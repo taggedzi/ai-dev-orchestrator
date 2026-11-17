@@ -1,0 +1,13 @@
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+
+# Local worktrees and execution artifacts
+/.worktrees/
+/.local/
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
