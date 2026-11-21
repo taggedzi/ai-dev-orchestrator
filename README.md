@@ -12,7 +12,7 @@ Research designs M1-01 through M1-10 have been merged. M1-11's recovery prefligh
 
 [Offline image preparation](research/validation/image-build-plan.md) has produced a retained, hash-bound image with measured versions and startup checks. The advertised tool catalog is broader than the fixture grant, so a startup pass does not establish isolation or dispatch approval.
 
-The [two-tool request and local admission checks](research/validation/control-policy-plan.md) now have SDK model/schema evidence. The developer selected a [separate trusted guard VM](docs/decisions/0001-validation-network-boundary.md) for network-enforcement preparation; exact provisioning and M1-12 qualification remain next.
+The [two-tool request and local admission checks](research/validation/control-policy-plan.md) now have SDK model/schema evidence. The developer selected a [separate trusted guard VM](docs/decisions/0001-validation-network-boundary.md) for network-enforcement preparation. Its [exact disconnected creation plan](research/validation/guard-preparation-plan.md) is ready for separate approval; hardening, missing offline nftables packages and M1-12 qualification follow.
 
 - [Project vision](docs/vision.md)
 - [Initial requirements and proof of concept](docs/requirements.md)

@@ -47,6 +47,6 @@ The developer has now [selected a separate guard VM for preparation](../../docs/
 ## Next review
 
 1. Freeze a readiness policy for the inspected installer-created cloud-init disable marker, then qualify three consecutive unattended cold starts and ACPI shutdowns on the two-CPU x2APIC-off candidate. One measured cycle is insufficient. Preserve the stopped disk and attempt chain; do not rerun the formatting installer. Review the offline network-online wait, bootstrap credential and installation artifacts during later hardening.
-2. Prepare the accepted guard topology's exact provisioning, package and external network/control policy inputs. Keep VM creation, guest runtime installation and NIC activation behind their concrete approvals. Final deployment approval and #12/#13/#11 experiments follow their frozen inputs and effective-control evidence.
+2. Review the accepted guard topology's [exact disconnected creation plan](guard-preparation-plan.md). Its source disk and package metadata have been inspected; nftables is absent. Separate approval is required for creating the stopped guard, then offline package/hardening, boot and external network/control qualification. Final deployment approval and #12/#13/#11 experiments follow their frozen inputs and effective-control evidence.
 
 Do not merge PR #25 with an automatic closure of #11 unless the unfinished measurements are explicitly preserved in tracking. The preparation work supplies assets and tested local mechanisms; it does not satisfy #11–#14 by itself.

@@ -312,6 +312,9 @@ def build(destination, gsd_export=None, gsd_snapshot_hash=None):
             "image-build-evidence.json",
             "control-schema-evidence.json",
             "control-request-example.json",
+            "guard-provisioning-plan.json",
+            "guard-network-inputs.json",
+            "guard-preparation-evidence.json",
             "MinimalAgentServer.Dockerfile",
         ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())

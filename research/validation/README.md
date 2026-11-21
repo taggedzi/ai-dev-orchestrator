@@ -2,6 +2,8 @@
 
 This package builds the synthetic inputs and local harness authorized in the November 20 conversation. It uses Python's standard library plus installed Node and Git for verification. It is experiment code; the product coordinator and its architecture remain unselected.
 
+The developer-selected guard topology now has an [exact first-stage provisioning review](guard-preparation-plan.md), a plan-only native script and explicit network inputs. Read-only inspection binds the stopped source disk and identifies missing nftables packages. Creation, boot, installation and network activation remain separate approvals.
+
 ## Build and check
 
 From the repository root, choose a new output directory and run:

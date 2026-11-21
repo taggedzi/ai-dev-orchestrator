@@ -1,0 +1,384 @@
+{
+  "actions": {
+    "network_created_or_enabled": false,
+    "packages_installed": false,
+    "provider_or_model_calls": 0,
+    "repository_data_uploaded": false,
+    "vm_configuration_changed": false,
+    "vm_created": false,
+    "vm_started": false
+  },
+  "base_commit": "168049b",
+  "classification": "Measured read-only source/package inspection and synthetic native-script refusal tests; guard creation, boot, installation, packet enforcement and M1-12 unqualified",
+  "installed_cli_help": [
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "help",
+        "modifyvm"
+      ],
+      "classification": "Installed CLI help text, not an attempted mutation",
+      "exit": 1
+    },
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "help",
+        "clonemedium"
+      ],
+      "classification": "Installed CLI help text, not an attempted mutation",
+      "exit": 1
+    },
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "help",
+        "storagectl"
+      ],
+      "classification": "Installed CLI help text, not an attempted mutation",
+      "exit": 1
+    },
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "help",
+        "storageattach"
+      ],
+      "classification": "Installed CLI help text, not an attempted mutation",
+      "exit": 1
+    },
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "help",
+        "createvm"
+      ],
+      "classification": "Installed CLI help text, not an attempted mutation",
+      "exit": 1
+    }
+  ],
+  "iso_inventory": "No nftables .deb appears in the local installer directory listing; iso-directory.stdout retained",
+  "management_port_probe": "exclusive bind succeeded, immediately released; must recheck at activation",
+  "native_inventory_commands": [
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "--version"
+      ],
+      "exit": 0,
+      "label": "version"
+    },
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "list",
+        "vms"
+      ],
+      "exit": 0,
+      "label": "vms"
+    },
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "list",
+        "runningvms"
+      ],
+      "exit": 0,
+      "label": "running"
+    },
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "showvminfo",
+        "74129e9c-5a65-44fa-9d35-79d458dc4704",
+        "--machinereadable"
+      ],
+      "exit": 0,
+      "label": "source"
+    },
+    {
+      "args": [
+        "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+        "showmediuminfo",
+        "disk",
+        "e832fc9c-23cc-40a8-8e66-fa0c624b8bd9"
+      ],
+      "exit": 0,
+      "label": "source-medium"
+    }
+  ],
+  "next_check": "Review exact plan-only preview and approve only disconnected guard VM creation; preserve source disk and qualify later stages separately",
+  "observed_at_utc": "2026-11-21T18:42:37.535325+00:00",
+  "package_observation": {
+    "classification": "Read-only package metadata from unreplayed stopped-image copy; binaries were not executed",
+    "installed_rows": 480,
+    "packages": {
+      "containerd": null,
+      "docker.io": null,
+      "iproute2": "6.1.0-1ubuntu6.4",
+      "iptables": null,
+      "libnftables1": null,
+      "linux-image-6.8.0-139-generic": "6.8.0-139.139",
+      "netplan.io": "1.1.2-8ubuntu1~24.04.2",
+      "nftables": null,
+      "openssh-server": null,
+      "procps": "2:4.0.4-4ubuntu3.3",
+      "python3": "3.12.3-0ubuntu2.1",
+      "python3-minimal": "3.12.3-0ubuntu2.1",
+      "systemd": "255.4-1ubuntu8.17",
+      "tcpdump": null,
+      "util-linux": "2.39.3-9ubuntu6.6"
+    },
+    "source_sha256": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09"
+  },
+  "prior_attempt": {
+    "files": {
+      "clone-help.stderr": {
+        "bytes": 425,
+        "sha256": "93f15daf5621fb07c03d96f7da9a14b8d0e0f29768ee9f1298805de7dc55b159"
+      },
+      "clone-help.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "running.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "running.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "source-medium.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "source-medium.stdout": {
+        "bytes": 524,
+        "sha256": "d8dbe0145c351913a2a2d917a6b333ca60da1fffb7db75ae0e71f23475e7dd69"
+      },
+      "source.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "source.stdout": {
+        "bytes": 3226,
+        "sha256": "27f9458adfc212d2d457e4a4abd6b42ccd8ca6d3401b7b4f69be39cf26cf61ea"
+      },
+      "version.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "version.stdout": {
+        "bytes": 15,
+        "sha256": "2ac2b583314b957306270781d498af778e2008ac0f084119e604fba15e5e738d"
+      },
+      "vms.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "vms.stdout": {
+        "bytes": 426,
+        "sha256": "2f6c42098f71932f353228883257839519c2d5944cbe339fea30ea34834923ce"
+      }
+    },
+    "path": ".local/validation/guard-preparation-01",
+    "result": "Stopped at rejected clonemedium --help before disk export; read-only inventory only"
+  },
+  "proposed_guard_vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a",
+  "raw_evidence_files": {
+    "clonemedium-help.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "clonemedium-help.stdout": {
+      "bytes": 3757,
+      "sha256": "178e4f4d89a7483004178d459d97eb3ed602dd70e0d7fcf6d6869f68021c052b"
+    },
+    "createvm-help.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "createvm-help.stdout": {
+      "bytes": 4162,
+      "sha256": "e467085e4327b51f78f2ad481f52ac378bed9da5f68ba55dc609b1514e93bde2"
+    },
+    "dpkg-status.stderr": {
+      "bytes": 29,
+      "sha256": "c0eda8e792b06ab4531f47cc421ca68489490dd5a9aa7c1eeae93b4d3193ef44"
+    },
+    "dpkg-status.stdout": {
+      "bytes": 497662,
+      "sha256": "b9f366f301a3ae82652a1bb983c905c53e325d78e44b831ed8da16a4176190b4"
+    },
+    "executed-check-guard-repository.py": {
+      "bytes": 715,
+      "sha256": "d3604984d728b8d5f5f416633b9b78879b4da57ec03d0764b671bc33c9962255"
+    },
+    "executed-inspect-guard-inputs.py": {
+      "bytes": 2557,
+      "sha256": "9c61d3eb803f4684551a0ef516a711df4b17299343fb5046d62481494486a90a"
+    },
+    "executed-inspect-guard-packages.py": {
+      "bytes": 2072,
+      "sha256": "8925907205c3068cdde3f9d2da745ed317ef71ba35cc702ab8b0ddcd8ed9c4c9"
+    },
+    "iso-directory.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "iso-directory.stdout": {
+      "bytes": 50697,
+      "sha256": "20e6f87eea68d95d287b2b9744231c43fe4198cf83084bde5a6d802d6ba55905"
+    },
+    "machine-id.stderr": {
+      "bytes": 29,
+      "sha256": "c0eda8e792b06ab4531f47cc421ca68489490dd5a9aa7c1eeae93b4d3193ef44"
+    },
+    "machine-id.stdout": {
+      "bytes": 559,
+      "sha256": "b73c327825a5dfdf845f19190aba97fa2046581c76b9b8785e5094268c940a2d"
+    },
+    "modifyvm-help.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "modifyvm-help.stdout": {
+      "bytes": 69887,
+      "sha256": "7c93841ddce6fc76a077d41dd1cdf09fcdfef4b719cb455ee5e53514eeb5a331"
+    },
+    "nft-binary.stderr": {
+      "bytes": 75,
+      "sha256": "f04812a6bf9aee54d6d036a2bfea6a695bad60b16fe64cc58efdef1a5ec48afa"
+    },
+    "nft-binary.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "package-finding.json": {
+      "bytes": 2894,
+      "sha256": "7c95d62545380b89a7e85919a5dd38ec90531dc2dd992848441f4c7d2d86a985"
+    },
+    "python-binary.stderr": {
+      "bytes": 29,
+      "sha256": "c0eda8e792b06ab4531f47cc421ca68489490dd5a9aa7c1eeae93b4d3193ef44"
+    },
+    "python-binary.stdout": {
+      "bytes": 562,
+      "sha256": "30bd0638725b3e2aaa9ef5195a85edcff8cd724478e1f15e8fc85933c6a8e2d1"
+    },
+    "result.json": {
+      "bytes": 3429,
+      "sha256": "c29d132a7b142c15a51e4547507174477bbbf21f33c2aaeb6e16ccb35a325bd5"
+    },
+    "root-tests-result.json": {
+      "bytes": 188,
+      "sha256": "4870ab9174f497957673876ad91f645392d05417d21aaec0ba7e0c532355a3ac"
+    },
+    "root-tests.stderr": {
+      "bytes": 115,
+      "sha256": "7704643232b958094f9df14152e45296c66ce15565316511a5ca6c4c7cbe0374"
+    },
+    "root-tests.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "root.receipt.json": {
+      "bytes": 518,
+      "sha256": "6d66341cd78eb92307916a0ad97746b75d4c7a71aa708d08466e66e3950a5b23"
+    },
+    "running.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "running.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source-medium.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source-medium.stdout": {
+      "bytes": 524,
+      "sha256": "d8dbe0145c351913a2a2d917a6b333ca60da1fffb7db75ae0e71f23475e7dd69"
+    },
+    "source.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source.stdout": {
+      "bytes": 3226,
+      "sha256": "27f9458adfc212d2d457e4a4abd6b42ccd8ca6d3401b7b4f69be39cf26cf61ea"
+    },
+    "storageattach-help.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "storageattach-help.stdout": {
+      "bytes": 11817,
+      "sha256": "4b9fbcbd1de348084f161f0aee5f44471ece8f40e24c25db03661c3f78af0a5b"
+    },
+    "storagectl-help.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "storagectl-help.stdout": {
+      "bytes": 2726,
+      "sha256": "b3bb047b3f834fce2a9432420c4306e0e13ff7fd662d9ebbb309cf49c9a36445"
+    },
+    "version.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "version.stdout": {
+      "bytes": 15,
+      "sha256": "2ac2b583314b957306270781d498af778e2008ac0f084119e604fba15e5e738d"
+    },
+    "vms.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "vms.stdout": {
+      "bytes": 426,
+      "sha256": "2f6c42098f71932f353228883257839519c2d5944cbe339fea30ea34834923ce"
+    }
+  },
+  "raw_evidence_root": ".local/validation/guard-preparation-02",
+  "remaining": [
+    "Separate native creation approval",
+    "Guard boot/readiness and inherited identity/credential hardening",
+    "Pinned offline nftables packages and trusted services",
+    "Effective packet policy and trusted qualification before executor NIC connection",
+    "Final executor/observer/supervisor/extractor and M1-12/M1-13 qualification"
+  ],
+  "schema_version": 1,
+  "source_disk": {
+    "allocated_ranges_sha256": "c8ea85056d15b4d1679172e34e5fb6445e5fab0302430d8503572d9b62978a8c",
+    "classification": "read-only stopped-disk copy; unreplayed filesystem, not a clean-image qualification",
+    "copied_bytes": 2612002816,
+    "logical_bytes": 33230422016,
+    "partition": 2,
+    "partition_offset": 1128267776,
+    "source_sha256_after": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09",
+    "source_sha256_before": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09"
+  },
+  "source_sha256": {
+    "New-GuardVm.ps1": "95d259011991450a60c757b8338ab2dc5a739a74ee44858f407a139324bfd296",
+    "bundle.py": "93152121fce18b17057d0ee7a9220743aae09dab950b1ab81eaf96ec963a5b22",
+    "guard-network-inputs.json": "99384091ddd6ece99658552e292cb986377416324c6bfeb6aa267283766337fc",
+    "guard-preparation-plan.md": "c6f4068c2f32b7b93172f3679c8e06603b318550663a33af6659a0c78cc7c593",
+    "guard-provisioning-plan.json": "d9b76875fa1892d015f109fe15f2584620d01d2f729451848221805713dcba85"
+  },
+  "source_vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704",
+  "test_sha256": "222cd31d9b78c19951befd62b0acb6577805c1b59034e615ddd094e507b1b7e4",
+  "topology_approval": "Developer selected guard VM preparation in this thread on 2026-11-21; native provisioning approval remains absent",
+  "verification": {
+    "elapsed_seconds": 28.235,
+    "new_native_script_tests": 5,
+    "repository_tests_run": 92,
+    "result": "pass",
+    "scope": "Preview and pre-native refusal paths in temporary directories with absent VBox executable; no native apply qualification",
+    "skipped": 1
+  }
+}
