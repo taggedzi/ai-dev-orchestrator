@@ -6,9 +6,9 @@ The project prioritizes correct, maintainable software and total cost per accept
 
 ## Current status
 
-Research designs M1-01 through M1-10 have been merged. M1-11's recovery preflight is on the current branch in [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25), checked open November 21. A [synthetic fixture and local test harness](research/validation/README.md) are prepared. The offline Ubuntu VM completed one unattended two-CPU boot and ACPI shutdown with x2APIC disabled. The installer-created cloud-init disable marker is now verified. Repeatability and runtime qualification remain open; the VM is safely powered off with its original settings restored. See the [findings and next check](research/validation/offline-inspection.md). There is no runnable orchestrator or approved implementation stack yet.
+Research designs M1-01 through M1-10 have been merged. M1-11's recovery preflight is on the current branch in [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25), checked open November 21. The [synthetic fixture and local harness](research/validation/README.md) now include a real pinned GSD export and five negative import controls. The earlier Ubuntu VM diagnostic completed one unattended two-CPU boot and ACPI shutdown with x2APIC disabled. Runtime-image preparation, repeatable readiness and isolation/executor qualification remain open. There is no runnable orchestrator or approved implementation stack yet.
 
-**Resume here:** [Project status and next work](docs/status.md). Freeze the corrected readiness policy and qualify repeated VM boot/shutdown before dependency preparation and isolation, gateway, and recovery measurements.
+**Resume here:** [Project status and next work](docs/status.md). Complete the pinned runtime image, external network and guest-readiness prerequisites for M1-12 isolation testing. The [planning freeze](research/validation/gsd-freeze-evidence.json) records the newly completed GSD input.
 
 - [Project vision](docs/vision.md)
 - [Initial requirements and proof of concept](docs/requirements.md)

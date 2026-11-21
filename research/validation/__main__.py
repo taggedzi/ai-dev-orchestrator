@@ -21,6 +21,9 @@ def main():
         child.add_argument("bundle", type=Path)
         if name == "verify":
             child.add_argument("--manifest-sha256")
+        if name == "build":
+            child.add_argument("--gsd-export", type=Path)
+            child.add_argument("--gsd-snapshot-sha256")
     child = sub.add_parser("blind")
     child.add_argument("bundle", type=Path)
     child.add_argument("destination", type=Path)
@@ -50,7 +53,7 @@ def main():
             child.add_argument("--upstream", required=True)
     args = parser.parse_args()
     if args.command == "build":
-        manifest = build(args.bundle)
+        manifest = build(args.bundle, args.gsd_export, args.gsd_snapshot_sha256)
         output = {
             "bundle": str(args.bundle),
             "files": len(manifest["files"]),
@@ -67,9 +70,10 @@ def main():
             "status": manifest["status"],
         }
     elif args.command == "profile":
-        verify(args.bundle)
+        manifest = verify(args.bundle)
         output = deployment_template(
-            digest((args.bundle / "manifest.json").read_bytes())
+            digest((args.bundle / "manifest.json").read_bytes()),
+            (manifest.get("planning_export") or {}).get("snapshot_sha256"),
         )
     elif args.command == "blind":
         output = blind_packets(args.bundle, args.destination, args.seed)

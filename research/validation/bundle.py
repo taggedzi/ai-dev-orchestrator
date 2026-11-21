@@ -143,7 +143,79 @@ def inventory(root, exclude_manifest=False):
     return result
 
 
-def build(destination):
+def attach_planning_export(root, export_root, expected_snapshot_hash):
+    from .gsd_import import normalize
+
+    export_root = Path(export_root)
+    snapshot = (export_root / "inspect.stdout").read_bytes()
+    if digest(snapshot) != expected_snapshot_hash:
+        raise ValueError("GSD snapshot differs from its external freeze digest")
+    receipt = load_json((export_root / "result.json").read_bytes())
+    if (
+        receipt.get("gsd_version") != PINS["gsd"]["version"]
+        or receipt.get("gsd_commit") != PINS["gsd"]["commit"]
+        or receipt.get("snapshot_sha256") != expected_snapshot_hash
+        or not all(
+            receipt.get(key) is True
+            for key in [
+                "planning_files_unchanged",
+                "git_metadata_unchanged",
+                "tool_package_unchanged",
+                "repeat_bytes_equal",
+            ]
+        )
+    ):
+        raise ValueError("GSD export lacks the required read-only provenance")
+    project = export_root / "planning-input"
+    before = load_json((export_root / "planning-before.json").read_bytes())
+    if before != load_json(
+        (export_root / "planning-after.json").read_bytes()
+    ) or before != inventory(project):
+        raise ValueError("GSD source planning/Git state changed")
+    raw = {}
+    for name in planning_files():
+        raw[name] = (project / name).read_bytes()
+        if raw[name] != (root / "planning" / name).read_bytes():
+            raise ValueError("GSD export refers to different raw planning inputs")
+    if {name for name in before if name.startswith(".planning/")} != set(raw):
+        raise ValueError("GSD source has unexpected planning inputs")
+    expected_queries = ["identity", "context", "inspect", "index", "inspect-repeat"]
+    if [row["name"] for row in receipt["queries"]] != expected_queries:
+        raise ValueError("GSD query provenance incomplete")
+    for row in receipt["queries"]:
+        if row["exit"] != 0:
+            raise ValueError("GSD query failed")
+        for suffix in ("stdout", "stderr"):
+            if (
+                digest((export_root / (row["name"] + "." + suffix)).read_bytes())
+                != row[suffix + "_sha256"]
+            ):
+                raise ValueError("GSD query evidence bytes changed")
+    if snapshot != (export_root / "inspect-repeat.stdout").read_bytes():
+        raise ValueError("GSD repeat evidence differs")
+    normalized = canonical(normalize(snapshot, raw)) + b"\n"
+    write(root, "planning/native-snapshot.json", snapshot)
+    write(
+        root,
+        "planning/native-export-receipt.json",
+        (export_root / "result.json").read_bytes(),
+    )
+    write(root, "planning/import-probe.json", normalized)
+    return {
+        "snapshot_sha256": expected_snapshot_hash,
+        "schema_version": 1,
+        "source_bundle_sha256": receipt["bundle_sha256"],
+        "source_planning_commit": receipt["planning_commit"]["oid"],
+        "import_probe_sha256": digest(normalized),
+        "classification": "measured GSD export plus fixture-only import probe; product integration remains open",
+    }
+
+
+def build(destination, gsd_export=None, gsd_snapshot_hash=None):
+    if bool(gsd_export) != bool(gsd_snapshot_hash):
+        raise ValueError(
+            "GSD attachment requires both export root and external snapshot digest"
+        )
     root = Path(destination).absolute()
     # Exclusive creation also prevents accidental replacement of a prior freeze.
     root.mkdir(parents=True, exist_ok=False)
@@ -233,6 +305,7 @@ def build(destination):
             "first-boot-evidence.json",
             "offline-inspection-evidence.json",
             "boot-diagnostic-evidence.json",
+            "gsd-export-evidence.json",
         ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())
     write(
@@ -240,6 +313,8 @@ def build(destination):
     )
     for path in sorted((ROOT / "tests").glob("test_*.py")):
         write(root, "harness/tests/" + path.name, path.read_bytes())
+    for path in sorted((ROOT / "tests/fixtures").glob("*.json")):
+        write(root, "harness/tests/fixtures/" + path.name, path.read_bytes())
     for directory in ("docs", "research"):
         for path in sorted((ROOT / directory).glob("*.md")):
             write(
@@ -340,6 +415,11 @@ def build(destination):
         )
         + b"\n",
     )
+    planning_export = (
+        attach_planning_export(root, gsd_export, gsd_snapshot_hash)
+        if gsd_export
+        else None
+    )
     manifest = {
         "schema_version": 1,
         "fixture": "M-CLI1",
@@ -348,7 +428,9 @@ def build(destination):
         "files": inventory(root, exclude_manifest=True),
         "objects": records,
         "open_gates": [
-            "actual pinned GSD schema-1 export and import comparison",
+            "product ingestion/acceptance integration for the measured GSD fixture export"
+            if planning_export
+            else "actual pinned GSD schema-1 export and import comparison",
             "Linux target/image/toolchain digests and isolation measurements",
             "deployed OpenHands prompts/tool schemas and exact Chat transcripts",
             "independent host observer and hypervisor stop/reap qualification",
@@ -356,6 +438,8 @@ def build(destination):
             "blinded reviewer adjudication and measured executor/gateway cases",
         ],
     }
+    if planning_export:
+        manifest["planning_export"] = planning_export
     write(root, "manifest.json", canonical(manifest) + b"\n")
     return manifest
 

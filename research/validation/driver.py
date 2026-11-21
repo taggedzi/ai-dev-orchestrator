@@ -12,7 +12,7 @@ from .http_tools import request
 from .store import Hold
 
 
-def deployment_template(bundle_hash):
+def deployment_template(bundle_hash, gsd_export_hash=None):
     return {
         "schema_version": 1,
         "status": "not-approved",
@@ -23,7 +23,7 @@ def deployment_template(bundle_hash):
         "toolchain_sha256": None,
         "network_policy_sha256": None,
         "tool_schema_sha256": None,
-        "gsd_export_sha256": None,
+        "gsd_export_sha256": gsd_export_hash,
         "chat_transcript_sha256": None,
         "gate_evidence": {
             "isolation": None,

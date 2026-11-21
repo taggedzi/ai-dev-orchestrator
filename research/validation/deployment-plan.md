@@ -36,6 +36,8 @@ The bundle's manifest freezes source, checks, policy proposals, payloads, patche
 
 The remaining packet needs the target UUID and start identity, OS/kernel/hypervisor/runtime versions, image and binary hashes, network/mount/controller snapshots, actual raw GSD export and normalized comparison, deployed prompt/tool schema bytes, exact Chat request/response transcripts, observer topology and control results, and supervisor installation/stop recovery plan. Every required blank remains a blocker; placeholder hashes must not be treated as evidence.
 
+The [GSD stage](gsd-export-plan.md) now supplies an actual schema-1 export and fixture-only import controls. The [new review-packet freeze](gsd-freeze-evidence.json) attaches that snapshot, its original query receipt and a normalized probe after verifying exact raw planning equality. Its generated deployment profile carries the real GSD hash, retains `not-approved` and leaves image/network/runtime qualification unset. Planning-host Node >=24 is separate from executor Node 22.16.0; the executor pins were preserved. Do not interpret this one completed input as an approved deployment.
+
 No product architecture decision is made here. The experiment still evaluates the existing proposed ownership boundaries and can finish with a safe hold. An approved local-only result cannot establish provider billing finality, agent review quality, or production recovery.
 
 ## Next review

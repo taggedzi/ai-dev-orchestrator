@@ -219,8 +219,8 @@ def sources():
 def planning_files():
     files = {
         ".planning/PROJECT.md": "# M-CLI1\n\nValidate a name and expose a dependency-free CLI. Synthetic experiment only.\n",
-        ".planning/REQUIREMENTS.md": "# Requirements\n\n- [ ] **CLI-01**: Preserve nonblank names; reject ECMAScript whitespace-only names.\n- [ ] **CLI-02**: Reuse the validator; greet on stdout or exit 2 with an error on stderr.\n",
-        ".planning/ROADMAP.md": "# Roadmap\n\n## Milestone v1.0: M-CLI1\n\n- [ ] **Phase 1: Validate CLI** - Implement CLI-01 and CLI-02.\n\n### Phase 1: Validate CLI\n**Goal:** Validate names and provide a CLI.\n**Depends on:** Nothing\n**Requirements:** CLI-01, CLI-02\n**Success Criteria:** Validator and CLI meet their frozen checks.\n**Plans:** 2 plans\n\nPlans:\n- [ ] 01-01-PLAN.md - Name validator\n- [ ] 01-02-PLAN.md - CLI\n",
+        ".planning/REQUIREMENTS.md": "# Requirements\n\n- [ ] **CLI-01**: Preserve nonblank names; reject ECMAScript whitespace-only names.\n- [ ] **CLI-02**: Reuse the validator; greet on stdout or exit 2 with an error on stderr.\n\n## Traceability\n\n| Requirement | Phase | Status |\n|-------------|-------|--------|\n| CLI-01 | Phase 1 | Pending |\n| CLI-02 | Phase 1 | Pending |\n",
+        ".planning/ROADMAP.md": "# Roadmap\n\n## Milestone v1.0: M-CLI1\n\n- [ ] **Phase 1: Validate CLI** - Implement CLI-01 and CLI-02.\n\n### Phase 1: Validate CLI\nValidate names and provide a CLI.\n\n**Goal**: Validate names and provide a CLI.\n**Depends on**: Nothing\n**Requirements**: CLI-01, CLI-02\n**Success Criteria**: Validator and CLI meet their frozen checks.\n**Plans**: 2 plans\n\nPlans:\n- [ ] 01-01-PLAN.md - Name validator\n- [ ] 01-02-PLAN.md - CLI\n",
         ".planning/STATE.md": "# Project State\n\n## Current Position\n\nPhase: 1 of 1 (Validate CLI)\nPlan: 0 of 2 in current phase\nStatus: Ready to execute\n",
         ".planning/config.json": canonical(
             {
@@ -235,6 +235,7 @@ def planning_files():
     for n, task in enumerate(TASKS, 1):
         actions = PROMPTS[task["id"]].split("\n", 1)[1].strip()
         deps = "[]" if n == 1 else '["01-01"]'
+        criteria = "\n".join("    - " + value for value in task["criteria"])
         files[f".planning/phases/01-validate-cli/01-0{n}-PLAN.md"] = f"""---
 phase: 01-validate-cli
 plan: 0{n}
@@ -246,7 +247,9 @@ autonomous: true
 requirements: ["CLI-0{n}"]
 ---
 
-<objective>Implement {task["id"]} from the frozen synthetic milestone.</objective>
+<objective>
+Implement {task["id"]} from the frozen synthetic milestone.
+</objective>
 <context>@01-CONTEXT.md</context>
 <tasks>
 <task type="auto">
@@ -254,7 +257,9 @@ requirements: ["CLI-0{n}"]
   <files>{", ".join(task["allowed_additions"])}</files>
   <action>{actions}</action>
   <verify><automated>node --test test/{"validate" if n == 1 else "cli"}.test.js</automated></verify>
-  <acceptance_criteria>{", ".join(task["criteria"])}</acceptance_criteria>
+  <acceptance_criteria>
+{criteria}
+  </acceptance_criteria>
   <done>All frozen candidate checks and independent review pass on the exact revision.</done>
 </task>
 </tasks>
