@@ -22,6 +22,8 @@ The first inspection stopped before disk export when `clonemedium --help` was re
 
 ## Reviewable operation
 
+The subsequent [package-input stage](guard-package-plan.md) has verified four downloaded nftables archives. A separate offline simulation proposes 97 OS upgrades and five new kernel packages. Plan those updates and the required firewall-service lifecycle changes before final hardening/readiness qualification. No package was installed; the disconnected creation plan's operations and digest remain unchanged.
+
 [New-GuardVm.ps1](New-GuardVm.ps1) defaults to a JSON preview and makes no native calls:
 
 ```powershell

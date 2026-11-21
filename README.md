@@ -14,6 +14,8 @@ Research designs M1-01 through M1-10 have been merged. M1-11's recovery prefligh
 
 The [two-tool request and local admission checks](research/validation/control-policy-plan.md) now have SDK model/schema evidence. The developer selected a [separate trusted guard VM](docs/decisions/0001-validation-network-boundary.md) for network-enforcement preparation. Its [exact disconnected creation plan](research/validation/guard-preparation-plan.md) is ready for separate approval; hardening, missing offline nftables packages and M1-12 qualification follow.
 
+The [packet-filter input set](research/validation/guard-package-plan.md) now has four verified archives. OS patching and firewall-service hardening still need a separate plan before final runtime qualification. VM creation remains pending approval.
+
 - [Project vision](docs/vision.md)
 - [Initial requirements and proof of concept](docs/requirements.md)
 - [Exploratory architecture and risks](docs/architecture.md)

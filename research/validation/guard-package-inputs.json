@@ -1,0 +1,76 @@
+{
+  "apt_resolution": "Four additions; zero upgrades/removals; no recommends/suggests; signed noble/noble-updates/noble-security main amd64",
+  "archive_root": ".local/validation/guard-packages-01/archives",
+  "archives": [
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/j/jansson/libjansson4_2.14-2build2_amd64.deb",
+      "bytes": 32830,
+      "depends": "libc6 (>= 2.38)",
+      "filename": "libjansson4_2.14-2build2_amd64.deb",
+      "local_filename": "libjansson4_2.14-2build2_amd64.deb",
+      "name": "libjansson4",
+      "pre_depends": "",
+      "sha256": "0cf79113f5d193ce9af2be2ff4b2c3b30dd4e55a0b6c47f7d28f6c849ff3aa60",
+      "version": "2.14-2build2"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/libn/libnftnl/libnftnl11_1.2.6-2build1_amd64.deb",
+      "bytes": 65986,
+      "depends": "libc6 (>= 2.34), libmnl0 (>= 1.0.3-4~)",
+      "filename": "libnftnl11_1.2.6-2build1_amd64.deb",
+      "local_filename": "libnftnl11_1.2.6-2build1_amd64.deb",
+      "name": "libnftnl11",
+      "pre_depends": "",
+      "sha256": "e5bde5c9cbb95082700011f0b7ef2c0a41900b0a9fd7434f6e90448e2a7b4e50",
+      "version": "1.2.6-2build1"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/n/nftables/libnftables1_1.0.9-1ubuntu0.1_amd64.deb",
+      "bytes": 358574,
+      "depends": "libc6 (>= 2.38), libgmp10 (>= 2:6.3.0+dfsg), libjansson4 (>= 2.14), libmnl0 (>= 1.0.3-4~), libnftnl11 (>= 1.2.6), libxtables12 (>= 1.6.0+snapshot20161117)",
+      "filename": "libnftables1_1.0.9-1ubuntu0.1_amd64.deb",
+      "local_filename": "libnftables1_1.0.9-1ubuntu0.1_amd64.deb",
+      "name": "libnftables1",
+      "pre_depends": "",
+      "sha256": "fcaee001747a6adaa0cd9337fef437b3aa7a7a6d5246b62fbd4784d3d6a5009e",
+      "version": "1.0.9-1ubuntu0.1"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/n/nftables/nftables_1.0.9-1ubuntu0.1_amd64.deb",
+      "bytes": 69842,
+      "depends": "libnftables1 (= 1.0.9-1ubuntu0.1), libc6 (>= 2.34), libedit2 (>= 3.1-20130611-0)",
+      "filename": "nftables_1.0.9-1ubuntu0.1_amd64.deb",
+      "local_filename": "nftables_1.0.9-1ubuntu0.1_amd64.deb",
+      "name": "nftables",
+      "pre_depends": "",
+      "sha256": "d648859fccde3c17b8b9b89993427564f91f394a39306db1f67bd5ea3ac42c6e",
+      "version": "1.0.9-1ubuntu0.1"
+    }
+  ],
+  "archives_bytes": 527232,
+  "existing_direct_dependencies": {
+    "libc6": "2.39-0ubuntu8.8",
+    "libedit2": "3.1-20230828-1build1",
+    "libgmp10": "2:6.3.0+dfsg-2ubuntu6.1",
+    "libmnl0": "1.0.5-2build1",
+    "libxtables12": "1.8.10-3ubuntu2"
+  },
+  "fresh_resolution_required_after_os_updates": true,
+  "installation_approval": null,
+  "os_update_archives_included": false,
+  "raw_collection_receipt": {
+    "path": ".local/validation/guard-packages-01/receipt.json",
+    "sha256": "c5c1a7927915d39424982ede3ef16ae3bb1a92b5b4d2bc1fd4867016465909f3"
+  },
+  "role": "candidate guard packet-filter dependencies for the inspected source base",
+  "schema_version": 1,
+  "source_vdi_sha256": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09",
+  "status": "downloaded-not-installed",
+  "target_installed_package_rows": 480,
+  "target_status_sha256": "b9f366f301a3ae82652a1bb983c905c53e325d78e44b831ed8da16a4176190b4",
+  "target_vm_created": false
+}

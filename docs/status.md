@@ -4,6 +4,8 @@ Updated November 21, 2026. The active goal is to finish the project, including t
 
 ## Where we stopped
 
+The latest [guard package preparation](../research/validation/guard-package-plan.md) retrieved four archives totaling 527,232 bytes and verified their identities/hashes against signed Ubuntu metadata. Nothing was installed. A separate offline simulation identifies 97 OS upgrades and five new kernel packages; the stock nftables service also needs its permissive example and flush-on-stop behavior replaced. Prepare coherent OS-update/hardening inputs before qualifying final profiles. The disconnected guard creation plan and its digest are unchanged, and its separate approval remains pending.
+
 M1-01 through M1-10 research designs have been merged. They cover executor interfaces, planning, routing, ownership, isolation, recovery policy, verification, spending, and the [two-task validation fixture](../research/two-task-validation-fixture.md). These documents describe proposed behavior and source findings; they do not establish that an integrated system works.
 
 The restart audit began on `research/m1-11-executor-recovery` at `56cdfe2e2169f742c61f618eccf0ce4b439e03d4`, with a clean working tree. Its [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25) was open and unmerged at the November 20 check. It adds the [recovery preflight](../research/executor-cancellation-recovery.md) and a [Linux marker probe](../research/fixtures/executor-recovery-probe.py). Every executor runtime case remains Inconclusive. The later fixture commit is local; no push or merge was requested.

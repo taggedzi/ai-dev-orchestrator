@@ -4,6 +4,8 @@ This package builds the synthetic inputs and local harness authorized in the Nov
 
 The developer-selected guard topology now has an [exact first-stage provisioning review](guard-preparation-plan.md), a plan-only native script and explicit network inputs. Read-only inspection binds the stopped source disk and identifies missing nftables packages. Creation, boot, installation and network activation remain separate approvals.
 
+The [offline packet-filter preparation](guard-package-plan.md) has verified four archives from signed Ubuntu metadata. Package inspection identifies service behavior that must change and a separate OS-update prerequisite. No package or rule was installed.
+
 ## Build and check
 
 From the repository root, choose a new output directory and run:
