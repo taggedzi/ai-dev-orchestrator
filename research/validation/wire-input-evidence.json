@@ -1,0 +1,378 @@
+{
+  "actions": {
+    "agent_steps": 0,
+    "executor_instances": 0,
+    "image_pulls_or_builds": 0,
+    "model_endpoint_deliveries": 0,
+    "model_responses": 0,
+    "package_installs": 0,
+    "repository_data_uploaded": false,
+    "sdk_completion_method_invocations": 4,
+    "serialized_http_requests_denied_at_mock_transport": 4,
+    "socket_connect_attempts": 0,
+    "task_or_payload_executions": 0,
+    "unexpected_http_attempts": 0,
+    "virtualbox_operations": 0
+  },
+  "base_commit": "c1d8c63",
+  "cases": [
+    {
+      "assessment": {
+        "dispatch_approved": false,
+        "input_cap": 12000,
+        "input_tokens_estimated": 5209,
+        "input_within_cap": true,
+        "output_cap": 6000,
+        "output_within_cap": true,
+        "requested_output_tokens": 6000
+      },
+      "http_attempts": 1,
+      "phase": "initial_edit",
+      "sdk_error_type": "APIError",
+      "sdk_input_tokens": 5209,
+      "sdk_response_returned": false,
+      "task": "T-01",
+      "wire_bytes": 24537,
+      "wire_fields": [
+        "messages",
+        "model",
+        "max_completion_tokens",
+        "tools"
+      ],
+      "wire_input_tokens": 5209,
+      "wire_output_field": "max_completion_tokens",
+      "wire_path": ".local/validation/wire-input-01/requests/T-01-initial_edit.json",
+      "wire_sha256": "e4c8d90798e2b146b153b42b8eef292a61b9df0d93c1646c3617a98f8718ccb2",
+      "wire_tool_json_sha256": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc"
+    },
+    {
+      "assessment": {
+        "dispatch_approved": false,
+        "input_cap": 6000,
+        "input_tokens_estimated": 5250,
+        "input_within_cap": true,
+        "output_cap": 1000,
+        "output_within_cap": false,
+        "requested_output_tokens": 6000
+      },
+      "http_attempts": 1,
+      "phase": "finish_projection",
+      "sdk_error_type": "APIError",
+      "sdk_input_tokens": 5250,
+      "sdk_response_returned": false,
+      "task": "T-01",
+      "wire_bytes": 24887,
+      "wire_fields": [
+        "messages",
+        "model",
+        "max_completion_tokens",
+        "tools"
+      ],
+      "wire_input_tokens": 5250,
+      "wire_output_field": "max_completion_tokens",
+      "wire_path": ".local/validation/wire-input-01/requests/T-01-finish_projection.json",
+      "wire_sha256": "32c7b70c56cf04fd27bd17e59211254454a8ed227a9dfeb7ae7731ff15105019",
+      "wire_tool_json_sha256": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc"
+    },
+    {
+      "assessment": {
+        "dispatch_approved": false,
+        "input_cap": 12000,
+        "input_tokens_estimated": 5228,
+        "input_within_cap": true,
+        "output_cap": 6000,
+        "output_within_cap": true,
+        "requested_output_tokens": 6000
+      },
+      "http_attempts": 1,
+      "phase": "initial_edit",
+      "sdk_error_type": "APIError",
+      "sdk_input_tokens": 5228,
+      "sdk_response_returned": false,
+      "task": "T-02",
+      "wire_bytes": 24605,
+      "wire_fields": [
+        "messages",
+        "model",
+        "max_completion_tokens",
+        "tools"
+      ],
+      "wire_input_tokens": 5228,
+      "wire_output_field": "max_completion_tokens",
+      "wire_path": ".local/validation/wire-input-01/requests/T-02-initial_edit.json",
+      "wire_sha256": "b99cf65dfa8649bccf9dec99b45be9ce1e09b8873e973b641ec33a7ac9b5d46c",
+      "wire_tool_json_sha256": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc"
+    },
+    {
+      "assessment": {
+        "dispatch_approved": false,
+        "input_cap": 6000,
+        "input_tokens_estimated": 5269,
+        "input_within_cap": true,
+        "output_cap": 1000,
+        "output_within_cap": false,
+        "requested_output_tokens": 6000
+      },
+      "http_attempts": 1,
+      "phase": "finish_projection",
+      "sdk_error_type": "APIError",
+      "sdk_input_tokens": 5269,
+      "sdk_response_returned": false,
+      "task": "T-02",
+      "wire_bytes": 24955,
+      "wire_fields": [
+        "messages",
+        "model",
+        "max_completion_tokens",
+        "tools"
+      ],
+      "wire_input_tokens": 5269,
+      "wire_output_field": "max_completion_tokens",
+      "wire_path": ".local/validation/wire-input-01/requests/T-02-finish_projection.json",
+      "wire_sha256": "0f6d1f4a29e441721459959e454d911c8b41992b7ea3c8d584ac108e13653f1a",
+      "wire_tool_json_sha256": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc"
+    }
+  ],
+  "classification": "Native SDK/LiteLLM HTTP serialization at a rejecting mock transport; prepared task inputs and synthetic finish projections, no Agent step, socket exchange, task execution, model response or final-target qualification",
+  "cleanup": {
+    "desktop_started_for_probe": true,
+    "desktop_stop_exit": 0,
+    "engine_unavailable_after_stop": true,
+    "named_container_absent": true,
+    "readiness_observation_timeouts": [
+      "engine-ready-0"
+    ],
+    "running_containers_after": 0
+  },
+  "deployment_tool_schema_sha256": null,
+  "driver_source_sha256": "6a33fbc195faaa7292cef1539d13b610413f1ae9e44774a94f178ea67f373e2a",
+  "finished_epoch": 1795303052.255813,
+  "fixture_manifest_sha256": "c63bc4edafcbd226dc209c938f94b4506c5034bcabab575070a8be78b1d0a32d",
+  "format": "mcli1-wire-input-evidence-v1",
+  "full_finish_review_correction_fit_qualified": false,
+  "image_id": "sha256:f242d7a2b69742fde04385231647c54c57396b251ddfd7a5f34095073970e868",
+  "input_sha256": "8550b7a5e1895abfa22b74af3360ba6767265da19ecdf6b141b3f663d646afd5",
+  "litellm_version": "1.105.1",
+  "native_approval": "offline-denied-wire-serialization-2026-11-21",
+  "next_check": "Prepare trusted per-phase output limits without raising fixture caps; verify native serialization and broker admission. Replace synthetic finish output with real qualified observations, bind correction/review packets and compare final-target Agent Server/guard wire before dispatch.",
+  "prepared_bindings": [
+    {
+      "base_oid": "187a824c8735c958b32b7d3c1f957d621d07226e",
+      "dispatch_approved": false,
+      "operation": "12345678-1234-4234-8234-000000000001",
+      "task": "T-01",
+      "task_sha256": "6f7503bfc8f1f21bce64c4aad1a9d97f3c7a4826df48af210b6725d9d36cb020",
+      "template_sha256": "8d2845035318dd587e13f9e39ee75278716bfc2d3bb60272cd93b72c46d939a7",
+      "user_prompt": "M-CLI1 PR-01 T-01 | base=187a824c8735c958b32b7d3c1f957d621d07226e | operation=12345678-1234-4234-8234-000000000001 | task=6f7503bfc8f1f21bce64c4aad1a9d97f3c7a4826df48af210b6725d9d36cb020\nAdd src/validate.js and test/validate.test.js only. Export validateName(input) for string inputs. Return nonblank names unchanged. Throw TypeError with message Name must not be blank for empty and ECMAScript whitespace-only strings, including tabs and mixed whitespace. Use a stateless check. Use node:test and node:assert/strict for Ada, padded Ada, empty, spaces and one tab. Run node --test test/validate.test.js. Report the two paths and test exit. Use the assigned source and preloaded tools. Leave Git, dependencies and network configuration alone.\n"
+    },
+    {
+      "base_oid": "2969711382c4fcd8735d2a35316919a94a80c71d",
+      "dispatch_approved": false,
+      "operation": "12345678-1234-4234-8234-000000000002",
+      "task": "T-02",
+      "task_sha256": "0be42c2150ce5e85548ea6b17107f69f0940764b72df10095b0889e34dc7a68d",
+      "template_sha256": "32d4c4ffd7f54b0e792689ec3d1aa5b5783b76f82e7cb9a2a7ee90710d36ead7",
+      "user_prompt": "M-CLI1 PR-01 T-02 | base=2969711382c4fcd8735d2a35316919a94a80c71d | operation=12345678-1234-4234-8234-000000000002 | task=0be42c2150ce5e85548ea6b17107f69f0940764b72df10095b0889e34dc7a68d\nAdd src/cli.js and test/cli.test.js only. Import validateName from ./validate.js. Validate argv[2], defaulting missing input to the empty string. For success print Hello, <name>! followed by LF to stdout and exit 0. For a validation error print its message followed by LF to stderr and exit 2. Use node:test, node:assert/strict and node:child_process for argv cases Ada, padded Ada, missing, empty, spaces and one tab. Assert exit, stdout and stderr. Run node --test test/cli.test.js. Report the two paths and test exit. Use the assigned source and preloaded tools. Leave Git, dependencies and network configuration alone.\n"
+    }
+  ],
+  "probe_source_sha256": "aa98eeae61e68e4f56b3c652964b1720b3b1dd8f0b04aba6d4d6109f24ffd3bf",
+  "profile_finding": {
+    "classification": "Calculated synthetic bound, no charge; profile mismatch observed at native HTTP serialization, not a deployed broker violation",
+    "observed_envelope_bound_using_proposed_6000_input_cap_micro_usd": 180000,
+    "observed_finish_output_request": 6000,
+    "proposed_finish_maximum_bound_micro_usd": 80000,
+    "proposed_finish_output_cap": 1000,
+    "status": "hold finish dispatch"
+  },
+  "qualified_chat_transcript_sha256": null,
+  "raw_files": {
+    "containers-before.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "containers-before.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-start.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-start.stdout": {
+      "bytes": 29,
+      "sha256": "5f83026ffb6adcef95ed27e8e68d43a0183d524611d0644977de86d6352ad3eb"
+    },
+    "desktop-stop.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-stop.stdout": {
+      "bytes": 29,
+      "sha256": "c4ed0e5b1c3f7042bc1743fd09ea47af6ecc5878e72f6a444895489894af51b0"
+    },
+    "docker-config/config.json": {
+      "bytes": 94,
+      "sha256": "fb0778721a550b523aed3a864d99713499b89e7ccc204d2b2e00980d3ae0be51"
+    },
+    "engine-after-stop.stderr": {
+      "bytes": 224,
+      "sha256": "e9133cf10b02b0b91c8b119848513db0ac541e7c3c19681266939e4b9952f7cc"
+    },
+    "engine-after-stop.stdout": {
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "engine-before.stderr": {
+      "bytes": 224,
+      "sha256": "e9133cf10b02b0b91c8b119848513db0ac541e7c3c19681266939e4b9952f7cc"
+    },
+    "engine-before.stdout": {
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "engine-ready-0.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-0.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-1.stdout": {
+      "bytes": 7,
+      "sha256": "db4ba0a89ba3c63cd68d4eb99ccf9e51bd122c7d3c2e03f79e91d251fb5300ab"
+    },
+    "executed-probe.py": {
+      "bytes": 11386,
+      "sha256": "aa98eeae61e68e4f56b3c652964b1720b3b1dd8f0b04aba6d4d6109f24ffd3bf"
+    },
+    "image-present.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "image-present.stdout": {
+      "bytes": 72,
+      "sha256": "653f77c084b5f15131de7efb7e69705b37ed73950247681a46683012611ea8cc"
+    },
+    "input.json": {
+      "bytes": 28666,
+      "sha256": "8550b7a5e1895abfa22b74af3360ba6767265da19ecdf6b141b3f663d646afd5"
+    },
+    "named-after.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "named-after.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "named-before.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "named-before.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "observation.json": {
+      "bytes": 104418,
+      "sha256": "eeac10d502086d5398b04a79215aefc9d676b62a0fc8c9c466d1c857811eadb7"
+    },
+    "probe.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "probe.stdout": {
+      "bytes": 103722,
+      "sha256": "7eadb29178fcc5a2caf2bdd79f1cdfd40b155489071f7a8f6c8f578c2ec978d7"
+    },
+    "process-before-0.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "process-before-0.stdout": {
+      "bytes": 64,
+      "sha256": "943b315e065238b7073b033f534ef954b6b6461fb3f03a3f5b8555b11bc4c0a2"
+    },
+    "process-before-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "process-before-1.stdout": {
+      "bytes": 64,
+      "sha256": "943b315e065238b7073b033f534ef954b6b6461fb3f03a3f5b8555b11bc4c0a2"
+    },
+    "requests/T-01-finish_projection.json": {
+      "bytes": 24887,
+      "sha256": "32c7b70c56cf04fd27bd17e59211254454a8ed227a9dfeb7ae7731ff15105019"
+    },
+    "requests/T-01-initial_edit.json": {
+      "bytes": 24537,
+      "sha256": "e4c8d90798e2b146b153b42b8eef292a61b9df0d93c1646c3617a98f8718ccb2"
+    },
+    "requests/T-02-finish_projection.json": {
+      "bytes": 24955,
+      "sha256": "0f6d1f4a29e441721459959e454d911c8b41992b7ea3c8d584ac108e13653f1a"
+    },
+    "requests/T-02-initial_edit.json": {
+      "bytes": 24605,
+      "sha256": "b99cf65dfa8649bccf9dec99b45be9ce1e09b8873e973b641ec33a7ac9b5d46c"
+    },
+    "result.json": {
+      "bytes": 20702,
+      "sha256": "9fcc08a9bda062b21d8cc70f1b15f54c9aa4f67a398fcbe87496ea17ef4e0ac3"
+    },
+    "run.py": {
+      "bytes": 9027,
+      "sha256": "6a33fbc195faaa7292cef1539d13b610413f1ae9e44774a94f178ea67f373e2a"
+    },
+    "running-after.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "running-after.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "raw_root": ".local/validation/wire-input-01",
+  "retained_inputs_sha256": {
+    "dynamic_context": "77a5ca9923c3a8e07774d9acb1544197cf362a20fb0991a3215a61c5f48422a0",
+    "native_tool_json": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc",
+    "request": "48b5b2f8c8519d80612766a9e1088be2459ca6da9e2396159b091b0dd5d41410",
+    "static_system_prompt": "ec7656c1a1975904653d8cba87e41ae5d493d110ce1607b6d8b5476e254b6d3a"
+  },
+  "sdk_commit": "504a88cab0fb48ee5226238ad7b8f1d865fa84a8",
+  "sdk_version": "1.62.0",
+  "started_epoch": 1795302990.476473,
+  "verification": {
+    "errors": 0,
+    "files": {
+      "result.json": {
+        "bytes": 45,
+        "sha256": "e7504af5c672d2f7a90395a2a74dad84c8aec8506b4a65daf78e5f6221d1e0ba"
+      },
+      "tests.stderr": {
+        "bytes": 18922,
+        "sha256": "f37ba0f1b62067df332fffc600e50e895334b52917656d979e88ce85c9799a95"
+      },
+      "tests.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "passed": 115,
+    "path": ".local/validation/wire-input-check-01",
+    "receipt": {
+      "elapsed_seconds": 26.782,
+      "exit": 0
+    },
+    "skip": "Existing Windows symlink test",
+    "skipped": 1,
+    "total": 116
+  }
+}

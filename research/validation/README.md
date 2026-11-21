@@ -93,6 +93,8 @@ The [stopped-image inspection](offline-inspection.md) resolves the installer's i
 
 ## Verification
 
+The [native serialization check](wire-input-plan.md) captures prepared requests only at a rejecting mock transport, without sockets, executors or model responses. It found finish projections requesting 6,000 output tokens against the proposed 1,000 cap. Finish dispatch remains held pending trusted per-phase enforcement and final request qualification.
+
 The [prepared token-count check](token-fit-plan.md) measures the retained system/tools prefix without inference. Its 4,985-token local estimate leaves only 1,015 under the finish/review input cap before other context. Complete request fitting and final wire binding remain required.
 
 ```powershell
