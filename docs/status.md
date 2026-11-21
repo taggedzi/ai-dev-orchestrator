@@ -4,6 +4,8 @@ Updated November 21, 2026. The active goal is to finish the project, including t
 
 ## Where we stopped
 
+The [OS-update proposal](../research/validation/os-update-plan.md) now has measured, coherent role transactions from the inspected base: executor 97 upgrades/five additions; guard 97 upgrades/nine additions. Both pinned replays pass without removals or held-back packages, and all 489 proposed final versions are present in authenticated metadata. The archive union is 106 files/about 283 MiB, with four small files already cached at resolution time. No update was installed. Guest bootstrap, package/service hardening, final readiness/isolation and product implementation remain open; the disconnected guard creation decision is still pending.
+
 The latest [guard package preparation](../research/validation/guard-package-plan.md) retrieved four archives totaling 527,232 bytes and verified their identities/hashes against signed Ubuntu metadata. Nothing was installed. A separate offline simulation identifies 97 OS upgrades and five new kernel packages; the stock nftables service also needs its permissive example and flush-on-stop behavior replaced. Prepare coherent OS-update/hardening inputs before qualifying final profiles. The disconnected guard creation plan and its digest are unchanged, and its separate approval remains pending.
 
 M1-01 through M1-10 research designs have been merged. They cover executor interfaces, planning, routing, ownership, isolation, recovery policy, verification, spending, and the [two-task validation fixture](../research/two-task-validation-fixture.md). These documents describe proposed behavior and source findings; they do not establish that an integrated system works.

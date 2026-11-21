@@ -6,6 +6,8 @@ The developer-selected guard topology now has an [exact first-stage provisioning
 
 The [offline packet-filter preparation](guard-package-plan.md) has verified four archives from signed Ubuntu metadata. Package inspection identifies service behavior that must change and a separate OS-update prerequisite. No package or rule was installed.
 
+The [coherent OS-update proposal](os-update-plan.md) now resolves both roles from the same base: executor 97 upgrades/five additions, guard 97 upgrades/nine additions, without removals or held-back packages. Exact pinned replay and authenticated metadata coverage for all 489 final versions passed. Archive retrieval and native installation remain separate from that resolver result.
+
 ## Build and check
 
 From the repository root, choose a new output directory and run:

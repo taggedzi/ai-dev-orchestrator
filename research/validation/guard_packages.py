@@ -69,7 +69,7 @@ def additions(simulation):
     return result
 
 
-def package_record(raw, name, version):
+def package_record(raw, name, version, *, max_bytes=8 * 1024**2):
     matches = [
         row
         for row in paragraphs(raw)
@@ -89,7 +89,7 @@ def package_record(raw, name, version):
         or ".." in filename.split("/")
         or not re.fullmatch(r"[0-9a-f]{64}", digest)
         or not size.isdecimal()
-        or not 0 < int(size) <= 8 * 1024**2
+        or not 0 < int(size) <= max_bytes
     ):
         raise ValueError("invalid package location, architecture, size or digest")
     return {

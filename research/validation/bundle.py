@@ -317,6 +317,9 @@ def build(destination, gsd_export=None, gsd_snapshot_hash=None):
             "guard-preparation-evidence.json",
             "guard-package-inputs.json",
             "guard-package-evidence.json",
+            "os-update-inputs.json",
+            "os-update-evidence.json",
+            "os-update-artifact-evidence.json",
             "MinimalAgentServer.Dockerfile",
         ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())
