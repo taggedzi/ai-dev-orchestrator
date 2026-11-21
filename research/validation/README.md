@@ -8,6 +8,8 @@ The [offline packet-filter preparation](guard-package-plan.md) has verified four
 
 The [coherent OS-update proposal](os-update-plan.md) now resolves both roles from the same base: executor 97 upgrades/five additions, guard 97 upgrades/nine additions, without removals or held-back packages. Exact pinned replay and authenticated metadata coverage for all 489 final versions passed. Archive retrieval and native installation remain separate from that resolver result.
 
+The separately approved [archive retrieval](os-update-artifact-evidence.json) is complete: 106 files/about 283 MiB, each hash/size/control identity verified, with no installation or VirtualBox operation. Offline guest bootstrap/hardening and final qualification still require their concrete review and approval.
+
 ## Build and check
 
 From the repository root, choose a new output directory and run:

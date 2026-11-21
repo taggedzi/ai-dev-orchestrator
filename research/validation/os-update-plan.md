@@ -42,6 +42,8 @@ Actual retrieval uses the installed WSL tools and the externally reviewed catalo
 
 ## Installation and qualification prerequisites
 
+The separately approved archive retrieval completed November 21: **106 archives / 297,065,488 bytes verified**, comprising 102 retrieved packages and four reused cached files. Every size, SHA-256 and package/version/architecture control identity passed; APT returned exit zero without timeout. Catalog, metadata and collector sources stayed unchanged, as did WSL's package-status bytes. See [artifact evidence](os-update-artifact-evidence.json). No downloaded code or installation ran. These retained archives satisfy the proposed data-input step, while installation and final-profile qualification remain open.
+
 Before a guest update, approve a concrete offline bootstrap/installation plan bound to that guest's actual disk UUID/hash, package status, payload/media and shutdown authority. Guard creation approval does not authorize attaching media, booting, installing or connecting a NIC. Keep both guests disconnected during updates and review maintainer scripts, service restarts, kernel/initramfs/bootloader changes, conffile handling and background package-management services.
 
 Then rotate inherited credentials/identity, remove installation artifacts, address the offline network wait, install the reviewed guard services and replace the stock nftables policy/flush-on-stop behavior. Record the installed inventory and running kernel before freezing final readiness policies. Qualify the final guard/executor profiles, independent stop supervisor, filtering/stream fencing, observers and disposable extractor before M1-12/M1-13 or executor task dispatch. The architecture feasibility decision and product implementation remain open.
