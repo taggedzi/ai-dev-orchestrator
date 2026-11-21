@@ -1,6 +1,6 @@
 # Proposed validation deployment
 
-Status: provisioning and the separately approved offline OS installation completed on November 21. `mcli1-validation-01` contains Ubuntu Server 24.04.5 and is powered off, with all NICs disabled. First boot, dependency preparation and executor experiments remain unqualified and outside the installation approval.
+Status: provisioning and offline OS installation completed on November 21. The subsequent [first-boot diagnostic](first-boot-plan.md) produced an installed-OS receipt after pause/resume, but startup reliability and orderly shutdown remain unqualified. `mcli1-validation-01` is powered off, restored to two vCPUs with all NICs disabled and temporary UART off. Dependency preparation and executor experiments remain gated.
 
 ## Target and trust boundary
 
@@ -40,7 +40,7 @@ No product architecture decision is made here. The experiment still evaluates th
 
 ## Next review
 
-1. Prepare an offline first-boot verification: remove installation media/temporary credentials as appropriate, boot only the installed disk, record the running kernel/account state, and shut down under a bounded lease. Preserve the installed image and do not rerun the formatting installer.
+1. Resolve the first-boot findings: unattended startup, cloud-init readiness and ACPI shutdown. The receipt confirms the installed kernel/account and unchanged packages; it does not qualify this baseline. Preserve the stopped disk and attempt chain; do not rerun the formatting installer. Review the local bootstrap credential and installation artifacts during later image hardening.
 2. Review dependency/image preparation and the external network boundary before connecting or running executor code. Final deployment approval and #12/#13/#11 experiments follow their frozen inputs and effective-control evidence.
 
 Do not merge PR #25 with an automatic closure of #11 unless the unfinished measurements are explicitly preserved in tracking. The preparation work supplies assets and tested local mechanisms; it does not satisfy #11–#14 by itself.

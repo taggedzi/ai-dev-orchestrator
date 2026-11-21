@@ -151,10 +151,14 @@ def parse_marker(raw, token):
     return result
 
 
-def validate_machine(configuration):
+def validate_machine(configuration, expected_cpus=2):
     if configuration.get("UUID") != VM or configuration.get("VMState") != "poweroff":
         raise Hold("target identity/state does not match the powered-off fixture VM")
-    if configuration.get("memory") != "4096" or configuration.get("cpus") != "2":
+    if expected_cpus not in (1, 2):
+        raise Hold("unsupported preparation CPU profile")
+    if configuration.get("memory") != "4096" or configuration.get("cpus") != str(
+        expected_cpus
+    ):
         raise Hold("target resource profile changed")
     if any(configuration.get(f"nic{n}") != "none" for n in range(1, 9)):
         raise Hold("all eight NICs must be disabled")
@@ -406,7 +410,32 @@ class Installer:
         try:
             if self.started:
                 self.store.fence("installation failed or timed out")
-                self.native("stop-after-failure", ["controlvm", VM, "poweroff"])
+                # Revocation must never prevent this target's emergency stop.
+                # The ordinary mutation path intentionally rejects fenced or
+                # uncertain operations, including an unanswered start request.
+                self.store.event("emergency-stop-intent", {"vm_uuid": VM})
+                result = subprocess.run(
+                    [str(VBOX), "controlvm", VM, "poweroff"],
+                    capture_output=True,
+                    timeout=10,
+                    check=False,
+                )
+                state = self.configuration().get("VMState")
+                self.store.event(
+                    "emergency-stop-observation",
+                    {
+                        "vm_uuid": VM,
+                        "command_exit": result.returncode,
+                        "stdout_sha256": digest(result.stdout),
+                        "stderr_sha256": digest(result.stderr),
+                        "state": state,
+                    },
+                )
+                if state != "poweroff":
+                    raise Hold(
+                        "emergency stop is unconfirmed; runtime requires operator reconciliation"
+                    )
+                self.started = False
         finally:
             self.store.close()
 

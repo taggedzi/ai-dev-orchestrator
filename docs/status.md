@@ -1,6 +1,6 @@
 # Project status and restart point
 
-Updated November 21, 2026. The developer requested a commit and continuation. Fixture/harness preparation was committed as `2758406`, VM provisioning as `6adb6f4`, and the separately approved offline OS installation has now completed. First boot, dependency installation, product implementation and executor experiments remain separate work.
+Updated November 21, 2026. The developer requested a commit and continuation. Fixture/harness preparation was committed as `2758406`, VM provisioning as `6adb6f4`, and offline OS installation as `7b4e2ad`. The next stage produced a first-boot receipt after a diagnostic pause/resume, but startup reliability, cloud-init readiness and orderly shutdown remain unresolved. The VM is stopped; dependency preparation and executor experiments remain gated.
 
 ## Where we stopped
 
@@ -51,8 +51,12 @@ Use synthetic inputs, dummy credentials and local scripted inference. Simulated 
 
 After authorization and freeze, follow the existing order: validate the trusted harness, qualify #12 isolation, establish minimal #13 route/metering controls, run B0/B1 and the remaining fault cases, then assemble #14 evidence. Keep native resume disabled until the applicable recovery evidence qualifies it.
 
-## Next developer action
+## Next research check
 
-Prepare an offline first-boot verification for `mcli1-validation-01`. The separately approved [OS installation stage](../research/validation/os-install-plan.md) completed in 298.515 seconds and powered off. It installed Ubuntu Server 24.04.5 amd64 with kernel file `vmlinuz-6.8.0-139-generic`, 480 package rows and operator UID 1000; all NICs remained disabled. Standalone detection's `E_NOTIMPL` did not block the measured native install path. The installed target was inspected from the installer; a boot of that installed system, runtime hardening and executor behavior have not yet been verified. The [deployment plan](../research/validation/deployment-plan.md) records the remaining host, network and storage checks.
+Resolve the [offline startup/shutdown findings](../research/validation/first-boot-plan.md#startup-follow-up-before-dependency-preparation) before dependency preparation. Two two-vCPU boots stalled before login. A separately approved one-vCPU diagnostic reached a shell after pause/resume; a host framing bug interrupted its receipt. The corrected retry collected the full receipt after another single pause/resume pair, but ACPI shutdown exceeded its 60-second wait and required emergency poweroff. A separate preflight-only invocation did not start the VM.
+
+The receipt confirms Ubuntu 24.04.5, running kernel `6.8.0-139-generic`, Python 3.12.3, operator UID 1000, ext4 disk root, only loopback, unchanged 480-row package inventory, a clean package audit and no SSH server. Nine of ten receipt predicates pass. Cloud-init reports `disabled-by-marker-file`, not the required `done`; the marker's origin and an appropriate readiness predicate need review. This does not by itself establish a cloud-init error. The [evidence summary](../research/validation/first-boot-evidence.json) binds the attempts, source snapshots and stopped disk.
+
+Emergency stops were confirmed in the native state and retained host termination logs. The target is now powered off with the original two vCPUs, 4096 MiB RAM, all eight NICs disabled and temporary UART off. Host virtualization/security settings and the existing `ai-dev-test` VM were unchanged. NEM/Hyper-V compatibility is a hypothesis supported by upstream reports, not a proven cause. Stable unattended boot and ACPI shutdown remain unqualified, as do runtime hardening, network containment and executor behavior. The [deployment plan](../research/validation/deployment-plan.md) records the remaining controls.
 
 The original 220-file review bundle remains unchanged at its recorded digest. This provisioning plan is a later revision, outside that freeze. Actual GSD export, built image/tool digests, deployed schemas, exact Chat transcripts and runtime qualification remain open. Product implementation and major architecture adoption remain gated on the feasibility decision.
