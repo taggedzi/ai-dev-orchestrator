@@ -38,6 +38,8 @@ The remaining packet needs the target UUID and start identity, OS/kernel/hypervi
 
 The [GSD stage](gsd-export-plan.md) now supplies an actual schema-1 export and fixture-only import controls. The [new review-packet freeze](gsd-freeze-evidence.json) attaches that snapshot, its original query receipt and a normalized probe after verifying exact raw planning equality. Its generated deployment profile carries the real GSD hash, retains `not-approved` and leaves image/network/runtime qualification unset. Planning-host Node >=24 is separate from executor Node 22.16.0; the executor pins were preserved. Do not interpret this one completed input as an approved deployment.
 
+The [minimal runtime preparation](runtime-image-plan.md) now binds 186 downloaded Python archives (142,502,826 bytes) to the pinned upstream lock. Offline selection excludes development dependencies; static published metadata has no detected missing/version-conflicting requirement. Required browser-use/MCP/Docker Python libraries remain in the dependency set even though their execution capabilities are disabled by policy. No package installation, image build, VM change or executor run occurred. Exact base images and build backend inputs remain the next freeze, with [evidence](runtime-image-evidence.json) separate from deployment approval.
+
 No product architecture decision is made here. The experiment still evaluates the existing proposed ownership boundaries and can finish with a safe hold. An approved local-only result cannot establish provider billing finality, agent review quality, or production recovery.
 
 ## Next review

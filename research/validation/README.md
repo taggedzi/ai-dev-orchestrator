@@ -71,6 +71,8 @@ For a new bundle, attach the measured export with `build DESTINATION --gsd-expor
 
 See [deployment preparation](deployment-plan.md) for the target review and the [M1-10 prerequisite order](../two-task-validation-fixture.md#execution-order-and-prerequisite-gates) for later experiments.
 
+The [minimal runtime preparation](runtime-image-plan.md) adds a reviewed 186-archive Python input catalog and a plan-only-by-default collector. Approved retrieval and static dependency metadata checks succeeded; no package was installed or executed. Exact builder/base-image and build backend pins remain open. This stage leaves the original and GSD review bundles unchanged.
+
 Offline OS construction is documented in the [installation plan and result](os-install-plan.md). Its separate `os_install` command targets only the newly created VM, requires an approval reference, and keeps every NIC disabled. Its default invocation prints a plan without native calls. The installed image must not be reformatted by rerunning this stage. OS construction does not qualify executor recovery or containment.
 
 The [first-boot plan](first-boot-plan.md) adds a bounded, non-root serial probe of the installed OS and ACPI shutdown. It records stalled boots and profile changes separately. Its default invocation is also plan-only. A failed attempt requires a stopped-image reconciliation; subsequent attempts never silently accept a changed disk. This is preparation code, not a qualified runtime supervisor.

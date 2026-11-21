@@ -10,6 +10,8 @@ Research designs M1-01 through M1-10 have been merged. M1-11's recovery prefligh
 
 **Resume here:** [Project status and next work](docs/status.md). Complete the pinned runtime image, external network and guest-readiness prerequisites for M1-12 isolation testing. The [planning freeze](research/validation/gsd-freeze-evidence.json) records the newly completed GSD input.
 
+[Runtime preparation](research/validation/runtime-image-plan.md) has collected 186 hash-pinned Python dependency archives and checked their static metadata. The next image step is freezing the builder/base images and build dependencies; installation and runtime qualification remain open.
+
 - [Project vision](docs/vision.md)
 - [Initial requirements and proof of concept](docs/requirements.md)
 - [Exploratory architecture and risks](docs/architecture.md)

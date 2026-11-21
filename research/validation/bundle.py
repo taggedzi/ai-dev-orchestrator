@@ -306,6 +306,8 @@ def build(destination, gsd_export=None, gsd_snapshot_hash=None):
             "offline-inspection-evidence.json",
             "boot-diagnostic-evidence.json",
             "gsd-export-evidence.json",
+            "runtime-inputs.json",
+            "runtime-image-evidence.json",
         ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())
     write(
