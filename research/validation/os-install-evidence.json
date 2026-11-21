@@ -1,0 +1,77 @@
+{
+  "classification": "measured offline OS construction; first boot and runtime qualification remain open",
+  "native_preflight": {
+    "dry_run_side_effects": [
+      "GUI/FirstRun set to 0",
+      "localhost-reachable normalized on disabled adapter"
+    ],
+    "install_backend_preparation_exit": 0,
+    "pass": true,
+    "path": ".local/validation/os-install-preflight-02/result.json",
+    "standalone_detection_error": "E_NOTIMPL",
+    "standalone_detection_exit": 1
+  },
+  "next_check": "Boot the installed OS under a reviewed offline verification plan, verify running kernel and account, then review offline dependency/image preparation.",
+  "observed_at_utc": "2026-11-21T06:40:05.496322+00:00",
+  "result": {
+    "classification": "measured offline OS installation; first boot and runtime boundary unqualified",
+    "elapsed_seconds": 298.515,
+    "image": {
+      "architecture": "amd64",
+      "classification": "installed target inspected from installer; first boot not verified",
+      "kernel_files": [
+        "vmlinuz-6.8.0-139-generic"
+      ],
+      "operator_uid": 1000,
+      "os_release": {
+        "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+        "HOME_URL": "https://www.ubuntu.com/",
+        "ID": "ubuntu",
+        "ID_LIKE": "debian",
+        "LOGO": "ubuntu-logo",
+        "NAME": "Ubuntu",
+        "PRETTY_NAME": "Ubuntu 24.04.5 LTS",
+        "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+        "SUPPORT_URL": "https://help.ubuntu.com/",
+        "UBUNTU_CODENAME": "noble",
+        "VERSION": "24.04.5 LTS (Noble Numbat)",
+        "VERSION_CODENAME": "noble",
+        "VERSION_ID": "24.04"
+      },
+      "package_inventory_sha256": "5b4f046c57bf86f2afb418c87902ef3745e925a7a11243b1d59037ef56398cb0",
+      "package_rows": 480,
+      "schema_version": 1,
+      "token": "ea42ee3d-e612-44da-b847-2b4c33851658"
+    },
+    "installed_vdi_sha256": "8461a61de7a1c53c125d47397ae3c52fd792a24fad3f7f794dfe29b9ff826feb",
+    "intent": {
+      "approval": "Offline Ubuntu installation authorized through command approval on 2026-11-21",
+      "deadline_seconds": 1200,
+      "disk_before_sha256": "4fda704fd1141deb2fd4200a7205db9323717aff11d32452e64fde0412b4e7ae",
+      "iso_sha256": "97f3d7ffb032c3eb3b23d2c8be9cc76e60c2c1f2c0146ba5ba9fe01cafae0fd8",
+      "template_sha256": "2c676108df5dd5eee2e83412a09f6268fc63d2f9139f63511fc21c009777f069",
+      "token": "ea42ee3d-e612-44da-b847-2b4c33851658",
+      "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+    },
+    "network": "eight NICs disabled",
+    "serial_sha256": "c9044155b00289bcdb62e1266a9ac745ecdae5ed12c353048b11a7db19bd4571",
+    "state": "poweroff",
+    "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+  },
+  "run_path": ".local/validation/os-install-01",
+  "schema_version": 1,
+  "script_sha256": {
+    "image_receipt.py": "3d12080eaed06d3d4d8d97fa6cde3a831981b7ca2db991e5a3aa64f29d7653d0",
+    "os_install.py": "a80af1f9f4cf7257cc24001197741bbc3f1046e9c71f6f09c822625b4fd7bf80"
+  },
+  "verification": {
+    "failure_markers": 0,
+    "lint": "pass",
+    "matching_completion_markers": 1,
+    "passed": 40,
+    "rendered_yaml": "parsed with already-installed PyYAML; receipt program compiled",
+    "skip_reason": "Windows symlink creation unavailable",
+    "skipped": 1,
+    "tests_run": 41
+  }
+}

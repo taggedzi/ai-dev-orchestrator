@@ -1,6 +1,6 @@
 # Project status and restart point
 
-Updated November 21, 2026. The developer requested a commit and continuation. Fixture/harness preparation was committed as `2758406`; the first VM provisioning stage was then approved through the command request and completed. OS/dependency installation, product implementation and executor experiments remain outside that approval.
+Updated November 21, 2026. The developer requested a commit and continuation. Fixture/harness preparation was committed as `2758406`, VM provisioning as `6adb6f4`, and the separately approved offline OS installation has now completed. First boot, dependency installation, product implementation and executor experiments remain separate work.
 
 ## Where we stopped
 
@@ -53,6 +53,6 @@ After authorization and freeze, follow the existing order: validate the trusted 
 
 ## Next developer action
 
-Prepare and approve offline OS installation for `mcli1-validation-01`. The [provisioning script](../research/validation/New-ValidationVm.ps1) downloaded and verified the pinned Ubuntu Server 24.04.5 installer and created the new VM powered off, with 2 vCPUs, 4 GiB RAM, a 32 GiB installation disk and all NICs disabled. Read-only installer detection returned partial Ubuntu 24.04.5 metadata but failed with `E_NOTIMPL`; do not assume unattended installation works. The [deployment plan](../research/validation/deployment-plan.md) records the measurements and remaining host, network and storage checks. No OS or executor code has been run in the new VM.
+Prepare an offline first-boot verification for `mcli1-validation-01`. The separately approved [OS installation stage](../research/validation/os-install-plan.md) completed in 298.515 seconds and powered off. It installed Ubuntu Server 24.04.5 amd64 with kernel file `vmlinuz-6.8.0-139-generic`, 480 package rows and operator UID 1000; all NICs remained disabled. Standalone detection's `E_NOTIMPL` did not block the measured native install path. The installed target was inspected from the installer; a boot of that installed system, runtime hardening and executor behavior have not yet been verified. The [deployment plan](../research/validation/deployment-plan.md) records the remaining host, network and storage checks.
 
 The original 220-file review bundle remains unchanged at its recorded digest. This provisioning plan is a later revision, outside that freeze. Actual GSD export, built image/tool digests, deployed schemas, exact Chat transcripts and runtime qualification remain open. Product implementation and major architecture adoption remain gated on the feasibility decision.

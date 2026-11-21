@@ -6,7 +6,7 @@ The project prioritizes correct, maintainable software and total cost per accept
 
 ## Current status
 
-Research designs M1-01 through M1-10 have been merged. M1-11's executor recovery preflight is on the current branch in [open PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25). A [synthetic fixture and local test harness](research/validation/README.md) are now prepared. Executor runtime validation has not run; the disposable Linux deployment still needs preparation, freeze, and approval. There is no runnable orchestrator or approved implementation stack yet.
+Research designs M1-01 through M1-10 have been merged. M1-11's executor recovery preflight is on the current branch in [open PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25). A [synthetic fixture and local test harness](research/validation/README.md) are prepared, and the candidate VM now has Ubuntu Server installed offline. First boot, containment and executor validation remain open. There is no runnable orchestrator or approved implementation stack yet.
 
 **Resume here:** [Project status and next work](docs/status.md). The next gate is target selection and deployment qualification for isolation, gateway, and recovery measurements.
 

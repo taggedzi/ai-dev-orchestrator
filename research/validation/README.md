@@ -69,11 +69,13 @@ Raw GSD plans are provided, but `planning/expected-plan.json` is explicitly a co
 
 See [deployment preparation](deployment-plan.md) for the target review and the [M1-10 prerequisite order](../two-task-validation-fixture.md#execution-order-and-prerequisite-gates) for later experiments.
 
+Offline OS construction is documented in the [installation plan and result](os-install-plan.md). Its separate `os_install` command targets only the newly created VM, requires an approval reference, and keeps every NIC disabled. Its default invocation prints a plan without native calls. The installed image must not be reformatted by rerunning this stage. OS construction does not qualify executor recovery or containment.
+
 ## Verification
 
 ```powershell
-python -m unittest discover -s tests -p test_validation_harness.py -v
-ruff check research/validation tests/test_validation_harness.py
+python -m unittest discover -s tests -p "test_*.py" -v
+ruff check research/validation tests
 ```
 
 Tests use temporary synthetic files and loopback fake services. They never start OpenHands, use a provider, provision a VM, or alter an existing VM. The subprocess crash test intentionally exits a small local journal writer after its fsynced synthetic effect. A skipped Windows symlink test is an outstanding platform observation, not a successful denial test.
