@@ -6,9 +6,9 @@ The project prioritizes correct, maintainable software and total cost per accept
 
 ## Current status
 
-Research designs M1-01 through M1-10 have been merged. M1-11's executor recovery preflight is on the current branch in [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25), last checked open on November 20. A [synthetic fixture and local test harness](research/validation/README.md) are prepared. The offline Ubuntu VM produced a first-boot receipt after a diagnostic intervention, but unattended startup and orderly shutdown remain unqualified. It is safely powered off. See the [boot findings and next check](research/validation/first-boot-plan.md). There is no runnable orchestrator or approved implementation stack yet.
+Research designs M1-01 through M1-10 have been merged. M1-11's recovery preflight is on the current branch in [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25), checked open November 21. A [synthetic fixture and local test harness](research/validation/README.md) are prepared. The offline Ubuntu VM completed one unattended two-CPU boot and ACPI shutdown with x2APIC disabled. The installer-created cloud-init disable marker is now verified. Repeatability and runtime qualification remain open; the VM is safely powered off with its original settings restored. See the [findings and next check](research/validation/offline-inspection.md). There is no runnable orchestrator or approved implementation stack yet.
 
-**Resume here:** [Project status and next work](docs/status.md). Resolve VM startup/shutdown reliability before dependency preparation and deployment qualification for isolation, gateway, and recovery measurements.
+**Resume here:** [Project status and next work](docs/status.md). Freeze the corrected readiness policy and qualify repeated VM boot/shutdown before dependency preparation and isolation, gateway, and recovery measurements.
 
 - [Project vision](docs/vision.md)
 - [Initial requirements and proof of concept](docs/requirements.md)

@@ -28,6 +28,26 @@ from .os_install import (
 from .store import Hold, Store
 
 MAX_CAPTURE = 10 * 1024**2
+TRIAL_SOURCES = (
+    "first_boot.py",
+    "boot_receipt.py",
+    "os_install.py",
+    "store.py",
+    "fixture.py",
+)
+
+
+def validate_apic(configuration, expected_x2apic):
+    if any(
+        configuration.get(key) != value
+        for key, value in {
+            "apic": "on",
+            "ioapic": "on",
+            "biosapic": "apic",
+            "x2apic": expected_x2apic,
+        }.items()
+    ):
+        raise Hold("APIC baseline or requested x2APIC state changed")
 
 
 def validate_checkpoint(path, original_hash):
@@ -40,7 +60,7 @@ def validate_checkpoint(path, original_hash):
         raise Hold("invalid stopped-boot checkpoint")
     if data.get("original_installed_vdi_sha256") != original_hash or data.get(
         "retry_index"
-    ) not in (1, 2, 3):
+    ) not in (1, 2, 3, 4):
         raise Hold("checkpoint is outside the bounded reviewed boot trials")
     if file_hash(path.parent / "serial-sanitized.log") != data.get("serial_sha256"):
         raise Hold("prior console evidence changed")
@@ -70,7 +90,7 @@ def validate_checkpoint(path, original_hash):
             or data.get("parent_checkpoint_sha256") != parent.get("checkpoint_sha256")
         ):
             raise Hold("diagnostic CPU trial lacks a valid stopped-image chain")
-    else:
+    elif data["retry_index"] == 3:
         parent = approvals[0].get("prior_attempt") or {}
         if (
             data.get("profile_change") != {"cpus": 1}
@@ -85,6 +105,38 @@ def validate_checkpoint(path, original_hash):
             )
         ):
             raise Hold("protocol retry lacks the completed login/transfer chain")
+    else:
+        parent = approvals[0].get("prior_attempt") or {}
+        pins = data.get("trial_source_sha256", {})
+        if (
+            not isinstance(pins, dict)
+            or set(pins) != set(TRIAL_SOURCES)
+            or any(
+                file_hash(WORKSPACE / "research/validation" / name) != pins[name]
+                for name in TRIAL_SOURCES
+            )
+        ):
+            raise Hold("diagnostic sources changed since review")
+        if (
+            data.get("profile_change") != {"x2apic": "off"}
+            or parent.get("retry_index") != 3
+            or parent.get("original_installed_vdi_sha256") != original_hash
+            or approvals[0].get("input_vdi_sha256") != parent.get("stopped_vdi_sha256")
+            or data.get("parent_checkpoint_sha256") != parent.get("checkpoint_sha256")
+            or not audit
+            or data.get("prior_audit_tail_digest") != audit[-1]["digest"]
+            or data.get("stopped_vdi_sha256")
+            != load_json((path.parent / "post-trial-state.json").read_bytes()).get(
+                "stopped_vdi_sha256"
+            )
+            or file_hash(
+                WORKSPACE / "research/validation/offline-inspection-evidence.json"
+            )
+            != data.get("offline_inspection_sha256")
+        ):
+            raise Hold(
+                "x2APIC diagnostic lacks bound offline inspection and stopped-image chain"
+            )
     if (
         not audit
         or audit[-1]["kind"] != "emergency-stop-observation"
@@ -205,8 +257,10 @@ class PipeConsole:
         self.file = None
         self.raw = bytearray()
 
-    def connect(self, deadline):
+    def connect(self, deadline, start_future=None):
         while time.monotonic() < deadline:
+            if start_future is not None and start_future.done():
+                start_future.result()
             try:
                 self.file = io.FileIO(self.name, "r+")
                 return
@@ -276,7 +330,7 @@ class PipeConsole:
 
 
 class BootCheck(Installer):
-    def run(self, approval, checkpoint=None, single_cpu=False):
+    def run(self, approval, checkpoint=None, single_cpu=False, disable_x2apic=False):
         if not approval:
             raise Hold("boot approval reference required")
         expected = load_json(
@@ -301,12 +355,13 @@ class BootCheck(Installer):
             else 2,
         )
         expected_cpus = 1 if single_cpu else 2
-        if single_cpu and (
-            not prior_attempt or prior_attempt.get("profile_change") != {"cpus": 1}
-        ):
-            raise Hold("one-CPU diagnostic requires its stopped-image checkpoint")
-        if prior_attempt and prior_attempt.get("profile_change") and not single_cpu:
-            raise Hold("checkpoint requires the explicit one-CPU option")
+        change = (prior_attempt or {}).get("profile_change", {})
+        if single_cpu != (change == {"cpus": 1}):
+            raise Hold("CPU diagnostic option does not match its checkpoint")
+        if disable_x2apic != (change == {"x2apic": "off"}):
+            raise Hold("x2APIC diagnostic option does not match its checkpoint")
+        if disable_x2apic:
+            validate_apic(self.configuration(), "on")
         if file_hash(disk) != input_hash:
             raise Hold("installed image changed since its recorded receipt")
         password = (
@@ -329,6 +384,13 @@ class BootCheck(Installer):
         )
         if single_cpu:
             self.native("one-cpu-nem-diagnostic", ["modifyvm", VM, "--cpus", "1"])
+        if disable_x2apic:
+            # VirtualBox's X2APIC setter assigns the same value to ordinary
+            # APIC. Re-enable APIC last to keep this a one-variable profile.
+            self.native(
+                "x2apic-diagnostic",
+                ["modifyvm", VM, "--x86-x2apic", "off", "--apic", "on"],
+            )
         for number, (controller, port, device) in enumerate(
             removable_media(VM_ROOT / "mcli1-validation-01.vbox")
         ):
@@ -371,6 +433,8 @@ class BootCheck(Installer):
             ],
         )
         validate_machine(self.configuration(), expected_cpus=expected_cpus)
+        if disable_x2apic:
+            validate_apic(self.configuration(), "off")
         if removable_media(VM_ROOT / "mcli1-validation-01.vbox"):
             raise Hold("installer media still attached")
         started = time.monotonic()
@@ -407,7 +471,7 @@ class BootCheck(Installer):
                     "start-first-boot",
                     ["startvm", VM, "--type", "headless"],
                 )
-                console.connect(min(deadline, time.monotonic() + 60))
+                console.connect(min(deadline, time.monotonic() + 60), future)
                 future.result(timeout=60)
             self.store.event("serial-phase", {"phase": "waiting-login"})
             console.wait(
@@ -465,6 +529,13 @@ class BootCheck(Installer):
                 if status.get("VMState") == "poweroff":
                     self.started = False
                     break
+                try:
+                    console.read_available()
+                except Hold:
+                    if self.configuration().get("VMState") != "poweroff":
+                        raise
+                    self.started = False
+                    break
                 time.sleep(2)
             if self.started:
                 raise Hold("ACPI shutdown not confirmed by deadline")
@@ -473,6 +544,8 @@ class BootCheck(Installer):
                 ["modifyvm", VM, "--uart1", "off", "--uart-mode1", "disconnected"],
             )
             validate_machine(self.configuration(), expected_cpus=expected_cpus)
+            if disable_x2apic:
+                self.native("restore-x2apic", ["modifyvm", VM, "--x86-x2apic", "on"])
             result = {
                 "classification": "measured offline base OS boot; runtime isolation and executor remain unqualified",
                 "pass": verdict["pass"],
@@ -480,6 +553,7 @@ class BootCheck(Installer):
                 "vm_uuid": VM,
                 "hypervisor_version": version,
                 "guest_cpus": expected_cpus,
+                "guest_x2apic": "off" if disable_x2apic else "baseline",
                 "state": "poweroff",
                 "network": "eight NICs disabled",
                 "shutdown": "ACPI",
@@ -506,6 +580,7 @@ def main():
     parser.add_argument("--approval")
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--single-cpu-diagnostic", action="store_true")
+    parser.add_argument("--disable-x2apic-diagnostic", action="store_true")
     parser.add_argument(
         "--output", type=Path, default=WORKSPACE / ".local/validation/first-boot-01"
     )
@@ -534,6 +609,7 @@ def main():
             args.approval,
             checkpoint=args.checkpoint,
             single_cpu=args.single_cpu_diagnostic,
+            disable_x2apic=args.disable_x2apic_diagnostic,
         )
         print(canonical(result).decode(), flush=True)
         if not result["pass"]:

@@ -1,0 +1,371 @@
+{
+  "artifacts": {
+    "cloud-config.stderr": {
+      "bytes": 29,
+      "sha256": "c0eda8e792b06ab4531f47cc421ca68489490dd5a9aa7c1eeae93b4d3193ef44"
+    },
+    "cloud-config.stdout": {
+      "bytes": 591,
+      "sha256": "c52a0c3e430af0235a09435827683cb31d0d4bd3c6602ccde83745d86878a26d"
+    },
+    "cloud-log.stderr": {
+      "bytes": 29,
+      "sha256": "c0eda8e792b06ab4531f47cc421ca68489490dd5a9aa7c1eeae93b4d3193ef44"
+    },
+    "cloud-log.stdout": {
+      "bytes": 117226,
+      "sha256": "2456d0980184ac1ca7eec3203120cc107f760b77464d4b680f599e2ca5932031"
+    },
+    "cloud-marker-finding.json": {
+      "bytes": 373,
+      "sha256": "219febe84dadaf3750dbc2f42e1a33e954e4b8b54ee3027cc0555f36d026300c"
+    },
+    "cloud-output.stderr": {
+      "bytes": 29,
+      "sha256": "c0eda8e792b06ab4531f47cc421ca68489490dd5a9aa7c1eeae93b4d3193ef44"
+    },
+    "cloud-output.stdout": {
+      "bytes": 4229,
+      "sha256": "d98109e1510edf9ea6a73c3b01b66712649c904ca4edc95c9526f5707aeb7cd7"
+    },
+    "curtin-log.stderr": {
+      "bytes": 29,
+      "sha256": "c0eda8e792b06ab4531f47cc421ca68489490dd5a9aa7c1eeae93b4d3193ef44"
+    },
+    "curtin-log.stdout": {
+      "bytes": 144599,
+      "sha256": "c50aa1aa68e17e896246014b896179828c4601c7770ecaeab9844df3807aa4aa"
+    },
+    "debugfs-00.txt": {
+      "bytes": 58262,
+      "sha256": "da228c627feaffafbf409f57a33c360497b69e9cee24e73e8abb87f0e2153358"
+    },
+    "debugfs-01.txt": {
+      "bytes": 597,
+      "sha256": "3c9f072cf621f23616158506f61ecb0e0913cf89e29ff32cbb96211a7ac5635e"
+    },
+    "debugfs-02.txt": {
+      "bytes": 169,
+      "sha256": "66a6f5ef1d7998247596beaf140fcef5487dae6150167099de24c022614b468a"
+    },
+    "debugfs-03.txt": {
+      "bytes": 1700,
+      "sha256": "9aab4d6ba4db518c11d7e13113cfff2425ada023819cd7989cedc07e474d6f79"
+    },
+    "debugfs-04.txt": {
+      "bytes": 96,
+      "sha256": "7d65f6252c725b0621e7e922c1eee7cf86a9e594faed1f300416df3ee10efd9b"
+    },
+    "debugfs-05.txt": {
+      "bytes": 597,
+      "sha256": "ce426acffddb365f2131ef92af02885cc2f7156c2e47933844f2413c3cb4701b"
+    },
+    "debugfs-06.txt": {
+      "bytes": 2313,
+      "sha256": "816c5d1c8dd8111af7c77fabf45edc64149531642456f6078f8f18cc1d51fb36"
+    },
+    "debugfs-07.txt": {
+      "bytes": 1369,
+      "sha256": "ef696a24daed36636a74524c14a17c6242da41dc108d2a6e10b84ad6778d09f5"
+    },
+    "debugfs-08.txt": {
+      "bytes": 256,
+      "sha256": "dd0b032df1dcd22dda636d3f460d4695dc9745d38418dc4ce617248b86440599"
+    },
+    "debugfs-09.txt": {
+      "bytes": 1829,
+      "sha256": "c0c2d4a9dd0a0636ac76d0644012d9ab014436fa74d89e39329ae3fa0fe0fb4e"
+    },
+    "debugfs-10.txt": {
+      "bytes": 127,
+      "sha256": "95c57c4bac8efbc702f69634be2fea9456a902650bfc1a8f40f6537647111132"
+    },
+    "guest-journal-255.jsonl": {
+      "bytes": 2232143,
+      "sha256": "a03e69a350702c3c912ce97f5768c66ec217d5370ee0414c76a93e0d22384319"
+    },
+    "guest-journal-255.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "guest-journal.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "guest-journal.stderr": {
+      "bytes": 425,
+      "sha256": "f139014a675746e2e0cfa4a72451f4beb3239746cea6fe2e5063c776a79e9e67"
+    },
+    "inspection-index.json": {
+      "bytes": 2312,
+      "sha256": "b2ba88cf4499b8194225ff35e2571b327dda1571e5342023e6410c831998e85a"
+    },
+    "journal-extraction.stderr": {
+      "bytes": 1405,
+      "sha256": "0c0b1aef663a95cb9645a9000b698e322fe637e76e30c6c19389b96a5e1808d0"
+    },
+    "journal-extraction.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "journal-findings.json": {
+      "bytes": 4373,
+      "sha256": "2db5bbfacbd40bc794572dda397e28fff4a07cebd42adc72fd422914342bad4b"
+    },
+    "journal-reader-version.txt": {
+      "bytes": 330,
+      "sha256": "a1f0e1c4129129ccd67f9759d86d1e45543f0c669fa4fa7fcae79868429e6dca"
+    },
+    "journals/d77b2b90d2ab448ea8d0ae4c808a092a/system.journal": {
+      "bytes": 8388608,
+      "sha256": "57773d47e1f9b0ab95572522ae7ffe6782ce2bed658fd3a964f01f0cfade1053"
+    },
+    "journals/d77b2b90d2ab448ea8d0ae4c808a092a/system@000660c445778a01-e5b958ffeea950ed.journal~": {
+      "bytes": 8388608,
+      "sha256": "e976eb2d14f8bdf37d134cc2b5cca5d6e058482a57ed36f266cd57afb41c11db"
+    },
+    "journals/d77b2b90d2ab448ea8d0ae4c808a092a/system@000660c45bdf5e30-06c486069bdc2e84.journal~": {
+      "bytes": 8388608,
+      "sha256": "c33ebae458575de883c69397889bfef4687ca25573b67dc88667ee96cf0c881f"
+    },
+    "journals/d77b2b90d2ab448ea8d0ae4c808a092a/user-1000.journal": {
+      "bytes": 8388608,
+      "sha256": "a290a7b08b8525591d2f0f4b797d8afc2f18cca28d1943359b01722920fb0b26"
+    },
+    "journals/d77b2b90d2ab448ea8d0ae4c808a092a/user-1000@000660c46459298c-a64b64421f4d8527.journal~": {
+      "bytes": 8388608,
+      "sha256": "f3db12edda604969dbaf6bb4fbd42d022821ccc23734d67b1a1e72b8deb40c47"
+    },
+    "log-extraction-index.json": {
+      "bytes": 2399,
+      "sha256": "6a415b92f72aeb0ad1784755a53aa610248c7fc6a727ce2f73f1d3c31571a91b"
+    },
+    "logind-overrides.stderr": {
+      "bytes": 29,
+      "sha256": "c0eda8e792b06ab4531f47cc421ca68489490dd5a9aa7c1eeae93b4d3193ef44"
+    },
+    "logind-overrides.stdout": {
+      "bytes": 227,
+      "sha256": "704a75f736961b9ef759c474f5d2f9ea369bc2eaf97bc34036ed3a9b49fb42b7"
+    },
+    "logind-unit.stderr": {
+      "bytes": 29,
+      "sha256": "c0eda8e792b06ab4531f47cc421ca68489490dd5a9aa7c1eeae93b4d3193ef44"
+    },
+    "logind-unit.stdout": {
+      "bytes": 2037,
+      "sha256": "528b9c24a93c52385a7c678dd4136f5f316d3ec82e21134dc3be1d2c12fda234"
+    },
+    "root.receipt.json": {
+      "bytes": 518,
+      "sha256": "5c51711a38bc7fb6d420e11e8113b9a6f3f6c5dd2b8b2dc17a86f96ffb1023ab"
+    }
+  },
+  "classification": "measured read-only stopped-image inspection; preparation only",
+  "cloud_marker": {
+    "cloud_init_version_observed": "26.1-0ubuntu1~24.04.1",
+    "deferred_write": true,
+    "finished_message_in_cloud_output": true,
+    "installer_data_source": "None",
+    "marker_bytes": 132,
+    "marker_path": "/etc/cloud/cloud-init.disabled",
+    "marker_sha256": "932a93a163ea404534b62a37be08baf1ca7d6ed2d037447f767b12cb6b87514f",
+    "matches_installer_config": true
+  },
+  "export": {
+    "allocated_ranges_sha256": "2cc4c56a2116344b49eface0198bcddb330c85eac6b2c1846719e4b3008e00f3",
+    "classification": "read-only stopped-disk copy; unreplayed filesystem, not a clean-image qualification",
+    "copied_bytes": 2597322752,
+    "logical_bytes": 33230422016,
+    "partition": 2,
+    "partition_offset": 1128267776,
+    "source_sha256_after": "0eda722dc1150b9f21f3ad3db0616c9def7ad4f6a5c1a020362527b460ef275e",
+    "source_sha256_before": "0eda722dc1150b9f21f3ad3db0616c9def7ad4f6a5c1a020362527b460ef275e"
+  },
+  "exporter_sha256": "f6151420c7dc30a9ddfd64f17b4a2f89ea47cc39e2c3402025bf37199b25e985",
+  "journal": {
+    "boot_counts": {
+      "677e6039d43645fd9eda8c7c9209b7f3": 1074,
+      "9477f869c56f4022bc67c2ac32287ddd": 698,
+      "cbff9bdae5f64d32a53a39afc5856267": 894
+    },
+    "current_boot": "677e6039d43645fd9eda8c7c9209b7f3",
+    "findings": [
+      {
+        "message": "clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns",
+        "monotonic_us": "32791139",
+        "unit": null
+      },
+      {
+        "message": "clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns",
+        "monotonic_us": "32791653",
+        "unit": null
+      },
+      {
+        "message": "clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x3407bdd2df5, max_idle_ns: 440795213646 ns",
+        "monotonic_us": "32798342",
+        "unit": null
+      },
+      {
+        "message": "clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns",
+        "monotonic_us": "32798730",
+        "unit": null
+      },
+      {
+        "message": "clocksource: Switched to clocksource kvm-clock",
+        "monotonic_us": "32805024",
+        "unit": null
+      },
+      {
+        "message": "clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns",
+        "monotonic_us": "32805072",
+        "unit": null
+      },
+      {
+        "message": "clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x3407bdd2df5, max_idle_ns: 440795213646 ns",
+        "monotonic_us": "32805632",
+        "unit": null
+      },
+      {
+        "message": "clocksource: Switched to clocksource tsc",
+        "monotonic_us": "32805639",
+        "unit": null
+      },
+      {
+        "message": "input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0",
+        "monotonic_us": "32805842",
+        "unit": null
+      },
+      {
+        "message": "ACPI: button: Power Button [PWRF]",
+        "monotonic_us": "32805852",
+        "unit": null
+      },
+      {
+        "message": "ACPI: button: Sleep Button [SLPF]",
+        "monotonic_us": "32805867",
+        "unit": null
+      },
+      {
+        "message": "Failed to start systemd-networkd-wait-online.service - Wait for Network to be Configured.",
+        "monotonic_us": "166624928",
+        "unit": "init.scope"
+      },
+      {
+        "message": "New seat seat0.",
+        "monotonic_us": "168798160",
+        "unit": "systemd-logind.service"
+      },
+      {
+        "message": "Watching system buttons on /dev/input/event0 (Power Button)",
+        "monotonic_us": "168897185",
+        "unit": "systemd-logind.service"
+      },
+      {
+        "message": "Watching system buttons on /dev/input/event1 (Sleep Button)",
+        "monotonic_us": "168898171",
+        "unit": "systemd-logind.service"
+      },
+      {
+        "message": "Watching system buttons on /dev/input/event2 (AT Translated Set 2 keyboard)",
+        "monotonic_us": "168898240",
+        "unit": "systemd-logind.service"
+      },
+      {
+        "message": "New session 1 of user fixture.",
+        "monotonic_us": "177788178",
+        "unit": "systemd-logind.service"
+      },
+      {
+        "message": "Power key pressed short.",
+        "monotonic_us": "188994456",
+        "unit": "systemd-logind.service"
+      },
+      {
+        "message": "Powering off...",
+        "monotonic_us": "188994939",
+        "unit": "systemd-logind.service"
+      },
+      {
+        "message": "System is powering down.",
+        "monotonic_us": "189120995",
+        "unit": "systemd-logind.service"
+      },
+      {
+        "message": "Session 1 logged out. Waiting for processes to exit.",
+        "monotonic_us": "189430374",
+        "unit": "systemd-logind.service"
+      },
+      {
+        "message": "Reached target shutdown.target - Shutdown.",
+        "monotonic_us": "189539545",
+        "unit": "user@1000.service"
+      },
+      {
+        "message": "Reached target shutdown.target - System Shutdown.",
+        "monotonic_us": "213883333",
+        "unit": "init.scope"
+      },
+      {
+        "message": "Reached target final.target - Late Shutdown Services.",
+        "monotonic_us": "213884124",
+        "unit": "init.scope"
+      },
+      {
+        "message": "Reached target poweroff.target - System Power Off.",
+        "monotonic_us": "213887672",
+        "unit": "init.scope"
+      },
+      {
+        "message": "Shutting down.",
+        "monotonic_us": "213887716",
+        "unit": "init.scope"
+      }
+    ],
+    "selected_rows": 1074
+  },
+  "next_check": "One bounded two-CPU x2APIC-off diagnostic, no pause/resume; capture serial shutdown progress, retain old readiness predicate and reconcile any failures before further starts.",
+  "observations": {
+    "acpi_reached_guest": true,
+    "cloud_init_disabled_intentionally_by_installer": true,
+    "guest_was_not_started": true,
+    "hypervisor_poweroff_unqualified": true,
+    "image_not_mounted": true,
+    "journal_reader_fallback": "Ubuntu 22.04 reader rejected unsupported feature; existing Ubuntu 24.04 systemd 255.4-1ubuntu8.12 read successfully",
+    "linux_reached_poweroff_target": true,
+    "offline_network_wait_failed": true,
+    "original_vdi_unchanged": true,
+    "source_opened_read_only": true
+  },
+  "observed_at_utc": "2026-11-21T09:17:44.810704+00:00",
+  "refused_x2apic_start": {
+    "artifacts": {
+      "configuration.log": "8ac841eb23af87dfe018f6900f21d5b3d5531d0c0c4ca7c1a83551994d534ea7",
+      "control.sqlite": "09cdcdac79115a6aed00a7ad3aaad033a84da628d94aaccf0ae21cbb57c344c4",
+      "disk-boot-and-pipe.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "failure-display.log": "f5a07ffeddc19c6658224e8700af792bab25121f7598e502ee24870110ab52c0",
+      "host-start-failure.log": "69d9104c9751895fcc26d46217897866ed37c409a7fb6d1b2446d5116cdbca6e",
+      "restored-configuration.log": "4295e80ad0579f420b733d55be85d8aa49907e38f13eba302f717262fa972a5a",
+      "serial-sanitized.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "start-first-boot.log": "00672fbf2a64f6d1b81c3db0e3c847466049d5051361558a88d07af5da685ce6",
+      "version.log": "a13dcb55ddfae435ebc57364d872c589b553fe399993462d41c13c5c8698fbad",
+      "x2apic-diagnostic.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "audit_tail_digest": "085ebfcab381e533d7df39f5089f462d25b289458a200cb169fd57878a39fd34",
+    "error": "Cannot disable the APIC for a 64-bit guest (VERR_INVALID_PARAMETER)",
+    "guest_booted": false,
+    "path": ".local/validation/x2apic-01",
+    "restoration": "native state poweroff, APIC on, x2APIC on, UART off"
+  },
+  "run_path": ".local/validation/offline-inspection-01",
+  "schema_version": 1,
+  "source_commit": "af6cd7c",
+  "tests": {
+    "format": "pass",
+    "lint": "pass",
+    "passed": 55,
+    "run": 56,
+    "skipped": 1
+  },
+  "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+}

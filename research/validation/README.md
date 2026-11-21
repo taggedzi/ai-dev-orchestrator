@@ -73,6 +73,8 @@ Offline OS construction is documented in the [installation plan and result](os-i
 
 The [first-boot plan](first-boot-plan.md) adds a bounded, non-root serial probe of the installed OS and ACPI shutdown. It records stalled boots and profile changes separately. Its default invocation is also plan-only. A failed attempt requires a stopped-image reconciliation; subsequent attempts never silently accept a changed disk. This is preparation code, not a qualified runtime supervisor.
 
+The [stopped-image inspection](offline-inspection.md) resolves the installer's intentional cloud-init disable marker and confirms that Linux handled the earlier ACPI event. `offline_disk.py` exports only a supported VDI 1.1 base image's GPT partition to a new sparse file, verifies copied ranges, and checks the original disk hash before and after. It opens the source read-only. Use it only after native poweroff is confirmed; inspection of an unreplayed filesystem does not qualify a clean shutdown. The retained copy may contain disposable guest credentials and stays in ignored local evidence storage.
+
 ## Verification
 
 ```powershell

@@ -43,6 +43,8 @@ def collect(token):
         for line in Path("/proc/mounts").read_text().splitlines()
         if line.split()[1] == "/"
     )
+    marker = Path("/etc/cloud/cloud-init.disabled")
+    marker_bytes = marker.read_bytes() if marker.is_file() else None
     result = {
         "schema_version": 1,
         "token": token,
@@ -57,6 +59,24 @@ def collect(token):
         "root_mount": root_mount,
         "interfaces": sorted(path.name for path in Path("/sys/class/net").iterdir()),
         "cloud_init": cloud,
+        "cloud_init_disable_marker": {
+            "exists": marker_bytes is not None,
+            "bytes": len(marker_bytes) if marker_bytes is not None else None,
+            "sha256": hashlib.sha256(marker_bytes).hexdigest()
+            if marker_bytes is not None
+            else None,
+        },
+        "readiness_services": command(
+            [
+                "systemctl",
+                "show",
+                "systemd-logind.service",
+                "cloud-final.service",
+                "systemd-networkd-wait-online.service",
+                "--property=Id,ActiveState,SubState,Result,ExecMainStatus",
+            ],
+            timeout=10,
+        ),
         "package_audit": audit,
         "package_inventory_sha256": hashlib.sha256(packages).hexdigest(),
         "package_rows": len(packages.splitlines()),

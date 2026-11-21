@@ -1,6 +1,6 @@
 # Proposed validation deployment
 
-Status: provisioning and offline OS installation completed on November 21. The subsequent [first-boot diagnostic](first-boot-plan.md) produced an installed-OS receipt after pause/resume, but startup reliability and orderly shutdown remain unqualified. `mcli1-validation-01` is powered off, restored to two vCPUs with all NICs disabled and temporary UART off. Dependency preparation and executor experiments remain gated.
+Status: provisioning and offline OS installation completed November 21. The latest [diagnostic](offline-inspection.md) completed one unattended two-CPU x2APIC-off boot and ACPI shutdown. Repeatability and prospective readiness-policy validation remain open. `mcli1-validation-01` is powered off with two vCPUs, original APIC settings restored on, all NICs disabled and UART off. Dependencies and executor experiments remain gated.
 
 ## Target and trust boundary
 
@@ -40,7 +40,7 @@ No product architecture decision is made here. The experiment still evaluates th
 
 ## Next review
 
-1. Resolve the first-boot findings: unattended startup, cloud-init readiness and ACPI shutdown. The receipt confirms the installed kernel/account and unchanged packages; it does not qualify this baseline. Preserve the stopped disk and attempt chain; do not rerun the formatting installer. Review the local bootstrap credential and installation artifacts during later image hardening.
+1. Freeze a readiness policy for the inspected installer-created cloud-init disable marker, then qualify three consecutive unattended cold starts and ACPI shutdowns on the two-CPU x2APIC-off candidate. One measured cycle is insufficient. Preserve the stopped disk and attempt chain; do not rerun the formatting installer. Review the offline network-online wait, bootstrap credential and installation artifacts during later hardening.
 2. Review dependency/image preparation and the external network boundary before connecting or running executor code. Final deployment approval and #12/#13/#11 experiments follow their frozen inputs and effective-control evidence.
 
 Do not merge PR #25 with an automatic closure of #11 unless the unfinished measurements are explicitly preserved in tracking. The preparation work supplies assets and tested local mechanisms; it does not satisfy #11–#14 by itself.

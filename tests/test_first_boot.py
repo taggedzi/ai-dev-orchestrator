@@ -10,12 +10,14 @@ from pathlib import Path
 from unittest.mock import patch
 
 from research.validation.first_boot import (
+    TRIAL_SOURCES,
     PipeConsole,
     check_receipt,
     clean_text,
     parse_receipt,
     probe_commands,
     removable_media,
+    validate_apic,
     validate_checkpoint,
 )
 from research.validation.os_install import VBOX, VM, Installer
@@ -49,6 +51,96 @@ def receipt():
 
 
 class BootTests(unittest.TestCase):
+    def test_x2apic_off_keeps_ordinary_apic_and_firmware_profile(self):
+        profile = {"apic": "on", "ioapic": "on", "biosapic": "apic", "x2apic": "off"}
+        validate_apic(profile, "off")
+        for key in profile:
+            with self.assertRaises(Hold):
+                validate_apic(profile | {key: "unexpected"}, "off")
+        with self.assertRaises(Hold):
+            validate_apic(profile | {"apic": "off"}, "off")
+
+    def test_failed_native_start_is_reported_before_pipe_connection(self):
+        import time
+        from concurrent.futures import Future
+
+        failed = Future()
+        failed.set_exception(Hold("native start failed"))
+        with self.assertRaisesRegex(Hold, "native start failed"):
+            PipeConsole("unused", "disposable").connect(time.monotonic() + 60, failed)
+
+    def test_x2apic_trial_binds_stopped_disk_audit_and_offline_evidence(self):
+        import hashlib
+
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            evidence = root / "research/validation/offline-inspection-evidence.json"
+            evidence.parent.mkdir(parents=True)
+            evidence.write_bytes(b"offline evidence")
+            pins = {}
+            for name in TRIAL_SOURCES:
+                (evidence.parent / name).write_bytes(b"frozen source")
+                pins[name] = hashlib.sha256(b"frozen source").hexdigest()
+            capture = b"completed receipt and failed shutdown\n"
+            (root / "serial-sanitized.log").write_bytes(capture)
+            (root / "post-trial-state.json").write_text(
+                json.dumps({"stopped_vdi_sha256": "stopped"})
+            )
+            parent = {
+                "retry_index": 3,
+                "original_installed_vdi_sha256": "original",
+                "stopped_vdi_sha256": "input",
+                "checkpoint_sha256": "parent",
+            }
+            store = Store(root / "control.sqlite")
+            store.event(
+                "first-boot-approval",
+                {"input_vdi_sha256": "input", "prior_attempt": parent},
+            )
+            store.event(
+                "emergency-stop-observation", {"vm_uuid": VM, "state": "poweroff"}
+            )
+            tail = store.audit()[-1]["digest"]
+            store.close()
+            data = {
+                "kind": "stopped-boot-reconciliation-v1",
+                "vm_uuid": VM,
+                "retry_index": 4,
+                "original_installed_vdi_sha256": "original",
+                "stopped_vdi_sha256": "stopped",
+                "serial_sha256": hashlib.sha256(capture).hexdigest(),
+                "profile_change": {"x2apic": "off"},
+                "parent_checkpoint_sha256": "parent",
+                "prior_audit_tail_digest": tail,
+                "offline_inspection_sha256": hashlib.sha256(
+                    evidence.read_bytes()
+                ).hexdigest(),
+                "trial_source_sha256": pins,
+            }
+            path = root / "checkpoint.json"
+            with (
+                patch("research.validation.first_boot.rooted", side_effect=lambda p: p),
+                patch("research.validation.first_boot.WORKSPACE", root),
+            ):
+                path.write_text(json.dumps(data))
+                self.assertEqual(
+                    validate_checkpoint(path, "original")["retry_index"], 4
+                )
+                for change in [
+                    {"prior_audit_tail_digest": "wrong"},
+                    {"stopped_vdi_sha256": "wrong"},
+                    {"offline_inspection_sha256": "wrong"},
+                    {"profile_change": {"cpus": 3}},
+                    {"trial_source_sha256": pins | {"first_boot.py": "changed"}},
+                ]:
+                    path.write_text(json.dumps(data | change))
+                    with self.assertRaises(Hold):
+                        validate_checkpoint(path, "original")
+                path.write_text(json.dumps(data))
+                evidence.write_bytes(b"changed evidence")
+                with self.assertRaises(Hold):
+                    validate_checkpoint(path, "original")
+
     def test_reconciled_retry_requires_matching_capture_original_intent_and_stop(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -147,7 +239,7 @@ class BootTests(unittest.TestCase):
                 for change in (
                     {"parent_checkpoint_sha256": "wrong-parent"},
                     {"profile_change": {"cpus": 2}},
-                    {"retry_index": 4},
+                    {"retry_index": 5},
                 ):
                     path.write_text(json.dumps(data | change))
                     with self.assertRaises(Hold):

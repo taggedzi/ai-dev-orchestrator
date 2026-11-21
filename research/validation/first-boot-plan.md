@@ -62,6 +62,8 @@ After confirming poweroff, preparation restored two CPUs and disabled/disconnect
 
 The next research check is a repeatable unattended start and ACPI shutdown on a frozen VM profile. Preserve this installed disk and the failed-run evidence. A shell reached after an intervention is useful diagnosis but does not satisfy that check. Do not add toolchain dependencies or run executor cases on this unresolved baseline.
 
+The later [read-only stopped-image inspection](offline-inspection.md) has now established the disable marker's installer origin and confirmed the guest's power-key handling and power-off target. These findings refine the next diagnostic; they do not alter the historical results above. The corrected x2APIC diagnostic keeps ordinary APIC enabled and records serial shutdown progress under the same bounds.
+
 Review a minimal reproduction against the upstream NEM reports using this exact hypervisor, kernel, firmware and host backend. Also inspect the cloud-init disable marker and power-button handling before revising their readiness checks. Bind any proposed diagnostic to a stopped-image hash, name the single changed variable and retain both success and failure controls. A successful profile then needs repeated cold starts without pause/resume, a full token-bound receipt and orderly shutdown before runtime-hardening preparation continues. No repeat count or compatibility conclusion has been qualified by these trials.
 
 Keep host Hyper-V, WSL and Windows security settings unchanged. A new VM profile, replacement backend, tool installation or host-level change needs a concrete separately reviewed plan. No upstream issue or repository data has been submitted externally by this work.

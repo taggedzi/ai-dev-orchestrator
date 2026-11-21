@@ -231,6 +231,8 @@ def build(destination):
             "provisioning-evidence.json",
             "os-install-evidence.json",
             "first-boot-evidence.json",
+            "offline-inspection-evidence.json",
+            "boot-diagnostic-evidence.json",
         ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())
     write(
