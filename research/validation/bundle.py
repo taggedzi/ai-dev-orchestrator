@@ -225,7 +225,10 @@ def build(destination):
     write(root, "probes/executor-recovery-probe.py", probe.read_bytes())
     # Copy harness source into the bundle so its version is part of the freeze.
     for path in sorted(Path(__file__).parent.iterdir()):
-        if path.suffix in (".py", ".md"):
+        if (
+            path.suffix in (".py", ".md", ".ps1")
+            or path.name == "provisioning-plan.json"
+        ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())
     write(
         root, "harness/research/fixtures/executor-recovery-probe.py", probe.read_bytes()

@@ -1,12 +1,12 @@
 # Project status and restart point
 
-Updated November 20, 2026. The developer authorized synthetic fixture and local test harness construction in this conversation. Product implementation, dependency installation, VM changes and executor runs remain outside that approval.
+Updated November 21, 2026. The developer requested a commit and continuation. Fixture/harness preparation was committed as `2758406`; the first VM provisioning stage was then approved through the command request and completed. OS/dependency installation, product implementation and executor experiments remain outside that approval.
 
 ## Where we stopped
 
 M1-01 through M1-10 research designs have been merged. They cover executor interfaces, planning, routing, ownership, isolation, recovery policy, verification, spending, and the [two-task validation fixture](../research/two-task-validation-fixture.md). These documents describe proposed behavior and source findings; they do not establish that an integrated system works.
 
-The current branch is `research/m1-11-executor-recovery` at `56cdfe2e2169f742c61f618eccf0ce4b439e03d4`. Its [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25) is open and unmerged. It adds the [recovery preflight](../research/executor-cancellation-recovery.md) and a [Linux marker probe](../research/fixtures/executor-recovery-probe.py). Every executor runtime case remains Inconclusive. The working tree was clean when this checkpoint began.
+The restart audit began on `research/m1-11-executor-recovery` at `56cdfe2e2169f742c61f618eccf0ce4b439e03d4`, with a clean working tree. Its [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25) was open and unmerged at the November 20 check. It adds the [recovery preflight](../research/executor-cancellation-recovery.md) and a [Linux marker probe](../research/fixtures/executor-recovery-probe.py). Every executor runtime case remains Inconclusive. The later fixture commit is local; no push or merge was requested.
 
 The developer [approved the M1-10 design](https://github.com/taggedzi/ai-dev-orchestrator/pull/24#issuecomment-6962022192) while explicitly keeping the recommendation Conditional until the fixture is frozen, approved, and executed. No later approval was found in PR #25 or the issue #11 discussion. On November 20, issues #11–#14 remained open with no comments.
 
@@ -53,4 +53,6 @@ After authorization and freeze, follow the existing order: validate the trusted 
 
 ## Next developer action
 
-Select the disposable target and review the concrete provisioning/dependency plan. The preparation bundle intentionally leaves the actual GSD export, image/tool digests, deployed tool schemas and exact Chat transcripts unresolved. Final execution approval follows the complete frozen packet and applicable boundary qualifications. Product implementation and major architecture adoption remain gated on the feasibility decision.
+Prepare and approve offline OS installation for `mcli1-validation-01`. The [provisioning script](../research/validation/New-ValidationVm.ps1) downloaded and verified the pinned Ubuntu Server 24.04.5 installer and created the new VM powered off, with 2 vCPUs, 4 GiB RAM, a 32 GiB installation disk and all NICs disabled. Read-only installer detection returned partial Ubuntu 24.04.5 metadata but failed with `E_NOTIMPL`; do not assume unattended installation works. The [deployment plan](../research/validation/deployment-plan.md) records the measurements and remaining host, network and storage checks. No OS or executor code has been run in the new VM.
+
+The original 220-file review bundle remains unchanged at its recorded digest. This provisioning plan is a later revision, outside that freeze. Actual GSD export, built image/tool digests, deployed schemas, exact Chat transcripts and runtime qualification remain open. Product implementation and major architecture adoption remain gated on the feasibility decision.

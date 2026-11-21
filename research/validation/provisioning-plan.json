@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "proposed-not-approved",
+  "stage": "create-powered-off-vm-and-attach-installer",
+  "vm_name": "mcli1-validation-01",
+  "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704",
+  "vbox_version": "7.2.22r175245",
+  "os_type": "Ubuntu_64",
+  "cpus": 2,
+  "memory_mib": 4096,
+  "installation_disk_mib": 32768,
+  "network": "all eight adapters disabled",
+  "iso": {
+    "filename": "ubuntu-24.04.5-live-server-amd64.iso",
+    "url": "https://releases.ubuntu.com/24.04/ubuntu-24.04.5-live-server-amd64.iso",
+    "sha256": "97f3d7ffb032c3eb3b23d2c8be9cc76e60c2c1f2c0146ba5ba9fe01cafae0fd8",
+    "checksum_source": "https://releases.ubuntu.com/24.04/SHA256SUMS",
+    "published_size": "approximately 3.8 GiB; final byte count must be measured",
+    "evidence": "published filename and checksum observed November 21, 2026; image not downloaded or locally verified"
+  },
+  "output_root": ".local/validation/vms",
+  "installer_root": ".local/validation/installers",
+  "start_vm": false,
+  "install_guest_os": false,
+  "install_guest_additions": false,
+  "host_network_changes": false,
+  "runtime_qualified": false,
+  "remaining_after_this_stage": [
+    "offline OS installation and separately approved dependency/image preparation",
+    "immutable base plus 8 GiB bounded writable runtime storage",
+    "network enforcement outside the guest before connecting any NIC",
+    "isolated observer/extractor and external supervisor qualification",
+    "actual GSD export and native OpenHands schemas/transcripts",
+    "separately frozen deployment and experiment approval"
+  ]
+}
