@@ -1,0 +1,306 @@
+{
+  "actions": {
+    "conversation_or_agent_server_created": false,
+    "image_pulls_or_builds": 0,
+    "model_calls": 0,
+    "packages_installed": false,
+    "repository_data_uploaded": false,
+    "tool_executors_initialized": false,
+    "virtualbox_operations": 0
+  },
+  "actual_chat_wire_sha256": null,
+  "base_commit": "69028cb",
+  "bundled_encoding": {
+    "bytes": 1681126,
+    "classification": "Read and hashed from verified wheel; expected digest matched pinned tiktoken source; not a new download",
+    "sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "wheel_member": "litellm/litellm_core_utils/tokenizers/9b5ad71b2ce5302211f9c61530b329a4922fc6a4"
+  },
+  "classification": "Local counter estimate of retained system prompt and native tool definitions only; no user/history, Chat wire, provider billing or full role-fit qualification",
+  "cleanup": {
+    "desktop_started_for_probe": true,
+    "desktop_stop_exit": 0,
+    "engine_unavailable_after_stop": true,
+    "named_container_absent": true,
+    "readiness_observation_timeouts": [
+      "engine-ready-0",
+      "engine-ready-1"
+    ],
+    "running_containers_after": 0
+  },
+  "dependency_source_artifacts": [
+    {
+      "bytes": 38775911,
+      "filename": "litellm-1.105.1-cp310-abi3-manylinux_2_28_x86_64.whl",
+      "kind": "wheel",
+      "package": "litellm",
+      "sha256": "f3d743c2d274c6537f7341213607c927c486676012a9d94412a8a8ccbe2f51f1",
+      "url": "https://files.pythonhosted.org/packages/07/1d/44e5c54df750ccb610285c778f92651794534a480dcce730eaf9d0aa8b31/litellm-1.105.1-cp310-abi3-manylinux_2_28_x86_64.whl",
+      "version": "1.105.1"
+    },
+    {
+      "bytes": 1151986,
+      "filename": "tiktoken-0.12.0-cp313-cp313-manylinux_2_28_x86_64.whl",
+      "kind": "wheel",
+      "package": "tiktoken",
+      "sha256": "4a1a4fcd021f022bfc81904a911d3df0f6543b9e7627b51411da75ff2fe7a1be",
+      "url": "https://files.pythonhosted.org/packages/0c/da/c028aa0babf77315e1cef357d4d768800c5f8a6de04d0eac0f377cb619fa/tiktoken-0.12.0-cp313-cp313-manylinux_2_28_x86_64.whl",
+      "version": "0.12.0"
+    }
+  ],
+  "deployment_tool_schema_sha256": null,
+  "driver_source_sha256": "2089cdbb54e549c1743c7d5430bdeb1a0502a96e1215dd86d258ebe138285f63",
+  "finished_epoch": 1795300567.4342322,
+  "format": "mcli1-token-fit-evidence-v1",
+  "full_role_fit_qualified": false,
+  "image_id": "sha256:f242d7a2b69742fde04385231647c54c57396b251ddfd7a5f34095073970e868",
+  "native_approval": "offline-token-count-preparation-2026-11-21",
+  "next_check": "Count complete role-specific request inputs and capture final-target wire; preserve caps and pending guard-creation review. Prefix headroom is not full request fit or dispatch approval.",
+  "observation": {
+    "classification": "Local counter estimate of retained system prompt and native tool definitions only; no user/history, Chat wire, provider billing or full role-fit qualification",
+    "counts": {
+      "litellm_messages_only": 3258,
+      "litellm_with_tools": 4985,
+      "sdk_messages_only": 3258
+    },
+    "custom_tokenizer_present": false,
+    "encoding_name": "cl100k_base",
+    "error": null,
+    "format": "mcli1-token-fit-probe-v1",
+    "formatted_messages_bytes": 15610,
+    "formatted_messages_sha256": "286fc3edb2037c4b23c611b87d4a5387c1ee00e4415cdfa5b53ed4b473b46af7",
+    "inference_attempts": 0,
+    "input_sha256": {
+      "dynamic_context": "77a5ca9923c3a8e07774d9acb1544197cf362a20fb0991a3215a61c5f48422a0",
+      "native_tool_json": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc",
+      "request": "48b5b2f8c8519d80612766a9e1088be2459ca6da9e2396159b091b0dd5d41410",
+      "static_system_prompt": "ec7656c1a1975904653d8cba87e41ae5d493d110ce1607b6d8b5476e254b6d3a"
+    },
+    "mock_tool_calls": false,
+    "model": "openai/fixture/model-v1",
+    "native_tool_calling": true,
+    "role_prefix_headroom": {
+      "correction_edit": 7015,
+      "finish": 1015,
+      "initial_edit": 7015,
+      "review": 1015
+    },
+    "token_counter_disabled": false
+  },
+  "outer_input_sha256": "ec6eff99dc1bc83e1a4556add9cc39a557bb3f237c7017a927d0953a1f8680b6",
+  "probe_source_sha256": "626ba96d1fef4752e7be1f0cee84c41553b2b7a9e660309aaf2c7546776ac570",
+  "raw_files": {
+    "containers-before.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "containers-before.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-start.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-start.stdout": {
+      "bytes": 29,
+      "sha256": "5f83026ffb6adcef95ed27e8e68d43a0183d524611d0644977de86d6352ad3eb"
+    },
+    "desktop-stop.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-stop.stdout": {
+      "bytes": 29,
+      "sha256": "c4ed0e5b1c3f7042bc1743fd09ea47af6ecc5878e72f6a444895489894af51b0"
+    },
+    "docker-config/config.json": {
+      "bytes": 94,
+      "sha256": "fb0778721a550b523aed3a864d99713499b89e7ccc204d2b2e00980d3ae0be51"
+    },
+    "engine-after-stop.stderr": {
+      "bytes": 224,
+      "sha256": "e9133cf10b02b0b91c8b119848513db0ac541e7c3c19681266939e4b9952f7cc"
+    },
+    "engine-after-stop.stdout": {
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "engine-before.stderr": {
+      "bytes": 224,
+      "sha256": "e9133cf10b02b0b91c8b119848513db0ac541e7c3c19681266939e4b9952f7cc"
+    },
+    "engine-before.stdout": {
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "engine-ready-0.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-0.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-1.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-2.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-2.stdout": {
+      "bytes": 7,
+      "sha256": "db4ba0a89ba3c63cd68d4eb99ccf9e51bd122c7d3c2e03f79e91d251fb5300ab"
+    },
+    "executed-probe.py": {
+      "bytes": 5697,
+      "sha256": "626ba96d1fef4752e7be1f0cee84c41553b2b7a9e660309aaf2c7546776ac570"
+    },
+    "image-present.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "image-present.stdout": {
+      "bytes": 72,
+      "sha256": "653f77c084b5f15131de7efb7e69705b37ed73950247681a46683012611ea8cc"
+    },
+    "input.json": {
+      "bytes": 25976,
+      "sha256": "ec6eff99dc1bc83e1a4556add9cc39a557bb3f237c7017a927d0953a1f8680b6"
+    },
+    "named-after.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "named-after.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "named-before.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "named-before.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "observation.json": {
+      "bytes": 1237,
+      "sha256": "8fbd662502e7b031e21f4c5e40d9d4e3dc9fb9474c21a3a87f9cefe189a4a54d"
+    },
+    "probe.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "probe.stdout": {
+      "bytes": 1101,
+      "sha256": "eae9a5903e3577eaee77ef1a7905a3fd7c627eaeecd6b618c5011d16b7d41a1b"
+    },
+    "process-before-0.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "process-before-0.stdout": {
+      "bytes": 64,
+      "sha256": "943b315e065238b7073b033f534ef954b6b6461fb3f03a3f5b8555b11bc4c0a2"
+    },
+    "process-before-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "process-before-1.stdout": {
+      "bytes": 64,
+      "sha256": "943b315e065238b7073b033f534ef954b6b6461fb3f03a3f5b8555b11bc4c0a2"
+    },
+    "result.json": {
+      "bytes": 15195,
+      "sha256": "144d2d781d5c7c833c8c9ec8edeee5858d55f4a7c3825af5b301cf4aad768094"
+    },
+    "run.py": {
+      "bytes": 8997,
+      "sha256": "2089cdbb54e549c1743c7d5430bdeb1a0502a96e1215dd86d258ebe138285f63"
+    },
+    "running-after.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "running-after.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "raw_root": ".local/validation/token-fit-01",
+  "sdk_commit": "504a88cab0fb48ee5226238ad7b8f1d865fa84a8",
+  "sdk_version": "1.62.0",
+  "source_review": {
+    "counter_units": "LiteLLM 1.105.1 local estimate for synthetic model, unknown-model cl100k fallback; not provider-authoritative usage",
+    "sdk_counter": "LLM.get_token_count returns zero after caught counter errors; this probe rejects zero",
+    "sources": [
+      "https://github.com/OpenHands/software-agent-sdk/blob/504a88cab0fb48ee5226238ad7b8f1d865fa84a8/openhands-sdk/openhands/sdk/llm/llm.py#L3240-L3292",
+      "https://github.com/openai/tiktoken/blob/0.12.0/tiktoken_ext/openai_public.py",
+      "https://github.com/openai/tiktoken/blob/0.12.0/tiktoken/load.py"
+    ],
+    "tool_count_path": "Recorded native function JSON supplied directly to LiteLLM; SDK count exercised messages only"
+  },
+  "started_epoch": 1795300504.7279036,
+  "verification": {
+    "attempts": [
+      {
+        "files": {
+          "result.json": {
+            "bytes": 45,
+            "sha256": "cc46e0e523a6837b458c83d521516e7babf2c15033629bcb74676acb8b44bb3a"
+          },
+          "tests.stderr": {
+            "bytes": 30352,
+            "sha256": "ec7c2184c161f9016642e3995f95e774d67ece5a2863c69d235920c77fc0dda0"
+          },
+          "tests.stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "path": ".local/validation/token-fit-check-01",
+        "receipt": {
+          "elapsed_seconds": 25.596,
+          "exit": 1
+        }
+      },
+      {
+        "files": {
+          "result.json": {
+            "bytes": 45,
+            "sha256": "f65368419f9b359de90069406eda66d98c10cf75bbd6358dd470a1f07545d8df"
+          },
+          "tests.stderr": {
+            "bytes": 18367,
+            "sha256": "30664a7bd18755b048ac44e50fbc4760ef02880403c9b63782e00d84e9b205ea"
+          },
+          "tests.stdout": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "path": ".local/validation/token-fit-check-02",
+        "receipt": {
+          "elapsed_seconds": 25.111,
+          "exit": 0
+        }
+      }
+    ],
+    "first_attempt_limit": "Five existing guard-script tests could not launch WindowsApps PowerShell under sandbox (WinError 1920). Same suite passed with execution permission; no code fix or native VM access.",
+    "skip": "Existing Windows symlink test",
+    "suite": {
+      "errors": 0,
+      "passed": 112,
+      "skipped": 1,
+      "total": 113
+    }
+  }
+}

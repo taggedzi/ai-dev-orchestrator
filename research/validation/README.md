@@ -93,6 +93,8 @@ The [stopped-image inspection](offline-inspection.md) resolves the installer's i
 
 ## Verification
 
+The [prepared token-count check](token-fit-plan.md) measures the retained system/tools prefix without inference. Its 4,985-token local estimate leaves only 1,015 under the finish/review input cap before other context. Complete request fitting and final wire binding remain required.
+
 ```powershell
 python -m unittest discover -s tests -p "test_*.py" -v
 ruff check research/validation tests
