@@ -42,9 +42,11 @@ The [minimal runtime preparation](runtime-image-plan.md) binds 186 downloaded Py
 
 No product architecture decision is made here. The experiment still evaluates the existing proposed ownership boundaries and can finish with a safe hold. An approved local-only result cannot establish provider billing finality, agent review quality, or production recovery.
 
+The developer has now [selected a separate guard VM for preparation](../../docs/decisions/0001-validation-network-boundary.md). It will place broker/control and filtering outside the executor guest, with an isolated internal switch and a loopback-bound management transport on the guard only. Exact guard image/UUID/packages, interfaces, packet rules, addresses, counters and control placement must be frozen and reviewed before native provisioning/connection. No network was configured by that decision. The [strict local control gate and SDK schema probe](control-policy-plan.md) are preparation mechanisms; deployed two-tool and wire qualification remain open.
+
 ## Next review
 
 1. Freeze a readiness policy for the inspected installer-created cloud-init disable marker, then qualify three consecutive unattended cold starts and ACPI shutdowns on the two-CPU x2APIC-off candidate. One measured cycle is insufficient. Preserve the stopped disk and attempt chain; do not rerun the formatting installer. Review the offline network-online wait, bootstrap credential and installation artifacts during later hardening.
-2. Review dependency/image preparation and the external network boundary before connecting or running executor code. Final deployment approval and #12/#13/#11 experiments follow their frozen inputs and effective-control evidence.
+2. Prepare the accepted guard topology's exact provisioning, package and external network/control policy inputs. Keep VM creation, guest runtime installation and NIC activation behind their concrete approvals. Final deployment approval and #12/#13/#11 experiments follow their frozen inputs and effective-control evidence.
 
 Do not merge PR #25 with an automatic closure of #11 unless the unfinished measurements are explicitly preserved in tracking. The preparation work supplies assets and tested local mechanisms; it does not satisfy #11–#14 by itself.

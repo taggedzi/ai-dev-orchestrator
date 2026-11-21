@@ -232,7 +232,10 @@ def fault_proxy(store, upstream, faults, address=("127.0.0.1", 0)):
                     self.command,
                     self.path,
                     raw,
-                    {"Content-Type": "application/json"},
+                    {
+                        "Content-Type": "application/json",
+                        "X-Session-API-Key": "fixture-dummy",
+                    },
                 )
                 if self.command == "POST":
                     store.receipt(operation, status, response)

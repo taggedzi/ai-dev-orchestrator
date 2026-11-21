@@ -310,6 +310,8 @@ def build(destination, gsd_export=None, gsd_snapshot_hash=None):
             "runtime-image-evidence.json",
             "image-build-inputs.json",
             "image-build-evidence.json",
+            "control-schema-evidence.json",
+            "control-request-example.json",
             "MinimalAgentServer.Dockerfile",
         ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())
@@ -320,6 +322,8 @@ def build(destination, gsd_export=None, gsd_snapshot_hash=None):
         write(root, "harness/tests/" + path.name, path.read_bytes())
     for path in sorted((ROOT / "tests/fixtures").glob("*.json")):
         write(root, "harness/tests/fixtures/" + path.name, path.read_bytes())
+    for path in sorted((ROOT / "docs/decisions").glob("*.md")):
+        write(root, "harness/docs/decisions/" + path.name, path.read_bytes())
     for directory in ("docs", "research"):
         for path in sorted((ROOT / directory).glob("*.md")):
             write(
