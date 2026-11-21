@@ -10,6 +10,8 @@ The [coherent OS-update proposal](os-update-plan.md) now resolves both roles fro
 
 The separately approved [archive retrieval](os-update-artifact-evidence.json) is complete: 106 files/about 283 MiB, each hash/size/control identity verified, with no installation or VirtualBox operation. Offline guest bootstrap/hardening and final qualification still require their concrete review and approval.
 
+The [native two-tool input check](resolved-tool-plan.md) also passed in the pinned image: real backend initialization, rendered system prompt and risk-enabled function schemas, zero actions/inference, clean executor/container shutdown. It is preparation data; final wire/token and isolation qualifications remain open.
+
 ## Build and check
 
 From the repository root, choose a new output directory and run:

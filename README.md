@@ -8,13 +8,13 @@ The project prioritizes correct, maintainable software and total cost per accept
 
 Research designs M1-01 through M1-10 have been merged. M1-11's recovery preflight is on the current branch in [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25), checked open November 21. The [synthetic fixture and local harness](research/validation/README.md) include a real pinned GSD export and five negative import controls. A pinned Agent Server image now builds and starts offline under a non-root/read-only preparation profile. The earlier Ubuntu VM diagnostic completed one unattended two-CPU boot and ACPI shutdown with x2APIC disabled. Final-target readiness, hardening and isolation/executor qualification remain open. There is no runnable orchestrator or approved implementation stack yet.
 
-**Resume here:** [Project status and next work](docs/status.md). Freeze the narrow conversation/API policy, external network and guest-readiness/hardening prerequisites for M1-12 isolation testing. The [planning freeze](research/validation/gsd-freeze-evidence.json) records the measured GSD input.
+**Resume here:** [Project status and next work](docs/status.md). Complete the final-target readiness, external network and wire prerequisites for M1-12 isolation testing. The [planning freeze](research/validation/gsd-freeze-evidence.json) records the measured GSD input.
 
 [Offline image preparation](research/validation/image-build-plan.md) has produced a retained, hash-bound image with measured versions and startup checks. The advertised tool catalog is broader than the fixture grant, so a startup pass does not establish isolation or dispatch approval.
 
-The [two-tool request and local admission checks](research/validation/control-policy-plan.md) now have SDK model/schema evidence. The developer selected a [separate trusted guard VM](docs/decisions/0001-validation-network-boundary.md) for network-enforcement preparation. Its [exact disconnected creation plan](research/validation/guard-preparation-plan.md) is ready for separate approval; hardening, missing offline nftables packages and M1-12 qualification follow.
+The [two-tool request and local admission checks](research/validation/control-policy-plan.md) now have native model validation and [resolved tool/prompt data](research/validation/resolved-tool-plan.md), with zero task actions or inference. The developer selected a [trusted guard VM](docs/decisions/0001-validation-network-boundary.md) for network-enforcement preparation. Its [disconnected creation plan](research/validation/guard-preparation-plan.md) awaits separate approval; guest installation/hardening and M1-12 qualification follow.
 
-The [packet-filter input set](research/validation/guard-package-plan.md) now has four verified archives. OS patching and firewall-service hardening still need a separate plan before final runtime qualification. VM creation remains pending approval.
+The [offline OS-update set](research/validation/os-update-plan.md) is cached and verified for both guest roles. Installation, firewall-service hardening and final runtime qualification remain separate steps.
 
 - [Project vision](docs/vision.md)
 - [Initial requirements and proof of concept](docs/requirements.md)
