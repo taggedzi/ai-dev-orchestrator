@@ -6,12 +6,15 @@ The project prioritizes correct, maintainable software and total cost per accept
 
 ## Current status
 
-The repository contains the original vision and initial research documents. There is no runnable orchestrator or selected stack yet. OpenHands, GSD Core, and model-routing options are candidates for evaluation.
+Research designs M1-01 through M1-10 have been merged. M1-11's executor recovery preflight is on the current branch in [open PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25). A [synthetic fixture and local test harness](research/validation/README.md) are now prepared. Executor runtime validation has not run; the disposable Linux deployment still needs preparation, freeze, and approval. There is no runnable orchestrator or approved implementation stack yet.
+
+**Resume here:** [Project status and next work](docs/status.md). The next gate is target selection and deployment qualification for isolation, gateway, and recovery measurements.
 
 - [Project vision](docs/vision.md)
 - [Initial requirements and proof of concept](docs/requirements.md)
 - [Exploratory architecture and risks](docs/architecture.md)
 - Research plans for [OpenHands](research/openhands.md), [GSD Core](research/gsd-core.md), and [model routing](research/model-routing.md)
+- [Two-task validation fixture](research/two-task-validation-fixture.md) and [executor recovery preflight](research/executor-cancellation-recovery.md)
 - [Agent guidelines](AGENTS.md)
 
-Start with the OpenHands source review. Its execution and recovery capabilities will help determine what the coordinator needs to own.
+The current recommendation remains Conditional until the frozen fixture is approved and measured. See the status note for the remaining gates and proposed preparation scope.

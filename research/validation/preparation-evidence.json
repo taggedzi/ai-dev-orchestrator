@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-11-21T04:40:03Z",
+  "local_date": "2026-11-20",
+  "classification": "measured local preparation checks; scripted model responses and billing",
+  "authorization": {
+    "source": "developer approved synthetic fixture and local harness construction in this conversation",
+    "construction": true,
+    "dependency_installation": false,
+    "vm_changes": false,
+    "executor_experiments": false
+  },
+  "software_observed": {
+    "python": "3.13.17",
+    "node": "26.13.1",
+    "git": "2.56.1.windows.1",
+    "deployment_pins_matched": false
+  },
+  "bundle": {
+    "path": ".local/validation/review-bundle",
+    "status": "prepared-not-approved",
+    "indexed_files": 220,
+    "manifest_sha256": "08cbd45c6f48c930300f5132bbc5af24d63cf0f55d3c24210095607ede57a405",
+    "external_digest_verification": "pass",
+    "seed_oid": "187a824c8735c958b32b7d3c1f957d621d07226e",
+    "gold_t01_oid": "2969711382c4fcd8735d2a35316919a94a80c71d",
+    "gold_t02_oid": "c6274b19849670c4be06f9600b88e0c68625dffa"
+  },
+  "checks": {
+    "unittest_command": "python -m unittest discover -s tests -p test_validation_harness.py -v",
+    "tests_run": 34,
+    "passed": 33,
+    "failed": 0,
+    "skipped": 1,
+    "skip_reason": "Windows process cannot create the symlink used by the link-denial test",
+    "ruff_check": "pass",
+    "ruff_format_check": "pass",
+    "gold_cli_check": "pass",
+    "gold_behavior_assertions": 32,
+    "gold_scope_checks": 2,
+    "real_git_fsck": "pass",
+    "rebuild_byte_comparison": "pass",
+    "local_process_death_after_fsynced_effect": "pass; uncertain mutation stays held and is not replayed"
+  },
+  "interpretation": {
+    "native_openhands_recovery": "Inconclusive; no executor started",
+    "target_isolation": "Inconclusive; no target probes run",
+    "host_supervisor_and_reap": "Inconclusive; only local lease logic with fake stop callbacks tested",
+    "native_websocket_recording": "not implemented or qualified",
+    "gsd_schema_1_export": "not generated; normalized fixture expectation is explicitly synthetic",
+    "independent_reviewer_quality": "not measured; corpus labels are fixture oracles",
+    "hosted_billing_and_model_efficacy": "not measured; no provider used"
+  },
+  "next_check": "Select the disposable target and review its concrete provisioning/dependency plan; complete the frozen deployment packet before approving executor experiments."
+}
