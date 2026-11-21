@@ -6,11 +6,11 @@ The project prioritizes correct, maintainable software and total cost per accept
 
 ## Current status
 
-Research designs M1-01 through M1-10 have been merged. M1-11's recovery preflight is on the current branch in [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25), checked open November 21. The [synthetic fixture and local harness](research/validation/README.md) now include a real pinned GSD export and five negative import controls. The earlier Ubuntu VM diagnostic completed one unattended two-CPU boot and ACPI shutdown with x2APIC disabled. Runtime-image preparation, repeatable readiness and isolation/executor qualification remain open. There is no runnable orchestrator or approved implementation stack yet.
+Research designs M1-01 through M1-10 have been merged. M1-11's recovery preflight is on the current branch in [PR #25](https://github.com/taggedzi/ai-dev-orchestrator/pull/25), checked open November 21. The [synthetic fixture and local harness](research/validation/README.md) include a real pinned GSD export and five negative import controls. A pinned Agent Server image now builds and starts offline under a non-root/read-only preparation profile. The earlier Ubuntu VM diagnostic completed one unattended two-CPU boot and ACPI shutdown with x2APIC disabled. Final-target readiness, hardening and isolation/executor qualification remain open. There is no runnable orchestrator or approved implementation stack yet.
 
-**Resume here:** [Project status and next work](docs/status.md). Complete the pinned runtime image, external network and guest-readiness prerequisites for M1-12 isolation testing. The [planning freeze](research/validation/gsd-freeze-evidence.json) records the newly completed GSD input.
+**Resume here:** [Project status and next work](docs/status.md). Freeze the narrow conversation/API policy, external network and guest-readiness/hardening prerequisites for M1-12 isolation testing. The [planning freeze](research/validation/gsd-freeze-evidence.json) records the measured GSD input.
 
-[Runtime preparation](research/validation/runtime-image-plan.md) has collected 186 hash-pinned Python dependency archives and checked their static metadata. The next image step is freezing the builder/base images and build dependencies; installation and runtime qualification remain open.
+[Offline image preparation](research/validation/image-build-plan.md) has produced a retained, hash-bound image with measured versions and startup checks. The advertised tool catalog is broader than the fixture grant, so a startup pass does not establish isolation or dispatch approval.
 
 - [Project vision](docs/vision.md)
 - [Initial requirements and proof of concept](docs/requirements.md)

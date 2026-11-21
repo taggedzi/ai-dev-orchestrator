@@ -1,6 +1,6 @@
 # Minimal OpenHands runtime preparation
 
-Status: input review, offline dependency export, approved archive retrieval and static metadata audit completed November 21, 2026. No dependency installation, image build or executor run has occurred. This is preparation for M1-12 under the [existing experiment order](../two-task-validation-fixture.md#execution-order-and-prerequisite-gates), not product implementation or architecture adoption.
+Status: input review, offline dependency export, approved archive retrieval and static metadata audit completed November 21, 2026. The later [offline image build and startup smoke](image-build-plan.md#measured-build-and-startup-result) now provide a retained image archive and measured versions. No executor task has run. This is preparation for M1-12 under the [existing experiment order](../two-task-validation-fixture.md#execution-order-and-prerequisite-gates), not product implementation or architecture adoption.
 
 ## Inputs established by source review
 
@@ -52,4 +52,4 @@ The executor VM remains disconnected. VirtualBox internal networking excludes ho
 
 Prepare a separate decision proposal for external enforcement before attaching any NIC: identify the enforcing host/switch or trusted appliance, literal broker/control flows, anti-spoofing, IPv4/IPv6 drops and counters, independent stop/fence authority, and positive controls for forbidden destinations. Do not substitute guest firewall rules for enforcement outside a potentially compromised guest. Keep the existing host-only adapter, host firewall, other VMs and security settings unchanged until a concrete deployment is approved.
 
-The immediate next action is a build-input freeze: exact builder/base-image manifests, build backend artifacts, the workspace source snapshot and the minimal image recipe. Guest readiness, external network design, supervisor/observer/extractor qualification and final deployment approval remain prerequisites to M1-12. The [250-file GSD review packet](gsd-freeze-evidence.json) remains unchanged; a later runtime/deployment freeze needs a new packet.
+The [subsequent build stage](image-build-plan.md) has now pinned builder/base manifests, build backends, source and recipe, then measured a successful offline build/startup. Its image ID, archive and software inventory are preparation evidence. Next, freeze and qualify the narrow conversation/API policy, external network boundary and guest runtime/hardening profile. Guest readiness, supervisor/observer/extractor qualification and final deployment approval remain prerequisites to M1-12. The [250-file GSD review packet](gsd-freeze-evidence.json) remains unchanged; the final deployment needs a new approved packet.
