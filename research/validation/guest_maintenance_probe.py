@@ -485,7 +485,8 @@ def control_plan(spec, observed):
     changes, stop = [], []
     if observed["policy"]["kind"] == "absent":
         changes.append({"action": "create-exclusive-file", **spec["policy"]})
-    for unit, state in observed["units"].items():
+    for unit in spec["masks"]:
+        state = observed["units"][unit]
         require(
             state["helper"] == {"kind": "absent"},
             "helper mask state exists; do not erase it",
@@ -571,7 +572,7 @@ def control_plan(spec, observed):
         )
     changes += [
         {"action": "create-exclusive-file", "path": p, "content": data, "mode": 0o600}
-        for p, data in spec["config_files"].items()
+        for p, data in sorted(spec["config_files"].items())
     ]
     return {
         "status": "proposed-not-executed",

@@ -19,7 +19,7 @@ import time
 import types
 from pathlib import Path
 
-PROBE_SHA256 = "9d64f2fdc9f2c0f27d6c7f94ca7d54064717d70c937ad682e8ac888270b2c16b"
+PROBE_SHA256 = "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
 STATE = "/var/lib/mcli1-maintenance-control"
 MAX_BYTES = 2 * 1024**2
 MAX_COMMAND = 64 * 1024

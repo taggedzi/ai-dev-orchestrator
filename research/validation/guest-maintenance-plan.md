@@ -1,5 +1,7 @@
 # Guest inspection and control-change preparation
 
+**Historical source pins:** [Transfer integration](transfer-plan.md) now uses a corrected planner whose action order survives JSON serialization. The artifacts below remain unchanged; the transfer review records the current probe/control cohort for future activation.
+
 The [maintenance admission checkpoint](maintenance-runner-plan.md) now has a
 standalone **read-only guest inspection program**, an exact control-change
 planner and two unarmed inspection packets. No selected VM was started or

@@ -265,6 +265,10 @@ def exchange(request, channel):
                 pending = bytearray(tail)
                 require(len(line) <= MAX_LINE, "serial line output limit")
                 line = bytes(line).rstrip(b"\r")
+                if line.startswith(("MCLI1_NACK_" + nonce + "_").encode()):
+                    raise Refuse(
+                        "guest rejected serial step; stop and reconcile without replay"
+                    )
                 if line.startswith(("MCLI1_ACK_" + nonce + "_").encode()):
                     require(
                         line == step["ack"].encode() and not matched,

@@ -1,5 +1,7 @@
 # Guest control executor preparation
 
+**Historical checkpoint:** [Transfer integration](transfer-plan.md) corrected JSON-dependent plan ordering and rebound the probe/control source pins. Keep the old artifacts and measurements below as provenance; use the newer transfer cohort for any future activation. No selected-VM root apply has run.
+
 The [guest inspection/planning stage](guest-maintenance-plan.md) now has a
 standalone executor for **maintenance controls only**, plus unarmed guard and
 executor review packets. It creates reviewed policy/masks/private configuration,

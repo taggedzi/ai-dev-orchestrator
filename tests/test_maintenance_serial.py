@@ -123,6 +123,13 @@ class SerialProtocolTests(unittest.TestCase):
             worker.exchange(self.request, channel)
         self.assertEqual(channel.sent, [b"PING\r"])
 
+    def test_guest_rejection_frame_holds_immediately_and_echo_is_not_a_frame(self):
+        marker = f"MCLI1_NACK_{self.request['request_id']}_0"
+        channel = Channel([(f'echo "{marker}"\n').encode(), (marker + "\n").encode()])
+        with self.assertRaisesRegex(worker.Refuse, "guest rejected"):
+            worker.exchange(self.request, channel)
+        self.assertEqual(channel.sent, [b"PING\r"])
+
     def test_expired_request_never_writes_to_channel(self):
         self.request["expires_mono_ns"] = time.monotonic_ns() - 1
         channel = Channel([])

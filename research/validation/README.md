@@ -22,7 +22,9 @@ The [guest inspection stage](guest-maintenance-plan.md) adds a standalone read-o
 
 The [bounded serial stage](maintenance-serial-plan.md) passed eighteen focused checks, including actual Windows pipe/job cleanup and parent-death behavior. Requests remain unarmed.
 
-The [guest control executor stage](guest-control-plan.md) now has exclusive writes, fresh-state/plan matching and retained global intent/partial-state holds. Eighteen checks passed on the unprivileged Linux tool host, including real scratch-filesystem and synthetic-child behavior. Both role requests remain unarmed; no root apply or real service command ran. Identity-gated transfer/invocation and original-authority/independent-stop integration are next; native guest actions still require approval and final qualification.
+The [guest control executor stage](guest-control-plan.md) has exclusive writes, fresh-state/plan matching and retained global intent/partial-state holds. Its source pins are superseded for activation by the transfer integration; the historical snapshots remain intact.
+
+The [transfer controller stage](transfer-plan.md) now generates identity-gated bounded lines, monitors original authority and requires the original stop ledger plus independent poweroff evidence. It fixes JSON-dependent plan ordering and adds explicit serial rejection. Four role/purpose grants remain unarmed. Windows regression passed 234 tests with 13 platform skips; 59 selected Linux checks passed. Live-state/stop adapter qualification and the same-boot inspection/approval handoff are next; no actual guest transfer or VM action ran.
 
 The [native two-tool input check](resolved-tool-plan.md) also passed in the pinned image: real backend initialization, rendered system prompt and risk-enabled function schemas, zero actions/inference, clean executor/container shutdown. It is preparation data; final wire/token and isolation qualifications remain open.
 
@@ -54,6 +56,7 @@ The build prints an external SHA-256 for `manifest.json`. Preserve it outside th
 | `maintenance_guest.py`, `guest_maintenance_probe.py` | Unarmed standalone inspection specs; fixed read-only Linux queries and raw unit/dpkg facts; control-change descriptions with conflict refusal. No control-change executor, complete admission observation or native VM transport. |
 | `maintenance_serial.py`, `maintenance_serial_worker.py` | Gated Windows serial I/O worker in an exact kill-on-close Job Object; bounded framing/output/deadlines; durable intent and fencing on uncertainty. No guest command generation, VM admission or stop implementation. |
 | `maintenance_control.py`, `guest_maintenance_control.py` | Unarmed control packets; pinned fresh inspection and exact plan matching; exclusive guest control operations with permanent intent/partial-state journal and reported postconditions. Separate activation required; no package installation or VM stop. |
+| `maintenance_transfer.py`, `transfer_commands.py`, `guest_transfer_entry.py` | Unarmed role/purpose grants; exact identity/staging/invocation compiler; original lease monitoring; retained uncertainty and original stop-ledger/observer requirements. Native state/stop collectors remain injected and unqualified. |
 
 The synthetic Git directory is inside the generated bundle. Building does not commit, stage, switch, or update refs in this project's repository. Source snapshots handed to an executor contain no Git metadata. Existing project changes are preserved.
 

@@ -1,5 +1,7 @@
 # Bounded serial worker preparation
 
+**Current integration:** [Transfer controller preparation](transfer-plan.md) adds explicit guest rejection frames and pins the updated worker. The earlier snapshots and measurements below remain intact; use the controller's complete source cohort for new transfers.
+
 The [guest inspection stage](guest-maintenance-plan.md) now has a Windows serial
 I/O primitive with native **local synthetic pipe/process** evidence. It does not
 configure a VM, authenticate a root session, generate guest commands or execute

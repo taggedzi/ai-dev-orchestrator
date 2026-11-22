@@ -4,9 +4,11 @@ Updated November 22, 2026. The active goal is to finish the project, including t
 
 ## Where we stopped
 
-Current checkpoint: [guest control executor preparation](../research/validation/guest-control-plan.md) adds exclusive control creation, fresh-state/plan matching and permanent partial-state/journal holds. All eighteen focused checks passed on the unprivileged Linux tool host; Windows regression passed 213 tests with eight platform skips. Both role requests remain unarmed, and no root apply, real service command or selected VM action ran. Next is identity-gated serial transfer/invocation bound to original host authority and independent stop. Guard creation and phase-boundary selection still need their separate developer decisions. Product implementation and final VM/runtime qualification remain open.
+Current checkpoint: [identity-gated transfer controller preparation](../research/validation/transfer-plan.md) connects bounded command generation, original-lease monitoring and original-supervisor stop reporting. Integration fixed JSON-dependent control-plan ordering and rebound the source cohort; earlier review snapshots remain intact. Four role/purpose grants remain unarmed. Windows regression passed 234 tests with 13 platform skips; 59 selected Linux checks passed. No actual guest transfer, root apply, real service command or VM action ran. Next is qualified live-state/stop adapters and the same-boot inspection/approval handoff. Guard creation and phase-boundary selection still need their separate developer decisions. Product implementation and final VM/runtime qualification remain open.
 
 ### Earlier preparation checkpoints
+
+The [guest control executor stage](../research/validation/guest-control-plan.md) prepared exclusive controls and permanent partial-state holds. Its earlier source pins are historical: use the corrected cohort in the transfer review for future activation. No old or new control packet has been applied on a selected VM.
 
 The [bounded serial worker stage](../research/validation/maintenance-serial-plan.md) passed eighteen focused checks, including native Windows blocked-write termination, parent-death cleanup and exact job membership. Its role requests remain unarmed; the primitive does not supply guest command generation, VM admission or independent VM stop.
 
