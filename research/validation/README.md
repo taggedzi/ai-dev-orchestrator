@@ -12,7 +12,9 @@ The separately approved [archive retrieval](os-update-artifact-evidence.json) is
 
 The [combined offline repository](offline-install-plan.md) now retains 114 unique archives and the original Ubuntu signatures/indexes. A private file-only APT refresh and exact simulations passed for both roles: executor 97 upgrades/16 additions, guard 97 upgrades/nine additions. This is verified installation input, with no installation authority or apply script. OS maintainer-script/maintenance review, actual guard creation and final qualification remain open.
 
-The [maintenance review](maintenance-procedure.md) has since captured both new archive scripts and older installed handlers/helpers from a fully verified unmounted baseline view. Its proposed procedure accounts for direct systemd reexec, conditional metadata lookups, APT hooks, masks and prompt handling. Read-only media and a checked configuration/runner preview remain next; no package installation, service activation or VM change ran.
+The [maintenance review](maintenance-procedure.md) has since captured both new archive scripts and older installed handlers/helpers from a fully verified unmounted baseline view. Its proposed procedure accounts for direct systemd reexec, conditional metadata lookups, APT hooks, masks and prompt handling; no package installation, service activation or VM change ran.
+
+The [configuration and data-media stage](maintenance-media-plan.md) now has ten native parser measurements, seven rejected unsafe cases and a 142-file byte-verified ISO. The 599,830,528-byte image remains unattached; the frozen mirror and guest-action authority are unchanged. Next is the bound maintenance runner/host preview, with target/attachment/installation approval and final runtime tests still separate.
 
 The [native two-tool input check](resolved-tool-plan.md) also passed in the pinned image: real backend initialization, rendered system prompt and risk-enabled function schemas, zero actions/inference, clean executor/container shutdown. It is preparation data; final wire/token and isolation qualifications remain open.
 

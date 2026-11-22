@@ -1,0 +1,277 @@
+{
+  "authority": {
+    "installation": null,
+    "media_attachment": null,
+    "runner_apply_path_available": false,
+    "runtime_or_security_qualified": false,
+    "vm_boot": null,
+    "vm_creation": null
+  },
+  "base_commit": "7611a34",
+  "configuration_attempts": [
+    {
+      "bytes": 2130,
+      "error": "ValueError: native configuration parser failed or exceeded its scope",
+      "path": ".local/validation/maintenance-config-check-01/receipt.json",
+      "sha256": "f059de7d14301815408cffdd0be4a778c68caa5a3d25f6f53f02537714a093e4",
+      "source_sha256": "e30e4feadb36a0de29f0765fd0e7bacae690b8da8c98daa57a25349efe47c311",
+      "status": "held"
+    },
+    {
+      "bytes": 2131,
+      "error": "ValueError: native configuration changed an effective critical option",
+      "path": ".local/validation/maintenance-config-check-02/receipt.json",
+      "sha256": "ecbd1c28de62daf04719531a1e89122290bf9b1d2e5d28922548f5c973146b84",
+      "source_sha256": "138224a972c917554e11bf5ab755b692030af178b5138772f250bc45808468dd",
+      "status": "held"
+    },
+    {
+      "bytes": 13079,
+      "error": null,
+      "path": ".local/validation/maintenance-config-check-03/receipt.json",
+      "sha256": "728872d44394b6659814b89dd961458b299c80027fcc1892e77cf705975296eb",
+      "source_sha256": "2c4fb51e96f630341c793c9684746864ac561ac02b936fe1d913ebd05dcc9a57",
+      "status": "native-parser-verified-not-applied"
+    }
+  ],
+  "media": {
+    "additional_review_files": 6,
+    "all_file_names_sizes_hashes_verified_from_iso": true,
+    "builder": {
+      "bytes": 9626,
+      "path": ".local/validation/maintenance-media-01/run.py",
+      "sha256": "ba871cfffb703aebc783265e4d73c4d38094b40f5cfb319b2fb65ffef895a161"
+    },
+    "commands": [
+      {
+        "args": [
+          "C:\\Windows\\System32\\tar.exe",
+          "--version"
+        ],
+        "exit": 0,
+        "label": "tar-version",
+        "pid": 10572,
+        "size_exceeded": false,
+        "timed_out": false
+      },
+      {
+        "args": [
+          "C:\\Windows\\System32\\tar.exe",
+          "--format=iso9660",
+          "--options=iso9660:rockridge,iso9660:!joliet,iso9660:iso-level=3,iso9660:volume-id=MCLI1_MAINT_01",
+          "--uid",
+          "0",
+          "--gid",
+          "0",
+          "--uname",
+          "root",
+          "--gname",
+          "root",
+          "--no-acls",
+          "--no-xattrs",
+          "--no-fflags",
+          "-cf",
+          "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\.local\\validation\\maintenance-media-01\\maintenance.iso",
+          "-C",
+          "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\.local\\validation\\maintenance-media-01\\payload",
+          "."
+        ],
+        "exit": 0,
+        "label": "create",
+        "pid": 13684,
+        "size_exceeded": false,
+        "timed_out": false
+      },
+      {
+        "args": [
+          "C:\\Windows\\System32\\tar.exe",
+          "--format=ustar",
+          "-cf",
+          "-",
+          "@E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\.local\\validation\\maintenance-media-01\\maintenance.iso"
+        ],
+        "exit": 0,
+        "label": "convert-readback",
+        "pid": 32948,
+        "timed_out": false
+      }
+    ],
+    "file_root_ownership_read_and_no_write_bits_checked": true,
+    "finished_utc": "2026-11-22T08:14:47.831744+00:00",
+    "format": "ISO9660 level 3, Rock Ridge, Joliet disabled",
+    "host_mount_performed": false,
+    "iso": {
+      "bytes": 599830528,
+      "path": ".local/validation/maintenance-media-01/maintenance.iso",
+      "sha256": "e09f95fb365b3b87be9f6e7b8f7d1529ee596f09c4ea2fee1cf36ea239dd48d4"
+    },
+    "links_or_special_files": 0,
+    "manifest": {
+      "bytes": 27362,
+      "path": ".local/validation/maintenance-media-01/payload/media-manifest.json",
+      "sha256": "de9916a00044717b9b5d588cf71bd5d88f565fc675a668a6b9351394dec943b6"
+    },
+    "new_media_index_files": 1,
+    "original_mirror_files_unchanged": 135,
+    "payload_bytes": 599085636,
+    "payload_files": 142,
+    "receipt": {
+      "bytes": 33429,
+      "path": ".local/validation/maintenance-media-01/receipt.json",
+      "sha256": "777739d6acbfac1464a1d0e339f78687c8529ea8998e145747748e19aebbe0ff"
+    },
+    "started_utc": "2026-11-22T08:14:29.331448+00:00",
+    "temporary_directory_empty_afterward": true,
+    "tool_probes": [
+      {
+        "bytes": 464,
+        "observation": "Long-name/deep-path ISO writer/read listing passed",
+        "path": ".local/validation/maintenance-iso-tool-probe-01/receipt.json",
+        "sha256": "0e99bec7638fdcf9f7a855caf22180e36c6b61cde6da039881a785cef88d0f59"
+      },
+      {
+        "bytes": 752,
+        "observation": "Unsupported --mode option rejected before media creation",
+        "path": ".local/validation/maintenance-iso-tool-probe-02/receipt.json",
+        "sha256": "9a5b712aa86b32cd07176b8c873fea66825e3af6b970b8cca1eec36669357446"
+      },
+      {
+        "bytes": 1147,
+        "observation": "Reviewed flags, root ownership and read-only regular-file conversion passed",
+        "path": ".local/validation/maintenance-iso-tool-probe-03/receipt.json",
+        "sha256": "4d441822dfb8cf25ce624a14c8d37882b230b7586ae81f6d677ac73ab208d263"
+      }
+    ],
+    "tool_sha256": "a3ac62fd4cdf619a7c53f71ca3fe5fb42f72020975670ff29afe3603f6416a8e",
+    "tool_version": "bsdtar 3.8.9 - libarchive 3.8.9 zlib/1.2.13.1-motley liblzma/5.8.3 bz2lib/1.0.8 libzstd/1.5.7 cng/2.0 libb2/bundled",
+    "verification_implementation_limit": "Writer and readback share installed libarchive; Linux kernel mount interpretation remains unmeasured",
+    "vm_attached": false,
+    "volume_descriptors": [
+      1,
+      255
+    ],
+    "volume_id": "MCLI1_MAINT_01",
+    "zero_system_area_and_no_boot_descriptor": true
+  },
+  "native_parser": {
+    "all_commands_exit_zero": true,
+    "apt_get_invoked": false,
+    "checker_source_sha256": "2c4fb51e96f630341c793c9684746864ac561ac02b936fe1d913ebd05dcc9a57",
+    "command_hooks_executed": false,
+    "commands": 10,
+    "effective_guest_settings": {
+      "APT::Architecture": "amd64",
+      "APT::Get::AllowUnauthenticated": "false",
+      "APT::Get::Always-Include-Phased-Updates": "true",
+      "APT::Install-Recommends": "false",
+      "APT::Install-Suggests": "false",
+      "APT::Periodic::Enable": "0",
+      "Acquire::AllowDowngradeToInsecureRepositories": "false",
+      "Acquire::AllowInsecureRepositories": "false",
+      "Acquire::Check-Date": "true",
+      "Acquire::Check-Valid-Until": "true",
+      "Acquire::GzipIndexes": "false",
+      "Acquire::IndexTargets::deb::CNF::DefaultEnabled": "false",
+      "Acquire::IndexTargets::deb::DEP-11::DefaultEnabled": "false",
+      "Acquire::IndexTargets::deb::Packages::CompressionTypes": "uncompressed",
+      "Acquire::Languages": "none",
+      "Acquire::PDiffs": "false",
+      "Acquire::Retries": "0",
+      "Debug::NoLocking": "false",
+      "Dir": "/",
+      "Dir::Bin::dpkg": "/usr/bin/dpkg",
+      "Dir::Cache": "/var/cache/mcli1-maintenance",
+      "Dir::Cache::archives": "/var/cache/mcli1-maintenance/archives",
+      "Dir::Cache::pkgcache": "",
+      "Dir::Cache::srcpkgcache": "",
+      "Dir::Etc": "/run/mcli1-maintenance/apt",
+      "Dir::Etc::main": "apt.conf",
+      "Dir::Etc::parts": "apt.conf.d",
+      "Dir::Etc::preferences": "preferences",
+      "Dir::Etc::preferencesparts": "preferences.d",
+      "Dir::Etc::sourcelist": "sources.list",
+      "Dir::Etc::sourceparts": "sources.list.d",
+      "Dir::Etc::trusted": "/media/mcli1-maintenance/keys/ubuntu-archive-keyring.gpg",
+      "Dir::Etc::trustedparts": "trusted.gpg.d",
+      "Dir::Log": "/var/log/mcli1-maintenance",
+      "Dir::State::lists": "/var/lib/mcli1-maintenance/apt/lists",
+      "Dir::State::status": "/var/lib/dpkg/status"
+    },
+    "guest_paths_note": "Expected absent guest-named parts directory on the WSL tool host; no guest paths created",
+    "host_status_sha256_after": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+    "host_status_sha256_before": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+    "language_normalization": "Require native Acquire::Languages empty parent plus exactly one none element; extra translations hold",
+    "negative_cases": [
+      {
+        "case": "copied-status",
+        "rejected": "native configuration changed an effective critical option"
+      },
+      {
+        "case": "alternate-root",
+        "rejected": "native configuration changed an effective critical option"
+      },
+      {
+        "case": "command-hook",
+        "rejected": "native configuration contains a command hook"
+      },
+      {
+        "case": "unsigned",
+        "rejected": "native configuration changed an effective critical option"
+      },
+      {
+        "case": "locking-disabled",
+        "rejected": "native configuration changed an effective critical option"
+      },
+      {
+        "case": "wrong-dpkg",
+        "rejected": "native configuration changed an effective critical option"
+      },
+      {
+        "case": "late-parts-hook",
+        "rejected": "native configuration contains a command hook"
+      }
+    ],
+    "staged_layout": "Empty private APT directories in the workspace; only Dir::Etc substituted, with actual status/root/bin paths retained",
+    "timeouts": 0,
+    "version": "apt 2.8.3 (amd64)"
+  },
+  "next_check": "Prepare the bound maintenance runner/host preview and refusal checks without attaching the ISO, creating a VM or activating installation.",
+  "observed_at_utc": "2026-11-22T08:20:25.180944+00:00",
+  "primary_format_source": "https://github.com/libarchive/libarchive/wiki/FormatISO9660",
+  "profile": {
+    "builder_source_sha256": "e30e4feadb36a0de29f0765fd0e7bacae690b8da8c98daa57a25349efe47c311",
+    "bytes": 2581,
+    "guest_paths_created": false,
+    "path": ".local/validation/maintenance-config-01/profile.json",
+    "sha256": "fef1a95fd7f80e5e4bf89aed1b29135508d7ce0035daa4c5df6a76171efbbf92"
+  },
+  "proposal": {
+    "bytes": 30360,
+    "path": "research/validation/maintenance-procedure.json",
+    "sha256": "42b91618b6f35639aee882e9654a7e8df20ef530b6cc5de23663f2400141d232"
+  },
+  "remaining": [
+    "Actual target/disk binding and guard creation approval",
+    "Bound maintenance runner/host preview and refusal checks",
+    "Approved DVD attachment and ro,nosuid,nodev,noexec mount plus complete target-side tree verification",
+    "Actual empty guest configuration directories and final installed apt/dpkg parser/configuration validation",
+    "Time/space/readiness, mask survival, reexec/console evidence, installation authority and new-kernel boot",
+    "Unresolved security/currentness, phase-boundary choice and final M1 isolation/routing/recovery/feasibility gates"
+  ],
+  "schema_version": 1,
+  "scope": "Preparation only; local artifact construction, installed apt-config parser checks and installed libarchive readback; no guest action or installer path",
+  "status": "configuration-parser-and-media-bytes-verified-not-applied",
+  "verification": {
+    "existing_skip": "Windows symlink creation unavailable",
+    "format": "ruff format --check research/validation tests passed",
+    "full_frozen_mirror_reverified": true,
+    "lint": "ruff check research/validation tests passed",
+    "native_and_staged_inventories_rehashed": true,
+    "new_contract_tests": 4,
+    "proposal_authority_unchanged": true,
+    "tests_passed": 155,
+    "tests_skipped": 1,
+    "tests_total": 156,
+    "unit_test_command": "python -B -X utf8 -m unittest discover -s tests -v"
+  }
+}
