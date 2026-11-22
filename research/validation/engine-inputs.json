@@ -1,0 +1,224 @@
+{
+  "additional_download_bytes": 73772330,
+  "archive_bytes": 74229720,
+  "archives": [
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/i/iptables/libip4tc2_1.8.10-3ubuntu2_amd64.deb",
+      "bytes": 23342,
+      "depends": "libc6 (>= 2.4)",
+      "filename": "libip4tc2_1.8.10-3ubuntu2_amd64.deb",
+      "locally_verified_archive": null,
+      "name": "libip4tc2",
+      "pre_depends": "",
+      "recommends": "",
+      "sha256": "eb381f8ff0469534df3f1b146c3eb8baa6e36f8cfcdf2e3e039398322930d0a4",
+      "source_package": "iptables",
+      "version": "1.8.10-3ubuntu2"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/i/iptables/libip6tc2_1.8.10-3ubuntu2_amd64.deb",
+      "bytes": 23732,
+      "depends": "libc6 (>= 2.4)",
+      "filename": "libip6tc2_1.8.10-3ubuntu2_amd64.deb",
+      "locally_verified_archive": null,
+      "name": "libip6tc2",
+      "pre_depends": "",
+      "recommends": "",
+      "sha256": "b98b88eb6aa14a902ea1aebc3b12ddd140572545ae1fc6428cb0868c31671d05",
+      "source_package": "iptables",
+      "version": "1.8.10-3ubuntu2"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/libn/libnfnetlink/libnfnetlink0_1.0.2-2build1_amd64.deb",
+      "bytes": 14810,
+      "depends": "libc6 (>= 2.14)",
+      "filename": "libnfnetlink0_1.0.2-2build1_amd64.deb",
+      "locally_verified_archive": null,
+      "name": "libnfnetlink0",
+      "pre_depends": "",
+      "recommends": "",
+      "sha256": "f557a287af2ca00df5dbf632c6b77d77479139ffb51c83e3de9766eb609b5d63",
+      "source_package": "libnfnetlink",
+      "version": "1.0.2-2build1"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/libn/libnetfilter-conntrack/libnetfilter-conntrack3_1.0.9-6build1_amd64.deb",
+      "bytes": 45218,
+      "depends": "libc6 (>= 2.14), libmnl0 (>= 1.0.3-4~), libnfnetlink0 (>= 1.0.2)",
+      "filename": "libnetfilter-conntrack3_1.0.9-6build1_amd64.deb",
+      "locally_verified_archive": null,
+      "name": "libnetfilter-conntrack3",
+      "pre_depends": "",
+      "recommends": "",
+      "sha256": "6d32a4c4618eb7d6c0d989591d28637a9acdfa86dfe22e42e9ac9cc25d882a97",
+      "source_package": "libnetfilter-conntrack",
+      "version": "1.0.9-6build1"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/libn/libnftnl/libnftnl11_1.2.6-2build1_amd64.deb",
+      "bytes": 65986,
+      "depends": "libc6 (>= 2.34), libmnl0 (>= 1.0.3-4~)",
+      "filename": "libnftnl11_1.2.6-2build1_amd64.deb",
+      "locally_verified_archive": ".local/validation/os-update-artifacts-01/archives/libnftnl11_1.2.6-2build1_amd64.deb",
+      "name": "libnftnl11",
+      "pre_depends": "",
+      "recommends": "",
+      "sha256": "e5bde5c9cbb95082700011f0b7ef2c0a41900b0a9fd7434f6e90448e2a7b4e50",
+      "source_package": "libnftnl",
+      "version": "1.2.6-2build1"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/i/iptables/iptables_1.8.10-3ubuntu2_amd64.deb",
+      "bytes": 381328,
+      "depends": "libip4tc2 (= 1.8.10-3ubuntu2), libip6tc2 (= 1.8.10-3ubuntu2), libxtables12 (= 1.8.10-3ubuntu2), netbase (>= 6.0), libc6 (>= 2.38), libmnl0 (>= 1.0.3-4~), libnetfilter-conntrack3 (>= 1.0.6), libnfnetlink0 (>= 1.0.2), libnftnl11 (>= 1.1.6)",
+      "filename": "iptables_1.8.10-3ubuntu2_amd64.deb",
+      "locally_verified_archive": null,
+      "name": "iptables",
+      "pre_depends": "",
+      "recommends": "nftables",
+      "sha256": "d341e8ffc42ca035f5aa0fd9a798c8d2b2edb019225dc11f4dac16edf9c57840",
+      "source_package": "iptables",
+      "version": "1.8.10-3ubuntu2"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/j/jansson/libjansson4_2.14-2build2_amd64.deb",
+      "bytes": 32830,
+      "depends": "libc6 (>= 2.38)",
+      "filename": "libjansson4_2.14-2build2_amd64.deb",
+      "locally_verified_archive": ".local/validation/os-update-artifacts-01/archives/libjansson4_2.14-2build2_amd64.deb",
+      "name": "libjansson4",
+      "pre_depends": "",
+      "recommends": "",
+      "sha256": "0cf79113f5d193ce9af2be2ff4b2c3b30dd4e55a0b6c47f7d28f6c849ff3aa60",
+      "source_package": "jansson",
+      "version": "2.14-2build2"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/n/nftables/libnftables1_1.0.9-1ubuntu0.1_amd64.deb",
+      "bytes": 358574,
+      "depends": "libc6 (>= 2.38), libgmp10 (>= 2:6.3.0+dfsg), libjansson4 (>= 2.14), libmnl0 (>= 1.0.3-4~), libnftnl11 (>= 1.2.6), libxtables12 (>= 1.6.0+snapshot20161117)",
+      "filename": "libnftables1_1.0.9-1ubuntu0.1_amd64.deb",
+      "locally_verified_archive": ".local/validation/os-update-artifacts-01/archives/libnftables1_1.0.9-1ubuntu0.1_amd64.deb",
+      "name": "libnftables1",
+      "pre_depends": "",
+      "recommends": "",
+      "sha256": "fcaee001747a6adaa0cd9337fef437b3aa7a7a6d5246b62fbd4784d3d6a5009e",
+      "source_package": "nftables",
+      "version": "1.0.9-1ubuntu0.1"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/r/runc-app/runc_1.3.4-0ubuntu1~24.04.1_amd64.deb",
+      "bytes": 9573850,
+      "depends": "libc6 (>= 2.38), libseccomp2 (>= 2.5.0)",
+      "filename": "runc_1.3.4-0ubuntu1~24.04.1_amd64.deb",
+      "locally_verified_archive": null,
+      "name": "runc",
+      "pre_depends": "",
+      "recommends": "",
+      "sha256": "6ddd64ed7ef1693dd95620a2b1148a4187ef4fe0819c3c3049fad9385ecfd5dc",
+      "source_package": "runc-app",
+      "version": "1.3.4-0ubuntu1~24.04.1"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/main/c/containerd-app/containerd_2.2.1-0ubuntu1~24.04.4_amd64.deb",
+      "bytes": 28151546,
+      "depends": "runc, libc6 (>= 2.34)",
+      "filename": "containerd_2.2.1-0ubuntu1~24.04.4_amd64.deb",
+      "locally_verified_archive": null,
+      "name": "containerd",
+      "pre_depends": "",
+      "recommends": "",
+      "sha256": "213089e5957d1ea6554b312f8e69869229017fc962ef4f6950228d7160fef2e9",
+      "source_package": "containerd-app",
+      "version": "2.2.1-0ubuntu1~24.04.4"
+    },
+    {
+      "architecture": "amd64",
+      "archive_path": "pool/universe/d/docker.io-app/docker.io_29.1.3-0ubuntu3~24.04.2_amd64.deb",
+      "bytes": 35558504,
+      "depends": "adduser, containerd (>= 1.2.6-0ubuntu1~), iptables, debconf (>= 0.5) | debconf-2.0, libc6 (>= 2.34), libnftables1 (>= 1.0.2), libsystemd0 (>= 209~)",
+      "filename": "docker.io_29.1.3-0ubuntu3~24.04.2_amd64.deb",
+      "locally_verified_archive": null,
+      "name": "docker.io",
+      "pre_depends": "",
+      "recommends": "ca-certificates, git, pigz, ubuntu-fan, xz-utils, apparmor",
+      "sha256": "bd5c22d42d4ce3021958b7a8d627701597f61a1a9867ba83fe3c841f04991e3a",
+      "source_package": "docker.io-app",
+      "version": "29.1.3-0ubuntu3~24.04.2"
+    }
+  ],
+  "before_installation": [
+    "Review Ubuntu source/changelogs/backports and feature restrictions",
+    "Approve archive retrieval and verify actual package control identities",
+    "Review services, daemon/network/socket policy, storage/LSM/image loading",
+    "Revalidate actual target status/disk and approve offline installation",
+    "Measure installed versions, readiness and target qualification"
+  ],
+  "cached_archives": 3,
+  "counts": {
+    "additions": 11,
+    "held_back": 0,
+    "removals": 0,
+    "upgrades": 0
+  },
+  "download_approval": null,
+  "include_phased_updates": true,
+  "installation_approval": null,
+  "native_resolution_receipt": {
+    "bytes": 42509,
+    "path": ".local/validation/engine-resolution-02/receipt.json",
+    "sha256": "b6727d3878cf7c3144a471352e23db04152411c2ad36072d293a4596c0f32dbd"
+  },
+  "no_install_recommends": true,
+  "planning_baseline": {
+    "classification": "Hypothetical 485-row post-OS planning inventory, not installed guest observation",
+    "package_rows": 485,
+    "projected_status_sha256": "9857d72c8972af5ce9ba4a10afa3f4de87ced7c5aa06f770a972373699fe408b"
+  },
+  "proposed_final_package_rows": 496,
+  "role": "executor container engine candidate",
+  "schema_version": 1,
+  "security_and_runtime_qualified": false,
+  "signed_releases": [
+    {
+      "codename": "noble",
+      "date": "2026-11-21T18:14:10+00:00",
+      "suite": "noble-updates",
+      "valid_until": null
+    },
+    {
+      "codename": "noble",
+      "date": "2024-04-25T15:10:33+00:00",
+      "suite": "noble",
+      "valid_until": null
+    },
+    {
+      "codename": "noble",
+      "date": "2026-11-21T09:52:04+00:00",
+      "suite": "noble-security",
+      "valid_until": null
+    }
+  ],
+  "source_engine_metadata": {
+    "bytes": 14606,
+    "path": "research/validation/engine-metadata-evidence.json",
+    "sha256": "a5cb2b76037fa610bbb5fe835d393c2f3ee2961ecf67b27cfbb85951f0b13db4"
+  },
+  "source_os_update_catalog": {
+    "bytes": 70800,
+    "path": "research/validation/os-update-inputs.json",
+    "sha256": "4e3d6910cd66b8bcd4f70fc13aba59f98a141fed9e8bc96392bcdeb33634e57a"
+  },
+  "status": "resolved-not-downloaded-not-installed",
+  "unique_archives": 11
+}

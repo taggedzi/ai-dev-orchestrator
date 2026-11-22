@@ -326,6 +326,8 @@ def build(destination, gsd_export=None, gsd_snapshot_hash=None):
             "phase-policy-evidence.json",
             "phase-handoff-review-evidence.json",
             "engine-metadata-evidence.json",
+            "engine-inputs.json",
+            "engine-resolution-evidence.json",
             "MinimalAgentServer.Dockerfile",
         ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())

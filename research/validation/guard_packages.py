@@ -69,7 +69,11 @@ def additions(simulation):
     return result
 
 
-def package_record(raw, name, version, *, max_bytes=8 * 1024**2):
+def package_record(raw, name, version, *, max_bytes=8 * 1024**2, components=("main",)):
+    if not components or any(
+        component not in ("main", "universe") for component in components
+    ):
+        raise ValueError("unsupported package component allowance")
     matches = [
         row
         for row in paragraphs(raw)
@@ -85,7 +89,9 @@ def package_record(raw, name, version, *, max_bytes=8 * 1024**2):
     )
     if (
         row.get("Architecture") not in ("amd64", "all")
-        or not re.fullmatch(r"pool/main/[A-Za-z0-9/_.+~%:-]+\.deb", filename)
+        or not re.fullmatch(
+            rf"pool/(?:{'|'.join(components)})/[A-Za-z0-9/_.+~%:-]+\.deb", filename
+        )
         or ".." in filename.split("/")
         or not re.fullmatch(r"[0-9a-f]{64}", digest)
         or not size.isdecimal()

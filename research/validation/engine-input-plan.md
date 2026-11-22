@@ -40,3 +40,33 @@ The corrected collection completed with all three compressed and expanded identi
 | runc in Main Updates | `1.3.4-0ubuntu1~24.04.1` | Retained authenticated Main record; backport/feature review open. |
 
 The newer Docker record depends on `libnftables1`, in addition to containerd, iptables and installed system libraries. Resolve the whole closure against the proposed 485-row executor baseline; do not reuse the guard's older four-package addition result as an executor engine transaction. Source package `docker.io-app` produces binary package `docker.io`; these names are not interchangeable installation requests. See [engine metadata evidence](engine-metadata-evidence.json).
+
+## Concrete offline resolution check
+
+[engine_plan.py](engine_plan.py) defaults to a no-action preview. It verifies both retained receipt chains, then reconstructs a hypothetical post-update dpkg status using exact-version package control metadata from the authenticated OS cohort. The 485-row preview has SHA-256 `9857d72c8972af5ce9ba4a10afa3f4de87ced7c5aa06f770a972373699fe408b`. It retains dependency, architecture, multiarch and other control fields, but makes no assertion about conffile changes, maintainer-script completion or installed files.
+
+Native resolution uses the existing Ubuntu-24.04 WSL tools as UID 1000 and a new private directory, `.local/validation/engine-resolution-01`. It copies Main and Universe lists/keyring, rechecks all three signatures and both component indexes against each signed release, and queries the reconstructed status with `dpkg-query`. Fixed private APT settings include no recommends/suggests and explicit phased updates. Compare WSL's actual package-status hash before/after.
+
+Select Docker's candidate from its own native `apt-cache policy` block. Run only `apt-get --simulate --no-install-recommends --no-remove install name=version`. Reject upgrades/removals/held-back effects, absent Docker/containerd/runc, a changed OS baseline or unsupported action output. Replay every selected addition at its exact version and require identical effects. Collect authenticated archive identities/dependencies, a bounded archive sum and raw command/source receipts. There is no APT update, download, installation, package script, Docker start, guest boot or VM change. The CLI command boundary rejects unsimulated, generic-version and alternative APT operations.
+
+```powershell
+python -B -m research.validation.engine_plan
+```
+
+The separate `--resolve` invocation is only an offline native planner. A successful simulation still leaves source/backport review, archive retrieval, installation approval, service/feature controls and final-target qualification open.
+
+The first resolver attempt completed reconstructed-status validation, all signatures/index checks and identical initial/pinned simulations, then held at catalog validation because the shared archive parser allowed only `pool/main`. Revision 02 explicitly allows Main and Universe for this engine set; the guard/OS parser default remains Main only. Preserve the first attempt's exact source/receipt and use a new `.local/validation/engine-resolution-02` directory for the corrected check.
+
+## Measured resolution result
+
+The corrected offline resolver passed using APT 2.8.3, dpkg-query 1.22.6 and the existing UID-1000 WSL tools. `dpkg-query` reproduced all 485 hypothetical baseline versions. All three release signatures and six private Main/Universe index identities passed. The initial Docker selection and exact-version replay agreed: **11 additions, zero upgrades, removals or held-back packages**. The proposed resulting inventory is 496 rows, conditional on a future successful installation. WSL's actual package-status bytes and all retained source metadata stayed unchanged. See [resolution evidence](engine-resolution-evidence.json).
+
+| Runtime package | Resolved version | Archive bytes |
+| --- | --- | ---: |
+| docker.io | `29.1.3-0ubuntu3~24.04.2` | 35,558,504 |
+| containerd | `2.2.1-0ubuntu1~24.04.4` | 28,151,546 |
+| runc | `1.3.4-0ubuntu1~24.04.1` | 9,573,850 |
+
+The other eight additions are iptables, libip4tc2, libip6tc2, libnfnetlink0, libnetfilter-conntrack3, libnftnl11, libjansson4 and libnftables1. The [exact archive catalog](engine-inputs.json) binds all versions, dependency declarations, repository paths and SHA-256 hashes. Its union is **74,229,720 bytes**. Three cached library archives reverified successfully; eight archives / **73,772,330 bytes** still require retrieval. The catalog carries null download/installation approval and false security/runtime qualification. No engine archive was downloaded or executed by the resolver.
+
+The simulation intentionally excludes recommended packages; it does not install the nftables binary, git, pigz or ubuntu-fan as recommendations. Existing baseline packages remain as proposed. Review daemon and networking side effects, package scripts/backports and storage/LSM/image compatibility before installation approval. Both held and successful resolver attempts remain separate; the component-parser change does not widen older Main-only collectors unless explicitly requested by their caller.

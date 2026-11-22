@@ -93,6 +93,8 @@ The [stopped-image inspection](offline-inspection.md) resolves the installer's i
 
 ## Verification
 
+The [engine resolver](engine-input-plan.md#measured-resolution-result) now binds 11 additions with an unchanged hypothetical 485-row OS baseline and identical exact-version replay. The catalog is not an installed inventory or security approval. Archive retrieval, script/backport review and installation/runtime qualification remain separate.
+
 The [engine metadata collector](engine-input-plan.md) defaults to preview. It retrieves only indexes pinned by the existing signed OS cohort, with compressed/expanded hash checks and retained failed attempts. Docker's archive candidate is now identified; the engine transaction, security review, package retrieval and installation remain open.
 
 The [phase-boundary proposal](../../docs/decisions/0002-fixture-phase-output-boundary.md) awaits developer selection. Its review helper compares a candidate output ceiling with independently captured native bodies; all four match. It returns preparation bytes only and is not wired into the broker. Existing strict rejection and dispatch holds remain active.
