@@ -328,6 +328,7 @@ def build(destination, gsd_export=None, gsd_snapshot_hash=None):
             "engine-metadata-evidence.json",
             "engine-inputs.json",
             "engine-resolution-evidence.json",
+            "engine-artifact-evidence.json",
             "MinimalAgentServer.Dockerfile",
         ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())

@@ -1,4 +1,4 @@
-"""Retrieve only the exact archives in an externally frozen OS update proposal.
+"""Retrieve exact archives from a frozen OS update or explicit engine proposal.
 
 Uses installed WSL APT/dpkg-deb tools, private metadata/cache/configuration and
 public Ubuntu mirrors. There is no installation or VM operation.
@@ -20,6 +20,7 @@ from .guard_packages import SOURCES, WORKSPACE, configuration, paragraphs, sha
 from .os_update_plan import COLLECTION, NAME, VERSION, release_dates, verify_files
 
 CATALOG = WORKSPACE / "research/validation/os-update-inputs.json"
+ENGINE_CATALOG = WORKSPACE / "research/validation/engine-inputs.json"
 
 
 def check_download_command(args):
@@ -31,7 +32,9 @@ def check_download_command(args):
         raise ValueError("only exact-version archive download commands are allowed")
 
 
-def checked_catalog(raw, expected):
+def checked_catalog(raw, expected, *, kind="os-update"):
+    if kind not in ("os-update", "engine"):
+        raise ValueError("unsupported archive proposal kind")
     if not re.fullmatch(r"[0-9a-f]{64}", expected) or sha(raw) != expected:
         raise ValueError("catalog differs from the external review digest")
     value = json.loads(raw)
@@ -45,21 +48,44 @@ def checked_catalog(raw, expected):
         or value["unique_archives"] != len(packages)
     ):
         raise ValueError("unsupported archive proposal")
-    if (
-        set(value["profiles"]) != {"executor", "guard"}
+    if kind == "os-update" and (
+        set(value.get("profiles", {})) != {"executor", "guard"}
         or set().union(*(set(r["package_names"]) for r in value["profiles"].values()))
         != names
     ):
         raise ValueError("proposal guest profiles do not match archive inventory")
+    if kind == "engine" and (
+        value.get("status") != "resolved-not-downloaded-not-installed"
+        or value.get("role") != "executor container engine candidate"
+        or not {"docker.io", "containerd", "runc"} <= names
+        or value.get("counts")
+        != {"upgrades": 0, "additions": len(packages), "removals": 0, "held_back": 0}
+        or value.get("planning_baseline", {}).get("package_rows") != 485
+        or value.get("proposed_final_package_rows") != 485 + len(packages)
+        or value.get("security_and_runtime_qualified") is not False
+    ):
+        raise ValueError(
+            "engine proposal does not preserve its unresolved installation scope"
+        )
     for row in packages:
         if (
             not re.fullmatch(NAME, row["name"])
             or not re.fullmatch(VERSION, row["version"])
             or not re.fullmatch(r"[0-9a-f]{64}", row["sha256"])
             or row.get("architecture") not in ("amd64", "all")
+            or type(row["bytes"]) is not int
             or not 0 < row["bytes"] <= 1024**3
         ):
             raise ValueError("unsupported package identity, digest or size")
+        if kind == "engine" and (
+            not re.fullmatch(
+                r"pool/(?:main|universe)/[A-Za-z0-9/_.+~%:-]+\.deb",
+                row.get("archive_path", ""),
+            )
+            or ".." in row["archive_path"].split("/")
+            or row.get("filename") != row["archive_path"].rsplit("/", 1)[-1]
+        ):
+            raise ValueError("engine archive is outside the reviewed components")
     if (
         sum(r["bytes"] for r in packages) != value["archive_bytes"]
         or value["archive_bytes"] > 2 * 1024**3
@@ -68,34 +94,69 @@ def checked_catalog(raw, expected):
     return value
 
 
+def check_resolution_binding(catalog, metadata, kind):
+    if kind == "os-update":
+        return catalog["source_status_sha256"]
+    keys = ("name", "version", "architecture", "bytes", "sha256", "archive_path")
+    expected = {r["name"]: tuple(r[k] for k in keys) for r in catalog["archives"]}
+    observed = {r["name"]: tuple(r[k] for k in keys) for r in metadata["packages"]}
+    status_hash = catalog["planning_baseline"]["projected_status_sha256"]
+    if (
+        len(observed) != len(metadata["packages"])
+        or expected != observed
+        or metadata.get("counts") != catalog["counts"]
+        or len(metadata.get("baseline_versions", {})) != 485
+        or metadata.get("projected_status_sha256") != status_hash
+        or not re.fullmatch(r"[0-9a-f]{64}", status_hash)
+    ):
+        raise ValueError("engine catalog differs from the frozen native resolution")
+    return status_hash
+
+
+def source_lines(keyring, kind):
+    if kind not in ("os-update", "engine"):
+        raise ValueError("unsupported source component mode")
+    return [
+        s.format(keyring=keyring) + (" universe" if kind == "engine" else "")
+        for s in SOURCES
+    ]
+
+
 def file_digest(path):
     with path.open("rb") as source:
         return hashlib.file_digest(source, "sha256").hexdigest()
 
 
-def fetch(output, expected_catalog, approval):
+def fetch(output, expected_catalog, approval, *, kind="os-update"):
     if sys.platform != "linux" or not approval.strip():
         raise ValueError(
             "retrieval requires existing Linux tools and an explicit approval reference"
         )
-    raw_catalog = CATALOG.read_bytes()
-    catalog = checked_catalog(raw_catalog, expected_catalog)
+    catalog_path = CATALOG if kind == "os-update" else ENGINE_CATALOG
+    raw_catalog = catalog_path.read_bytes()
+    catalog = checked_catalog(raw_catalog, expected_catalog, kind=kind)
+    if kind == "engine" and os.getuid() != 1000:
+        raise ValueError("engine retrieval requires the reviewed unprivileged WSL user")
     local_root = (WORKSPACE / ".local/validation").resolve()
     candidate = Path(output).absolute()
     if any(p.is_symlink() for p in (candidate, *candidate.parents)):
         raise ValueError("linked output paths are forbidden")
     root = candidate.resolve()
     root.relative_to(local_root)
-    metadata_file = (WORKSPACE / catalog["metadata_receipt"]["path"]).resolve()
+    reference = catalog[
+        "metadata_receipt" if kind == "os-update" else "native_resolution_receipt"
+    ]
+    metadata_file = (WORKSPACE / reference["path"]).resolve()
     metadata_file.relative_to(local_root)
     raw_metadata = metadata_file.read_bytes()
-    if sha(raw_metadata) != catalog["metadata_receipt"]["sha256"]:
+    if sha(raw_metadata) != reference["sha256"]:
         raise ValueError("metadata receipt differs from the frozen proposal")
     source = metadata_file.parent
     metadata = json.loads(raw_metadata)
     if metadata["status"] != "prepared-not-approved":
-        raise ValueError("OS update resolution did not pass")
+        raise ValueError("archive proposal resolution did not pass")
     verify_files(source, metadata["files"])
+    expected_status = check_resolution_binding(catalog, metadata, kind)
     for release in (source / "releases").glob("*.txt"):
         release_dates(release.read_text(), datetime.now(timezone.utc))
     root.mkdir(parents=True, exist_ok=False)
@@ -113,10 +174,10 @@ def fetch(output, expected_catalog, approval):
     keyring = root / "etc/ubuntu-archive-keyring.gpg"
     keyring.write_bytes((source / "etc/ubuntu-archive-keyring.gpg").read_bytes())
     (root / "etc/sources.list").write_text(
-        "\n".join(s.format(keyring=keyring) for s in SOURCES) + "\n"
+        "\n".join(source_lines(keyring, kind)) + "\n"
     )
     (root / "target-status").write_bytes((source / "target-status").read_bytes())
-    if sha((root / "target-status").read_bytes()) != catalog["source_status_sha256"]:
+    if sha((root / "target-status").read_bytes()) != expected_status:
         raise ValueError("starting target status differs")
     (root / "apt.config").write_text(configuration(root))
     (root / "catalog.json").write_bytes(raw_catalog)
@@ -131,6 +192,7 @@ def fetch(output, expected_catalog, approval):
     before = file_digest(host_status)
     receipt = {
         "schema_version": 1,
+        "catalog_kind": kind,
         "status": "retrieving",
         "approval": approval,
         "catalog_sha256": expected_catalog,
@@ -156,6 +218,7 @@ def fetch(output, expected_catalog, approval):
     save()
     try:
         reused = []
+        reused_sources = []
         available = {}
         for p in (COLLECTION / "archives").glob("*.deb"):
             if p.is_symlink():
@@ -171,6 +234,9 @@ def fetch(output, expected_catalog, approval):
                 raise ValueError("cache archive size mismatch")
             shutil.copyfile(cached, root / "archives" / cached.name)
             reused.append(row["name"])
+            reused_sources.append(
+                {"name": row["name"], "path": str(cached), "sha256": row["sha256"]}
+            )
         args = [
             "apt-get",
             "download",
@@ -180,6 +246,7 @@ def fetch(output, expected_catalog, approval):
             check_download_command(args)
             receipt["download_args"] = args
             receipt["reused_packages"] = reused
+            receipt["reused_archive_sources"] = reused_sources
             save()
             with subprocess.Popen(
                 args,
@@ -189,6 +256,10 @@ def fetch(output, expected_catalog, approval):
                 stderr=subprocess.PIPE,
                 start_new_session=True,
             ) as operation:
+                receipt["download_pid"] = operation.pid
+                receipt["download_process_group"] = operation.pid
+                receipt["download_state"] = "running"
+                save()
                 timed_out = False
                 try:
                     stdout, stderr = operation.communicate(timeout=900)
@@ -203,6 +274,7 @@ def fetch(output, expected_catalog, approval):
             (root / "download.stdout").write_bytes(stdout)
             (root / "download.stderr").write_bytes(stderr)
             receipt["download_exit"] = download_exit
+            receipt["download_state"] = "terminal"
             receipt["download_timed_out"] = timed_out
             save()
             if download_exit or timed_out:
@@ -260,6 +332,7 @@ def fetch(output, expected_catalog, approval):
                 "archive_bytes": sum(r["bytes"] for r in observations),
                 "retrieved_packages": len(pending),
                 "reused_packages": reused,
+                "reused_archive_sources": reused_sources,
             }
         )
         verify_files(source, metadata["files"])
@@ -269,7 +342,9 @@ def fetch(output, expected_catalog, approval):
     receipt["finished_at_utc"] = datetime.now(timezone.utc).isoformat()
     if (
         before != receipt["host_status_sha256_after"]
-        or CATALOG.read_bytes() != raw_catalog
+        or catalog_path.read_bytes() != raw_catalog
+        or metadata_file.read_bytes() != raw_metadata
+        or file_digest(root / "target-status") != expected_status
         or any(
             sha(Path(__file__).with_name(name).read_bytes()) != digest
             for name, digest in receipt["source_sha256"].items()
@@ -295,16 +370,19 @@ def fetch(output, expected_catalog, approval):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", default=".local/validation/os-update-artifacts-01")
+    parser.add_argument("--output")
+    parser.add_argument("--kind", choices=("os-update", "engine"), default="os-update")
     parser.add_argument("--catalog-sha256")
     parser.add_argument("--retrieve-approval")
     args = parser.parse_args()
+    catalog_path = CATALOG if args.kind == "os-update" else ENGINE_CATALOG
     if not args.retrieve_approval:
         print(
             json.dumps(
                 {
                     "mode": "preview",
-                    "catalog_sha256": sha(CATALOG.read_bytes()),
+                    "catalog_sha256": sha(catalog_path.read_bytes()),
+                    "catalog_kind": args.kind,
                     "scope": "download exact public Ubuntu archives only",
                     "install": False,
                     "vm_changes": False,
@@ -313,7 +391,18 @@ def main():
         )
         return
     result = fetch(
-        WORKSPACE / args.output, args.catalog_sha256 or "", args.retrieve_approval
+        WORKSPACE
+        / (
+            args.output
+            or (
+                ".local/validation/engine-artifacts-01"
+                if args.kind == "engine"
+                else ".local/validation/os-update-artifacts-01"
+            )
+        ),
+        args.catalog_sha256 or "",
+        args.retrieve_approval,
+        kind=args.kind,
     )
     print(
         json.dumps(

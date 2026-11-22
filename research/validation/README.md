@@ -93,6 +93,8 @@ The [stopped-image inspection](offline-inspection.md) resolves the installer's i
 
 ## Verification
 
+All [engine archives and package-text observations](engine-input-plan.md#measured-retrieval-and-text-review-result) are retained separately from installation. The explicit engine downloader mode binds the native resolver and Main/Universe sources; default OS mode remains Main only. Stock service/socket behavior and unsettled source/backport findings carry forward to offline install/hardening review.
+
 The [engine resolver](engine-input-plan.md#measured-resolution-result) now binds 11 additions with an unchanged hypothetical 485-row OS baseline and identical exact-version replay. The catalog is not an installed inventory or security approval. Archive retrieval, script/backport review and installation/runtime qualification remain separate.
 
 The [engine metadata collector](engine-input-plan.md) defaults to preview. It retrieves only indexes pinned by the existing signed OS cohort, with compressed/expanded hash checks and retained failed attempts. Docker's archive candidate is now identified; the engine transaction, security review, package retrieval and installation remain open.
