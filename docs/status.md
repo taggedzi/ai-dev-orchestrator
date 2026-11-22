@@ -4,9 +4,11 @@ Updated November 22, 2026. The active goal is to finish the project, including t
 
 ## Where we stopped
 
-Current checkpoint: [bounded serial worker preparation](../research/validation/maintenance-serial-plan.md) has eighteen passing focused checks, including native Windows blocked-write termination, parent-death cleanup and exact job membership. Both role requests remain unarmed; no selected VM or package changes ran. Next is identity-gated guest commands and create-only control execution, bound to original VM authority and independent stop. Guard creation and phase-boundary selection still need their separate developer decisions. Product implementation and final VM/runtime qualification remain open.
+Current checkpoint: [guest control executor preparation](../research/validation/guest-control-plan.md) adds exclusive control creation, fresh-state/plan matching and permanent partial-state/journal holds. All eighteen focused checks passed on the unprivileged Linux tool host; Windows regression passed 213 tests with eight platform skips. Both role requests remain unarmed, and no root apply, real service command or selected VM action ran. Next is identity-gated serial transfer/invocation bound to original host authority and independent stop. Guard creation and phase-boundary selection still need their separate developer decisions. Product implementation and final VM/runtime qualification remain open.
 
 ### Earlier preparation checkpoints
+
+The [bounded serial worker stage](../research/validation/maintenance-serial-plan.md) passed eighteen focused checks, including native Windows blocked-write termination, parent-death cleanup and exact job membership. Its role requests remain unarmed; the primitive does not supply guest command generation, VM admission or independent VM stop.
 
 The [guest inspection and control-change stage](../research/validation/guest-maintenance-plan.md) prepared a standalone read-only payload, create-only planner and two unarmed role specs. Sixteen focused checks passed on the Linux tool host, including bounded pipe cleanup and APT staging ownership. Native guest observation and actual control changes remain unperformed.
 
