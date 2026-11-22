@@ -4,9 +4,11 @@ Updated November 22, 2026. The active goal is to finish the project, including t
 
 ## Where we stopped
 
-Current checkpoint: [maintenance admission and host preview](../research/validation/maintenance-runner-plan.md) is prepared. Both role packets remain unarmed and refuse dispatch. Thirteen focused synthetic tests cover durable intent, concurrent admission, lost acknowledgements and complete postcondition/stop requirements. No native transport, guest preparation program or VM/package changes were introduced. Next is the guest controls/observation payload and bounded host transport review; guard creation and phase-boundary selection still need their separate developer decisions. Product implementation and final VM/runtime qualification remain open.
+Current checkpoint: [guest inspection and control-change preparation](../research/validation/guest-maintenance-plan.md) adds a standalone read-only inspection payload, create-only change planner and two unarmed role packets. Sixteen focused checks passed on the Linux tool host, including bounded pipe/child cleanup and APT staging ownership. No selected VM or package changes ran. Next is bounded serial transport and control-change execution preparation; guard creation and phase-boundary selection still need their separate developer decisions. Product implementation and final VM/runtime qualification remain open.
 
 ### Earlier preparation checkpoints
+
+The [maintenance admission and host preview](../research/validation/maintenance-runner-plan.md) prepared durable intent, one-use handoff and complete postcondition/stop checks, with thirteen focused synthetic tests. Its packets remain unarmed. The newer guest inspection report is diagnostic and does not yet provide the complete host admission frame or a qualified native transport.
 
 The [maintenance media and configuration stage](../research/validation/maintenance-media-plan.md) produced a 599,830,528-byte ISO with 142 byte-verified files; it remains unattached. Native APT parsing accepted the preview and refused seven unsafe cases. Those frozen inputs are unchanged by the admission checkpoint.
 

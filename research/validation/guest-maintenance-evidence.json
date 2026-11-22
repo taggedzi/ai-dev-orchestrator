@@ -1,0 +1,311 @@
+{
+  "artifact_revision": "Revision 02 binds the actual non-root _apt account and proposes traversable root-owned cache/list parents and _apt-owned mode-0700 staging. Revision 01 remains intact; actual sandbox access and root fallback still require native validation.",
+  "authority": {
+    "control_changes": null,
+    "guard_creation": null,
+    "guard_topology_preparation": "approved",
+    "guest_boot": null,
+    "guest_observation": null,
+    "installation": null,
+    "phase_boundary_selection": null
+  },
+  "base_commit": "55d1504",
+  "earlier_packets": [
+    {
+      "configuration_files": 4,
+      "directory": ".local/validation/guest-maintenance-guard-01",
+      "files": [
+        {
+          "bytes": 20591,
+          "path": ".local/validation/guest-maintenance-guard-01/guest_maintenance_probe.py",
+          "sha256": "bcb089c5f7dc65a5ede2493b146029dadf2e26bc860fae8f2dbe2ce8f375f619"
+        },
+        {
+          "bytes": 1897,
+          "path": ".local/validation/guest-maintenance-guard-01/review.json",
+          "sha256": "1e37c80bd474d721a55143eb0b9d2aaa8e250e0d953b07dc68f56ae243b939b0"
+        },
+        {
+          "bytes": 4594,
+          "path": ".local/validation/guest-maintenance-guard-01/spec.json",
+          "sha256": "45b9e04c5581825c0383bae9aff6e08d1e33eafd2edb750073f8e0470d9be27c"
+        }
+      ],
+      "masks": 30,
+      "private_directories": 14,
+      "refusal": "inspection nonce is unbound",
+      "role": "guard",
+      "spec_digest_kind": "raw-file-bytes"
+    },
+    {
+      "configuration_files": 4,
+      "directory": ".local/validation/guest-maintenance-executor-01",
+      "files": [
+        {
+          "bytes": 20591,
+          "path": ".local/validation/guest-maintenance-executor-01/guest_maintenance_probe.py",
+          "sha256": "bcb089c5f7dc65a5ede2493b146029dadf2e26bc860fae8f2dbe2ce8f375f619"
+        },
+        {
+          "bytes": 1900,
+          "path": ".local/validation/guest-maintenance-executor-01/review.json",
+          "sha256": "ba597bd15c938d4c95140ee648361f769962e601ba59f2f2fbd91309ae86d68f"
+        },
+        {
+          "bytes": 4642,
+          "path": ".local/validation/guest-maintenance-executor-01/spec.json",
+          "sha256": "7047b50fd2c9267e2e7679987788432889ae1f5fbe3c48aed8d271d8c320b11c"
+        }
+      ],
+      "masks": 32,
+      "private_directories": 14,
+      "refusal": "inspection nonce is unbound",
+      "role": "executor",
+      "spec_digest_kind": "raw-file-bytes"
+    }
+  ],
+  "limits": [
+    "Guest inspection is diagnostic, not the complete host admission frame.",
+    "WSL query/helper results do not qualify the selected guest systemd, filesystem, controls or serial channel.",
+    "Guest timestamps cannot establish host freshness or extend VM authority.",
+    "Hashes bind data; approval authentication, trusted observation collection and independent stop enforcement remain required.",
+    "Process comm-name scans do not prove the absence of unknown package/runtime actors.",
+    "Guest root and filesystem are trusted for this collector; hostile-root and path-race resistance are not qualified.",
+    "Read/query deadlines require an independent bounded host worker for stalled kernel I/O.",
+    "Mounted media/member checks, shared-filesystem space accounting, exact effective APT/configuration/transaction checks and protected socket/group restrictions remain open.",
+    "Control plans contain proposed mutations but have no execution backend; no native control changes or install ran."
+  ],
+  "next_check": "Prepare bounded serial transport and create-only control execution with original outside-VM authority and independent stop; retain pending creation/phase decisions.",
+  "packets": [
+    {
+      "configuration_files": 4,
+      "directory": ".local/validation/guest-maintenance-guard-02",
+      "files": [
+        {
+          "bytes": 21641,
+          "path": ".local/validation/guest-maintenance-guard-02/guest_maintenance_probe.py",
+          "sha256": "9d64f2fdc9f2c0f27d6c7f94ca7d54064717d70c937ad682e8ac888270b2c16b"
+        },
+        {
+          "bytes": 1897,
+          "path": ".local/validation/guest-maintenance-guard-02/review.json",
+          "sha256": "642539205b64944410e447806913bee3221198e8a33506c7380bf07d28e9b241"
+        },
+        {
+          "bytes": 4594,
+          "path": ".local/validation/guest-maintenance-guard-02/spec.json",
+          "sha256": "0fee827502e4b943c5c46853fa13438f2e4a089e221bf723128b77e33bd54aff"
+        }
+      ],
+      "masks": 30,
+      "private_directories": 14,
+      "refusal": "inspection nonce is unbound",
+      "role": "guard",
+      "spec_digest_kind": "raw-file-bytes"
+    },
+    {
+      "configuration_files": 4,
+      "directory": ".local/validation/guest-maintenance-executor-02",
+      "files": [
+        {
+          "bytes": 21641,
+          "path": ".local/validation/guest-maintenance-executor-02/guest_maintenance_probe.py",
+          "sha256": "9d64f2fdc9f2c0f27d6c7f94ca7d54064717d70c937ad682e8ac888270b2c16b"
+        },
+        {
+          "bytes": 1900,
+          "path": ".local/validation/guest-maintenance-executor-02/review.json",
+          "sha256": "3bfb8e6062f340b0f84a335a210fb2c3b74333f1ab4d4a779c1f70ff6932de2b"
+        },
+        {
+          "bytes": 4642,
+          "path": ".local/validation/guest-maintenance-executor-02/spec.json",
+          "sha256": "c628e7fd3484ae15d522d046bc2c9254a2d4449c52c6529b4264467b10cee3dd"
+        }
+      ],
+      "masks": 32,
+      "private_directories": 14,
+      "refusal": "inspection nonce is unbound",
+      "role": "executor",
+      "spec_digest_kind": "raw-file-bytes"
+    }
+  ],
+  "primary_sources": [
+    {
+      "classification": "documentation: Noble systemd 255.4, not target measurement",
+      "url": "https://manpages.ubuntu.com/manpages/noble/man1/systemctl.1.html"
+    },
+    {
+      "classification": "upstream manual: explicit output columns, not target measurement",
+      "url": "https://man7.org/linux/man-pages/man8/findmnt.8.html"
+    },
+    {
+      "classification": "upstream APT 3.0.3 partial-directory ownership/mode setup; not pinned-guest measurement",
+      "url": "https://sources.debian.org/src/apt/3.0.3/apt-pkg/acquire.cc"
+    }
+  ],
+  "recorded_utc": "2026-11-22T10:24:38.568639+00:00",
+  "scope": {
+    "control_change_executor_available": false,
+    "control_changes_performed": false,
+    "guest_inspection_performed": false,
+    "host_transport_available": false,
+    "mounted_or_attached_media": false,
+    "package_installation": false,
+    "product_implementation": false,
+    "provider_calls": 0,
+    "repository_uploads": 0,
+    "selected_vm_operations": 0,
+    "source_vdi_preservation_remeasured": false,
+    "tool_installation": false
+  },
+  "sources": [
+    {
+      "bytes": 21641,
+      "path": "research/validation/guest_maintenance_probe.py",
+      "sha256": "9d64f2fdc9f2c0f27d6c7f94ca7d54064717d70c937ad682e8ac888270b2c16b"
+    },
+    {
+      "bytes": 5282,
+      "path": "research/validation/maintenance_guest.py",
+      "sha256": "09290df891bfd4c093b54ce31d80c2ebb0183e865363dfd917cdb0a0102a9a50"
+    },
+    {
+      "bytes": 16537,
+      "path": "tests/test_guest_maintenance.py",
+      "sha256": "9edb9757478351674655720d9796ab59419e50649f6b0a4a126b70680cff39a7"
+    }
+  ],
+  "status": "unarmed-guest-inspection-and-control-planning-not-applied",
+  "verification": {
+    "earlier_windows_regression": {
+      "command": "python -B -X utf8 -m unittest discover -s tests -v",
+      "log": {
+        "bytes": 30933,
+        "path": ".local/validation/guest-maintenance-tests-01.log",
+        "sha256": "8614cbf75197fca70d02d78bf62b8ed9e4456f8c7c6ffae9c72b77dc177b7c1b"
+      },
+      "passed": 182,
+      "seconds": 51.608,
+      "skip_reasons": [
+        "Existing Windows symlink fixture limitation",
+        "New POSIX pipe/process-group case, executed separately on Linux"
+      ],
+      "skipped": 2,
+      "tests_run": 184
+    },
+    "focused_tests": 16,
+    "linux_native_attempts": [
+      {
+        "log": {
+          "bytes": 1791,
+          "path": ".local/validation/guest-query-check-01/unittest.log",
+          "sha256": "4ccfd1151fd2378374541e0496ee499148f2313fbf4adff0da7792e417833677"
+        },
+        "receipt": {
+          "bytes": 757,
+          "path": ".local/validation/guest-query-check-01/receipt.json",
+          "sha256": "7de91a5a5856579cb3cd38ca780a776d7316fdb46d871df3875420552e1a7656"
+        },
+        "result": {
+          "elapsed_seconds": 0.996193,
+          "exit": 0,
+          "kernel": "6.18.58.1-microsoft-standard-WSL2",
+          "kind": "WSL-toolhost-query-helper-only",
+          "log_sha256": "4ccfd1151fd2378374541e0496ee499148f2313fbf4adff0da7792e417833677",
+          "source_sha256": "bcb089c5f7dc65a5ede2493b146029dadf2e26bc860fae8f2dbe2ce8f375f619",
+          "status_after": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "status_before": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "tests_sha256": "7317d6cdadde67bd75f75cf072f7066081f07e87665886fd1c0e9693d8b867b0",
+          "uid": 1000,
+          "versions": {
+            "dpkg": "1.21.1ubuntu2.6",
+            "systemd": "249.11-0ubuntu3.23",
+            "util-linux": "2.37.2-4ubuntu3.6"
+          },
+          "vm_or_installation_qualification": false
+        }
+      },
+      {
+        "log": {
+          "bytes": 1791,
+          "path": ".local/validation/guest-query-check-02/unittest.log",
+          "sha256": "3401cd3a6c61f9f28a6519a005deee23011f41661339514238e3b20366e4bc37"
+        },
+        "receipt": {
+          "bytes": 630,
+          "path": ".local/validation/guest-query-check-02/receipt.json",
+          "sha256": "06f915ddb876acaf72b725c2708ec2acc25101ee66d387de50daf3d4331486ae"
+        },
+        "result": {
+          "elapsed_seconds": 0.986066,
+          "exit": 0,
+          "kernel": "6.18.58.1-microsoft-standard-WSL2",
+          "kind": "WSL-toolhost-query-helper-only",
+          "log_sha256": "3401cd3a6c61f9f28a6519a005deee23011f41661339514238e3b20366e4bc37",
+          "source_sha256": "bcb089c5f7dc65a5ede2493b146029dadf2e26bc860fae8f2dbe2ce8f375f619",
+          "status_after": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "status_before": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "tests_sha256": "07b8945a3ab619e32d545352339140b7d5dd17a3308ee03705de7072c7c744b8",
+          "uid": 1000,
+          "vm_or_installation_qualification": false
+        }
+      },
+      {
+        "log": {
+          "bytes": 1910,
+          "path": ".local/validation/guest-query-check-03/unittest.log",
+          "sha256": "c990b0c2663475dab968a886528784e6408d511dd36d7775aab0d557e3c856a8"
+        },
+        "receipt": {
+          "bytes": 630,
+          "path": ".local/validation/guest-query-check-03/receipt.json",
+          "sha256": "74647672dfcaf0fe0d81e119bfd0fb22c64769ee0e23db5f7430331060a73fc5"
+        },
+        "result": {
+          "elapsed_seconds": 0.978665,
+          "exit": 0,
+          "kernel": "6.18.58.1-microsoft-standard-WSL2",
+          "kind": "WSL-toolhost-query-helper-only",
+          "log_sha256": "c990b0c2663475dab968a886528784e6408d511dd36d7775aab0d557e3c856a8",
+          "source_sha256": "9d64f2fdc9f2c0f27d6c7f94ca7d54064717d70c937ad682e8ac888270b2c16b",
+          "status_after": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "status_before": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "tests_sha256": "9edb9757478351674655720d9796ab59419e50649f6b0a4a126b70680cff39a7",
+          "uid": 1000,
+          "vm_or_installation_qualification": false
+        }
+      }
+    ],
+    "native_four_query_summary": {
+      "bytes": 1951,
+      "path": ".local/validation/guest-query-native-01.json",
+      "sha256": "36b3565136bfbc95225871479ac4dd58232f73daf94d449189db9536471784fd"
+    },
+    "ruff_check": "passed: research/validation tests",
+    "ruff_format_check": "passed: 85 files",
+    "versions": {
+      "dpkg": "1.21.1ubuntu2.6",
+      "kernel": "6.18.58.1-microsoft-standard-WSL2",
+      "systemd": "249.11-0ubuntu3.23",
+      "tool_host": "WSL Ubuntu-22.04 UID 1000",
+      "util-linux": "2.37.2-4ubuntu3.6"
+    },
+    "windows_regression": {
+      "command": "python -B -X utf8 -m unittest discover -s tests -v",
+      "log": {
+        "bytes": 31118,
+        "path": ".local/validation/guest-maintenance-tests-02.log",
+        "sha256": "af36648f2ca4ff771f537db3333cad2164af7fab116c16606c94b630ae72d62f"
+      },
+      "passed": 183,
+      "seconds": 46.948,
+      "skip_reasons": [
+        "Existing Windows symlink fixture limitation",
+        "New POSIX pipe/process-group case, executed separately on Linux"
+      ],
+      "skipped": 2,
+      "tests_run": 185
+    }
+  }
+}

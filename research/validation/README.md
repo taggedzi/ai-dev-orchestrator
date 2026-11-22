@@ -16,7 +16,9 @@ The [maintenance review](maintenance-procedure.md) has since captured both new a
 
 The [configuration and data-media stage](maintenance-media-plan.md) now has ten native parser measurements, seven rejected unsafe cases and a 142-file byte-verified ISO. The 599,830,528-byte image remains unattached; the frozen mirror and guest-action authority are unchanged.
 
-The [maintenance admission preview](maintenance-runner-plan.md) adds durable intent, one-use dispatch and full-result checks with thirteen synthetic tests and two unarmed role packets. Its CLI prepares artifacts only; no native transport is provided. Guest control/observation and bounded transport preparation are next, with creation/attachment/boot/installation approvals and final runtime tests still separate.
+The [maintenance admission preview](maintenance-runner-plan.md) adds durable intent, one-use dispatch and full-result checks with thirteen synthetic tests and two unarmed role packets. Its CLI prepares artifacts only; no native transport is provided.
+
+The [guest inspection stage](guest-maintenance-plan.md) adds a standalone read-only payload and create-only control-change planner. Sixteen checks passed on the Linux tool host, including real pipe timeout/output bounds, child reaping and APT staging ownership; both role specs remain unarmed. Bounded serial/control execution preparation is next. Guest observation and control changes still need their applicable approvals, and complete admission/runtime qualification remains open.
 
 The [native two-tool input check](resolved-tool-plan.md) also passed in the pinned image: real backend initialization, rendered system prompt and risk-enabled function schemas, zero actions/inference, clean executor/container shutdown. It is preparation data; final wire/token and isolation qualifications remain open.
 
@@ -45,6 +47,7 @@ The build prints an external SHA-256 for `manifest.json`. Preserve it outside th
 | `observe.py` | Exact marker parsing, bounded barrier wait, atomic release-file publication and source collection that requires an independent stop-receipt reference. Host placement and the truth of that receipt need separate qualification. |
 | `supervisor.py` | Durable VM lease, original wall and monotonic deadlines across process restart, stop on expiry/fencing/clock rollback, and a prepared target-specific poweroff command. Command return is distinct from independently confirmed stop/reap. |
 | `maintenance_runner.py` | Unarmed role packets; target/media/control/lease admission; separate one-use marker and SQLite intent before an injected handoff; complete reported package and independent-stop checks. No native transport or apply CLI. |
+| `maintenance_guest.py`, `guest_maintenance_probe.py` | Unarmed standalone inspection specs; fixed read-only Linux queries and raw unit/dpkg facts; control-change descriptions with conflict refusal. No control-change executor, complete admission observation or native VM transport. |
 
 The synthetic Git directory is inside the generated bundle. Building does not commit, stage, switch, or update refs in this project's repository. Source snapshots handed to an executor contain no Git metadata. Existing project changes are preserved.
 
