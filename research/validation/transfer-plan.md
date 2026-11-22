@@ -1,5 +1,11 @@
 # Identity-gated transfer controller preparation
 
+The newer [host-adapter checkpoint](host-adapter-plan.md) supplies prepared
+collectors and a bounded Job Object accounting fix in the serial transport.
+Its revision 03 grants supersede this checkpoint's revision 02 transport binding
+for future activation. The measured evidence and snapshots below remain historical
+and unchanged; no old or new grant has been activated.
+
 The [serial primitive](maintenance-serial-plan.md) and
 [guest controls](guest-control-plan.md) now have a controller, bounded command
 compiler and standalone guest entry. Four role/purpose review packets remain
@@ -22,7 +28,8 @@ These snapshots are provenance/review inputs, not complete deployable host
 packages or activatable commands. [Evidence](transfer-evidence.json) records
 exact inventories, source hashes, receipts and remaining gates. Revision 01
 packets remain intact as earlier source snapshots; revision 02 binds the final
-byte-freezing changes and is the current review cohort.
+byte-freezing changes and was this checkpoint's review cohort. Use the newer host
+review's revision 03 grants for the corrected transport source binding.
 
 Integration exposed an ordering bug in the earlier probe: JSON sorting changed
 unit/configuration map iteration and therefore the action-list hash. The planner

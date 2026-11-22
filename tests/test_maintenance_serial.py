@@ -325,6 +325,36 @@ class NativeSerialTests(unittest.TestCase):
             "possible-send",
         )
 
+    def test_delayed_job_accounting_after_exit_waits_within_original_authority(self):
+        value = request(5)
+        ack = value["steps"][0]["ack"]
+
+        def handle(server):
+            server.read()
+            server.write((ack + "\r\n").encode())
+            server.release.wait(5)
+
+        peer = PipeServer(value["pipe"], handle)
+        self.addCleanup(peer.close)
+        original = serial.KillJob.active
+        observed = []
+
+        def delayed(job):
+            actual = original(job)
+            if actual == 0:
+                if not observed:
+                    observed.append(time.monotonic())
+                if time.monotonic() - observed[0] < 0.05:
+                    return 1  # Simulate the measured lag; never hide an active process.
+            return actual
+
+        deadline = value["expires_mono_ns"]
+        with patch.object(serial.KillJob, "active", delayed):
+            result = self.run_request(value)
+        self.assertEqual(result["job_active_processes"], 0)
+        self.assertTrue(observed)
+        self.assertEqual(value["expires_mono_ns"], deadline)
+
     def test_revocation_stops_worker_with_original_deadline_unchanged(self):
         value = request(5)
         cancelled = threading.Event()

@@ -303,6 +303,10 @@ def run_request(raw, external_sha, before_start, cancelled=None):
             and worker.digest(data) == result["data_sha256"],
             "serial result data digest changed",
         )
+        while job.active():
+            worker.live(request)
+            worker.require(not cancelled.is_set(), "serial authority revoked")
+            time.sleep(0.005)
         worker.require(job.active() == 0, "serial job has an unreaped process")
         return {
             **result,
@@ -324,6 +328,9 @@ def run_request(raw, external_sha, before_start, cancelled=None):
                     thread.join(timeout=1)
                 for pipe in (child.stdin, child.stdout, child.stderr):
                     pipe.close()
+                cleanup_deadline = time.monotonic() + 0.5
+                while job.active() and time.monotonic() < cleanup_deadline:
+                    time.sleep(0.005)
                 worker.require(job.active() == 0, "serial job cleanup incomplete")
         finally:
             job.close()

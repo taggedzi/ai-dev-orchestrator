@@ -26,6 +26,8 @@ The [guest control executor stage](guest-control-plan.md) has exclusive writes, 
 
 The [transfer controller stage](transfer-plan.md) now generates identity-gated bounded lines, monitors original authority and requires the original stop ledger plus independent poweroff evidence. It fixes JSON-dependent plan ordering and adds explicit serial rejection. Four role/purpose grants remain unarmed. Windows regression passed 234 tests with 13 platform skips; 59 selected Linux checks passed. Live-state/stop adapter qualification and the same-boot inspection/approval handoff are next; no actual guest transfer or VM action ran.
 
+The [host-adapter checkpoint](host-adapter-plan.md) adds bounded read-only Windows queries, separate original-owner PID/heartbeat binding and a stop observer that issues no VM command. Stopped-state native inventory passed; running/UART/stop qualification is still open. Regression passed 258 tests with 13 skips, including all 23 new host checks and 20 serial checks. Current role packets and revision 03 transfer grants remain unarmed. The same-boot session proposal needs approval; current inspections still stop.
+
 The [native two-tool input check](resolved-tool-plan.md) also passed in the pinned image: real backend initialization, rendered system prompt and risk-enabled function schemas, zero actions/inference, clean executor/container shutdown. It is preparation data; final wire/token and isolation qualifications remain open.
 
 ## Build and check
@@ -57,6 +59,7 @@ The build prints an external SHA-256 for `manifest.json`. Preserve it outside th
 | `maintenance_serial.py`, `maintenance_serial_worker.py` | Gated Windows serial I/O worker in an exact kill-on-close Job Object; bounded framing/output/deadlines; durable intent and fencing on uncertainty. No guest command generation, VM admission or stop implementation. |
 | `maintenance_control.py`, `guest_maintenance_control.py` | Unarmed control packets; pinned fresh inspection and exact plan matching; exclusive guest control operations with permanent intent/partial-state journal and reported postconditions. Separate activation required; no package installation or VM stop. |
 | `maintenance_transfer.py`, `transfer_commands.py`, `guest_transfer_entry.py` | Unarmed role/purpose grants; exact identity/staging/invocation compiler; original lease monitoring; retained uncertainty and original stop-ledger/observer requirements. Native state/stop collectors remain injected and unqualified. |
+| `maintenance_host.py`, `windows_readonly.py` | Prepared fixed read-only query/observation adapters, original-owner registration/PID binding and independent stop observation. No native owner activation CLI; actual running/UART/stop and receipt issuers remain unqualified. |
 
 The synthetic Git directory is inside the generated bundle. Building does not commit, stage, switch, or update refs in this project's repository. Source snapshots handed to an executor contain no Git metadata. Existing project changes are preserved.
 
