@@ -4,9 +4,11 @@ Updated November 22, 2026. The active goal is to finish the project, including t
 
 ## Where we stopped
 
-Current checkpoint: [maintenance media and configuration preparation](../research/validation/maintenance-media-plan.md) passed. The 599,830,528-byte ISO has 142 byte-verified files and remains unattached. Native APT parsing accepted the preview and refused seven unsafe cases. Product implementation and final VM/runtime qualification remain open. Next is the bound maintenance runner/host preview; guard creation and phase-boundary selection still need their separate developer decisions.
+Current checkpoint: [maintenance admission and host preview](../research/validation/maintenance-runner-plan.md) is prepared. Both role packets remain unarmed and refuse dispatch. Thirteen focused synthetic tests cover durable intent, concurrent admission, lost acknowledgements and complete postcondition/stop requirements. No native transport, guest preparation program or VM/package changes were introduced. Next is the guest controls/observation payload and bounded host transport review; guard creation and phase-boundary selection still need their separate developer decisions. Product implementation and final VM/runtime qualification remain open.
 
 ### Earlier preparation checkpoints
+
+The [maintenance media and configuration stage](../research/validation/maintenance-media-plan.md) produced a 599,830,528-byte ISO with 142 byte-verified files; it remains unattached. Native APT parsing accepted the preview and refused seven unsafe cases. Those frozen inputs are unchanged by the admission checkpoint.
 
 The [native tool-resolution input check](../research/validation/resolved-tool-plan.md) passed on the pinned preparation image: terminal/file_editor only, one initial system event, zero tool actions/inference, both executors closed and no direct children after cleanup. Generated function schemas are 8,051 bytes; the static prompt is 15,235 bytes. These are byte lengths, not token-fit evidence. Raw conversion/prompt bytes and all preflights are retained; the container was removed and Desktop stopped. [Evidence](../research/validation/resolved-tool-evidence.json) leaves deployment schema/wire and final-target qualifications explicitly open. Guard creation approval is still pending.
 
