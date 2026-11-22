@@ -1,0 +1,345 @@
+{
+  "approval": "pinned-container-engine-metadata-2026-11-21",
+  "attempts": [
+    {
+      "error": "ValueError: unexpected trailing compressed stream",
+      "files": {
+        "executed-source.py": {
+          "bytes": 10591,
+          "sha256": "d6a28fd6912ae34dba9e37a0598192f17051338d6f8ec91a8e60df5dbd747cd5"
+        },
+        "noble-Packages": {
+          "bytes": 73379142,
+          "sha256": "687ffc969e7700137677b9cfe2f614ee2d638052a91a7c9bf31f3f6a3040a99a"
+        },
+        "noble-Packages.xz": {
+          "bytes": 15037908,
+          "sha256": "ba9057fa1b91438cc8a1d26808d00c85389fe101d0c1496254df97236405599a"
+        },
+        "noble-updates-Packages": {
+          "bytes": 10691677,
+          "sha256": "2349f1cd7b5d285a6fc04b91b4467738c7d8a938d9b4ef54c57b0ed7f0474cbe"
+        },
+        "noble-updates-Packages.xz": {
+          "bytes": 1716228,
+          "sha256": "5cc7e9138397ba6aa68b73e452e7b2cf8c53a1244bb33bedaeb1b6213a3739e4"
+        }
+      },
+      "finished_utc": "2026-11-22T02:47:58.003857+00:00",
+      "path": ".local/validation/engine-metadata-01",
+      "receipt": {
+        "bytes": 4191,
+        "path": ".local/validation/engine-metadata-01/receipt.json",
+        "sha256": "605f9dcf275cf3ac4b7153b9b16810dbec02191e672d02258e70e466c5742630"
+      },
+      "source_sha256": "d6a28fd6912ae34dba9e37a0598192f17051338d6f8ec91a8e60df5dbd747cd5",
+      "started_utc": "2026-11-22T02:47:54.081101+00:00",
+      "status": "hold"
+    },
+    {
+      "error": null,
+      "files": {
+        "executed-source.py": {
+          "bytes": 12612,
+          "sha256": "d69942343c081caf8212214435ed970f5bfb55d5be6a2535cac6868b281c1d5f"
+        },
+        "noble-Packages": {
+          "bytes": 73379142,
+          "sha256": "687ffc969e7700137677b9cfe2f614ee2d638052a91a7c9bf31f3f6a3040a99a"
+        },
+        "noble-Packages.xz": {
+          "bytes": 15037908,
+          "sha256": "ba9057fa1b91438cc8a1d26808d00c85389fe101d0c1496254df97236405599a"
+        },
+        "noble-security-Packages": {
+          "bytes": 7722388,
+          "sha256": "460578edf79d78ba490348e3a69306cb480d11e842f6111e76da4923e88ccb34"
+        },
+        "noble-security-Packages.xz": {
+          "bytes": 1230632,
+          "sha256": "4b732a716199f9581157eeeb1052ca92ebcc004304c85ca137cd3ca4376678ff"
+        },
+        "noble-updates-Packages": {
+          "bytes": 10691677,
+          "sha256": "2349f1cd7b5d285a6fc04b91b4467738c7d8a938d9b4ef54c57b0ed7f0474cbe"
+        },
+        "noble-updates-Packages.xz": {
+          "bytes": 1716228,
+          "sha256": "5cc7e9138397ba6aa68b73e452e7b2cf8c53a1244bb33bedaeb1b6213a3739e4"
+        }
+      },
+      "finished_utc": "2026-11-22T02:50:15.030155+00:00",
+      "path": ".local/validation/engine-metadata-02",
+      "receipt": {
+        "bytes": 6376,
+        "path": ".local/validation/engine-metadata-02/receipt.json",
+        "sha256": "8b16c9a5a5a9fc59e00f59f6ab98737583b8ce47787b96cdcfbdb0e6a60c7cab"
+      },
+      "source_sha256": "d69942343c081caf8212214435ed970f5bfb55d5be6a2535cac6868b281c1d5f",
+      "started_utc": "2026-11-22T02:50:12.446253+00:00",
+      "status": "collected-not-resolved-not-installed"
+    }
+  ],
+  "base_commit": "ff1ffc8",
+  "classification": "Signed-index data verification and repository-record inspection, not an installed engine, selected dependency transaction, security assessment or runtime qualification",
+  "collection_actions": {
+    "apt_operations": 0,
+    "downloaded_code_executed": 0,
+    "package_archives_downloaded": 0,
+    "packages_installed": 0,
+    "provider_model_calls": 0,
+    "repository_data_uploaded": false,
+    "virtualbox_or_docker_operations": 0
+  },
+  "collector": {
+    "bytes": 12612,
+    "path": "research/validation/engine_metadata.py",
+    "sha256": "d69942343c081caf8212214435ed970f5bfb55d5be6a2535cac6868b281c1d5f"
+  },
+  "compressed_bytes": 17984768,
+  "dependency_resolution": null,
+  "engine_selected": null,
+  "existing_main_engine_records": [
+    {
+      "Architecture": "amd64",
+      "Depends": "runc, libc6 (>= 2.34)",
+      "Filename": "pool/main/c/containerd-app/containerd_2.2.1-0ubuntu1~24.04.4_amd64.deb",
+      "Package": "containerd",
+      "Pre-Depends": "",
+      "Recommends": "",
+      "SHA256": "213089e5957d1ea6554b312f8e69869229017fc962ef4f6950228d7160fef2e9",
+      "Section": "admin",
+      "Size": "28151546",
+      "Source": "containerd-app",
+      "Version": "2.2.1-0ubuntu1~24.04.4",
+      "index": "archive.ubuntu.com_ubuntu_dists_noble-updates_main_binary-amd64_Packages"
+    },
+    {
+      "Architecture": "amd64",
+      "Depends": "libc6 (>= 2.38), libseccomp2 (>= 2.5.0)",
+      "Filename": "pool/main/r/runc-app/runc_1.3.4-0ubuntu1~24.04.1_amd64.deb",
+      "Package": "runc",
+      "Pre-Depends": "",
+      "Recommends": "",
+      "SHA256": "6ddd64ed7ef1693dd95620a2b1148a4187ef4fe0819c3c3049fad9385ecfd5dc",
+      "Section": "devel",
+      "Size": "9573850",
+      "Source": "runc-app",
+      "Version": "1.3.4-0ubuntu1~24.04.1",
+      "index": "archive.ubuntu.com_ubuntu_dists_noble-updates_main_binary-amd64_Packages"
+    },
+    {
+      "Architecture": "amd64",
+      "Depends": "runc, libc6 (>= 2.34)",
+      "Filename": "pool/main/c/containerd-app/containerd_1.7.12-0ubuntu4_amd64.deb",
+      "Package": "containerd",
+      "Pre-Depends": "",
+      "Recommends": "",
+      "SHA256": "379c4750e429d470260b15e41bf35cbfac15eddd4e1998f3d41b5db5b584e212",
+      "Section": "admin",
+      "Size": "38580926",
+      "Source": "containerd-app",
+      "Version": "1.7.12-0ubuntu4",
+      "index": "archive.ubuntu.com_ubuntu_dists_noble_main_binary-amd64_Packages"
+    },
+    {
+      "Architecture": "amd64",
+      "Depends": "libc6 (>= 2.38), libseccomp2 (>= 2.5.0)",
+      "Filename": "pool/main/r/runc-app/runc_1.1.12-0ubuntu3_amd64.deb",
+      "Package": "runc",
+      "Pre-Depends": "",
+      "Recommends": "",
+      "SHA256": "e99406d554277a7e812036bff7aa157e098b1e4f3169ea9985bec4e6b23a5b52",
+      "Section": "devel",
+      "Size": "8599124",
+      "Source": "runc-app",
+      "Version": "1.1.12-0ubuntu3",
+      "index": "archive.ubuntu.com_ubuntu_dists_noble_main_binary-amd64_Packages"
+    },
+    {
+      "Architecture": "amd64",
+      "Depends": "runc, libc6 (>= 2.34)",
+      "Filename": "pool/main/c/containerd-app/containerd_2.2.1-0ubuntu1~24.04.3_amd64.deb",
+      "Package": "containerd",
+      "Pre-Depends": "",
+      "Recommends": "",
+      "SHA256": "459a0184cc631c17eb4a625392f749fa753627b4ddba196919e0666a6206d92a",
+      "Section": "admin",
+      "Size": "28145484",
+      "Source": "containerd-app",
+      "Version": "2.2.1-0ubuntu1~24.04.3",
+      "index": "security.ubuntu.com_ubuntu_dists_noble-security_main_binary-amd64_Packages"
+    },
+    {
+      "Architecture": "amd64",
+      "Depends": "libc6 (>= 2.38), libseccomp2 (>= 2.5.0)",
+      "Filename": "pool/main/r/runc-app/runc_1.3.3-0ubuntu1~24.04.3_amd64.deb",
+      "Package": "runc",
+      "Pre-Depends": "",
+      "Recommends": "",
+      "SHA256": "77450eb221b184e567f8a8732c3dd38cc2b4f826f0106718e1ce843b17dacb86",
+      "Section": "devel",
+      "Size": "8815206",
+      "Source": "runc-app",
+      "Version": "1.3.3-0ubuntu1~24.04.3",
+      "index": "security.ubuntu.com_ubuntu_dists_noble-security_main_binary-amd64_Packages"
+    }
+  ],
+  "expanded_bytes": 91793207,
+  "failure_analysis": {
+    "correction": "Handle concatenated streams and four-byte stream padding; enforce aggregate signed size/hash and bounded memory/time/stream count",
+    "first_attempt": "Single-stream decoder rejected a valid empty second XZ stream; held source/receipt preserved",
+    "format_source": "https://tukaani.org/xz/xz-file-format.txt",
+    "observed_noble_trailing_stream_bytes": 32,
+    "observed_trailing_expanded_bytes": 0,
+    "reuse": "Second attempt independently rehashed and copied two compressed indexes; no failed intent replay or overwrite"
+  },
+  "format": "mcli1-engine-metadata-evidence-v1",
+  "host_python": "3.13.17",
+  "installation_approval": null,
+  "newly_retrieved_compressed_bytes_in_successful_attempt": 1230632,
+  "next_check": "Reconstruct a labeled hypothetical 485-row post-OS executor status, resolve coherent exact engine dependencies and pinned replay from this combined authenticated cohort, then review source/backports and installation effects. Preserve both pending architecture/guard decisions.",
+  "os_update_catalog_sha256": "4e3d6910cd66b8bcd4f70fc13aba59f98a141fed9e8bc96392bcdeb33634e57a",
+  "prior_native_signature_receipt_sha256": "408bf86c502100b284273aa5ec1c6a43c4c7b8949e414cc2079d329ebfaca3a9",
+  "security_source_review": {
+    "canonical_cve_page": "Fetch of https://ubuntu.com/security/CVE-2026-119101 timed out; no distro status inferred",
+    "classification": "Primary-source review only, distro patch/backport disposition and actual feature restrictions remain unknown",
+    "runc_checkpoint_restore": "CVE-2026-119101 upstream advisory limits impact to checkpoint and restore; conversation continuation is a different mechanism",
+    "runc_rootfs": "CVE-2026-41579 upstream advisory documents Docker-specific mitigating behavior; do not infer deployed behavior",
+    "sources": [
+      "https://github.com/opencontainers/runc/security/advisories/GHSA-g2c3-j8g3-7gpw",
+      "https://github.com/opencontainers/runc/security/advisories/GHSA-xjvp-4fhw-gc47",
+      "https://discourse.ubuntu.com/t/heads-up-upcoming-container-stack-updates/79268"
+    ]
+  },
+  "signed_indexes": [
+    {
+      "compressed": {
+        "bytes": 1716228,
+        "sha256": "5cc7e9138397ba6aa68b73e452e7b2cf8c53a1244bb33bedaeb1b6213a3739e4"
+      },
+      "expanded": {
+        "bytes": 10691677,
+        "sha256": "2349f1cd7b5d285a6fc04b91b4467738c7d8a938d9b4ef54c57b0ed7f0474cbe"
+      },
+      "signed_release": {
+        "codename": "noble",
+        "date": "2026-11-21T18:14:10+00:00",
+        "suite": "noble-updates",
+        "valid_until": null
+      },
+      "suite": "noble-updates",
+      "url": "https://archive.ubuntu.com/ubuntu/dists/noble-updates/universe/binary-amd64/by-hash/SHA256/5cc7e9138397ba6aa68b73e452e7b2cf8c53a1244bb33bedaeb1b6213a3739e4"
+    },
+    {
+      "compressed": {
+        "bytes": 15037908,
+        "sha256": "ba9057fa1b91438cc8a1d26808d00c85389fe101d0c1496254df97236405599a"
+      },
+      "expanded": {
+        "bytes": 73379142,
+        "sha256": "687ffc969e7700137677b9cfe2f614ee2d638052a91a7c9bf31f3f6a3040a99a"
+      },
+      "signed_release": {
+        "codename": "noble",
+        "date": "2024-04-25T15:10:33+00:00",
+        "suite": "noble",
+        "valid_until": null
+      },
+      "suite": "noble",
+      "url": "https://archive.ubuntu.com/ubuntu/dists/noble/universe/binary-amd64/by-hash/SHA256/ba9057fa1b91438cc8a1d26808d00c85389fe101d0c1496254df97236405599a"
+    },
+    {
+      "compressed": {
+        "bytes": 1230632,
+        "sha256": "4b732a716199f9581157eeeb1052ca92ebcc004304c85ca137cd3ca4376678ff"
+      },
+      "expanded": {
+        "bytes": 7722388,
+        "sha256": "460578edf79d78ba490348e3a69306cb480d11e842f6111e76da4923e88ccb34"
+      },
+      "signed_release": {
+        "codename": "noble",
+        "date": "2026-11-21T09:52:04+00:00",
+        "suite": "noble-security",
+        "valid_until": null
+      },
+      "suite": "noble-security",
+      "url": "https://security.ubuntu.com/ubuntu/dists/noble-security/universe/binary-amd64/by-hash/SHA256/4b732a716199f9581157eeeb1052ca92ebcc004304c85ca137cd3ca4376678ff"
+    }
+  ],
+  "status": "metadata collected; dependency resolution, package retrieval and installation pending",
+  "universe_docker_records": [
+    {
+      "Architecture": "amd64",
+      "Depends": "adduser, containerd (>= 1.2.6-0ubuntu1~), iptables, debconf (>= 0.5) | debconf-2.0, libc6 (>= 2.34), libnftables1 (>= 1.0.2), libsystemd0 (>= 209~)",
+      "Filename": "pool/universe/d/docker.io-app/docker.io_29.1.3-0ubuntu3~24.04.2_amd64.deb",
+      "Package": "docker.io",
+      "Pre-Depends": "",
+      "Recommends": "ca-certificates, git, pigz, ubuntu-fan, xz-utils, apparmor",
+      "SHA256": "bd5c22d42d4ce3021958b7a8d627701597f61a1a9867ba83fe3c841f04991e3a",
+      "Section": "universe/admin",
+      "Size": "35558504",
+      "Source": "docker.io-app",
+      "Version": "29.1.3-0ubuntu3~24.04.2",
+      "suite": "noble-updates"
+    },
+    {
+      "Architecture": "amd64",
+      "Depends": "adduser, containerd (>= 1.2.6-0ubuntu1~), iptables, debconf (>= 0.5) | debconf-2.0, libc6 (>= 2.34), libdevmapper1.02.1 (>= 2:1.02.97), libsystemd0 (>= 209~)",
+      "Filename": "pool/universe/d/docker.io-app/docker.io_24.0.7-0ubuntu4_amd64.deb",
+      "Package": "docker.io",
+      "Pre-Depends": "",
+      "Recommends": "ca-certificates, git, pigz, ubuntu-fan, xz-utils, apparmor",
+      "SHA256": "c5dd7b465d5cb10d1b78c733ebfb7980a234f1852b547424bfe0e57cba0e6db0",
+      "Section": "universe/admin",
+      "Size": "29094392",
+      "Source": "docker.io-app",
+      "Version": "24.0.7-0ubuntu4",
+      "suite": "noble"
+    },
+    {
+      "Architecture": "amd64",
+      "Depends": "adduser, containerd (>= 1.2.6-0ubuntu1~), iptables, debconf (>= 0.5) | debconf-2.0, libc6 (>= 2.34), libnftables1 (>= 1.0.2), libsystemd0 (>= 209~)",
+      "Filename": "pool/universe/d/docker.io-app/docker.io_29.1.3-0ubuntu3~24.04.2_amd64.deb",
+      "Package": "docker.io",
+      "Pre-Depends": "",
+      "Recommends": "ca-certificates, git, pigz, ubuntu-fan, xz-utils, apparmor",
+      "SHA256": "bd5c22d42d4ce3021958b7a8d627701597f61a1a9867ba83fe3c841f04991e3a",
+      "Section": "universe/admin",
+      "Size": "35558504",
+      "Source": "docker.io-app",
+      "Version": "29.1.3-0ubuntu3~24.04.2",
+      "suite": "noble-security"
+    }
+  ],
+  "verification": {
+    "errors": 0,
+    "files": {
+      "result.json": {
+        "bytes": 44,
+        "path": ".local/validation/engine-metadata-check-01/result.json",
+        "sha256": "11a6b944e9ad403101813ed0d327e362733a8220566104574b82feca3ad813f5"
+      },
+      "tests.stderr": {
+        "bytes": 22407,
+        "path": ".local/validation/engine-metadata-check-01/tests.stderr",
+        "sha256": "953c05318a6dd6a0dd997326e07ee0c45f225a0b9fb671be18c55295256a36ae"
+      },
+      "tests.stdout": {
+        "bytes": 0,
+        "path": ".local/validation/engine-metadata-check-01/tests.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "passed": 135,
+    "path": ".local/validation/engine-metadata-check-01",
+    "receipt": {
+      "elapsed_seconds": 31.36,
+      "exit": 0
+    },
+    "skip": "Existing Windows symlink test",
+    "skipped": 1,
+    "total": 136
+  }
+}
