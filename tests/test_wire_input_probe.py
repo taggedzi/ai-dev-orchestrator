@@ -3,6 +3,7 @@ import hashlib
 import json
 import unittest
 
+from research.validation.phase_policy import TOKEN_CAPS
 from research.validation.wire_input_probe import (
     ROLE_LIMITS,
     assess_request,
@@ -27,6 +28,10 @@ def request(phase, output=6000):
 
 
 class WireInputTests(unittest.TestCase):
+    def test_sdk_probe_phase_options_match_the_broker_policy(self):
+        self.assertEqual(ROLE_LIMITS["initial_edit"], TOKEN_CAPS["edit"])
+        self.assertEqual(ROLE_LIMITS["finish_projection"], TOKEN_CAPS["finish"])
+
     def test_observed_output_mismatch_remains_a_valid_but_unapproved_measurement(self):
         initial = assess_request(request("initial_edit"), "initial_edit", 5300)
         finish = assess_request(request("finish_projection"), "finish_projection", 5400)
@@ -82,6 +87,8 @@ class WireInputTests(unittest.TestCase):
                     }
                 )
         validate_observation(value)
+        with self.assertRaises(ValueError):
+            validate_observation({**value, "explicit_phase_options": True})
         for field, bad in (
             ("http_attempts", 2),
             ("sdk_response_returned", True),

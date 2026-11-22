@@ -323,6 +323,7 @@ def build(destination, gsd_export=None, gsd_snapshot_hash=None):
             "resolved-tool-evidence.json",
             "token-fit-evidence.json",
             "wire-input-evidence.json",
+            "phase-policy-evidence.json",
             "MinimalAgentServer.Dockerfile",
         ):
             write(root, "harness/research/validation/" + path.name, path.read_bytes())

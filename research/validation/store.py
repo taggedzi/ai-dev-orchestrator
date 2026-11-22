@@ -219,14 +219,40 @@ class Store:
                 },
             )
 
-    def consume(self, request_hash):
+    def bind_broker_transcript(self, transcript_hash):
+        """A restarted broker must use the same frozen policy and transcript."""
+        with self.transaction():
+            rows = self.db.execute(
+                "SELECT payload FROM audit WHERE kind='broker-transcript-bound'"
+            ).fetchall()
+            expected = canonical({"sha256": transcript_hash})
+            if rows and (len(rows) != 1 or rows[0]["payload"] != expected):
+                raise Hold("broker transcript or phase policy changed across restart")
+            if not rows:
+                if self.db.execute(
+                    "SELECT 1 FROM audit WHERE kind='submission-intent'"
+                ).fetchone():
+                    raise Hold("prior submissions have no frozen broker binding")
+                self._event("broker-transcript-bound", {"sha256": transcript_hash})
+
+    def consume(self, request_hash, admission=None):
         with self.transaction():
             row = self.db.execute(
                 "SELECT * FROM permits WHERE state='reserved'"
             ).fetchone()
             if not row or row["request_hash"] != request_hash:
                 raise Hold("no exact-request permit")
+            if admission is not None and (
+                admission["request_sha256"] != request_hash
+                or any(
+                    row[key] != admission[key]
+                    for key in ("task", "attempt", "role", "bound")
+                )
+            ):
+                raise Hold("permit differs from the trusted phase admission")
             self.active(row["generation"])
+            if admission is not None:
+                self._event("phase-admission", {"permit": row["id"], **admission})
             self.db.execute(
                 "UPDATE permits SET state='possible-send' WHERE id=?", (row["id"],)
             )

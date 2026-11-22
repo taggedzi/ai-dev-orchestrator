@@ -9,7 +9,14 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlsplit
 
 from .bundle import load_json
-from .fixture import canonical
+from .fixture import POLICY, canonical
+from .phase_policy import (
+    INPUT_MICRO_USD_PER_TOKEN,
+    OUTPUT_MICRO_USD_PER_TOKEN,
+    TOKEN_CAPS,
+    admit_request,
+    validate_turn,
+)
 from .store import Hold
 
 MAX_BODY = 1024**2
@@ -98,10 +105,14 @@ class LocalServer(HTTPServer):
 
 
 def broker(store, transcript, address=("127.0.0.1", 0)):
-    """Exact raw-request hashes plus one-use permits. Caller freezes transcripts."""
+    """Frozen counts/roles, exact raw requests and atomically bound one-use permits."""
     if not isinstance(transcript, list) or not transcript or len(transcript) > 32:
         raise ValueError("transcript must have 1..32 frozen entries")
+    # Validate and serve the same detached snapshot of caller-owned data.
+    transcript = load_json(canonical(transcript))
     for row in transcript:
+        if not isinstance(row, dict):
+            raise TypeError("transcript row must be an object")
         if (
             not isinstance(row.get("request_sha256"), str)
             or len(row["request_sha256"]) != 64
@@ -113,8 +124,26 @@ def broker(store, transcript, address=("127.0.0.1", 0)):
             raise ValueError("invalid synthetic settlement")
         if not row.get("generation_id") or not isinstance(row.get("response"), dict):
             raise ValueError("missing response or generation")
+        bound = validate_turn(row.get("admission"))
+        if row["settled"] > bound:
+            raise ValueError("scripted settlement exceeds the phase reservation")
         if len(canonical(row)) > MAX_BODY:
             raise ValueError("transcript row exceeds limit")
+    binding = hashlib.sha256(
+        canonical(
+            {
+                "format": "mcli1-phase-broker-v1",
+                "token_caps": TOKEN_CAPS,
+                "money_limits": POLICY["limits"],
+                "micro_usd_per_token": [
+                    INPUT_MICRO_USD_PER_TOKEN,
+                    OUTPUT_MICRO_USD_PER_TOKEN,
+                ],
+                "transcript": transcript,
+            }
+        )
+    ).hexdigest()
+    store.bind_broker_transcript(binding)
 
     class Broker(Handler):
         def do_POST(self):
@@ -144,7 +173,8 @@ def broker(store, transcript, address=("127.0.0.1", 0)):
                 ):
                     raise Hold("unexpected transcript request or turn order")
                 row = transcript[used]
-                permit = store.consume(request_hash)
+                admission = admit_request(raw, request_hash, row["admission"])
+                permit = store.consume(request_hash, admission)
                 mode = row.get("mode", "json")
                 if mode == "interrupt":
                     store.event(

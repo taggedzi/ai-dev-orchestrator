@@ -7,7 +7,9 @@ import sys
 ROLE_LIMITS = {"initial_edit": (12000, 6000), "finish_projection": (6000, 1000)}
 
 
-def prepare_inputs(bundle, retained_root, expected_manifest_sha256):
+def prepare_inputs(
+    bundle, retained_root, expected_manifest_sha256, *, apply_phase_limits=False
+):
     """Bind preparation-only messages to an existing frozen fixture packet."""
     from pathlib import Path
 
@@ -54,6 +56,7 @@ def prepare_inputs(bundle, retained_root, expected_manifest_sha256):
         "retained_sha256": INPUT_HASHES,
         "cases": cases,
         "fixture_manifest_sha256": expected_manifest_sha256,
+        "apply_phase_limits": apply_phase_limits,
     }
 
 
@@ -111,6 +114,13 @@ def validate_observation(value):
             != assess_request(raw, row["phase"], row["wire_input_tokens"])
         ):
             raise ValueError("invalid native request observation")
+        if value.get("explicit_phase_options") is True and (
+            row["assessment"]["requested_output_tokens"] != ROLE_LIMITS[row["phase"]][1]
+            or not row["assessment"]["output_within_cap"]
+        ):
+            raise ValueError(
+                "explicit phase output limit did not reach native serialization"
+            )
 
 
 def main():
@@ -126,6 +136,9 @@ def main():
     from openhands.tools.terminal.definition import TerminalAction, TerminalTool
 
     inputs = json.loads(sys.stdin.buffer.read())
+    apply_phase_limits = inputs.get("apply_phase_limits", False)
+    if type(apply_phase_limits) is not bool:
+        raise TypeError("phase-option selection must be explicit boolean")
     retained = inputs["retained"]
     # The host also binds the entire payload to its external SHA-256.
     for name, expected in inputs["retained_sha256"].items():
@@ -165,6 +178,7 @@ def main():
         "unexpected_transport_attempts": 0,
         "socket_connect_attempts": 0,
         "executor_instances": 0,
+        "explicit_phase_options": apply_phase_limits,
         "cases": [],
     }
     captures = []
@@ -241,7 +255,14 @@ def main():
                 }
                 try:
                     llm.completion(
-                        messages, tools=tools, add_security_risk_prediction=True
+                        messages,
+                        tools=tools,
+                        add_security_risk_prediction=True,
+                        **(
+                            {"max_completion_tokens": ROLE_LIMITS[phase][1]}
+                            if apply_phase_limits
+                            else {}
+                        ),
                     )
                     row["sdk_response_returned"] = True
                 except Exception as exc:  # noqa: BLE001 -- capture denial type, never fake success

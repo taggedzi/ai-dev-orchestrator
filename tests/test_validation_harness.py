@@ -392,6 +392,7 @@ class HttpTests(unittest.TestCase):
             {
                 "model": "fixture/model-v1",
                 "messages": [{"role": "user", "content": "synthetic"}],
+                "max_completion_tokens": 6000,
             }
         )
         transcript = [
@@ -400,6 +401,14 @@ class HttpTests(unittest.TestCase):
                 "generation_id": "gen-test",
                 "settled": 120000,
                 "mode": mode,
+                "admission": {
+                    "task": "T-01",
+                    "attempt": "A1",
+                    "role": "edit",
+                    "input_tokens": 100,
+                    "response_tokens": 1,
+                    "counter_evidence_sha256": "a" * 64,
+                },
                 "response": {
                     "id": "gen-test",
                     "model": "fixture/model-v1",
