@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import time
 import unittest
 from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler
@@ -140,6 +141,83 @@ class BundleTests(unittest.TestCase):
             digest((self.bundle / "manifest.json").read_bytes())
         )
         with self.assertRaises(Hold):
+            qualified_profile(self.bundle, profile)
+
+    def structurally_bound_profile(self):
+        """Synthetic approval/owner facts; no actual runtime qualification."""
+        from research.validation import maintenance_stop as stop
+
+        profile = deployment_template(
+            digest((self.bundle / "manifest.json").read_bytes())
+        )
+        profile.update(
+            status="approved",
+            approval="test:structural-only",
+            target_vm_uuid=stop.VM_IDS["guard"],
+            vboxmanage=str(stop.VBOX),
+            lease_expires_utc_ns=time.time_ns() + 500 * 10**9,
+        )
+        for key in (
+            "image_sha256",
+            "toolchain_sha256",
+            "network_policy_sha256",
+            "tool_schema_sha256",
+            "gsd_export_sha256",
+            "chat_transcript_sha256",
+        ):
+            profile[key] = "a" * 64
+        profile["gate_evidence"] = {
+            k: "test:synthetic" for k in profile["gate_evidence"]
+        }
+        plan = stop.draft("guard")
+        plan.update(
+            owner_nonce="8" * 32,
+            process={
+                "pid": os.getpid(),
+                "created_filetime": 1,
+                "image": r"C:\fixture\代理\python.exe",
+            },
+            approval={"native_stop": "test:structural-only"},
+            lease={
+                "target": profile["target_vm_uuid"],
+                "armed_ns": time.time_ns(),
+                "expires_ns": profile["lease_expires_utc_ns"],
+                "armed_mono_ns": time.monotonic_ns(),
+                "expires_mono_ns": time.monotonic_ns() + 500 * 10**9,
+            },
+        )
+        owner = {
+            "format": "mcli1-original-owner-v1",
+            "owner_nonce": plan["owner_nonce"],
+            "lease": plan["lease"],
+            "process": plan["process"],
+        }
+        plan["owner_binding_sha256"] = digest(stop.canonical(owner))
+        profile["bounded_stop"] = {"plan": plan, "sha256": digest(stop.canonical(plan))}
+        return profile
+
+    def test_other_approval_metadata_cannot_qualify_a_missing_original_stop_plan(self):
+        profile = self.structurally_bound_profile()
+        profile["bounded_stop"] = None
+        with self.assertRaisesRegex(Hold, "missing bounded original-owner stop plan"):
+            qualified_profile(self.bundle, profile)
+
+    def test_profile_requires_matching_stop_target_expiry_and_current_source(self):
+        from research.validation import maintenance_stop as stop
+
+        profile = self.structurally_bound_profile()
+        self.assertIs(qualified_profile(self.bundle, profile), profile)
+        for key, value in (
+            ("target_vm_uuid", stop.VM_IDS["executor"]),
+            ("lease_expires_utc_ns", profile["lease_expires_utc_ns"] + 1),
+        ):
+            changed = {**profile, key: value}
+            with self.assertRaisesRegex(Hold, "bindings differ"):
+                qualified_profile(self.bundle, changed)
+        plan = profile["bounded_stop"]["plan"]
+        plan["sources"]["driver.py"] = "0" * 64
+        profile["bounded_stop"]["sha256"] = digest(stop.canonical(plan))
+        with self.assertRaisesRegex(Hold, "source cohort"):
             qualified_profile(self.bundle, profile)
 
     def test_external_freeze_digest_is_required_to_detect_manifest_rewrite(self):

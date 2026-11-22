@@ -1,5 +1,11 @@
 # Maintenance host observations and original-owner handoff
 
+The newer [original-stop checkpoint](original-stop-plan.md) prepares bounded
+execution through the same owner and adds a required stop-plan profile binding.
+Its host revision 04 packets supersede the source cohort below for future use.
+This checkpoint's revision 02 packets and measured inventory remain historical;
+actual independent owner launch and native VM shutdown are still unqualified.
+
 [maintenance_host.py](maintenance_host.py) prepares a live-state collector,
 durable original-owner registration and a stop observer for the
 [transfer controller](transfer-plan.md). [windows_readonly.py](windows_readonly.py)

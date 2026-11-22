@@ -213,9 +213,11 @@ def _run(executable, args, wall_deadline, mono_deadline, before_resume=None):
 
     try:
         null = os.open(os.devnull, os.O_RDONLY | os.O_BINARY)
+        fds.append(null)
         out_read, out_write = os.pipe()
+        fds.extend([out_read, out_write])
         err_read, err_write = os.pipe()
-        fds.extend([null, out_read, out_write, err_read, err_write])
+        fds.extend([err_read, err_write])
         handles = [msvcrt.get_osfhandle(fd) for fd in (null, out_write, err_write)]
         for handle in handles:
             os.set_handle_inheritable(handle, True)

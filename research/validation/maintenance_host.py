@@ -249,6 +249,7 @@ class RegisteredOwner:
         self.profile = canonical(supervisor.profile)
         path = self.store.db.execute("PRAGMA database_list").fetchone()["file"]
         require(path, "owner requires a durable store")
+        self.store.db.execute("PRAGMA busy_timeout=50")
         row = self.store.db.execute("SELECT * FROM lease WHERE singleton=1").fetchone()
         require(row is not None and row["state"] == "armed", "owner lease is not armed")
         require(

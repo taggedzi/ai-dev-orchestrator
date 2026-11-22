@@ -1,7 +1,6 @@
 """Prepared executor client. No VM startup or automatic mutation recovery."""
 
 import hashlib
-import subprocess
 import time
 from pathlib import Path
 from uuid import UUID
@@ -34,6 +33,7 @@ def deployment_template(bundle_hash, gsd_export_hash=None):
         "proxy_url": "http://127.0.0.1:8001",
         "lease_expires_utc_ns": None,
         "vboxmanage": None,
+        "bounded_stop": None,
     }
 
 
@@ -75,6 +75,19 @@ def qualified_profile(bundle_root, profile):
         or time.time_ns() >= profile["lease_expires_utc_ns"]
     ):
         raise Hold("missing or expired runtime lease")
+    from .maintenance_stop import canonical as stop_canonical
+    from .maintenance_stop import checked
+
+    binding = profile.get("bounded_stop")
+    if not isinstance(binding, dict) or set(binding) != {"plan", "sha256"}:
+        raise Hold("missing bounded original-owner stop plan")
+    plan = checked(stop_canonical(binding["plan"]), binding["sha256"])
+    if (
+        plan["target_vm_uuid"] != profile["target_vm_uuid"]
+        or plan["lease"]["expires_ns"] != profile["lease_expires_utc_ns"]
+        or plan["hypervisor"]["path"] != profile.get("vboxmanage")
+    ):
+        raise Hold("profile and original stop plan bindings differ")
     return profile
 
 
@@ -130,38 +143,11 @@ class Driver:
 
 
 def stop_vm(store, profile):
-    """Prepared emergency stop for one explicitly named VirtualBox target."""
-    identity = str(UUID(profile["target_vm_uuid"]))
-    executable = Path(profile["vboxmanage"])
-    if (
-        executable.name.lower() not in ("vboxmanage.exe", "vboxmanage")
-        or not executable.is_absolute()
-    ):
-        raise Hold("explicit VBoxManage executable required")
+    """Original supervisor entry; a bound plan is required before native I/O."""
+    from .maintenance_stop import execute
+
     store.fence("VM stop requested")
-    started = time.monotonic_ns()
-    # Only this target; no shell interpolation, enumeration or VM creation.
-    result = subprocess.run(
-        [str(executable), "controlvm", identity, "poweroff"],
-        stdin=subprocess.DEVNULL,
-        capture_output=True,
-        timeout=10,
-        shell=False,
-        check=False,
-    )
-    store.event(
-        "supervisor-stop-command",
-        {
-            "target": identity,
-            "exit": result.returncode,
-            "elapsed_ns": time.monotonic_ns() - started,
-            "stdout_sha256": digest(result.stdout),
-            "stderr_sha256": digest(result.stderr),
-            "classification": "command receipt; independent stop/reap confirmation still required",
-        },
-    )
-    if result.returncode:
-        raise Hold("VM poweroff command failed; runtime stop unproven")
+    return execute(store, profile)
 
 
 def report(store):
