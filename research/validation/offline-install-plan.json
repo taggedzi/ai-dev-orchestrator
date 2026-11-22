@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "status": "preparation-only-no-apply-script",
+  "installation_approval": null,
+  "maintenance_lease_approval": null,
+  "guard_creation_approval": null,
+  "executor_vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704",
+  "executor_baseline_disk_sha256": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09",
+  "guard_proposed_vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a",
+  "guard_actual_disk_uuid": null,
+  "guard_actual_disk_sha256": null,
+  "baseline_status_sha256": "b9f366f301a3ae82652a1bb983c905c53e325d78e44b831ed8da16a4176190b4",
+  "network_during_maintenance": "All eight adapters disabled on each target; no experiment task admitted",
+  "repository": "Exact signed Ubuntu Noble/Main/Universe cohort plus hash-pinned archive subset; file transport only",
+  "transaction_proposal": "One exact-version OS plus engine transaction on executor; OS plus nftables on guard; no recommends, removals or held-back effects",
+  "before_installation": [
+    "Resolve disconnected guard creation approval; preserve its reviewed original source before changing the executor disk",
+    "Revalidate stopped VM/disk identity and original installed inventory; prepare independently restorable baseline copies",
+    "Review currentness and distro security/backports; the retained releases have no Valid-Until",
+    "Freeze role-specific maintenance authority, time/storage limits, stop and recovery plan without widening experiment leases",
+    "Review all OS maintainer-script side effects and conffile/debconf handling; approve a concrete apply procedure"
+  ],
+  "proposed_service_suppression": {
+    "policy_rc_d": "Propose create-only /usr/sbin/policy-rc.d returning 101; hold if an existing policy differs; retain until separately controlled activation",
+    "executor_persistent_admin_masks": ["docker.service", "docker.socket", "containerd.service"],
+    "guard_persistent_admin_masks": ["nftables.service"],
+    "limitations": "Policy-aware helpers can deny starts; this does not universally block enable/unmask, direct systemctl, package helper code or all OS service restarts. Verify masks after configuration and before reboot; helper behavior and actual target effects remain to qualify.",
+    "automatic_updates": "Freeze and suppress role-specific apt/unattended-upgrades/snap refresh paths before installation; exact unit inventory remains to inspect"
+  },
+  "required_hardening_before_activation": [
+    "Rotate inherited credentials, reset clone machine identity, remove installation artifacts and resolve offline network-online waits",
+    "Replace nftables permissive example and flush-on-stop behavior with reviewed default-deny rules and lifecycle",
+    "Freeze Docker/containerd storage, quota, network and LSM configuration; exclude container checkpoint/restore",
+    "Restrict Docker socket/group membership and management API; package success does not prove enforcing AppArmor",
+    "Install trusted guard control/broker/deadman services with credentials outside executor storage",
+    "Bind exact interfaces, MACs, routes, resource limits and external stop authority; import and verify the pinned Agent Server image"
+  ],
+  "after_installation": [
+    "Retain actual package-status bytes, configure/audit result, effective unit/mask/socket/group state and binary identities",
+    "Measure booted kernel and repeated readiness; hypothetical row counts are not installed state",
+    "Obtain final deployment/run review and qualify isolation, routing, fencing and cleanup before task dispatch"
+  ],
+  "runtime_or_security_qualified": false
+}

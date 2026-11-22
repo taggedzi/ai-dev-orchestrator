@@ -10,6 +10,8 @@ The [coherent OS-update proposal](os-update-plan.md) now resolves both roles fro
 
 The separately approved [archive retrieval](os-update-artifact-evidence.json) is complete: 106 files/about 283 MiB, each hash/size/control identity verified, with no installation or VirtualBox operation. Offline guest bootstrap/hardening and final qualification still require their concrete review and approval.
 
+The [combined offline repository](offline-install-plan.md) now retains 114 unique archives and the original Ubuntu signatures/indexes. A private file-only APT refresh and exact simulations passed for both roles: executor 97 upgrades/16 additions, guard 97 upgrades/nine additions. This is verified installation input, with no installation authority or apply script. OS maintainer-script/maintenance review, actual guard creation and final qualification remain open.
+
 The [native two-tool input check](resolved-tool-plan.md) also passed in the pinned image: real backend initialization, rendered system prompt and risk-enabled function schemas, zero actions/inference, clean executor/container shutdown. It is preparation data; final wire/token and isolation qualifications remain open.
 
 ## Build and check
