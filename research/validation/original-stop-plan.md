@@ -1,5 +1,11 @@
 # Bounded original-supervisor poweroff preparation
 
+The newer [independent-owner checkpoint](owner-launch-plan.md) prepares a sealed
+suspended-process handoff and measures survival of controller-job/bootstrap loss
+with Python surrogates. Its host revision 05 adds the launch source closure.
+The stop revision 02 packet and measurements below remain unchanged; actual target
+poweroff and full native boot/startup qualification are still open.
+
 [maintenance_stop.py](maintenance_stop.py) now supplies the existing supervisor's
 stop command through [driver.stop_vm](driver.py). This replaces its unbounded
 output capture; it adds no second VM stop issuer. Default preview and `--prepare`

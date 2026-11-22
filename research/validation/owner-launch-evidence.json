@@ -1,0 +1,1873 @@
+{
+  "authority": {
+    "actual_native_stop": null,
+    "actual_owner_start": null,
+    "broker_phase_policy": null,
+    "controls": null,
+    "guard_creation": null,
+    "guard_topology_preparation": "approved",
+    "installation": null,
+    "local_regression": "outside-sandbox test approval only; no Native VM permission",
+    "native_boot": null,
+    "root_session": null,
+    "same_boot_session_design": null,
+    "transfer": null
+  },
+  "base_commit": "8e192ca4295f0c81f2ff8de75c8ed179bc666a3d",
+  "contract": {
+    "activation_message": "at most 65 bytes: exact sealed-packet SHA-256 and newline via stdin before resume",
+    "controller_job": "Local\\MCLI1Controller-<nonce>",
+    "controller_liveness": "PID creation identity checked each owner poll; failure fences and triggers the original one-shot stop",
+    "default_CLI": "preview or unarmed prepare only; no launch/apply CLI",
+    "kernel_membership": "controller inside its job; bootstrap and owner outside; query handles immediately closed",
+    "lease_renewal": false,
+    "original_lease_seconds_at_most": 600,
+    "owner_job": "Local\\MCLI1Owner-<nonce>",
+    "owner_start_reference_separate": true,
+    "packet_bytes_at_most": 65536,
+    "poll_sleep_seconds": 0.05,
+    "provisional_job": "non-inheritable kill-on-close, active limit 2, suspended process",
+    "publication": "fsynced exclusive staging then hard link; no overwrite or removal of staged evidence",
+    "ready_grants_VM_start": false,
+    "ready_job": "worker holds own non-inheritable handle and clears parent-close kill coupling before registration; active limit 2 remains",
+    "ready_proof": "live owner PID/creation identity, original active Store/lease/owner row, fresh pulse, exact seal and job limits plus live controller",
+    "ready_wait_seconds_at_most": 5,
+    "restart_takeover_or_native_stop_replay": false,
+    "review_and_startup_consume_original_lease": true,
+    "sources": [
+      "maintenance_stop.py",
+      "driver.py",
+      "supervisor.py",
+      "maintenance_host.py",
+      "windows_readonly.py",
+      "maintenance_serial.py",
+      "maintenance_serial_worker.py",
+      "transfer_commands.py",
+      "store.py",
+      "fixture.py",
+      "owner_process.py",
+      "owner_launch.py"
+    ],
+    "stop_issuer": "unchanged original RegisteredOwner/LeaseSupervisor/driver bounded stop path",
+    "suspended_review": "actual PID/creation identity and original Store clocks known before exact canonical stop-plan approval; only its approval field may change"
+  },
+  "historical_evidence_preserved": [
+    {
+      "bytes": 58840,
+      "path": "research/validation/original-stop-evidence.json",
+      "sha256": "6c9d4b760c55cfed871cacc98ae619b1a0a46c77ffaeff00754d0e18383416ce"
+    },
+    {
+      "bytes": 56449,
+      "path": "research/validation/host-adapter-evidence.json",
+      "sha256": "96149d03e2cec819ed18be80792d4699309e69ebe5e7f5773bf4758f200f8092"
+    },
+    {
+      "bytes": 55473,
+      "path": "research/validation/transfer-evidence.json",
+      "sha256": "1b67563d2a5d0b0d9b4e1ef416f6c1979da0132daea91c4e825493269472bb53"
+    }
+  ],
+  "host_packets": [
+    {
+      "contract": {
+        "bytes": 1756,
+        "path": ".local/validation/host-adapter-guard-05/adapter-contract.json",
+        "sha256": "7ff93ddbd79114f3171f1660e31998bd7c257aa82bfd870cfac7a70019e38b74"
+      },
+      "directory": ".local/validation/host-adapter-guard-05",
+      "files": [
+        {
+          "bytes": 1756,
+          "path": ".local/validation/host-adapter-guard-05/adapter-contract.json",
+          "sha256": "7ff93ddbd79114f3171f1660e31998bd7c257aa82bfd870cfac7a70019e38b74"
+        },
+        {
+          "bytes": 6047,
+          "path": ".local/validation/host-adapter-guard-05/driver.py",
+          "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+        },
+        {
+          "bytes": 10319,
+          "path": ".local/validation/host-adapter-guard-05/fixture.py",
+          "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+        },
+        {
+          "bytes": 28102,
+          "path": ".local/validation/host-adapter-guard-05/maintenance_host.py",
+          "sha256": "b6d9d37b97042e5294f4f0d51d0e6f6b8e14fc4c107435a33b870a2266620c3b"
+        },
+        {
+          "bytes": 15471,
+          "path": ".local/validation/host-adapter-guard-05/maintenance_serial.py",
+          "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/host-adapter-guard-05/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 14573,
+          "path": ".local/validation/host-adapter-guard-05/maintenance_stop.py",
+          "sha256": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/host-adapter-guard-05/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 16850,
+          "path": ".local/validation/host-adapter-guard-05/owner_launch.py",
+          "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+        },
+        {
+          "bytes": 11948,
+          "path": ".local/validation/host-adapter-guard-05/owner_process.py",
+          "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+        },
+        {
+          "bytes": 836,
+          "path": ".local/validation/host-adapter-guard-05/review.json",
+          "sha256": "d161f2de4fb9599eb9709f404355cd792926a3b572bf2b3eded95af5c64e2c57"
+        },
+        {
+          "bytes": 15306,
+          "path": ".local/validation/host-adapter-guard-05/store.py",
+          "sha256": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779"
+        },
+        {
+          "bytes": 3366,
+          "path": ".local/validation/host-adapter-guard-05/supervisor.py",
+          "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/host-adapter-guard-05/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        },
+        {
+          "bytes": 12755,
+          "path": ".local/validation/host-adapter-guard-05/windows_readonly.py",
+          "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+        }
+      ],
+      "review": {
+        "VM_mutations": 0,
+        "activation_authorized": false,
+        "actual_owner_registered": false,
+        "deployable_runtime_package": false,
+        "grant_refusals": {
+          "controls": "transfer approval is unbound",
+          "inspect": "transfer approval is unbound"
+        },
+        "guest_commands": 0,
+        "role": "guard",
+        "source_snapshot_paths": [
+          "research/validation/driver.py",
+          "research/validation/fixture.py",
+          "research/validation/maintenance_host.py",
+          "research/validation/maintenance_serial.py",
+          "research/validation/maintenance_serial_worker.py",
+          "research/validation/maintenance_stop.py",
+          "research/validation/maintenance_transfer.py",
+          "research/validation/owner_launch.py",
+          "research/validation/owner_process.py",
+          "research/validation/store.py",
+          "research/validation/supervisor.py",
+          "research/validation/transfer_commands.py",
+          "research/validation/windows_readonly.py"
+        ],
+        "status": "unarmed-host-adapter-review"
+      },
+      "role": "guard"
+    },
+    {
+      "contract": {
+        "bytes": 1805,
+        "path": ".local/validation/host-adapter-executor-05/adapter-contract.json",
+        "sha256": "3d68ed35cea3ded7e1548ed7637be9d5493a319890f1004b1810e66a241cc49c"
+      },
+      "directory": ".local/validation/host-adapter-executor-05",
+      "files": [
+        {
+          "bytes": 1805,
+          "path": ".local/validation/host-adapter-executor-05/adapter-contract.json",
+          "sha256": "3d68ed35cea3ded7e1548ed7637be9d5493a319890f1004b1810e66a241cc49c"
+        },
+        {
+          "bytes": 6047,
+          "path": ".local/validation/host-adapter-executor-05/driver.py",
+          "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+        },
+        {
+          "bytes": 10319,
+          "path": ".local/validation/host-adapter-executor-05/fixture.py",
+          "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+        },
+        {
+          "bytes": 28102,
+          "path": ".local/validation/host-adapter-executor-05/maintenance_host.py",
+          "sha256": "b6d9d37b97042e5294f4f0d51d0e6f6b8e14fc4c107435a33b870a2266620c3b"
+        },
+        {
+          "bytes": 15471,
+          "path": ".local/validation/host-adapter-executor-05/maintenance_serial.py",
+          "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/host-adapter-executor-05/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 14573,
+          "path": ".local/validation/host-adapter-executor-05/maintenance_stop.py",
+          "sha256": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/host-adapter-executor-05/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 16850,
+          "path": ".local/validation/host-adapter-executor-05/owner_launch.py",
+          "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+        },
+        {
+          "bytes": 11948,
+          "path": ".local/validation/host-adapter-executor-05/owner_process.py",
+          "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+        },
+        {
+          "bytes": 839,
+          "path": ".local/validation/host-adapter-executor-05/review.json",
+          "sha256": "906750c6cf9b2382a8948016d8967dbc15d92b5ca52426dc4ca1b9b16cf7973c"
+        },
+        {
+          "bytes": 15306,
+          "path": ".local/validation/host-adapter-executor-05/store.py",
+          "sha256": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779"
+        },
+        {
+          "bytes": 3366,
+          "path": ".local/validation/host-adapter-executor-05/supervisor.py",
+          "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/host-adapter-executor-05/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        },
+        {
+          "bytes": 12755,
+          "path": ".local/validation/host-adapter-executor-05/windows_readonly.py",
+          "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+        }
+      ],
+      "review": {
+        "VM_mutations": 0,
+        "activation_authorized": false,
+        "actual_owner_registered": false,
+        "deployable_runtime_package": false,
+        "grant_refusals": {
+          "controls": "transfer approval is unbound",
+          "inspect": "transfer approval is unbound"
+        },
+        "guest_commands": 0,
+        "role": "executor",
+        "source_snapshot_paths": [
+          "research/validation/driver.py",
+          "research/validation/fixture.py",
+          "research/validation/maintenance_host.py",
+          "research/validation/maintenance_serial.py",
+          "research/validation/maintenance_serial_worker.py",
+          "research/validation/maintenance_stop.py",
+          "research/validation/maintenance_transfer.py",
+          "research/validation/owner_launch.py",
+          "research/validation/owner_process.py",
+          "research/validation/store.py",
+          "research/validation/supervisor.py",
+          "research/validation/transfer_commands.py",
+          "research/validation/windows_readonly.py"
+        ],
+        "status": "unarmed-host-adapter-review"
+      },
+      "role": "executor"
+    }
+  ],
+  "launch_packets": [
+    {
+      "directory": ".local/validation/owner-launch-guard-01",
+      "files": [
+        {
+          "bytes": 6047,
+          "path": ".local/validation/owner-launch-guard-01/driver.py",
+          "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+        },
+        {
+          "bytes": 10319,
+          "path": ".local/validation/owner-launch-guard-01/fixture.py",
+          "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+        },
+        {
+          "bytes": 1437,
+          "path": ".local/validation/owner-launch-guard-01/launch-review.json",
+          "sha256": "0f459bd7b825fa2c2b8acec412fb2c3313156d8298ca4baf0cd79a70d55591cf"
+        },
+        {
+          "bytes": 28102,
+          "path": ".local/validation/owner-launch-guard-01/maintenance_host.py",
+          "sha256": "b6d9d37b97042e5294f4f0d51d0e6f6b8e14fc4c107435a33b870a2266620c3b"
+        },
+        {
+          "bytes": 15471,
+          "path": ".local/validation/owner-launch-guard-01/maintenance_serial.py",
+          "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/owner-launch-guard-01/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 14573,
+          "path": ".local/validation/owner-launch-guard-01/maintenance_stop.py",
+          "sha256": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a"
+        },
+        {
+          "bytes": 16850,
+          "path": ".local/validation/owner-launch-guard-01/owner_launch.py",
+          "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+        },
+        {
+          "bytes": 11948,
+          "path": ".local/validation/owner-launch-guard-01/owner_process.py",
+          "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+        },
+        {
+          "bytes": 571,
+          "path": ".local/validation/owner-launch-guard-01/review.json",
+          "sha256": "abfdf656d547041197ad46f9a523648f0bbd650bc13a269e447bd1dd6f4cde12"
+        },
+        {
+          "bytes": 15306,
+          "path": ".local/validation/owner-launch-guard-01/store.py",
+          "sha256": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779"
+        },
+        {
+          "bytes": 3366,
+          "path": ".local/validation/owner-launch-guard-01/supervisor.py",
+          "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/owner-launch-guard-01/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        },
+        {
+          "bytes": 12755,
+          "path": ".local/validation/owner-launch-guard-01/windows_readonly.py",
+          "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+        }
+      ],
+      "review": {
+        "VM_mutations": 0,
+        "activation_authorized": false,
+        "actual_owner_launched": false,
+        "native_calls": 0,
+        "packet": {
+          "bytes": 1437,
+          "sha256": "0f459bd7b825fa2c2b8acec412fb2c3313156d8298ca4baf0cd79a70d55591cf"
+        },
+        "role": "guard",
+        "status": "unarmed-independent-owner-launch-review",
+        "still_required": [
+          "Outside-bootstrap/controller job and process bindings",
+          "Separate process start and exact native stop approvals",
+          "Actual suspended PID/original clocks and sealed plan",
+          "Native VM bootstrap and final stop qualification"
+        ]
+      },
+      "review_packet": {
+        "bytes": 1437,
+        "path": ".local/validation/owner-launch-guard-01/launch-review.json",
+        "sha256": "0f459bd7b825fa2c2b8acec412fb2c3313156d8298ca4baf0cd79a70d55591cf"
+      },
+      "role": "guard"
+    },
+    {
+      "directory": ".local/validation/owner-launch-executor-01",
+      "files": [
+        {
+          "bytes": 6047,
+          "path": ".local/validation/owner-launch-executor-01/driver.py",
+          "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+        },
+        {
+          "bytes": 10319,
+          "path": ".local/validation/owner-launch-executor-01/fixture.py",
+          "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+        },
+        {
+          "bytes": 1440,
+          "path": ".local/validation/owner-launch-executor-01/launch-review.json",
+          "sha256": "c3451670ea99c2f7b23ab504a03678bed2bcec3cb321f0d66302559cc3cb3e3f"
+        },
+        {
+          "bytes": 28102,
+          "path": ".local/validation/owner-launch-executor-01/maintenance_host.py",
+          "sha256": "b6d9d37b97042e5294f4f0d51d0e6f6b8e14fc4c107435a33b870a2266620c3b"
+        },
+        {
+          "bytes": 15471,
+          "path": ".local/validation/owner-launch-executor-01/maintenance_serial.py",
+          "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/owner-launch-executor-01/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 14573,
+          "path": ".local/validation/owner-launch-executor-01/maintenance_stop.py",
+          "sha256": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a"
+        },
+        {
+          "bytes": 16850,
+          "path": ".local/validation/owner-launch-executor-01/owner_launch.py",
+          "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+        },
+        {
+          "bytes": 11948,
+          "path": ".local/validation/owner-launch-executor-01/owner_process.py",
+          "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+        },
+        {
+          "bytes": 574,
+          "path": ".local/validation/owner-launch-executor-01/review.json",
+          "sha256": "1505f9884890962a1d2d153938a6afeeafd671a6a8283d27845e49c901309c9e"
+        },
+        {
+          "bytes": 15306,
+          "path": ".local/validation/owner-launch-executor-01/store.py",
+          "sha256": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779"
+        },
+        {
+          "bytes": 3366,
+          "path": ".local/validation/owner-launch-executor-01/supervisor.py",
+          "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/owner-launch-executor-01/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        },
+        {
+          "bytes": 12755,
+          "path": ".local/validation/owner-launch-executor-01/windows_readonly.py",
+          "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+        }
+      ],
+      "review": {
+        "VM_mutations": 0,
+        "activation_authorized": false,
+        "actual_owner_launched": false,
+        "native_calls": 0,
+        "packet": {
+          "bytes": 1440,
+          "sha256": "c3451670ea99c2f7b23ab504a03678bed2bcec3cb321f0d66302559cc3cb3e3f"
+        },
+        "role": "executor",
+        "status": "unarmed-independent-owner-launch-review",
+        "still_required": [
+          "Outside-bootstrap/controller job and process bindings",
+          "Separate process start and exact native stop approvals",
+          "Actual suspended PID/original clocks and sealed plan",
+          "Native VM bootstrap and final stop qualification"
+        ]
+      },
+      "review_packet": {
+        "bytes": 1440,
+        "path": ".local/validation/owner-launch-executor-01/launch-review.json",
+        "sha256": "c3451670ea99c2f7b23ab504a03678bed2bcec3cb321f0d66302559cc3cb3e3f"
+      },
+      "role": "executor"
+    }
+  ],
+  "limits": [
+    "Native jobs, PID lifetimes and controller/bootstrap exits were measured; every target/approval fact was synthetic and each new VBox poweroff was replaced at the boundary with an isolated Python child. No selected VM operation or native-target owner activation ran.",
+    "Ready proves a particular original worker/lease handshake; it explicitly grants no VM-start permission. Actual boot admission must combine it with scoped target/start/backup/media/root approvals and independently validated current target state.",
+    "Process survival is measured for the named controller kill job and released/bootstrap process handles. Arbitrary ancestor jobs, Windows logoff/reboot, owner crash, system power loss and host kernel stalls remain unqualified.",
+    "Source reads, SQLite/fsync/native calls can stall under host failures; the loop and command checks are not a hard real-time external hypervisor deadman proof. Owner/host loss can leave target state unknown and requires independent reconciliation.",
+    "PID/image checks and same-user job separation do not authenticate code, approvals or observers against a hostile host. Host ACLs, executable/Python dependencies, session/service placement and authentic approval transport remain unqualified.",
+    "The provisional review starts the immutable lease; a slow review expires it rather than extending deadlines. Missing/altered/noncanonical approvals cannot resume that suspended worker. A fresh attempt needs a new directory/nonce; no takeover or automatic rearm exists.",
+    "The final fixture uses the generated bootstrap and real worker loop; test-only source installs the Python surrogate before entry. This does not qualify the real VBox command latency, cleanup or its complete target stop path.",
+    "Archived case directories contain copied evidence from temporary roots, expired synthetic leases and stale test PIDs/approvals. They are not runnable deployment packets and must not be replayed.",
+    "Original-stop revision 02 and transfer revision 03 were not changed. New owner launch revision 01 and host revision 05 remain unarmed; no source-cohort mixing or inferred native approval is allowed.",
+    "Guard creation, broker phase policy, same-boot review design, genuine backup/receipt issuers, guest hardening/install and M1-11 through M1-14/product lifecycle requirements remain incomplete."
+  ],
+  "next_check": "Bind the owner-ready proof into actual boot/startup admission, including denial before readiness and failure handling. Keep all native target actions and pending architectural choices behind their separate explicit approvals.",
+  "primary_sources": [
+    {
+      "classification": "kernel job membership checks and required query access; source review plus native fixtures",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/jobapi/nf-jobapi-isprocessinjob"
+    },
+    {
+      "classification": "nested jobs, last-handle kill semantics and object lifetime; source review plus named-job measurements",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects"
+    },
+    {
+      "classification": "hard-link API; source review and complete/exclusive publication fixtures, not crash durability proof",
+      "url": "https://docs.python.org/3.13/library/os.html#os.link"
+    }
+  ],
+  "recorded_utc": "2026-11-22T18:36:13.210631+00:00",
+  "scope": {
+    "actual_VM_boot": false,
+    "actual_VM_mutations": 0,
+    "actual_guest_commands": 0,
+    "actual_native_VM_stop": false,
+    "actual_native_target_owner_launch": false,
+    "current_VDI_bytes_hashed": false,
+    "current_VM_inventory_refreshed": false,
+    "every_new_stop_is_Python_surrogate": true,
+    "media_mounts": 0,
+    "native_Windows_processes_and_jobs_measured": true,
+    "package_or_tool_installation": false,
+    "product_implementation": false,
+    "provider_calls": 0,
+    "repository_uploads": 0,
+    "same_boot_session_implemented": false
+  },
+  "sources": [
+    {
+      "bytes": 6047,
+      "path": "research/validation/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 10319,
+      "path": "research/validation/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 28102,
+      "path": "research/validation/maintenance_host.py",
+      "sha256": "b6d9d37b97042e5294f4f0d51d0e6f6b8e14fc4c107435a33b870a2266620c3b"
+    },
+    {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 14573,
+      "path": "research/validation/maintenance_stop.py",
+      "sha256": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a"
+    },
+    {
+      "bytes": 16850,
+      "path": "research/validation/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 11948,
+      "path": "research/validation/owner_process.py",
+      "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+    },
+    {
+      "bytes": 15306,
+      "path": "research/validation/store.py",
+      "sha256": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779"
+    },
+    {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 10632,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+    },
+    {
+      "bytes": 12755,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    },
+    {
+      "bytes": 1949,
+      "path": "tests/fixtures/owner_bootstrap_exit.py",
+      "sha256": "d6ea8a36434047204512ffc327091da670bd7eb231702b69d641255a3d2677fe"
+    },
+    {
+      "bytes": 2162,
+      "path": "tests/fixtures/owner_surrogate_child.py",
+      "sha256": "9bc3d8df35ff9df9d273a6f75ea10972011be14d35c5eeaf0f1c5a0844fbea64"
+    },
+    {
+      "bytes": 15039,
+      "path": "tests/test_owner_launch.py",
+      "sha256": "8be3d4330dec503f3c2d3938aee973519b3941c749416d7a92cca2325b668f1b"
+    }
+  ],
+  "status": "unarmed-independent-owner-launch-preparation-with-native-surrogate-evidence",
+  "unchanged_stop_packets": [
+    {
+      "plan": {
+        "bytes": 1439,
+        "path": ".local/validation/original-stop-guard-02/stop-plan.json",
+        "sha256": "3c1649cbea5b9b35642091e80a419caf66fc31dee75868b870546dafc054b389"
+      },
+      "role": "guard"
+    },
+    {
+      "plan": {
+        "bytes": 1442,
+        "path": ".local/validation/original-stop-executor-02/stop-plan.json",
+        "sha256": "dcd10f776140be345f6c4e099d284d7152d406bc1406d201fda110e1c855b770"
+      },
+      "role": "executor"
+    }
+  ],
+  "unchanged_transfer_packets": [
+    {
+      "grant": {
+        "bytes": 1614,
+        "path": ".local/validation/transfer-guard-inspect-03/grant.json",
+        "sha256": "11f4b1813c2c42defe5f2c5acb7bc34573ddd8544b2d74734ac2cfa48e4c92b2"
+      },
+      "purpose": "inspect",
+      "role": "guard"
+    },
+    {
+      "grant": {
+        "bytes": 1843,
+        "path": ".local/validation/transfer-guard-controls-03/grant.json",
+        "sha256": "e0e5fb445d8d9cea784f0744d76749a27bc6c0ef59ec28de04f0e6d2262cc941"
+      },
+      "purpose": "controls",
+      "role": "guard"
+    },
+    {
+      "grant": {
+        "bytes": 1617,
+        "path": ".local/validation/transfer-executor-inspect-03/grant.json",
+        "sha256": "d0bf59483073d1c4e92174af64c2c4e0aafe13926ce4f70a09fd2b3d3c86f342"
+      },
+      "purpose": "inspect",
+      "role": "executor"
+    },
+    {
+      "grant": {
+        "bytes": 1846,
+        "path": ".local/validation/transfer-executor-controls-03/grant.json",
+        "sha256": "6b5eb74a7821189713770bd4cb7d72ad8e65dbabf593280e7217fc74251acb73"
+      },
+      "purpose": "controls",
+      "role": "executor"
+    }
+  ],
+  "verification": {
+    "Windows_regression": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 290,
+      "skipped": 13,
+      "tests_run": 303
+    },
+    "earlier_fixture_result": "first run had one negative-fixture aliasing/expected-message mismatch; source/tool-result receipt retained, no safety assertion was weakened",
+    "focused": {
+      "native_Windows_process_job_cases": 6,
+      "packet_and_preview_cases": 5,
+      "passed": 11,
+      "test_classes": {
+        "NativeOwnerTests": [
+          "test_owner_survives_controller_job_close_and_bootstrap_handle_release",
+          "test_owner_expiry_is_original_and_does_not_depend_on_controller_failure",
+          "test_unapproved_or_altered_plan_cannot_resume_suspended_owner",
+          "test_lost_surrogate_ack_is_held_without_restart_or_replay",
+          "test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start",
+          "test_outside_bootstrap_death_does_not_kill_ready_owner"
+        ],
+        "PacketTests": [
+          "test_sealed_packet_requires_current_source_and_exact_original_plan",
+          "test_missing_approval_shared_process_or_changed_root_refuses_before_registration",
+          "test_stop_approval_and_packet_bytes_cannot_change_after_seal",
+          "test_ready_publication_is_complete_exclusive_and_retains_staging",
+          "test_packet_size_and_default_CLI_never_launch_an_owner"
+        ]
+      },
+      "tests_run": 11
+    },
+    "measurements": [
+      {
+        "current_cohort": false,
+        "directory": ".local/validation/owner-launch-focus-01",
+        "files": [
+          {
+            "bytes": 1938,
+            "path": ".local/validation/owner-launch-focus-01/owner_bootstrap_exit.py",
+            "sha256": "dd2073158a340bd517260e37fdf6e5eddc280b27cc1f505fcbf3bdbabebbafa4"
+          },
+          {
+            "bytes": 16192,
+            "path": ".local/validation/owner-launch-focus-01/owner_launch.py",
+            "sha256": "59553d314225bea80018e82915962503a173310fcbd586fe17e6ac51bef4ab6b"
+          },
+          {
+            "bytes": 11948,
+            "path": ".local/validation/owner-launch-focus-01/owner_process.py",
+            "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+          },
+          {
+            "bytes": 2018,
+            "path": ".local/validation/owner-launch-focus-01/owner_surrogate_child.py",
+            "sha256": "ae359b40cee528b020ad276c32b9ddf5d45c0d1d5200ee31a57295c16a3a3914"
+          },
+          {
+            "bytes": 1063,
+            "path": ".local/validation/owner-launch-focus-01/receipt.json",
+            "sha256": "0ef9d6cee39f7a8dec40963fb51e1556b9cd811d6777ff1f17d068c438081c6e"
+          },
+          {
+            "bytes": 14446,
+            "path": ".local/validation/owner-launch-focus-01/test_owner_launch.py",
+            "sha256": "cdaff43c13cb0cdaa3e5053b47c7fbdee8f82d567b8b4189f2c9e6061d9b26cf"
+          }
+        ],
+        "result": {
+          "actual_VM_mutations": 0,
+          "actual_native_VM_stop": false,
+          "classification": "initial fixture run; every target/approval synthetic and every stop a Python surrogate",
+          "elapsed_test_seconds": 4.315,
+          "failure": "negative fixture shared the same lease object with its nested stop plan; altering it triggered stop-plan digest refusal before the expected cross-binding check",
+          "failures": 1,
+          "native_process_cases_passed": 6,
+          "passed": 10,
+          "sources": {
+            "research/validation/owner_launch.py": "59553d314225bea80018e82915962503a173310fcbd586fe17e6ac51bef4ab6b",
+            "research/validation/owner_process.py": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c",
+            "tests/fixtures/owner_bootstrap_exit.py": "dd2073158a340bd517260e37fdf6e5eddc280b27cc1f505fcbf3bdbabebbafa4",
+            "tests/fixtures/owner_surrogate_child.py": "ae359b40cee528b020ad276c32b9ddf5d45c0d1d5200ee31a57295c16a3a3914",
+            "tests/test_owner_launch.py": "cdaff43c13cb0cdaa3e5053b47c7fbdee8f82d567b8b4189f2c9e6061d9b26cf"
+          },
+          "tests_run": 11
+        }
+      },
+      {
+        "current_cohort": false,
+        "directory": ".local/validation/owner-launch-focus-02",
+        "files": [
+          {
+            "bytes": 1938,
+            "path": ".local/validation/owner-launch-focus-02/owner_bootstrap_exit.py",
+            "sha256": "dd2073158a340bd517260e37fdf6e5eddc280b27cc1f505fcbf3bdbabebbafa4"
+          },
+          {
+            "bytes": 16192,
+            "path": ".local/validation/owner-launch-focus-02/owner_launch.py",
+            "sha256": "59553d314225bea80018e82915962503a173310fcbd586fe17e6ac51bef4ab6b"
+          },
+          {
+            "bytes": 11948,
+            "path": ".local/validation/owner-launch-focus-02/owner_process.py",
+            "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+          },
+          {
+            "bytes": 1957,
+            "path": ".local/validation/owner-launch-focus-02/owner_surrogate_child.py",
+            "sha256": "023fa8601beedba933dd30b23eb233cb2b7f6ee787f14bb5460e94ae5d055bcb"
+          },
+          {
+            "bytes": 1006,
+            "path": ".local/validation/owner-launch-focus-02/receipt.json",
+            "sha256": "ef99d6066b5050dea93e076c81bd590b22abdf5c12b95bee516757e8cbaec8fe"
+          },
+          {
+            "bytes": 14744,
+            "path": ".local/validation/owner-launch-focus-02/test_owner_launch.py",
+            "sha256": "e8ac4d55b0e119de4fb9d3b2217bba4c0e951d37ffcfb0c2827b69dd3df43163"
+          },
+          {
+            "bytes": 2008,
+            "path": ".local/validation/owner-launch-focus-02/unittest.log",
+            "sha256": "556790692a9f298c5f2347739a687d2f0ff2ef7b52ec5f021ff58e4bd8ce6f02"
+          }
+        ],
+        "result": {
+          "actual_VM_mutations": 0,
+          "actual_native_VM_stop": false,
+          "classification": "native Windows independent-owner fixtures, all VM states/approvals synthetic; all poweroffs replaced with Python children",
+          "elapsed_seconds": 4.474833199987188,
+          "errors": 0,
+          "failures": 0,
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "skipped": 0,
+          "sources": {
+            "research/validation/owner_launch.py": "59553d314225bea80018e82915962503a173310fcbd586fe17e6ac51bef4ab6b",
+            "research/validation/owner_process.py": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c",
+            "tests/fixtures/owner_bootstrap_exit.py": "dd2073158a340bd517260e37fdf6e5eddc280b27cc1f505fcbf3bdbabebbafa4",
+            "tests/fixtures/owner_surrogate_child.py": "023fa8601beedba933dd30b23eb233cb2b7f6ee787f14bb5460e94ae5d055bcb",
+            "tests/test_owner_launch.py": "e8ac4d55b0e119de4fb9d3b2217bba4c0e951d37ffcfb0c2827b69dd3df43163"
+          },
+          "tests_run": 11
+        }
+      },
+      {
+        "current_cohort": false,
+        "directory": ".local/validation/owner-launch-focus-03",
+        "files": [
+          {
+            "bytes": 1949,
+            "path": ".local/validation/owner-launch-focus-03/owner_bootstrap_exit.py",
+            "sha256": "d6ea8a36434047204512ffc327091da670bd7eb231702b69d641255a3d2677fe"
+          },
+          {
+            "bytes": 16512,
+            "path": ".local/validation/owner-launch-focus-03/owner_launch.py",
+            "sha256": "e757eefb88c4e81705cafc214036c7d4029bc46f32cb71b919ad96f090a40d2f"
+          },
+          {
+            "bytes": 11948,
+            "path": ".local/validation/owner-launch-focus-03/owner_process.py",
+            "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+          },
+          {
+            "bytes": 2162,
+            "path": ".local/validation/owner-launch-focus-03/owner_surrogate_child.py",
+            "sha256": "9bc3d8df35ff9df9d273a6f75ea10972011be14d35c5eeaf0f1c5a0844fbea64"
+          },
+          {
+            "bytes": 1029,
+            "path": ".local/validation/owner-launch-focus-03/receipt.json",
+            "sha256": "b729c6d8cbaff96b8d4d6cd982686da9978673f8e45ecf3eb2eac427e3b2d606"
+          },
+          {
+            "bytes": 14741,
+            "path": ".local/validation/owner-launch-focus-03/test_owner_launch.py",
+            "sha256": "46cb55919acb18f56513809b8206b607848c4229d87693b6701b41d33da5949d"
+          },
+          {
+            "bytes": 2008,
+            "path": ".local/validation/owner-launch-focus-03/unittest.log",
+            "sha256": "0f3fcd3fb351d1a4abfe62a47ce3e79072991591c4d677e96331f7e7bd01039d"
+          }
+        ],
+        "result": {
+          "actual_VM_mutations": 0,
+          "actual_native_VM_stop": false,
+          "classification": "native Windows independent-owner fixtures using the actual generated bootstrap with only the native stop boundary substituted by Python children",
+          "elapsed_seconds": 4.266527600004338,
+          "errors": 0,
+          "failures": 0,
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "skipped": 0,
+          "sources": {
+            "research/validation/owner_launch.py": "e757eefb88c4e81705cafc214036c7d4029bc46f32cb71b919ad96f090a40d2f",
+            "research/validation/owner_process.py": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c",
+            "tests/fixtures/owner_bootstrap_exit.py": "d6ea8a36434047204512ffc327091da670bd7eb231702b69d641255a3d2677fe",
+            "tests/fixtures/owner_surrogate_child.py": "9bc3d8df35ff9df9d273a6f75ea10972011be14d35c5eeaf0f1c5a0844fbea64",
+            "tests/test_owner_launch.py": "46cb55919acb18f56513809b8206b607848c4229d87693b6701b41d33da5949d"
+          },
+          "tests_run": 11
+        }
+      },
+      {
+        "current_cohort": false,
+        "directory": ".local/validation/owner-launch-focus-04",
+        "files": [
+          {
+            "bytes": 1949,
+            "path": ".local/validation/owner-launch-focus-04/owner_bootstrap_exit.py",
+            "sha256": "d6ea8a36434047204512ffc327091da670bd7eb231702b69d641255a3d2677fe"
+          },
+          {
+            "bytes": 16653,
+            "path": ".local/validation/owner-launch-focus-04/owner_launch.py",
+            "sha256": "9f20e93aa1ae8362ebc483e82af8887915a2c2250f26ab54ae9b979440c9a3f8"
+          },
+          {
+            "bytes": 11948,
+            "path": ".local/validation/owner-launch-focus-04/owner_process.py",
+            "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+          },
+          {
+            "bytes": 2162,
+            "path": ".local/validation/owner-launch-focus-04/owner_surrogate_child.py",
+            "sha256": "9bc3d8df35ff9df9d273a6f75ea10972011be14d35c5eeaf0f1c5a0844fbea64"
+          },
+          {
+            "bytes": 1020,
+            "path": ".local/validation/owner-launch-focus-04/receipt.json",
+            "sha256": "e12a6a398bc3fd90cd0dad450626bfbd06ed80e86d80d20f6c961ec6bad7e3fb"
+          },
+          {
+            "bytes": 15039,
+            "path": ".local/validation/owner-launch-focus-04/test_owner_launch.py",
+            "sha256": "8be3d4330dec503f3c2d3938aee973519b3941c749416d7a92cca2325b668f1b"
+          },
+          {
+            "bytes": 2008,
+            "path": ".local/validation/owner-launch-focus-04/unittest.log",
+            "sha256": "a29cd95043f5a0a912394874b5189c980bfcbc795c6eea8d74fded0878fd0355"
+          }
+        ],
+        "result": {
+          "actual_VM_mutations": 0,
+          "actual_native_VM_stop": false,
+          "classification": "actual generated owner bootstrap and native Windows jobs; all target/approval facts synthetic; every VM stop replaced with Python child",
+          "elapsed_seconds": 4.194629399979021,
+          "errors": 0,
+          "failures": 0,
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "skipped": 0,
+          "sources": {
+            "research/validation/owner_launch.py": "9f20e93aa1ae8362ebc483e82af8887915a2c2250f26ab54ae9b979440c9a3f8",
+            "research/validation/owner_process.py": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c",
+            "tests/fixtures/owner_bootstrap_exit.py": "d6ea8a36434047204512ffc327091da670bd7eb231702b69d641255a3d2677fe",
+            "tests/fixtures/owner_surrogate_child.py": "9bc3d8df35ff9df9d273a6f75ea10972011be14d35c5eeaf0f1c5a0844fbea64",
+            "tests/test_owner_launch.py": "8be3d4330dec503f3c2d3938aee973519b3941c749416d7a92cca2325b668f1b"
+          },
+          "tests_run": 11
+        }
+      },
+      {
+        "current_cohort": true,
+        "directory": ".local/validation/owner-launch-focus-05",
+        "files": [
+          {
+            "bytes": 6047,
+            "path": ".local/validation/owner-launch-focus-05/driver.py",
+            "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+          },
+          {
+            "bytes": 10319,
+            "path": ".local/validation/owner-launch-focus-05/fixture.py",
+            "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+          },
+          {
+            "bytes": 28102,
+            "path": ".local/validation/owner-launch-focus-05/maintenance_host.py",
+            "sha256": "b6d9d37b97042e5294f4f0d51d0e6f6b8e14fc4c107435a33b870a2266620c3b"
+          },
+          {
+            "bytes": 15471,
+            "path": ".local/validation/owner-launch-focus-05/maintenance_serial.py",
+            "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+          },
+          {
+            "bytes": 11221,
+            "path": ".local/validation/owner-launch-focus-05/maintenance_serial_worker.py",
+            "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+          },
+          {
+            "bytes": 14573,
+            "path": ".local/validation/owner-launch-focus-05/maintenance_stop.py",
+            "sha256": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a"
+          },
+          {
+            "bytes": 1949,
+            "path": ".local/validation/owner-launch-focus-05/owner_bootstrap_exit.py",
+            "sha256": "d6ea8a36434047204512ffc327091da670bd7eb231702b69d641255a3d2677fe"
+          },
+          {
+            "bytes": 16850,
+            "path": ".local/validation/owner-launch-focus-05/owner_launch.py",
+            "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+          },
+          {
+            "bytes": 11948,
+            "path": ".local/validation/owner-launch-focus-05/owner_process.py",
+            "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+          },
+          {
+            "bytes": 2162,
+            "path": ".local/validation/owner-launch-focus-05/owner_surrogate_child.py",
+            "sha256": "9bc3d8df35ff9df9d273a6f75ea10972011be14d35c5eeaf0f1c5a0844fbea64"
+          },
+          {
+            "bytes": 2850,
+            "path": ".local/validation/owner-launch-focus-05/receipt.json",
+            "sha256": "0a9a74c7eb601912378f3f8b957dd68014d28c22a1ddd6db27f23950ceb4bcad"
+          },
+          {
+            "bytes": 15306,
+            "path": ".local/validation/owner-launch-focus-05/store.py",
+            "sha256": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779"
+          },
+          {
+            "bytes": 3366,
+            "path": ".local/validation/owner-launch-focus-05/supervisor.py",
+            "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+          },
+          {
+            "bytes": 15039,
+            "path": ".local/validation/owner-launch-focus-05/test_owner_launch.py",
+            "sha256": "8be3d4330dec503f3c2d3938aee973519b3941c749416d7a92cca2325b668f1b"
+          },
+          {
+            "bytes": 10632,
+            "path": ".local/validation/owner-launch-focus-05/transfer_commands.py",
+            "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+          },
+          {
+            "bytes": 2008,
+            "path": ".local/validation/owner-launch-focus-05/unittest.log",
+            "sha256": "4fbcfe30aad4cd7fada67e9dc44b09aa285ba843a38b826c8fd6a627e6f86229"
+          },
+          {
+            "bytes": 12755,
+            "path": ".local/validation/owner-launch-focus-05/windows_readonly.py",
+            "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+          }
+        ],
+        "result": {
+          "actual_VM_mutations": 0,
+          "actual_native_VM_stop": false,
+          "classification": "final native Windows process/job fixtures using the generated bootstrap; target/approval facts synthetic and every new VM stop a Python surrogate",
+          "elapsed_seconds": 4.235043799999403,
+          "errors": 0,
+          "failures": 0,
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "skipped": 0,
+          "sources": {
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\driver.py": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\fixture.py": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\maintenance_host.py": "b6d9d37b97042e5294f4f0d51d0e6f6b8e14fc4c107435a33b870a2266620c3b",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\maintenance_serial.py": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\maintenance_serial_worker.py": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\maintenance_stop.py": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\owner_launch.py": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\owner_process.py": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\store.py": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\supervisor.py": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\transfer_commands.py": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\windows_readonly.py": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f",
+            "tests/fixtures/owner_bootstrap_exit.py": "d6ea8a36434047204512ffc327091da670bd7eb231702b69d641255a3d2677fe",
+            "tests/fixtures/owner_surrogate_child.py": "9bc3d8df35ff9df9d273a6f75ea10972011be14d35c5eeaf0f1c5a0844fbea64",
+            "tests/test_owner_launch.py": "8be3d4330dec503f3c2d3938aee973519b3941c749416d7a92cca2325b668f1b"
+          },
+          "tests_run": 11
+        }
+      },
+      {
+        "current_cohort": true,
+        "directory": ".local/validation/owner-launch-regression-01",
+        "files": [
+          {
+            "bytes": 6047,
+            "path": ".local/validation/owner-launch-regression-01/driver.py",
+            "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+          },
+          {
+            "bytes": 10319,
+            "path": ".local/validation/owner-launch-regression-01/fixture.py",
+            "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+          },
+          {
+            "bytes": 28102,
+            "path": ".local/validation/owner-launch-regression-01/maintenance_host.py",
+            "sha256": "b6d9d37b97042e5294f4f0d51d0e6f6b8e14fc4c107435a33b870a2266620c3b"
+          },
+          {
+            "bytes": 15471,
+            "path": ".local/validation/owner-launch-regression-01/maintenance_serial.py",
+            "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+          },
+          {
+            "bytes": 11221,
+            "path": ".local/validation/owner-launch-regression-01/maintenance_serial_worker.py",
+            "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+          },
+          {
+            "bytes": 14573,
+            "path": ".local/validation/owner-launch-regression-01/maintenance_stop.py",
+            "sha256": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a"
+          },
+          {
+            "bytes": 1949,
+            "path": ".local/validation/owner-launch-regression-01/owner_bootstrap_exit.py",
+            "sha256": "d6ea8a36434047204512ffc327091da670bd7eb231702b69d641255a3d2677fe"
+          },
+          {
+            "bytes": 16850,
+            "path": ".local/validation/owner-launch-regression-01/owner_launch.py",
+            "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+          },
+          {
+            "bytes": 11948,
+            "path": ".local/validation/owner-launch-regression-01/owner_process.py",
+            "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+          },
+          {
+            "bytes": 2162,
+            "path": ".local/validation/owner-launch-regression-01/owner_surrogate_child.py",
+            "sha256": "9bc3d8df35ff9df9d273a6f75ea10972011be14d35c5eeaf0f1c5a0844fbea64"
+          },
+          {
+            "bytes": 2909,
+            "path": ".local/validation/owner-launch-regression-01/receipt.json",
+            "sha256": "26024d74b69ccc50eea3a0e921d023ace4982d3722a12b1b77707789eec19dd6"
+          },
+          {
+            "bytes": 1376,
+            "path": ".local/validation/owner-launch-regression-01/run.py",
+            "sha256": "4c22813288cc6bb32f69f7d79e0e5a5d94a5e013be7995a2df1381bb92da6a33"
+          },
+          {
+            "bytes": 15306,
+            "path": ".local/validation/owner-launch-regression-01/store.py",
+            "sha256": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779"
+          },
+          {
+            "bytes": 3366,
+            "path": ".local/validation/owner-launch-regression-01/supervisor.py",
+            "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+          },
+          {
+            "bytes": 15039,
+            "path": ".local/validation/owner-launch-regression-01/test_owner_launch.py",
+            "sha256": "8be3d4330dec503f3c2d3938aee973519b3941c749416d7a92cca2325b668f1b"
+          },
+          {
+            "bytes": 10632,
+            "path": ".local/validation/owner-launch-regression-01/transfer_commands.py",
+            "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+          },
+          {
+            "bytes": 52297,
+            "path": ".local/validation/owner-launch-regression-01/unittest.log",
+            "sha256": "a579073e5db81b94dbb51240a7dcdfb9f5c486a277e1f2cb839498acfde98135"
+          },
+          {
+            "bytes": 12755,
+            "path": ".local/validation/owner-launch-regression-01/windows_readonly.py",
+            "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+          }
+        ],
+        "result": {
+          "actual_VM_mutations": 0,
+          "actual_guest_commands": 0,
+          "actual_native_VM_stop": false,
+          "classification": "Windows full regression with independent owner/controller/job fixtures; every new stop is a Python surrogate",
+          "elapsed_seconds": 55.612985199986724,
+          "errors": 0,
+          "failures": 0,
+          "outside_sandbox": true,
+          "package_installation": false,
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "skipped": 13,
+          "sources": {
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\driver.py": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\fixture.py": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\maintenance_host.py": "b6d9d37b97042e5294f4f0d51d0e6f6b8e14fc4c107435a33b870a2266620c3b",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\maintenance_serial.py": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\maintenance_serial_worker.py": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\maintenance_stop.py": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\owner_launch.py": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\owner_process.py": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\store.py": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\supervisor.py": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\transfer_commands.py": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2",
+            "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\research\\validation\\windows_readonly.py": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f",
+            "tests/fixtures/owner_bootstrap_exit.py": "d6ea8a36434047204512ffc327091da670bd7eb231702b69d641255a3d2677fe",
+            "tests/fixtures/owner_surrogate_child.py": "9bc3d8df35ff9df9d273a6f75ea10972011be14d35c5eeaf0f1c5a0844fbea64",
+            "tests/test_owner_launch.py": "8be3d4330dec503f3c2d3938aee973519b3941c749416d7a92cca2325b668f1b"
+          },
+          "tests_run": 303
+        }
+      }
+    ],
+    "native_case_archives": [
+      {
+        "classification": "actual Windows process/job effects; target, lease authorization and VM effects are synthetic",
+        "directory": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner",
+        "files": [
+          {
+            "bytes": 3300,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/owner.proposal.json",
+            "sha256": "bbe99af00c0c7f74609ca317a63a0b0fdb5b8da75d2e6ab0ef4684d4e802e5b8"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/owner.ready.json",
+            "sha256": "e656864a16f253d138b6b5be3110cd05db208733f929eee69d9951855330f3d9"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/owner.ready.json.staged",
+            "sha256": "e656864a16f253d138b6b5be3110cd05db208733f929eee69d9951855330f3d9"
+          },
+          {
+            "bytes": 4074,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/owner.sealed.json",
+            "sha256": "2f78635a5d842337373de0c04ac25db36ba6211995989a2d261d79febe6484ae"
+          },
+          {
+            "bytes": 45056,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/owner.sqlite",
+            "sha256": "4970c7b3bc4a73eaf29323baf10a9532e91e5825fb5aa08e7931a413a8801760"
+          },
+          {
+            "bytes": 145,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/owner.terminal.json",
+            "sha256": "ffaba3da1b5121bf2b88c8eb1c416bc0a368247fec92ceb29627598d8af14f94"
+          },
+          {
+            "bytes": 145,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/owner.terminal.json.staged",
+            "sha256": "ffaba3da1b5121bf2b88c8eb1c416bc0a368247fec92ceb29627598d8af14f94"
+          },
+          {
+            "bytes": 424,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/surrogate-stops/a5fd0dcea58a46fa9e5abe6b84e293a2/poweroff.intent.json",
+            "sha256": "5d966e8454f737139c2318e74c70d81f674d80fa0ca7145744f9d67c70a80324"
+          },
+          {
+            "bytes": 133,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/surrogate.calls.jsonl",
+            "sha256": "169033fb0c0c578450d4e6583b1db9a813142c9a3f7918d91abe210b0f8d1160"
+          },
+          {
+            "bytes": 21,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_lost_surrogate_ack_is_held_without_restart_or_replay/owner/surrogate.effect",
+            "sha256": "69244c4f83446dfc676381449a5e54b47bb50952c290cb2dc67aa1a829532c62"
+          }
+        ],
+        "name": "test_lost_surrogate_ack_is_held_without_restart_or_replay",
+        "native_stop_state": {
+          "child_pid": 26920,
+          "intent_sha": "5d966e8454f737139c2318e74c70d81f674d80fa0ca7145744f9d67c70a80324",
+          "plan_sha": "f3a7a378a844c8d2d9e070bf7df01575e90f8e2436a9ecf018d6d138fc8694ca",
+          "receipt_sha": null,
+          "singleton": 1,
+          "state": "possible-send"
+        },
+        "original_lease_after_cleanup": {
+          "armed_mono_ns": 142307768949300,
+          "armed_ns": 1795372369103928900,
+          "expires_mono_ns": 142322760177800,
+          "expires_ns": 1795372384095157400,
+          "singleton": 1,
+          "state": "stopping",
+          "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+        },
+        "ready": {
+          "VM_start_authorized": false,
+          "controller_job_separate": true,
+          "format": "mcli1-owner-ready-v1",
+          "launch_sha256": "2f78635a5d842337373de0c04ac25db36ba6211995989a2d261d79febe6484ae",
+          "lease": {
+            "armed_mono_ns": 142307768949300,
+            "armed_ns": 1795372369103928900,
+            "expires_mono_ns": 142322760177800,
+            "expires_ns": 1795372384095157400,
+            "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+          },
+          "observed_mono_ns": 142308011543900,
+          "owner": {
+            "created_filetime": 134398459691053262,
+            "image": "C:\\Users\\tagge\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+            "pid": 17608
+          },
+          "owner_binding_sha256": "70e52fa737e77186ac996a1666bdec987bea4c1269def1eeee0608d35b400518",
+          "owner_job_retained": true,
+          "stop_plan_sha256": "f3a7a378a844c8d2d9e070bf7df01575e90f8e2436a9ecf018d6d138fc8694ca"
+        },
+        "source_cohort_matches_current": true,
+        "surrogate_dispatches": [
+          {
+            "actual_VM_command": false,
+            "bootstrap_live": true,
+            "controller_live": false,
+            "monotonic_ns": 142308070632300,
+            "owner_pid": 17608
+          }
+        ],
+        "terminal": {
+          "error_type": "Hold",
+          "launch_sha256": "2f78635a5d842337373de0c04ac25db36ba6211995989a2d261d79febe6484ae",
+          "status": "held-owner-state-not-accepted"
+        }
+      },
+      {
+        "bootstrap_observed": {
+          "bootstrap_pid": 22148,
+          "controller_pid": 35608,
+          "owner": {
+            "created_filetime": 134398459698759217,
+            "image": "C:\\Users\\tagge\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+            "pid": 14012
+          },
+          "owner_ready": true
+        },
+        "classification": "actual Windows process/job effects; target, lease authorization and VM effects are synthetic",
+        "directory": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner",
+        "files": [
+          {
+            "bytes": 209,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/bootstrap.observed.json",
+            "sha256": "4eaf90b4cc31e947358a33e9a5de257e64328384c1341c0fe9fcd2de9f56b892"
+          },
+          {
+            "bytes": 3288,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/owner.proposal.json",
+            "sha256": "46dc5e8005aaa6ca40138c9771b01442bb1edf522239d2c31bce1a619b63d112"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/owner.ready.json",
+            "sha256": "ec7de70a7a5665825622f04146328a33614d14278d6dc8eefc8062fcf0ef7784"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/owner.ready.json.staged",
+            "sha256": "ec7de70a7a5665825622f04146328a33614d14278d6dc8eefc8062fcf0ef7784"
+          },
+          {
+            "bytes": 4086,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/owner.sealed.json",
+            "sha256": "f963a9febfae2128c4c399c4bc9e3cb4561ce77e65cbc36e4c97c0861751aa57"
+          },
+          {
+            "bytes": 45056,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/owner.sqlite",
+            "sha256": "07ff55e9ec0302d48debbdfebe4f7bdb6c322e43c79e4df49ed939d747222625"
+          },
+          {
+            "bytes": 324,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/owner.terminal.json",
+            "sha256": "86bfcd285a6cba7a6d48d6d8e651363be5d9a38d340e8333b987f0885f5f63f7"
+          },
+          {
+            "bytes": 324,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/owner.terminal.json.staged",
+            "sha256": "86bfcd285a6cba7a6d48d6d8e651363be5d9a38d340e8333b987f0885f5f63f7"
+          },
+          {
+            "bytes": 713,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/surrogate-stops/20f0e649b46c462587513af45e2b88d8/command.receipt.json",
+            "sha256": "4f24847f2257d915cda7e5a6f78dfdcaaf4a9634272ea102cb2abbdea7eebc69"
+          },
+          {
+            "bytes": 424,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/surrogate-stops/20f0e649b46c462587513af45e2b88d8/poweroff.intent.json",
+            "sha256": "76f8229daa74113a26a466bdc81da6277d9ad33303989ba27edbb327f43e7e7e"
+          },
+          {
+            "bytes": 409,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/surrogate-stops/20f0e649b46c462587513af45e2b88d8/process.result.json",
+            "sha256": "2711746afad209b987d53808bb95a67884ab1b11a06c4361ad3431d5b3a90cc8"
+          },
+          {
+            "bytes": 0,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/surrogate-stops/20f0e649b46c462587513af45e2b88d8/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 16,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/surrogate-stops/20f0e649b46c462587513af45e2b88d8/stdout.bin",
+            "sha256": "a006f846b7b16986be46da787dc0e735a8a60667a526a99261dea2222d3fba3f"
+          },
+          {
+            "bytes": 134,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/surrogate.calls.jsonl",
+            "sha256": "8f09d2ad3670c883247b071f671eca715a5f217f085821cf27246d40e94643f1"
+          },
+          {
+            "bytes": 21,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_outside_bootstrap_death_does_not_kill_ready_owner/detached-owner/surrogate.effect",
+            "sha256": "69244c4f83446dfc676381449a5e54b47bb50952c290cb2dc67aa1a829532c62"
+          }
+        ],
+        "name": "test_outside_bootstrap_death_does_not_kill_ready_owner",
+        "native_stop_state": {
+          "child_pid": 29112,
+          "intent_sha": "76f8229daa74113a26a466bdc81da6277d9ad33303989ba27edbb327f43e7e7e",
+          "plan_sha": "ba2e0ef895fd80c6d38420d787bca12b1d3a546a9cdfe00f38eeb074a03cebe1",
+          "receipt_sha": "4f24847f2257d915cda7e5a6f78dfdcaaf4a9634272ea102cb2abbdea7eebc69",
+          "singleton": 1,
+          "state": "command-returned"
+        },
+        "original_lease_after_cleanup": {
+          "armed_mono_ns": 142308539576100,
+          "armed_ns": 1795372369874556000,
+          "expires_mono_ns": 142328530014100,
+          "expires_ns": 1795372389864994000,
+          "singleton": 1,
+          "state": "stop-command-returned",
+          "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+        },
+        "ready": {
+          "VM_start_authorized": false,
+          "controller_job_separate": true,
+          "format": "mcli1-owner-ready-v1",
+          "launch_sha256": "f963a9febfae2128c4c399c4bc9e3cb4561ce77e65cbc36e4c97c0861751aa57",
+          "lease": {
+            "armed_mono_ns": 142308539576100,
+            "armed_ns": 1795372369874556000,
+            "expires_mono_ns": 142328530014100,
+            "expires_ns": 1795372389864994000,
+            "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+          },
+          "observed_mono_ns": 142308781896700,
+          "owner": {
+            "created_filetime": 134398459698759217,
+            "image": "C:\\Users\\tagge\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+            "pid": 14012
+          },
+          "owner_binding_sha256": "928eb070d7fdc50b2306f62ce9b932a9710300e7444d3c8eab671c683a85bce4",
+          "owner_job_retained": true,
+          "stop_plan_sha256": "ba2e0ef895fd80c6d38420d787bca12b1d3a546a9cdfe00f38eeb074a03cebe1"
+        },
+        "source_cohort_matches_current": true,
+        "surrogate_dispatches": [
+          {
+            "actual_VM_command": false,
+            "bootstrap_live": false,
+            "controller_live": false,
+            "monotonic_ns": 142308840767400,
+            "owner_pid": 14012
+          }
+        ],
+        "terminal": {
+          "finished_mono_ns": 142308921600200,
+          "independent_poweroff_still_required": true,
+          "launch_sha256": "f963a9febfae2128c4c399c4bc9e3cb4561ce77e65cbc36e4c97c0861751aa57",
+          "owner_binding_sha256": "928eb070d7fdc50b2306f62ce9b932a9710300e7444d3c8eab671c683a85bce4",
+          "status": "original-owner-stop-command-returned-not-poweroff-acceptance"
+        }
+      },
+      {
+        "classification": "actual Windows process/job effects; target, lease authorization and VM effects are synthetic",
+        "directory": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner",
+        "files": [
+          {
+            "bytes": 3300,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/owner.proposal.json",
+            "sha256": "dec6d32e5aee5c2086f3ee30c7e68d10ff29d9d9ca142352bb9e56a70f1558e5"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/owner.ready.json",
+            "sha256": "0928e9e2e72c347e761116999ea76e40d90aa1c638ea9309c51375baefe8ac49"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/owner.ready.json.staged",
+            "sha256": "0928e9e2e72c347e761116999ea76e40d90aa1c638ea9309c51375baefe8ac49"
+          },
+          {
+            "bytes": 4074,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/owner.sealed.json",
+            "sha256": "27ecbdd072360c355b04a0256e8783efc77fa209f01cd1ada8a8eed78ec55e03"
+          },
+          {
+            "bytes": 45056,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/owner.sqlite",
+            "sha256": "42fe75edf78da5ef0b3746351bbbec10ec3a6b23254feda54210e17928e60280"
+          },
+          {
+            "bytes": 324,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/owner.terminal.json",
+            "sha256": "73484e5cd48f99c1de2c7c46523c8208be8f1226aceb4145055d7bf5d8c6be83"
+          },
+          {
+            "bytes": 324,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/owner.terminal.json.staged",
+            "sha256": "73484e5cd48f99c1de2c7c46523c8208be8f1226aceb4145055d7bf5d8c6be83"
+          },
+          {
+            "bytes": 712,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/surrogate-stops/af2627cd17e34e6ca2224fb7d466e746/command.receipt.json",
+            "sha256": "caaa685e462983e24cf40f76a112fc90c28df68cf535f59e017e1ce3eaa25c3c"
+          },
+          {
+            "bytes": 424,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/surrogate-stops/af2627cd17e34e6ca2224fb7d466e746/poweroff.intent.json",
+            "sha256": "b0210e73b531ef45675770f2013d3c9ff150657bb93ce70dce1c3ef4cffbd759"
+          },
+          {
+            "bytes": 409,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/surrogate-stops/af2627cd17e34e6ca2224fb7d466e746/process.result.json",
+            "sha256": "71116a45ff0e57132d6b59410eb1edbcc4efbc345fccfb1a8d44a257668c930b"
+          },
+          {
+            "bytes": 0,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/surrogate-stops/af2627cd17e34e6ca2224fb7d466e746/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 16,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/surrogate-stops/af2627cd17e34e6ca2224fb7d466e746/stdout.bin",
+            "sha256": "a006f846b7b16986be46da787dc0e735a8a60667a526a99261dea2222d3fba3f"
+          },
+          {
+            "bytes": 132,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/surrogate.calls.jsonl",
+            "sha256": "1427ed6295cda683f4850d660f4c4be5d2f430358cd13708e13e4dd3716ebbdc"
+          },
+          {
+            "bytes": 21,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_expiry_is_original_and_does_not_depend_on_controller_failure/owner/surrogate.effect",
+            "sha256": "69244c4f83446dfc676381449a5e54b47bb50952c290cb2dc67aa1a829532c62"
+          }
+        ],
+        "name": "test_owner_expiry_is_original_and_does_not_depend_on_controller_failure",
+        "native_stop_state": {
+          "child_pid": 18032,
+          "intent_sha": "b0210e73b531ef45675770f2013d3c9ff150657bb93ce70dce1c3ef4cffbd759",
+          "plan_sha": "57ab791f402e2f697118a9ab6cb07dc2c618931d63f0df82c04461ce6ebc3d04",
+          "receipt_sha": "caaa685e462983e24cf40f76a112fc90c28df68cf535f59e017e1ce3eaa25c3c",
+          "singleton": 1,
+          "state": "command-returned"
+        },
+        "original_lease_after_cleanup": {
+          "armed_mono_ns": 142308959288500,
+          "armed_ns": 1795372370294268500,
+          "expires_mono_ns": 142310949439200,
+          "expires_ns": 1795372372284419200,
+          "singleton": 1,
+          "state": "stop-command-returned",
+          "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+        },
+        "ready": {
+          "VM_start_authorized": false,
+          "controller_job_separate": true,
+          "format": "mcli1-owner-ready-v1",
+          "launch_sha256": "27ecbdd072360c355b04a0256e8783efc77fa209f01cd1ada8a8eed78ec55e03",
+          "lease": {
+            "armed_mono_ns": 142308959288500,
+            "armed_ns": 1795372370294268500,
+            "expires_mono_ns": 142310949439200,
+            "expires_ns": 1795372372284419200,
+            "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+          },
+          "observed_mono_ns": 142309197378800,
+          "owner": {
+            "created_filetime": 134398459702955601,
+            "image": "C:\\Users\\tagge\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+            "pid": 24468
+          },
+          "owner_binding_sha256": "1e7951ee2e2e72f0907c3173eaff9117d75c3bd092dfd71471e7d69c9c3d21ff",
+          "owner_job_retained": true,
+          "stop_plan_sha256": "57ab791f402e2f697118a9ab6cb07dc2c618931d63f0df82c04461ce6ebc3d04"
+        },
+        "source_cohort_matches_current": true,
+        "surrogate_dispatches": [
+          {
+            "actual_VM_command": false,
+            "bootstrap_live": true,
+            "controller_live": true,
+            "monotonic_ns": 142310980391500,
+            "owner_pid": 24468
+          }
+        ],
+        "terminal": {
+          "finished_mono_ns": 142311054165300,
+          "independent_poweroff_still_required": true,
+          "launch_sha256": "27ecbdd072360c355b04a0256e8783efc77fa209f01cd1ada8a8eed78ec55e03",
+          "owner_binding_sha256": "1e7951ee2e2e72f0907c3173eaff9117d75c3bd092dfd71471e7d69c9c3d21ff",
+          "status": "original-owner-stop-command-returned-not-poweroff-acceptance"
+        }
+      },
+      {
+        "classification": "actual Windows process/job effects; target, lease authorization and VM effects are synthetic",
+        "directory": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner",
+        "files": [
+          {
+            "bytes": 3300,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/owner.proposal.json",
+            "sha256": "3a01b68000327cbc8e401dc9124d149b69075e16e1baad6cbe289805fea22e6b"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/owner.ready.json",
+            "sha256": "f20eb52717e868f5d4c9c1c235b05f9af095d75268cb55b353ee00c450edf319"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/owner.ready.json.staged",
+            "sha256": "f20eb52717e868f5d4c9c1c235b05f9af095d75268cb55b353ee00c450edf319"
+          },
+          {
+            "bytes": 4074,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/owner.sealed.json",
+            "sha256": "63237979aec6d760552a7fdd5ab41e30f5cb4128b24a3e51b33e41bfb6d7fec0"
+          },
+          {
+            "bytes": 45056,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/owner.sqlite",
+            "sha256": "7aceb95adc53e8762399c69a5c77760a10f1467e1b18c40b4f34817493f222f0"
+          },
+          {
+            "bytes": 324,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/owner.terminal.json",
+            "sha256": "0401b75d76b7496ba3d86b4f8b2d34a6d7e59cdbe68f748999eea85c86dd9780"
+          },
+          {
+            "bytes": 324,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/owner.terminal.json.staged",
+            "sha256": "0401b75d76b7496ba3d86b4f8b2d34a6d7e59cdbe68f748999eea85c86dd9780"
+          },
+          {
+            "bytes": 713,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/surrogate-stops/cfd0848b28cb41e6aec978bc30ee2687/command.receipt.json",
+            "sha256": "7969cb6b8aa61fa46b63705063de0d795f0102f4ac4a7850b55f45cb8f541fc3"
+          },
+          {
+            "bytes": 424,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/surrogate-stops/cfd0848b28cb41e6aec978bc30ee2687/poweroff.intent.json",
+            "sha256": "70ee7d086aff90f0ff989f3959aea66ecdf830892e9c5d7294c5561bc67b8262"
+          },
+          {
+            "bytes": 409,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/surrogate-stops/cfd0848b28cb41e6aec978bc30ee2687/process.result.json",
+            "sha256": "2a628ab80caa2a19926e09a767026dc028fa850ba993532e54d83863ec166d39"
+          },
+          {
+            "bytes": 0,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/surrogate-stops/cfd0848b28cb41e6aec978bc30ee2687/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 16,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/surrogate-stops/cfd0848b28cb41e6aec978bc30ee2687/stdout.bin",
+            "sha256": "a006f846b7b16986be46da787dc0e735a8a60667a526a99261dea2222d3fba3f"
+          },
+          {
+            "bytes": 133,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/surrogate.calls.jsonl",
+            "sha256": "81ac57e558c620708caeefe1105586904f6f0538a6a7f574d9457c6c8863fa91"
+          },
+          {
+            "bytes": 21,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_owner_survives_controller_job_close_and_bootstrap_handle_release/owner/surrogate.effect",
+            "sha256": "69244c4f83446dfc676381449a5e54b47bb50952c290cb2dc67aa1a829532c62"
+          }
+        ],
+        "name": "test_owner_survives_controller_job_close_and_bootstrap_handle_release",
+        "native_stop_state": {
+          "child_pid": 33836,
+          "intent_sha": "70ee7d086aff90f0ff989f3959aea66ecdf830892e9c5d7294c5561bc67b8262",
+          "plan_sha": "e09c9f12c1e5722dd4f3067b6e292ff3439647650378c4b4ae9359e432425d45",
+          "receipt_sha": "7969cb6b8aa61fa46b63705063de0d795f0102f4ac4a7850b55f45cb8f541fc3",
+          "singleton": 1,
+          "state": "command-returned"
+        },
+        "original_lease_after_cleanup": {
+          "armed_mono_ns": 142311096496700,
+          "armed_ns": 1795372372431476300,
+          "expires_mono_ns": 142326088036700,
+          "expires_ns": 1795372387423016300,
+          "singleton": 1,
+          "state": "stop-command-returned",
+          "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+        },
+        "ready": {
+          "VM_start_authorized": false,
+          "controller_job_separate": true,
+          "format": "mcli1-owner-ready-v1",
+          "launch_sha256": "63237979aec6d760552a7fdd5ab41e30f5cb4128b24a3e51b33e41bfb6d7fec0",
+          "lease": {
+            "armed_mono_ns": 142311096496700,
+            "armed_ns": 1795372372431476300,
+            "expires_mono_ns": 142326088036700,
+            "expires_ns": 1795372387423016300,
+            "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+          },
+          "observed_mono_ns": 142311336030000,
+          "owner": {
+            "created_filetime": 134398459724327854,
+            "image": "C:\\Users\\tagge\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+            "pid": 28944
+          },
+          "owner_binding_sha256": "483ec2ef79ba593e0b8d5f46bca082deeec6c672f3fa83672feea6dfca1a7247",
+          "owner_job_retained": true,
+          "stop_plan_sha256": "e09c9f12c1e5722dd4f3067b6e292ff3439647650378c4b4ae9359e432425d45"
+        },
+        "source_cohort_matches_current": true,
+        "surrogate_dispatches": [
+          {
+            "actual_VM_command": false,
+            "bootstrap_live": true,
+            "controller_live": false,
+            "monotonic_ns": 142311395145000,
+            "owner_pid": 28944
+          }
+        ],
+        "terminal": {
+          "finished_mono_ns": 142311468583700,
+          "independent_poweroff_still_required": true,
+          "launch_sha256": "63237979aec6d760552a7fdd5ab41e30f5cb4128b24a3e51b33e41bfb6d7fec0",
+          "owner_binding_sha256": "483ec2ef79ba593e0b8d5f46bca082deeec6c672f3fa83672feea6dfca1a7247",
+          "status": "original-owner-stop-command-returned-not-poweroff-acceptance"
+        }
+      },
+      {
+        "classification": "actual Windows process/job effects; target, lease authorization and VM effects are synthetic",
+        "directory": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner",
+        "files": [
+          {
+            "bytes": 3300,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/owner.proposal.json",
+            "sha256": "b161aa95b9b44ed81f18d442ebd53d80be4ccd296ad1fbc22f70fe994bcea0c1"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/owner.ready.json",
+            "sha256": "98b66988c9effba187b3215506896a588c46bf81faa7fd7a4cb8980ec11cb51c"
+          },
+          {
+            "bytes": 744,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/owner.ready.json.staged",
+            "sha256": "98b66988c9effba187b3215506896a588c46bf81faa7fd7a4cb8980ec11cb51c"
+          },
+          {
+            "bytes": 4074,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/owner.sealed.json",
+            "sha256": "2c4baa00a33f70c6d6ddc48719b74fd4827f6cbc285c38b3fb2345cc6a5a93a9"
+          },
+          {
+            "bytes": 45056,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/owner.sqlite",
+            "sha256": "1c2f0ddbd14c5739893ccf278712837e7d0d2f965cd972c863099a89a949d684"
+          },
+          {
+            "bytes": 324,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/owner.terminal.json",
+            "sha256": "6921f361b7a5e6faeca0da4af4c3b2cc2e215cce8b18878a3986a6b0a074c604"
+          },
+          {
+            "bytes": 324,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/owner.terminal.json.staged",
+            "sha256": "6921f361b7a5e6faeca0da4af4c3b2cc2e215cce8b18878a3986a6b0a074c604"
+          },
+          {
+            "bytes": 713,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/surrogate-stops/503c3bed85a64943b43908b7e7290796/command.receipt.json",
+            "sha256": "c5a4b72e3934d5c059f6f98a23af225233d029e8cd929e76428b28908aa7bb48"
+          },
+          {
+            "bytes": 424,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/surrogate-stops/503c3bed85a64943b43908b7e7290796/poweroff.intent.json",
+            "sha256": "cb44e9252c9e93e9ae097856b5a5a6355424f5d798926e4031b28871a8996396"
+          },
+          {
+            "bytes": 409,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/surrogate-stops/503c3bed85a64943b43908b7e7290796/process.result.json",
+            "sha256": "8e603ad9d3c8a725765921dd8bff83ca59930b18d344f15587567bc5b04bdaf4"
+          },
+          {
+            "bytes": 0,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/surrogate-stops/503c3bed85a64943b43908b7e7290796/stderr.bin",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 16,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/surrogate-stops/503c3bed85a64943b43908b7e7290796/stdout.bin",
+            "sha256": "a006f846b7b16986be46da787dc0e735a8a60667a526a99261dea2222d3fba3f"
+          },
+          {
+            "bytes": 132,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/surrogate.calls.jsonl",
+            "sha256": "c4859deea6ae86ad0b72201cc557bfc93d1172b0b916831c3ed307faa211841c"
+          },
+          {
+            "bytes": 21,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start/owner/surrogate.effect",
+            "sha256": "69244c4f83446dfc676381449a5e54b47bb50952c290cb2dc67aa1a829532c62"
+          }
+        ],
+        "name": "test_same_controller_job_or_fenced_ready_ledger_cannot_authorize_start",
+        "native_stop_state": {
+          "child_pid": 32964,
+          "intent_sha": "cb44e9252c9e93e9ae097856b5a5a6355424f5d798926e4031b28871a8996396",
+          "plan_sha": "8043be7248368050ecbc4f99e07df1080af8b40ccb3ca886bab2af6da3ae0dce",
+          "receipt_sha": "c5a4b72e3934d5c059f6f98a23af225233d029e8cd929e76428b28908aa7bb48",
+          "singleton": 1,
+          "state": "command-returned"
+        },
+        "original_lease_after_cleanup": {
+          "armed_mono_ns": 142311519336600,
+          "armed_ns": 1795372372854316600,
+          "expires_mono_ns": 142326510757900,
+          "expires_ns": 1795372387845737900,
+          "singleton": 1,
+          "state": "stop-command-returned",
+          "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+        },
+        "ready": {
+          "VM_start_authorized": false,
+          "controller_job_separate": true,
+          "format": "mcli1-owner-ready-v1",
+          "launch_sha256": "2c4baa00a33f70c6d6ddc48719b74fd4827f6cbc285c38b3fb2345cc6a5a93a9",
+          "lease": {
+            "armed_mono_ns": 142311519336600,
+            "armed_ns": 1795372372854316600,
+            "expires_mono_ns": 142326510757900,
+            "expires_ns": 1795372387845737900,
+            "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+          },
+          "observed_mono_ns": 142311761219800,
+          "owner": {
+            "created_filetime": 134398459728555652,
+            "image": "C:\\Users\\tagge\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+            "pid": 33664
+          },
+          "owner_binding_sha256": "86adf8b9d05bb816731ff16ee3a7a2e5cd146566a4cc8a5ad5354806549d8fbd",
+          "owner_job_retained": true,
+          "stop_plan_sha256": "8043be7248368050ecbc4f99e07df1080af8b40ccb3ca886bab2af6da3ae0dce"
+        },
+        "source_cohort_matches_current": true,
+        "surrogate_dispatches": [
+          {
+            "actual_VM_command": false,
+            "bootstrap_live": true,
+            "controller_live": true,
+            "monotonic_ns": 142311820774400,
+            "owner_pid": 33664
+          }
+        ],
+        "terminal": {
+          "finished_mono_ns": 142311896988300,
+          "independent_poweroff_still_required": true,
+          "launch_sha256": "2c4baa00a33f70c6d6ddc48719b74fd4827f6cbc285c38b3fb2345cc6a5a93a9",
+          "owner_binding_sha256": "86adf8b9d05bb816731ff16ee3a7a2e5cd146566a4cc8a5ad5354806549d8fbd",
+          "status": "original-owner-stop-command-returned-not-poweroff-acceptance"
+        }
+      },
+      {
+        "classification": "actual Windows process/job effects; target, lease authorization and VM effects are synthetic",
+        "directory": ".local/validation/owner-launch-focus-05/cases/test_unapproved_or_altered_plan_cannot_resume_suspended_owner/owner",
+        "files": [
+          {
+            "bytes": 3297,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_unapproved_or_altered_plan_cannot_resume_suspended_owner/owner/owner.proposal.json",
+            "sha256": "e9d77a28f36aabf565e5ff906f1ced2fe9b8d5f0b6e67daf5ac073d970de9e80"
+          },
+          {
+            "bytes": 36864,
+            "path": ".local/validation/owner-launch-focus-05/cases/test_unapproved_or_altered_plan_cannot_resume_suspended_owner/owner/owner.sqlite",
+            "sha256": "caad15a167173042af8a3354f9b68b2515ab58870ae4c1e4b7053c46d67b868a"
+          }
+        ],
+        "name": "test_unapproved_or_altered_plan_cannot_resume_suspended_owner",
+        "status": "proposal remained suspended and unapproved; no registered owner/VM dispatch",
+        "surrogate_dispatches": []
+      }
+    ],
+    "ruff_check": "passed: research/validation tests",
+    "ruff_format_check": "passed: 111 files"
+  }
+}

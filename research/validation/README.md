@@ -30,6 +30,8 @@ The [host-adapter checkpoint](host-adapter-plan.md) adds bounded read-only Windo
 
 The [original-stop checkpoint](original-stop-plan.md) now gates the same owner's bounded command with durable one-shot intent, process/source binding and required deployment-profile admission. Regression passed 279 tests with 13 skips; 19 stop checks and two added profile checks passed. Every new native command was an isolated Python surrogate; no VBox poweroff ran. Current stop/host packets remain unarmed. Independent owner startup and actual target shutdown still need qualification.
 
+The [independent-owner checkpoint](owner-launch-plan.md) adds suspended PID review/sealing, independent job retention and a fresh ready proof. All 11 focused cases passed, including six native Windows process/job checks with Python surrogate stops. Regression passed 290 tests with 13 skips. Launch/host packets remain unarmed; actual VM boot/startup integration and shutdown qualification are next.
+
 The [native two-tool input check](resolved-tool-plan.md) also passed in the pinned image: real backend initialization, rendered system prompt and risk-enabled function schemas, zero actions/inference, clean executor/container shutdown. It is preparation data; final wire/token and isolation qualifications remain open.
 
 ## Build and check
@@ -63,6 +65,7 @@ The build prints an external SHA-256 for `manifest.json`. Preserve it outside th
 | `maintenance_transfer.py`, `transfer_commands.py`, `guest_transfer_entry.py` | Unarmed role/purpose grants; exact identity/staging/invocation compiler; original lease monitoring; retained uncertainty and original stop-ledger/observer requirements. Native state/stop collectors remain injected and unqualified. |
 | `maintenance_host.py`, `windows_readonly.py` | Prepared fixed read-only query/observation adapters, original-owner registration/PID binding and independent stop observation. No native owner activation CLI; actual running/UART/stop and receipt issuers remain unqualified. |
 | `maintenance_stop.py` | Unarmed role stop plans; original-owner-only fixed poweroff command, private bounded process wrapper, durable no-replay intent and command receipt. Independent launch and actual poweroff remain unqualified. |
+| `owner_launch.py`, `owner_process.py` | Unarmed launch reviews; exact suspended-process sealing; original owner outside controller kill job; ready/terminal evidence and unchanged one-shot stop path. No VM-start grant or activation CLI. |
 
 The synthetic Git directory is inside the generated bundle. Building does not commit, stage, switch, or update refs in this project's repository. Source snapshots handed to an executor contain no Git metadata. Existing project changes are preserved.
 
