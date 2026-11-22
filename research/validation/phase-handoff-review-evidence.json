@@ -1,0 +1,145 @@
+{
+  "actions": {
+    "broker_calls_or_activation": 0,
+    "docker_or_virtualbox_operations": 0,
+    "model_or_task_runs": 0,
+    "package_installs": 0,
+    "repository_data_uploaded": false,
+    "sdk_invocations": 0,
+    "socket_connections": 0
+  },
+  "active_broker_source_sha256": {
+    "research/validation/control_policy.py": "accccc46cb9f38d0627d44935f971ad3fe876bf8b74a2ff1eb429fe0e67bcea0",
+    "research/validation/http_tools.py": "06176a5bcaaf725d2277fb9887068a540c14b857e624bb5253851a393ad3ba06",
+    "research/validation/phase_policy.py": "5cb6e90f96234814f77eda3598ed256c637e0d4c0565150905068699a3a47ef8",
+    "research/validation/store.py": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779"
+  },
+  "base_commit": "6b4cbe4",
+  "candidate_source": {
+    "path": "research/validation/phase_handoff_review.py",
+    "sha256": "17ab1d677afb24c91da65b3b094693cbbfaff78d8692478fa163ec91564eaa70"
+  },
+  "classification": "Local byte comparison of independently retained native denied-request captures; not Agent integration, broker activation or new token measurements",
+  "comparisons": [
+    {
+      "all_other_fields_and_content_order_preserved": true,
+      "count_classification": "Reused previous native estimates; this comparison executed no tokenizer or SDK",
+      "dispatch_approved": false,
+      "effective_bytes": 24537,
+      "effective_output": 6000,
+      "effective_path": ".local/validation/wire-input-02/requests/T-01-initial_edit.json",
+      "effective_sha256": "e4c8d90798e2b146b153b42b8eef292a61b9df0d93c1646c3617a98f8718ccb2",
+      "exact_independent_target_match": true,
+      "prepared_phase": "initial_edit",
+      "previous_native_input_count": 5209,
+      "raw_bytes": 24537,
+      "raw_path": ".local/validation/wire-input-01/requests/T-01-initial_edit.json",
+      "raw_sha256": "e4c8d90798e2b146b153b42b8eef292a61b9df0d93c1646c3617a98f8718ccb2",
+      "requested_output": 6000,
+      "task": "T-01",
+      "trusted_role_for_review": "edit"
+    },
+    {
+      "all_other_fields_and_content_order_preserved": true,
+      "count_classification": "Reused previous native estimates; this comparison executed no tokenizer or SDK",
+      "dispatch_approved": false,
+      "effective_bytes": 24887,
+      "effective_output": 1000,
+      "effective_path": ".local/validation/wire-input-02/requests/T-01-finish_projection.json",
+      "effective_sha256": "713c3e2074e82433d3bda87e713025963810494a26cb3a2dffeb94ab9e9e5094",
+      "exact_independent_target_match": true,
+      "prepared_phase": "finish_projection",
+      "previous_native_input_count": 5250,
+      "raw_bytes": 24887,
+      "raw_path": ".local/validation/wire-input-01/requests/T-01-finish_projection.json",
+      "raw_sha256": "32c7b70c56cf04fd27bd17e59211254454a8ed227a9dfeb7ae7731ff15105019",
+      "requested_output": 6000,
+      "task": "T-01",
+      "trusted_role_for_review": "finish"
+    },
+    {
+      "all_other_fields_and_content_order_preserved": true,
+      "count_classification": "Reused previous native estimates; this comparison executed no tokenizer or SDK",
+      "dispatch_approved": false,
+      "effective_bytes": 24605,
+      "effective_output": 6000,
+      "effective_path": ".local/validation/wire-input-02/requests/T-02-initial_edit.json",
+      "effective_sha256": "b99cf65dfa8649bccf9dec99b45be9ce1e09b8873e973b641ec33a7ac9b5d46c",
+      "exact_independent_target_match": true,
+      "prepared_phase": "initial_edit",
+      "previous_native_input_count": 5228,
+      "raw_bytes": 24605,
+      "raw_path": ".local/validation/wire-input-01/requests/T-02-initial_edit.json",
+      "raw_sha256": "b99cf65dfa8649bccf9dec99b45be9ce1e09b8873e973b641ec33a7ac9b5d46c",
+      "requested_output": 6000,
+      "task": "T-02",
+      "trusted_role_for_review": "edit"
+    },
+    {
+      "all_other_fields_and_content_order_preserved": true,
+      "count_classification": "Reused previous native estimates; this comparison executed no tokenizer or SDK",
+      "dispatch_approved": false,
+      "effective_bytes": 24955,
+      "effective_output": 1000,
+      "effective_path": ".local/validation/wire-input-02/requests/T-02-finish_projection.json",
+      "effective_sha256": "8f9efb77bbd071172219b266d0a7e3d8df2de9d85309e0143b161ed96c338c64",
+      "exact_independent_target_match": true,
+      "prepared_phase": "finish_projection",
+      "previous_native_input_count": 5269,
+      "raw_bytes": 24955,
+      "raw_path": ".local/validation/wire-input-01/requests/T-02-finish_projection.json",
+      "raw_sha256": "0f6d1f4a29e441721459959e454d911c8b41992b7ea3c8d584ac108e13653f1a",
+      "requested_output": 6000,
+      "task": "T-02",
+      "trusted_role_for_review": "finish"
+    }
+  ],
+  "decision": "docs/decisions/0002-fixture-phase-output-boundary.md",
+  "format": "mcli1-phase-handoff-review-v1",
+  "native_sources": [
+    {
+      "path": "research/validation/wire-input-evidence.json",
+      "sha256": "4d248586aa629228eef0429f45c45f39237052d2b22d841fe4c04c6289b7d5f3"
+    },
+    {
+      "path": "research/validation/phase-policy-evidence.json",
+      "sha256": "a37f2c1180be025fa6a15a20b5c36383ff789abf11525fe88abd1faf9428e047"
+    }
+  ],
+  "next_check": "Obtain developer selection of the concrete phase-boundary proposal. Do not activate normalization or change frozen controls before that decision; afterward prepare mode-bound raw/effective admission and its failure/restart controls.",
+  "source_review": {
+    "classification": "Pinned source review only; no native route, Agent step, pause/switch or rerun measured",
+    "sdk_commit": "504a88cab0fb48ee5226238ad7b8f1d865fa84a8",
+    "sdk_version": "1.62.0",
+    "server_run": "EventService.run may prefer native async execution; sync source alone does not qualify that path",
+    "switch_route": "POST /api/conversations/{id}/switch_llm exists but is absent from the current narrow control grant",
+    "sync_run": "Per-run iteration count resets, unfinished limit emits MaxIterationsReached/ERROR; a phase split would change the baseline trace and need safe barrier/continuation qualification"
+  },
+  "status": "proposed; developer decision pending; strict broker unchanged",
+  "verification": {
+    "errors": 0,
+    "files": {
+      "result.json": {
+        "bytes": 45,
+        "sha256": "7928adaef64a26014845a558d98a2a580af768cc4f565eae65639d973fc1a597"
+      },
+      "tests.stderr": {
+        "bytes": 21162,
+        "sha256": "b8724d41fa08213a93b2a779b8482dbcd0081b0dc300f0871b78d2b4e43eed1c"
+      },
+      "tests.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "passed": 128,
+    "path": ".local/validation/phase-handoff-check-01",
+    "receipt": {
+      "elapsed_seconds": 27.864,
+      "exit": 0
+    },
+    "skip": "Existing Windows symlink test",
+    "skipped": 1,
+    "total": 129
+  }
+}

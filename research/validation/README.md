@@ -93,6 +93,8 @@ The [stopped-image inspection](offline-inspection.md) resolves the installer's i
 
 ## Verification
 
+The [phase-boundary proposal](../../docs/decisions/0002-fixture-phase-output-boundary.md) awaits developer selection. Its review helper compares a candidate output ceiling with independently captured native bodies; all four match. It returns preparation bytes only and is not wired into the broker. Existing strict rejection and dispatch holds remain active.
+
 The [trusted phase contract](phase-policy-plan.md) now requires frozen task/attempt/role and input/response count declarations with a counting-evidence digest for every broker transcript row. Exact requests must carry an output limit within that role's cap, and the permit must match the role and full money envelope. The broker refuses old count-free transcripts and policy/transcript changes across restart. Qualified count receipts and the actual Agent phase handoff remain deployment prerequisites. Direct SDK preparation now verifies a 1,000-token finish override while preserving the 6,000-token edit limit.
 
 The [native serialization check](wire-input-plan.md) captures prepared requests only at a rejecting mock transport, without sockets, executors or model responses. It found finish projections requesting 6,000 output tokens against the proposed 1,000 cap. Finish dispatch remains held pending trusted per-phase enforcement and final request qualification.
