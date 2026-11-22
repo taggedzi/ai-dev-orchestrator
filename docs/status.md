@@ -4,9 +4,11 @@ Updated November 22, 2026. The active goal is to finish the project, including t
 
 ## Where we stopped
 
-Current checkpoint: [guest inspection and control-change preparation](../research/validation/guest-maintenance-plan.md) adds a standalone read-only inspection payload, create-only change planner and two unarmed role packets. Sixteen focused checks passed on the Linux tool host, including bounded pipe/child cleanup and APT staging ownership. No selected VM or package changes ran. Next is bounded serial transport and control-change execution preparation; guard creation and phase-boundary selection still need their separate developer decisions. Product implementation and final VM/runtime qualification remain open.
+Current checkpoint: [bounded serial worker preparation](../research/validation/maintenance-serial-plan.md) has eighteen passing focused checks, including native Windows blocked-write termination, parent-death cleanup and exact job membership. Both role requests remain unarmed; no selected VM or package changes ran. Next is identity-gated guest commands and create-only control execution, bound to original VM authority and independent stop. Guard creation and phase-boundary selection still need their separate developer decisions. Product implementation and final VM/runtime qualification remain open.
 
 ### Earlier preparation checkpoints
+
+The [guest inspection and control-change stage](../research/validation/guest-maintenance-plan.md) prepared a standalone read-only payload, create-only planner and two unarmed role specs. Sixteen focused checks passed on the Linux tool host, including bounded pipe cleanup and APT staging ownership. Native guest observation and actual control changes remain unperformed.
 
 The [maintenance admission and host preview](../research/validation/maintenance-runner-plan.md) prepared durable intent, one-use handoff and complete postcondition/stop checks, with thirteen focused synthetic tests. Its packets remain unarmed. The newer guest inspection report is diagnostic and does not yet provide the complete host admission frame or a qualified native transport.
 
