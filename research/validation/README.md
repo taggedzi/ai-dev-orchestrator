@@ -2,7 +2,16 @@
 
 This package builds the synthetic inputs and local harness authorized in the November 20 conversation. It uses Python's standard library plus installed Node and Git for verification. It is experiment code; the product coordinator and its architecture remain unselected.
 
-The developer-selected guard topology now has an [exact first-stage provisioning review](guard-preparation-plan.md), a plan-only native script and explicit network inputs. Read-only inspection binds the stopped source disk and identifies missing nftables packages. Creation, boot, installation and network activation remain separate approvals.
+The latest checkpoint adds [verified unattached backups](stopped-backup-plan.md),
+the approved/applied [stopped maintenance profiles](maintenance-profile-plan.md)
+and a prepared [owner-bound frontend adapter](frontend-start-plan.md).
+Final regression passed 396 tests with 13 platform skips, including 28 new startup
+checks with Python surrogates and synthetic VM/session facts; Ruff passes. See
+[the retained startup evidence](frontend-start-evidence.json). Both VMs remain
+powered off/disconnected. A fixed native
+session observer and startup/readiness qualification remain open; boot, installation and network
+activation need separate concrete approvals. Earlier preparation stages below
+retain their execution-time results and historical source pins.
 
 The [offline packet-filter preparation](guard-package-plan.md) has verified four archives from signed Ubuntu metadata. Package inspection identifies service behavior that must change and a separate OS-update prerequisite. No package or rule was installed.
 
@@ -30,7 +39,7 @@ The [host-adapter checkpoint](host-adapter-plan.md) adds bounded read-only Windo
 
 The [original-stop checkpoint](original-stop-plan.md) now gates the same owner's bounded command with durable one-shot intent, process/source binding and required deployment-profile admission. Regression passed 279 tests with 13 skips; 19 stop checks and two added profile checks passed. Every new native command was an isolated Python surrogate; no VBox poweroff ran. Current stop/host packets remain unarmed. Independent owner startup and actual target shutdown still need qualification.
 
-The [independent-owner checkpoint](owner-launch-plan.md) adds suspended PID review/sealing, independent job retention and a fresh ready proof. All 11 focused cases passed, including six native Windows process/job checks with Python surrogate stops. Regression passed 290 tests with 13 skips. Launch/host packets remain unarmed; actual VM boot/startup integration and shutdown qualification are next.
+The [independent-owner checkpoint](owner-launch-plan.md) adds suspended PID review/sealing, independent job retention and a fresh ready proof. Its 11 focused cases and 290-pass regression remain historical. The later session/boot cohort changes Store/compiler/host sources; old launch/host packets remain unarmed and need successor review inputs before activation.
 
 The [native two-tool input check](resolved-tool-plan.md) also passed in the pinned image: real backend initialization, rendered system prompt and risk-enabled function schemas, zero actions/inference, clean executor/container shutdown. It is preparation data; final wire/token and isolation qualifications remain open.
 
@@ -66,6 +75,9 @@ The build prints an external SHA-256 for `manifest.json`. Preserve it outside th
 | `maintenance_host.py`, `windows_readonly.py` | Prepared fixed read-only query/observation adapters, original-owner registration/PID binding and independent stop observation. No native owner activation CLI; actual running/UART/stop and receipt issuers remain unqualified. |
 | `maintenance_stop.py` | Unarmed role stop plans; original-owner-only fixed poweroff command, private bounded process wrapper, durable no-replay intent and command receipt. Independent launch and actual poweroff remain unqualified. |
 | `owner_launch.py`, `owner_process.py` | Unarmed launch reviews; exact suspended-process sealing; original owner outside controller kill job; ready/terminal evidence and unchanged one-shot stop path. No VM-start grant or activation CLI. |
+| `boot_preconditions.py`, `maintenance_session.py` | Non-authorizing boot precondition reports; one original Store/lease across inspection, exact review and controls; durable phase dispatch gates and original-owner stop. Native startup/session/stop qualification remains open. |
+| `backup_records.py`, `stopped_backup.py`, `maintenance_profile.py` | Explicit file/absent-NVRAM backup records; exclusive locked-source copy/readback and revalidation; separately approved stopped-only settings with one-use intents. No boot, attach, install or restore path. |
+| `frontend_process.py`, `frontend_start.py` | Private suspended family and owner-bound intent/resume/monitoring adapter; bounded output, exact runtime session-PID join, original authority and full process cleanup. CLI remains an unarmed draft; native observer/start/stop qualification is open. |
 
 The synthetic Git directory is inside the generated bundle. Building does not commit, stage, switch, or update refs in this project's repository. Source snapshots handed to an executor contain no Git metadata. Existing project changes are preserved.
 
@@ -129,7 +141,12 @@ The [engine resolver](engine-input-plan.md#measured-resolution-result) now binds
 
 The [engine metadata collector](engine-input-plan.md) defaults to preview. It retrieves only indexes pinned by the existing signed OS cohort, with compressed/expanded hash checks and retained failed attempts. Docker's archive candidate is now identified; the engine transaction, security review, package retrieval and installation remain open.
 
-The [phase-boundary proposal](../../docs/decisions/0002-fixture-phase-output-boundary.md) awaits developer selection. Its review helper compares a candidate output ceiling with independently captured native bodies; all four match. It returns preparation bytes only and is not wired into the broker. Existing strict rejection and dispatch holds remain active.
+The [phase-boundary decision](../../docs/decisions/0002-fixture-phase-output-boundary.md)
+is approved for preparation. The optional [broker ceiling](broker-ceiling-plan.md)
+now binds the mode/approval and raw/effective body/count references before one-use
+permit consumption. Strict rejection retains its original binding and stays the
+default. The four retained native prepared bodies still match; final Agent traffic,
+complete counts and native dispatch remain unqualified.
 
 The [trusted phase contract](phase-policy-plan.md) now requires frozen task/attempt/role and input/response count declarations with a counting-evidence digest for every broker transcript row. Exact requests must carry an output limit within that role's cap, and the permit must match the role and full money envelope. The broker refuses old count-free transcripts and policy/transcript changes across restart. Qualified count receipts and the actual Agent phase handoff remain deployment prerequisites. Direct SDK preparation now verifies a 1,000-token finish override while preserving the 6,000-token edit limit.
 

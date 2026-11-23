@@ -92,6 +92,44 @@ class Store:
             raise ValueError("invalid operation ID")
         with self.transaction():
             self.active(generation)
+            if (
+                operation.startswith("serial:")
+                and self.db.execute(
+                    "SELECT 1 FROM sqlite_master WHERE type='table' AND name='maintenance_session'"
+                ).fetchone()
+            ):
+                session = self.db.execute(
+                    "SELECT state FROM maintenance_session"
+                ).fetchone()
+                if session is None or session["state"] not in {
+                    "inspect-active",
+                    "controls-active",
+                }:
+                    raise Hold(
+                        "session has no guest dispatch authority while awaiting review or stopped"
+                    )
+                purpose = session["state"].removesuffix("-active")
+                phase = self.db.execute(
+                    "SELECT * FROM maintenance_session_phase WHERE purpose=?",
+                    (purpose,),
+                ).fetchone()
+                allowed = (
+                    set()
+                    if phase is None
+                    else {
+                        "serial:"
+                        + hashlib.sha256(
+                            (phase["nonce"] + ":" + purpose + ":" + kind).encode()
+                        ).hexdigest()[:32]
+                        for kind in ("identity", "upload")
+                    }
+                )
+                if (
+                    phase is None
+                    or phase["state"] != "intent"
+                    or operation not in allowed
+                ):
+                    raise Hold("serial operation is outside the active session phase")
             row = self.db.execute(
                 "SELECT * FROM operations WHERE id=?", (operation,)
             ).fetchone()

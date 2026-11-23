@@ -1,5 +1,10 @@
 # Trusted phase limits in the fixture broker
 
+The subsequent [broker ceiling checkpoint](broker-ceiling-plan.md) implements
+the separately approved optional mode. Strict enforcement described below stays
+the default; historical native captures/count estimates are unchanged. Complete
+count and final-target traffic qualification remain open.
+
 This is research harness preparation under the existing [fixture caps](../two-task-validation-fixture.md#simulated-spending-profile), following the [native output mismatch](wire-input-plan.md). It does not adopt a product architecture or authorize a task. Historical request profiles, packets and native results remain unchanged.
 
 ## Prepared enforcement

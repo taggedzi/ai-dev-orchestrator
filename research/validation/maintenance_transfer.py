@@ -14,6 +14,7 @@ import time
 import zlib
 from pathlib import Path
 
+from . import backup_records
 from . import guest_maintenance_control as control
 from . import guest_maintenance_probe as probe
 from . import guest_transfer_entry as entry
@@ -34,6 +35,7 @@ SLOTS = {
 }
 EXECUTOR_DISK = "e832fc9c-23cc-40a8-8e66-fa0c624b8bd9"
 SOURCES = {
+    "backup_records": Path(backup_records.__file__),
     "controller": Path(__file__),
     "compiler": Path(commands.__file__),
     "entry": Path(entry.__file__),
@@ -156,32 +158,10 @@ def checked_grant(raw, external_sha):
         "stopped disk/source preservation evidence unbound",
     )
     backup = grant["backup"]
-    require(
-        set(backup)
-        == {
-            "source_disk_uuid",
-            "disk_uuid",
-            "disk_sha256",
-            "configuration_sha256",
-            "nvram_sha256",
-            "receipt_sha256",
-        },
-        "transfer backup fields changed",
-    )
-    require(
-        backup["source_disk_uuid"] == target["disk_uuid"]
-        and probe.uuid(backup["disk_uuid"])
-        and backup["disk_uuid"] not in (target["disk_uuid"], EXECUTOR_DISK),
-        "transfer backup is not independent",
-    )
-    require(
-        all(
-            isinstance(v, str) and re.fullmatch(r"[0-9a-f]{64}", v)
-            for k, v in backup.items()
-            if k.endswith("sha256")
-        ),
-        "transfer backup evidence is unbound",
-    )
+    if backup.get("format") == backup_records.BINDING_FORMAT:
+        backup_records.checked_binding(backup, target["disk_uuid"])
+    else:
+        _legacy_backup(backup, target)
     lease = grant["lease"]
     require(
         set(lease) == {"owner_nonce", "expires_utc_ns", "expires_mono_ns"}
@@ -216,6 +196,35 @@ def checked_grant(raw, external_sha):
         "transfer source cohort changed",
     )
     return grant
+
+
+def _legacy_backup(backup, target):
+    require(
+        set(backup)
+        == {
+            "source_disk_uuid",
+            "disk_uuid",
+            "disk_sha256",
+            "configuration_sha256",
+            "nvram_sha256",
+            "receipt_sha256",
+        },
+        "transfer backup fields changed",
+    )
+    require(
+        backup["source_disk_uuid"] == target["disk_uuid"]
+        and probe.uuid(backup["disk_uuid"])
+        and backup["disk_uuid"] not in (target["disk_uuid"], EXECUTOR_DISK),
+        "transfer backup is not independent",
+    )
+    require(
+        all(
+            isinstance(v, str) and re.fullmatch(r"[0-9a-f]{64}", v)
+            for k, v in backup.items()
+            if k.endswith("sha256")
+        ),
+        "transfer backup evidence is unbound",
+    )
 
 
 def payloads(grant, files):
@@ -590,7 +599,7 @@ class TransferController:
             "CREATE TABLE IF NOT EXISTS transfer_attempt (singleton INTEGER PRIMARY KEY CHECK(singleton=1), grant_sha TEXT, nonce TEXT, state TEXT)"
         )
 
-    def run(self, raw, external_sha, files):
+    def run(self, raw, external_sha, files, *, _session=None):
         grant = checked_grant(raw, external_sha)
         files = dict(
             files
@@ -598,6 +607,7 @@ class TransferController:
         payloads(grant, files)
         watch = None
         validated = False
+        awaiting_review = False
         started, outcome, upload_request, _result_raw, stopped = (
             False,
             None,
@@ -608,15 +618,27 @@ class TransferController:
         try:
             with self.store.transaction():
                 check_lease(self.store.db, grant)
-                require(
-                    self.store.db.execute("SELECT 1 FROM transfer_attempt").fetchone()
-                    is None,
-                    "transfer attempt exists; reconcile without replay",
-                )
-                self.store.db.execute(
-                    "INSERT INTO transfer_attempt VALUES(1,?,?,'intent')",
-                    (external_sha, grant["run_nonce"]),
-                )
+                if _session is None:
+                    require(
+                        self.store.db.execute(
+                            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='maintenance_session'"
+                        ).fetchone()
+                        is None,
+                        "session Store requires its original session controller",
+                    )
+                    require(
+                        self.store.db.execute(
+                            "SELECT 1 FROM transfer_attempt"
+                        ).fetchone()
+                        is None,
+                        "transfer attempt exists; reconcile without replay",
+                    )
+                    self.store.db.execute(
+                        "INSERT INTO transfer_attempt VALUES(1,?,?,'intent')",
+                        (external_sha, grant["run_nonce"]),
+                    )
+                else:
+                    _session.begin_phase(self, grant, external_sha, files)
                 self.store._event(
                     "transfer-controller-intent",
                     {"grant_sha256": external_sha, "nonce": grant["run_nonce"]},
@@ -740,63 +762,88 @@ class TransferController:
                 )
             validated = True
         finally:
-            if watch is not None:
-                watch.close()
-            if started:
-                self.store.fence(
-                    "transfer finished or uncertain; independent stop/reconciliation required"
-                )
-                with self.store.transaction():
-                    self.store.db.execute(
-                        "UPDATE transfer_attempt SET state='stopping'"
+            try:
+                if watch is not None:
+                    watch.close()
+                if (
+                    started
+                    and validated
+                    and _session is not None
+                    and grant["purpose"] == "inspect"
+                ):
+                    require(
+                        all(not t.is_alive() for t in watch.threads),
+                        "inspection authority sampler did not close",
                     )
-                    self.store._event(
-                        "transfer-stop-intent",
-                        {"target_vm_uuid": grant["target"]["vm_uuid"]},
+                    _session.await_review(
+                        grant, outcome, _result_raw, receipt, upload_request
                     )
-                box, done = {}, threading.Event()
-                stop_started = time.monotonic_ns()
-
-                def stop():
-                    try:
-                        box["receipt"] = self.stopper(grant)
-                    except Exception:  # noqa: BLE001 - Stop errors retain uncertain state.
-                        box["failed"] = True
-                    finally:
-                        done.set()
-
-                threading.Thread(target=stop, daemon=True).start()
-                require(
-                    done.wait(10) and "receipt" in box,
-                    "independent transfer stop unknown; no retry",
-                )
-                stopped = box["receipt"]
-                stop_report(grant, stopped, stop_started)
-                lease = self.store.db.execute(
-                    "SELECT * FROM lease WHERE singleton=1"
-                ).fetchone()
-                require(
-                    lease["state"] == "stop-command-returned"
-                    and lease["target"] == grant["target"]["vm_uuid"]
-                    and lease["expires_ns"] == grant["lease"]["expires_utc_ns"]
-                    and lease["expires_mono_ns"] == grant["lease"]["expires_mono_ns"],
-                    "original supervisor stop ledger is incomplete or changed",
-                )
-                with self.store.transaction():
-                    if not validated:
-                        self.store.db.execute(
-                            "UPDATE transfer_attempt SET state='held-stop-reported'"
+                    awaiting_review = True
+            finally:
+                if started and not awaiting_review:
+                    self.store.fence(
+                        "transfer finished or uncertain; independent stop/reconciliation required"
+                    )
+                    with self.store.transaction():
+                        if _session is None:
+                            self.store.db.execute(
+                                "UPDATE transfer_attempt SET state='stopping'"
+                            )
+                        else:
+                            _session.stopping()
+                        self.store._event(
+                            "transfer-stop-intent",
+                            {"target_vm_uuid": grant["target"]["vm_uuid"]},
                         )
-                    self.store._event(
-                        "transfer-stop-reported",
-                        {"receipt_sha256": stopped["receipt_sha256"]},
+                    box, done = {}, threading.Event()
+                    stop_started = time.monotonic_ns()
+
+                    def stop():
+                        try:
+                            box["receipt"] = self.stopper(grant)
+                        except Exception:  # noqa: BLE001 - Stop errors retain uncertain state.
+                            box["failed"] = True
+                        finally:
+                            done.set()
+
+                    threading.Thread(target=stop, daemon=True).start()
+                    require(
+                        done.wait(10) and "receipt" in box,
+                        "independent transfer stop unknown; no retry",
                     )
+                    stopped = box["receipt"]
+                    stop_report(grant, stopped, stop_started)
+                    lease = self.store.db.execute(
+                        "SELECT * FROM lease WHERE singleton=1"
+                    ).fetchone()
+                    require(
+                        lease["state"] == "stop-command-returned"
+                        and lease["target"] == grant["target"]["vm_uuid"]
+                        and lease["expires_ns"] == grant["lease"]["expires_utc_ns"]
+                        and lease["expires_mono_ns"]
+                        == grant["lease"]["expires_mono_ns"],
+                        "original supervisor stop ledger is incomplete or changed",
+                    )
+                    with self.store.transaction():
+                        if not validated and _session is None:
+                            self.store.db.execute(
+                                "UPDATE transfer_attempt SET state='held-stop-reported'"
+                            )
+                        self.store._event(
+                            "transfer-stop-reported",
+                            {"receipt_sha256": stopped["receipt_sha256"]},
+                        )
+        if awaiting_review:
+            return _session.review_packet()
         combined = commands.canonical({"outcome": outcome, "stop": stopped})
         self.store.receipt("serial:" + upload_request["request_id"], 200, combined)
         with self.store.transaction():
-            self.store.db.execute(
-                "UPDATE transfer_attempt SET state='reported-and-stop-reported'"
-            )
+            if _session is None:
+                self.store.db.execute(
+                    "UPDATE transfer_attempt SET state='reported-and-stop-reported'"
+                )
+            else:
+                _session.finished(stopped)
             self.store._event(
                 "transfer-postconditions-reported",
                 {

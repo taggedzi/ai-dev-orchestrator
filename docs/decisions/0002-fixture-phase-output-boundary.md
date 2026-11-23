@@ -1,8 +1,8 @@
-# Proposed fixture phase output boundary
+# Fixture phase output boundary
 
-Status: **Proposed — developer decision pending.** Preparation only. The current strict broker still rejects oversized finish requests; this proposal does not activate normalization, amend a frozen profile, or authorize native tasks. The scope is the M-CLI1 local scripted fixture, not adoption of a product routing stack.
+Status: **Approved for broker phase-ceiling preparation, November 22, 2026.** The developer selected “Approve broker phase-ceiling preparation” in the conversation. Strict rejection remains the default. The optional ceiling mode is preparation for the M-CLI1 local scripted fixture; no frozen deployment profile or native task is authorized by this decision.
 
-## Decision requested
+## Recorded decision
 
 Prepare a trusted broker output ceiling for each frozen phase. The unmodified Agent can continue its two-call run using its existing 6,000-token SDK maximum. The broker selects the phase from its trusted transcript and one-use permit, verifies the exact incoming body, and derives an effective request whose `max_completion_tokens` is the smaller of the incoming limit and the phase cap. For finish this changes 6,000 to 1,000. Keep all proposed token and money caps unchanged.
 
@@ -21,7 +21,7 @@ The explicit decision changes how the broker interprets the executor's requested
 3. Apply the existing strict phase checks to the effective request, including measured input/response counts and response count within the effective output bound. Compare the permit's task, attempt, role and unchanged full reservation. Atomically journal raw/effective hashes, requested/effective limits, evidence references and possible-send before selecting a response. Changed policy or either body hash after restart holds. Alias bodies, retries and alternate routes do not gain another permit.
 4. Return only the frozen local scripted response under its qualified effective count. Do not truncate a returned JSON/SSE response or tool arguments. This fixture broker has no provider-forwarding path. Treat fictional billing usage separately from the native counter measurements.
 
-The preparation-only [review helper](../../research/validation/phase_handoff_review.py) reproduces a separately frozen target body and returns bytes only. It has no broker import/call site, permit consumption, transport or model action. It does not replace the strict admission checks or attest a count receipt.
+The [review helper](../../research/validation/phase_handoff_review.py) reproduces a separately frozen target body and returns bytes only. The approved optional broker mode now calls it through `admit_with_ceiling`, then applies the existing strict checks to the effective body. The helper does not issue a permit, send traffic or attest a count receipt.
 
 ## Evidence available for review
 
@@ -31,6 +31,6 @@ Preparation comparison of all four retained bodies found that changing the outpu
 
 Source review found a native [LLM switch route](https://github.com/OpenHands/software-agent-sdk/blob/504a88cab0fb48ee5226238ad7b8f1d865fa84a8/openhands-agent-server/openhands/agent_server/conversation_router.py#L624-L667). The [sync run loop](https://github.com/OpenHands/software-agent-sdk/blob/504a88cab0fb48ee5226238ad7b8f1d865fa84a8/openhands-sdk/openhands/sdk/conversation/impl/local_conversation.py#L2159-L2332) resets its local iteration count on each run and emits `MaxIterationsReached`/ERROR when unfinished at its limit. The current narrow gate grants neither LLM switching nor a phase barrier; acknowledgements alone cannot establish a safe switch point. Agent Server may select the async run path, which would need its own qualification for the one-step alternative.
 
-## Remaining gates after a decision
+## Preparation and remaining gates
 
-If the broker option is selected, prepare an explicit mode bound into the policy/transcript digest; strict rejection remains the default for old transcripts. Test both raw/effective bindings, no limit increases, phase/permit mismatches, restart and journal-failure behavior. Verify complete input/response counts and actual Agent Server traffic on the final frozen target before dispatch. This review does not qualify finish/correction/review inputs, inference semantics, route metering, containment or recovery. The separate guard-creation approval remains pending.
+The selected `phase-ceiling-v1` mode binds its approval reference, raw/effective hashes and incoming/effective count references into the policy/transcript digest. Existing strict transcripts retain their original binding. [Prepared behavior and checks](../../research/validation/broker-ceiling-plan.md) cover caps, phase/permit mismatches, restart, interruption and journal failure. Complete input/response counts and actual Agent Server traffic on the final frozen target still need qualification before dispatch. This decision does not qualify inference semantics, route metering, containment or recovery. Disconnected guard creation was separately approved and completed; boot, installation and network activation remain separate.

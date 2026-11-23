@@ -1,0 +1,275 @@
+{
+  "NIC_activations": 0,
+  "VM_boots": 0,
+  "VirtualBox_frontends_launched": 0,
+  "actual_Windows_controller_owner_cases": 7,
+  "actual_Windows_original_file_lock_cases": 4,
+  "approval": "conversation:2026-11-22-direct-frontend-preparation",
+  "format": "mcli1-owner-bound-frontend-preparation-evidence-v1",
+  "guest_commands": 0,
+  "initial_regression": {
+    "finding": "409 tests: one deterministic-bundle comparison failed while included documentation was being edited during the run. Passing successor ran with fixed inputs; no test bypass or assertion change.",
+    "inventory": {
+      "bytes": 145526,
+      "path": ".local/validation/startup-regression-01/inventory.json",
+      "sha256": "bd45521620cdd3938f3f89565649ac7f5b609b908ad584a233123a67431c3674"
+    },
+    "log": {
+      "bytes": 71316,
+      "path": ".local/validation/startup-regression-01/unittest.log",
+      "sha256": "416e38c7ca3da52b430a34ed885bf87f9c6b37bae4cf56e1a304867073617a0d"
+    },
+    "summary": {
+      "bytes": 14912,
+      "path": ".local/validation/startup-regression-01/result.json",
+      "sha256": "51f21eef26beaff1f04a44f45598a55523d839f203749c7d687895e40b95fa94"
+    }
+  },
+  "limits": [
+    "Surrogate-only startup and VM/session facts",
+    "Current conservative retirement may race the original sole poweroff command; unknown/raced stop stays held",
+    "Process reaping alone proves neither VM poweroff nor late/detached-start settlement",
+    "Host ACLs, native executable dependencies, actual readiness/UART and full native stop timing remain unqualified"
+  ],
+  "measured_surrogate_family": [
+    {
+      "created_filetime": 134398682735108995,
+      "image": "C:\\Users\\tagge\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "pid": 12124
+    },
+    {
+      "created_filetime": 134398682735290583,
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "pid": 12252
+    },
+    {
+      "created_filetime": 134398682735788888,
+      "image": "C:\\Users\\tagge\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "pid": 26236
+    },
+    {
+      "created_filetime": 134398682735839801,
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "pid": 13060
+    },
+    {
+      "created_filetime": 134398682736395281,
+      "image": "C:\\Users\\tagge\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+      "pid": 8432
+    },
+    {
+      "created_filetime": 134398682736443554,
+      "image": "C:\\Windows\\System32\\conhost.exe",
+      "pid": 9608
+    }
+  ],
+  "native_session_facts": "synthetic; no installed-build session reader qualification",
+  "new_tests": 28,
+  "next_check": "Prepare and test the fixed bounded native session observer and concrete controller/owner qualification run before requesting native approval.",
+  "separate_query_reaped": true,
+  "source_reviews": [
+    {
+      "finding": "sessionPID is valid only when sessionState is Locked or Unlocking; preparation requires Locked. Exact installed-build correspondence remains unknown.",
+      "reviewed": "2026-11-22",
+      "url": "https://raw.githubusercontent.com/VirtualBox/virtualbox/main/src/VBox/Main/idl/VirtualBox.xidl"
+    },
+    {
+      "finding": "No SessionPID field was found in showvminfo source. A separate fixed bounded observer is needed.",
+      "header_revision": "114362, 2026-06-15",
+      "url": "https://raw.githubusercontent.com/VirtualBox/virtualbox/main/src/VBox/Frontends/VBoxManage/VBoxManageInfo.cpp"
+    }
+  ],
+  "sources": [
+    {
+      "bytes": 14602,
+      "path": "research/validation/maintenance_stop.py",
+      "sha256": "f947ae1c1558d150db556a8437a01de2934938fa38e4478ca5da6264c1882faf"
+    },
+    {
+      "bytes": 6047,
+      "path": "research/validation/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 31432,
+      "path": "research/validation/maintenance_host.py",
+      "sha256": "b4abff939398a81e628d3de21e9c718f9b7e239a39772a337eb607f17716c583"
+    },
+    {
+      "bytes": 12755,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    },
+    {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 10697,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 16923,
+      "path": "research/validation/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 10319,
+      "path": "research/validation/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 3809,
+      "path": "research/validation/backup_records.py",
+      "sha256": "633902a7db727cfd1b0086b354816a6dbd79e3e14c967dceeca9f55a91adc521"
+    },
+    {
+      "bytes": 11948,
+      "path": "research/validation/owner_process.py",
+      "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+    },
+    {
+      "bytes": 16850,
+      "path": "research/validation/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 20285,
+      "path": "research/validation/boot_preconditions.py",
+      "sha256": "73db7d68efea800bc41ff9998be67b3cfb72a7be49adeb28de51cf20a227bb3e"
+    },
+    {
+      "bytes": 36517,
+      "path": "research/validation/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122"
+    },
+    {
+      "bytes": 25846,
+      "path": "research/validation/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    {
+      "bytes": 17502,
+      "path": "research/validation/stopped_backup.py",
+      "sha256": "6b363daf2ed5a88c96609bf1fd8d7633924944a40868a7ab1dc8a077aa0d3f0f"
+    },
+    {
+      "bytes": 26924,
+      "path": "research/validation/frontend_start.py",
+      "sha256": "c2cdef6faba417a71dae4f43a14f0b0d1dd00e09c1ed3270cae457f063dbb5d9"
+    },
+    {
+      "bytes": 11386,
+      "path": "research/validation/frontend_process.py",
+      "sha256": "c6437355d342a48381b466296db229c6025ff9474218b8fb093679d8a9d21925"
+    },
+    {
+      "bytes": 21707,
+      "path": "tests/test_frontend_start.py",
+      "sha256": "04c12f9ae6263ad9edb9a56e528ce7342799370b24f9112a4b661df34b0bafb1"
+    },
+    {
+      "bytes": 3558,
+      "path": "tests/fixtures/frontend_start_support.py",
+      "sha256": "5a040baf7b8b62592b4c6793e406638b839f21b7ef3c6bf1fb9085eedb40fabf"
+    },
+    {
+      "bytes": 4864,
+      "path": "tests/fixtures/frontend_start_controller.py",
+      "sha256": "693e532833315254fc603560ce6250da5fdb0cff1b9aa04fc2b26e13b8a6b26e"
+    }
+  ],
+  "startup_review_inventory": {
+    "bytes": 4311,
+    "path": ".local/validation/startup-input-review-02/inventory.json",
+    "sha256": "bb4eced4dd6fda41487730073e211dadc6f69d11d4dd216e82a2593754daf914"
+  },
+  "status": "owner-bound admission/resume/watchdog/runtime join prepared; native observer and qualification open",
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 145526,
+      "path": ".local/validation/startup-regression-02/inventory.json",
+      "sha256": "748ef6e4183f3af568165ba5e08976c68ff26b99fb529d83b36779d3c7529e12"
+    },
+    "log": {
+      "bytes": 70427,
+      "path": ".local/validation/startup-regression-02/unittest.log",
+      "sha256": "7ac0ca7e4fdb12bc5a7eb93053ba11f6ae3125f8adf3768ee104af5e659148be"
+    },
+    "passed": 396,
+    "skipped": [
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_exclusive_file_and_mask_never_overwrite_existing_bytes"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_global_journal_survives_close_and_rejects_a_fresh_attempt"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_hardlinked_or_foreign_owned_inputs_are_not_approved"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_partial_file_write_remains_and_refuses_replay"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_real_child_capture_timeout_output_bound_and_reaping"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_symlink_ancestors_writable_parents_and_path_escapes_refuse"
+      },
+      {
+        "reason": "POSIX pipe/process-group check",
+        "test": "test_guest_maintenance.GuestMaintenanceTests.test_native_pipe_deadline_output_bound_and_child_reaping"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_actual_non_guest_identity_fails_before_any_stage_write"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_bounded_decode_refuses_expansion_before_creating_final"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_tampered_compression_and_existing_final_file_never_execute_or_overwrite"
+      },
+      {
+        "reason": "symlink creation is unavailable to this process",
+        "test": "test_validation_harness.ObserverTests.test_symlinks_are_rejected_when_platform_supports_creation"
+      }
+    ],
+    "summary": {
+      "bytes": 14812,
+      "path": ".local/validation/startup-regression-02/result.json",
+      "sha256": "fc0cdcdb8590e900eac257f9c63fcffc3ffe001c370227231dea07c994f85579"
+    },
+    "tests_run": 409
+  }
+}

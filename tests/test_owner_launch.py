@@ -151,8 +151,9 @@ class PacketTests(unittest.TestCase):
         self.assertFalse(preview["launch_available"])
 
 
-@unittest.skipUnless(sys.platform == "win32", "Windows independent-job process checks")
-class NativeOwnerTests(unittest.TestCase):
+class NativeOwnerFixture:
+    """Shared native fixture; every owner stop uses an isolated Python surrogate."""
+
     artifact_root = None
 
     def setUp(self):
@@ -246,6 +247,9 @@ class NativeOwnerTests(unittest.TestCase):
         self.assertFalse(self.alive(self.owner_identity))
         return result
 
+
+@unittest.skipUnless(sys.platform == "win32", "Windows independent-job process checks")
+class NativeOwnerTests(NativeOwnerFixture, unittest.TestCase):
     def test_owner_survives_controller_job_close_and_bootstrap_handle_release(self):
         self.pending()
         ready = self.seal()

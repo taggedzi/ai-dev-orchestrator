@@ -101,3 +101,43 @@ def admit_request(raw, request_sha256, admission):
         "output_cap": output_cap,
         "requested_output_tokens": requested,
     }
+
+
+def validate_normalization(value):
+    """Frozen effective-body and incoming-count bindings, supplied by trusted policy."""
+    if (
+        not isinstance(value, dict)
+        or set(value)
+        != {"effective_request_sha256", "incoming_counter_evidence_sha256"}
+        or any(
+            not isinstance(v, str) or not re.fullmatch(r"[0-9a-f]{64}", v)
+            for v in value.values()
+        )
+    ):
+        raise ValueError("missing or invalid frozen normalization bindings")
+
+
+def admit_with_ceiling(raw, request_sha256, admission, normalization):
+    """Derive only the reviewed output maximum, then apply all strict checks."""
+    from .phase_handoff_review import preview_output_ceiling
+
+    validate_turn(admission)
+    validate_normalization(normalization)
+    effective_sha = normalization["effective_request_sha256"]
+    effective = preview_output_ceiling(
+        raw, admission["role"], request_sha256, effective_sha
+    )
+    checked = admit_request(effective, effective_sha, admission)
+    return {
+        **checked,
+        # Permits always bind the incoming bytes, including interrupted/replayed calls.
+        "request_sha256": request_sha256,
+        "incoming_request_sha256": request_sha256,
+        "effective_request_sha256": effective_sha,
+        "requested_output_tokens": load_json(raw)["max_completion_tokens"],
+        "effective_output_tokens": checked["requested_output_tokens"],
+        "incoming_counter_evidence_sha256": normalization[
+            "incoming_counter_evidence_sha256"
+        ],
+        "output_policy": "phase-ceiling-v1",
+    }

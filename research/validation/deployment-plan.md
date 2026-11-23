@@ -2,6 +2,15 @@
 
 Status: provisioning and offline OS installation completed November 21. The latest [diagnostic](offline-inspection.md) completed one unattended two-CPU x2APIC-off boot and ACPI shutdown. Repeatability and prospective readiness-policy validation remain open. The last native receipt for `mcli1-validation-01` records poweroff, two vCPUs, original APIC settings restored on, all NICs disabled and UART off; revalidate before further VM work. A separate Docker Desktop preparation has now built and smoke-tested the runtime image. Guest runtime installation and executor experiments remain gated.
 
+November 22: the separately approved [guard creation](guard-preparation-plan.md),
+[file backups](stopped-backup-plan.md) and [stopped maintenance profiles](maintenance-profile-plan.md)
+are complete with independent observations. Both targets remain powered off,
+NICs disabled, with four SATA ports, UART server configured and x2APIC off/APIC on.
+The [frontend family primitive](frontend-process-plan.md), same-boot session and
+broker ceiling are locally prepared. Original-owner boot integration, native
+startup/session-PID/readiness, hardening and isolation remain open. No new guest
+boot or network activation ran.
+
 ## Target and trust boundary
 
 Continue the existing [M1-06 profile](../execution-security-boundary.md#minimum-secure-proof-of-concept): a fresh dedicated disposable Linux VM, with an unprivileged container running the pinned Agent Server local runtime. Give it only metadata-free synthetic source, bounded scratch, read-only payloads, and an explicitly restricted path to the scripted broker. Keep planning, audit/ledger, Git writer, broker policy, fault proxy, supervisor and observer storage outside its control.
@@ -47,6 +56,12 @@ The developer has now [selected a separate guard VM for preparation](../../docs/
 ## Next review
 
 1. Prepare coherent [OS-update and hardening inputs](guard-package-plan.md) before freezing final guest profiles. The four downloaded nftables archives do not apply the 97 available OS upgrades or new kernel. Review installation, firewall-service stop/start behavior, the offline network wait and inherited credentials/artifacts. Then freeze the narrowly bound readiness policy and qualify three consecutive unattended cold starts/ACPI shutdowns on the final two-CPU x2APIC-off executor profile. Preserve earlier verdicts and the stopped-disk/attempt chain; do not replay the formatting installer. Guard readiness remains a separate profile measurement.
-2. Review the accepted guard topology's [exact disconnected creation plan](guard-preparation-plan.md). Its source disk and package metadata have been inspected; nftables is absent. Separate approval is required for creating the stopped guard, then offline package/hardening, boot and external network/control qualification. Final deployment approval and #12/#13/#11 experiments follow their frozen inputs and effective-control evidence.
+2. Continue from the [applied stopped profiles](maintenance-profile-plan.md) and
+   [verified backups](stopped-backup-plan.md). Integrate the original owner/lease
+   and current profile into a one-use frontend start grant, then obtain separate
+   approval for native boot/failure/readiness qualification. Installation and
+   network activation remain separate actions.
+   Final deployment approval and #12/#13/#11 experiments follow their frozen inputs
+   and effective-control evidence.
 
 Do not merge PR #25 with an automatic closure of #11 unless the unfinished measurements are explicitly preserved in tracking. The preparation work supplies assets and tested local mechanisms; it does not satisfy #11–#14 by itself.

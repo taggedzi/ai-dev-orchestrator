@@ -2,6 +2,10 @@
 
 Status: **Accepted for preparation — provisioning and qualification pending.** On November 21, 2026, the developer selected “Prepare the guard VM topology” in the thread's explicit decision request. Scope is the synthetic M1-12 validation deployment, not selection of the product implementation stack. This decision itself changes no VM, adapter, firewall or service.
 
+November 22 update: [disconnected guard creation](../../research/validation/guard-preparation-plan.md)
+was separately approved and completed. Boot, installation/hardening and network
+qualification remain open; the topology decision itself grants none of those actions.
+
 ## Recorded decision
 
 Prepare a small trusted guard VM alongside the already selected executor VM. It will host the scripted broker and a narrow control ingress, with filtering outside the executor's kernel. The alternative considered was the original separate Linux runner with host-side VM filtering. Do not replace the requirement with an executor-local firewall or with Docker Desktop's offline startup check.

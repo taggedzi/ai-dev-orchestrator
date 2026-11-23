@@ -1,0 +1,239 @@
+{
+  "VM_boots": 0,
+  "VM_mutations": 0,
+  "backups": [
+    {
+      "binding": {
+        "backup_id": "b756af2ed0dd4e268d93931f6e401df4",
+        "configuration_sha256": "2a72502ad694f8cfccdd083840b1c4f18a0cf9c3c2ba9cc0bdbf8eba348138db",
+        "disk_bytes": 2625634304,
+        "disk_sha256": "a8a6024499644999738f089546096e93174a336c003f2d1ae841214c2fe22c43",
+        "format": "mcli1-file-backup-binding-v2",
+        "nvram": {
+          "state": "absent"
+        },
+        "receipt_sha256": "c16629a52d55229edd3f66c2afb3c99af231451379ae26814668421837e4715f",
+        "source_disk_uuid": "a8f47315-d330-4b28-bbb0-6a721b4c6251"
+      },
+      "copy_classification": "unattached independent file copies preserving original disk UUID; no registered clone",
+      "inventory": {
+        "bytes": 2527,
+        "path": ".local/validation/stopped-backup-guard-01/inventory.json",
+        "sha256": "ab534379ec5b097fc592b4347e0e5eef361eead0275b090ecebf83c939b5a689"
+      },
+      "receipt": {
+        "bytes": 3177,
+        "path": ".local/validation/stopped-backup-guard-01/receipt.json",
+        "sha256": "c16629a52d55229edd3f66c2afb3c99af231451379ae26814668421837e4715f"
+      },
+      "role": "guard",
+      "source_poweroff_before_and_after": true
+    },
+    {
+      "binding": {
+        "backup_id": "75e7961aa7754c34af2a356e45f435ce",
+        "configuration_sha256": "14581811bc8c47b961d0fce39d55f24c4433346d2347b1ad958e0b5797d27655",
+        "disk_bytes": 2625634304,
+        "disk_sha256": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09",
+        "format": "mcli1-file-backup-binding-v2",
+        "nvram": {
+          "bytes": 540672,
+          "sha256": "cdfcb7d4b7eb19f0a4d990481704fbd02f81272e6f32d0651ed4a726546ce521",
+          "state": "file"
+        },
+        "receipt_sha256": "c727a10b2fcc3cc4d83be32943b46f28895a8005dd5da4ccf4381a1d0eceb44a",
+        "source_disk_uuid": "e832fc9c-23cc-40a8-8e66-fa0c624b8bd9"
+      },
+      "copy_classification": "unattached independent file copies preserving original disk UUID; no registered clone",
+      "inventory": {
+        "bytes": 2757,
+        "path": ".local/validation/stopped-backup-executor-01/inventory.json",
+        "sha256": "c8d7ecbf3181fc070102e48839b7cde1bc6c5471bf39146e8e461851048356ed"
+      },
+      "receipt": {
+        "bytes": 3502,
+        "path": ".local/validation/stopped-backup-executor-01/receipt.json",
+        "sha256": "c727a10b2fcc3cc4d83be32943b46f28895a8005dd5da4ccf4381a1d0eceb44a"
+      },
+      "role": "executor",
+      "source_poweroff_before_and_after": true
+    }
+  ],
+  "base_commit": "a522739066592af55eebfdc21f3487b1d184a29b",
+  "classification": "historical backup/profile/process checkpoint; newer owner-bound startup preparation is separate",
+  "format": "mcli1-stopped-backup-evidence-v2",
+  "independent_readback_inventory": {
+    "bytes": 209,
+    "path": ".local/validation/stopped-backup-verify-01/inventory.json",
+    "sha256": "f76e6fba4f381564445df3ebb767fa6a816a15b34f800f111daadc723485838e"
+  },
+  "limits": [
+    "No restore or bootability qualification",
+    "Backups share the host storage failure domain",
+    "Current live configuration files changed only in the separately approved profile stage",
+    "Host ACLs, approval authentication and native boot/stop qualification remain open"
+  ],
+  "plan_inventory": {
+    "bytes": 3337,
+    "path": ".local/validation/stopped-backup-review-01/inventory.json",
+    "sha256": "1e4f05c83f1445b00babcff6640698ec8bca59d1728f005f36106ff520df231d"
+  },
+  "source_review": {
+    "classification": "API documentation; Windows scratch tests separately measure denied write/delete/replace",
+    "url": "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew"
+  },
+  "sources": [
+    {
+      "bytes": 14602,
+      "path": "research/validation/maintenance_stop.py",
+      "sha256": "f947ae1c1558d150db556a8437a01de2934938fa38e4478ca5da6264c1882faf"
+    },
+    {
+      "bytes": 6047,
+      "path": "research/validation/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 31432,
+      "path": "research/validation/maintenance_host.py",
+      "sha256": "b4abff939398a81e628d3de21e9c718f9b7e239a39772a337eb607f17716c583"
+    },
+    {
+      "bytes": 12755,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    },
+    {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 10697,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 16923,
+      "path": "research/validation/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 10319,
+      "path": "research/validation/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 3809,
+      "path": "research/validation/backup_records.py",
+      "sha256": "633902a7db727cfd1b0086b354816a6dbd79e3e14c967dceeca9f55a91adc521"
+    },
+    {
+      "bytes": 11948,
+      "path": "research/validation/owner_process.py",
+      "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+    },
+    {
+      "bytes": 16850,
+      "path": "research/validation/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 17502,
+      "path": "research/validation/stopped_backup.py",
+      "sha256": "6b363daf2ed5a88c96609bf1fd8d7633924944a40868a7ab1dc8a077aa0d3f0f"
+    },
+    {
+      "bytes": 25846,
+      "path": "research/validation/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    }
+  ],
+  "status": "measured native read-only inventory and local copy/readback",
+  "successor_evidence": "research/validation/frontend-start-evidence.json",
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 70400,
+      "path": ".local/validation/frontend-regression-01/inventory.json",
+      "sha256": "1243245e165b71d004f6e3df66c3bbfe21f088eca7ec24a5cfd8cf5d156d8782"
+    },
+    "log": {
+      "bytes": 65741,
+      "path": ".local/validation/frontend-regression-01/unittest.log",
+      "sha256": "1d44928be77e46543c122e51eb6266fde311f026d8a408725c21ce508bb1eb38"
+    },
+    "passed": 368,
+    "skipped": [
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_exclusive_file_and_mask_never_overwrite_existing_bytes"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_global_journal_survives_close_and_rejects_a_fresh_attempt"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_hardlinked_or_foreign_owned_inputs_are_not_approved"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_partial_file_write_remains_and_refuses_replay"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_real_child_capture_timeout_output_bound_and_reaping"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_symlink_ancestors_writable_parents_and_path_escapes_refuse"
+      },
+      {
+        "reason": "POSIX pipe/process-group check",
+        "test": "test_guest_maintenance.GuestMaintenanceTests.test_native_pipe_deadline_output_bound_and_child_reaping"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_actual_non_guest_identity_fails_before_any_stage_write"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_bounded_decode_refuses_expansion_before_creating_final"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_tampered_compression_and_existing_final_file_never_execute_or_overwrite"
+      },
+      {
+        "reason": "symlink creation is unavailable to this process",
+        "test": "test_validation_harness.ObserverTests.test_symlinks_are_rejected_when_platform_supports_creation"
+      }
+    ],
+    "summary": {
+      "bytes": 14155,
+      "path": ".local/validation/frontend-regression-01/result.json",
+      "sha256": "61fb15d43632d20a733bec7600c5b3e5dcb47a8405d975af0b41f4698ed448fa"
+    },
+    "tests_run": 381
+  }
+}

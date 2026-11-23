@@ -1,12 +1,146 @@
 # Project status and restart point
 
-Updated November 22, 2026. The active goal is to finish the project, including the vision's lifecycle requirements; this research checkpoint is not completion. The GSD freeze/conformance work is committed at `048cb6b`, and dependency input preparation at `fec5bfb`. The planning freeze has a real pinned GSD schema-1 export and five negative import controls. A separately approved offline build has now produced an exact Agent Server image and a successful non-root/read-only startup smoke check. The image archive and software/binary hashes are retained. Docker Desktop is stopped again; no VirtualBox operations were issued. The earlier VM diagnostic measured one unattended two-CPU x2APIC-off boot and ACPI shutdown. Product implementation, repeatable VM readiness, runtime hardening, isolation, gateway and executor qualification remain open.
+Updated November 22, 2026. The active goal remains the full project, including the
+vision's lifecycle requirements; this checkpoint is not completion. The developer
+approved same-boot session preparation, disconnected guard creation, broker
+phase-ceiling preparation, both stopped-only maintenance profiles and direct
+frontend preparation in this conversation. The work remains within those
+separate scopes. The branch remains
+`research/m1-11-executor-recovery`, based on `a522739`; no commit, push or release
+was requested. See the [requirement-by-requirement completion audit](completion-audit.md).
 
-## Where we stopped
+## Latest original-owner startup preparation
 
-Current checkpoint: [independent original-owner preparation](../research/validation/owner-launch-plan.md) now seals an exact stop plan against a suspended worker's real PID and immutable original lease. Six native Windows process/job checks passed, including controller kill-job closure and abrupt bootstrap exit; every VM stop was replaced by a Python surrogate. Final Windows regression passed 290 tests with 13 platform skips. Both role launch reviews and host revision 05 contracts remain unarmed. No VM boot, setting change, guest command or poweroff ran. Next is enforcing the owner-ready proof in boot/startup admission and testing failure paths before actual target activation. Guard creation, broker phase policy and the [same-boot proposal](decisions/0003-maintenance-same-boot-review.md) remain pending. Product implementation and final VM/runtime qualification remain open.
+The [owner-bound frontend adapter](../research/validation/frontend-start-plan.md)
+now binds the original owner/ready proof, immutable Store/lease, current stopped
+profile, actual backup/current-file bytes, executable/environment and source cohort.
+Exclusive filesystem/SQLite intents precede its one possible resume. A separate
+watchdog checks authority, job/family/output state and the original stop reserve.
+Runtime session-PID matching produces no guest-readiness or dispatch permission.
+
+All **28 focused startup checks pass**. Seven exercise the actual Windows
+controller/job and independent owner with Python frontend/stop surrogates; four
+exercise real file-sharing locks with synthetic disk bytes. Lost resume or
+original-stop acknowledgement, controller death, revocation, output overflow,
+stale runtime evidence and replay remain held. No VirtualBox frontend or VM ran.
+Final regression: **409 tests, 396 passed, 13 platform skips**, no failures or
+errors; Ruff and whitespace checks pass. Exact sources, logs, process/file-lock
+artifacts and the initial input-drift failure are retained in
+[startup evidence](../research/validation/frontend-start-evidence.json). Current
+unarmed successor inputs are `.local/validation/startup-input-review-02`, inventory
+SHA-256 `bb4eced4dd6fda41487730073e211dadc6f69d11d4dd216e82a2593754daf914`.
+Earlier cohorts below retain their execution-time results and source snapshots.
+
+Next prepare a fixed bounded native session observer and the exact controller/owner
+qualification run for separate review. The installed frontend's descendants,
+session join, late/detached startup and stop/retirement timing remain unqualified.
+The conservative retirement path can race the sole original poweroff command;
+cleanup cannot turn a raced or unknown result into acceptance. Guest readiness,
+UART/root-session collection, hardening and the product lifecycle remain open.
+
+## Previous backup/profile/process checkpoint
+
+The two preparation VMs now have [verified unattached file backups](../research/validation/stopped-backup-plan.md).
+Each original 2,625,634,304-byte VDI was copied under Windows read-sharing locks,
+read back, and independently rehashed alongside its original. The guard's NVRAM
+absence is explicit; the executor's existing firmware file is hash-bound. Version-2
+backup bindings are opt-in, retaining old version-1 packet semantics. Backup
+images retain their original UUIDs and must never be attached or registered.
+
+The developer-approved [stopped profile changes](../research/validation/maintenance-profile-plan.md)
+were applied and independently reobserved. Both VMs remain powered off with eight
+disabled NICs, four SATA ports and their fixed UART server settings. Both now have
+x2APIC off/APIC on. Disk hashes and NVRAM state are unchanged. Current guard
+configuration SHA-256 is `986cf055dec3732488666adfe7e8715965faac421c9dc9c651eecb411f5c4f7e`;
+executor configuration is `5dfe5bc297f585a934bb2090797c365fafcfbd4bb7cbe785c8916f1da7ccf4f2`.
+The backups intentionally retain the earlier configurations. No VM boot, guest
+command, package install or network activation occurred.
+
+[Decision 0004](decisions/0004-startup-process-ownership.md) approves direct
+frontend/job preparation. Source review exposed Windows hardening respawns, and
+native Python tests exposed console-helper processes. The new private
+[frontend-family primitive](../research/validation/frontend-process-plan.md) accounts
+for at most three frontend images plus three pinned console helpers, under a
+twelve-process outer controller job. Eight native scratch checks pass, including
+the actual nested controller/family/query arrangement, abrupt parent loss and full
+family cleanup. No VirtualBox frontend was launched. This primitive still needs
+the actual original-owner/lease/start-grant adapter and runtime session-PID join.
+
+Final regression: **381 tests, 368 passed, 13 platform skips**; Ruff passes. New
+source snapshots, logs, native backup/profile receipts and process artifacts are
+hash-indexed in [backup evidence](../research/validation/stopped-backup-evidence.json),
+[profile evidence](../research/validation/maintenance-profile-evidence.json) and
+[frontend evidence](../research/validation/frontend-process-evidence.json).
+Current unarmed input context is `.local/validation/startup-input-review-01`;
+earlier packets and summaries retain their historical source cohorts.
+
+The later adapter checkpoint above implements this cohort's planned integration
+with Python surrogates. The older `.local/validation/startup-input-review-01`
+packets retain their historical sources and remain unarmed. Product implementation
+and the complete lifecycle goal remain open.
+
+### Previous session and broker checkpoint
+
+The [same-boot session](../research/validation/maintenance-session-plan.md) now
+retains inspection and an exact action list for review, denies guest dispatch
+while waiting, and admits controls under the original immutable lease. Each phase
+has separate durable operation IDs. Expiry/revocation/journal/replay cases pass;
+a native original-owner test confirms one surrogate stop after an unanswered
+review. Host collection and final stop observation understand the session ledger.
+The [boot preconditions](../research/validation/boot-preconditions-plan.md) bind
+live readiness, jobs, original Store and stopped configuration but deliberately
+issue no native-start permission. Actual startup integration/settlement remains
+the next control-path gap.
+
+The [guard creation](../research/validation/guard-preparation-plan.md) completed
+under exact plan digest `d9b76875fa1892d015f109fe15f2584620d01d2f729451848221805713dcba85`.
+`mcli1-guard-01` is powered off with eight disabled NICs; disk UUID is
+`a8f47315-d330-4b28-bbb0-6a721b4c6251`, hash
+`a8a6024499644999738f089546096e93174a336c003f2d1ae841214c2fe22c43`.
+Independent bounded queries and both full disk hashes passed; the executor source
+remains unchanged at `2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09`.
+The guard has one SATA port and no first-boot NVRAM file. Maintenance admission
+requires a reviewed four-port/UART configuration and a genuine backup record that
+represents absent NVRAM correctly. No boot, guest command, installation or network
+activation occurred in this checkpoint.
+
+The [broker ceiling](../research/validation/broker-ceiling-plan.md) is now an
+explicit approved preparation mode with raw/effective hash/count bindings and
+unchanged token/money caps. Strict rejection and its old binding digest remain
+the default. All four retained native prepared bodies match their effective
+counterparts through the integrated admission path; response counts in this new
+comparison are synthetic, not qualified measurements.
+
+Final regression: **352 tests, 339 passed, 13 platform skips**, with no failures or
+errors; Ruff passes. Full logs, source snapshots and native-process receipts are
+hash-indexed in [session evidence](../research/validation/maintenance-session-evidence.json),
+[guard evidence](../research/validation/guard-provisioning-evidence.json) and
+[broker evidence](../research/validation/broker-ceiling-evidence.json). Earlier
+packets and measurements remain intact, with historical source cohorts; none is
+armed by these approvals. Product implementation, native target/session/start/stop
+qualification and M1-11 through M1-14 remain open.
+
+Next, prepare the exact stopped target configuration, genuine backup/absence
+receipts and bounded startup path with late/unanswered-start handling. Obtain its
+separate native approval only after those controls are concrete. Then qualify
+readiness, offline hardening, external filtering/gateway and executor behavior in
+the established prerequisite order. The two design-preparation decisions and
+disconnected guard creation no longer await a decision.
 
 ### Earlier preparation checkpoints
+
+The [independent original-owner checkpoint](../research/validation/owner-launch-plan.md)
+sealed stop plans against suspended real PIDs and original leases. Its 290-pass
+regression and unarmed launch/host revision 05 packets remain historical. The new
+session source cohort includes subsequent Store/compiler/host changes; use its
+successor review inputs rather than silently arming those older packets.
+
+The GSD freeze/conformance work was committed at `048cb6b`, and dependency inputs
+at `fec5bfb`. The real pinned schema-1 export and five negative import controls,
+exact Agent Server preparation image and offline non-root/read-only startup smoke
+remain separate evidence. The earlier VM diagnostic measured one unattended
+two-CPU x2APIC-off boot and ACPI shutdown. These observations do not qualify the
+new guard or an integrated executor deployment.
 
 The [bounded original-stop checkpoint](../research/validation/original-stop-plan.md) replaced unrestricted subprocess capture and requires a matching deployment-profile stop binding. Its 279-pass regression and unarmed stop revision 02 plans remain intact. Later launch preparation uses that same stop issuer and source cohort.
 

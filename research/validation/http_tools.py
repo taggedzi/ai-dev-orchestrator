@@ -15,6 +15,8 @@ from .phase_policy import (
     OUTPUT_MICRO_USD_PER_TOKEN,
     TOKEN_CAPS,
     admit_request,
+    admit_with_ceiling,
+    validate_normalization,
     validate_turn,
 )
 from .store import Hold
@@ -104,8 +106,22 @@ class LocalServer(HTTPServer):
         return thread
 
 
-def broker(store, transcript, address=("127.0.0.1", 0)):
+def broker(
+    store,
+    transcript,
+    address=("127.0.0.1", 0),
+    *,
+    output_policy="strict",
+    ceiling_approval=None,
+):
     """Frozen counts/roles, exact raw requests and atomically bound one-use permits."""
+    if output_policy not in {"strict", "phase-ceiling-v1"}:
+        raise ValueError("unknown broker output policy")
+    if output_policy == "strict":
+        if ceiling_approval is not None:
+            raise ValueError("strict policy has no phase-ceiling approval")
+    elif not isinstance(ceiling_approval, str) or not 0 < len(ceiling_approval) <= 256:
+        raise ValueError("phase-ceiling preparation approval is unbound")
     if not isinstance(transcript, list) or not transcript or len(transcript) > 32:
         raise ValueError("transcript must have 1..32 frozen entries")
     # Validate and serve the same detached snapshot of caller-owned data.
@@ -125,24 +141,31 @@ def broker(store, transcript, address=("127.0.0.1", 0)):
         if not row.get("generation_id") or not isinstance(row.get("response"), dict):
             raise ValueError("missing response or generation")
         bound = validate_turn(row.get("admission"))
+        if output_policy == "phase-ceiling-v1":
+            validate_normalization(row.get("normalization"))
+        elif "normalization" in row:
+            raise ValueError("normalization requires explicit phase-ceiling policy")
         if row["settled"] > bound:
             raise ValueError("scripted settlement exceeds the phase reservation")
         if len(canonical(row)) > MAX_BODY:
             raise ValueError("transcript row exceeds limit")
-    binding = hashlib.sha256(
-        canonical(
-            {
-                "format": "mcli1-phase-broker-v1",
-                "token_caps": TOKEN_CAPS,
-                "money_limits": POLICY["limits"],
-                "micro_usd_per_token": [
-                    INPUT_MICRO_USD_PER_TOKEN,
-                    OUTPUT_MICRO_USD_PER_TOKEN,
-                ],
-                "transcript": transcript,
-            }
+    policy = {
+        "format": "mcli1-phase-broker-v1",
+        "token_caps": TOKEN_CAPS,
+        "money_limits": POLICY["limits"],
+        "micro_usd_per_token": [
+            INPUT_MICRO_USD_PER_TOKEN,
+            OUTPUT_MICRO_USD_PER_TOKEN,
+        ],
+        "transcript": transcript,
+    }
+    if output_policy == "phase-ceiling-v1":
+        policy.update(
+            format="mcli1-phase-ceiling-broker-v1",
+            output_policy=output_policy,
+            ceiling_approval=ceiling_approval,
         )
-    ).hexdigest()
+    binding = hashlib.sha256(canonical(policy)).hexdigest()
     store.bind_broker_transcript(binding)
 
     class Broker(Handler):
@@ -173,7 +196,13 @@ def broker(store, transcript, address=("127.0.0.1", 0)):
                 ):
                     raise Hold("unexpected transcript request or turn order")
                 row = transcript[used]
-                admission = admit_request(raw, request_hash, row["admission"])
+                if output_policy == "phase-ceiling-v1":
+                    admission = admit_with_ceiling(
+                        raw, request_hash, row["admission"], row["normalization"]
+                    )
+                    admission["ceiling_approval"] = ceiling_approval
+                else:
+                    admission = admit_request(raw, request_hash, row["admission"])
                 permit = store.consume(request_hash, admission)
                 mode = row.get("mode", "json")
                 if mode == "interrupt":

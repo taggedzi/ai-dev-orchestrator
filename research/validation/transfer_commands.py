@@ -65,7 +65,7 @@ def serial_request(grant, steps, phase):
     return {
         "format": "mcli1-serial-exchange-v1",
         "mode": "guest",
-        "request_id": subnonce(grant["run_nonce"], phase),
+        "request_id": subnonce(grant["run_nonce"], grant["purpose"] + ":" + phase),
         "target_vm_uuid": grant["target"]["vm_uuid"],
         "pipe": "\\\\.\\pipe\\mcli1-maint-" + grant["target"]["vm_uuid"],
         "steps": steps,
@@ -77,7 +77,7 @@ def serial_request(grant, steps, phase):
 
 
 def identity_request(grant, grant_sha):
-    nonce = subnonce(grant["run_nonce"], "identity")
+    nonce = subnonce(grant["run_nonce"], grant["purpose"] + ":identity")
     expected = {k: grant["target"][k] for k in ("dmi_uuid", "root_fs_uuid", "boot_id")}
     raw_source = entry_bytes(grant).decode()
     function = next(
@@ -201,7 +201,7 @@ def compile_upload(grant, grant_sha, identity, guest_window, files):
         + "-"
         + grant["run_nonce"]
     )
-    nonce = subnonce(grant["run_nonce"], "upload")
+    nonce = subnonce(grant["run_nonce"], grant["purpose"] + ":upload")
     initial = guest_guard(identity, guest_window)
     initial += 'r=os.open("/run",flags);s=os.fstat(r);assert s.st_uid==u and not stat.S_IMODE(s.st_mode)&0o022\n'
     initial += (

@@ -1,8 +1,10 @@
-# Proposed: bounded same-boot maintenance review
+# Bounded same-boot maintenance review
 
-Status: **Proposed; developer approval required.** No adoption or native action is
-authorized by this record. This concerns the validation fixture, not the product
-orchestrator architecture. The existing stop-after-attempt behavior stays active.
+Status: **Approved for session-model preparation, November 22, 2026.** The developer
+selected “Approve session-model preparation” in the conversation. This authorizes
+the fixture's session code and local checks. It does not authorize native VM
+activation or adopt the product orchestrator architecture. Standalone transfer
+attempts retain their stop-after-attempt behavior.
 
 ## Problem and evidence
 
@@ -18,7 +20,7 @@ separate controls from the original owner's durable lease and stop ledger. This
 is a workflow gap; the synthetic controls tests establish neither a usable human
 approval handoff nor permission to skip shutdown.
 
-## Recommended design for approval
+## Approved preparation design
 
 Prepare one maintenance session under the **original, immutable outside-VM lease**,
 with these explicit states:
@@ -76,10 +78,11 @@ report would require a different approval policy and is not proposed here.
 - The full actual inspection, review, fresh comparison, controls and independent
   stop workflow must run on the selected VM under separate scoped native approval.
 
-## Requested decision and limits
+## Recorded decision and limits
 
-Approve preparation of this session model, or retain today's unconditional stop
-contract while another mechanism is designed. Approval of this design would not
+The developer approved preparation of this session model. That approval does not
 authorize VM creation, boot, root access, transfer, control changes, installation,
 network activation or final validation. Existing guard-creation and broker
-phase-boundary decisions remain separate. No new session code has been added.
+phase-boundary decisions remain separate. The prepared implementation is
+[maintenance_session.py](../../research/validation/maintenance_session.py).
+Local synthetic checks and native target qualification are separate evidence.

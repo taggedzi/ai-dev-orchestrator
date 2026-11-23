@@ -16,6 +16,7 @@ from ctypes import wintypes
 from pathlib import Path, PureWindowsPath
 from uuid import UUID
 
+from . import backup_records
 from . import maintenance_transfer as transfer
 from .os_install import WORKSPACE
 from .supervisor import LeaseSupervisor
@@ -340,20 +341,10 @@ class RegisteredOwner:
 def receipt_pins(grant, backup, preboot, preservation):
     """Validate proposed trusted receipts; these are not fresh disk measurements."""
     b, p, s = [object_bytes(raw) for raw in (backup, preboot, preservation)]
-    require(
-        b.get("independent") is True
-        and b.get("source_poweroff") is True
-        and digest(backup) == grant["backup"]["receipt_sha256"]
-        and b
-        == {
-            "format": "mcli1-independent-backup-v1",
-            "target_vm_uuid": grant["target"]["vm_uuid"],
-            "source_poweroff": True,
-            "independent": True,
-            **{k: v for k, v in grant["backup"].items() if k != "receipt_sha256"},
-        },
-        "backup receipt bytes or facts differ",
-    )
+    if grant["backup"].get("format") == backup_records.BINDING_FORMAT:
+        backup_records.checked_receipt(b, digest(backup), grant)
+    else:
+        _legacy_backup_receipt(grant, backup, b)
     require(
         digest(preboot) == grant["disk_evidence"]["pre_boot_receipt_sha256"]
         and p
@@ -382,6 +373,90 @@ def receipt_pins(grant, backup, preboot, preservation):
             "state": "poweroff",
         },
         "source-preservation receipt bytes or facts differ",
+    )
+
+
+def _legacy_backup_receipt(grant, backup, b):
+    require(
+        b.get("independent") is True
+        and b.get("source_poweroff") is True
+        and digest(backup) == grant["backup"]["receipt_sha256"]
+        and b
+        == {
+            "format": "mcli1-independent-backup-v1",
+            "target_vm_uuid": grant["target"]["vm_uuid"],
+            "source_poweroff": True,
+            "independent": True,
+            **{k: v for k, v in grant["backup"].items() if k != "receipt_sha256"},
+        },
+        "backup receipt bytes or facts differ",
+    )
+
+
+def session_observation_grant(db, grant):
+    """Read-only monitoring may outlive inspection, within the approved original lease."""
+    if (
+        db.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='maintenance_session'"
+        ).fetchone()
+        is None
+    ):
+        return grant
+    from .maintenance_session import SOURCE_EPOCH, current_sources
+
+    row = db.execute("SELECT * FROM maintenance_session").fetchone()
+    review = object_bytes(row["review"])
+    require(
+        review["inspection_grant_sha256"] == digest(canonical(grant))
+        and review["sources"] == SOURCE_EPOCH == current_sources()
+        and row["state"]
+        in {
+            "inspection-ready",
+            "inspect-active",
+            "awaiting-review",
+            "controls-ready",
+            "controls-active",
+        },
+        "host observer is outside its original approved session",
+    )
+    lease = db.execute("SELECT * FROM lease").fetchone()
+    window = dict(grant["phase_window"])
+    for clock, key in (("utc", "expires_ns"), ("mono", "expires_mono_ns")):
+        end = review["review_expires_" + clock + "_ns"]
+        require(
+            type(end) is int and end <= lease[key] - 10 * 10**9,
+            "session observation extends original stop reserve",
+        )
+        window["expires_" + clock + "_ns"] = end
+    return {**grant, "phase_window": window}
+
+
+def stop_intent(db, grant):
+    """Check either the standalone intent or the same session's exact phase grant."""
+    if (
+        db.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='maintenance_session'"
+        ).fetchone()
+        is None
+    ):
+        attempt = db.execute("SELECT * FROM transfer_attempt").fetchone()
+        require(
+            attempt is not None
+            and attempt["nonce"] == grant["run_nonce"]
+            and attempt["state"] == "stopping",
+            "controller fence/stop intent is absent",
+        )
+        return
+    row = db.execute("SELECT * FROM maintenance_session").fetchone()
+    phase = db.execute(
+        "SELECT * FROM maintenance_session_phase WHERE purpose=?", (grant["purpose"],)
+    ).fetchone()
+    require(
+        row["state"] == "stopping"
+        and phase is not None
+        and phase["nonce"] == grant["run_nonce"]
+        and phase["grant_sha"] == digest(canonical(grant)),
+        "session fence/phase stop intent is absent",
     )
 
 
@@ -559,11 +634,14 @@ class HostAdapters:
         started = time.monotonic_ns()
         with self._db() as db:
             self._owner(db, True)
-            transfer.check_lease(db, self.grant)
+            observed_grant = session_observation_grant(db, self.grant)
+            transfer.check_lease(db, observed_grant)
         wall = min(
-            time.time_ns() + 4 * 10**9, self.grant["phase_window"]["expires_utc_ns"]
+            time.time_ns() + 4 * 10**9, observed_grant["phase_window"]["expires_utc_ns"]
         )
-        mono = min(started + 4 * 10**9, self.grant["phase_window"]["expires_mono_ns"])
+        mono = min(
+            started + 4 * 10**9, observed_grant["phase_window"]["expires_mono_ns"]
+        )
         host, observed, _receipt = self._capture(wall, mono, "running")
         with self._db() as db:
             row, lease = self._owner(db, True)
@@ -581,12 +659,36 @@ class HostAdapters:
                     "expires_mono_ns": lease["expires_mono_ns"],
                 },
             }
-            transfer.check_authority(db, self.grant, snapshot)
+            observed_grant = session_observation_grant(db, self.grant)
+            transfer.check_authority(db, observed_grant, snapshot)
         return snapshot
 
     def stop(self, grant):
         """Fencing is the durable signal. Only the registered original owner stops."""
-        require(grant == self.grant, "stop adapter grant changed")
+        if grant != self.grant:
+            with self._db() as db:
+                require(
+                    db.execute(
+                        "SELECT 1 FROM sqlite_master WHERE type='table' AND name='maintenance_session'"
+                    ).fetchone()
+                    is not None,
+                    "stop adapter grant changed outside a session",
+                )
+                stop_intent(db, grant)
+            for key in (
+                "role",
+                "run_nonce",
+                "generation",
+                "target",
+                "lease",
+                "backup",
+                "disk_evidence",
+                "sources",
+            ):
+                require(
+                    grant[key] == self.grant[key],
+                    "session stop adapter binding changed",
+                )
         start, wall_start = time.monotonic_ns(), time.time_ns()
         with (self.root / "stop-wait.intent.json").open("xb") as output:
             output.write(
@@ -605,11 +707,9 @@ class HostAdapters:
             with self._db() as db:
                 row, lease = self._owner(db, False)
                 authority = db.execute("SELECT * FROM authority").fetchone()
-                attempt = db.execute("SELECT * FROM transfer_attempt").fetchone()
+                stop_intent(db, grant)
                 require(
-                    not authority["active"]
-                    and attempt["nonce"] == grant["run_nonce"]
-                    and attempt["state"] == "stopping",
+                    not authority["active"],
                     "controller fence/stop intent is absent",
                 )
                 if (
@@ -635,14 +735,12 @@ class HostAdapters:
             with self._db() as db:
                 owner, lease = self._owner(db, False)
                 authority = db.execute("SELECT * FROM authority").fetchone()
-                attempt = db.execute("SELECT * FROM transfer_attempt").fetchone()
+                stop_intent(db, grant)
                 require(
                     lease["state"] == "stop-command-returned"
                     and owner["state"] == "stop-returned"
                     and not authority["active"]
-                    and authority["generation"] == generation
-                    and attempt["nonce"] == grant["run_nonce"]
-                    and attempt["state"] == "stopping",
+                    and authority["generation"] == generation,
                     "stop authority/owner changed during independent observation",
                 )
             if host["state"] == "poweroff":

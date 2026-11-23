@@ -1,5 +1,11 @@
 # Independent original-owner process preparation
 
+The later [session checkpoint](maintenance-session-plan.md) includes new
+Store/compiler/host source pins and boot precondition checks. The launch/host
+packets and measurements below retain their historical cohort; none is newly
+armed. The same-boot design has since been approved for preparation. Actual native
+startup and complete target/session/stop qualification remain open.
+
 [owner_launch.py](owner_launch.py) prepares the suspended-process handoff;
 [owner_process.py](owner_process.py) runs the existing original lease supervisor
 outside the controller's job. Default CLI preview and `--prepare` do not launch

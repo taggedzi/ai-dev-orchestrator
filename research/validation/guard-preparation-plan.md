@@ -2,6 +2,42 @@
 
 The developer selected the [guard topology](../../docs/decisions/0001-validation-network-boundary.md) for preparation on November 21, 2026. The first native action proposed here creates a new **powered-off, disconnected VM** from a full disk clone. It does not boot either VM, install packages, create a network or run an executor. Those later stages remain separate reviews under [AGENTS.md](../../AGENTS.md).
 
+**November 22 update:** the developer separately approved the exact creation plan,
+SHA-256 `d9b76875fa1892d015f109fe15f2584620d01d2f729451848221805713dcba85`.
+Creation and independent read-only verification completed. The historical
+preflight and operation proposal below are retained; the measured result follows.
+
+## Measured disconnected creation
+
+The script created `mcli1-guard-01`, UUID
+`0eceb37e-f216-45ed-817c-7cf2fca3a32a`, with disk UUID
+`a8f47315-d330-4b28-bbb0-6a721b4c6251`. Its 2,625,634,304-byte dynamic base VDI
+has SHA-256 `a8a6024499644999738f089546096e93174a336c003f2d1ae841214c2fe22c43`.
+The source remains at `2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09`.
+Creation compared the source configuration before/after and rehashed its disk.
+Separate bounded read-only queries and fresh full hashes of both disks then
+confirmed the result. Both VMs were powered off with all eight NICs disabled.
+
+The guard has the reviewed one CPU/1 GiB/EFI/APIC-on/x2APIC-off profile, UART off
+and no shares. It has **one SATA port**, as the creation script specifies; the
+prepared maintenance adapter requires four. Preserve that refusal and prepare
+the exact stopped configuration change before maintenance admission. The new
+guard has no NVRAM file before its first boot; a genuine backup receipt must
+represent that absence rather than invent file bytes/hash.
+
+The later, separately approved [maintenance profile](maintenance-profile-plan.md)
+now has four SATA ports and the fixed UART server setting; independent observation
+still confirms poweroff and eight disabled NICs. The creation-time configuration
+above and its receipt remain historical. Verified unattached [backups](stopped-backup-plan.md)
+preserve that original configuration and explicit NVRAM absence.
+
+PowerShell warned that nested native progress objects exceeded its JSON logging
+depth. Command arguments/exit codes and final postconditions remain retained;
+independent read-only inventory and full hash checks passed separately. No VM
+boot, package installation or network activation ran. The inherited guest
+identity/account/installation artifacts remain unhardened. See
+[guard-provisioning-evidence.json](guard-provisioning-evidence.json).
+
 ## Concrete first-stage inputs
 
 [guard-provisioning-plan.json](guard-provisioning-plan.json) fixes `mcli1-guard-01`, UUID `0eceb37e-f216-45ed-817c-7cf2fca3a32a`, one CPU, 1024 MiB, EFI, ordinary APIC on and x2APIC off. All eight NICs, UARTs, clipboard, drag-and-drop, USB, audio and remote display stay disabled. A new SATA disk is a full independent dynamic VDI, with 32 GiB logical capacity. No installer, source NVRAM, source VM configuration or source disk is attached to the new VM. This capacity is guard preparation storage, not the executor's later writable-space limit.

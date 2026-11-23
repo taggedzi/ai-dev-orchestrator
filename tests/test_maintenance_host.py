@@ -354,6 +354,14 @@ class AdapterTests(unittest.TestCase):
             self.adapter.stop(self.grant)
         self.assertEqual(self.queries, [])
 
+    def test_standalone_stop_cannot_use_a_different_phase_grant(self):
+        self.stopping()
+        altered = json.loads(canonical(self.grant))
+        altered["purpose"] = "controls"
+        with self.assertRaisesRegex(Hold, "outside a session"):
+            self.adapter.stop(altered)
+        self.assertEqual(self.queries, [])
+
     def test_stop_acknowledgement_waits_for_poweroff_without_repeating_stop(self):
         self.stopping()
         calls = []

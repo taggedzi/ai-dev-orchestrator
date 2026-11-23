@@ -38,6 +38,7 @@ SOURCES = {
         "transfer_commands.py",
         "store.py",
         "fixture.py",
+        "backup_records.py",
     )
 }
 SOURCE_EPOCH = {name: digest(path.read_bytes()) for name, path in SOURCES.items()}

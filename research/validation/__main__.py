@@ -51,6 +51,13 @@ def main():
         child.add_argument("--port", type=int, default=0)
         if name == "proxy":
             child.add_argument("--upstream", required=True)
+        else:
+            child.add_argument(
+                "--output-policy",
+                choices=("strict", "phase-ceiling-v1"),
+                default="strict",
+            )
+            child.add_argument("--ceiling-approval")
     args = parser.parse_args()
     if args.command == "build":
         manifest = build(args.bundle, args.gsd_export, args.gsd_snapshot_sha256)
@@ -119,7 +126,13 @@ def main():
             else:
                 script = load_json(args.script.read_bytes())
                 server = (
-                    broker(store, script, ("127.0.0.1", args.port))
+                    broker(
+                        store,
+                        script,
+                        ("127.0.0.1", args.port),
+                        output_policy=args.output_policy,
+                        ceiling_approval=args.ceiling_approval,
+                    )
                     if args.command == "broker"
                     else fault_proxy(
                         store, args.upstream, script, ("127.0.0.1", args.port)
