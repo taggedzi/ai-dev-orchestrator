@@ -1,5 +1,6 @@
-# Product HTTP/dashboard candidate. Compile to an exact platform lock before
+# Product HTTP/dashboard runtime. Compile to an exact platform lock before
 # the separately approved installation; no extras or source builds are required.
+# Browser tests are a separate project dependency: requirements/browser-qa.in.
 fastapi
 uvicorn
 jinja2

@@ -5,8 +5,10 @@ turns, plan import and exact approval, task states, pause/revise/recovery, the
 scripted promotion commands, and the schema-7 cost report. It uses the same application commands as
 [the CLI](product-cli.md). It does not call a provider or execute a candidate
 command. `capabilities.task_acceptance` and `live_eligible` stay false. Browser
-proof of the dashboard is still M6: Computer Use could not confidently determine
-the browser URL.
+proof of the dashboard is still M6. Playwright 1.64.1 is a lasting project
+test dependency in [browser-qa.in](../requirements/browser-qa.in), installed
+in `.local/browser-qa-venv`, separate from the 19 product wheels. It can read
+a page URL. The dashboard flows have not been exercised.
 
 ## Run locally
 
@@ -119,7 +121,9 @@ use ASGI in-process requests, not browser interaction. Starlette warns that its 
 is deprecated; the approved lock remains unchanged and HTTPX2 is not installed.
 The temporary browser fixture server was terminated and no service was left
 running. A retained source/test cohort and real desktop/mobile browser checks
-are separate evidence from dependency installation.
+are separate evidence from dependency installation. Playwright 1.64.1 remains
+the project's browser-test dependency in `.local/browser-qa-venv`, and a
+headless launch reported `about:blank`.
 
 The exact approved Windows wheels and their license metadata are in
 `requirements/web-wheel-manifest.json`; measured installation evidence is in

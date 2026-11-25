@@ -275,15 +275,27 @@ were not rewritten.
 
 ### M6. Browser QA of the loopback dashboard
 
-**Status:** blocked. Computer Use could not read the browser URL. The temporary
-server from that attempt is already dead. Do not start a server only to poll
-that failure.
+**Status:** driver installed, dashboard flows not run. On November 25, 2026
+the developer made Playwright **1.64.1** a lasting project browser-test
+dependency. It is not a product runtime dependency and it is not part of the
+approved 19-wheel web install. M6 is its first use. The hash-locked set is
+[browser-qa.in](../requirements/browser-qa.in) and
+[browser-qa-win-py315.lock](../requirements/browser-qa-win-py315.lock):
+playwright 1.64.1, greenlet 3.5.6, pyee 14.0.0, typing-extensions 4.16.0.
+Those wheels are installed in `.local/browser-qa-venv` with
+`C:\Python315\python.exe`. `pip check` passed. `.local/product-web-venv` was
+not modified. Headless Chromium 156.0.8078.4, the revision already cached for
+this Playwright release, launched and reported `page.url` as `about:blank`.
+That was not a dashboard session. The old Computer Use failure and its dead
+server stay as recorded. Do not start the product server only to recheck that
+failure.
 
-When a browser tool can read the page URL, exercise create/revise, plan
-approval, pause/resume/recover, and the M2 cost and pending-decision panels.
-Loopback, exact Host/Origin, and the existing session stay in force. Record
-the URL and the actions. A screenshot alone is not the result. If the URL is
-still unreadable, stop and leave this milestone blocked.
+Use `.local/browser-qa-venv/Scripts/python.exe` for the browser. When it can
+read the page URL, exercise create/revise, plan approval, pause/resume/recover,
+and the M2 cost and pending-decision panels. Loopback, exact Host/Origin, and
+the existing session stay in force. Record the URL and the actions. A
+screenshot alone is not the result. If the URL is still unreadable, stop and
+leave this milestone blocked.
 
 ## Qualification gates
 
