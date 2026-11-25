@@ -30,9 +30,9 @@
       "sha256": "151986cb3124295a7c912d6ddb8ea063dccc7de62143c360f1a8527ed648efcb"
     },
     {
-      "bytes": 12975,
+      "bytes": 12653,
       "path": "docs/implementation/product-verification-evidence.json",
-      "sha256": "1d90210fab232b16dc5c8ae369d005fcedc879e47a6b2c3f5c3bc2dc887e5f51"
+      "sha256": "f021ef8170d712150f0e260df1caef770254e22eaae89f2e608c02919de9586e"
     }
   ],
   "browser_qa": "not completed",
