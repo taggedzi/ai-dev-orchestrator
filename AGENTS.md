@@ -7,4 +7,5 @@
 - Use primary sources. Record upstream versions or commit IDs, evidence, unknowns, and the next check. Mark observations from source review separately from results measured in a run.
 - Keep provider-specific details at integration boundaries. Add abstractions only when a concrete need calls for them. Record proposed architectural decisions in `docs/decisions/` and seek developer approval for major decisions.
 - Verify changed files and report outstanding questions. Leave Git commits, pushes, and release publication to the developer unless explicitly requested.
+- Before starting a milestone, fetch and confirm local `main` matches `origin/main` and that the repository has no open pull requests. Do not start while either check fails. Do the milestone on a branch updated from that `main`. When the milestone is done, merge that branch into `main`. Leave the branch in place until the developer agrees to delete it.
 - Keep updates short and technically precise. When the developer needs to act, give at most two next steps at a time.

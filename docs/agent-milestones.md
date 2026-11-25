@@ -70,6 +70,9 @@ disagree.
   counts include 100, 109, M1's 114, M2's 118, M3's 121, M4's 126, and M5's
   132. Product tests do not repair the research cohort (**609 tests: 594 passed,
   14 skipped, one startup-BEGIN BUSY error**).
+- M5's paragraph says the next open milestone is M6 and that it stays blocked.
+  M6 is now done: browser QA ran on November 25, 2026 against
+  `127.0.0.1:8765`. See the M6 status below.
 
 ## Open product milestones
 
@@ -275,27 +278,55 @@ were not rewritten.
 
 ### M6. Browser QA of the loopback dashboard
 
-**Status:** driver installed, dashboard flows not run. On November 25, 2026
-the developer made Playwright **1.64.1** a lasting project browser-test
-dependency. It is not a product runtime dependency and it is not part of the
-approved 19-wheel web install. M6 is its first use. The hash-locked set is
-[browser-qa.in](../requirements/browser-qa.in) and
-[browser-qa-win-py315.lock](../requirements/browser-qa-win-py315.lock):
-playwright 1.64.1, greenlet 3.5.6, pyee 14.0.0, typing-extensions 4.16.0.
-Those wheels are installed in `.local/browser-qa-venv` with
-`C:\Python315\python.exe`. `pip check` passed. `.local/product-web-venv` was
-not modified. Headless Chromium 156.0.8078.4, the revision already cached for
-this Playwright release, launched and reported `page.url` as `about:blank`.
-That was not a dashboard session. The old Computer Use failure and its dead
-server stay as recorded. Do not start the product server only to recheck that
-failure.
+**Status:** done, November 25, 2026. Browser QA ran against the live loopback
+dashboard. The driver was Playwright **1.64.1** in `.local/browser-qa-venv`
+(headless Chromium 156.0.8078.4); the server used `.local/product-web-venv`
+(Python 3.15.2 / SQLite 3.53.4). A fresh scratch store was used; no retained
+evidence store was opened or migrated. The server bound only `127.0.0.1:8765`,
+kept exact Host/Origin, and used the private token file without printing it or
+placing it in a URL. The browser read `page.url` as `http://127.0.0.1:8765/` at
+every step. Commands:
 
-Use `.local/browser-qa-venv/Scripts/python.exe` for the browser. When it can
-read the page URL, exercise create/revise, plan approval, pause/resume/recover,
-and the M2 cost and pending-decision panels. Loopback, exact Host/Origin, and
-the existing session stay in force. Record the URL and the actions. A
-screenshot alone is not the result. If the URL is still unreadable, stop and
-leave this milestone blocked.
+```powershell
+.local/product-web-venv/Scripts/python.exe -m coordinator --db .local/validation/m6-browser-01/store/state.sqlite init
+.local/product-web-venv/Scripts/python.exe -m coordinator.web --token-file .local/validation/m6-browser-01/web-token --init-token
+.local/product-web-venv/Scripts/python.exe -m coordinator.web --db .local/validation/m6-browser-01/store/state.sqlite --token-file .local/validation/m6-browser-01/web-token --port 8765
+.local/browser-qa-venv/Scripts/python.exe .local/validation/m6-browser-01/browser_flow.py
+```
+
+Fourteen recorded browser actions: login; create project (revision 1); import
+`examples/p1-plan.json` as an unapproved M1 plan; see pending decision
+`Approve the exact plan for M1`; approve the exact plan (badge "Approved
+intent"); pause ("Paused"); resume ("Planning workspace"); recover ("Paused");
+revise intent ("Requirements revision 2"); frozen GSD import
+(`tests/fixtures/gsd-schema-1.json` plus its PLAN files) rendering an unapproved
+PH1 plan; stored-discovery turn rendering at revision 3; the M2 cost panel
+(Known/Estimated/Pending/Unknown = 0 each) with pending decisions
+`requirements_changed` (M1), `plan_approval` (PH1), and `model_policy` (M1);
+final status `capabilities.task_acceptance=false` and `live_eligible=false`.
+Evidence: `.local/validation/m6-browser-01/browser-log.json` and screenshots
+`01-login.png` through `08-operator-panel.png`.
+
+Limits: costs were zero because this QA created no model policy, assignment,
+permit, usage, or scripted promotion; the nonzero M2 report stays the HTTP test.
+The dashboard has no discovery or GSD input widget, so those two panels were
+exercised by calling their routes from the page's own session and origin and
+then observing the rendered panel; that is rendering proof, not new UI. This is
+loopback only: no provider call, no OpenHands dispatch, no VM command, no new
+dependency, and no candidate execution. The held admission
+`ccc16a8440524bda84e57fdcd90055e7` was not opened. No product code changed, so
+the product suite stays at **132 tests, 0 skips**. The server was stopped and
+both launcher and worker processes were confirmed exited with port 8765 closed.
+
+`python .local/validation/verify-agent-handoff-02.py` still fails, and the cause
+predates M6. Its pinned prior checkpoint
+`docs/implementation/product-integration-evidence.json` is
+`ad28c10555f0…`/13989 bytes, but `main`'s M5 commit `73f808b` rewrote that file
+to `0c373f8d100c…`/13643 bytes. The uncommitted `AGENTS.md` rule is also pinned.
+No pinned file was rewritten for M6; the drift is recorded here as a known
+failure, not repaired by editing history.
+
+R1, R8, and P4–P6 stay open. No product milestone remains open below M6.
 
 ## Qualification gates
 
