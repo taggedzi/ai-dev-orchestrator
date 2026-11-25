@@ -4,9 +4,9 @@
   "VM_queries_or_mutations_this_turn": 0,
   "current_documents": [
     {
-      "bytes": 1673,
+      "bytes": 2028,
       "path": "AGENTS.md",
-      "sha256": "b19cdc51adc75a3a09569c86019cc887db513d55469b7e81b16ecdae9abc9c15"
+      "sha256": "3f98de9ccf5653ca93083a910f71635c3367eec8be355525121ad1d521364d3d"
     },
     {
       "bytes": 10386,
@@ -14,14 +14,14 @@
       "sha256": "19a40b2e4bc4632d284290a64a99dcbbe16ac0aa34192e030cfb471a2e5fb59d"
     },
     {
-      "bytes": 22063,
+      "bytes": 21744,
       "path": "docs/HANDOFF.md",
-      "sha256": "d8b47571c8833ea3f7df33c567cf78289b83db0fc46ebf8c5f9df560cdc7d20f"
+      "sha256": "478c9bf746d0263f189a302f5b50779dfc9df75d8f133321a629f1888f12e1fa"
     },
     {
-      "bytes": 91385,
+      "bytes": 90314,
       "path": "docs/status.md",
-      "sha256": "11ec4c73c751d4b262739dae9c64e3197a45ef700cb1207ba92ed48fca444c2e"
+      "sha256": "1a04b6a6206df6898f9325f54bf7c5d2bc8dbe7a697f3d28956e0fe26e774f1f"
     }
   ],
   "date": "2026-11-24",
@@ -81,6 +81,12 @@
       "path": "coordinator/cli.py",
       "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/cli.py",
       "sha256": "d63559188a537aab7457ca68213fca5691207fb00c67915228930e4c6e985a2d"
+    },
+    {
+      "bytes": 15407,
+      "path": "coordinator/intake.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/intake.py",
+      "sha256": "06ea6bae6b301d180db078b4d9f73cbe1a8fc3ad423c2677d44c8dd6930c67d7"
     },
     {
       "bytes": 48893,
@@ -165,9 +171,9 @@
   ],
   "new_dependencies": 0,
   "prior_checkpoint": {
-    "bytes": 13989,
+    "bytes": 13643,
     "path": "docs/implementation/product-integration-evidence.json",
-    "sha256": "ad28c10555f078f3cd932aeae93118b4d270b75036150d4156adca3a04ea2f56"
+    "sha256": "f853fd1931f982c89a8ba32f6bf6fe8d0d4ffefaa1ef9aea11fbae61d3329b7a"
   },
   "prior_document_resolutions": {
     "bytes": 6103,
