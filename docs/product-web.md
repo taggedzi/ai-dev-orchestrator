@@ -5,10 +5,17 @@ turns, plan import and exact approval, task states, pause/revise/recovery, the
 scripted promotion commands, and the schema-7 cost report. It uses the same application commands as
 [the CLI](product-cli.md). It does not call a provider or execute a candidate
 command. `capabilities.task_acceptance` and `live_eligible` stay false. Browser
-proof of the dashboard is still M6. Playwright 1.64.1 is a lasting project
-test dependency in [browser-qa.in](../requirements/browser-qa.in), installed
-in `.local/browser-qa-venv`, separate from the 19 product wheels. It can read
-a page URL. The dashboard flows have not been exercised.
+proof of the dashboard was measured on November 25, 2026 (M6). Playwright 1.64.1
+in `.local/browser-qa-venv` (headless Chromium 156.0.8078.4) read `page.url` as
+`http://127.0.0.1:8765/` while driving a fresh scratch store through login,
+create, revise, plan import and exact approval, pause, resume, recover, the
+frozen GSD import and stored-discovery panels, and the cost and pending-decision
+panels. Costs read 0 because no model records were created. Evidence is
+`.local/validation/m6-browser-01/browser-log.json`. Loopback, exact Host/Origin,
+and the server-owned developer session stayed in force; no provider call,
+candidate execution, or new dependency was involved. The dashboard has no
+discovery or GSD input widget, so those two routes were called from the page's
+own session and the rendered panels were observed.
 
 ## Run locally
 
@@ -64,7 +71,8 @@ Host, and Origin checks as the other developer commands. A service principal
 cannot call it. The project panel lists
 `project.spec.context.discovery.turns` from `GET /api/projects/{id}`. This is
 stored discovery. It does not call a model or approve a plan, and R8 remains
-open. Browser proof of that panel remains M6.
+open. Browser proof of that panel was measured in M6: the panel rendered the
+stored turn at its revision.
 
 `POST /api/projects/{id}/plan-import-gsd` calls `plan-import-gsd`. The strict
 body is `command_id`, `milestone_key`, `snapshot`, `digest`, `plans`,
@@ -74,7 +82,8 @@ uses the same session, CSRF, Host, and Origin checks as the other developer
 commands. A service principal cannot call it. The result is the unapproved
 `submit_plan` result. The existing plan panel renders that plan from
 `GET /api/projects/{id}`. GSD stays a read-only import. The coordinator owns
-approval, and R1 remains open. Browser proof of that panel remains M6.
+approval, and R1 remains open. Browser proof of that panel was measured in M6:
+the imported plan rendered as a draft awaiting approval.
 
 `GET /api/projects/{id}` is the status command. Its `cost` object has
 `known_units`, `estimated_units`, `pending_units`, and `unknown_units`.
@@ -104,7 +113,8 @@ Scripted promotion uses the same bodies as the CLI. Each of these requires
 
 `promote` does not use `command_id` as an acknowledgement key. A lost response
 uses promotion reconcile. The dashboard does not send these mutations; it only
-renders the status fields. Browser exercise of that panel is M6.
+renders the status fields. The M6 browser run rendered those status fields and
+did not send promotion mutations.
 
 Request command IDs provide local ACK-loss deduplication. The browser preserves
 an uncertain command ID in session storage for retrying the same intent; inspect
@@ -117,13 +127,17 @@ acceptance tests, the M3 stored-discovery tests, the M4 frozen-import tests,
 and the M5 disabled-execution boundary tests, on `.local/product-web-venv`
 (Python 3.15.2 / SQLite 3.53.4).
 The count is also in [agent milestones](agent-milestones.md). Those HTTP tests
-use ASGI in-process requests, not browser interaction. Starlette warns that its working HTTPX adapter
-is deprecated; the approved lock remains unchanged and HTTPX2 is not installed.
-The temporary browser fixture server was terminated and no service was left
-running. A retained source/test cohort and real desktop/mobile browser checks
-are separate evidence from dependency installation. Playwright 1.64.1 remains
-the project's browser-test dependency in `.local/browser-qa-venv`, and a
-headless launch reported `about:blank`.
+use ASGI in-process requests, not a browser. M6 ran the app in headless Chromium
+156.0.8078.4 through Playwright 1.64.1 against `http://127.0.0.1:8765` on a fresh
+scratch store; the recorded actions and URL are in
+`.local/validation/m6-browser-01/browser-log.json`. That is one headless desktop
+flow, not a visual-design, responsive/mobile, or accessibility audit. Starlette
+warns that its working HTTPX adapter is deprecated; the approved lock remains
+unchanged and HTTPX2 is not installed. No service was left running: the server's
+launcher and worker processes were both confirmed exited and port 8765 closed.
+A retained source/test cohort is separate evidence from dependency installation.
+Playwright 1.64.1 remains the project's browser-test dependency in
+`.local/browser-qa-venv`.
 
 The exact approved Windows wheels and their license metadata are in
 `requirements/web-wheel-manifest.json`; measured installation evidence is in
