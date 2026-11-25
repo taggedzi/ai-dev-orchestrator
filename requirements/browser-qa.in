@@ -1,0 +1,5 @@
+# Lasting project dependency for browser tests, including M6. This is not a
+# product runtime dependency and it is not part of the approved 19-wheel web
+# install. Compile to an exact Windows lock before installation; no extras or
+# source builds are required.
+playwright==1.64.1

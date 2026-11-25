@@ -7,6 +7,8 @@ and CLI are implemented with [retained tests/smoke evidence](implementation/p1-c
 The authenticated loopback API/dashboard now exists with
 [26 passing core/web tests](implementation/product-web-evidence.json) and
 [approved local dependencies](implementation/web-install-evidence.json).
+Browser tests use the separate pinned project dependency
+[requirements/browser-qa.in](../requirements/browser-qa.in) (Playwright 1.64.1).
 Browser usability, migration/restore and remaining deliverables still require
 their stated acceptance evidence. P2's [trusted Git intake foundation](product-source.md)
 now seals private candidates and artifacts. [Durable intake](product-intake.md)
