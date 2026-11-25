@@ -1,0 +1,112 @@
+{
+  "VM_boots": 0,
+  "approval": "conversation:call_cd472ae3b520416bb77616dda37af878:Approve-one-guard-boot-stop-run",
+  "approved_review_sha256": "fc14c0ca697b09726c3fcdc84ed78810e876fce6f7e9997305a0a733cdef54db",
+  "finding": "The first bounded read-only VBoxManage machine query timed out inside the qualification bootstrap after original-owner readiness, before controller.input.json or any start/resume intent existed. Later standalone read-only observations succeeded. Sandbox, service warm-up, process/job context and I/O effects have not been isolated; do not claim a cause.",
+  "format": "mcli1-first-native-qualification-held-before-start-v1",
+  "guard_and_executor_files_unchanged": true,
+  "independent_inspection": {
+    "bytes": 1511,
+    "path": ".local/validation/guard-startup-review-01/independent-hold-inspection.json",
+    "sha256": "19cb7ce12ef2bae9af29ae6865e44f39958785d3062bddc2858dba35bdad5256"
+  },
+  "input_lock_measurement": {
+    "elapsed_ns": 4738633400,
+    "finding": "Actual backup verification/current-file hashing and locks took 4.74 seconds in this read-only measurement. This does not establish a worst-case filesystem bound.",
+    "receipt": {
+      "bytes": 2124,
+      "path": ".local/validation/start-input-timing-01/result.json",
+      "sha256": "22e1596b253215b5bcef218ee7cc33eac259b66d13aca571590ddd1a755c440e"
+    }
+  },
+  "native_frontends_created": 0,
+  "native_running_case_qualified": false,
+  "next_check": "Move fixed read-only machine/session/profile checks ahead of original-owner activation, add fault tests proving an early hold cannot issue a native stop, then prepare a new exact native review. Do not claim the original timeout cause or replay the consumed session.",
+  "original_poweroff_attempts": 1,
+  "original_stop_inventory": {
+    "bytes": 237,
+    "path": ".local/validation/owner-stops/9d4bbf222fb747e58cbc60c635d888ed/inventory.json",
+    "sha256": "3008ff3ce31e98586cd031a0fac353887b5c97b14edbbb9e91d5356891bcb39b"
+  },
+  "original_stop_result": "unknown; native_owner_stop possible-send; no receipt; no replay",
+  "posthold_readonly_observations": [
+    {
+      "inventory": {
+        "bytes": 1186,
+        "path": ".local/validation/guard-startup-posthold-01/inventory.json",
+        "sha256": "caca1bbcc4eca1bd1f853cbd476670c9ec9c47ee671780a73626979281215022"
+      },
+      "receipt": {
+        "bytes": 1876,
+        "path": ".local/validation/guard-startup-posthold-01/receipt.json",
+        "sha256": "cc3d3343e880223cc4f2f5538be95a4c466d1a0236d89128e03495b919021fd8"
+      },
+      "role": "guard",
+      "session": {
+        "pid": 0,
+        "state_after": "Unlocked",
+        "state_before": "Unlocked",
+        "vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "state": "poweroff"
+    },
+    {
+      "inventory": {
+        "bytes": 1228,
+        "path": ".local/validation/guard-startup-source-posthold-01/inventory.json",
+        "sha256": "94ef65a5775bdd3fa2aadbfc6b5ec15e2bd6641068d8ebf8250aebead274ab6d"
+      },
+      "receipt": {
+        "bytes": 1879,
+        "path": ".local/validation/guard-startup-source-posthold-01/receipt.json",
+        "sha256": "c22e0ef11b363bf79b654a227107f5a3eb321134afc5ef51e653a53132235fdb"
+      },
+      "role": "executor",
+      "session": {
+        "pid": 0,
+        "state_after": "Unlocked",
+        "state_before": "Unlocked",
+        "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+      },
+      "state": "poweroff"
+    }
+  ],
+  "read_only_context_diagnostic": {
+    "before_owner": {
+      "VM_boots": 0,
+      "actual_VM_stop_commands": 0,
+      "elapsed_ns": 391881800,
+      "session": {
+        "pid": 0,
+        "state_after": "Unlocked",
+        "state_before": "Unlocked",
+        "vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "status": "read-only-observed"
+    },
+    "finding": "Both queries succeeded with the actual 12-process controller job, suspended controller and independent Python owner. Every stop was a Python surrogate. Owner/job presence alone did not reproduce the timeout; other timing/service/context effects remain unknown.",
+    "inventory": {
+      "bytes": 7345,
+      "path": ".local/validation/session-context-probe-01/inventory.json",
+      "sha256": "637657cc05bcc07e9319f428258d12ab07efbf656f8e82999dc8b6e6e58f3b89"
+    },
+    "while_owner_watches": {
+      "VM_boots": 0,
+      "actual_VM_stop_commands": 0,
+      "elapsed_ns": 380943300,
+      "session": {
+        "pid": 0,
+        "state_after": "Unlocked",
+        "state_before": "Unlocked",
+        "vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "status": "read-only-observed"
+    }
+  },
+  "review_and_journal_inventory": {
+    "bytes": 3252,
+    "path": ".local/validation/guard-startup-review-01/inventory.json",
+    "sha256": "858e261f901333b429ffd63e70adf14565c1d29bb2b4a42c6e645dee29feb70e"
+  },
+  "status": "held-before-controller-activation-and-frontend-creation"
+}

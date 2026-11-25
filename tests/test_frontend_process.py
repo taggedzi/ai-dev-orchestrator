@@ -145,6 +145,130 @@ class FrontendTests(unittest.TestCase):
         self.assertLessEqual(result["stdout_bytes"], 65536)
         self.assertEqual(result["job_active_processes"], 0)
 
+    def test_only_the_retained_root_zero_exit_can_skip_a_final_image_lookup(self):
+        import research.validation.frontend_process as module
+
+        process = self.process("pass")
+        process.resume(lambda _: None)
+        end = time.monotonic() + 3
+        while process.poll() is None and time.monotonic() < end:
+            time.sleep(0.01)
+        self.assertEqual(process.poll(), 0)
+        with (
+            patch.object(process.job, "pids", return_value=[process.pid]),
+            patch.object(
+                module, "process_identity", side_effect=Hold("PID image unavailable")
+            ),
+        ):
+            with self.assertRaises(Hold):
+                process.members()
+            self.assertEqual(process.members(allow_retired=True), [])
+
+    def test_final_root_exit_does_not_hide_unknown_family_members(self):
+        import research.validation.frontend_process as module
+
+        process = self.process("pass")
+        process.resume(lambda _: None)
+        end = time.monotonic() + 3
+        while process.poll() is None and time.monotonic() < end:
+            time.sleep(0.01)
+        self.assertEqual(process.poll(), 0)
+        with (
+            patch.object(process.job, "pids", return_value=[process.pid, 999999]),
+            patch.object(module, "process_identity", side_effect=Hold("unknown image")),
+            self.assertRaises(Hold),
+        ):
+            process.members(allow_retired=True)
+
+    def test_retained_live_root_is_known_but_nonzero_exit_still_holds(self):
+        import research.validation.frontend_process as module
+
+        for code in ("import time;time.sleep(8)", "raise SystemExit(7)"):
+            process = self.process(code)
+            process.resume(lambda _: None)
+            if "SystemExit" in code:
+                end = time.monotonic() + 3
+                while process.poll() is None and time.monotonic() < end:
+                    time.sleep(0.01)
+                self.assertEqual(process.poll(), 7)
+            with (
+                patch.object(process.job, "pids", return_value=[process.pid]),
+                patch.object(
+                    module, "process_identity", side_effect=Hold("unreadable image")
+                ),
+            ):
+                with self.assertRaises(Hold):
+                    process.members()
+                if "SystemExit" in code:
+                    with self.assertRaisesRegex(Hold, "nonzero"):
+                        process.members(allow_retired=True)
+                else:
+                    self.assertEqual(
+                        process.members(allow_retired=True), [process.identity]
+                    )
+
+    def test_unknown_wait_result_cannot_prove_a_root_exit(self):
+        import _winapi
+
+        process = self.process("pass")
+        with (
+            patch.object(_winapi, "WaitForSingleObject", return_value=0xFFFFFFFF),
+            self.assertRaisesRegex(Hold, "wait result is unknown"),
+        ):
+            process.poll()
+
+    def test_retained_family_handles_prove_natural_exit_without_image_requery(self):
+        import research.validation.frontend_process as module
+
+        process = _FrontendProcess(
+            sys.executable,
+            ["-I", "-B", str(FIXTURES / "frontend_family.py"), str(self.root), "0"],
+        )
+        self.addCleanup(process.retire)
+        process.resume(lambda _: None)
+        self.wait_file(self.root / "family-2.json")
+        members = process.members()
+        self.assertEqual(
+            sum(
+                Path(row["image"]).resolve() == Path(sys.executable).resolve()
+                for row in members
+            ),
+            3,
+        )
+        self.assertLessEqual(len(members), 6)
+        pins = list(process._pins.values())
+        (self.root / "family.finish").write_text("finish")
+        end = time.monotonic() + 3
+        while process.job.active() and time.monotonic() < end:
+            time.sleep(0.01)
+        self.assertEqual(process.poll(), 0)
+        with (
+            patch.object(
+                process.job, "pids", return_value=[row["pid"] for row in members]
+            ),
+            patch.object(
+                module, "process_identity", side_effect=Hold("image unavailable")
+            ),
+        ):
+            self.assertEqual(process.members(allow_retired=True), [])
+        terminal = process.retire()
+        self.assertFalse(terminal["terminated"])
+        self.assertEqual(len(terminal["retained_process_exits"]), len(members))
+        self.assertTrue(
+            all(row["exit_code"] == 0 for row in terminal["retained_process_exits"])
+        )
+        self.assertTrue(all(pin.handle is None for pin in pins))
+        self.assertEqual(process._pins, {})
+
+    def test_unknown_retained_wait_result_holds_normal_finish(self):
+        process = self.process("import time;time.sleep(8)")
+        pin = process._pins[process.pid]
+        with (
+            patch.object(pin.api, "WaitForSingleObject", return_value=0xFFFFFFFF),
+            self.assertRaisesRegex(Hold, "retained frontend wait result is unknown"),
+        ):
+            process.members(allow_retired=True)
+
     def test_resume_is_one_shot_and_delayed_frontend_can_be_retired(self):
         marker = self.root / "late"
         process = self.process(

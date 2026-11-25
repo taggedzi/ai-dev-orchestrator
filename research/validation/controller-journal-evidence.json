@@ -1,0 +1,677 @@
+{
+  "VM_setting_changes": 0,
+  "classification": "real SQLite locks, controlled fault injection and actual Windows Python controller/original-owner/family with an independent writer process; VM/session facts in tests are synthetic. Fresh actual read-only capture/readback/preflight are separate.",
+  "consumed_native_failure": {
+    "bytes": 12471,
+    "path": "research/validation/guard-startup-journal-hold-evidence.json",
+    "sha256": "2f856c8ca33db5dacc84919b4baa726030e6a5ad6a9e60cda8377e0e599e4061"
+  },
+  "controlled_prechange_reproduction": {
+    "boundary": "A real writer lock reproduced SQLITE_BUSY, premature filesystem receipt/in-memory join and an unchanged resumed ledger. This does not identify the competing writer or exact failed statement in the consumed native run.",
+    "inventory": {
+      "bytes": 3613,
+      "path": ".local/validation/controller-journal-reproduction-01/inventory.json",
+      "sha256": "9c3d423c5a20eddbf2bd327d030507668182c26435a0973bf2670d11e1d503e2"
+    },
+    "result": {
+      "bytes": 330,
+      "path": ".local/validation/controller-journal-reproduction-01/result.json",
+      "sha256": "bd659cb77dd6790466165128429a5d137a4af834171edfba0327b43f500b6227"
+    }
+  },
+  "entry_wait": {
+    "boundary": "Only exact ordinary SQLITE_BUSY at BEGIN IMMEDIATE with no open transaction permits another entry attempt. Original authority, family/source identity, lease/startup/heartbeat/observation bounds and absence of native stop intent/record are checked again. Body/COMMIT/publication failures, unknown/extended codes and uncertain transaction state hold without replay. Kernel/filesystem stalls are not claimed to be hard real-time bounded.",
+    "busy_timeout_ms": 50,
+    "maximum_BEGIN_attempts": 16,
+    "maximum_loop_budget_ns": 1000000000
+  },
+  "format": "mcli1-controller-journal-nonentry-wait-preparation-v1",
+  "fresh_capture": {
+    "backup": {
+      "bytes": 4999,
+      "path": ".local/validation/initial-aborted-capture-06/backup/receipt.json",
+      "sha256": "7cfd314bb0aba03ef765292562ad2002b1dec07d0dc2712ee75add361b458b41"
+    },
+    "context_sha256": "623e3701fab0d58601a21108291bc840a15da8a8b281dde8371917cc39781908",
+    "inventory": {
+      "bytes": 7284,
+      "path": ".local/validation/initial-aborted-capture-06/inventory.json",
+      "sha256": "02dc4bdc688470f859f4c47c576142c12a8611769b240dd0714ac65576bdc85a"
+    },
+    "preflight": {
+      "bytes": 569,
+      "path": ".local/validation/initial-aborted-preflight-04/preactivation.receipt.json",
+      "sha256": "3717ff85cf9508604102ec292fb630e43981926cf2564660d3342626a390615d"
+    },
+    "preflight_inventory": {
+      "bytes": 3179,
+      "path": ".local/validation/initial-aborted-preflight-04/inventory.json",
+      "sha256": "4db1a7662962b53d2150006776da6e4145dff11d2ec0f1f88a4b17d471ad24e1"
+    },
+    "preparation": {
+      "bytes": 419,
+      "path": ".local/validation/initial-aborted-capture-06/preparation.receipt.json",
+      "sha256": "86a303a2c011c15b448e3c07c848ef4b43ffda2057c6cba230fb748c3b4abe8c"
+    },
+    "profile": {
+      "bytes": 2887,
+      "path": ".local/validation/initial-aborted-capture-06/profile.json",
+      "sha256": "f1099451c3cdab31efc448baa52e9fbabfecdbca74b1cac4ebd9dc3fdf47324a"
+    },
+    "readback": {
+      "bytes": 3961,
+      "path": ".local/validation/initial-aborted-readback-03/receipt.json",
+      "sha256": "4bea9295b7aa8f06c372d42c2bcc30d407280dc3293a69765622562e44281cf5"
+    },
+    "readback_inventory": {
+      "bytes": 2258,
+      "path": ".local/validation/initial-aborted-readback-03/inventory.json",
+      "sha256": "26a91d82ed663a21d4c51b053e1b1b0aebdeb58d04403664d8e26013773b1958"
+    }
+  },
+  "guest_ready": false,
+  "held_readonly_capture": {
+    "followup": {
+      "bytes": 1204,
+      "path": ".local/validation/guard-query-after-capture-05/inventory.json",
+      "sha256": "1b1b76155faf718f376dab8c9ed08d75cea0dfa2182249c5d315a48ca20456b7"
+    },
+    "intent": {
+      "bytes": 11301,
+      "path": ".local/validation/initial-aborted-capture-05/intent.json",
+      "sha256": "431735ca3aa004cbf8cd70fa43938fc9ed08853884255fb1982595dd225d8ddc"
+    },
+    "inventory": {
+      "bytes": 632,
+      "path": ".local/validation/initial-aborted-capture-05/inventory.json",
+      "sha256": "e98bc49dea295902322f513fd2735f0a02f11e3becb171b7df492559cbca55fc"
+    },
+    "root_cause": "not isolated; no query/startup/native deadline was relaxed",
+    "status": "first guard inventory query exceeded unchanged four-second bound before any copy; no completed marker"
+  },
+  "independent_writer_surrogate": {
+    "one_join_and_one_original_owner_stop": true,
+    "terminal": {
+      "bytes": 1512,
+      "path": ".local/validation/controller-journal-regression-01/native-process-evidence/NativeStartTests/test_separate_writer_process_allows_one_join_and_original_stop/owner/controller.terminal.json",
+      "sha256": "b0b9f30fd19c733805d049a807534b35d3f3bf3f67c99039bac976a49e60fe1f"
+    },
+    "trace": {
+      "bytes": 1312,
+      "path": ".local/validation/controller-journal-regression-01/native-process-evidence/NativeStartTests/test_separate_writer_process_allows_one_join_and_original_stop/owner/frontend.journal.trace.json",
+      "sha256": "cdaab03b50710592bd6354b08461ab40d7576146e91a0820ac430fcfb5e5db18"
+    },
+    "writer": {
+      "bytes": 197,
+      "path": ".local/validation/controller-journal-regression-01/native-process-evidence/NativeStartTests/test_separate_writer_process_allows_one_join_and_original_stop/owner/controller.journal.writer.json",
+      "sha256": "f7007ffd3d1f75330718aa3550e9642b0cbef5d076cc40efbc9af0967769f5a0"
+    }
+  },
+  "native_settlement_qualified": false,
+  "new_VM_boots": 0,
+  "new_actual_VM_stop_commands": 0,
+  "next_check": "Prepare one fresh exact guard recovery review using capture 06; a separate timely native approval is required. No consumed review, lease, command or context can be replayed.",
+  "receipt_order": "Observed SQLite commit precedes exclusive session-receipt publication, which precedes in-memory joined state. Missing publication or uncertain commit remains held. No filesystem receipt alone proves a committed join; no native command or transaction body is replayed.",
+  "recovery_provenance": {
+    "boundary": "All three consumed attempts and every retained creation are freshly reconciled; a null historical leaf exit is never a retirement proof. The exact new guard configuration is required. Older context V1/V2 and their captures stay historical and cannot be silently relabeled for admission.",
+    "format": "mcli1-initial-aborted-context-v3",
+    "intervening_review": "680a7aa23fe6efcd1db67344d1271e4e32b71e08f62e47736cbe8e8712dbefd0",
+    "latest_orphan_receipt_accepted": false,
+    "latest_parent_context": "0bff309b8928c81a74771cb1c0724187d640a099f87dc6baefb84015d7eba668",
+    "latest_review": "fba9d14f0b7cadd70786674b730b34c8375fbba60c1d9b4886d725b9df86d77f",
+    "prior_review": "98fa65d7365578352207992992a1d25ab8cf37dbf918d17e5f75aefd5c53ae6e",
+    "reconciliation": {
+      "bytes": 12922,
+      "path": ".local/validation/startup-history-reconciliation-03.json",
+      "sha256": "2b29a15c98f0f0a880732ab8ad1710c99daaed9c7ecfaa4a9e3d44098e14cdf6"
+    }
+  },
+  "source_review": {
+    "connection_state_and_codes": "https://docs.python.org/3.13/library/sqlite3.html",
+    "observation": "BEGIN IMMEDIATE may fail with SQLITE_BUSY when another writer is active; COMMIT error semantics differ. Connection.in_transaction exposes low-level transaction state. Preparation deliberately does not replay body or COMMIT.",
+    "transactions": "https://www.sqlite.org/lang_transaction.html"
+  },
+  "sources": [
+    {
+      "bytes": 6422,
+      "path": ".local/validation/controller-journal-regression-01/sources/__main__.py",
+      "sha256": "d124c78a47f4aa2ef453a510baa50d0f18fe616d1a3b40f42c735ede503eb176",
+      "workspace_source": "research\\validation\\__main__.py"
+    },
+    {
+      "bytes": 6220,
+      "path": ".local/validation/controller-journal-regression-01/sources/backup_records.py",
+      "sha256": "10fef40e816b1b7cd840fac94ed3ac8f1fdf16b4860814d864afbb69816da8c7",
+      "workspace_source": "research\\validation\\backup_records.py"
+    },
+    {
+      "bytes": 21485,
+      "path": ".local/validation/controller-journal-regression-01/sources/boot_preconditions.py",
+      "sha256": "b80bd097eeb2c34266b46432c16f5bdedd4607766c7f6c22f41688f966c35f3d",
+      "workspace_source": "research\\validation\\boot_preconditions.py"
+    },
+    {
+      "bytes": 6047,
+      "path": ".local/validation/controller-journal-regression-01/sources/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba",
+      "workspace_source": "research\\validation\\driver.py"
+    },
+    {
+      "bytes": 10319,
+      "path": ".local/validation/controller-journal-regression-01/sources/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2",
+      "workspace_source": "research\\validation\\fixture.py"
+    },
+    {
+      "bytes": 16580,
+      "path": ".local/validation/controller-journal-regression-01/sources/frontend_process.py",
+      "sha256": "dbc3cdff35d96432bce6e847b31e4e7c5ad25d477fab477b159e1f7057189e2d",
+      "workspace_source": "research\\validation\\frontend_process.py"
+    },
+    {
+      "bytes": 49122,
+      "path": ".local/validation/controller-journal-regression-01/sources/frontend_start.py",
+      "sha256": "c6a2c8dec009495f59fb6ba69392655eafdd5dda3815dc79f95517ed463d2239",
+      "workspace_source": "research\\validation\\frontend_start.py"
+    },
+    {
+      "bytes": 26530,
+      "path": ".local/validation/controller-journal-regression-01/sources/guest_maintenance_control.py",
+      "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391",
+      "workspace_source": "research\\validation\\guest_maintenance_control.py"
+    },
+    {
+      "bytes": 21670,
+      "path": ".local/validation/controller-journal-regression-01/sources/guest_maintenance_probe.py",
+      "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99",
+      "workspace_source": "research\\validation\\guest_maintenance_probe.py"
+    },
+    {
+      "bytes": 10718,
+      "path": ".local/validation/controller-journal-regression-01/sources/guest_transfer_entry.py",
+      "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1",
+      "workspace_source": "research\\validation\\guest_transfer_entry.py"
+    },
+    {
+      "bytes": 13113,
+      "path": ".local/validation/controller-journal-regression-01/sources/http_tools.py",
+      "sha256": "968163ac16f0c1a2ecd8e8d524fcf3d940df22a3ba75573091553aa9cdf63a73",
+      "workspace_source": "research\\validation\\http_tools.py"
+    },
+    {
+      "bytes": 27838,
+      "path": ".local/validation/controller-journal-regression-01/sources/initial_aborted.py",
+      "sha256": "48af5239ecf56d3d5f0a67119c84a2c8fbaf604e68630254231f5ada58fcb222",
+      "workspace_source": "research\\validation\\initial_aborted.py"
+    },
+    {
+      "bytes": 14280,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_config.py",
+      "sha256": "2c4fb51e96f630341c793c9684746864ac561ac02b936fe1d913ebd05dcc9a57",
+      "workspace_source": "research\\validation\\maintenance_config.py"
+    },
+    {
+      "bytes": 4117,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_control.py",
+      "sha256": "796ab5b6440e69f9c27e4459ea75f2f30ff3613176a4faf8f69db1dadb23e08a",
+      "workspace_source": "research\\validation\\maintenance_control.py"
+    },
+    {
+      "bytes": 5282,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_guest.py",
+      "sha256": "09290df891bfd4c093b54ce31d80c2ebb0183e865363dfd917cdb0a0102a9a50",
+      "workspace_source": "research\\validation\\maintenance_guest.py"
+    },
+    {
+      "bytes": 35250,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_host.py",
+      "sha256": "0fac9c031deb3ff6c3bc43e43b962c283115cd3861b5d49dd7bfcfc025978eda",
+      "workspace_source": "research\\validation\\maintenance_host.py"
+    },
+    {
+      "bytes": 11331,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_profile.py",
+      "sha256": "4f05799f0455d315b03091c29259ffa8bdf7ef2697a9a546ba5b41cebdce721d",
+      "workspace_source": "research\\validation\\maintenance_profile.py"
+    },
+    {
+      "bytes": 15471,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9",
+      "workspace_source": "research\\validation\\maintenance_serial.py"
+    },
+    {
+      "bytes": 11221,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+      "workspace_source": "research\\validation\\maintenance_serial_worker.py"
+    },
+    {
+      "bytes": 19990,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_session.py",
+      "sha256": "78b15a869b2023694d312a51719ea47cba0a06e3eb157525bbbf4e2ac84e7fdc",
+      "workspace_source": "research\\validation\\maintenance_session.py"
+    },
+    {
+      "bytes": 14633,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_stop.py",
+      "sha256": "5125a7553465e792997a858bb162f499d729226d91d662ae667ee4dca7248fe6",
+      "workspace_source": "research\\validation\\maintenance_stop.py"
+    },
+    {
+      "bytes": 36517,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122",
+      "workspace_source": "research\\validation\\maintenance_transfer.py"
+    },
+    {
+      "bytes": 14000,
+      "path": ".local/validation/controller-journal-regression-01/sources/native_session.py",
+      "sha256": "b9b365803cad5dd7eb00ada6803b2e9aa4228cd9320bc584cbb70a1133cdfff4",
+      "workspace_source": "research\\validation\\native_session.py"
+    },
+    {
+      "bytes": 25846,
+      "path": ".local/validation/controller-journal-regression-01/sources/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e",
+      "workspace_source": "research\\validation\\offline_repo.py"
+    },
+    {
+      "bytes": 16850,
+      "path": ".local/validation/controller-journal-regression-01/sources/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7",
+      "workspace_source": "research\\validation\\owner_launch.py"
+    },
+    {
+      "bytes": 12297,
+      "path": ".local/validation/controller-journal-regression-01/sources/owner_process.py",
+      "sha256": "4bfbb296bd5081d15caaef338cbaa89cef3f7b768764d55f2de5cc1c1fd76f1b",
+      "workspace_source": "research\\validation\\owner_process.py"
+    },
+    {
+      "bytes": 1736,
+      "path": ".local/validation/controller-journal-regression-01/sources/phase_handoff_review.py",
+      "sha256": "17ab1d677afb24c91da65b3b094693cbbfaff78d8692478fa163ec91564eaa70",
+      "workspace_source": "research\\validation\\phase_handoff_review.py"
+    },
+    {
+      "bytes": 5477,
+      "path": ".local/validation/controller-journal-regression-01/sources/phase_policy.py",
+      "sha256": "82fe2ee9cbc8795078dc8225488324ca542c4646204554d2fa4b765e16bbe56e",
+      "workspace_source": "research\\validation\\phase_policy.py"
+    },
+    {
+      "bytes": 1726,
+      "path": ".local/validation/controller-journal-regression-01/sources/process_proof.py",
+      "sha256": "af51675c2760bb21ada8af8ec2e10ffbd39194857025a52c43495ce10e3265db",
+      "workspace_source": "research\\validation\\process_proof.py"
+    },
+    {
+      "bytes": 12233,
+      "path": ".local/validation/controller-journal-regression-01/sources/recovery_records.py",
+      "sha256": "496beacd8aa0f505b1c867fbd9d1675d79f853511c0cc79550c6737ee31da9e0",
+      "workspace_source": "research\\validation\\recovery_records.py"
+    },
+    {
+      "bytes": 37953,
+      "path": ".local/validation/controller-journal-regression-01/sources/startup_qualification.py",
+      "sha256": "dc1d9c37bc7351f6eeccbd3c1f79f9d4206723e6113bbb17aacb7560345af75b",
+      "workspace_source": "research\\validation\\startup_qualification.py"
+    },
+    {
+      "bytes": 18952,
+      "path": ".local/validation/controller-journal-regression-01/sources/stopped_backup.py",
+      "sha256": "20205aefa189ab6891ab95a040db8433467aefefc6a95e62a07cb83170d6a80f",
+      "workspace_source": "research\\validation\\stopped_backup.py"
+    },
+    {
+      "bytes": 16923,
+      "path": ".local/validation/controller-journal-regression-01/sources/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5",
+      "workspace_source": "research\\validation\\store.py"
+    },
+    {
+      "bytes": 3366,
+      "path": ".local/validation/controller-journal-regression-01/sources/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d",
+      "workspace_source": "research\\validation\\supervisor.py"
+    },
+    {
+      "bytes": 10697,
+      "path": ".local/validation/controller-journal-regression-01/sources/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249",
+      "workspace_source": "research\\validation\\transfer_commands.py"
+    },
+    {
+      "bytes": 12755,
+      "path": ".local/validation/controller-journal-regression-01/sources/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f",
+      "workspace_source": "research\\validation\\windows_readonly.py"
+    },
+    {
+      "bytes": 2181,
+      "path": ".local/validation/controller-journal-regression-01/sources/frontend_controller.py",
+      "sha256": "8d33115ea97bac2f1d57a6c5cb1433528df73243f2fa3868628d180ca4981daf",
+      "workspace_source": "tests\\fixtures\\frontend_controller.py"
+    },
+    {
+      "bytes": 865,
+      "path": ".local/validation/controller-journal-regression-01/sources/frontend_family.py",
+      "sha256": "a8b54ab4387320842af31e5cbaa8e92a1addac1356d3344ec606d31950e55583",
+      "workspace_source": "tests\\fixtures\\frontend_family.py"
+    },
+    {
+      "bytes": 702,
+      "path": ".local/validation/controller-journal-regression-01/sources/frontend_journal_writer.py",
+      "sha256": "e20c52c99b0a99501c34edf60fd05f1eade2cad39e77a3151febe71284c94ea1",
+      "workspace_source": "tests\\fixtures\\frontend_journal_writer.py"
+    },
+    {
+      "bytes": 11187,
+      "path": ".local/validation/controller-journal-regression-01/sources/frontend_start_controller.py",
+      "sha256": "aac0d98282689fd6193a75dcc2d94a4a05c9a39ab8a63ad5a415bcdebd53f8d1",
+      "workspace_source": "tests\\fixtures\\frontend_start_controller.py"
+    },
+    {
+      "bytes": 3558,
+      "path": ".local/validation/controller-journal-regression-01/sources/frontend_start_support.py",
+      "sha256": "5a040baf7b8b62592b4c6793e406638b839f21b7ef3c6bf1fb9085eedb40fabf",
+      "workspace_source": "tests\\fixtures\\frontend_start_support.py"
+    },
+    {
+      "bytes": 22783,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_boot_preconditions.py",
+      "sha256": "e4fa7900b7c28fe458c69d686a585f7b873075efb751e62502f00cf694af5a50",
+      "workspace_source": "tests\\test_boot_preconditions.py"
+    },
+    {
+      "bytes": 17505,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_control_policy.py",
+      "sha256": "4c607a6c96c15202f5b40734aab35d7ddf30078b7d56d18bb5968f8e5b2b2152",
+      "workspace_source": "tests\\test_control_policy.py"
+    },
+    {
+      "bytes": 5266,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_engine_metadata.py",
+      "sha256": "47d84a1a4273131d15aa14358fd372d365847e1c98f99b447654cb1398e28d7e",
+      "workspace_source": "tests\\test_engine_metadata.py"
+    },
+    {
+      "bytes": 5657,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_engine_plan.py",
+      "sha256": "0327fc04bc028857a2a16a66c1a12a8572fc2c347797b13a14897fb683bd0922",
+      "workspace_source": "tests\\test_engine_plan.py"
+    },
+    {
+      "bytes": 4734,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_engine_retrieval.py",
+      "sha256": "b1f8236cc5b37390d1880043e69b180614f0617f31f33ae797c7005207ec065d",
+      "workspace_source": "tests\\test_engine_retrieval.py"
+    },
+    {
+      "bytes": 3154,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_fetch_os_updates.py",
+      "sha256": "7176ece39699ce61037926b377e9ce372ce2b53fcbab429e678918be7489c736",
+      "workspace_source": "tests\\test_fetch_os_updates.py"
+    },
+    {
+      "bytes": 14420,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_first_boot.py",
+      "sha256": "cbe5063a9fbf5e8f5f4f0f8cdaeac13787bbea76116f9de2f904b9fc3ace972a",
+      "workspace_source": "tests\\test_first_boot.py"
+    },
+    {
+      "bytes": 10940,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_frontend_journal_contention.py",
+      "sha256": "2e499c9c5d34049f14a57d6d35789d3c7f778c08b3b1c63249ac1c587435e008",
+      "workspace_source": "tests\\test_frontend_journal_contention.py"
+    },
+    {
+      "bytes": 12284,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_frontend_process.py",
+      "sha256": "41eee420de964d83d8e7d900bece458139eeb172cd6fa53d408d2fc8f585df23",
+      "workspace_source": "tests\\test_frontend_process.py"
+    },
+    {
+      "bytes": 38150,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_frontend_start.py",
+      "sha256": "8069fd533115e189e9c15557698b0f5092d789010a1e0e40acdf3ce8fecb4d87",
+      "workspace_source": "tests\\test_frontend_start.py"
+    },
+    {
+      "bytes": 5194,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_gsd_export.py",
+      "sha256": "cf185ed4a215c9d285498a0b9ac3bcaeee7c47f50c8cd87e21c4e249e23d671e",
+      "workspace_source": "tests\\test_gsd_export.py"
+    },
+    {
+      "bytes": 9285,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_gsd_import.py",
+      "sha256": "77e8aa98511f6af91f5fe655e8726e3913c33db9561ad9eb2a069532ef94813f",
+      "workspace_source": "tests\\test_gsd_import.py"
+    },
+    {
+      "bytes": 3394,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_guard_packages.py",
+      "sha256": "8c3c959968765141fc5e6416580ed93cfa3a88d5c814e402fb17e0f34c1d5bd2",
+      "workspace_source": "tests\\test_guard_packages.py"
+    },
+    {
+      "bytes": 5288,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_guard_provisioning.py",
+      "sha256": "222cd31d9b78c19951befd62b0acb6577805c1b59034e615ddd094e507b1b7e4",
+      "workspace_source": "tests\\test_guard_provisioning.py"
+    },
+    {
+      "bytes": 18327,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_guest_control.py",
+      "sha256": "19d36d4349193743f35a028365fe9e1e73d81012ebb80857a10c97a04ae7558b",
+      "workspace_source": "tests\\test_guest_control.py"
+    },
+    {
+      "bytes": 16537,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_guest_maintenance.py",
+      "sha256": "9edb9757478351674655720d9796ab59419e50649f6b0a4a126b70680cff39a7",
+      "workspace_source": "tests\\test_guest_maintenance.py"
+    },
+    {
+      "bytes": 2726,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_image_context.py",
+      "sha256": "83ba2c36c52b960cd53c39bb94210deef978f5abe356a081f7cb4e430d793c37",
+      "workspace_source": "tests\\test_image_context.py"
+    },
+    {
+      "bytes": 28931,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_initial_aborted.py",
+      "sha256": "fa8f222d7ad2782ab7256d69dd5cb9434ff548f4b213b1fa4d6e4104a280439b",
+      "workspace_source": "tests\\test_initial_aborted.py"
+    },
+    {
+      "bytes": 2754,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_maintenance_config.py",
+      "sha256": "7ceeb35343a52381e2fd81f5e1d67c7d6660dff949f0f2cd2f4cb632b3b6ebf3",
+      "workspace_source": "tests\\test_maintenance_config.py"
+    },
+    {
+      "bytes": 27661,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_maintenance_host.py",
+      "sha256": "82ed8f1254d2f8c18e0f1ea6c62be0257815fb61d46fb9c75dbcd83df7657b8b",
+      "workspace_source": "tests\\test_maintenance_host.py"
+    },
+    {
+      "bytes": 8742,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_maintenance_profile.py",
+      "sha256": "e1240a982bcc9ac68aa1cf85ce7f36059b27da190c2650d1c276b11cbcb36072",
+      "workspace_source": "tests\\test_maintenance_profile.py"
+    },
+    {
+      "bytes": 18317,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_maintenance_runner.py",
+      "sha256": "d65218e129f385c07beb436702496856d307d4470048fa937248581e60f04c07",
+      "workspace_source": "tests\\test_maintenance_runner.py"
+    },
+    {
+      "bytes": 20844,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_maintenance_serial.py",
+      "sha256": "a6a65ef884637f3a6463ae6525fc43bd71c1b4823e5aeb6fba848c7a8bdda157",
+      "workspace_source": "tests\\test_maintenance_serial.py"
+    },
+    {
+      "bytes": 21326,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_maintenance_session.py",
+      "sha256": "02d7fa7bd7970644edc16a55bf6653be60dfe1d676455ddd959496bc7f99c073",
+      "workspace_source": "tests\\test_maintenance_session.py"
+    },
+    {
+      "bytes": 18720,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_maintenance_stop.py",
+      "sha256": "948f362582bdd50d0adc11f136b3ffc089585cc7241551ef457b78858d331cac",
+      "workspace_source": "tests\\test_maintenance_stop.py"
+    },
+    {
+      "bytes": 28792,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_maintenance_transfer.py",
+      "sha256": "76cadf1e37f025e73575304063126f8e694308ceeb9a08b0ff93c47cb9fa8992",
+      "workspace_source": "tests\\test_maintenance_transfer.py"
+    },
+    {
+      "bytes": 13392,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_native_session.py",
+      "sha256": "12bacc1b95afb81746c0535b21f9dae5ca0c8af72305edc624488f6bb8cfd4d8",
+      "workspace_source": "tests\\test_native_session.py"
+    },
+    {
+      "bytes": 4544,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_offline_disk.py",
+      "sha256": "03cff5a2f38f2b6c7fec532a4a47fbeb2d2b452f38d39d088f88023219717729",
+      "workspace_source": "tests\\test_offline_disk.py"
+    },
+    {
+      "bytes": 5034,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_offline_repo.py",
+      "sha256": "54f06228c287eabd151b861a96c53657e205809abeace30303116d6d97d42603",
+      "workspace_source": "tests\\test_offline_repo.py"
+    },
+    {
+      "bytes": 5259,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_os_install.py",
+      "sha256": "6d97874a1f6d6c62d98bb9eafd20e07e5ab305a37c8828ec637b1d9be7d1dbb0",
+      "workspace_source": "tests\\test_os_install.py"
+    },
+    {
+      "bytes": 6943,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_os_update_plan.py",
+      "sha256": "f937737fbb15d2d522c3e0f3d1016cdecece51b34c257a401b738e85cdf2b714",
+      "workspace_source": "tests\\test_os_update_plan.py"
+    },
+    {
+      "bytes": 8780,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_owner_journal_contention.py",
+      "sha256": "8234f7e1adece2d3776d45df0871b6fa632ad2222051fcf174621bb12a5d1c83",
+      "workspace_source": "tests\\test_owner_journal_contention.py"
+    },
+    {
+      "bytes": 15172,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_owner_launch.py",
+      "sha256": "43a1532ca96f5dc5f35c9a04a7880cea64b9b36d54868b49d386128baf3027b8",
+      "workspace_source": "tests\\test_owner_launch.py"
+    },
+    {
+      "bytes": 10103,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_phase_ceiling.py",
+      "sha256": "c30fd5a80f303ee39abd7502f0158110ceafd2c01718d2807cb305f0976b1bdb",
+      "workspace_source": "tests\\test_phase_ceiling.py"
+    },
+    {
+      "bytes": 3161,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_phase_handoff_review.py",
+      "sha256": "8c844d2c08bfc2be125e58741ca7f1cb4b91f6cd5ec2edb402366cb9a789cd89",
+      "workspace_source": "tests\\test_phase_handoff_review.py"
+    },
+    {
+      "bytes": 8595,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_phase_policy.py",
+      "sha256": "8aab7937be74fafea909eb33f7b06b094852573ef6557f1a0bd89e9be10a637d",
+      "workspace_source": "tests\\test_phase_policy.py"
+    },
+    {
+      "bytes": 9330,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_recovery_admission.py",
+      "sha256": "9d0f8dad07b3ebe665f6f76a52494d0538ad20fec6c589fe70434906a42db011",
+      "workspace_source": "tests\\test_recovery_admission.py"
+    },
+    {
+      "bytes": 12145,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_recovery_records.py",
+      "sha256": "202afe94a0f877cb6a9125f6521fe50945059d2baf18a6f7145df453f670fd8c",
+      "workspace_source": "tests\\test_recovery_records.py"
+    },
+    {
+      "bytes": 2847,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_resolved_tool_probe.py",
+      "sha256": "50e6e4e2c8d3f30529d54baf43ef6063b6c2c640361efb7abd9536aaf9438909",
+      "workspace_source": "tests\\test_resolved_tool_probe.py"
+    },
+    {
+      "bytes": 3699,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_runtime_artifacts.py",
+      "sha256": "bd681df335b08ef87116b65de9544d6eb7200bf5592415f9bbfec2878a76751f",
+      "workspace_source": "tests\\test_runtime_artifacts.py"
+    },
+    {
+      "bytes": 31717,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_startup_qualification.py",
+      "sha256": "bba6879518cdf9f9c209d05be8771bc75ebc3be892a0a5af49f98e2a8c2d4334",
+      "workspace_source": "tests\\test_startup_qualification.py"
+    },
+    {
+      "bytes": 13027,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_stopped_backup.py",
+      "sha256": "dff5cf16070b3ba48498f67903fb9671ea3a3f34edc5b1c0e3e781fef28b5807",
+      "workspace_source": "tests\\test_stopped_backup.py"
+    },
+    {
+      "bytes": 2291,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_token_fit_probe.py",
+      "sha256": "650e803f57ba75118db714799bb5d462701fb4d1cb2c9e0387691b4f2c990bbd",
+      "workspace_source": "tests\\test_token_fit_probe.py"
+    },
+    {
+      "bytes": 29735,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_validation_harness.py",
+      "sha256": "4c77ac2f73027f3fc867e1c5e1d9b9ab6936a385191c8b193b5f505a11bcffd8",
+      "workspace_source": "tests\\test_validation_harness.py"
+    },
+    {
+      "bytes": 4288,
+      "path": ".local/validation/controller-journal-regression-01/sources/test_wire_input_probe.py",
+      "sha256": "bec2d89379b63713a82f46d3717dfa27d7e3e60ec86893fe48e83a1170aaa702",
+      "workspace_source": "tests\\test_wire_input_probe.py"
+    }
+  ],
+  "status": "bounded journal entry and commit-before-receipt preparation verified; new native activation remains separately gated",
+  "trace": "Bounded BEGIN/body/COMMIT/publication phase events and SQLite error codes are retained after physical containment/fencing. The consumed run's missing original statement trace is not reconstructed or rewritten.",
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 262984,
+      "path": ".local/validation/controller-journal-regression-01/inventory.json",
+      "sha256": "7f5ec4da6b3e690abc036a332946102197436d1c6e866ab6c05d656fa3f6fcbb"
+    },
+    "log": {
+      "bytes": 95437,
+      "path": ".local/validation/controller-journal-regression-01/unittest.log",
+      "sha256": "c2f7480bfc39c72d39b558057c36b58f3d33fcc623997cd42ebb6ae0c030333e"
+    },
+    "passed": 543,
+    "platform_skips": 13,
+    "sqlite_version": "3.50.4",
+    "summary": {
+      "bytes": 16934,
+      "path": ".local/validation/controller-journal-regression-01/result.json",
+      "sha256": "3a459aa217c2f28f664d54901a83d37dc6e54eebb177bff4013d8ee237b22bf3"
+    },
+    "tests_run": 556
+  }
+}

@@ -97,7 +97,7 @@ def draft(role):
     }
 
 
-def checked(raw, sha):
+def checked(raw, sha, *, recovery=None):
     require(
         type(raw) is bytes and digest(raw) == sha, "boot preconditions digest differs"
     )
@@ -147,7 +147,17 @@ def checked(raw, sha):
         "boot disk/source preservation evidence is unbound",
     )
     backup = grant["backup"]
-    if backup.get("format") == backup_records.BINDING_FORMAT:
+    if recovery is not None:
+        context = backup_records.recovery_model.checked(recovery)
+        require(
+            grant["role"] == "guard"
+            and grant["target"]["vm_uuid"] == context["target_vm_uuid"],
+            "recovery boot scope differs",
+        )
+        backup_records.checked_binding(
+            backup, grant["target"]["disk_uuid"], recovery=context
+        )
+    elif backup.get("format") == backup_records.BINDING_FORMAT:
         backup_records.checked_binding(backup, grant["target"]["disk_uuid"])
     else:
         legacy_backup(backup, grant)
@@ -260,6 +270,10 @@ def watch_owner(store, grant, identity=host.process_identity, jobs=kernel_jobs):
     Admission must still use owner_live, including immediately before resume.
     """
     root = Path(grant["owner"]["root"])
+    require(
+        not (root / "owner.terminal.json").exists(),
+        "original owner terminal receipt forbids further admission",
+    )
     root_record = owner.root_identity(root)
     dbpath = store.db.execute("PRAGMA database_list").fetchone()["file"]
     require(
@@ -375,7 +389,7 @@ def ledger_live(db, grant, packet, ready_mono_ns):
     )
 
 
-def stopped_snapshot(grant, snapshot):
+def stopped_snapshot(grant, snapshot, *, recovery=None):
     require(
         set(snapshot) == {"observed_mono_ns", "machine", "medium"}
         and type(snapshot["observed_mono_ns"]) is int
@@ -389,6 +403,17 @@ def stopped_snapshot(grant, snapshot):
     fields = host.machine_fields(snapshot["machine"])
     expected = transfer.expected_host(grant)
     expected["state"] = "poweroff"
+    if recovery is not None:
+        context = backup_records.recovery_model.checked(recovery)
+        require(
+            grant["role"] == "guard"
+            and grant["target"]["vm_uuid"] == context["target_vm_uuid"],
+            "recovery stopped scope differs",
+        )
+        backup_records.checked_binding(
+            grant["backup"], grant["target"]["disk_uuid"], recovery=context
+        )
+        expected["state"] = "aborted"
     require(
         host.machine_profile(snapshot["machine"]) == expected
         and fields["hardwareuuid"] == grant["target"]["dmi_uuid"],
@@ -399,6 +424,11 @@ def stopped_snapshot(grant, snapshot):
         "boot firmware/order/autostart policy changed",
     )
     host.check_medium(snapshot["medium"], snapshot["machine"], grant)
+    if recovery is not None:
+        require(
+            host.medium_fields(snapshot["medium"])["State"] == "created",
+            "recovery admission medium is still locked",
+        )
     return {
         "observed_mono_ns": snapshot["observed_mono_ns"],
         "machine_sha256": digest(snapshot["machine"]),

@@ -1,0 +1,180 @@
+{
+  "VM_backups_captured_this_turn": 0,
+  "VM_mutations_this_turn": 0,
+  "VM_queries_or_mutations_this_turn": 0,
+  "current_documents": [
+    {
+      "bytes": 1673,
+      "path": "AGENTS.md",
+      "sha256": "b19cdc51adc75a3a09569c86019cc887db513d55469b7e81b16ecdae9abc9c15"
+    },
+    {
+      "bytes": 10386,
+      "path": "docs/NEXT_AGENT.md",
+      "sha256": "19a40b2e4bc4632d284290a64a99dcbbe16ac0aa34192e030cfb471a2e5fb59d"
+    },
+    {
+      "bytes": 22063,
+      "path": "docs/HANDOFF.md",
+      "sha256": "d8b47571c8833ea3f7df33c567cf78289b83db0fc46ebf8c5f9df560cdc7d20f"
+    },
+    {
+      "bytes": 91385,
+      "path": "docs/status.md",
+      "sha256": "11ec4c73c751d4b262739dae9c64e3197a45ef700cb1207ba92ed48fca444c2e"
+    }
+  ],
+  "date": "2026-11-24",
+  "first_next_task": "M1 archive restore is measured. Next open product milestone is M2. P4 still waits on the qualification lane. No live provider call, real transfer, or VM boot.",
+  "format": "agent-takeover-checkpoint-v1",
+  "full_product_complete": false,
+  "git_commits_pushes_publications": 0,
+  "goal_control": {
+    "final_action": "Measured explicit archive restore and path rebinding. M2 is next. No live provider call, real transfer, or VM boot.",
+    "pause_requested": false,
+    "resume_authorized": true,
+    "resume_requires_developer": false,
+    "user_answer": "Resume the full product. Decision 0007 preparation does not authorize a real transfer or VM boot."
+  },
+  "last_product_terminal_session": {
+    "exit": 0,
+    "id": "9e9e7f5e-c9fb-4a0d-a1d6-ca647bb418f6"
+  },
+  "last_product_tests": {
+    "cohort": ".local/validation/product-integration-01",
+    "evidence_bundle_rewritten": false,
+    "passed": 114,
+    "retained_checkpoint_passed": 87,
+    "rerun_for_handoff": true,
+    "run": 114,
+    "skipped": 0
+  },
+  "live_processes": [],
+  "live_task_handles": [],
+  "moved_product_sources": [
+    {
+      "bytes": 52270,
+      "path": "coordinator/application.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/application.py",
+      "sha256": "43092371190f6848392459859176a7a9c6f0b8b5ed2acce9b4cd1abf80685826"
+    },
+    {
+      "bytes": 83143,
+      "path": "coordinator/integration.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/integration.py",
+      "sha256": "43376b6f48cf1907b8501fd642dd0e03f78ffc86022ce4e3497212358fb13e2b"
+    },
+    {
+      "bytes": 32633,
+      "path": "coordinator/source.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/source.py",
+      "sha256": "1ef39a71b701187a86cc8a30484a53da26811bc922c0e1990f8e7f67d251e7e7"
+    },
+    {
+      "bytes": 28356,
+      "path": "coordinator/store.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/store.py",
+      "sha256": "0905fba1be9458f022d89ead58169face9f6decd96a094130e96f47517522e6e"
+    },
+    {
+      "bytes": 17237,
+      "path": "coordinator/cli.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/cli.py",
+      "sha256": "d63559188a537aab7457ca68213fca5691207fb00c67915228930e4c6e985a2d"
+    },
+    {
+      "bytes": 48893,
+      "path": "tests/test_coordinator.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/tests/test_coordinator.py",
+      "sha256": "cf3bab876599a6b1341e0b4360c38ec6cf46bfc3903bde1dbe7c62be8032174a"
+    },
+    {
+      "bytes": 31966,
+      "path": "tests/test_coordinator_intake.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/tests/test_coordinator_intake.py",
+      "sha256": "43669b4a5b07f2362ade34947236120de8a7dcee6cb895284c051b88e1acedda"
+    },
+    {
+      "bytes": 47515,
+      "path": "tests/test_coordinator_integration.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/tests/test_coordinator_integration.py",
+      "sha256": "bf4542fa2ed1b806e473ca27ff1e8bde1a79356c6586bd70aab9495c565f8235"
+    },
+    {
+      "bytes": 21174,
+      "path": "coordinator/web.py",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/web.py",
+      "sha256": "6ab7c632b908cdc68e5f6a6a49119f2057b22a2388cd69dcbeb45018cb07fb09"
+    },
+    {
+      "bytes": 5386,
+      "path": "coordinator/web_assets/workspace.css",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/web_assets/workspace.css",
+      "sha256": "7af540a7cafe8c84070f08781fdbcedbbef7bc570e621cb45487293239b045e4"
+    },
+    {
+      "bytes": 11773,
+      "path": "coordinator/web_assets/workspace.js",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/web_assets/workspace.js",
+      "sha256": "d9eb4a3a304102c05f264b27d4d90a319b13a4b03ef09f78fff828cd5cff6a07"
+    },
+    {
+      "bytes": 6166,
+      "path": "coordinator/web_templates/workspace.html",
+      "retained_snapshot": ".local/validation/product-integration-01/sources/coordinator/web_templates/workspace.html",
+      "sha256": "f282dfa167079551eacb3f1227551c847a1f49a3a9f97cb2f1577f2e8cccc741"
+    }
+  ],
+  "native_source_edits_this_turn": 0,
+  "native_sources_read_at_stopping_point": [
+    {
+      "bytes": 41455,
+      "path": "research/validation/offline_startup.py",
+      "sha256": "601eb7e3a171dad9f91367abb3948ce3bbf10394d90a6c3acf4bc7b6c52b01b9"
+    },
+    {
+      "bytes": 53268,
+      "path": "research/validation/held_successor.py",
+      "sha256": "93a07fbf62e516741875ec6438f2a103737a99e0193f93641bccd129168d279e"
+    },
+    {
+      "bytes": 25351,
+      "path": "tests/test_held_successor.py",
+      "sha256": "bf930cbc893e8ac55966d2d916ed9925822b240454eb2a8e832e6dcf4f63dbad"
+    },
+    {
+      "bytes": 1848,
+      "path": "research/validation/held-successor-evidence.json",
+      "sha256": "bd9aeb8617d02656a0ac90822cfac6d5e8cdb839732ca776058fef553d632079"
+    },
+    {
+      "bytes": 27838,
+      "path": "research/validation/initial_aborted.py",
+      "sha256": "48af5239ecf56d3d5f0a67119c84a2c8fbaf604e68630254231f5ada58fcb222"
+    },
+    {
+      "bytes": 12233,
+      "path": "research/validation/recovery_records.py",
+      "sha256": "496beacd8aa0f505b1c867fbd9d1675d79f853511c0cc79550c6737ee31da9e0"
+    },
+    {
+      "bytes": 50836,
+      "path": "research/validation/startup_qualification.py",
+      "sha256": "a8d2b339c7bb5a4fdac7d15cdb4a669d2b9def2cb87c4832bfaf7ca7c6cf0c0a"
+    }
+  ],
+  "new_dependencies": 0,
+  "prior_checkpoint": {
+    "bytes": 13989,
+    "path": "docs/implementation/product-integration-evidence.json",
+    "sha256": "ad28c10555f078f3cd932aeae93118b4d270b75036150d4156adca3a04ea2f56"
+  },
+  "prior_document_resolutions": {
+    "bytes": 6103,
+    "path": ".local/validation/agent-handoff-2026-11-24-02/prior-document-resolutions.json",
+    "sha256": "a23f559d529ba931b335042f5028ddd56c61851f50a03b653cb426fdb1282b07"
+  },
+  "provider_calls": 0,
+  "real_reservation_transfers": 0,
+  "scope": "Decision 0007 preparation measured; no real reservation transfer, VM boot, commit or publication"
+}

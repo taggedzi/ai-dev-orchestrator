@@ -16,7 +16,7 @@ from pathlib import Path
 
 from .maintenance_host import process_identity
 from .maintenance_serial import ExtendedLimits, KillJob
-from .windows_readonly import _create_in_job, require
+from .windows_readonly import Hold, _create_in_job, require
 
 FRONTEND_LIMIT = 3
 FAMILY_LIMIT = 6
@@ -109,6 +109,70 @@ def frontend_environment():
     return env
 
 
+class _HeldProcess:
+    """Retain one validated creation identity until family cleanup."""
+
+    def __init__(self, identity, handle=None):
+        self.identity, self.owned = dict(identity), handle is None
+        self.api = ctypes.WinDLL("kernel32", use_last_error=True)
+        definitions = {
+            "OpenProcess": (
+                [wintypes.DWORD, wintypes.BOOL, wintypes.DWORD],
+                wintypes.HANDLE,
+            ),
+            "GetProcessTimes": (
+                [wintypes.HANDLE, *([ctypes.c_void_p] * 4)],
+                wintypes.BOOL,
+            ),
+            "WaitForSingleObject": ([wintypes.HANDLE, wintypes.DWORD], wintypes.DWORD),
+            "GetExitCodeProcess": ([wintypes.HANDLE, ctypes.c_void_p], wintypes.BOOL),
+            "CloseHandle": ([wintypes.HANDLE], wintypes.BOOL),
+        }
+        for name, (args, result) in definitions.items():
+            function = getattr(self.api, name)
+            function.argtypes, function.restype = args, result
+        self.handle = (
+            handle
+            if handle is not None
+            else self.api.OpenProcess(0x1000 | 0x100000, False, identity["pid"])
+        )
+        require(self.handle, "validated frontend process handle unavailable")
+        try:
+            stamps = [ctypes.c_uint64() for _ in range(4)]
+            require(
+                self.api.GetProcessTimes(
+                    self.handle, *[ctypes.byref(s) for s in stamps]
+                )
+                and stamps[0].value == identity["created_filetime"],
+                "retained frontend creation identity differs",
+            )
+        except BaseException:
+            self.close()
+            raise
+
+    def exit_code(self):
+        require(self.handle is not None, "retained frontend handle is closed")
+        status = self.api.WaitForSingleObject(self.handle, 0)
+        require(status in {0, 0x102}, "retained frontend wait result is unknown")
+        if status == 0x102:
+            return None
+        code = wintypes.DWORD()
+        require(
+            self.api.GetExitCodeProcess(self.handle, ctypes.byref(code)),
+            "retained frontend exit code unavailable",
+        )
+        return code.value
+
+    def close(self):
+        if self.handle is not None:
+            handle, self.handle = self.handle, None
+            if self.owned:
+                require(
+                    self.api.CloseHandle(handle),
+                    "retained frontend handle did not close",
+                )
+
+
 class _FrontendProcess:
     """Create already-jobbed/suspended; retain bounded pipes and entire family.
 
@@ -124,6 +188,7 @@ class _FrontendProcess:
         self.executable = Path(executable).resolve(strict=True)
         self.process = self.primary = None
         self.pid, self.identity, self.resumed = None, None, False
+        self._pins = {}
         self.stdout, self.stderr, self.threads = bytearray(), bytearray(), []
         self.fault, self.terminal = threading.Event(), None
         self.job = FamilyJob(name)
@@ -163,6 +228,7 @@ class _FrontendProcess:
                 Path(self.identity["image"]).resolve() == self.executable,
                 "frontend image identity differs",
             )
+            self._pins[self.pid] = _HeldProcess(self.identity, self.process)
 
             def read(fd, target):
                 try:
@@ -229,9 +295,29 @@ class _FrontendProcess:
         self.primary = None
         self.resumed = True
 
-    def members(self):
+    def members(self, *, allow_retired=False):
         require(self.job.handle is not None, "frontend family already closed")
-        members = [process_identity(pid) for pid in self.job.pids()]
+        exits = {}
+        if allow_retired:
+            for pid, pin in self._pins.items():
+                exits[pid] = pin.exit_code()
+                require(
+                    Path(pin.identity["image"]).resolve() != self.executable
+                    or exits[pid] in {None, 0},
+                    "frontend exited nonzero during normal finish",
+                )
+        members = []
+        for pid in self.job.pids():
+            if allow_retired and pid in self._pins:
+                if exits[pid] is None:
+                    members.append(dict(self._pins[pid].identity))
+                continue
+            try:
+                members.append(process_identity(pid))
+            except (Hold, OSError) as error:
+                raise Hold(
+                    f"frontend family PID {pid} identity unavailable: {error}"
+                ) from error
         frontends, helpers = [], []
         for row in members:
             if Path(row["image"]).resolve() == self.executable:
@@ -248,17 +334,42 @@ class _FrontendProcess:
             len(frontends) <= FRONTEND_LIMIT and len(helpers) <= FRONTEND_LIMIT,
             "frontend/helper process count exceeds bound",
         )
+        known = {pid: pin.identity for pid, pin in self._pins.items()}
+        for row in members:
+            require(
+                row["pid"] not in known or known[row["pid"]] == row,
+                "frontend creation identity changed",
+            )
+            known[row["pid"]] = row
+        require(
+            sum(
+                Path(row["image"]).resolve() == self.executable
+                for row in known.values()
+            )
+            <= FRONTEND_LIMIT
+            and sum(
+                Path(row["image"]).resolve() != self.executable
+                for row in known.values()
+            )
+            <= FRONTEND_LIMIT,
+            "cumulative frontend/helper process count exceeds bound",
+        )
+        for row in members:
+            if row["pid"] not in self._pins:
+                pin = _HeldProcess(row)
+                self._pins[row["pid"]] = pin
+                require(
+                    pin.exit_code() is None, "new frontend retired before validation"
+                )
         return members
 
     def poll(self):
         import _winapi
 
         require(self.process is not None, "frontend process handle is closed")
-        return (
-            None
-            if _winapi.WaitForSingleObject(self.process, 0) == 0x102
-            else _winapi.GetExitCodeProcess(self.process)
-        )
+        status = _winapi.WaitForSingleObject(self.process, 0)
+        require(status in {0, 0x102}, "frontend root wait result is unknown")
+        return None if status == 0x102 else _winapi.GetExitCodeProcess(self.process)
 
     def retire(self):
         """Terminate any remaining family and prove local process/pipe cleanup only."""
@@ -289,6 +400,10 @@ class _FrontendProcess:
                 "status": "frontend-family-reaped-not-VM-poweroff-proof",
                 "root_pid": self.pid,
                 "root_exit": self.poll(),
+                "retained_process_exits": [
+                    {**pin.identity, "exit_code": pin.exit_code()}
+                    for pin in self._pins.values()
+                ],
                 "terminated": terminated,
                 "job_active_processes": 0,
                 "output_fault": self.fault.is_set(),
@@ -305,13 +420,28 @@ class _FrontendProcess:
     def close_handles(self):
         import _winapi
 
+        errors = []
+        for pin in self._pins.values():
+            try:
+                pin.close()
+            except (Hold, OSError) as error:
+                errors.append(error)
+        self._pins.clear()
         for name in ("primary", "process"):
             handle = getattr(self, name)
             if handle is not None:
-                _winapi.CloseHandle(handle)
                 setattr(self, name, None)
+                try:
+                    _winapi.CloseHandle(handle)
+                except (Hold, OSError) as error:
+                    errors.append(error)
         if self.job.handle:
-            self.job.close()
+            try:
+                self.job.close()
+            except (Hold, OSError) as error:
+                errors.append(error)
+        if errors:
+            raise Hold("frontend handle cleanup incomplete") from errors[0]
 
 
 if __name__ == "__main__":

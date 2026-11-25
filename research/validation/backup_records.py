@@ -2,10 +2,13 @@
 
 import re
 
+from . import recovery_records as recovery_model
 from .store import Hold
 
 BINDING_FORMAT = "mcli1-file-backup-binding-v2"
 RECEIPT_FORMAT = "mcli1-stopped-file-backup-v2"
+RECOVERY_BINDING_FORMAT = "mcli1-file-backup-binding-v3"
+RECOVERY_RECEIPT_FORMAT = "mcli1-aborted-file-backup-v3"
 
 
 def require(value, message):
@@ -32,7 +35,9 @@ def nvram_record(value):
         )
 
 
-def checked_binding(value, target_disk):
+def checked_binding(value, target_disk, *, recovery=None):
+    context = recovery_model.checked(recovery) if recovery is not None else None
+    extra = {"source_machine_state", "recovery_context_sha256"} if context else set()
     require(
         isinstance(value, dict)
         and set(value)
@@ -46,7 +51,8 @@ def checked_binding(value, target_disk):
             "nvram",
             "receipt_sha256",
         }
-        and value["format"] == BINDING_FORMAT,
+        | extra
+        and value["format"] == (RECOVERY_BINDING_FORMAT if context else BINDING_FORMAT),
         "file backup binding fields differ",
     )
     require(
@@ -65,10 +71,28 @@ def checked_binding(value, target_disk):
         "file backup byte/hash evidence is unbound",
     )
     nvram_record(value["nvram"])
+    if context:
+        require(
+            target_disk == recovery_model.GUARD_DISK
+            and value["source_machine_state"] == "aborted"
+            and value["recovery_context_sha256"]
+            == recovery_model.context_sha256(context)
+            and value["disk_bytes"] == context["files"]["disk"]["bytes"]
+            and value["disk_sha256"] == context["files"]["disk"]["sha256"]
+            and value["configuration_sha256"]
+            == context["files"]["configuration"]["sha256"]
+            and value["nvram"] == context["files"]["nvram"],
+            "recovery backup and exact guard context differ",
+        )
     return value
 
 
-def binding(receipt, receipt_sha):
+def binding(receipt, receipt_sha, *, recovery=None):
+    require(
+        receipt["format"]
+        == (RECOVERY_RECEIPT_FORMAT if recovery is not None else RECEIPT_FORMAT),
+        "backup receipt provenance format differs",
+    )
     files = receipt["files"]
     nvram = {
         k: files["nvram"][k]
@@ -76,7 +100,7 @@ def binding(receipt, receipt_sha):
         if k in files["nvram"]
     }
     value = {
-        "format": BINDING_FORMAT,
+        "format": RECOVERY_BINDING_FORMAT if recovery is not None else BINDING_FORMAT,
         "backup_id": receipt["backup_id"],
         "source_disk_uuid": receipt["source_disk_uuid"],
         "disk_bytes": files["disk"]["bytes"],
@@ -85,21 +109,47 @@ def binding(receipt, receipt_sha):
         "nvram": nvram,
         "receipt_sha256": receipt_sha,
     }
-    return checked_binding(value, receipt["source_disk_uuid"])
+    if recovery is not None:
+        value.update(
+            source_machine_state="aborted",
+            recovery_context_sha256=recovery_model.context_sha256(recovery),
+        )
+    return checked_binding(value, receipt["source_disk_uuid"], recovery=recovery)
 
 
-def checked_receipt(receipt, receipt_sha, grant):
+def checked_receipt(receipt, receipt_sha, grant, *, recovery=None):
     """Check pinned facts; fresh filesystem verification is a separate operation."""
-    value = checked_binding(grant["backup"], grant["target"]["disk_uuid"])
+    value = checked_binding(
+        grant["backup"], grant["target"]["disk_uuid"], recovery=recovery
+    )
+    if recovery is None:
+        source_valid = (
+            receipt.get("format") == RECEIPT_FORMAT
+            and receipt.get("source_poweroff") is True
+            and receipt.get("status") == "stopped-backup-reported-not-boot-authority"
+        )
+    else:
+        source_valid = (
+            receipt.get("format") == RECOVERY_RECEIPT_FORMAT
+            and receipt.get("status") == "aborted-backup-reported-not-boot-authority"
+            and "source_poweroff" not in receipt
+            and receipt.get("source_machine_state") == "aborted"
+            and receipt.get("source_session_state") == "Unlocked"
+            and type(receipt.get("source_session_pid")) is int
+            and receipt["source_session_pid"] == 0
+            and receipt.get("recovery_context_sha256")
+            == recovery_model.context_sha256(recovery)
+            and receipt.get("role") == "guard"
+            and grant["role"] == "guard"
+            and receipt.get("target_vm_uuid") == recovery_model.GUARD_VM
+        )
     require(
-        receipt.get("format") == RECEIPT_FORMAT
-        and receipt.get("status") == "stopped-backup-reported-not-boot-authority"
-        and receipt.get("source_poweroff") is True
+        source_valid
         and receipt.get("independent") is True
         and receipt.get("never_attach") is True
         and receipt.get("target_vm_uuid") == grant["target"]["vm_uuid"]
         and receipt.get("role") == grant["role"]
-        and binding(receipt, receipt_sha) == value,
+        and binding(receipt, receipt_sha, recovery=recovery) == value,
         "stopped file backup receipt differs",
     )
     require(

@@ -2,6 +2,7 @@
 
 import json
 import os
+import subprocess
 import sys
 import time
 import traceback
@@ -13,6 +14,7 @@ workspace = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(workspace))
 sys.path.insert(0, str(workspace / "tests"))
 from research.validation import frontend_start as start
+from research.validation import startup_qualification as qualification
 from research.validation.store import Hold, Store
 from research.validation.transfer_commands import canonical, digest
 from research.validation.windows_readonly import _run
@@ -32,6 +34,27 @@ def retain_error(kind, value, trace):
 
 sys.excepthook = retain_error
 original = start.frontend._FrontendProcess
+original_prior = start.recovery_host.prior_snapshot
+original_intervening = start.recovery_host.intervening_snapshot
+original_latest = start.recovery_host.latest_snapshot
+
+
+def prior_snapshot():
+    if grant.get("format") == start.RECOVERY_FORMAT:
+        return grant["recovery"]["prior"]  # Explicit synthetic prior-process facts.
+    return original_prior()
+
+
+def intervening_snapshot():
+    if grant.get("format") == start.RECOVERY_FORMAT:
+        return grant["recovery"]["intervening"]
+    return original_intervening()
+
+
+def latest_snapshot():
+    if grant.get("format") == start.RECOVERY_FORMAT:
+        return grant["recovery"]["latest"]
+    return original_latest()
 
 
 def factory(exe, args):
@@ -71,7 +94,11 @@ with closing(Store(root / "owner.sqlite")) as store:
         calls.append(1)
         if mode == "deny-gate" and len(calls) == 2:
             store.fence("test-only final suspended gate revocation")
-        return snapshot(grant["boot"])
+        frame = snapshot(grant["boot"])
+        if grant.get("format") == start.RECOVERY_FORMAT:
+            frame["machine"] = frame["machine"].replace(b'"poweroff"', b'"aborted"')
+            frame["medium"] = frame["medium"].replace(b"locked write", b"created")
+        return frame
 
     with (
         patch.object(start, "_InputLocks", NoInputLocks),
@@ -80,6 +107,9 @@ with closing(Store(root / "owner.sqlite")) as store:
             start.frontend, "HEADLESS_SHA256", digest(Path(sys.executable).read_bytes())
         ),
         patch.object(start.frontend, "_FrontendProcess", factory),
+        patch.object(start.recovery_host, "prior_snapshot", prior_snapshot),
+        patch.object(start.recovery_host, "intervening_snapshot", intervening_snapshot),
+        patch.object(start.recovery_host, "latest_snapshot", latest_snapshot),
     ):
         adapter = start._PreparedStart(store, probe)
         try:
@@ -98,7 +128,57 @@ with closing(Store(root / "owner.sqlite")) as store:
                 ):
                     time.sleep(0.01)
                 members = adapter.family.members()
+                if grant.get("format") == start.RECOVERY_FORMAT:
+                    initial = probe()
+                    initial["session"] = {
+                        "vm_uuid": grant["boot"]["target"]["vm_uuid"],
+                        "state_before": "Unlocked",
+                        "state_after": "Unlocked",
+                        "pid": 0,
+                    }
+                    waiting = adapter.observe(initial)
+                    assert adapter.joined is None
+                    start.owner.publish(
+                        root / "recovery.wait.json",
+                        canonical(
+                            {**waiting, "original_lease": adapter.packet["lease"]}
+                        ),
+                    )
                 leaf = json.loads((root / "family-2.json").read_bytes())
+                probe_stamp = time.monotonic_ns()
+                progress = adapter.observe_startup_session(
+                    {
+                        "format": "mcli1-startup-session-probe-v1",
+                        "observed_mono_ns": probe_stamp,
+                        "finished_mono_ns": probe_stamp,
+                        "session_raw": canonical(
+                            {
+                                "format": "mcli1-native-session-read-v1",
+                                "version": start.session_observer.VERSION,
+                                "revision": start.session_observer.REVISION,
+                                "vm_uuid": grant["boot"]["target"]["vm_uuid"],
+                                "state_before": 2,
+                                "state_after": 2,
+                                "machine_before": 11,
+                                "machine_after": 11,
+                                "pid": leaf["pid"],
+                            }
+                        ),
+                    }
+                )
+                assert (
+                    adapter.joined is None and progress["profile_observation_allowed"]
+                )
+                start.owner.publish(
+                    root / "controller.probe.json",
+                    canonical(
+                        {
+                            **progress,
+                            "original_lease": adapter.packet["lease"],
+                            "joined": False,
+                        }
+                    ),
+                )
                 frame = snapshot(grant["boot"])
                 frame["machine"] = frame["machine"].replace(b'"poweroff"', b'"running"')
                 frame["session"] = {
@@ -107,7 +187,62 @@ with closing(Store(root / "owner.sqlite")) as store:
                     "state_after": "Locked",
                     "pid": leaf["pid"],
                 }
-                adapter.observe(frame)
+                if mode == "graceful-contention":
+                    writer = subprocess.Popen(
+                        [
+                            sys.executable,
+                            "-I",
+                            "-B",
+                            str(Path(__file__).with_name("frontend_journal_writer.py")),
+                            str(root),
+                        ],
+                        stdin=subprocess.DEVNULL,
+                        stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL,
+                        close_fds=True,
+                        creationflags=subprocess.CREATE_NO_WINDOW,
+                    )
+                    end = time.monotonic() + 3
+                    while (
+                        not (root / "journal-writer.ready.json").exists()
+                        and writer.poll() is None
+                        and time.monotonic() < end
+                    ):
+                        time.sleep(0.005)
+                    assert (root / "journal-writer.ready.json").exists()
+                    writer_identity = start.host.process_identity(writer.pid)
+                    note = adapter._journal_note
+
+                    def release_writer(phase, stage, error=None, **facts):
+                        note(phase, stage, error, **facts)
+                        if (
+                            phase == "session-bind"
+                            and stage == "begin-failed"
+                            and not (root / "journal-writer.release").exists()
+                        ):
+                            (root / "journal-writer.release").write_text(
+                                "release known scratch writer"
+                            )
+
+                    adapter._journal_note = release_writer
+                    adapter.observe(frame)
+                    assert writer.wait(timeout=3) == 0
+                    start.owner.publish(
+                        root / "controller.journal.writer.json",
+                        canonical(
+                            {
+                                "process": writer_identity,
+                                "exit": 0,
+                                "begin_busy_count": sum(
+                                    e["stage"] == "begin-failed"
+                                    for e in adapter.journal_trace
+                                ),
+                                "native_VM_calls": 0,
+                            }
+                        ),
+                    )
+                else:
+                    adapter.observe(frame)
                 query = _run(
                     Path(sys.executable),
                     ["-I", "-B", "-c", "print('query')"],
@@ -127,7 +262,22 @@ with closing(Store(root / "owner.sqlite")) as store:
                 )
                 if mode == "abrupt":
                     os._exit(0)
-                if mode == "graceful":
+                if mode == "qualification-loss":
+                    samples = []
+                    for _ in range(2):
+                        frame["observed_mono_ns"] = time.monotonic_ns()
+                        adapter.observe(frame)
+                        samples.append(
+                            {
+                                "observed_mono_ns": frame["observed_mono_ns"],
+                                "session": frame["session"],
+                                "members": adapter.family.members(),
+                            }
+                        )
+                    qualification._controller_loss_exit(
+                        root, digest(canonical(grant)), adapter, samples
+                    )
+                if mode in {"graceful", "recovery-graceful", "graceful-contention"}:
                     (root / "allow.surrogate.stop").write_text(
                         "Python surrogate exit after original stop effect"
                     )

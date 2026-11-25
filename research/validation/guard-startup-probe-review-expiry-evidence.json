@@ -1,0 +1,33 @@
+{
+  "VM_boots": 0,
+  "actual_VM_stop_commands": 0,
+  "format": "mcli1-COM-probe-review-expired-unarmed-v1",
+  "inspection": {
+    "bytes": 880,
+    "path": ".local/validation/guard-startup-review-06/independent-unarmed-closure.json",
+    "sha256": "b611cd62f63f792bc1179d6c1e30c1206d77d0ad01cea1c8bcc40a76d9dfc17e"
+  },
+  "limits": [
+    "Unarmed review expiry is not a native qualification run",
+    "No new VM disk/configuration hashes are claimed by closure inspection",
+    "Late approval cannot reuse the expired review, process identities or lease"
+  ],
+  "next_check": "After the developer returns, prepare a fresh exact review only; native activation still needs its own timely approval. Never replay this review or auto-approve goal continuation.",
+  "original_processes_retired": {
+    "bootstrap": true,
+    "controller": true,
+    "owner": true
+  },
+  "preparation_summary": {
+    "bytes": 30281,
+    "path": "research/validation/startup-session-probe-evidence.json",
+    "sha256": "8b353277ba17fe2a7392332286f931919140b08305b9026e57b391d4bc98e9cf"
+  },
+  "review_inventory": {
+    "bytes": 1816,
+    "path": ".local/validation/guard-startup-review-06/inventory.json",
+    "sha256": "73cdf6d8cf67e2b4fdea8e35e08d731317449a2c394fe934c264102167ec4512"
+  },
+  "review_sha256": "4507ab8096d8d9ead05f75f0b62f38402ed5ab490ce17eded3a4f7aebbca9bb9",
+  "status": "no timely approval; suspended recovery review closed without native activation"
+}

@@ -1,0 +1,48 @@
+{
+  "Python": "3.13.17",
+  "SQLite": "3.50.4",
+  "VM_mutations": 0,
+  "archived_database_bytes": {
+    "offline_admissions": {
+      "bytes": 20480,
+      "path": ".local/validation/coordinator-storage-review-01/offline_admissions.sqlite.bytes",
+      "sha256": "f1eac66681934fd294c73efeb580ebc102b64e6586a17a13bdd7a1bec488260a"
+    },
+    "original_owner": {
+      "bytes": 49152,
+      "path": ".local/validation/coordinator-storage-review-01/original_owner.sqlite.bytes",
+      "sha256": "24bab655c096ee1fa16b4f4bed2d04a76a167eee93de7e0fd21c54cefade0313"
+    }
+  },
+  "classification": "Primary-source advisory applicability and actual local read-only integrity checks; no reproduced corruption or historical lock-error diagnosis",
+  "database_mutations": 0,
+  "format": "mcli1-storage-review-evidence-v1",
+  "held_admission_preserved": true,
+  "integrity_check": {
+    "offline_admissions": [
+      "ok"
+    ],
+    "original_owner": [
+      "ok"
+    ]
+  },
+  "limits": [
+    "Read-only integrity results cover these current files, not absence of a future storage race or durability under host power loss",
+    "Source byte archives are preservation records, not an approved restore or migration"
+  ],
+  "next_check": "Select and verify a patched SQLite build before further native admission writes or product persistence qualification; runtime installation requires approval.",
+  "original_authority_fenced": true,
+  "original_stop_accepted": false,
+  "receipt": {
+    "bytes": 2978,
+    "path": ".local/validation/coordinator-storage-review-01/receipt.json",
+    "sha256": "20b5c8ef7857e5e78fb7d31dcb69e45d8d0366e03817e32d4591c2b38da05c62"
+  },
+  "source_review": {
+    "finding": "Installed 3.50.4 is in the documented affected WAL-reset version range. No corruption or causal link to historical lock errors is established.",
+    "page_last_updated": "2026-08-25 19:42:39Z",
+    "reviewed_date": "2026-11-24",
+    "url": "https://www.sqlite.org/wal.html#walreset"
+  },
+  "sqlite_source_id": "2025-07-30 19:33:53 4d8adfb30e03f9cf27f800a2c1ba3c48fb4ca1b08b0f5ed59a4d5ecbf45e20a3"
+}

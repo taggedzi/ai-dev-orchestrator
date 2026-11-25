@@ -1,5 +1,12 @@
 # Measured stopped file backups
 
+The [post-review-10 refresh](controller-loss-preparation-evidence.json) now retains
+an ordinary stopped guard backup at `.local/validation/stopped-backup-guard-02`,
+including the 540,672-byte NVRAM created by the authorized boot. Capture, separate
+readback and current profile checks passed; both VMs remain off/disconnected.
+This refresh is unattached and grants no activation authority. The measurements
+below describe the earlier backups and their original NVRAM absence.
+
 [stopped_backup.py](stopped_backup.py) now creates exclusive, unattached byte-copy
 backups of the two preparation VMs. It performs fixed read-only native inventory
 queries and ordinary local file copies. It contains no VM start, mutation,
@@ -14,7 +21,7 @@ independent file, **not a second registered medium**; never attach/register it.
 Restoration requires a separately reviewed stopped-VM action. Recovery bootability
 and protection against physical loss of this host disk have not been measured.
 
-The guard's NVRAM is `{"state":"absent"}`. Absence cannot carry an invented hash
+The original guard backup's NVRAM is `{"state":"absent"}`. Absence cannot carry an invented hash
 or zero-byte file descriptor. The executor's NVRAM is a real 540,672-byte file,
 SHA-256 `cdfcb7d4b7eb19f0a4d990481704fbd02f81272e6f32d0651ed4a726546ce521`.
 Existing version-1 clone-style backup bindings keep their original semantics.

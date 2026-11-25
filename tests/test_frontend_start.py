@@ -35,6 +35,7 @@ class FakeFamily:
         self.terminal = None
         self.exit = None
         self.extra = []
+        self.stdout, self.stderr = bytearray(), bytearray()
         self.lose_ack = False
         self.job = SimpleNamespace(active=lambda: 0 if self.exit == 0 else 1)
 
@@ -44,7 +45,7 @@ class FakeFamily:
         if self.lose_ack:
             raise Hold("injected lost resume acknowledgement")
 
-    def members(self):
+    def members(self, *, allow_retired=False):
         return [self.identity, *self.extra]
 
     def poll(self):
@@ -55,6 +56,14 @@ class FakeFamily:
             "status": "fake-family-reaped",
             "job_active_processes": 0,
             "root_exit": self.exit,
+            **{
+                name + "_bytes": len(getattr(self, name))
+                for name in ("stdout", "stderr")
+            },
+            **{
+                name + "_sha256": digest(getattr(self, name))
+                for name in ("stdout", "stderr")
+            },
         }
         return self.terminal
 
@@ -123,6 +132,178 @@ class AdmissionTests(unittest.TestCase):
         self.assertIsNotNone(self.adapter.terminal)
         self.assertFalse(self.adapter.terminal["original_stop_accepted"])
         self.assertFalse(self.adapter.terminal["VM_poweroff_proven"])
+
+    def waiting_frame(self, states=None, before="Spawning", after="Locked", pid=0):
+        frame = self.frame(state="running")
+        frame["session"].update(state_before=before, state_after=after, pid=pid)
+        frame["startup_transition"] = {
+            "format": "mcli1-startup-wait-v1",
+            "machine_states": states or ["poweroff", "starting", "running", "running"],
+        }
+        return frame
+
+    def session_probe(self, *, state="starting", session="Locked", pid=None):
+        native = start.session_observer
+        stamp = time.monotonic_ns()
+        return {
+            "format": "mcli1-startup-session-probe-v1",
+            "observed_mono_ns": stamp,
+            "finished_mono_ns": stamp,
+            "session_raw": canonical(
+                {
+                    "format": "mcli1-native-session-read-v1",
+                    "version": native.VERSION,
+                    "revision": native.REVISION,
+                    "vm_uuid": self.grant["boot"]["target"]["vm_uuid"],
+                    "state_before": {"Unlocked": 1, "Locked": 2, "Spawning": 3}[
+                        session
+                    ],
+                    "state_after": {"Unlocked": 1, "Locked": 2, "Spawning": 3}[session],
+                    "machine_before": native.MACHINE_STATES[state],
+                    "machine_after": native.MACHINE_STATES[state],
+                    "pid": (self.adapter.family.identity["pid"] if pid is None else pid)
+                    if session == "Locked"
+                    else 0,
+                }
+            ),
+        }
+
+    def test_session_probe_waits_without_join_or_lease_renewal(self):
+        self.launch()
+        lease = dict(self.store.db.execute("SELECT * FROM lease").fetchone())
+        started = self.adapter.started_mono
+        wait = self.adapter.observe_startup_session(
+            self.session_probe(state="poweroff", session="Unlocked")
+        )
+        self.assertFalse(wait["profile_observation_allowed"])
+        ready = self.adapter.observe_startup_session(self.session_probe())
+        self.assertTrue(ready["profile_observation_allowed"])
+        self.assertFalse(ready["guest_ready"])
+        self.assertIsNone(self.adapter.joined)
+        self.assertFalse((self.root / "frontend.session.receipt.json").exists())
+        self.assertEqual(self.adapter.started_mono, started)
+        self.assertEqual(
+            dict(self.store.db.execute("SELECT * FROM lease").fetchone()), lease
+        )
+        frame = self.frame()
+        frame["machine"] = frame["machine"].replace(
+            b'"memory"="1024"', b'"memory"="2048"'
+        )
+        with self.assertRaises(Hold):
+            self.adapter.observe(frame)
+        self.assertIsNone(self.adapter.joined)
+
+    def test_session_probe_rejects_foreign_pid_and_retains_containment(self):
+        self.launch()
+        with self.assertRaisesRegex(Hold, "outside frontend family"):
+            self.adapter.observe_startup_session(self.session_probe(pid=777))
+        self.assertIsNotNone(self.adapter.terminal)
+
+    def test_session_probe_rejects_replayed_observation(self):
+        self.launch()
+        probe = self.session_probe(state="running")
+        self.adapter.observe_startup_session(probe)
+        with self.assertRaisesRegex(Hold, "stale/reordered"):
+            self.adapter.observe_startup_session(probe)
+
+    def test_session_probe_backward_progress_is_held(self):
+        self.launch()
+        self.adapter.observe_startup_session(self.session_probe(state="running"))
+        with self.assertRaisesRegex(Hold, "regressed"):
+            self.adapter.observe_startup_session(self.session_probe())
+
+    def test_session_probe_after_full_join_is_held(self):
+        self.launch()
+        self.adapter.observe(self.frame())
+        with self.assertRaisesRegex(Hold, "after join"):
+            self.adapter.observe_startup_session(self.session_probe(state="running"))
+
+    def test_session_probe_cannot_extend_original_startup_deadline(self):
+        self.launch()
+        self.adapter.started_mono -= start.STARTUP_NS
+        with self.assertRaisesRegex(Hold, "startup timed out"):
+            self.adapter.observe_startup_session(self.session_probe())
+        self.assertIsNotNone(self.adapter.terminal)
+
+    def test_unproven_probe_machine_state_is_held(self):
+        self.launch()
+        probe = self.session_probe()
+        record = json.loads(probe["session_raw"])
+        record["machine_after"] = 999
+        probe["session_raw"] = canonical(record)
+        with self.assertRaisesRegex(Hold, "unknown startup state"):
+            self.adapter.observe_startup_session(probe)
+        self.assertIsNone(self.adapter.joined)
+
+    def test_forward_wait_does_not_join_publish_or_renew_authority(self):
+        self.launch()
+        lease = dict(self.store.db.execute("SELECT * FROM lease").fetchone())
+        started = self.adapter.started_mono
+        result = self.adapter.observe(self.waiting_frame())
+        self.assertEqual(result["status"], "awaiting-session-identity")
+        self.assertFalse(result["guest_ready"])
+        self.assertIsNone(self.adapter.joined)
+        self.assertFalse((self.root / "frontend.session.receipt.json").exists())
+        self.assertEqual(self.adapter.started_mono, started)
+        self.assertEqual(
+            dict(self.store.db.execute("SELECT * FROM lease").fetchone()), lease
+        )
+        self.assertEqual(
+            self.adapter.observe(self.frame())["status"],
+            "runtime-session-bound-not-guest-ready",
+        )
+
+    def test_wait_cannot_hide_cross_observation_regression(self):
+        self.launch()
+        self.adapter.observe(self.waiting_frame())
+        with self.assertRaisesRegex(Hold, "regressed"):
+            self.adapter.observe(self.waiting_frame())
+        self.assertIsNotNone(self.adapter.terminal)
+
+    def test_wait_checks_exact_profile_before_accepting_progress(self):
+        self.launch()
+        frame = self.waiting_frame()
+        frame["machine"] = frame["machine"].replace(
+            b'"memory"="1024"', b'"memory"="2048"'
+        )
+        with self.assertRaises(Hold):
+            self.adapter.observe(frame)
+        self.assertIsNone(self.adapter.joined)
+
+    def test_wait_is_rejected_after_join(self):
+        self.launch()
+        self.adapter.observe(self.frame())
+        with self.assertRaises(Hold):
+            self.adapter.observe(self.waiting_frame())
+
+    def test_retirement_retains_console_bytes_without_accepting_a_stop(self):
+        self.launch()
+        self.adapter.family.stdout.extend(b"bounded frontend output\n")
+        self.adapter.family.stderr.extend(b"bounded frontend warning\n")
+        result = self.adapter.close()
+        self.assertFalse(result["original_stop_accepted"])
+        self.assertFalse(result["VM_poweroff_proven"])
+        self.assertEqual(result["errors"], [])
+        for stream in ("stdout", "stderr"):
+            raw = (self.root / ("frontend." + stream + ".bin")).read_bytes()
+            self.assertEqual(raw, getattr(self.adapter.family, stream))
+            self.assertEqual(digest(raw), result["cleanup"][stream + "_sha256"])
+
+    def test_output_publication_failure_holds_after_containment_and_fencing(self):
+        self.launch()
+        (self.root / "frontend.stderr.bin").write_bytes(b"existing evidence")
+        result = self.adapter.close()
+        self.assertEqual(result["status"], "frontend-retirement-held")
+        self.assertIn("output:FileExistsError", result["errors"])
+        self.assertIsNotNone(self.adapter.family.terminal)
+        self.assertEqual(
+            self.store.db.execute("SELECT active FROM authority").fetchone()[0], 0
+        )
+        self.assertFalse(result["original_stop_accepted"])
+        self.assertEqual(
+            (self.root / "frontend.stderr.bin").read_bytes(), b"existing evidence"
+        )
+        self.assertIs(self.adapter.close(), result)
 
     def test_unarmed_grant_and_missing_owner_ready_never_create_process(self):
         self.grant["approval"]["native_run"] = None
@@ -467,6 +648,47 @@ class NativeStartTests(owner_tests.NativeOwnerFixture, unittest.TestCase):
         b, _ = preconditions.grant_for(pending.root, packet)
         b["caller"] = {"role": "controller", "process": packet["controller"]}
         grant, receipts = bind(b, preconditions.snapshot(b))
+        if mode == "recovery-graceful":
+            from tests import test_recovery_records as recovery_tests
+
+            context = recovery_tests.context()
+            context["sources"] = dict(start.recovery_host.SOURCE_EPOCH)
+            b["target"]["disk_uuid"] = start.recovery_host.model.GUARD_DISK
+            b["disk_evidence"]["pre_boot_disk_sha256"] = context["files"]["disk"][
+                "sha256"
+            ]
+            frame = preconditions.snapshot(b)
+            frame["machine"] = frame["machine"].replace(b'"poweroff"', b'"aborted"')
+            frame["medium"] = frame["medium"].replace(b"locked write", b"created")
+            for label in ("first_observation", "last_observation"):
+                context[label].update(
+                    machine_sha256=digest(frame["machine"]),
+                    medium_sha256=digest(frame["medium"]),
+                )
+            backup = recovery_tests.receipt(context)
+            backup_sha = digest(canonical(backup))
+            b["backup"] = start.backup.records.binding(
+                backup, backup_sha, recovery=context
+            )
+            preboot = {
+                **receipts[1],
+                "format": "mcli1-recovery-preboot-disk-v1",
+                "disk_uuid": b["target"]["disk_uuid"],
+                "disk_sha256": b["disk_evidence"]["pre_boot_disk_sha256"],
+                "state": "aborted",
+                "backup_receipt_sha256": backup_sha,
+                "recovery_context_sha256": start.recovery_host.model.context_sha256(
+                    context
+                ),
+            }
+            b["disk_evidence"]["pre_boot_receipt_sha256"] = digest(canonical(preboot))
+            profile = start.recovery_host.profile(context, backup_sha)
+            grant.update(
+                format=start.RECOVERY_FORMAT,
+                recovery=context,
+                profile_receipt_sha256=digest(canonical(profile)),
+            )
+            receipts = [backup, preboot, receipts[2], profile]
         grant["executable"] = {
             "path": str(Path(sys.executable).resolve()),
             "sha256": digest(Path(sys.executable).read_bytes()),
@@ -558,10 +780,13 @@ class NativeStartTests(owner_tests.NativeOwnerFixture, unittest.TestCase):
         self.verify_stop()
 
     def test_output_overflow_retires_without_runtime_observer(self):
-        self.prepared(mode="flood")
+        root = self.prepared(mode="flood")
         result = self.wait_file("controller.terminal.json")
         self.assertTrue(result["cleanup"]["output_fault"])
         self.assertLessEqual(result["cleanup"]["stdout_bytes"], 65536)
+        raw = (root / "frontend.stdout.bin").read_bytes()
+        self.assertEqual(len(raw), result["cleanup"]["stdout_bytes"])
+        self.assertEqual(digest(raw), result["cleanup"]["stdout_sha256"])
         self.verify_stop()
 
     def test_unanswered_runtime_join_retires_at_original_stop_reserve(self):
@@ -598,6 +823,49 @@ class NativeStartTests(owner_tests.NativeOwnerFixture, unittest.TestCase):
         self.verify_stop()
         for row in ready["members"]:
             self.assertFalse(self.alive(row))
+
+    def test_recovery_uses_real_original_owner_and_jobs_with_python_only_frontends(
+        self,
+    ):
+        root = self.prepared(mode="recovery-graceful")
+        ready = self.wait_file("controller.ready.json")
+        waiting = self.wait_file("recovery.wait.json")
+        progress = self.wait_file("controller.probe.json")
+        result = self.wait_file("controller.terminal.json")
+        self.assertEqual(waiting["status"], "awaiting-session-identity")
+        self.assertFalse(waiting["guest_ready"])
+        self.assertIn("original stop returned", result["reason"])
+        self.assertEqual(result["cleanup"]["root_exit"], 0)
+        self.assertFalse(result["cleanup"]["terminated"])
+        packet = json.loads((root / "owner.sealed.json").read_bytes())
+        self.assertEqual(waiting["original_lease"], packet["lease"])
+        self.assertEqual(progress["original_lease"], packet["lease"])
+        self.assertTrue(progress["profile_observation_allowed"])
+        self.assertFalse(progress["joined"])
+        self.assertFalse(result["original_stop_accepted"])
+        self.verify_stop()
+        for process in ready["members"]:
+            self.assertFalse(self.alive(process))
+
+    def test_separate_writer_process_allows_one_join_and_original_stop(self):
+        root = self.prepared(mode="graceful-contention")
+        self.wait_file("controller.ready.json")
+        writer = self.wait_file("controller.journal.writer.json")
+        result = self.wait_file("controller.terminal.json")
+        self.assertGreater(writer["begin_busy_count"], 0)
+        self.assertFalse(self.alive(writer["process"]))
+        self.assertEqual(result["cleanup"]["root_exit"], 0)
+        self.assertFalse(result["cleanup"]["terminated"])
+        self.assertEqual(result["errors"], [])
+        trace = json.loads((root / "frontend.journal.trace.json").read_bytes())
+        self.assertEqual(
+            sum(
+                e["phase"] == "session-bind" and e["stage"] == "committed"
+                for e in trace["events"]
+            ),
+            1,
+        )
+        self.verify_stop()
 
     def test_normal_finish_lost_original_ack_is_held_after_natural_exit(self):
         root = self.prepared(mode="graceful", owner_mode="lost-ack")

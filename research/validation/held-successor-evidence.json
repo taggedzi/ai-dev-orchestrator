@@ -1,0 +1,50 @@
+{
+  "format": "mcli1-held-guard-successor-evidence-v1",
+  "status": "held-successor-capture-reported-not-boot-authority",
+  "transferred": false,
+  "native_boot_authorized": false,
+  "old_stop_accepted": false,
+  "registered": false,
+  "VM_mutations": 0,
+  "python": "3.15.2",
+  "sqlite": "3.53.4",
+  "tests": {
+    "held_successor": "15 passed",
+    "offline_startup_without_native_binding": "26 passed"
+  },
+  "context_sha256": "f6767a56f310c73bdab1482962a44167cb51b47de02afbcd43d232eee17eded8",
+  "capture": ".local/validation/held-successor-capture-01",
+  "production_ledger_sha256": "f1eac66681934fd294c73efeb580ebc102b64e6586a17a13bdd7a1bec488260a",
+  "production_owner_sha256": "24bab655c096ee1fa16b4f4bed2d04a76a167eee93de7e0fd21c54cefade0313",
+  "wal_bytes": 0,
+  "snapshot": {
+    "review_id": "ccc16a8440524bda84e57fdcd90055e7",
+    "state": "held",
+    "active": 1,
+    "revoked": 0,
+    "user_version": 0,
+    "continuations": 0,
+    "bytes": 20480
+  },
+  "guard": {
+    "state": "aborted",
+    "session": "Unlocked",
+    "pid": 0,
+    "uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a",
+    "configuration_sha256": "6388740c34b3ce72b8d66f384a66c82d36fe9b8385a519998b7083ab07e29046",
+    "disk_sha256": "a8a6024499644999738f089546096e93174a336c003f2d1ae841214c2fe22c43",
+    "disk_bytes": 2625634304,
+    "nvram_sha256": "ec2dca0346cd722d9e47a263353fa97b71b3de1914d7f5084b87eec1c9b4a49c",
+    "nvram_bytes": 540672
+  },
+  "executor": {
+    "before": "poweroff",
+    "after": "poweroff",
+    "session": "Unlocked",
+    "pid": 0,
+    "uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+  },
+  "first_inventory": "native query deadline expired while VBoxSVC cold-started; no copy",
+  "live_handle": "VBoxSVC pid 24848 started 2026-11-24 18:32:36 local; no VBoxManage or VBoxHeadless",
+  "not_authorized": "real reservation transfer and VM boot"
+}

@@ -53,11 +53,34 @@ The existing boot-precondition command still produces no dispatch permit.
 
 ## Retirement and measured checks
 
-Retirement contains the process family before attempting a potentially broken
+For startup uncertainty, retirement contains the process family before attempting a potentially broken
 journal write, then fences the original authority and records cleanup. Only the
 independent original owner can issue the VM poweroff command. Process cleanup
 does not accept that command, prove VM poweroff, or settle a late/detached start.
 A raced, nonzero or lost original stop result remains held.
+
+Retirement now also retains the bounded frontend stdout/stderr bytes after
+containment and fencing. Their lengths/hashes must match the reaped primitive's
+cleanup evidence. Exclusive publication failure preserves existing files and
+holds; it cannot delay physical containment, retry execution or accept a stop.
+
+The later [one-boot qualification preparation](startup-qualification-plan.md) adds
+normal finish after a verified join: one durable stop request/fence asks the
+original owner to act, while the controller retains containment for at most four
+seconds under the unchanged original lease. Natural zero family exit is required.
+Unknown acknowledgement, source/authority/binding drift or expiry retires the
+family and remains held. This path issues no VM command and accepts no stop itself.
+Seven additional checks, including two actual Windows original-owner cases, pass.
+
+Normal finish retains query/synchronize handles for every validated family member,
+binding each handle to its observed creation time. It checks those handles for exit
+instead of repeating image-name queries while known processes terminate. Microsoft
+[documents the lifetime of a retained process object and PID](https://devblogs.microsoft.com/oldnewthing/20110107-00/?p=11803/).
+Running/startup monitoring still requires fresh identities. New or unreadable
+unproven members, unknown wait results and nonzero frontend exit remain holds.
+The cumulative inventory stays within three frontend and three pinned helper
+identities; cleanup closes all retained handles. These changes grant no VM action
+and leave original-stop acceptance and independent poweroff checks unchanged.
 
 Twenty-eight focused checks pass. Seven run the actual Windows controller/job
 and independent owner with three Python frontend processes and bounded query
@@ -68,7 +91,25 @@ unanswered session identity, the unchanged original stop reserve, lost resume
 acknowledgement, lost original-stop acknowledgement, replay and runtime heartbeat
 loss. No VirtualBox frontend was launched; VM and session facts are synthetic.
 
-## Native qualification still required
+## Native normal case measured; further cases remain
+
+The separately approved [review 10](guard-startup-normal-stop-evidence.json)
+measured a committed exact native session-PID binding, two accepted running
+samples, the original owner's sole successful stop and natural zero exits for
+all four retained frontend/helper processes. Two independent poweroff/unlocked
+observations completed within 2.597 seconds of the stop request. This qualifies
+only that normal case. Native loss/late/detached/failure cases, guest readiness
+and UART/root-session ownership remain open. Historical failed stops are not
+repaired; no further native authority remains.
+
+The later [controller journal correction](controller-journal-plan.md) reproduces
+real SQLite writer contention. Confirmed BEGIN non-entry may wait within one
+second and the original clocks; body/COMMIT/native commands are not replayed.
+A committed binding now precedes receipt publication and in-memory acceptance.
+Bounded phase/error traces are retained after containment. The full 556-check
+cohort (543 passed, 13 platform skips) includes an independent writer process
+with the actual Windows controller/original-owner/Python-family surrogate. These
+checks grant no native startup/stop or guest-readiness qualification.
 
 Oracle's [Main API declaration](https://raw.githubusercontent.com/VirtualBox/virtualbox/main/src/VBox/Main/idl/VirtualBox.xidl)
 documents `IMachine.sessionPID` as valid only under `Locked` or `Unlocking` session
@@ -78,8 +119,10 @@ qualify a reader against the installed build. The reviewed
 header revision **114362, June 15, 2026**, supplies no `SessionPID` output field;
 the adapter must not invent one from `showvminfo`.
 
-Next prepare a fixed bounded read-only native session observer and the concrete
-controller/owner qualification run. Freeze real executable dependencies, current
+The [native observer](native-session-plan.md) and concrete
+[controller/owner qualification](startup-qualification-plan.md) are now prepared.
+The observer's actual stopped-state queries passed; running facts in preparation
+tests remain synthetic. Freeze real executable dependencies, current
 inputs and stop/cleanup timing before requesting approval. Measure actual
 hardening descendants, the runtime session-PID join, and whether any delayed or
 detached runtime survives retirement. Then require independent stopped-state and

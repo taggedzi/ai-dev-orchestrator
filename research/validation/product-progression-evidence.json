@@ -1,0 +1,119 @@
+{
+  "VM_changes": 0,
+  "database_mutations": 0,
+  "dependency_installs": 0,
+  "format": "mcli1-product-progression-proposal-v1",
+  "inputs": [
+    {
+      "bytes": 1250,
+      "path": "AGENTS.md",
+      "sha256": "81125016a6352272dad59a78668f6f620543390f27e27fdd8862c76254337cff"
+    },
+    {
+      "bytes": 5699,
+      "path": "docs/vision.md",
+      "sha256": "c1c537b3f714739b01b747d60190913d771797b42a8fb0046f51670a29907b92"
+    },
+    {
+      "bytes": 2728,
+      "path": "docs/requirements.md",
+      "sha256": "21cd58db145824a623bee2e41f1b5e78685b0c63865d3030f9a3afa9e86b2c2d"
+    },
+    {
+      "bytes": 3478,
+      "path": "docs/architecture.md",
+      "sha256": "b23198d261892d639bc219a78160df6fc5f3e1b68e972b5567b2b05210625949"
+    },
+    {
+      "bytes": 35999,
+      "path": "research/planning-execution-handoff.md",
+      "sha256": "5ed5481100d43bbe98bfa3752fa217b4952792c52b8dfb2d0d5fc24e432ccb00"
+    },
+    {
+      "bytes": 43694,
+      "path": "research/verification-integration.md",
+      "sha256": "5c897d4ce0e6a1006e7d601554a64dcc1c807f4f2d64c17133fd835d7eb20c76"
+    },
+    {
+      "bytes": 52303,
+      "path": "research/autonomy-recovery.md",
+      "sha256": "2cce9396f2d7cafe544ba9fb632d3bf78bcd7f618876278d05107f2e2e32e80c"
+    },
+    {
+      "bytes": 78476,
+      "path": "research/model-routing.md",
+      "sha256": "aa3a9a9f8678bf3d4ade55376d21c6e014a308fb437146ac0367a9a7351ff59e"
+    },
+    {
+      "bytes": 44216,
+      "path": "research/spending-reconciliation.md",
+      "sha256": "0a95310e6e5b464233099e5ddcc6a444c99d44c5791af083fba9946c817713be"
+    },
+    {
+      "bytes": 33060,
+      "path": "research/executor-cancellation-recovery.md",
+      "sha256": "4b470c1f70245fff5a431a26f1e6331a825fe38d5979053d53c45d97b30b285d"
+    },
+    {
+      "bytes": 38604,
+      "path": "research/validation/offline_startup.py",
+      "sha256": "5d41d41cdfb8612e847d76e5abb68d8395d16a24d7ec4a97056133dce25176e3"
+    },
+    {
+      "bytes": 12233,
+      "path": "research/validation/recovery_records.py",
+      "sha256": "496beacd8aa0f505b1c867fbd9d1675d79f853511c0cc79550c6737ee31da9e0"
+    }
+  ],
+  "native_outcome": {
+    "bytes": 31161,
+    "path": "research/validation/guard-controller-loss-evidence.json",
+    "sha256": "4c58ee4f5ea9bb2cea0afd31bd347217238dbf954dac3183ebe5b129d407871d"
+  },
+  "native_runs": 0,
+  "next_check": "Obtain separate decisions on explicit held-guard preparation and product implementation/order. Existing research approvals do not authorize either change.",
+  "observed_product_source": {
+    "Python_files_in_those_directories": 0,
+    "tracked_files_in_coordinator_or_integrations": 0
+  },
+  "previous_goal_turn": "progress: exact approved native fault was consumed once and independently measured; held outcome and evidence recorded",
+  "product_source_changes": 0,
+  "proposals": [
+    {
+      "bytes": 7787,
+      "path": "docs/decisions/0007-held-guard-successor.md",
+      "sha256": "29f33d1470e62fcbca7e5b585b04cdb08679fb479bce0a403d332b6762c9f95e"
+    },
+    {
+      "bytes": 8273,
+      "path": "docs/decisions/0008-product-implementation-boundary.md",
+      "sha256": "235b0114943a7e4c0510a35a617c0fc05c75e1270f23ae45c1d6c713896cdd3c"
+    },
+    {
+      "bytes": 7770,
+      "path": "docs/product-delivery-plan.md",
+      "sha256": "db06da2ce08105bb426ee08433b1aebebdfc1f8ded902432b83160376239c36d"
+    }
+  ],
+  "remote_writes": 0,
+  "requirement_completion_claimed": false,
+  "requirement_ids_preserved": [
+    "R1",
+    "R2",
+    "R3",
+    "R4",
+    "R5",
+    "R6",
+    "R7",
+    "R8",
+    "R9"
+  ],
+  "reviewed_date": "2026-11-24",
+  "source_review_method": "Indexed Admissions source and activate cleanup; pinned research documents and current AGENTS/drafts. Source observations are distinct from native/storage measurements.",
+  "status": "Two concrete proposals prepared; developer decisions pending; no product implementation or runtime installation",
+  "storage_review": {
+    "bytes": 2086,
+    "path": "research/validation/coordinator-storage-evidence.json",
+    "sha256": "6eeacb3e0498ff918227c7d1b258b73ac414c0a50d9f2202cb718769401204e9"
+  }
+}

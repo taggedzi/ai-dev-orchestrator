@@ -1,0 +1,338 @@
+{
+  "NIC_activations": 0,
+  "VM_boots": 1,
+  "accepted_running_samples": 0,
+  "approval": "conversation:user-approve:corrected-guard-review-07",
+  "approval_publication": "An initial sandboxed process-retirement read failed before writing approval. Outside-sandbox checks passed and published the same exact approval once before both cutoffs. This was no VM/start/stop retry.",
+  "containment": {
+    "all_original_and_retained_family_identities_retired": true,
+    "forced": true,
+    "inspection": {
+      "bytes": 3961,
+      "path": ".local/validation/guard-startup-review-07/independent-startup-inspection.json",
+      "sha256": "1673dc6ef028d94bcbbaceab98fd5bf524e61197bfbec556bfbff614ce77921e"
+    },
+    "job_active_processes": 0,
+    "leaf_exit_code_at_initial_cleanup": null,
+    "leaf_retirement_later_independently_proven": true,
+    "root_exit": 2
+  },
+  "format": "mcli1-native-running-session-journal-hold-v1",
+  "guest_commands": 0,
+  "guest_ready": false,
+  "journal_failure": {
+    "error": "OperationalError: database is locked",
+    "exact_BEGIN_body_or_COMMIT_failure_stage": "not retained",
+    "frontend_ledger_receipt_sha": null,
+    "frontend_ledger_state": "resumed",
+    "note": "Receipt publication precedes Store.transaction. The remaining transaction phase raised SQLite locked; current evidence does not identify the competing writer or exact statement. No task or stop command is retried.",
+    "receipt_status": "orphan provisional artifact; SQLite binding did not commit, so never accepted",
+    "session_receipt": {
+      "bytes": 510,
+      "path": ".local/validation/guard-startup-review-07/owner/frontend.session.receipt.json",
+      "sha256": "76febdb1fbae48a171b7cb72c665e99d4ba43ff1868b3fddda962dc138c42c0c"
+    }
+  },
+  "native_frontend_roots_created_and_resumed": 1,
+  "native_settlement_qualified": false,
+  "next_check": "Prepare controlled controller-side join-journal contention tests and retain exact failure stages. Any bounded waiting must prove rollback/non-entry, preserve original authority/deadlines and never replay native commands. A successor recovery context/backup/profile must bind this consumed run and new guard metadata before a separately approved native activation.",
+  "original_stop": {
+    "accepted": false,
+    "attempts": 1,
+    "exit": 1,
+    "inventory": {
+      "bytes": 864,
+      "path": ".local/validation/owner-stops/84befdb011344d1abbc0f31b47a0b698/inventory.json",
+      "sha256": "30eba5f22f2c0c1f59e231311daa85251b62e56461eeba93678936f6c1a81982"
+    },
+    "job_active_processes": 0,
+    "ledger_state": "possible-send",
+    "stderr": "Machine is not currently running"
+  },
+  "package_installs": 0,
+  "posthold": {
+    "both_disks_unchanged": true,
+    "executor_configuration_and_nvram_unchanged": true,
+    "executor_inventory": {
+      "bytes": 1198,
+      "path": ".local/validation/executor-native-posthold-07/inventory.json",
+      "sha256": "ec9c0933eec4bb32a05959eaf87c2c5b835b9c4e4c4bdc603d720b847b2efbc2"
+    },
+    "executor_state": "poweroff/unlocked/PID-zero",
+    "files": {
+      "bytes": 2439,
+      "path": ".local/validation/guard-startup-review-07/postfiles/receipt.json",
+      "sha256": "079ae81f3639498f533a70932eed662270a193ec24de2051961df939a009b18d"
+    },
+    "guard_configuration_payload_unchanged_beyond_metadata": true,
+    "guard_configuration_sha256": "91c25dbe0e2281892a1cceeef07abc9c8a80d1595b12f1c7e403c1d2edbe17aa",
+    "guard_inventory": {
+      "bytes": 1180,
+      "path": ".local/validation/guard-native-posthold-07/inventory.json",
+      "sha256": "0dc88f72ac52bcdeb9b7fd3abb493796d783081b5d926e8216140d8e7ba8007f"
+    },
+    "guard_metadata_after": {
+      "aborted": "true",
+      "lastStateChange": "2026-11-23T20:51:48Z"
+    },
+    "guard_metadata_before": {
+      "aborted": "true",
+      "lastStateChange": "2026-11-23T06:44:17Z"
+    },
+    "guard_nvram_absent": true,
+    "guard_state": "aborted/unlocked/PID-zero"
+  },
+  "restores": 0,
+  "retries": 0,
+  "review_inventory": {
+    "bytes": 23574,
+    "path": ".local/validation/guard-startup-review-07/inventory.json",
+    "sha256": "d6be3f9518fbcab495d7d6d698685310fcabb098d05ac2d8675a922d00e5aa9a"
+  },
+  "review_sha256": "fba9d14f0b7cadd70786674b730b34c8375fbba60c1d9b4886d725b9df86d77f",
+  "running_observation": {
+    "first_machine": {
+      "bytes": 3369,
+      "path": ".local/validation/guard-startup-review-07/owner/runtime-observations/12/machine_first.stdout",
+      "sha256": "81ca20455fdaa63c945683a602781749fdf5a848f5d2c398b9bce199b51be434"
+    },
+    "frontend_identity": {
+      "created_filetime": 134399407043456086,
+      "image": "C:\\Program Files\\Oracle\\VirtualBox\\VBoxHeadless.exe",
+      "pid": 4424
+    },
+    "last_machine": {
+      "bytes": 3375,
+      "path": ".local/validation/guard-startup-review-07/owner/runtime-observations/12/machine.stdout",
+      "sha256": "c40bce9403f6ca89d281b85893a6e897b8e50a34bff6271b414d31f03a6f5f98"
+    },
+    "native_log_reached_running": true,
+    "phase_sequence": [
+      {
+        "capture": "1",
+        "phase": "full-profile",
+        "query_kinds": [
+          "machine",
+          "disk",
+          "session",
+          "machine"
+        ]
+      },
+      {
+        "capture": "2",
+        "phase": "full-profile",
+        "query_kinds": [
+          "machine",
+          "disk",
+          "session",
+          "machine"
+        ]
+      },
+      {
+        "capture": "3",
+        "phase": "startup-session-only",
+        "query_kinds": [
+          "session"
+        ]
+      },
+      {
+        "capture": "4",
+        "phase": "startup-session-only",
+        "query_kinds": [
+          "session"
+        ]
+      },
+      {
+        "capture": "5",
+        "phase": "startup-session-only",
+        "query_kinds": [
+          "session"
+        ]
+      },
+      {
+        "capture": "6",
+        "phase": "startup-session-only",
+        "query_kinds": [
+          "session"
+        ]
+      },
+      {
+        "capture": "7",
+        "phase": "startup-session-only",
+        "query_kinds": [
+          "session"
+        ]
+      },
+      {
+        "capture": "8",
+        "phase": "startup-session-only",
+        "query_kinds": [
+          "session"
+        ]
+      },
+      {
+        "capture": "9",
+        "phase": "startup-session-only",
+        "query_kinds": [
+          "session"
+        ]
+      },
+      {
+        "capture": "10",
+        "phase": "full-profile",
+        "query_kinds": [
+          "machine",
+          "disk",
+          "session",
+          "machine"
+        ]
+      },
+      {
+        "capture": "11",
+        "phase": "startup-session-only",
+        "query_kinds": [
+          "session"
+        ]
+      },
+      {
+        "capture": "12",
+        "phase": "full-profile",
+        "query_kinds": [
+          "machine",
+          "disk",
+          "session",
+          "machine"
+        ]
+      }
+    ],
+    "raw_session": {
+      "bytes": 210,
+      "path": ".local/validation/guard-startup-review-07/owner/runtime-observations/12/session_raw.stdout",
+      "sha256": "4c75e6f2aec187e14bf6a6103b233a3f482680a20198c83738e56cbaed138c57"
+    },
+    "session_pid": 4424
+  },
+  "sources": [
+    {
+      "bytes": 6220,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/backup_records.py",
+      "sha256": "10fef40e816b1b7cd840fac94ed3ac8f1fdf16b4860814d864afbb69816da8c7"
+    },
+    {
+      "bytes": 21485,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/boot_preconditions.py",
+      "sha256": "b80bd097eeb2c34266b46432c16f5bdedd4607766c7f6c22f41688f966c35f3d"
+    },
+    {
+      "bytes": 6047,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 10319,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 16580,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/frontend_process.py",
+      "sha256": "dbc3cdff35d96432bce6e847b31e4e7c5ad25d477fab477b159e1f7057189e2d"
+    },
+    {
+      "bytes": 42212,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/frontend_start.py",
+      "sha256": "58ceb57cb53f332cc5c88d0064ba8ce151920afb496ab54fa6de39c5b87b360e"
+    },
+    {
+      "bytes": 24313,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/initial_aborted.py",
+      "sha256": "b24c9ad895f3d7b4f9709dc039ff77cbc5bdb2f6e28eba1c7925fcfcba42a9b4"
+    },
+    {
+      "bytes": 35250,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/maintenance_host.py",
+      "sha256": "0fac9c031deb3ff6c3bc43e43b962c283115cd3861b5d49dd7bfcfc025978eda"
+    },
+    {
+      "bytes": 15471,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 14633,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/maintenance_stop.py",
+      "sha256": "5125a7553465e792997a858bb162f499d729226d91d662ae667ee4dca7248fe6"
+    },
+    {
+      "bytes": 36517,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122"
+    },
+    {
+      "bytes": 14000,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/native_session.py",
+      "sha256": "b9b365803cad5dd7eb00ada6803b2e9aa4228cd9320bc584cbb70a1133cdfff4"
+    },
+    {
+      "bytes": 25846,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    {
+      "bytes": 16850,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 12297,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/owner_process.py",
+      "sha256": "4bfbb296bd5081d15caaef338cbaa89cef3f7b768764d55f2de5cc1c1fd76f1b"
+    },
+    {
+      "bytes": 1726,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/process_proof.py",
+      "sha256": "af51675c2760bb21ada8af8ec2e10ffbd39194857025a52c43495ce10e3265db"
+    },
+    {
+      "bytes": 10000,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/recovery_records.py",
+      "sha256": "0859f074201abf64efe808de7f7452e2494e77b734439feb1e92dd0f3f701e81"
+    },
+    {
+      "bytes": 37953,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/startup_qualification.py",
+      "sha256": "dc1d9c37bc7351f6eeccbd3c1f79f9d4206723e6113bbb17aacb7560345af75b"
+    },
+    {
+      "bytes": 18952,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/stopped_backup.py",
+      "sha256": "20205aefa189ab6891ab95a040db8433467aefefc6a95e62a07cb83170d6a80f"
+    },
+    {
+      "bytes": 16923,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 3366,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 10697,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 12755,
+      "path": ".local/validation/startup-session-probe-regression-02/sources/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    }
+  ],
+  "status": "native running/session PID observed; join journal failed with SQLite locked; no committed running samples or accepted stop"
+}

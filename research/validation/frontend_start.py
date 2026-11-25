@@ -13,12 +13,14 @@ import re
 import sqlite3
 import threading
 import time
-from contextlib import ExitStack
+from contextlib import ExitStack, contextmanager
 from pathlib import Path
 
 from . import boot_preconditions as boot
 from . import frontend_process as frontend
+from . import initial_aborted as recovery_host
 from . import maintenance_host as host
+from . import native_session as session_observer
 from . import owner_process as owner
 from . import stopped_backup as backup
 from .maintenance_serial import ExtendedLimits, KillJob
@@ -26,16 +28,19 @@ from .transfer_commands import canonical, digest
 from .windows_readonly import require
 
 SOURCES = {
+    **recovery_host.SOURCES,
     **boot.SOURCES,
     **backup.SOURCES,
     "frontend_start.py": Path(__file__),
     "frontend_process.py": Path(frontend.__file__),
     "native_session.py": Path(__file__).with_name("native_session.py"),
+    "startup_qualification.py": Path(__file__).with_name("startup_qualification.py"),
     "maintenance_serial.py": Path(KillJob.__init__.__code__.co_filename),
 }
 SOURCE_EPOCH = {n: digest(p.read_bytes()) for n, p in SOURCES.items()}
 RESERVE_NS = 10 * 10**9
 STARTUP_NS = 15 * 10**9
+RECOVERY_FORMAT = "mcli1-direct-frontend-recovery-start-v1"
 
 
 def draft(role="guard"):
@@ -59,17 +64,26 @@ def draft(role="guard"):
 def checked(raw, sha):
     require(type(raw) is bytes and digest(raw) == sha, "frontend grant digest differs")
     grant = host.object_bytes(raw)
+    is_recovery = grant["format"] == RECOVERY_FORMAT
     require(
-        set(grant) == set(draft())
-        and grant["format"] == "mcli1-direct-frontend-start-v1",
+        set(grant) == set(draft()) | ({"recovery"} if is_recovery else set())
+        and grant["format"] in {"mcli1-direct-frontend-start-v1", RECOVERY_FORMAT},
         "frontend grant format differs",
     )
-    b = boot.checked(canonical(grant["boot"]), digest(canonical(grant["boot"])))
+    context = recovery_host.live_context(grant["recovery"]) if is_recovery else None
+    b = boot.checked(
+        canonical(grant["boot"]), digest(canonical(grant["boot"])), recovery=context
+    )
     require(
         b["caller"]["role"] == "controller", "frontend caller must be the controller"
     )
     require(
-        b["backup"].get("format") == backup.records.BINDING_FORMAT,
+        b["backup"].get("format")
+        == (
+            backup.records.RECOVERY_BINDING_FORMAT
+            if is_recovery
+            else backup.records.BINDING_FORMAT
+        ),
         "frontend start requires the explicit file-backup binding",
     )
     require(
@@ -144,6 +158,13 @@ def profile_binding(grant, raw):
     )
     profile = host.object_bytes(raw)
     b = grant["boot"]
+    if grant.get("format") == RECOVERY_FORMAT:
+        require(
+            profile
+            == recovery_host.profile(grant["recovery"], b["backup"]["receipt_sha256"]),
+            "frontend recovery profile differs",
+        )
+        return profile
     require(
         profile["status"] == "stopped-maintenance-profile-reported-not-boot-authority"
         and profile["role"] == b["role"]
@@ -175,7 +196,10 @@ class _InputLocks:
         try:
             b = grant["boot"]
             require(
-                backup.verify_files(backup_raw, digest(backup_raw)) == b["backup"],
+                backup.verify_files(
+                    backup_raw, digest(backup_raw), recovery=grant.get("recovery")
+                )
+                == b["backup"],
                 "fresh backup verification differs",
             )
             paths = backup.source_paths(b["role"])
@@ -249,21 +273,180 @@ class _PreparedStart:
     Guest dispatch and original stop acceptance remain separate control paths.
     """
 
-    def __init__(self, store, probe):
+    def __init__(self, store, probe, *, input_factory=None):
         self.store, self.probe = store, probe
+        self.input_factory = input_factory
         self.family = self.grant = self.packet = self.terminal = None
         self.lock = threading.RLock()
         self.done = threading.Event()
         self.thread = None
         self.joined = None
         self.last_observation = 0
+        self.startup_rank = (0, 0)
         self.owner_stop = None
+        self.journal_trace = []
+
+    def _journal_note(self, phase, stage, error=None, **facts):
+        require(len(self.journal_trace) < 128, "frontend journal trace exceeds bound")
+        self.journal_trace.append(
+            {
+                "phase": phase,
+                "stage": stage,
+                "observed_mono_ns": time.monotonic_ns(),
+                "sqlite_errorcode": getattr(error, "sqlite_errorcode", None),
+                "error": None
+                if error is None
+                else type(error).__name__ + ": " + str(error)[:256],
+                **facts,
+            }
+        )
+
+    @contextmanager
+    def _journal_transaction(self, phase, observed_mono):
+        """Wait only on known non-entry at BEGIN; never replay body or COMMIT."""
+        with self.store.lock:
+            db = self.store.db
+            previous_timeout = db.execute("PRAGMA busy_timeout").fetchone()[0]
+            wall = min(
+                time.time_ns() + 10**9, self.packet["lease"]["expires_ns"] - RESERVE_NS
+            )
+            mono = min(
+                time.monotonic_ns() + 10**9,
+                observed_mono + 5 * 10**9,
+                self.packet["lease"]["expires_mono_ns"] - RESERVE_NS,
+            )
+
+            def clocks():
+                if time.time_ns() >= wall or time.monotonic_ns() >= mono:
+                    self._journal_note(phase, "bounds-ended", retryable=False)
+                require(
+                    time.time_ns() < wall and time.monotonic_ns() < mono,
+                    "frontend journal wait exhausted original bounds",
+                )
+
+            def rollback():
+                if not db.in_transaction:
+                    return "not-open"
+                try:
+                    db.execute("ROLLBACK")
+                    return "rolled-back" if not db.in_transaction else "unknown"
+                except sqlite3.Error:
+                    return "unknown"
+
+            db.execute("PRAGMA busy_timeout=50")
+            try:
+                for attempt in range(1, 17):
+                    self._journal_note(phase, "checking-entry", attempt=attempt)
+                    self._live()
+                    clocks()
+                    require(
+                        not db.in_transaction,
+                        "frontend journal already has a transaction",
+                    )
+                    require(
+                        not (
+                            owner.stop.STOPS_ROOT
+                            / self.packet["owner_nonce"]
+                            / "poweroff.intent.json"
+                        ).exists(),
+                        "original native stop intent forbids journal waiting",
+                    )
+                    table = db.execute(
+                        "SELECT 1 FROM sqlite_master WHERE type='table' AND name='native_owner_stop'"
+                    ).fetchone()
+                    require(
+                        table is None
+                        or db.execute(
+                            "SELECT 1 FROM native_owner_stop LIMIT 1"
+                        ).fetchone()
+                        is None,
+                        "original native stop record forbids journal waiting",
+                    )
+                    try:
+                        db.execute("BEGIN IMMEDIATE")
+                    except sqlite3.OperationalError as error:
+                        retryable = (
+                            getattr(error, "sqlite_errorcode", None)
+                            == sqlite3.SQLITE_BUSY
+                            and not db.in_transaction
+                            and attempt < 16
+                        )
+                        self._journal_note(
+                            phase,
+                            "begin-failed",
+                            error,
+                            attempt=attempt,
+                            transaction_open=db.in_transaction,
+                            retryable=retryable,
+                        )
+                        if not retryable:
+                            if db.in_transaction:
+                                self._journal_note(
+                                    phase,
+                                    "begin-rollback",
+                                    rollback=rollback(),
+                                    retryable=False,
+                                )
+                            raise
+                        clocks()
+                        time.sleep(0.02)
+                    else:
+                        self._journal_note(phase, "begun", attempt=attempt)
+                        break
+                stage = "body"
+                try:
+                    clocks()
+                    yield
+                    clocks()
+                    stage = "commit"
+                    db.execute("COMMIT")
+                    self._journal_note(phase, "committed")
+                except BaseException as error:
+                    self._journal_note(
+                        phase,
+                        stage + "-failed",
+                        error,
+                        rollback=rollback(),
+                        transaction_open=db.in_transaction,
+                        retryable=False,
+                    )
+                    raise
+            finally:
+                try:
+                    db.execute(f"PRAGMA busy_timeout={int(previous_timeout)}")
+                except BaseException as error:
+                    self._journal_note(
+                        phase, "timeout-restore-failed", error, retryable=False
+                    )
+                    raise
+
+    @contextmanager
+    def _start_transaction(self, phase):
+        """Trace startup journal failure phases without retrying any statement."""
+        stage = "begin"
+        try:
+            with self.store.transaction():
+                stage = "body"
+                yield
+                stage = "commit"
+            self._journal_note(phase, "start-committed")
+        except BaseException as error:
+            self._journal_note(
+                phase,
+                "start-" + stage + "-failed",
+                error,
+                transaction_open=self.store.db.in_transaction,
+                retryable=False,
+            )
+            raise
 
     def start(self, raw, sha, backup_raw, preboot, preservation, profile_raw):
         require(self.grant is None, "frontend adapter is one use")
         self.grant, self.raw, self.sha = checked(raw, sha), raw, sha
         b = self.grant["boot"]
-        host.receipt_pins(b, backup_raw, preboot, preservation)
+        host.receipt_pins(
+            b, backup_raw, preboot, preservation, recovery=self.grant.get("recovery")
+        )
         profile = profile_binding(self.grant, profile_raw)
         self.packet, _ = boot.owner_live(self.store, b)
         controller_limits(self.packet)
@@ -272,9 +455,13 @@ class _PreparedStart:
             # Original-file hashing is inside the bounded admission window. A
             # slow filesystem must obtain a new reviewed attempt, never renewal.
             with ExitStack() as stack:
-                inputs = _InputLocks(self.grant, backup_raw, profile)
+                inputs = (self.input_factory or _InputLocks)(
+                    self.grant, backup_raw, profile
+                )
                 stack.callback(inputs.close)
-                first = boot.stopped_snapshot(b, self.probe())
+                first = boot.stopped_snapshot(
+                    b, self.probe(), recovery=self.grant.get("recovery")
+                )
                 require(
                     first["machine_sha256"] == profile["machine_sha256"]
                     and first["medium_sha256"] == profile["medium_sha256"],
@@ -292,7 +479,7 @@ class _PreparedStart:
                     }
                 )
                 owner.stop.write_once(self.root / "frontend.start.intent.json", intent)
-                with self.store.transaction():
+                with self._start_transaction("start-intent"):
                     self.store.db.execute(
                         "CREATE TABLE IF NOT EXISTS frontend_start (singleton INTEGER PRIMARY KEY CHECK(singleton=1), grant_sha TEXT, state TEXT, process BLOB, receipt_sha TEXT)"
                     )
@@ -312,7 +499,9 @@ class _PreparedStart:
                 )
 
                 def gate(identity):
-                    final = boot.stopped_snapshot(b, self.probe())
+                    final = boot.stopped_snapshot(
+                        b, self.probe(), recovery=self.grant.get("recovery")
+                    )
                     require(
                         final["machine_sha256"] == first["machine_sha256"]
                         and final["medium_sha256"] == first["medium_sha256"],
@@ -327,7 +516,7 @@ class _PreparedStart:
                         self.root / "frontend.resume.intent.json",
                         canonical({"grant_sha256": sha, "process": identity}),
                     )
-                    with self.store.transaction():
+                    with self._start_transaction("possible-resume"):
                         row = self.store.db.execute(
                             "SELECT * FROM frontend_start"
                         ).fetchone()
@@ -364,7 +553,7 @@ class _PreparedStart:
                 self.thread.start()
                 # If resume acknowledgement is lost, possible-resume is already
                 # durable. Cleanup/fencing follows; no second resume or starter.
-                with self.store.transaction():
+                with self._start_transaction("resume-ack"):
                     row = self.store.db.execute(
                         "SELECT * FROM frontend_start"
                     ).fetchone()
@@ -484,15 +673,18 @@ class _PreparedStart:
                     self.root / "frontend.owner-stop.intent.json",
                     canonical(self.owner_stop),
                 )
-                with self.store.transaction():
+                ready_mono = host.object_bytes(
+                    owner.read_packet(self.root / "owner.ready.json")
+                )["observed_mono_ns"]
+                with self._journal_transaction(
+                    "owner-stop-request", self.last_observation
+                ):
                     b = self.grant["boot"]
                     boot.ledger_live(
                         self.store.db,
                         b,
                         self.packet,
-                        host.object_bytes(
-                            owner.read_packet(self.root / "owner.ready.json")
-                        )["observed_mono_ns"],
+                        ready_mono,
                     )
                     row = self.store.db.execute(
                         "SELECT * FROM frontend_start"
@@ -613,7 +805,9 @@ class _PreparedStart:
         require(
             not self.family.fault.is_set(), "frontend output fault during normal finish"
         )
-        self.family.members()  # All surviving descendants/helpers remain pinned.
+        self.family.members(
+            allow_retired=True
+        )  # Surviving descendants/helpers remain pinned.
         code = self.family.poll()
         require(
             code is None or code == 0, "frontend exited nonzero during normal finish"
@@ -627,6 +821,74 @@ class _PreparedStart:
                 "original stop acknowledgement is held",
             )
         return returned and code == 0 and self.family.job.active() == 0
+
+    def observe_startup_session(self, frame):
+        """Wait on COM properties without accepting a profile, join or readiness."""
+        with self.lock:
+            try:
+                members = self._live()
+                require(self.joined is None, "startup session probe after join")
+                require(
+                    set(frame)
+                    == {"format", "observed_mono_ns", "finished_mono_ns", "session_raw"}
+                    and frame["format"] == "mcli1-startup-session-probe-v1",
+                    "startup session probe format differs",
+                )
+                stamp, finished = frame["observed_mono_ns"], frame["finished_mono_ns"]
+                require(
+                    type(stamp) is int
+                    and type(finished) is int
+                    and max(self.started_mono, self.last_observation)
+                    < stamp
+                    <= finished
+                    <= time.monotonic_ns()
+                    and finished - stamp <= 4 * 10**9
+                    and time.monotonic_ns() - stamp <= 5 * 10**9,
+                    "startup session probe is stale/reordered",
+                )
+                record = session_observer.session_record(
+                    frame["session_raw"], self.grant["boot"]["role"], startup=True
+                )
+                names = {v: k for k, v in session_observer.MACHINE_STATES.items()}
+                before, after = (
+                    session_observer.SESSION_STATES[record[k]]
+                    for k in ("state_before", "state_after")
+                )
+                states = [names.get(record["machine_before"])] * 2 + [
+                    names.get(record["machine_after"])
+                ] * 2
+                first_rank, last_rank = session_observer.startup_progress(
+                    states, before, after, recovery=self.grant.get("recovery")
+                )
+                require(
+                    all(
+                        a <= b
+                        for a, b in zip(self.startup_rank, first_rank, strict=True)
+                    ),
+                    "startup session probe regressed",
+                )
+                if before == "Locked":
+                    require(
+                        any(
+                            p["pid"] == record["pid"]
+                            and Path(p["image"]).resolve()
+                            == frontend.HEADLESS.resolve()
+                            for p in members
+                        ),
+                        "startup probe PID is outside frontend family",
+                    )
+                self._live()
+                self.startup_rank, self.last_observation = last_rank, stamp
+                return {
+                    "status": "startup-session-probe-not-profile-or-join",
+                    "profile_observation_allowed": before == after == "Locked"
+                    and states[0] == states[-1]
+                    and states[-1] in {"starting", "running"},
+                    "guest_ready": False,
+                }
+            except BaseException:
+                self.retire("startup session probe incomplete or conflicting")
+                raise
 
     def observe(self, frame):
         """Join a trusted, bounded read-only VM/session observation to the family.
@@ -665,7 +927,48 @@ class _PreparedStart:
                     and type(session["pid"]) is int,
                     "frontend session observation differs",
                 )
-                if state == "running":
+                transition = frame.get("startup_transition")
+                if self.joined is None:
+                    states = [state] * 4
+                    if transition is not None:
+                        require(
+                            set(transition) == {"format", "machine_states"}
+                            and transition["format"] == "mcli1-startup-wait-v1"
+                            and transition["machine_states"][-1] == state,
+                            "startup wait marker differs",
+                        )
+                        states = transition["machine_states"]
+                    first_rank, last_rank = session_observer.startup_progress(
+                        states,
+                        session["state_before"],
+                        session["state_after"],
+                        recovery=self.grant.get("recovery"),
+                    )
+                    require(
+                        all(
+                            a <= b
+                            for a, b in zip(self.startup_rank, first_rank, strict=True)
+                        ),
+                        "startup state regressed between observations",
+                    )
+                    self.startup_rank = last_rank
+                if transition is not None:
+                    require(self.joined is None, "startup wait after session join")
+                    require(
+                        0 <= session["pid"] <= 2**32 - 1
+                        and (
+                            any(
+                                p["pid"] == session["pid"]
+                                and Path(p["image"]).resolve()
+                                == frontend.HEADLESS.resolve()
+                                for p in members
+                            )
+                            if session["state_before"] == "Locked"
+                            else session["pid"] == 0
+                        ),
+                        "startup wait PID differs from frontend family",
+                    )
+                elif state == "running":
                     require(
                         session["state_before"] == session["state_after"] == "Locked"
                         and session["pid"] > 0,
@@ -683,30 +986,27 @@ class _PreparedStart:
                         "VM session PID is outside the exact frontend family or changed",
                     )
                     if self.joined is None:
-                        self.joined = matches[0]
-                        self.last_observation = stamp
+                        identity = matches[0]
                         receipt = canonical(
                             {
                                 "status": "runtime-session-bound-not-guest-ready",
                                 "grant_sha256": self.sha,
-                                "process": self.joined,
+                                "process": identity,
                                 "original_lease": self.packet["lease"],
                                 "guest_ready": False,
                                 "native_settlement_qualified": False,
                             }
                         )
                         self._live()
-                        owner.publish(
-                            self.root / "frontend.session.receipt.json", receipt
-                        )
-                        with self.store.transaction():
+                        ready_mono = host.object_bytes(
+                            owner.read_packet(self.root / "owner.ready.json")
+                        )["observed_mono_ns"]
+                        with self._journal_transaction("session-bind", stamp):
                             boot.ledger_live(
                                 self.store.db,
                                 b,
                                 self.packet,
-                                host.object_bytes(
-                                    owner.read_packet(self.root / "owner.ready.json")
-                                )["observed_mono_ns"],
+                                ready_mono,
                             )
                             self.store.db.execute(
                                 "UPDATE frontend_start SET state='session-bound',receipt_sha=? WHERE state='resumed' AND grant_sha=?",
@@ -721,15 +1021,37 @@ class _PreparedStart:
                                 "frontend-session-bound",
                                 {"receipt_sha256": digest(receipt)},
                             )
+                        try:
+                            owner.publish(
+                                self.root / "frontend.session.receipt.json", receipt
+                            )
+                        except BaseException as error:
+                            self._journal_note(
+                                "session-bind", "receipt-failed", error, retryable=False
+                            )
+                            raise
+                        self._journal_note("session-bind", "receipt-published")
+                        self.joined, self.last_observation = identity, stamp
                 else:
                     require(
-                        self.joined is None and state in {"poweroff", "starting"},
+                        self.joined is None
+                        and state
+                        in {
+                            "aborted"
+                            if self.grant.get("recovery") is not None
+                            else "poweroff",
+                            "starting",
+                        },
                         "frontend runtime stopped/changed before original stop acceptance",
                     )
                     require(
                         session["state_before"] == session["state_after"]
                         and session["state_before"] in {"Unlocked", "Locked"}
-                        and session["pid"] >= 0,
+                        and (
+                            session["pid"] > 0
+                            if session["state_before"] == "Locked"
+                            else session["pid"] == 0
+                        ),
                         "frontend startup session transition is uncertain",
                     )
                     if session["state_before"] == "Locked":
@@ -770,6 +1092,33 @@ class _PreparedStart:
                 self.store.fence(reason)
             except Exception as error:  # noqa: BLE001 -- cleanup already attempted, record journal failure
                 errors.append("fence:" + type(error).__name__)
+            if cleanup is not None:
+                try:
+                    for stream in ("stdout", "stderr"):
+                        raw = bytes(getattr(self.family, stream))
+                        require(
+                            len(raw) <= frontend.OUTPUT_LIMIT
+                            and len(raw) == cleanup[stream + "_bytes"]
+                            and digest(raw) == cleanup[stream + "_sha256"],
+                            "retired frontend output differs from cleanup evidence",
+                        )
+                        owner.publish(self.root / ("frontend." + stream + ".bin"), raw)
+                except Exception as error:  # noqa: BLE001 -- containment/fencing already completed; retain partial output and hold
+                    errors.append("output:" + type(error).__name__)
+            if self.journal_trace and hasattr(self, "root"):
+                try:
+                    owner.publish(
+                        self.root / "frontend.journal.trace.json",
+                        canonical(
+                            {
+                                "format": "mcli1-frontend-journal-trace-v1",
+                                "events": self.journal_trace,
+                                "native_commands_retried": False,
+                            }
+                        ),
+                    )
+                except Exception as error:  # noqa: BLE001 -- contain/fence first; trace failure stays held
+                    errors.append("journal-trace:" + type(error).__name__)
             self.terminal = {
                 "status": "frontend-retired-awaiting-independent-stop-review"
                 if not errors

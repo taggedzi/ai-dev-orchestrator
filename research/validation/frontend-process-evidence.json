@@ -56,6 +56,7 @@
   "new_native_process_tests": 8,
   "outer_controller_limit": 12,
   "separate_query_reaped": true,
+  "source_description_note": "Changed historical workspace sources point to retained exact bytes; current owner-contention cohort is separate.",
   "source_reviews": [
     {
       "header_revision": "114470, 2026-06-22",
@@ -89,7 +90,8 @@
     },
     {
       "bytes": 735,
-      "path": "tests/fixtures/frontend_family.py",
+      "historical_workspace_path": "tests/fixtures/frontend_family.py",
+      "path": ".local/validation/startup-regression-02/sources/frontend_family.py",
       "sha256": "f2197479d6d182b1661602a0db89be433d34673b9f6bcbaa5c4ddea1c933e3cc"
     }
   ],

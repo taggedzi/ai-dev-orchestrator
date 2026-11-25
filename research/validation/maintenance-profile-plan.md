@@ -64,9 +64,9 @@ queries confirmed four SATA ports, the fixed UART setting, x2APIC off/APIC on,
 poweroff and all eight NICs disabled on both VMs. Full disk hashes and NVRAM state
 remain unchanged; live configuration hashes changed as intended.
 
-Current guard configuration hash is
+At the end of that stopped-settings run, guard configuration hash was
 `986cf055dec3732488666adfe7e8715965faac421c9dc9c651eecb411f5c4f7e`;
-executor configuration hash is
+executor configuration hash was
 `5dfe5bc297f585a934bb2090797c365fafcfbd4bb7cbe785c8916f1da7ccf4f2`.
 The one-use role intents remain retained. Do not reapply this consumed plan.
 [Evidence](maintenance-profile-evidence.json) binds native receipts, independent

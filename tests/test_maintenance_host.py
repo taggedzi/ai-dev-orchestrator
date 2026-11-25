@@ -129,6 +129,56 @@ def receipts(grant):
 
 
 class InventoryTests(unittest.TestCase):
+    def test_live_display_and_double_equals_client_count_are_diagnostic_data(self):
+        grant, *_ = bound_fixture()
+        raw, _ = inventory(grant)
+        runtime = b'SessionName="headless"\nVideoMode="0,0,0"@0,0 1\nVRDEActiveConnection="off"\nVRDEClients==0\n'
+        fields = host.machine_fields(raw + runtime)
+        self.assertEqual(fields["VideoMode"], '"0,0,0"@0,0 1')
+        self.assertEqual(fields["VRDEClients"], "0")
+        self.assertEqual(
+            host.machine_profile(raw + runtime), transfer.expected_host(grant)
+        )
+        self.assertEqual(
+            host.machine_fields(b'VideoMode="1920,1080,32"@-1920,-1080 1\n')[
+                "VideoMode"
+            ],
+            '"1920,1080,32"@-1920,-1080 1',
+        )
+
+    def test_live_diagnostic_exceptions_require_the_exact_bounded_grammar(self):
+        for raw in (
+            b'VideoMode="0,0,0"\n',
+            b'VideoMode="0,0,0"@0,0 1 trailing\n',
+            b'VideoMode="0,0,0"@0,$(cmd) 1\n',
+            b'VideoMode="4294967296,0,0"@0,0 1\n',
+            b'VideoMode="0,0,0"@-2147483649,0 1\n',
+            b'VideoMode="0,0,0"@0,0 2147483648\n',
+            b"VRDEClients===0\n",
+            b"VRDEClients==4294967296\n",
+            b"VRDEClients==$(cmd)\n",
+            b"memory==1024\n",
+        ):
+            with self.subTest(raw=raw), self.assertRaises(Hold):
+                host.machine_fields(raw)
+
+    def test_live_diagnostics_cannot_hide_duplicate_or_changed_transport_fields(self):
+        for raw in (
+            b'VRDEClients==0\n"VRDEClients"=0\n',
+            b'VideoMode="0,0,0"@0,0 1\n"VideoMode"="0,0,0"@0,0 1\n',
+        ):
+            with self.subTest(raw=raw), self.assertRaisesRegex(Hold, "duplicate"):
+                host.machine_fields(raw)
+        grant, *_ = bound_fixture()
+        raw, _ = inventory(grant)
+        runtime = b'VideoMode="0,0,0"@0,0 1\nVRDEClients==0\n'
+        for old, new in (
+            (b'"vrde"="off"', b'"vrde"="on"'),
+            (b'"nic1"="none"', b'"nic1"="nat"'),
+        ):
+            with self.subTest(new=new), self.assertRaises(Hold):
+                host.machine_profile(raw.replace(old, new) + runtime)
+
     def test_both_roles_and_raw_uart_backslashes_match_the_frozen_profile(self):
         for role in ("guard", "executor"):
             grant, *_ = bound_fixture(role=role)

@@ -435,16 +435,52 @@ def capture(raw, sha, output, probe=observe, locker=locked_source):
     }
 
 
-def verify_files(raw, sha):
+def verify_files(raw, sha, *, recovery=None):
+    if recovery is not None:
+        recovery = records.recovery_model.checked(recovery)
     require(type(raw) is bytes and digest(raw) == sha, "backup receipt digest differs")
     receipt = host.object_bytes(raw)
     require(
-        receipt["format"] == records.RECEIPT_FORMAT and receipt["never_attach"] is True,
+        receipt["format"]
+        == (
+            records.RECOVERY_RECEIPT_FORMAT
+            if recovery is not None
+            else records.RECEIPT_FORMAT
+        )
+        and receipt["never_attach"] is True,
         "backup receipt format differs",
     )
-    records.binding(receipt, sha)
+    binding = records.binding(receipt, sha, recovery=recovery)
+    if recovery is not None:
+        records.checked_receipt(
+            receipt,
+            sha,
+            {
+                "role": "guard",
+                "target": {
+                    "vm_uuid": records.recovery_model.GUARD_VM,
+                    "disk_uuid": records.recovery_model.GUARD_DISK,
+                },
+                "backup": binding,
+                "disk_evidence": {
+                    "pre_boot_disk_sha256": recovery["files"]["disk"]["sha256"]
+                },
+            },
+            recovery=recovery,
+        )
     identities = set()
-    for row in receipt["files"].values():
+    if recovery is not None:
+        require(
+            set(receipt["files"]) == set(recovery["files"]),
+            "recovery backup file inventory differs",
+        )
+    for label, row in receipt["files"].items():
+        if recovery is not None:
+            expected_source = source_paths("guard")[label]
+            require(
+                row["source_relative"] == expected_source.relative_to(ROOT).as_posix(),
+                "recovery backup source path differs",
+            )
         if row["state"] == "absent":
             require(row["backup_relative"] is None, "absent file has a backup path")
             continue
@@ -466,8 +502,13 @@ def verify_files(raw, sha):
                 and hashlib.file_digest(stream, "sha256").hexdigest() == row["sha256"],
                 "backup identity/bytes changed",
             )
+            if recovery is not None:
+                require(
+                    file_identity(expected_source.stat()) != identity,
+                    "recovery backup aliases current source",
+                )
             identities.add(key)
-    return records.binding(receipt, sha)
+    return binding
 
 
 def main():

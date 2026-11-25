@@ -309,7 +309,11 @@ def serve(
         return terminal
     except Exception as exc:
         failure = type(exc).__name__
-        store.fence("original owner held; independent reconciliation required")
+        fence_error = None
+        try:
+            store.fence("original owner held; independent reconciliation required")
+        except Exception as fence_exc:  # noqa: BLE001 -- a busy journal must not suppress the independent terminal record
+            fence_error = type(fence_exc).__name__ + ": " + str(fence_exc)[:256]
         if not (root / "owner.terminal.json").exists():
             publish(
                 root / "owner.terminal.json",
@@ -317,6 +321,8 @@ def serve(
                     {
                         "status": "held-owner-state-not-accepted",
                         "error_type": failure,
+                        "error": str(exc)[:256],
+                        "fence_error": fence_error,
                         "launch_sha256": external_sha,
                     }
                 ),

@@ -1,0 +1,33 @@
+{
+  "VM_boots": 0,
+  "actual_VM_stop_commands": 0,
+  "format": "mcli1-third-review-closed-unarmed-v1",
+  "inspection": {
+    "bytes": 880,
+    "path": ".local/validation/guard-startup-review-03/independent-unarmed-closure.json",
+    "sha256": "2819213e298f5799eae3f568eaf47887dec0d19468ff181bc0e2fd08c3424c01"
+  },
+  "limits": [
+    "This is an unarmed review expiration, not a native qualification run",
+    "No new VM disk/configuration hashes are claimed by this closure inspection",
+    "Late approval cannot reuse this review, process identity or original lease"
+  ],
+  "next_check": "Wait for the developer's decision before preparing another fresh exact live review. Do not auto-create repeated leases or infer permission from goal continuation.",
+  "original_processes_retired": {
+    "bootstrap": true,
+    "controller": true,
+    "owner": true
+  },
+  "preparation_summary": {
+    "bytes": 10428,
+    "path": "research/validation/startup-progress-evidence.json",
+    "sha256": "e502b024280309703dcf381f3942eff2e1cb155ccfe366331b9f4a7f060720b4"
+  },
+  "review_inventory": {
+    "bytes": 2025,
+    "path": ".local/validation/guard-startup-review-03/inventory.json",
+    "sha256": "b6b1a26358b216da8f127cd3a904fcd6c74cf05a347ee4b9fafec797c27e1ed6"
+  },
+  "review_sha256": "7580226fe0d7a9e75c702a57e68c69966e5c8f3a4f3328fd8b0423cdedf1118a",
+  "status": "no timely approval; suspended review closed without native activation"
+}

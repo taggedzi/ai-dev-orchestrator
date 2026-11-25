@@ -1,0 +1,27 @@
+{
+  "title": "Development-only dependency example",
+  "baseline_revision": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "requirements_revision": 1,
+  "tasks": [
+    {
+      "id": "T1",
+      "title": "Implement validation",
+      "instructions": "Implement the validation criterion after a real executor is qualified.",
+      "depends_on": [],
+      "allowed_paths": ["src/validate.py"],
+      "criteria": [{"id": "C1", "description": "Blank input is rejected", "requirement_id": "R1", "checks": ["unit"]}],
+      "checks": [{"id": "unit", "argv": ["python", "-m", "unittest"], "timeout_seconds": 30}],
+      "max_attempts": 2
+    },
+    {
+      "id": "T2",
+      "title": "Use validation in the CLI",
+      "instructions": "Use the accepted validation revision after task T1 is independently accepted.",
+      "depends_on": ["T1"],
+      "allowed_paths": ["src/cli.py"],
+      "criteria": [{"id": "C1", "description": "Invalid input exits with an error", "requirement_id": "R1", "checks": ["unit"]}],
+      "checks": [{"id": "unit", "argv": ["python", "-m", "unittest"], "timeout_seconds": 30}],
+      "max_attempts": 2
+    }
+  ]
+}

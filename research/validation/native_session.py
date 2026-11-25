@@ -11,6 +11,7 @@ import time
 from pathlib import Path
 
 from . import maintenance_host as host
+from . import recovery_records as recovery_model
 from . import stopped_backup as backup
 from . import windows_readonly as native
 from .maintenance_stop import EXE_SHA
@@ -22,7 +23,7 @@ POWERSHELL = Path("C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe")
 POWERSHELL_SHA256 = "95ce2acbc6cd9d7f4a22759d39a8d40fc2a53ceeecf068ef856849f0d2076961"
 VERSION, REVISION = "7.2.22", 175245
 SESSION_STATES = {1: "Unlocked", 2: "Locked", 3: "Spawning", 4: "Unlocking"}
-MACHINE_STATES = {"poweroff": 1, "running": 6, "starting": 11}
+MACHINE_STATES = {"poweroff": 1, "aborted": 4, "running": 6, "starting": 11}
 SOURCES = {**backup.SOURCES, "native_session.py": Path(__file__)}
 SOURCE_EPOCH = {n: digest(p.read_bytes()) for n, p in SOURCES.items()}
 
@@ -53,7 +54,31 @@ def script(role):
     )
 
 
-def session_record(raw, role):
+def startup_progress(states, before, after, *, recovery=None):
+    """Validate forward-only reads; the returned ranks confer no readiness."""
+    initial = "poweroff"
+    if recovery is not None:
+        recovery_model.checked(recovery)
+        initial = "aborted"
+    machines = {initial: 0, "starting": 1, "running": 2}
+    sessions = {"Unlocked": 0, "Spawning": 1, "Locked": 2}
+    require(
+        type(states) is list
+        and len(states) == 4
+        and all(s in machines for s in states)
+        and before in sessions
+        and after in sessions,
+        "unknown startup state",
+    )
+    ranks = [machines[s] for s in states]
+    require(
+        ranks == sorted(ranks) and sessions[before] <= sessions[after],
+        "startup state moved backward",
+    )
+    return (ranks[0], sessions[before]), (ranks[-1], sessions[after])
+
+
+def session_record(raw, role, *, startup=False):
     value = host.object_bytes(raw)
     require(
         set(value)
@@ -84,9 +109,15 @@ def session_record(raw, role):
     ):
         require(type(value[key]) is int, "native session numeric type differs")
     require(
-        value["state_before"] == value["state_after"]
-        and value["state_before"] in SESSION_STATES
-        and value["machine_before"] == value["machine_after"]
+        value["state_before"] in SESSION_STATES
+        and value["state_after"] in SESSION_STATES
+        and (
+            startup
+            or (
+                value["state_before"] == value["state_after"]
+                and value["machine_before"] == value["machine_after"]
+            )
+        )
         and 0 <= value["pid"] <= 2**32 - 1
         and ((value["pid"] > 0) if value["state_before"] == 2 else value["pid"] == 0),
         "native session state/PID read is uncertain",
@@ -112,27 +143,13 @@ class NativeObserver:
         )
 
     def __call__(self):
-        self.pins()
-        wall, mono = time.time_ns() + 4 * 10**9, time.monotonic_ns() + 4 * 10**9
-        started = time.monotonic_ns()
-        self.last = {"observed_mono_ns": started, "queries": []}
+        return self._capture(startup=False)
 
-        def query(kind, target, name):
-            result = self.queries(kind, target, wall, mono)
-            self.last[name] = result["stdout"]
-            self.last["queries"].append(
-                {
-                    "kind": kind,
-                    "target": target,
-                    **{
-                        k: v for k, v in result.items() if k not in {"stdout", "stderr"}
-                    },
-                }
-            )
-            return result["stdout"]
+    def startup_observation(self, *, recovery=None):
+        """Read startup progress only; strict observation remains the default."""
+        return self._capture(startup=True, recovery=recovery)
 
-        first = query("machine", self.slot["vm_uuid"], "machine_first")
-        medium = query("disk", self.slot["disk_uuid"], "medium")
+    def _session_query(self, wall, mono, *, startup):
         result = self.runner(
             POWERSHELL,
             ["-NoLogo", "-NoProfile", "-NonInteractive", "-Command", script(self.role)],
@@ -155,13 +172,91 @@ class NativeObserver:
             and len(result["stdout"]) <= native.MAX_OUTPUT,
             "native session query failed or was not reaped",
         )
-        session = session_record(result["stdout"], self.role)
+        return session_record(result["stdout"], self.role, startup=startup)
+
+    def startup_session(self):
+        """COM property reads only: no CLI query or VM session-lock request."""
+        self.pins()
+        wall, mono = time.time_ns() + 4 * 10**9, time.monotonic_ns() + 4 * 10**9
+        started = time.monotonic_ns()
+        self.last = {
+            "observed_mono_ns": started,
+            "queries": [],
+            "phase": "startup-session-only",
+        }
+        self._session_query(wall, mono, startup=True)
+        native.live(wall, mono)
+        self.last["finished_mono_ns"] = time.monotonic_ns()
+        return {
+            "format": "mcli1-startup-session-probe-v1",
+            "observed_mono_ns": started,
+            "finished_mono_ns": self.last["finished_mono_ns"],
+            "session_raw": self.last["session_raw"],
+        }
+
+    def _capture(self, *, startup, recovery=None):
+        if recovery is not None:
+            recovery_model.checked(recovery)
+            require(
+                startup and self.role == "guard",
+                "recovery observation is guard startup only",
+            )
+        self.pins()
+        wall, mono = time.time_ns() + 4 * 10**9, time.monotonic_ns() + 4 * 10**9
+        started = time.monotonic_ns()
+        self.last = {"observed_mono_ns": started, "queries": []}
+
+        def query(kind, target, name):
+            result = self.queries(kind, target, wall, mono)
+            self.last[name] = result["stdout"]
+            self.last["queries"].append(
+                {
+                    "kind": kind,
+                    "target": target,
+                    **{
+                        k: v for k, v in result.items() if k not in {"stdout", "stderr"}
+                    },
+                }
+            )
+            return result["stdout"]
+
+        first = query("machine", self.slot["vm_uuid"], "machine_first")
+        medium = query("disk", self.slot["disk_uuid"], "medium")
+        session = self._session_query(wall, mono, startup=startup)
         final = query("machine", self.slot["vm_uuid"], "machine")
         native.live(wall, mono)
         fields = host.machine_fields(final)
         first_fields = host.machine_fields(first)
+        first_profile, final_profile = (
+            host.machine_profile(first),
+            host.machine_profile(final),
+        )
+        transition = None
+        if startup:
+            names = {v: k for k, v in MACHINE_STATES.items()}
+            states = [
+                first_fields["VMState"],
+                names.get(session["machine_before"]),
+                names.get(session["machine_after"]),
+                fields["VMState"],
+            ]
+            before, after = (
+                SESSION_STATES[session[k]] for k in ("state_before", "state_after")
+            )
+            startup_progress(states, before, after, recovery=recovery)
+            first_profile = {**first_profile, "state": final_profile["state"]}
+            if (
+                len(set(states)) != 1
+                or before != after
+                or before == "Spawning"
+                or (states[-1] == "running" and before != "Locked")
+            ):
+                transition = {
+                    "format": "mcli1-startup-wait-v1",
+                    "machine_states": states,
+                }
         require(
-            host.machine_profile(first) == host.machine_profile(final)
+            first_profile == final_profile
             and fields["hardwareuuid"]
             == first_fields["hardwareuuid"]
             == self.slot["vm_uuid"]
@@ -182,7 +277,10 @@ class NativeObserver:
                     "recording_started",
                 )
             )
-            and session["machine_before"] == MACHINE_STATES.get(fields["VMState"]),
+            and (
+                startup
+                or session["machine_before"] == MACHINE_STATES.get(fields["VMState"])
+            ),
             "native VM state/profile changed across session observation",
         )
         grant = {
@@ -194,7 +292,7 @@ class NativeObserver:
         }
         host.check_medium(medium, final, grant)
         self.last["finished_mono_ns"] = time.monotonic_ns()
-        return {
+        frame = {
             "observed_mono_ns": started,
             "machine": final,
             "medium": medium,
@@ -205,6 +303,9 @@ class NativeObserver:
                 "pid": session["pid"],
             },
         }
+        if transition is not None:
+            frame["startup_transition"] = transition
+        return frame
 
 
 def retain(root, observer):

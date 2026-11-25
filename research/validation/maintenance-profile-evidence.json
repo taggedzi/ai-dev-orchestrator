@@ -224,6 +224,7 @@
       "role": "executor"
     }
   ],
+  "source_description_note": "Changed historical workspace sources point to retained exact bytes; current owner-contention cohort is separate.",
   "sources": [
     {
       "bytes": 14602,
@@ -242,7 +243,8 @@
     },
     {
       "bytes": 31432,
-      "path": "research/validation/maintenance_host.py",
+      "historical_workspace_path": "research/validation/maintenance_host.py",
+      "path": ".local/validation/preactivation-regression-01/sources/maintenance_host.py",
       "sha256": "b4abff939398a81e628d3de21e9c718f9b7e239a39772a337eb607f17716c583"
     },
     {
@@ -282,7 +284,8 @@
     },
     {
       "bytes": 11948,
-      "path": "research/validation/owner_process.py",
+      "historical_workspace_path": "research/validation/owner_process.py",
+      "path": ".local/validation/preactivation-regression-01/sources/owner_process.py",
       "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
     },
     {

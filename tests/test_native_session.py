@@ -11,6 +11,7 @@ from research.validation import native_session as session
 from research.validation.store import Hold
 from research.validation.transfer_commands import canonical
 from tests import test_boot_preconditions as inputs
+from tests import test_recovery_records as recovery_tests
 
 
 def sample(role="guard", state="poweroff", pid=0):
@@ -110,6 +111,38 @@ class ObserverTests(unittest.TestCase):
         self.session = sample(state="running", pid=123)
         self.assertEqual(self.observer()["session"]["pid"], 123)
 
+    def test_startup_session_probe_never_calls_cli_or_claims_profile(self):
+        self.observer.queries = lambda *_args: self.fail("CLI acquired a startup lock")
+        before = time.monotonic_ns()
+        probe = self.observer.startup_session()
+        self.assertEqual([c[0] for c in self.calls], ["session"])
+        self.assertEqual(
+            set(probe),
+            {"format", "observed_mono_ns", "finished_mono_ns", "session_raw"},
+        )
+        self.assertEqual(probe["session_raw"], canonical(self.session))
+        self.assertLessEqual(before, probe["observed_mono_ns"])
+        self.assertLessEqual(probe["observed_mono_ns"], probe["finished_mono_ns"])
+        self.assertLessEqual(self.calls[0][3] - before, 4 * 10**9 + 10**6)
+        with tempfile.TemporaryDirectory() as folder:
+            session.retain(Path(folder), self.observer)
+            self.assertEqual(
+                (Path(folder) / "session_raw.stdout").read_bytes(),
+                canonical(self.session),
+            )
+
+    def test_startup_session_probe_preserves_failure_and_process_bounds(self):
+        for change in (
+            {"exit": 1},
+            {"stderr": b"uncertain"},
+            {"job_active_processes": 1},
+            {"stdout": b"x" * 65537},
+        ):
+            self.result_changes = change
+            with self.subTest(change=change), self.assertRaises(Hold):
+                self.observer.startup_session()
+        self.assertTrue(all(call[0] == "session" for call in self.calls))
+
     def test_wrong_target_version_types_or_unstable_state_are_rejected(self):
         cases = (
             {"vm_uuid": session.backup.SLOTS["executor"]["vm_uuid"]},
@@ -170,6 +203,119 @@ class ObserverTests(unittest.TestCase):
             self.assertEqual(
                 (root / "machine_first.stdout").read_bytes(), self.frame["machine"]
             )
+
+    def test_forward_machine_and_session_reads_produce_only_a_wait_marker(self):
+        self.session.update(
+            state_before=3, state_after=2, machine_before=11, machine_after=6
+        )
+        original = self.query
+
+        def progress(kind, *args):
+            if len(self.calls) == 3:
+                self.frame["machine"] = self.frame["machine"].replace(
+                    b'"poweroff"', b'"running"'
+                )
+            return original(kind, *args)
+
+        self.observer.queries = progress
+        frame = self.observer.startup_observation()
+        self.assertEqual(
+            frame["startup_transition"]["machine_states"],
+            ["poweroff", "starting", "running", "running"],
+        )
+        self.assertEqual(frame["session"]["pid"], 0)
+
+    def test_stable_spawning_can_wait_but_default_observer_stays_strict(self):
+        self.session.update(state_before=3, state_after=3)
+        self.assertIn("startup_transition", self.observer.startup_observation())
+        self.session["state_after"] = 2
+        with self.assertRaises(Hold):
+            self.observer()
+
+    def test_spawning_wait_accepts_installed_cli_display_and_client_diagnostics(self):
+        self.session.update(state_before=3, state_after=3)
+        original = self.query
+
+        def runtime(kind, *args):
+            if len(self.calls) == 3:
+                self.frame["machine"] += (
+                    b'SessionName="headless"\nVideoMode="0,0,0"@0,0 1\nVRDEActiveConnection="off"\nVRDEClients==0\n'
+                )
+            return original(kind, *args)
+
+        self.observer.queries = runtime
+        frame = self.observer.startup_observation()
+        self.assertIn("startup_transition", frame)
+        self.assertEqual(frame["session"]["pid"], 0)
+        self.assertEqual(frame["session"]["state_before"], "Spawning")
+
+    def test_aborted_is_observable_data_but_not_ordinary_startup_admission(self):
+        self.frame["machine"] = self.frame["machine"].replace(
+            b'"poweroff"', b'"aborted"'
+        )
+        self.session = sample(state="aborted")
+        observed = self.observer()
+        self.assertEqual(
+            session.host.machine_fields(observed["machine"])["VMState"], "aborted"
+        )
+        with self.assertRaises(Hold):
+            self.observer.startup_observation()
+        self.session.update(state_before=3, state_after=3)
+        frame = self.observer.startup_observation(recovery=recovery_tests.context())
+        self.assertEqual(frame["startup_transition"]["machine_states"], ["aborted"] * 4)
+
+    def test_recovery_progress_has_one_explicit_initial_state_and_no_backward_edge(
+        self,
+    ):
+        context = recovery_tests.context()
+        self.assertEqual(
+            session.startup_progress(
+                ["aborted", "starting", "running", "running"],
+                "Spawning",
+                "Locked",
+                recovery=context,
+            ),
+            ((0, 1), (2, 2)),
+        )
+        for states in (
+            ["poweroff"] * 4,
+            ["running", "aborted", "aborted", "aborted"],
+            ["aborted", "saved", "starting", "running"],
+        ):
+            with self.subTest(states=states), self.assertRaises(Hold):
+                session.startup_progress(states, "Spawning", "Locked", recovery=context)
+        self.observer.role = "executor"
+        self.calls.clear()
+        with self.assertRaises(Hold):
+            self.observer.startup_observation(recovery=context)
+        self.assertEqual(self.calls, [])
+
+    def test_startup_still_rejects_backward_unknown_profile_and_pid_drift(self):
+        for change in (
+            {"state_before": 3, "state_after": 1},
+            {"state_before": 4, "state_after": 4},
+            {"machine_before": 6, "machine_after": 11},
+            {"machine_after": 999},
+            {"state_before": 3, "state_after": 2, "pid": 123},
+            {"version": "7.2.23"},
+        ):
+            self.session = {**sample(), **change}
+            with self.subTest(change=change), self.assertRaises(Hold):
+                self.observer.startup_observation()
+        self.session = sample()
+        original = self.query
+
+        def drift(kind, *args):
+            if len(self.calls) == 3:
+                self.frame["machine"] = self.frame["machine"].replace(
+                    b'"memory"="1024"', b'"memory"="2048"'
+                )
+            return original(kind, *args)
+
+        self.calls.clear()
+        self.observer.queries = drift
+        with self.assertRaises(Hold):
+            self.observer.startup_observation()
 
     def test_script_reads_session_pid_only_under_locked_state_and_has_no_mutator(self):
         source = session.script("guard")

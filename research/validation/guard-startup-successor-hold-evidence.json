@@ -1,0 +1,56 @@
+{
+  "VM_boots": "no running state observed; not qualified",
+  "accepted_running_session_samples": 0,
+  "approval": "conversation:call_bf788a6c3fb643de84e41d718d8b0c32:Approve-successor-guard-boot-stop-run",
+  "controlled_lock_reproduction": {
+    "finding": "Holding a temporary original-owner SQLite writer lock for 0.4 seconds reproducibly killed the actual Python owner with exit 1 and no terminal receipt or surrogate stop. Every stop boundary in this diagnostic was Python-only. This demonstrates a journal contention defect; it does not prove the native incident's original exception, which was not retained.",
+    "inventory": {
+      "bytes": 2288,
+      "path": ".local/validation/owner-lock-reproduction-01/inventory.json",
+      "sha256": "92eb2530aed9eb2d2a02b30ccc02aba4811c9044574d5c1214bcf0ca90294f1b"
+    },
+    "observation": {
+      "bytes": 231,
+      "path": ".local/validation/owner-lock-reproduction-01/observation.json",
+      "sha256": "1bfd4e49c051647d6a473818488ba309a32ab31889866e938e6b4823e17353fc"
+    }
+  },
+  "findings": [
+    "Watchdog reported a generic process-identity failure; exact PID role was not retained",
+    "Owner lease remained armed/watching with no native-stop table, and owner process was retired without a terminal record",
+    "Root frontend cleanup exited 2 because the family was terminated; do not treat that as a native frontend error code",
+    "All backing-file hashes/configurations and explicit NVRAM state match the prior stopped profile"
+  ],
+  "format": "mcli1-successor-native-frontend-held-v1",
+  "guard_and_executor_files_unchanged": true,
+  "guard_state_after": "poweroff",
+  "independent_journal_and_file_inspection": {
+    "bytes": 2531,
+    "path": ".local/validation/guard-startup-review-02/independent-startup-inspection.json",
+    "sha256": "e4d85da9d80c03dfd54399ac51539a6a06e40c2fa7dad1f749f629666e9baa5e"
+  },
+  "native_frontends_created_and_resumed": 1,
+  "native_settlement_qualified": false,
+  "next_check": "Boundedly tolerate SQLite busy while the same original lease remains armed and no stop has begun; never retry a stopping/possible-send command. Retain owner exceptions even if fencing the journal also fails, and identify family PID failures explicitly. Test with actual lock contention before any successor native approval.",
+  "original_owner_exit_acknowledgement": "absent",
+  "original_stop_attempts": 0,
+  "posthold_observation": {
+    "inventory": {
+      "bytes": 1186,
+      "path": ".local/validation/guard-startup-posthold-02/inventory.json",
+      "sha256": "2e9ba18b23a625f78656fa29757a94d3d1936abb2aabce45fe9594323532cc9e"
+    },
+    "receipt": {
+      "bytes": 1876,
+      "path": ".local/validation/guard-startup-posthold-02/receipt.json",
+      "sha256": "072f91b739fd92680e662eaadfe486e128f58b35ff7174c09e404cc82afab9ed"
+    }
+  },
+  "review_inventory": {
+    "bytes": 15160,
+    "path": ".local/validation/guard-startup-review-02/inventory.json",
+    "sha256": "50c452a797e8b35ce6d5a981ffa6fed60a4624353f43e76e7a97babfcd8c53b5"
+  },
+  "review_sha256": "72f98453006968770162d719590e5c3ce0972db3412c780332c80b8c2bb8978f",
+  "status": "native-frontend-resumed-then-contained-before-session-qualification"
+}

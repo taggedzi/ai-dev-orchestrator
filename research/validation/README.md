@@ -1,15 +1,101 @@
 # M-CLI1 fixture preparation
 
-This package builds the synthetic inputs and local harness authorized in the November 20 conversation. It uses Python's standard library plus installed Node and Git for verification. It is experiment code; the product coordinator and its architecture remain unselected.
+This package builds the synthetic inputs and local harness authorized in the November 20 conversation. It uses Python's standard library plus installed Node and Git for verification. It is experiment code. The separate product core/CLI now exists under `coordinator/`, with 15 passing product tests and a scripted CLI smoke; real execution remains gated. Resume with [the handoff](../../docs/HANDOFF.md).
+
+The approved [offline initial-review model](offline-approval-plan.md) is now
+implemented and verified. Human review creates no process or lease; one-use
+activation later verifies locked inputs and binds the original lifetime. Five
+Windows Python cases and actual read-only preflight passed. Its inert native
+controller-loss artifact was subsequently separately approved and consumed once.
+
+Latest native result: [joined controller loss](guard-controller-loss-evidence.json)
+was contained in **2.668 seconds** after two Running samples and deliberate exit
+29. All original/family identities retired and jobs emptied. The original owner's
+sole stop exited 1; shutdown is unaccepted and the consumed admission retains its
+active target reservation. Guard is Aborted/unlocked, executor poweroff/unlocked,
+all NICs disabled. Both disks, guard NVRAM and executor files are unchanged;
+only guard abort/time metadata changed. No retry or release ran. Recovery
+provenance and held-reservation settlement need review before another activation.
+
+Previously, the separately approved [review 10](guard-startup-normal-stop-evidence.json)
+passed one normal disconnected guard startup/session/stop case. The exact binding
+committed, two running samples passed, the original stop exited 0, and all four
+frontend/helper processes exited naturally with code 0. Independent stopped-session
+proof took 2.597 seconds. Both VMs were then off/unlocked with disabled NICs. Disks and
+executor files are unchanged; guard NVRAM and shutdown metadata changed during
+the authorized boot. All reviews are closed. Further native failure cases and
+guest/installation/isolation/executor qualification remain open; new current
+profile/backup bindings and separate exact approval precede another activation.
+The preparation history below retains its execution-time findings.
+
+The [held-guard successor proposal](../../docs/decisions/0007-held-guard-successor.md)
+now specifies new recovery provenance and separately approved reservation transfer;
+preparation is now approved, but no real ledger change is authorized. The
+[storage review](coordinator-storage-plan.md) records passing read-only integrity
+checks and an applicable upstream runtime fix requirement. Separately,
+[Decision 0008](../../docs/decisions/0008-product-implementation-boundary.md)
+authorizes beginning full product implementation while dependent live execution
+remains gated. These approvals do not complete research or product requirements.
+
+The [joined-controller-loss preparation](controller-loss-plan.md) added
+18 new checks include actual Windows Python controller death and conservative
+held-stop classification. Fresh ordinary stopped backup/profile, independent
+readback and read-only preflight passed before the later approved native fault.
+[Preparation evidence](controller-loss-preparation-evidence.json) remains historical.
 
 The latest checkpoint adds [verified unattached backups](stopped-backup-plan.md),
 the approved/applied [stopped maintenance profiles](maintenance-profile-plan.md)
 and a prepared [owner-bound frontend adapter](frontend-start-plan.md).
-Final regression passed 396 tests with 13 platform skips, including 28 new startup
-checks with Python surrogates and synthetic VM/session facts; Ruff passes. See
-[the retained startup evidence](frontend-start-evidence.json). Both VMs remain
-powered off/disconnected. A fixed native
-session observer and startup/readiness qualification remain open; boot, installation and network
+Earlier frozen [Python 3.13 regression](offline-approval-evidence.json): 608 tests,
+595 passed, 13 platform skips, no failures/errors. The later
+[patched-runtime candidate](patched-runtime-evidence.json) ran 609 tests:
+594 passed, 14 skipped, one startup-BEGIN BUSY error; compatibility remains open.
+Only historical replay metadata in the test fixture changed, with an added
+drift negative case. No production policy or real ledger changed. The fixed
+[native observer](native-session-plan.md) measured actual stopped sessions. The
+[one-boot guard qualification](startup-qualification-plan.md) was approved, then
+[held before startup](guard-startup-hold-evidence.json) on its first read-only
+query. No frontend or boot occurred; the consumed owner/stop session stays held.
+See [the preparation evidence](native-qualification-evidence.json).
+The approved successor resumed a native frontend but held before session
+qualification; see [its evidence](guard-startup-successor-hold-evidence.json).
+The later [owner contention repair](owner-contention-evidence.json) passes actual
+writer-lock tests and read-only preflight. Neither consumed session is replayed.
+The [startup progress preparation](startup-progress-evidence.json) now handles
+forward transitions as wait-only under the unchanged lease and startup deadlines.
+Its fresh [live review expired unarmed](guard-startup-unarmed-review-evidence.json):
+zero native starts/stops, with all original Python identities retired. No review
+is currently live; a late answer cannot activate that expired lease.
+The next approved [native run held on CLI diagnostics](guard-startup-parser-hold-evidence.json).
+Its [parser/output repair](runtime-parser-evidence.json) is verified; the guard is
+now aborted/unlocked, the executor off/unlocked, with both disks unchanged and
+all NICs disabled. [Decision 0005 preparation](../../docs/decisions/0005-initial-aborted-recovery.md)
+is implemented and [verified](initial-aborted-evidence.json), including an actual
+unattached backup, separate-process readback and read-only recovery preflight.
+Ordinary admission remains poweroff-only. A fresh exact native review/approval is
+still required. The later [exact recovery run held at the session lock](guard-startup-lock-hold-evidence.json):
+one frontend resume, zero accepted running samples and one failed original stop.
+All reviewed processes retired; all backing files are unchanged and both sessions
+are unlocked. Source review identifies lock-taking startup status polling as a
+candidate cause; exact lock ownership is unmeasured. That review is consumed.
+The [COM-only startup correction](startup-session-probe-evidence.json) now passes
+regression and actual offline probes. New context V2 requires both consumed
+attempts and every retained process; fresh capture/readback/preflight passed.
+Only an exact separate native review/approval can activate a successor run.
+The later [approved review 07 reached Running](guard-startup-journal-hold-evidence.json)
+and matched the session PID to the frontend family, then held on SQLite contention
+while committing the join. Its filesystem receipt is provisional; the ledger
+stayed `resumed` with no receipt hash and zero accepted samples. Containment reaped
+the family; the sole original stop failed and is not replayed. Disks/executor
+files are unchanged, but guard timestamp metadata changed. Capture 04/context V2
+are now historical and cannot admit another run without updated provenance/profile.
+The [controller journal correction](controller-journal-plan.md) now passes real
+SQLite and independent writer-process tests. Only known non-entry at BEGIN can
+wait; body/COMMIT and native commands are not replayed. Context V3 requires the
+three recovery-history anchors and current metadata. Fresh capture 06, separate
+readback 03 and read-only preflight 04 passed; native approval remains separate.
+Normal startup/session/stop subsequently passed review 10 above. Readiness and
+native failure-case qualification remain open; further boot, installation and network
 activation need separate concrete approvals. Earlier preparation stages below
 retain their execution-time results and historical source pins.
 

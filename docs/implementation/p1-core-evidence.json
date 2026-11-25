@@ -1,0 +1,194 @@
+{
+  "Git_commits_or_pushes": 0,
+  "VM_mutations": 0,
+  "approved_by": "Decisions 0007/0008; conversation developer approval retained in docs/decisions/0007-0008-approval.json",
+  "capabilities": [
+    "Versioned project requirements/context and immutable validated dependency plans",
+    "Exact-digest plan approval and stale-version refusal",
+    "Atomic attempt plus operation intent and absolute task attempt caps",
+    "Pause/revision/recovery fencing, no blind replay, late/conflicting observations",
+    "Development-only scripted results never accept tasks",
+    "Ordered audit events and inspectable mutation-disabled backup archives"
+  ],
+  "classification": "Actual product SQLite/CLI operations and sender-process fault; executor/model/cost outcomes are explicitly scripted development data, no native coding or provider traffic",
+  "current_documents": [
+    {
+      "bytes": 1673,
+      "path": "AGENTS.md",
+      "sha256": "b19cdc51adc75a3a09569c86019cc887db513d55469b7e81b16ecdae9abc9c15"
+    },
+    {
+      "bytes": 5653,
+      "path": "README.md",
+      "sha256": "9f04aa35dd1491af8cf117081da5682a143ece1f25abd3840b618053ec08987f"
+    },
+    {
+      "bytes": 11019,
+      "path": "docs/HANDOFF.md",
+      "sha256": "055096f6d6515175526e42f5b09fc9628e27c9a063915c0f47cfbb1303fcaa41"
+    },
+    {
+      "bytes": 75716,
+      "path": "docs/status.md",
+      "sha256": "44e14667fd7b4e931b624b809579ba5dca0e0e7c36b71f5e769028e5ec62fc0c"
+    },
+    {
+      "bytes": 7852,
+      "path": "docs/product-delivery-plan.md",
+      "sha256": "cb9d91bcf8471d40bc33799a365ebbb263bfe32b4732f1e8f5050a75bf1666b8"
+    },
+    {
+      "bytes": 14830,
+      "path": "docs/completion-audit.md",
+      "sha256": "17a53e6beadd98349d3697e906f0d846f52643cace414c24356281657f5e58b6"
+    },
+    {
+      "bytes": 7149,
+      "path": "docs/developer-experience-walkthrough.md",
+      "sha256": "c1516b189c89186418dd6e41e5d8593f80d6fb8d0d6822b993b5c21d4744f2bc"
+    },
+    {
+      "bytes": 5207,
+      "path": "docs/product-cli.md",
+      "sha256": "26a2b611642ca36bfdbf724d6a20c0ad5b3b726cfd53458e95fc8c098bb481fe"
+    },
+    {
+      "bytes": 30637,
+      "path": "research/validation/README.md",
+      "sha256": "4bbf2c60a32c78490df081b443ebc9cc327658584dd9b0969386f3191c9f211a"
+    }
+  ],
+  "date": "2026-11-24",
+  "dependency_installs": 0,
+  "format": "orchestrator-p1-core-cli-v1",
+  "full_product_complete": false,
+  "goal_status_observed": "active",
+  "limits": [
+    "No HTTP/API/dashboard or remote authentication",
+    "No real executor, source edits, check execution, independent review, integration or task acceptance",
+    "No real model selection, provider traffic or spend/budget qualification; simulated cost is not actual cost",
+    "No database restore/migration workflow or host-power-loss durability qualification",
+    "Existing failed complete research cohort remains failed; these are 14 product tests only",
+    "Guard successor preparation not implemented; real held reservation untouched",
+    "Live execution/VM changes, installations, provider-data/paid experiments, remote writes/publication remain separately gated"
+  ],
+  "live_task_handles": [],
+  "next_actions": [
+    "Prepare exact HTTP/UI dependency lock and concrete installation review, then reuse these application commands behind authenticated loopback API",
+    "Develop trusted P2 Git/evidence intake with scratch repositories and revision-bound independent acceptance; no generic acceptance bypass"
+  ],
+  "prior_checkpoint": {
+    "bytes": 5673,
+    "path": "research/validation/handoff-evidence.json",
+    "sha256": "b9c07ab3f72caed9b192aad16aecf3c1361372753888bd534627234b38cb4ddb"
+  },
+  "prior_document_resolutions": {
+    "bytes": 4899,
+    "path": ".local/validation/p1-core-01/prior-document-resolutions.json",
+    "sha256": "8e5d1ff554c56514ad67fb0a88203f7ba6c58b3af9e9403d7d10ad6bd0144812"
+  },
+  "provider_calls": 0,
+  "real_held_journal_hashes_unchanged": {
+    ".local/validation/offline-guard-admissions.sqlite": "f1eac66681934fd294c73efeb580ebc102b64e6586a17a13bdd7a1bec488260a",
+    ".local/validation/offline-guard-run-ccc16a8440524bda84e57fdcd90055e7/owner/owner.sqlite": "24bab655c096ee1fa16b4f4bed2d04a76a167eee93de7e0fd21c54cefade0313"
+  },
+  "runtime": {
+    "Python": "3.15.2",
+    "SQLite": "3.53.4",
+    "sqlite_source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc"
+  },
+  "sources": [
+    {
+      "bytes": 286,
+      "path": ".local/validation/p1-core-01/sources/__init__.py",
+      "sha256": "d044c232fe90a5f2fbea02702e3475a5da14632835c7ae3aeaab37c5790d1015",
+      "workspace_source": "coordinator/__init__.py"
+    },
+    {
+      "bytes": 48,
+      "path": ".local/validation/p1-core-01/sources/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "workspace_source": "coordinator/__main__.py"
+    },
+    {
+      "bytes": 30782,
+      "path": ".local/validation/p1-core-01/sources/application.py",
+      "sha256": "8d790e28b4d079e08cd9e391789f3b25d28d9fb1a342eca1e0cc88274189828e",
+      "workspace_source": "coordinator/application.py"
+    },
+    {
+      "bytes": 7050,
+      "path": ".local/validation/p1-core-01/sources/cli.py",
+      "sha256": "319f89ce314691ab2dc1846b67b10d4f0286828569a69d6ee7225a7bc3f46fc5",
+      "workspace_source": "coordinator/cli.py"
+    },
+    {
+      "bytes": 7465,
+      "path": ".local/validation/p1-core-01/sources/domain.py",
+      "sha256": "83a2cccf2e9bdab2d7b6efe317d950204906556d04bb373ef3c933fb713c1d3e",
+      "workspace_source": "coordinator/domain.py"
+    },
+    {
+      "bytes": 8470,
+      "path": ".local/validation/p1-core-01/sources/store.py",
+      "sha256": "ccf4075a9d2e8f5d594edc5f37689bcf7eac6f712a62eaae2ef0059f01bb805d",
+      "workspace_source": "coordinator/store.py"
+    },
+    {
+      "bytes": 1134,
+      "path": ".local/validation/p1-core-01/sources/p1-plan.json",
+      "sha256": "52b4c6cb36d974f251b7024902bb7c7f543756be838244e9f70da063e3925ceb",
+      "workspace_source": "examples/p1-plan.json"
+    },
+    {
+      "bytes": 278,
+      "path": ".local/validation/p1-core-01/sources/p1-project.json",
+      "sha256": "baf73830229315e22d7f8e6ad3813912c8505b3838bbecf3e93d997f2ef5406d",
+      "workspace_source": "examples/p1-project.json"
+    },
+    {
+      "bytes": 15241,
+      "path": ".local/validation/p1-core-01/sources/test_coordinator.py",
+      "sha256": "0ca44a3ba3899a8ea1e3aef4c7de63f8190f6ea5be03f410b7696fc7c3e11de7",
+      "workspace_source": "tests/test_coordinator.py"
+    }
+  ],
+  "status": "First product core and CLI implemented and verified; full product and P1 API/dashboard incomplete",
+  "terminal_product_exec_session": {
+    "exit": 0,
+    "id": 69200
+  },
+  "verification": {
+    "Ruff": "passed",
+    "cli_process_calls": 21,
+    "cli_smoke": {
+      "bytes": 40471,
+      "path": ".local/validation/p1-core-01/cli-smoke.json",
+      "sha256": "057c1de97739ba05f279b0620bb6376b82487cf91b817c646ccec7bdb630fa13"
+    },
+    "errors": 0,
+    "failures": 0,
+    "formatting": "passed",
+    "inventory": {
+      "bytes": 5430,
+      "path": ".local/validation/p1-core-01/inventory.json",
+      "sha256": "60b3f9f948d7f515a0db23cd747da853053df05478f50ce9cf265cda72040adc"
+    },
+    "log": {
+      "bytes": 2413,
+      "path": ".local/validation/p1-core-01/unittest.log",
+      "sha256": "da1bb0d06c514cf594d24d64d746191aa7a305de1b663705cfe6047e477f272f"
+    },
+    "passed": 14,
+    "product_store_integrity": "ok",
+    "skipped": 0,
+    "source_drift": [],
+    "summary": {
+      "bytes": 2450,
+      "path": ".local/validation/p1-core-01/result.json",
+      "sha256": "727026f91707766ca20062403c57292637787477cc519610635693d3584d3cb7"
+    },
+    "tests_run": 14,
+    "whitespace": "passed"
+  }
+}

@@ -1,0 +1,782 @@
+{
+  "VM_setting_changes": 0,
+  "actual_Python_binding_cases": {
+    "test_real_python_binding_starts_lease_after_preparation_and_stops_once": {
+      "Python_surrogate_stop_calls": 1,
+      "actual_VM_commands": 0,
+      "admission": {
+        "active": 0,
+        "approval_sha": "77ac88d794bd12692537400499c29580835a84a39c3fb0bdc9f80677efbb9c32",
+        "binding_sha": "d10ac6f0467bb1e9e93abbf4d3452e7e050cf4ffdb1203adbff6bf7215295950",
+        "input_sha": "2f39080bfa7235f7e02ac50e5ad6d527553ac4ccb889f405663cd3de064d6c13",
+        "output": ".local/validation/offline-guard-run-bf954649ac944e59b404773721e5282d",
+        "review_id": "bf954649ac944e59b404773721e5282d",
+        "review_sha": "0388c08d511af629f9384c2dc09c25c1683d3bbf0eeac28dcd907de31d27d8fd",
+        "revoked": 0,
+        "state": "finished",
+        "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "prepared_inputs": {
+        "bytes": 4122,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_binding_starts_lease_after_preparation_and_stops_once/run/preparation.ready.json",
+        "sha256": "33efd22e3f5695c5d07ad48578d59674a5e7b6ed332bf6635f1ecf98fa8cbf82"
+      },
+      "runtime_binding": {
+        "bytes": 6516,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_binding_starts_lease_after_preparation_and_stops_once/run/review.json",
+        "sha256": "d10ac6f0467bb1e9e93abbf4d3452e7e050cf4ffdb1203adbff6bf7215295950"
+      },
+      "terminal": {
+        "bytes": 719,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_binding_starts_lease_after_preparation_and_stops_once/run/qualification.terminal.json",
+        "sha256": "def8e28bd6a7dfac567acc673651aef55051d061df6bd282ba43f9fc739b512c"
+      }
+    },
+    "test_real_python_controller_loss_keeps_stop_held_and_target_reserved": {
+      "Python_surrogate_stop_calls": 1,
+      "actual_VM_commands": 0,
+      "admission": {
+        "active": 1,
+        "approval_sha": "4ece3e9ec5eb792d36269259cd4e0745982934593fe070861c29bdbd982e9b45",
+        "binding_sha": "17ed1793d0e37c5cd8ecb43343633f6d4e4e43d7aaf9e390a90ea158acde09cd",
+        "input_sha": "9a894bc09294cd0fe2a6f19cf0f48f46df8ea0a34ffa7a9d24a2bcf126d76c35",
+        "output": ".local/validation/offline-guard-run-d4ae272776a642d7b3fe9b95074f8bcb",
+        "review_id": "d4ae272776a642d7b3fe9b95074f8bcb",
+        "review_sha": "c1f9140c202402caac430bd0032c787f4b5510508ec58797b648c83ae10b8b08",
+        "revoked": 0,
+        "state": "held",
+        "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "prepared_inputs": {
+        "bytes": 4122,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_controller_loss_keeps_stop_held_and_target_reserved/run/preparation.ready.json",
+        "sha256": "39aa7453650d122973cd1e6618bc4f88cb42747db1f68c6c55cba35df8025b89"
+      },
+      "runtime_binding": {
+        "bytes": 6682,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_controller_loss_keeps_stop_held_and_target_reserved/run/review.json",
+        "sha256": "17ed1793d0e37c5cd8ecb43343633f6d4e4e43d7aaf9e390a90ea158acde09cd"
+      },
+      "terminal": {
+        "bytes": 2096,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_controller_loss_keeps_stop_held_and_target_reserved/run/qualification.terminal.json",
+        "sha256": "9923984453a85713f9deb8b87c4b4b25c9e83de566b705d085aa4757703bace7"
+      }
+    },
+    "test_real_python_lost_owner_seal_ack_holds_and_never_reconstructs_session": {
+      "Python_surrogate_stop_calls": 0,
+      "actual_VM_commands": 0,
+      "admission": {
+        "active": 1,
+        "approval_sha": "a89bb3b73887dc60d475994b01568d37e7cfc232816745ba5a6ebc961ae7f8d7",
+        "binding_sha": "33014457a1e1ce7920df07cc0ebdc289f31353684bbf25ed3be5a7cfcc0896bf",
+        "input_sha": null,
+        "output": ".local/validation/offline-guard-run-65e38e129ef84fcd93104f41376ef41d",
+        "review_id": "65e38e129ef84fcd93104f41376ef41d",
+        "review_sha": "219dd5b04a17934eb6d2ea91ad714772e466664897c5ddc8656f82a3bb2ff6de",
+        "revoked": 0,
+        "state": "held",
+        "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "prepared_inputs": {
+        "bytes": 4121,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_lost_owner_seal_ack_holds_and_never_reconstructs_session/run/preparation.ready.json",
+        "sha256": "80dc749f0754a8fbf9810b99b4cd2a58f8afadd99d12e9f2decf2ce316b83d69"
+      },
+      "runtime_binding": {
+        "bytes": 6519,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_lost_owner_seal_ack_holds_and_never_reconstructs_session/run/review.json",
+        "sha256": "33014457a1e1ce7920df07cc0ebdc289f31353684bbf25ed3be5a7cfcc0896bf"
+      },
+      "terminal": {
+        "bytes": 190,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_lost_owner_seal_ack_holds_and_never_reconstructs_session/run/qualification.terminal.json",
+        "sha256": "20e6b1c53f1eb770ff2af008f35c3c1df6698040dc380912a8e0ac1fcbff85bf"
+      }
+    },
+    "test_real_python_post_arm_revocation_contains_worker_and_original_owner_stops_once": {
+      "Python_surrogate_stop_calls": 1,
+      "actual_VM_commands": 0,
+      "admission": {
+        "active": 1,
+        "approval_sha": "ebedfb0bdf027646b681eb7dd7a9602116e6895604b915ba34053608639a2722",
+        "binding_sha": "889784a1e263cf9f2fd1c12561db97743bafd6e0265bf98d15c8616748ff11cf",
+        "input_sha": "836941778721dc23d7c8e3e277f5e9ef56f5c1391f2672cb36159eca65f80636",
+        "output": ".local/validation/offline-guard-run-a7a1313bf13241e094cac0c22e31eaaa",
+        "review_id": "a7a1313bf13241e094cac0c22e31eaaa",
+        "review_sha": "11c213c016d8c232c5ff28acf43faef010889924c9e51524bf268d533a4a28a6",
+        "revoked": 1,
+        "state": "held",
+        "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "prepared_inputs": {
+        "bytes": 4122,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_post_arm_revocation_contains_worker_and_original_owner_stops_once/run/preparation.ready.json",
+        "sha256": "8fba8b961e165d5703333aa7a42477a55920aa04cc9314a8c625acf703c410b8"
+      },
+      "runtime_binding": {
+        "bytes": 6518,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_post_arm_revocation_contains_worker_and_original_owner_stops_once/run/review.json",
+        "sha256": "889784a1e263cf9f2fd1c12561db97743bafd6e0265bf98d15c8616748ff11cf"
+      },
+      "terminal": {
+        "bytes": 188,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_post_arm_revocation_contains_worker_and_original_owner_stops_once/run/qualification.terminal.json",
+        "sha256": "32a9cb11e16bba60929a9ddad54cbf481dee5b70211f28622a513bddc60b07f9"
+      }
+    },
+    "test_real_python_revocation_during_binding_never_arms_owner_or_frontend": {
+      "Python_surrogate_stop_calls": 0,
+      "actual_VM_commands": 0,
+      "admission": {
+        "active": 0,
+        "approval_sha": "5b4233c66ce7fe5965404ac0ca60a4f64e5d3effd30d964b06ce740eb7cd8e75",
+        "binding_sha": null,
+        "input_sha": null,
+        "output": ".local/validation/offline-guard-run-cae2d8bc8f1345798d991b2cba5f07fa",
+        "review_id": "cae2d8bc8f1345798d991b2cba5f07fa",
+        "review_sha": "bcfb96bc4a6e82716b016fd5df32c559e4b4cdbfe674df0d5ed37c017eec9dce",
+        "revoked": 1,
+        "state": "held",
+        "target": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "prepared_inputs": {
+        "bytes": 4122,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_revocation_during_binding_never_arms_owner_or_frontend/run/preparation.ready.json",
+        "sha256": "89d114eca278e2fed4bc10f7554c603490bc1c90ab021050895e7390bf61fbf1"
+      },
+      "runtime_binding": {
+        "bytes": 6520,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_revocation_during_binding_never_arms_owner_or_frontend/run/review.json",
+        "sha256": "5f0692a653ed29f6955ca10e50faaee5251542d74618622d158a6b43d2956c9f"
+      },
+      "terminal": {
+        "bytes": 159,
+        "path": ".local/validation/offline-approval-regression-01/native-process-evidence/NativeBindingTests/test_real_python_revocation_during_binding_never_arms_owner_or_frontend/run/qualification.terminal.json",
+        "sha256": "72a0659cfc0a2a8993613e0b3f4a4632362555a5ac52ffe9714cf9a0b985fc04"
+      }
+    }
+  },
+  "admission_boundary": "Target-bound durable consumption precedes preflight/process allocation; a distinct runtime binding and input hash must match the one armed row. Competing consumers, lost consumption/arm acknowledgements, output collisions, source/input drift and revoked approvals cannot create another session. A known fully retired unarmed failure can release the target slot while its artifact remains consumed. Native uncertainty/controller loss keeps the target held.",
+  "classification": "Actual Windows jobs, current-file locks, Python controller/owner/frontends and surrogate stop commands; VM facts in runtime tests are synthetic replay. Actual native read-only preflight is separate.",
+  "clock_boundary": "Human review allocates no processes/jobs/lease. After explicit exact native approval, a bounded read-only worker hashes and retains the same file handles; the original owner and immutable at-most-600-second wall/monotonic lease are constructed afterward. Startup/heartbeat/stop bounds remain unchanged. Actual Python test leases were shortened to 30 seconds; the 600-second maximum also has direct conformance checks.",
+  "decision": "0006; preparation approved in conversation November 24, 2026",
+  "diagnostic_followup": {
+    "SQLite": "One developing normal Python case held on SQLite locked; its exact failing phase was not retained. Startup BEGIN/body/COMMIT phases now retain SQLite codes without retries or changed bounds. Controlled failure traces and the retained complete regression pass. This does not prove contention-free startup or reconstruct the earlier failure.",
+    "owner_packet": "Source review found the original-owner sealed packet uses owner, not process. Corrected controller-loss proof and verified it against the actual Python owner packet in the whole binder test."
+  },
+  "format": "mcli1-offline-review-binding-preparation-v1",
+  "guest_ready": false,
+  "inert_review": {
+    "activation_output_present": false,
+    "admission_database_present": false,
+    "approval_present": false,
+    "artifact": {
+      "bytes": 4351,
+      "path": ".local/validation/offline-guard-review-01/review.json",
+      "sha256": "0925de6acf1a400301d84abf1177a0596f811ff142597e3e74ddc52c4f13a788"
+    },
+    "case": "controller-loss",
+    "inventory": {
+      "bytes": 403,
+      "path": ".local/validation/offline-guard-review-01/inventory.json",
+      "sha256": "244c90141ab7f50d18a49a4ee9f4bdad997e41b1e7de260ac837788fa6376ecb"
+    },
+    "leases_allocated": 0,
+    "native_calls": 0,
+    "processes_allocated": 0,
+    "review_id": "ccc16a8440524bda84e57fdcd90055e7"
+  },
+  "limits": [
+    "Preparation approval is not native-run approval; current inert artifact remains unapproved/unconsumed",
+    "Initial-Aborted recovery/executor activation do not gain this path",
+    "Existing live reviews are not converted; same-boot maintenance waiting still consumes its original armed lease",
+    "A digest/reference is not hostile-host authentication; ACL, filesystem/kernel stall and physical power-loss guarantees remain unqualified",
+    "No guest/UART readiness, installation/hardening, isolation, executor recovery or product requirement is completed by these checks"
+  ],
+  "native_controller_loss_qualified": false,
+  "native_readonly_preflight": {
+    "VM_mutations": 0,
+    "inventory": {
+      "bytes": 6400,
+      "path": ".local/validation/offline-guard-preflight-01/inventory.json",
+      "sha256": "31ee7bd6e0c4ff9db2dc1c24e64fc6087796935a3cbafa1229e0018d26411cb6"
+    },
+    "leases_allocated": 0,
+    "locked_files_measured": 9,
+    "receipt": {
+      "bytes": 4183,
+      "path": ".local/validation/offline-guard-preflight-01/receipt.json",
+      "sha256": "75f74d8be8570290571841b7f7a0786f379eefd25fbe7d0c9fb84855eb9d6991"
+    }
+  },
+  "new_VM_boots": 0,
+  "new_actual_VM_stop_commands": 0,
+  "next_check": "Obtain separate exact native approval of the retained inert controller-loss artifact, then run its one-use activation. Human delay creates no live countdown; drift still refuses without renewal/replay.",
+  "revocation_boundary": "Revocation and arming serialize durably. Revocation after arming fences the original Store; it never issues a replacement VM command or accepts stop without independent evidence.",
+  "sources": [
+    {
+      "bytes": 38604,
+      "path": ".local/validation/offline-approval-regression-01/sources/offline_startup.py",
+      "sha256": "5d41d41cdfb8612e847d76e5abb68d8395d16a24d7ec4a97056133dce25176e3",
+      "workspace_source": "research/validation/offline_startup.py"
+    },
+    {
+      "bytes": 6422,
+      "path": ".local/validation/offline-approval-regression-01/sources/__main__.py",
+      "sha256": "d124c78a47f4aa2ef453a510baa50d0f18fe616d1a3b40f42c735ede503eb176",
+      "workspace_source": "research\\validation\\__main__.py"
+    },
+    {
+      "bytes": 6220,
+      "path": ".local/validation/offline-approval-regression-01/sources/backup_records.py",
+      "sha256": "10fef40e816b1b7cd840fac94ed3ac8f1fdf16b4860814d864afbb69816da8c7",
+      "workspace_source": "research\\validation\\backup_records.py"
+    },
+    {
+      "bytes": 21485,
+      "path": ".local/validation/offline-approval-regression-01/sources/boot_preconditions.py",
+      "sha256": "b80bd097eeb2c34266b46432c16f5bdedd4607766c7f6c22f41688f966c35f3d",
+      "workspace_source": "research\\validation\\boot_preconditions.py"
+    },
+    {
+      "bytes": 6047,
+      "path": ".local/validation/offline-approval-regression-01/sources/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba",
+      "workspace_source": "research\\validation\\driver.py"
+    },
+    {
+      "bytes": 10319,
+      "path": ".local/validation/offline-approval-regression-01/sources/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2",
+      "workspace_source": "research\\validation\\fixture.py"
+    },
+    {
+      "bytes": 16580,
+      "path": ".local/validation/offline-approval-regression-01/sources/frontend_process.py",
+      "sha256": "dbc3cdff35d96432bce6e847b31e4e7c5ad25d477fab477b159e1f7057189e2d",
+      "workspace_source": "research\\validation\\frontend_process.py"
+    },
+    {
+      "bytes": 49955,
+      "path": ".local/validation/offline-approval-regression-01/sources/frontend_start.py",
+      "sha256": "53c649b2a4ccd1997a971555f5ed11bb5afcff94fa11cb1c30eb904b0a37db85",
+      "workspace_source": "research\\validation\\frontend_start.py"
+    },
+    {
+      "bytes": 26530,
+      "path": ".local/validation/offline-approval-regression-01/sources/guest_maintenance_control.py",
+      "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391",
+      "workspace_source": "research\\validation\\guest_maintenance_control.py"
+    },
+    {
+      "bytes": 21670,
+      "path": ".local/validation/offline-approval-regression-01/sources/guest_maintenance_probe.py",
+      "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99",
+      "workspace_source": "research\\validation\\guest_maintenance_probe.py"
+    },
+    {
+      "bytes": 10718,
+      "path": ".local/validation/offline-approval-regression-01/sources/guest_transfer_entry.py",
+      "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1",
+      "workspace_source": "research\\validation\\guest_transfer_entry.py"
+    },
+    {
+      "bytes": 13113,
+      "path": ".local/validation/offline-approval-regression-01/sources/http_tools.py",
+      "sha256": "968163ac16f0c1a2ecd8e8d524fcf3d940df22a3ba75573091553aa9cdf63a73",
+      "workspace_source": "research\\validation\\http_tools.py"
+    },
+    {
+      "bytes": 27838,
+      "path": ".local/validation/offline-approval-regression-01/sources/initial_aborted.py",
+      "sha256": "48af5239ecf56d3d5f0a67119c84a2c8fbaf604e68630254231f5ada58fcb222",
+      "workspace_source": "research\\validation\\initial_aborted.py"
+    },
+    {
+      "bytes": 14280,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_config.py",
+      "sha256": "2c4fb51e96f630341c793c9684746864ac561ac02b936fe1d913ebd05dcc9a57",
+      "workspace_source": "research\\validation\\maintenance_config.py"
+    },
+    {
+      "bytes": 4117,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_control.py",
+      "sha256": "796ab5b6440e69f9c27e4459ea75f2f30ff3613176a4faf8f69db1dadb23e08a",
+      "workspace_source": "research\\validation\\maintenance_control.py"
+    },
+    {
+      "bytes": 5282,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_guest.py",
+      "sha256": "09290df891bfd4c093b54ce31d80c2ebb0183e865363dfd917cdb0a0102a9a50",
+      "workspace_source": "research\\validation\\maintenance_guest.py"
+    },
+    {
+      "bytes": 35250,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_host.py",
+      "sha256": "0fac9c031deb3ff6c3bc43e43b962c283115cd3861b5d49dd7bfcfc025978eda",
+      "workspace_source": "research\\validation\\maintenance_host.py"
+    },
+    {
+      "bytes": 11331,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_profile.py",
+      "sha256": "4f05799f0455d315b03091c29259ffa8bdf7ef2697a9a546ba5b41cebdce721d",
+      "workspace_source": "research\\validation\\maintenance_profile.py"
+    },
+    {
+      "bytes": 15471,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9",
+      "workspace_source": "research\\validation\\maintenance_serial.py"
+    },
+    {
+      "bytes": 11221,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+      "workspace_source": "research\\validation\\maintenance_serial_worker.py"
+    },
+    {
+      "bytes": 19990,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_session.py",
+      "sha256": "78b15a869b2023694d312a51719ea47cba0a06e3eb157525bbbf4e2ac84e7fdc",
+      "workspace_source": "research\\validation\\maintenance_session.py"
+    },
+    {
+      "bytes": 14633,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_stop.py",
+      "sha256": "5125a7553465e792997a858bb162f499d729226d91d662ae667ee4dca7248fe6",
+      "workspace_source": "research\\validation\\maintenance_stop.py"
+    },
+    {
+      "bytes": 36517,
+      "path": ".local/validation/offline-approval-regression-01/sources/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122",
+      "workspace_source": "research\\validation\\maintenance_transfer.py"
+    },
+    {
+      "bytes": 14000,
+      "path": ".local/validation/offline-approval-regression-01/sources/native_session.py",
+      "sha256": "b9b365803cad5dd7eb00ada6803b2e9aa4228cd9320bc584cbb70a1133cdfff4",
+      "workspace_source": "research\\validation\\native_session.py"
+    },
+    {
+      "bytes": 25846,
+      "path": ".local/validation/offline-approval-regression-01/sources/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e",
+      "workspace_source": "research\\validation\\offline_repo.py"
+    },
+    {
+      "bytes": 16850,
+      "path": ".local/validation/offline-approval-regression-01/sources/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7",
+      "workspace_source": "research\\validation\\owner_launch.py"
+    },
+    {
+      "bytes": 12297,
+      "path": ".local/validation/offline-approval-regression-01/sources/owner_process.py",
+      "sha256": "4bfbb296bd5081d15caaef338cbaa89cef3f7b768764d55f2de5cc1c1fd76f1b",
+      "workspace_source": "research\\validation\\owner_process.py"
+    },
+    {
+      "bytes": 1736,
+      "path": ".local/validation/offline-approval-regression-01/sources/phase_handoff_review.py",
+      "sha256": "17ab1d677afb24c91da65b3b094693cbbfaff78d8692478fa163ec91564eaa70",
+      "workspace_source": "research\\validation\\phase_handoff_review.py"
+    },
+    {
+      "bytes": 5477,
+      "path": ".local/validation/offline-approval-regression-01/sources/phase_policy.py",
+      "sha256": "82fe2ee9cbc8795078dc8225488324ca542c4646204554d2fa4b765e16bbe56e",
+      "workspace_source": "research\\validation\\phase_policy.py"
+    },
+    {
+      "bytes": 1726,
+      "path": ".local/validation/offline-approval-regression-01/sources/process_proof.py",
+      "sha256": "af51675c2760bb21ada8af8ec2e10ffbd39194857025a52c43495ce10e3265db",
+      "workspace_source": "research\\validation\\process_proof.py"
+    },
+    {
+      "bytes": 12233,
+      "path": ".local/validation/offline-approval-regression-01/sources/recovery_records.py",
+      "sha256": "496beacd8aa0f505b1c867fbd9d1675d79f853511c0cc79550c6737ee31da9e0",
+      "workspace_source": "research\\validation\\recovery_records.py"
+    },
+    {
+      "bytes": 50836,
+      "path": ".local/validation/offline-approval-regression-01/sources/startup_qualification.py",
+      "sha256": "a8d2b339c7bb5a4fdac7d15cdb4a669d2b9def2cb87c4832bfaf7ca7c6cf0c0a",
+      "workspace_source": "research\\validation\\startup_qualification.py"
+    },
+    {
+      "bytes": 18952,
+      "path": ".local/validation/offline-approval-regression-01/sources/stopped_backup.py",
+      "sha256": "20205aefa189ab6891ab95a040db8433467aefefc6a95e62a07cb83170d6a80f",
+      "workspace_source": "research\\validation\\stopped_backup.py"
+    },
+    {
+      "bytes": 16923,
+      "path": ".local/validation/offline-approval-regression-01/sources/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5",
+      "workspace_source": "research\\validation\\store.py"
+    },
+    {
+      "bytes": 3366,
+      "path": ".local/validation/offline-approval-regression-01/sources/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d",
+      "workspace_source": "research\\validation\\supervisor.py"
+    },
+    {
+      "bytes": 10697,
+      "path": ".local/validation/offline-approval-regression-01/sources/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249",
+      "workspace_source": "research\\validation\\transfer_commands.py"
+    },
+    {
+      "bytes": 12755,
+      "path": ".local/validation/offline-approval-regression-01/sources/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f",
+      "workspace_source": "research\\validation\\windows_readonly.py"
+    },
+    {
+      "bytes": 6326,
+      "path": ".local/validation/offline-approval-regression-01/sources/offline_startup_controller.py",
+      "sha256": "2986e5bf1c933881ab0149f864f480f5688574e7d6ba569540a886337ef24b54",
+      "workspace_source": "tests/fixtures/offline_startup_controller.py"
+    },
+    {
+      "bytes": 16607,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_controller_loss.py",
+      "sha256": "8b1104c08306e243f16c8eb7dfc25bce164ae708ed9c95c453173592a2fea970",
+      "workspace_source": "tests/test_controller_loss.py"
+    },
+    {
+      "bytes": 32239,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_offline_startup.py",
+      "sha256": "3c5a9905bdf7fa12759c3a61ab03d95ea307940b9a165213197f1739a012e740",
+      "workspace_source": "tests/test_offline_startup.py"
+    },
+    {
+      "bytes": 2181,
+      "path": ".local/validation/offline-approval-regression-01/sources/frontend_controller.py",
+      "sha256": "8d33115ea97bac2f1d57a6c5cb1433528df73243f2fa3868628d180ca4981daf",
+      "workspace_source": "tests\\fixtures\\frontend_controller.py"
+    },
+    {
+      "bytes": 865,
+      "path": ".local/validation/offline-approval-regression-01/sources/frontend_family.py",
+      "sha256": "a8b54ab4387320842af31e5cbaa8e92a1addac1356d3344ec606d31950e55583",
+      "workspace_source": "tests\\fixtures\\frontend_family.py"
+    },
+    {
+      "bytes": 702,
+      "path": ".local/validation/offline-approval-regression-01/sources/frontend_journal_writer.py",
+      "sha256": "e20c52c99b0a99501c34edf60fd05f1eade2cad39e77a3151febe71284c94ea1",
+      "workspace_source": "tests\\fixtures\\frontend_journal_writer.py"
+    },
+    {
+      "bytes": 11985,
+      "path": ".local/validation/offline-approval-regression-01/sources/frontend_start_controller.py",
+      "sha256": "29f9ba15750a97ba584c8102ebd603431ac6f8b12a61c7d07887f4602a175b9f",
+      "workspace_source": "tests\\fixtures\\frontend_start_controller.py"
+    },
+    {
+      "bytes": 3558,
+      "path": ".local/validation/offline-approval-regression-01/sources/frontend_start_support.py",
+      "sha256": "5a040baf7b8b62592b4c6793e406638b839f21b7ef3c6bf1fb9085eedb40fabf",
+      "workspace_source": "tests\\fixtures\\frontend_start_support.py"
+    },
+    {
+      "bytes": 22783,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_boot_preconditions.py",
+      "sha256": "e4fa7900b7c28fe458c69d686a585f7b873075efb751e62502f00cf694af5a50",
+      "workspace_source": "tests\\test_boot_preconditions.py"
+    },
+    {
+      "bytes": 17505,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_control_policy.py",
+      "sha256": "4c607a6c96c15202f5b40734aab35d7ddf30078b7d56d18bb5968f8e5b2b2152",
+      "workspace_source": "tests\\test_control_policy.py"
+    },
+    {
+      "bytes": 5266,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_engine_metadata.py",
+      "sha256": "47d84a1a4273131d15aa14358fd372d365847e1c98f99b447654cb1398e28d7e",
+      "workspace_source": "tests\\test_engine_metadata.py"
+    },
+    {
+      "bytes": 5657,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_engine_plan.py",
+      "sha256": "0327fc04bc028857a2a16a66c1a12a8572fc2c347797b13a14897fb683bd0922",
+      "workspace_source": "tests\\test_engine_plan.py"
+    },
+    {
+      "bytes": 4734,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_engine_retrieval.py",
+      "sha256": "b1f8236cc5b37390d1880043e69b180614f0617f31f33ae797c7005207ec065d",
+      "workspace_source": "tests\\test_engine_retrieval.py"
+    },
+    {
+      "bytes": 3154,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_fetch_os_updates.py",
+      "sha256": "7176ece39699ce61037926b377e9ce372ce2b53fcbab429e678918be7489c736",
+      "workspace_source": "tests\\test_fetch_os_updates.py"
+    },
+    {
+      "bytes": 14420,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_first_boot.py",
+      "sha256": "cbe5063a9fbf5e8f5f4f0f8cdaeac13787bbea76116f9de2f904b9fc3ace972a",
+      "workspace_source": "tests\\test_first_boot.py"
+    },
+    {
+      "bytes": 13461,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_frontend_journal_contention.py",
+      "sha256": "6fd0a5ade5d631dd1586b5170cd30ec750bf4e8270ae0b0e8aacd881f1b11a7e",
+      "workspace_source": "tests\\test_frontend_journal_contention.py"
+    },
+    {
+      "bytes": 12284,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_frontend_process.py",
+      "sha256": "41eee420de964d83d8e7d900bece458139eeb172cd6fa53d408d2fc8f585df23",
+      "workspace_source": "tests\\test_frontend_process.py"
+    },
+    {
+      "bytes": 38150,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_frontend_start.py",
+      "sha256": "8069fd533115e189e9c15557698b0f5092d789010a1e0e40acdf3ce8fecb4d87",
+      "workspace_source": "tests\\test_frontend_start.py"
+    },
+    {
+      "bytes": 5194,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_gsd_export.py",
+      "sha256": "cf185ed4a215c9d285498a0b9ac3bcaeee7c47f50c8cd87e21c4e249e23d671e",
+      "workspace_source": "tests\\test_gsd_export.py"
+    },
+    {
+      "bytes": 9285,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_gsd_import.py",
+      "sha256": "77e8aa98511f6af91f5fe655e8726e3913c33db9561ad9eb2a069532ef94813f",
+      "workspace_source": "tests\\test_gsd_import.py"
+    },
+    {
+      "bytes": 3394,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_guard_packages.py",
+      "sha256": "8c3c959968765141fc5e6416580ed93cfa3a88d5c814e402fb17e0f34c1d5bd2",
+      "workspace_source": "tests\\test_guard_packages.py"
+    },
+    {
+      "bytes": 5288,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_guard_provisioning.py",
+      "sha256": "222cd31d9b78c19951befd62b0acb6577805c1b59034e615ddd094e507b1b7e4",
+      "workspace_source": "tests\\test_guard_provisioning.py"
+    },
+    {
+      "bytes": 18327,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_guest_control.py",
+      "sha256": "19d36d4349193743f35a028365fe9e1e73d81012ebb80857a10c97a04ae7558b",
+      "workspace_source": "tests\\test_guest_control.py"
+    },
+    {
+      "bytes": 16537,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_guest_maintenance.py",
+      "sha256": "9edb9757478351674655720d9796ab59419e50649f6b0a4a126b70680cff39a7",
+      "workspace_source": "tests\\test_guest_maintenance.py"
+    },
+    {
+      "bytes": 2726,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_image_context.py",
+      "sha256": "83ba2c36c52b960cd53c39bb94210deef978f5abe356a081f7cb4e430d793c37",
+      "workspace_source": "tests\\test_image_context.py"
+    },
+    {
+      "bytes": 28931,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_initial_aborted.py",
+      "sha256": "fa8f222d7ad2782ab7256d69dd5cb9434ff548f4b213b1fa4d6e4104a280439b",
+      "workspace_source": "tests\\test_initial_aborted.py"
+    },
+    {
+      "bytes": 2754,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_maintenance_config.py",
+      "sha256": "7ceeb35343a52381e2fd81f5e1d67c7d6660dff949f0f2cd2f4cb632b3b6ebf3",
+      "workspace_source": "tests\\test_maintenance_config.py"
+    },
+    {
+      "bytes": 27661,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_maintenance_host.py",
+      "sha256": "82ed8f1254d2f8c18e0f1ea6c62be0257815fb61d46fb9c75dbcd83df7657b8b",
+      "workspace_source": "tests\\test_maintenance_host.py"
+    },
+    {
+      "bytes": 8742,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_maintenance_profile.py",
+      "sha256": "e1240a982bcc9ac68aa1cf85ce7f36059b27da190c2650d1c276b11cbcb36072",
+      "workspace_source": "tests\\test_maintenance_profile.py"
+    },
+    {
+      "bytes": 18317,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_maintenance_runner.py",
+      "sha256": "d65218e129f385c07beb436702496856d307d4470048fa937248581e60f04c07",
+      "workspace_source": "tests\\test_maintenance_runner.py"
+    },
+    {
+      "bytes": 20844,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_maintenance_serial.py",
+      "sha256": "a6a65ef884637f3a6463ae6525fc43bd71c1b4823e5aeb6fba848c7a8bdda157",
+      "workspace_source": "tests\\test_maintenance_serial.py"
+    },
+    {
+      "bytes": 21326,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_maintenance_session.py",
+      "sha256": "02d7fa7bd7970644edc16a55bf6653be60dfe1d676455ddd959496bc7f99c073",
+      "workspace_source": "tests\\test_maintenance_session.py"
+    },
+    {
+      "bytes": 18720,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_maintenance_stop.py",
+      "sha256": "948f362582bdd50d0adc11f136b3ffc089585cc7241551ef457b78858d331cac",
+      "workspace_source": "tests\\test_maintenance_stop.py"
+    },
+    {
+      "bytes": 28792,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_maintenance_transfer.py",
+      "sha256": "76cadf1e37f025e73575304063126f8e694308ceeb9a08b0ff93c47cb9fa8992",
+      "workspace_source": "tests\\test_maintenance_transfer.py"
+    },
+    {
+      "bytes": 13392,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_native_session.py",
+      "sha256": "12bacc1b95afb81746c0535b21f9dae5ca0c8af72305edc624488f6bb8cfd4d8",
+      "workspace_source": "tests\\test_native_session.py"
+    },
+    {
+      "bytes": 4544,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_offline_disk.py",
+      "sha256": "03cff5a2f38f2b6c7fec532a4a47fbeb2d2b452f38d39d088f88023219717729",
+      "workspace_source": "tests\\test_offline_disk.py"
+    },
+    {
+      "bytes": 5034,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_offline_repo.py",
+      "sha256": "54f06228c287eabd151b861a96c53657e205809abeace30303116d6d97d42603",
+      "workspace_source": "tests\\test_offline_repo.py"
+    },
+    {
+      "bytes": 5259,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_os_install.py",
+      "sha256": "6d97874a1f6d6c62d98bb9eafd20e07e5ab305a37c8828ec637b1d9be7d1dbb0",
+      "workspace_source": "tests\\test_os_install.py"
+    },
+    {
+      "bytes": 6943,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_os_update_plan.py",
+      "sha256": "f937737fbb15d2d522c3e0f3d1016cdecece51b34c257a401b738e85cdf2b714",
+      "workspace_source": "tests\\test_os_update_plan.py"
+    },
+    {
+      "bytes": 8780,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_owner_journal_contention.py",
+      "sha256": "8234f7e1adece2d3776d45df0871b6fa632ad2222051fcf174621bb12a5d1c83",
+      "workspace_source": "tests\\test_owner_journal_contention.py"
+    },
+    {
+      "bytes": 15172,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_owner_launch.py",
+      "sha256": "43a1532ca96f5dc5f35c9a04a7880cea64b9b36d54868b49d386128baf3027b8",
+      "workspace_source": "tests\\test_owner_launch.py"
+    },
+    {
+      "bytes": 10103,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_phase_ceiling.py",
+      "sha256": "c30fd5a80f303ee39abd7502f0158110ceafd2c01718d2807cb305f0976b1bdb",
+      "workspace_source": "tests\\test_phase_ceiling.py"
+    },
+    {
+      "bytes": 3161,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_phase_handoff_review.py",
+      "sha256": "8c844d2c08bfc2be125e58741ca7f1cb4b91f6cd5ec2edb402366cb9a789cd89",
+      "workspace_source": "tests\\test_phase_handoff_review.py"
+    },
+    {
+      "bytes": 8595,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_phase_policy.py",
+      "sha256": "8aab7937be74fafea909eb33f7b06b094852573ef6557f1a0bd89e9be10a637d",
+      "workspace_source": "tests\\test_phase_policy.py"
+    },
+    {
+      "bytes": 9330,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_recovery_admission.py",
+      "sha256": "9d0f8dad07b3ebe665f6f76a52494d0538ad20fec6c589fe70434906a42db011",
+      "workspace_source": "tests\\test_recovery_admission.py"
+    },
+    {
+      "bytes": 12145,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_recovery_records.py",
+      "sha256": "202afe94a0f877cb6a9125f6521fe50945059d2baf18a6f7145df453f670fd8c",
+      "workspace_source": "tests\\test_recovery_records.py"
+    },
+    {
+      "bytes": 2847,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_resolved_tool_probe.py",
+      "sha256": "50e6e4e2c8d3f30529d54baf43ef6063b6c2c640361efb7abd9536aaf9438909",
+      "workspace_source": "tests\\test_resolved_tool_probe.py"
+    },
+    {
+      "bytes": 3699,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_runtime_artifacts.py",
+      "sha256": "bd681df335b08ef87116b65de9544d6eb7200bf5592415f9bbfec2878a76751f",
+      "workspace_source": "tests\\test_runtime_artifacts.py"
+    },
+    {
+      "bytes": 33405,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_startup_qualification.py",
+      "sha256": "e05fcebb4646351aa7bd486570f10c22ba9d962bfb00207b1a1b45f54d0bbc71",
+      "workspace_source": "tests\\test_startup_qualification.py"
+    },
+    {
+      "bytes": 13027,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_stopped_backup.py",
+      "sha256": "dff5cf16070b3ba48498f67903fb9671ea3a3f34edc5b1c0e3e781fef28b5807",
+      "workspace_source": "tests\\test_stopped_backup.py"
+    },
+    {
+      "bytes": 2291,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_token_fit_probe.py",
+      "sha256": "650e803f57ba75118db714799bb5d462701fb4d1cb2c9e0387691b4f2c990bbd",
+      "workspace_source": "tests\\test_token_fit_probe.py"
+    },
+    {
+      "bytes": 29735,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_validation_harness.py",
+      "sha256": "4c77ac2f73027f3fc867e1c5e1d9b9ab6936a385191c8b193b5f505a11bcffd8",
+      "workspace_source": "tests\\test_validation_harness.py"
+    },
+    {
+      "bytes": 4288,
+      "path": ".local/validation/offline-approval-regression-01/sources/test_wire_input_probe.py",
+      "sha256": "bec2d89379b63713a82f46d3717dfa27d7e3e60ec86893fe48e83a1170aaa702",
+      "workspace_source": "tests\\test_wire_input_probe.py"
+    }
+  ],
+  "status": "inert review and one-use binder implemented and verified; no native activation approved or performed",
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 405946,
+      "path": ".local/validation/offline-approval-regression-01/inventory.json",
+      "sha256": "046de347a54f067138ada7de4837b7ebbfcd2d323bff9a4cccc02368c99360a4"
+    },
+    "log": {
+      "bytes": 104300,
+      "path": ".local/validation/offline-approval-regression-01/unittest.log",
+      "sha256": "33cd8134b049bd5b852c4aa921616b3ef07209ac4e131294e56f81431fbc334e"
+    },
+    "passed": 595,
+    "platform_skips": 13,
+    "summary": {
+      "bytes": 17211,
+      "path": ".local/validation/offline-approval-regression-01/result.json",
+      "sha256": "9831aa1185c4da0e8b5c24cedb846dc730ca084916ca3a2facb0f798c1a1098d"
+    },
+    "tests_run": 608
+  }
+}

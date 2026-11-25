@@ -5,6 +5,7 @@
   "actual_Windows_controller_owner_cases": 7,
   "actual_Windows_original_file_lock_cases": 4,
   "approval": "conversation:2026-11-22-direct-frontend-preparation",
+  "classification": "historical 28-check startup checkpoint; successor adds native observer and bounded owner-first normal finish",
   "format": "mcli1-owner-bound-frontend-preparation-evidence-v1",
   "guest_commands": 0,
   "initial_regression": {
@@ -67,6 +68,7 @@
   "new_tests": 28,
   "next_check": "Prepare and test the fixed bounded native session observer and concrete controller/owner qualification run before requesting native approval.",
   "separate_query_reaped": true,
+  "source_description_note": "Changed historical workspace sources point to retained exact bytes; current owner-contention cohort is separate.",
   "source_reviews": [
     {
       "finding": "sessionPID is valid only when sessionState is Locked or Unlocking; preparation requires Locked. Exact installed-build correspondence remains unknown.",
@@ -97,7 +99,8 @@
     },
     {
       "bytes": 31432,
-      "path": "research/validation/maintenance_host.py",
+      "historical_workspace_path": "research/validation/maintenance_host.py",
+      "path": ".local/validation/preactivation-regression-01/sources/maintenance_host.py",
       "sha256": "b4abff939398a81e628d3de21e9c718f9b7e239a39772a337eb607f17716c583"
     },
     {
@@ -137,7 +140,8 @@
     },
     {
       "bytes": 11948,
-      "path": "research/validation/owner_process.py",
+      "historical_workspace_path": "research/validation/owner_process.py",
+      "path": ".local/validation/preactivation-regression-01/sources/owner_process.py",
       "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
     },
     {
@@ -147,7 +151,8 @@
     },
     {
       "bytes": 20285,
-      "path": "research/validation/boot_preconditions.py",
+      "historical_workspace_path": "research/validation/boot_preconditions.py",
+      "path": ".local/validation/preactivation-regression-01/sources/boot_preconditions.py",
       "sha256": "73db7d68efea800bc41ff9998be67b3cfb72a7be49adeb28de51cf20a227bb3e"
     },
     {
@@ -167,17 +172,20 @@
     },
     {
       "bytes": 26924,
-      "path": "research/validation/frontend_start.py",
+      "historical_workspace_path": "research/validation/frontend_start.py",
+      "path": ".local/validation/startup-regression-02/sources/frontend_start.py",
       "sha256": "c2cdef6faba417a71dae4f43a14f0b0d1dd00e09c1ed3270cae457f063dbb5d9"
     },
     {
       "bytes": 11386,
-      "path": "research/validation/frontend_process.py",
+      "historical_workspace_path": "research/validation/frontend_process.py",
+      "path": ".local/validation/preactivation-regression-01/sources/frontend_process.py",
       "sha256": "c6437355d342a48381b466296db229c6025ff9474218b8fb093679d8a9d21925"
     },
     {
       "bytes": 21707,
-      "path": "tests/test_frontend_start.py",
+      "historical_workspace_path": "tests/test_frontend_start.py",
+      "path": ".local/validation/startup-regression-02/sources/test_frontend_start.py",
       "sha256": "04c12f9ae6263ad9edb9a56e528ce7342799370b24f9112a4b661df34b0bafb1"
     },
     {
@@ -187,7 +195,8 @@
     },
     {
       "bytes": 4864,
-      "path": "tests/fixtures/frontend_start_controller.py",
+      "historical_workspace_path": "tests/fixtures/frontend_start_controller.py",
+      "path": ".local/validation/startup-regression-02/sources/frontend_start_controller.py",
       "sha256": "693e532833315254fc603560ce6250da5fdb0cff1b9aa04fc2b26e13b8a6b26e"
     }
   ],
@@ -197,6 +206,7 @@
     "sha256": "bb4eced4dd6fda41487730073e211dadc6f69d11d4dd216e82a2593754daf914"
   },
   "status": "owner-bound admission/resume/watchdog/runtime join prepared; native observer and qualification open",
+  "successor_evidence": "research/validation/native-qualification-evidence.json",
   "verification": {
     "errors": 0,
     "failures": 0,

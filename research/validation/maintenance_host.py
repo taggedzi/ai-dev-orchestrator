@@ -65,7 +65,28 @@ def machine_fields(raw):
             and re.fullmatch(r"[A-Za-z0-9_-]+", key),
             "duplicate or malformed VM inventory key",
         )
-        if value.startswith('"'):
+        if key == "VideoMode":
+            # VBoxManageInfo.cpp emits a composite display value, not JSON.
+            mode = re.fullmatch(
+                r'"([0-9]{1,10}),([0-9]{1,10}),([0-9]{1,10})"@(-?[0-9]{1,10}),(-?[0-9]{1,10}) ([0-9]{1,10})',
+                value,
+            )
+            numbers = tuple(map(int, mode.groups())) if mode else ()
+            require(
+                mode is not None
+                and all(n <= 2**32 - 1 for n in numbers[:3])
+                and all(-(2**31) <= n < 2**31 for n in numbers[3:5])
+                and numbers[5] < 2**31,
+                "malformed VM display diagnostic",
+            )
+        elif key == "VRDEClients" and value.startswith("="):
+            # Its SHOW_ULONG_VALUE call includes '=' in the key as well.
+            require(
+                re.fullmatch(r"=[0-9]{1,10}", value) and int(value[1:]) <= 2**32 - 1,
+                "malformed VM VRDE client diagnostic",
+            )
+            value = value[1:]
+        elif value.startswith('"'):
             if re.fullmatch(r"uartmode\d+", key):
                 # VBoxManageInfo.cpp uses raw printf here, not its escaped-string helper.
                 require(value.endswith('"') and '"' not in value[1:-1], "bad UART mode")
@@ -308,27 +329,81 @@ class RegisteredOwner:
 
     def poll(self, stopper=None):
         require(self.binding is not None, "owner loop already terminated")
+        lease = object_bytes(self.binding)["lease"]
+        wall, mono = time.time_ns(), time.monotonic_ns()
         try:
-            require(
-                canonical(self.supervisor.profile) == self.profile,
-                "original owner profile changed",
-            )
-            with self.store.transaction():
-                row = self.store.db.execute(
-                    "SELECT * FROM maintenance_owner"
-                ).fetchone()
-                require(
-                    row["binding"] == self.binding and row["state"] == "watching",
-                    "owner binding changed",
-                )
-                self.store.db.execute(
-                    "UPDATE maintenance_owner SET observed_mono_ns=?, sequence=sequence+1",
-                    (time.monotonic_ns(),),
-                )
-            stopped = self.supervisor.poll(stopper=stopper)
+            while True:
+                try:
+                    return self._poll_once(stopper)
+                except sqlite3.OperationalError as error:
+                    if not self._retry_armed_busy(error, lease, wall, mono):
+                        raise
+                    time.sleep(0.01)
+                    if not self._retry_armed_busy(error, lease, wall, mono):
+                        raise  # Sleep/scheduling must not admit a retry after expiry.
         except Exception:
             self.binding = None  # Never retry a possibly sent native stop.
             raise
+
+    def _retry_armed_busy(self, error, original, began_wall, began_mono):
+        """Retry only a rolled-back BUSY operation before any stop intent.
+
+        This tolerates short heartbeat/journal contention, not uncertain delivery.
+        The one-second wait is also bounded by both original expiry clocks.
+        """
+        code = getattr(error, "sqlite_errorcode", None)
+        wall, mono = time.time_ns(), time.monotonic_ns()
+        if (
+            type(code) is not int
+            or code & 0xFF != sqlite3.SQLITE_BUSY
+            or self.store.db.in_transaction
+            or not original["armed_ns"] <= wall < original["expires_ns"]
+            or not original["armed_mono_ns"] <= mono < original["expires_mono_ns"]
+            or not began_wall <= wall < began_wall + 10**9
+            or not began_mono <= mono < began_mono + 10**9
+        ):
+            return False
+        try:
+            lease = self.store.db.execute("SELECT * FROM lease").fetchone()
+            registered = self.store.db.execute(
+                "SELECT * FROM maintenance_owner"
+            ).fetchone()
+            if not (
+                lease is not None
+                and lease["state"] == "armed"
+                and {k: lease[k] for k in OWNER_KEYS} == original
+                and registered is not None
+                and registered["state"] == "watching"
+                and registered["binding"] == self.binding
+            ):
+                return False
+            exists = self.store.db.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name='native_owner_stop'"
+            ).fetchone()
+            return (
+                not exists
+                or self.store.db.execute("SELECT 1 FROM native_owner_stop").fetchone()
+                is None
+            )
+        except sqlite3.Error:
+            return False  # An unreadable state cannot authorize another attempt.
+
+    def _poll_once(self, stopper):
+        require(
+            canonical(self.supervisor.profile) == self.profile,
+            "original owner profile changed",
+        )
+        with self.store.transaction():
+            row = self.store.db.execute("SELECT * FROM maintenance_owner").fetchone()
+            require(
+                row["binding"] == self.binding and row["state"] == "watching",
+                "owner binding changed",
+            )
+            self.store.db.execute(
+                "UPDATE maintenance_owner SET observed_mono_ns=?, sequence=sequence+1",
+                (time.monotonic_ns(),),
+            )
+        stopped = self.supervisor.poll(stopper=stopper)
         if stopped:
             with self.store.transaction():
                 self.store.db.execute(
@@ -338,25 +413,35 @@ class RegisteredOwner:
         return stopped
 
 
-def receipt_pins(grant, backup, preboot, preservation):
+def receipt_pins(grant, backup, preboot, preservation, *, recovery=None):
     """Validate proposed trusted receipts; these are not fresh disk measurements."""
     b, p, s = [object_bytes(raw) for raw in (backup, preboot, preservation)]
-    if grant["backup"].get("format") == backup_records.BINDING_FORMAT:
+    if recovery is not None:
+        backup_records.checked_receipt(b, digest(backup), grant, recovery=recovery)
+    elif grant["backup"].get("format") == backup_records.BINDING_FORMAT:
         backup_records.checked_receipt(b, digest(backup), grant)
     else:
         _legacy_backup_receipt(grant, backup, b)
+    expected_preboot = {
+        "format": "mcli1-preboot-disk-v1",
+        "run_nonce": grant["run_nonce"],
+        "target_vm_uuid": grant["target"]["vm_uuid"],
+        "disk_uuid": grant["target"]["disk_uuid"],
+        "disk_sha256": grant["disk_evidence"]["pre_boot_disk_sha256"],
+        "state": "poweroff",
+        "backup_receipt_sha256": digest(backup),
+    }
+    if recovery is not None:
+        expected_preboot.update(
+            format="mcli1-recovery-preboot-disk-v1",
+            state="aborted",
+            recovery_context_sha256=backup_records.recovery_model.context_sha256(
+                recovery
+            ),
+        )
     require(
         digest(preboot) == grant["disk_evidence"]["pre_boot_receipt_sha256"]
-        and p
-        == {
-            "format": "mcli1-preboot-disk-v1",
-            "run_nonce": grant["run_nonce"],
-            "target_vm_uuid": grant["target"]["vm_uuid"],
-            "disk_uuid": grant["target"]["disk_uuid"],
-            "disk_sha256": grant["disk_evidence"]["pre_boot_disk_sha256"],
-            "state": "poweroff",
-            "backup_receipt_sha256": digest(backup),
-        },
+        and p == expected_preboot,
         "preboot receipt bytes or facts differ",
     )
     require(

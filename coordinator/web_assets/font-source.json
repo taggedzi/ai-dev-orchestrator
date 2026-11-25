@@ -1,0 +1,20 @@
+{
+  "commit": "b31870aff700ab7a1d74fa0c6887d95beb9e0037",
+  "files": [
+    {
+      "bytes": 164700,
+      "path": "coordinator/web_assets/manrope.ttf",
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/b31870aff700ab7a1d74fa0c6887d95beb9e0037/ofl/manrope/Manrope%5Bwght%5D.ttf"
+    },
+    {
+      "bytes": 4387,
+      "path": "coordinator/web_assets/manrope-OFL.txt",
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+      "source_url": "https://raw.githubusercontent.com/google/fonts/b31870aff700ab7a1d74fa0c6887d95beb9e0037/ofl/manrope/OFL.txt"
+    }
+  ],
+  "host_font_installation": false,
+  "license": "SIL OFL 1.1; original license file retained",
+  "repository": "google/fonts"
+}
