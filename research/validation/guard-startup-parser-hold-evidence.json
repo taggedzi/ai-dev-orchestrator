@@ -1,0 +1,211 @@
+{
+  "NIC_activations": 0,
+  "VM_boots": "one startup attempt reached Starting in the native log; no running session qualified",
+  "accepted_running_samples": 0,
+  "approval": "conversation:call_0281311086ca4946ad6877ea3b2aa166:Approve-this-exact-guard-boot-stop-run",
+  "files": {
+    "both_disks_unchanged": true,
+    "executor_configuration_and_nvram_unchanged": true,
+    "guard_configuration_metadata_after": {
+      "aborted": "true",
+      "lastStateChange": "2026-11-23T06:44:17Z"
+    },
+    "guard_configuration_metadata_before": {
+      "aborted": null,
+      "lastStateChange": "2026-11-22T23:20:26Z"
+    },
+    "guard_configuration_payload_unchanged_beyond_metadata": true,
+    "guard_nvram_absent": true,
+    "measurement": {
+      "bytes": 2607,
+      "path": ".local/validation/guard-startup-review-04/postfiles/receipt.json",
+      "sha256": "ba4517e2780910ef343631015eb5b6e42e6da616b5c2d76ba3724aaf3e723ed4"
+    }
+  },
+  "format": "mcli1-third-native-frontend-parser-hold-v1",
+  "guest_commands": 0,
+  "independent_process_inspection": {
+    "bytes": 2618,
+    "path": ".local/validation/guard-startup-review-04/independent-startup-inspection.json",
+    "sha256": "080776d85f3887113279934021b362596a3cb617d29775999adacf86a3bd3f2c"
+  },
+  "native_frontends_created_and_resumed": 1,
+  "native_settlement_qualified": false,
+  "next_check": "Verify the parser/output-retention repair and review proposed initial-Aborted recovery preparation in decision 0005. Current poweroff-only admission stays closed; this review/lease/stop cannot be replayed.",
+  "original_stop": {
+    "accepted": false,
+    "attempts": 1,
+    "exit": 1,
+    "inventory": {
+      "bytes": 864,
+      "path": ".local/validation/owner-stops/cbfdf9cc77d54bef8edfe87d2e460161/inventory.json",
+      "sha256": "9e70298866173c523ce7a72fe6b1a4f880a4e9cf52c140f258b2a757a63b8473"
+    },
+    "job_active_processes": 0,
+    "ledger_state": "possible-send",
+    "stderr": "Machine is not currently running"
+  },
+  "package_installs": 0,
+  "parser": {
+    "after_offline_replay": {
+      "bytes": 1320,
+      "path": ".local/validation/guard-startup-review-04/parser-replay-after.json",
+      "sha256": "dea74817d1a7351d2bceb5f8dc3db295c75fa8a6414acef3629da8a910068b43"
+    },
+    "before": {
+      "bytes": 708,
+      "path": ".local/validation/guard-startup-review-04/parser-failure-reproduction.json",
+      "sha256": "06ab4dd2944e0e87ebd9b92dd3f43805f9cf1113f7b92332a29be9a4cff6bc2a"
+    },
+    "native_input_fields": [
+      "VideoMode=\"0,0,0\"@0,0 1",
+      "VRDEClients==0"
+    ],
+    "upstream": {
+      "exact_installed_source_correspondence": "unknown",
+      "header_date": "2026-06-15",
+      "header_revision": "114362",
+      "url": "https://raw.githubusercontent.com/VirtualBox/virtualbox/main/src/VBox/Frontends/VBoxManage/VBoxManageInfo.cpp"
+    }
+  },
+  "posthold": {
+    "executor_inventory": {
+      "bytes": 1198,
+      "path": ".local/validation/executor-native-posthold-04/inventory.json",
+      "sha256": "13466e5f33c574e4bad21b2b302d53fe205bb80032edb9dde6f1d4eaf8f4b805"
+    },
+    "executor_state": "poweroff",
+    "failed_old_profile_preflight_inventory": {
+      "bytes": 427,
+      "path": ".local/validation/guard-startup-posthold-04/inventory.json",
+      "sha256": "08e4875a01e1d5691cdf02b741571937a3c4a9dbc3b22244cbc448ae85674218"
+    },
+    "guard_inventory": {
+      "bytes": 990,
+      "path": ".local/validation/guard-native-posthold-04/inventory.json",
+      "sha256": "5a0cdf994994397dac8b60bebea73901ff7f98024a44f781941d7bb2a1d7da11"
+    },
+    "guard_session": "Unlocked, PID zero",
+    "guard_state": "aborted"
+  },
+  "restores": 0,
+  "review_inventory": {
+    "bytes": 23198,
+    "path": ".local/validation/guard-startup-review-04/inventory.json",
+    "sha256": "72746787764769742e66c303ee3e78cd897d3c750b57f0d111d50037dd754593"
+  },
+  "review_sha256": "98fa65d7365578352207992992a1d25ab8cf37dbf918d17e5f75aefd5c53ae6e",
+  "sources": [
+    {
+      "bytes": 3809,
+      "path": ".local/validation/startup-progress-regression-01/sources/backup_records.py",
+      "sha256": "633902a7db727cfd1b0086b354816a6dbd79e3e14c967dceeca9f55a91adc521"
+    },
+    {
+      "bytes": 20426,
+      "path": ".local/validation/startup-progress-regression-01/sources/boot_preconditions.py",
+      "sha256": "fe403017a39518b44064ca9154d9aa58ed28e2a277f4e96832e47eee48dc046d"
+    },
+    {
+      "bytes": 6047,
+      "path": ".local/validation/startup-progress-regression-01/sources/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 10319,
+      "path": ".local/validation/startup-progress-regression-01/sources/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 11632,
+      "path": ".local/validation/startup-progress-regression-01/sources/frontend_process.py",
+      "sha256": "f81bc341c528dc0cf2039c7df9a2447c78f3880121bedb82a65a295bdced0ce8"
+    },
+    {
+      "bytes": 36773,
+      "path": ".local/validation/startup-progress-regression-01/sources/frontend_start.py",
+      "sha256": "414591cf1329c1ced4a0c4d55ea89ef5a8803eaab6aa55f189c72cac17dcdc8c"
+    },
+    {
+      "bytes": 33854,
+      "path": ".local/validation/startup-progress-regression-01/sources/maintenance_host.py",
+      "sha256": "ebd01b1c779bbb1cd286b5e31c767592e8c2b03065b3dc732db2b3f92a847052"
+    },
+    {
+      "bytes": 15471,
+      "path": ".local/validation/startup-progress-regression-01/sources/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": ".local/validation/startup-progress-regression-01/sources/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 14602,
+      "path": ".local/validation/startup-progress-regression-01/sources/maintenance_stop.py",
+      "sha256": "f947ae1c1558d150db556a8437a01de2934938fa38e4478ca5da6264c1882faf"
+    },
+    {
+      "bytes": 36517,
+      "path": ".local/validation/startup-progress-regression-01/sources/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122"
+    },
+    {
+      "bytes": 12602,
+      "path": ".local/validation/startup-progress-regression-01/sources/native_session.py",
+      "sha256": "f7d036eb6df2fc27a06a5f98b4faceddc42d284d4e5958c2f9aa8ac6a4ed661b"
+    },
+    {
+      "bytes": 25846,
+      "path": ".local/validation/startup-progress-regression-01/sources/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    {
+      "bytes": 16850,
+      "path": ".local/validation/startup-progress-regression-01/sources/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 12297,
+      "path": ".local/validation/startup-progress-regression-01/sources/owner_process.py",
+      "sha256": "4bfbb296bd5081d15caaef338cbaa89cef3f7b768764d55f2de5cc1c1fd76f1b"
+    },
+    {
+      "bytes": 33711,
+      "path": ".local/validation/startup-progress-regression-01/sources/startup_qualification.py",
+      "sha256": "2feaa4b52aeac1137ba3dcfcefaaa081bb5f99f8e4d1cbc8183cd93055984c7e"
+    },
+    {
+      "bytes": 17502,
+      "path": ".local/validation/startup-progress-regression-01/sources/stopped_backup.py",
+      "sha256": "6b363daf2ed5a88c96609bf1fd8d7633924944a40868a7ab1dc8a077aa0d3f0f"
+    },
+    {
+      "bytes": 16923,
+      "path": ".local/validation/startup-progress-regression-01/sources/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 3366,
+      "path": ".local/validation/startup-progress-regression-01/sources/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 10697,
+      "path": ".local/validation/startup-progress-regression-01/sources/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 12755,
+      "path": ".local/validation/startup-progress-regression-01/sources/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    }
+  ],
+  "status": "native startup contained after retained CLI diagnostic parsing failure; guard aborted/unlocked",
+  "timing": {
+    "note": "The long interval includes stopped-file hashing and local bookkeeping. It does not isolate cache, storage or scheduling causes, change the original lease or establish worst-case I/O bounds.",
+    "posthold_file_measurement_ns": 3056803400,
+    "preboot_interval_enclosing_disk_hashes_ns": 266968007700
+  }
+}

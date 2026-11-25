@@ -1,0 +1,136 @@
+{
+  "Git_commits_or_pushes": 0,
+  "approval": {
+    "bytes": 2188,
+    "path": "docs/decisions/0007-0008-approval.json",
+    "sha256": "7658ea95ba1b0105afafa01afa7154f68f02f88375c752360fe4a82717fe4893"
+  },
+  "branch": "research/m1-11-executor-recovery",
+  "classification": "Verified document/approval/source checkpoint; no product implementation or new experiment",
+  "controlled_startup_check": {
+    "bytes": 28323,
+    "path": "research/validation/startup-entry-lock-evidence.json",
+    "sha256": "1e381000220979fa6661de415863bfee603f74d128fb4aded178846727104ece"
+  },
+  "current_documents": [
+    {
+      "bytes": 1673,
+      "path": "AGENTS.md",
+      "sha256": "b19cdc51adc75a3a09569c86019cc887db513d55469b7e81b16ecdae9abc9c15"
+    },
+    {
+      "bytes": 5514,
+      "path": "README.md",
+      "sha256": "a7d4c8ab415f9a705103025299e356cc6d6369d75352a594da566948832aaf41"
+    },
+    {
+      "bytes": 15094,
+      "path": "docs/HANDOFF.md",
+      "sha256": "7da9a2118bd3eb41f47d7e841383d0ef0d7efd3fb84a75849124f1ee47826786"
+    },
+    {
+      "bytes": 74345,
+      "path": "docs/status.md",
+      "sha256": "f88c0f25cf8497364c802d2af4e83742b9da3f6bcfef3ab3d7f7696908de05d8"
+    },
+    {
+      "bytes": 14352,
+      "path": "docs/completion-audit.md",
+      "sha256": "11ea1a4d8db591319494dd13cc1293b3d468ded916031bfe6dc4870f37d7b983"
+    },
+    {
+      "bytes": 7798,
+      "path": "docs/product-delivery-plan.md",
+      "sha256": "91824e645e1e7347e3b010f394fa24e68d8440bd0a292233ff162cc4b07579fa"
+    },
+    {
+      "bytes": 6998,
+      "path": "docs/developer-experience-walkthrough.md",
+      "sha256": "d0904a63651d91a7ce25df107e3dc2a2ea6692a8c0693f6115b5e326ee097ba4"
+    },
+    {
+      "bytes": 8063,
+      "path": "docs/decisions/0007-held-guard-successor.md",
+      "sha256": "624a5025b09e6da1497c3fd767b2141a47ced8cc41b99d17ae8429e724fbeec6"
+    },
+    {
+      "bytes": 8856,
+      "path": "docs/decisions/0008-product-implementation-boundary.md",
+      "sha256": "794b92c8a020a5d8e02e5a4b95892df175ad9a9e40b0639124a39837f11e398d"
+    },
+    {
+      "bytes": 2188,
+      "path": "docs/decisions/0007-0008-approval.json",
+      "sha256": "7658ea95ba1b0105afafa01afa7154f68f02f88375c752360fe4a82717fe4893"
+    },
+    {
+      "bytes": 30598,
+      "path": "research/validation/README.md",
+      "sha256": "09c395ddee4d59316d634c1a4fdfbf693295b9c79274befc48feafa4813755b9"
+    }
+  ],
+  "date": "2026-11-24",
+  "dependency_installs": 0,
+  "format": "orchestrator-agent-handoff-v1",
+  "full_product_complete": false,
+  "goal": "Continue ai-dev-orchestrator toward verified completion of the full vision and requirements R1-R9, following the approved product delivery plan and Decisions 0007/0008. At every stopping point leave a verified, self-contained handoff that another agent can use: current status, approvals and limits, changed files, evidence and known failures, live process/session handles, and the next one or two implementation steps with resume commands. Preserve existing work and historical evidence. Do not declare completion without requirement-by-requirement proof. Start by reading docs/HANDOFF.md and implementing P1's durable domain/CLI; product implementation is already approved, while dependent native actions and installations retain their separate gates.",
+  "goal_tool": {
+    "false_completion_used": false,
+    "observed_error": "cannot create a new goal because this thread has an unfinished goal; complete the existing goal first",
+    "old_approval_blocker_resolved": true,
+    "old_status": "blocked",
+    "restart_requested": true,
+    "restart_succeeded": false
+  },
+  "head": "e609dbce6af8f3f845ea8226bf2648fbe245197c",
+  "historical_document_resolution": {
+    "bytes": 1796,
+    "path": ".local/validation/handoff-2026-11-24-01/historical-document-resolutions.json",
+    "sha256": "6358154a27a1b3ca09bf55c2b42cde1ff31b173b727d129717f1e76b28da89cb"
+  },
+  "historical_product_proposal": {
+    "bytes": 4122,
+    "path": "research/validation/product-progression-evidence.json",
+    "sha256": "b889706682691805b6ff8a96dc34f133befc016934671f3012b15fe36916a007"
+  },
+  "limits": [
+    "Full R1-R9/product acceptance remains incomplete",
+    "No product or Decision 0007 preparation code exists yet",
+    "Native transfer/boot/changes, installations, provider-data/paid experiments, remote writes/publication remain separate",
+    "Dirty/untracked files and ignored local artifacts must accompany transfer; HEAD alone is insufficient"
+  ],
+  "live_task_handles": [],
+  "native_actions": 0,
+  "native_outcome": {
+    "bytes": 31161,
+    "path": "research/validation/guard-controller-loss-evidence.json",
+    "sha256": "4c58ee4f5ea9bb2cea0afd31bd347217238dbf954dac3183ebe5b129d407871d"
+  },
+  "next_actions": [
+    "Implement P1 durable domain/SQLite/CLI under coordinator using existing patched Python",
+    "Verify scratch-store approval/dependency/concurrency/fencing/restart behavior and update handoff"
+  ],
+  "product_source_files": {
+    "coordinator": [],
+    "integrations": []
+  },
+  "provider_calls": 0,
+  "real_held_journals_unchanged": true,
+  "runtime_candidate": {
+    "bytes": 37587,
+    "path": "research/validation/patched-runtime-evidence.json",
+    "sha256": "b851eb2edf6a286c736707be4a6a06d28cecd3147f689ff47d33454e222afb4c"
+  },
+  "source_snapshot": {
+    "bytes": 14731,
+    "path": ".local/validation/startup-entry-lock-check-02/result.json",
+    "sha256": "f379b0860aab34e5b56ef45f6fe1d28e541e8ccbbe2070a2cc0e06da5a41bc65"
+  },
+  "terminal_handles": {
+    "64990": 0,
+    "66588": 1,
+    "70775": 1,
+    "95869": 0
+  },
+  "verification_output": ".local/validation/handoff-2026-11-24-01/verification.json"
+}

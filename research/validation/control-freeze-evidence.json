@@ -1,0 +1,46 @@
+{
+  "bundle": {
+    "bundle": ".local/validation/control-review-bundle-07",
+    "files": 269,
+    "manifest_sha256": "c63bc4edafcbd226dc209c938f94b4506c5034bcabab575070a8be78b1d0a32d",
+    "native_schema_scope": "Only action/request model schemas observed; resolved Chat schema field stays null.",
+    "profile_correction": "Prior draft 06 used an extra runtime_image_sha256 key while required image_sha256 was unset. Draft 07 fills the required field and preserves the prior unapproved draft unchanged.",
+    "profile_path": ".local/validation/deployment-control-07.json",
+    "profile_sha256": "5604b9526c8f61f550cb1486c98780e0a3734e2928713f347b66c12a24878f92",
+    "status": "prepared-not-approved"
+  },
+  "classification": "Frozen control-admission/schema preparation; deployment and final runtime qualification unapproved",
+  "next_check": "Prepare exact guard VM clone/provisioning and network-policy inputs; seek separate approval before creating or modifying VMs.",
+  "profile": {
+    "approval": null,
+    "chat_transcript_sha256": null,
+    "gate_evidence": {
+      "isolation": null,
+      "route_and_metering": null,
+      "stop_reap": null
+    },
+    "guard_vm_uuid": null,
+    "image_sha256": "4859acc886856d990bef0215be182999bf6a7021db54ba06db30888ca01caf66",
+    "network_policy_sha256": null,
+    "status": "not-approved",
+    "tool_schema_sha256": null,
+    "toolchain_sha256": "89da4f442adfd5cc89517c05efdf946cd8c637f77dc4cb7abe4e02a3a71366dc"
+  },
+  "schema_version": 1,
+  "self_reference_policy": "This external receipt is deliberately excluded from the bundle source allowlist.",
+  "topology_decision": {
+    "path": "docs/decisions/0001-validation-network-boundary.md",
+    "sha256": "06e6b7c282e43d9c41876ec8ceef7981e275fdb55ccd449b422719252ab38703",
+    "status": "guard VM selected for preparation only"
+  },
+  "verification": {
+    "changed_files_credential_scan": "pass",
+    "elapsed_seconds": 24.224,
+    "evidence": "Observed command result: python -B -m unittest discover -s tests -p test_*.py -q, working copy .local/validation/control-harness-check-07",
+    "frozen_inventory": "unchanged",
+    "packaged_harness_skipped": 1,
+    "packaged_harness_tests_run": 87,
+    "result": "pass",
+    "source_and_raw_hashes": "pass"
+  }
+}

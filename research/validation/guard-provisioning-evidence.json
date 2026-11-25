@@ -1,0 +1,56 @@
+{
+  "approval": "conversation:2026-11-22-disconnected-guard-creation",
+  "booted": false,
+  "command_logging_note": "PowerShell emitted a depth-6 JSON diagnostic warning for nested native progress objects; command arguments/exit codes and final postconditions are retained. Independent read-only queries/full hashes passed separately.",
+  "creation_inventory": {
+    "bytes": 573,
+    "path": ".local/validation/guard-provision-01/inventory.json",
+    "sha256": "24a2d0a5539abab80182363a959a1478be18d6842f001d3d98be7fa5241fc4d5"
+  },
+  "disk_hashes_rechecked": {
+    "guard": {
+      "bytes": 2625634304,
+      "sha256": "a8a6024499644999738f089546096e93174a336c003f2d1ae841214c2fe22c43"
+    },
+    "source": {
+      "bytes": 2625634304,
+      "sha256": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09"
+    }
+  },
+  "format": "mcli1-guard-provisioning-evidence-v1",
+  "guard_nvram_file": "absent before first boot",
+  "guard_sata_ports": "1",
+  "maintenance_adapter_required_sata_ports": "4",
+  "network_enabled": false,
+  "next_check": "Prepare exact stopped configuration/backup and startup settlement bindings; guard readiness, inherited machine identity/bootstrap artifacts, installation/hardening and isolation remain open.",
+  "observation_inventory": {
+    "bytes": 1182,
+    "path": ".local/validation/guard-provision-observe-01/inventory.json",
+    "sha256": "b16edddb7cf8c2060fb8cb529d1ca7b2cccc0f4de4fffd893b4d502dbb28cdef"
+  },
+  "packages_installed": false,
+  "plan": {
+    "bytes": 1725,
+    "path": "research/validation/guard-provisioning-plan.json",
+    "sha256": "d9b76875fa1892d015f109fe15f2584620d01d2f729451848221805713dcba85"
+  },
+  "result": {
+    "approval": "conversation:2026-11-22-disconnected-guard-creation",
+    "disk_uuid": "a8f47315-d330-4b28-bbb0-6a721b4c6251",
+    "guard_disk_sha256": "a8a6024499644999738f089546096e93174a336c003f2d1ae841214c2fe22c43",
+    "network": "eight NICs disabled",
+    "plan_sha256": "d9b76875fa1892d015f109fe15f2584620d01d2f729451848221805713dcba85",
+    "qualified": false,
+    "source_disk_sha256": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09",
+    "source_unchanged": true,
+    "state": "poweroff",
+    "utc": "2026-11-22T23:20:49.9076663Z",
+    "vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+  },
+  "script": {
+    "bytes": 10156,
+    "path": "research/validation/New-GuardVm.ps1",
+    "sha256": "95d259011991450a60c757b8338ab2dc5a739a74ee44858f407a139324bfd296"
+  },
+  "status": "created stopped and disconnected; independently reobserved"
+}

@@ -1,0 +1,175 @@
+{
+  "catalog": {
+    "path": "research/validation/runtime-inputs.json",
+    "sha256": "9d564fe32a459224da2b8d9e51c89964e5a7fd80d91c8e564aa0ea1a8f6a9881"
+  },
+  "classification": "Source review and measured offline metadata export/selection, not an installed or qualified runtime",
+  "files": {
+    "Dockerfile.upstream": {
+      "bytes": 39168,
+      "sha256": "fcd00ec881f0cc1ea557aebc3eaa62188fae74b4521a94bc34c182c337f180e8"
+    },
+    "agent-server.__main__.py": {
+      "bytes": 12407,
+      "sha256": "1663cb43390f410721857939349b9f9ef58c3ac467a46a0ae4caffb9ee597120"
+    },
+    "agent-server.config.py": {
+      "bytes": 26035,
+      "sha256": "0b064821b213e6da12a0e8e81bb7bee614bd072b960ccd9c5c377b3d6249caaf"
+    },
+    "agent-server.pyproject.toml": {
+      "bytes": 1713,
+      "sha256": "1003a37357f437234e5b5d787ef9d870281e358b20e44dc506aa06973ffda06a"
+    },
+    "artifact-selection.json": {
+      "bytes": 123917,
+      "sha256": "2b87ff69d4ae0424ccd491c626a7673533a1366752df88dca7fa1fd83f1874e2"
+    },
+    "audit_metadata.py": {
+      "bytes": 4459,
+      "sha256": "1bdf905b5ea9fe90fc05cec7e297ccddafab0fbfc20aab7c42a13e0cea80b386"
+    },
+    "git-sha256sums.asc": {
+      "bytes": 195818,
+      "sha256": "c5c22f0619d05131352a6a58038c0cb96911b16695ae897c68443f310782424b"
+    },
+    "metadata-audit.json": {
+      "bytes": 128918,
+      "sha256": "e5caebfa00a48964e6f85c979403af5a3c488ada29c4adbf215f839c10a98fa0"
+    },
+    "node-SHASUMS256.txt": {
+      "bytes": 3777,
+      "sha256": "e1f5ad5e2a5654721e7b89d84d27f406e582c46ca0b5cde304c5dcdd7bab8b31"
+    },
+    "pyproject.upstream.toml": {
+      "bytes": 4674,
+      "sha256": "a9fd07dc4df8f5c5316354c6f1ed312ced1230dfcf77a7f7b706efb92c95a610"
+    },
+    "sdk.pyproject.toml": {
+      "bytes": 1765,
+      "sha256": "73e74177393d556836aa133c1e19ab784787623197a5ab91a9024febfd9c91a1"
+    },
+    "server-requirements.txt": {
+      "bytes": 256977,
+      "sha256": "e16b99d9ba9ef36ec673dc38a03fee11cfb29d0d3a04669481e6fce21cecf32e"
+    },
+    "tools.pyproject.toml": {
+      "bytes": 1199,
+      "sha256": "90ffa63f4f3afaaf8000adaff233c6b3dcef9efc26dac91359d7e70437c74e17"
+    },
+    "uv-export-receipt.json": {
+      "bytes": 1676,
+      "sha256": "2b365f8be36604cc912b228f2a25f3738808e3f5d46287bfad42264848911498"
+    },
+    "uv-export.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "uv-export.stdout": {
+      "bytes": 256977,
+      "sha256": "e16b99d9ba9ef36ec673dc38a03fee11cfb29d0d3a04669481e6fce21cecf32e"
+    },
+    "uv.lock": {
+      "bytes": 1072916,
+      "sha256": "7756b36b335f98d6f58220a6d0c84c4ff94c69c7540fb08a07847e829a2c793c"
+    },
+    "workspace.pyproject.toml": {
+      "bytes": 1047,
+      "sha256": "8f3accb862df730785e4713b73cc36066f62d5c7a46aae0a4866d92208bc3f29"
+    }
+  },
+  "network_policy_sha256": null,
+  "next_check": "Freeze exact builder/base-image manifests, build backend artifacts, workspace snapshot and minimal image recipe. Preserve separate guest readiness, external network, observer/supervisor/extractor and final deployment gates.",
+  "observed_at_utc": "2026-11-21T10:48:51.037813+00:00",
+  "offline_export": {
+    "args": [
+      "C:\\Users\\tagge\\AppData\\Local\\Microsoft\\WinGet\\Packages\\astral-sh.uv_Microsoft.Winget.Source_8wekyb3d8bbwe\\uv.EXE",
+      "export",
+      "--frozen",
+      "--offline",
+      "--no-dev",
+      "--package",
+      "openhands-agent-server",
+      "--no-emit-workspace",
+      "--no-header",
+      "--no-annotate",
+      "--format",
+      "requirements.txt",
+      "--project",
+      "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\.local\\validation\\runtime-review-01\\metadata-only",
+      "--output-file",
+      "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\.local\\validation\\runtime-review-01\\server-requirements.txt"
+    ],
+    "exit": 0,
+    "metadata_sha256": {
+      "openhands-agent-server/pyproject.toml": "1003a37357f437234e5b5d787ef9d870281e358b20e44dc506aa06973ffda06a",
+      "openhands-sdk/pyproject.toml": "73e74177393d556836aa133c1e19ab784787623197a5ab91a9024febfd9c91a1",
+      "openhands-tools/pyproject.toml": "90ffa63f4f3afaaf8000adaff233c6b3dcef9efc26dac91359d7e70437c74e17",
+      "openhands-workspace/pyproject.toml": "8f3accb862df730785e4713b73cc36066f62d5c7a46aae0a4866d92208bc3f29",
+      "pyproject.toml": "a9fd07dc4df8f5c5316354c6f1ed312ced1230dfcf77a7f7b706efb92c95a610",
+      "uv.lock": "7756b36b335f98d6f58220a6d0c84c4ff94c69c7540fb08a07847e829a2c793c"
+    },
+    "metadata_unchanged": true,
+    "mode": "offline frozen export only; no install or source execution",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_sha256": "e16b99d9ba9ef36ec673dc38a03fee11cfb29d0d3a04669481e6fce21cecf32e",
+    "tool_version": "uv 0.13.9 (6b2d39dcc 2026-11-17 x86_64-pc-windows-msvc)"
+  },
+  "raw_evidence_root": ".local/validation/runtime-review-01",
+  "retrieval": {
+    "bytes": 142502826,
+    "catalog_sha256": "9d564fe32a459224da2b8d9e51c89964e5a7fd80d91c8e564aa0ea1a8f6a9881",
+    "collector_sha256": "ccd72af06991a3731776592fc8492414576819f280088da6d212cbc6f0c17570",
+    "errors": [],
+    "execution_source": ".local/validation/runtime-artifacts-01/execution-source.py",
+    "finished_at_utc": "2026-11-21T10:46:32.964553+00:00",
+    "observations": 186,
+    "receipt_path": ".local/validation/runtime-artifacts-01/receipt.json",
+    "receipt_sha256": "994278bb64472a4b8723816e138002e3b97b18b4da362d18f71950b09e652882",
+    "started_at_utc": "2026-11-21T10:46:19.627510+00:00",
+    "status": "collected-not-installed"
+  },
+  "runtime_image_sha256": null,
+  "schema_version": 1,
+  "source_review_findings": [
+    "Full targets inherit passwordless sudo even when optional capabilities are empty.",
+    "source-minimal does not by itself pin builder Python or omit default development dependencies.",
+    "browser-use is a required tools dependency; package presence differs from enabled browser capability.",
+    "Workspace build requirements >=83.0.0 are not represented by the lockfile setuptools 80.9.0 runtime row. Build dependency pinning remains open."
+  ],
+  "static_metadata_audit": {
+    "archives_rehashed": 186,
+    "distributions_reached": 189,
+    "missing_or_conflicting_requirements": [],
+    "pass": true,
+    "raw_path": ".local/validation/runtime-review-01/metadata-audit.json",
+    "raw_sha256": "e5caebfa00a48964e6f85c979403af5a3c488ada29c4adbf215f839c10a98fa0",
+    "sdist_metadata_limit": "func-timeout PKG-INFO is static and can omit build-time/dynamically generated requirements; isolated build remains mandatory",
+    "unused_selected": [],
+    "workspace_manifests": 3
+  },
+  "target_selection": {
+    "artifacts": 186,
+    "bytes": 142502826,
+    "excluded_rows": 166,
+    "missing": [],
+    "nodejs_wheel_binaries_selected": false,
+    "packaging": "26.2 (installed pip vendored)",
+    "platform": "linux-x86_64",
+    "python": "3.13.17",
+    "sdists": 1,
+    "universal_rows": 352,
+    "wheels": 185
+  },
+  "upstream": {
+    "commit": "504a88cab0fb48ee5226238ad7b8f1d865fa84a8",
+    "repository": "OpenHands/software-agent-sdk",
+    "version": "1.62.0"
+  },
+  "verification": {
+    "result": "pass",
+    "root_unit_tests_run": 73,
+    "root_unit_tests_skipped": 1,
+    "scope": "Temporary synthetic inputs, local fake services and preparation guards only; no VM, provider or OpenHands installation."
+  }
+}

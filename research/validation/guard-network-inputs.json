@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "status": "preparation-contract-not-enforcement",
+  "decision": "docs/decisions/0001-validation-network-boundary.md",
+  "initial_provisioning_network": "all eight NICs disabled",
+  "internal_switch": "mcli1-validation-net-01",
+  "maximum_participants": 2,
+  "guard": {
+    "vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a",
+    "internal_nic_slot": 1,
+    "internal_address": "192.0.2.1/30",
+    "internal_mac": null,
+    "internal_interface": null,
+    "management_nic_slot": 2,
+    "management_attachment": "ordinary NAT, guard only",
+    "management_address_candidate": "10.0.3.15/24",
+    "management_mac": null,
+    "management_interface": null,
+    "management_forwarded_source_address": null,
+    "default_routes": [],
+    "dns_servers": [],
+    "ip_forwarding": false
+  },
+  "executor": {
+    "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704",
+    "internal_nic_slot": 1,
+    "internal_address": "192.0.2.2/30",
+    "internal_mac_candidate": "08:00:27:a2:d9:d0",
+    "internal_interface": null,
+    "default_routes": [],
+    "dns_servers": [],
+    "additional_nics": false
+  },
+  "management_forward": {
+    "host_address": "127.0.0.1",
+    "host_port": 18181,
+    "guest_port": 8081,
+    "protocol": "tcp",
+    "creation_authorized": false
+  },
+  "allowed_new_flows": [
+    {"origin": "authenticated coordinator via measured NAT source", "destination": "guard management address", "tcp_port": 8081, "policy": "exact control grants; private credential never forwarded"},
+    {"origin": "guard internal address", "destination": "192.0.2.2", "tcp_port": 8000, "policy": "fixed backend and disposable dummy credential"},
+    {"origin": "192.0.2.2", "destination": "192.0.2.1", "tcp_port": 8080, "policy": "live attempt, durable one-use scripted broker permits, no upstream forwarding"}
+  ],
+  "packet_policy_requirements": [
+    "Default drop at internal ingress and guard IPv4/IPv6 input, output and forward hooks",
+    "Permanent neighbor entries and exact source/destination MAC/IP binding; reject ARP from executor once static neighbors exist",
+    "Reject unexpected EtherTypes, VLANs, IPv6, IPv4 fragments and source spoofing at ingress",
+    "Do not route: forwarding sysctls disabled and forward chain drop even if sysctls change",
+    "Evaluate active-attempt authority before any established broker allowance",
+    "Fencing removes broker authority and closes active streams; retain separately granted observation/stop control",
+    "No blanket established/related exception; replies limited to the three qualified flow directions",
+    "No DHCP, DNS, multicast discovery, metadata, host-management or public-network allowance",
+    "Boot with disconnected cables until default-deny policy and services are verified; service failure cannot bypass filtering"
+  ],
+  "independent_controls": [
+    "Windows supervisor absolute lease and forced executor stop independent of guard/coordinator",
+    "Guard deadman fences broker on expired authority or lost control connection",
+    "Separate observer receiver/counters and disposable stopped-disk extractor; guard is never extractor"
+  ],
+  "required_before_activation": {
+    "hardened_guard_image_sha256": null,
+    "nftables_package_set_sha256": null,
+    "effective_rules_sha256": null,
+    "effective_routes_neighbors_sysctls_sha256": null,
+    "native_switch_participant_inventory_sha256": null,
+    "positive_and_negative_probe_evidence_sha256": null,
+    "deadman_and_stream_fence_evidence_sha256": null,
+    "activation_approval": null
+  }
+}

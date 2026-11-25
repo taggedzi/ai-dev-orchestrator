@@ -1,0 +1,314 @@
+{
+  "NIC_activations": 0,
+  "VM_boots": 0,
+  "VM_mutations": 0,
+  "classification": "historical native-observer preparation before the consumed first review and preactivation-order correction",
+  "coverage": {
+    "VM_session_facts_in_tests": "synthetic",
+    "native_observer_conformance_checks": 9,
+    "original_owner_and_jobs_in_normal_finish_proof": "actual Windows processes; every VM poweroff is a Python surrogate",
+    "qualification_conformance_checks": 11,
+    "startup_adapter_checks": 35
+  },
+  "focused_verification": {
+    "inventory": {
+      "bytes": 123561,
+      "path": ".local/validation/native-qualification-focused-01/inventory.json",
+      "sha256": "9dcb0fe6b3f41883b44dbb2e891bd404c99474dd8537d67743500df64aef4cdf"
+    },
+    "passed": 55,
+    "summary": {
+      "bytes": 12870,
+      "path": ".local/validation/native-qualification-focused-01/result.json",
+      "sha256": "411dca12cceb63f34099ccea57d48fb2f72abda755ec0cade60b51160ea5797d"
+    },
+    "tests": 55
+  },
+  "format": "mcli1-native-observer-and-one-boot-preparation-v1",
+  "guest_commands": 0,
+  "initial_sandbox_hold": {
+    "finding": "CLI reported native query deadline expired during the first VBoxManage observation. No command receipt or returned process result was produced. Retained observations are incomplete; the bounded read-only observer succeeded outside the sandbox.",
+    "inventory": {
+      "bytes": 212,
+      "path": ".local/validation/native-session-guard-01/inventory.json",
+      "sha256": "3163c6e3f2f1eb884d930e468b9f98b07a336ec2193cb3fd526f8a7f849704b2"
+    }
+  },
+  "limits": [
+    "Running native session/hardening behavior not measured",
+    "Native boot/stop timing and native failure cases not yet qualified",
+    "The proposed first run covers only one guard normal startup/session/stop case",
+    "No guest readiness, UART ownership, hardening, isolation or product lifecycle completion"
+  ],
+  "native_stopped_observations": [
+    {
+      "elapsed_ns": 1303727100,
+      "inventory": {
+        "bytes": 1174,
+        "path": ".local/validation/native-session-guard-02/inventory.json",
+        "sha256": "1fc7c40340a7caea8e4dde219f80072e445d27e2e639d5da26137e7134afc31f"
+      },
+      "receipt": {
+        "bytes": 1875,
+        "path": ".local/validation/native-session-guard-02/receipt.json",
+        "sha256": "48242e02932c7671f3286b69e7ae4362a6fd6eac52ed904d7fab33b5ab65f119"
+      },
+      "role": "guard",
+      "session": {
+        "pid": 0,
+        "state_after": "Unlocked",
+        "state_before": "Unlocked",
+        "vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "state": "poweroff"
+    },
+    {
+      "elapsed_ns": 1170931600,
+      "inventory": {
+        "bytes": 1192,
+        "path": ".local/validation/native-session-executor-01/inventory.json",
+        "sha256": "d11277180726e6b9f15dc61345ade56dba91aca7622e5e2e599dd4eec62f94b7"
+      },
+      "receipt": {
+        "bytes": 1878,
+        "path": ".local/validation/native-session-executor-01/receipt.json",
+        "sha256": "831cd2e21af0740276a3c42ea83ba84791dd394c6f98e548c7a98ec5ee691ddb"
+      },
+      "role": "executor",
+      "session": {
+        "pid": 0,
+        "state_after": "Unlocked",
+        "state_before": "Unlocked",
+        "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+      },
+      "state": "poweroff"
+    }
+  ],
+  "next_check": "Create the live suspended owner/controller review and request separate approval for its exact one-boot policy/hash. No answer or late approval leaves the VM unstarted.",
+  "normal_finish": "Only after a joined session: one durable owner stop request, at most four seconds under the original lease, natural family exit required. Immediate containment remains for startup uncertainty. Unknown/raced original stop stays held.",
+  "source_description_note": "Changed historical workspace sources point to retained exact bytes; the current startup-progress cohort is separate.",
+  "sources": [
+    {
+      "bytes": 14602,
+      "path": "research/validation/maintenance_stop.py",
+      "sha256": "f947ae1c1558d150db556a8437a01de2934938fa38e4478ca5da6264c1882faf"
+    },
+    {
+      "bytes": 6047,
+      "path": "research/validation/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 31432,
+      "historical_workspace_path": "research/validation/maintenance_host.py",
+      "path": ".local/validation/preactivation-regression-01/sources/maintenance_host.py",
+      "sha256": "b4abff939398a81e628d3de21e9c718f9b7e239a39772a337eb607f17716c583"
+    },
+    {
+      "bytes": 12755,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    },
+    {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 10697,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 16923,
+      "path": "research/validation/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 10319,
+      "path": "research/validation/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 3809,
+      "path": "research/validation/backup_records.py",
+      "sha256": "633902a7db727cfd1b0086b354816a6dbd79e3e14c967dceeca9f55a91adc521"
+    },
+    {
+      "bytes": 11948,
+      "historical_workspace_path": "research/validation/owner_process.py",
+      "path": ".local/validation/preactivation-regression-01/sources/owner_process.py",
+      "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+    },
+    {
+      "bytes": 16850,
+      "path": "research/validation/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 20285,
+      "historical_workspace_path": "research/validation/boot_preconditions.py",
+      "path": ".local/validation/preactivation-regression-01/sources/boot_preconditions.py",
+      "sha256": "73db7d68efea800bc41ff9998be67b3cfb72a7be49adeb28de51cf20a227bb3e"
+    },
+    {
+      "bytes": 36517,
+      "path": "research/validation/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122"
+    },
+    {
+      "bytes": 25846,
+      "path": "research/validation/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    {
+      "bytes": 17502,
+      "path": "research/validation/stopped_backup.py",
+      "sha256": "6b363daf2ed5a88c96609bf1fd8d7633924944a40868a7ab1dc8a077aa0d3f0f"
+    },
+    {
+      "bytes": 34597,
+      "historical_workspace_path": "research/validation/frontend_start.py",
+      "path": ".local/validation/owner-contention-regression-02/sources/frontend_start.py",
+      "sha256": "556efc8b71d975178ea6ea3a12584819b62b393d2d4cfb31ffa54633cc73ec14"
+    },
+    {
+      "bytes": 11386,
+      "historical_workspace_path": "research/validation/frontend_process.py",
+      "path": ".local/validation/preactivation-regression-01/sources/frontend_process.py",
+      "sha256": "c6437355d342a48381b466296db229c6025ff9474218b8fb093679d8a9d21925"
+    },
+    {
+      "bytes": 10256,
+      "historical_workspace_path": "research/validation/native_session.py",
+      "path": ".local/validation/owner-contention-regression-02/sources/native_session.py",
+      "sha256": "62d4945fdd000ab4b70e2436f94062f71369da7540eb8a7558ce73fe10c52928"
+    },
+    {
+      "bytes": 25100,
+      "historical_workspace_path": "research/validation/startup_qualification.py",
+      "path": ".local/validation/native-qualification-regression-02/sources/startup_qualification.py",
+      "sha256": "b117f8cf705f939c64bb9eb20fac0e88cf9f6628a5fc8eb91d4728deee9fba8e"
+    },
+    {
+      "bytes": 7247,
+      "historical_workspace_path": "tests/test_native_session.py",
+      "path": ".local/validation/owner-contention-regression-02/sources/test_native_session.py",
+      "sha256": "d4c55648aa341ed886dca856a2dde3069773d109ebe33a84a3bfb011bec34f2c"
+    },
+    {
+      "bytes": 13204,
+      "historical_workspace_path": "tests/test_startup_qualification.py",
+      "path": ".local/validation/native-qualification-regression-02/sources/test_startup_qualification.py",
+      "sha256": "2aa47b6c5a014602b7f84ce023c31404d1212f9adc2e37fa9ea6b98bf515b5c9"
+    },
+    {
+      "bytes": 25598,
+      "historical_workspace_path": "tests/test_frontend_start.py",
+      "path": ".local/validation/owner-contention-regression-02/sources/test_frontend_start.py",
+      "sha256": "11578fed60aaf57d5862383030a69299cdfb761359a0cedf11db6935a4ccf25d"
+    },
+    {
+      "bytes": 5113,
+      "path": "tests/fixtures/frontend_start_controller.py",
+      "sha256": "feedbe8bfa8cdc50e5c82f260c500e9237d1f016b8a4bfcabff165625d78daab"
+    },
+    {
+      "bytes": 865,
+      "path": "tests/fixtures/frontend_family.py",
+      "sha256": "a8b54ab4387320842af31e5cbaa8e92a1addac1356d3344ec606d31950e55583"
+    }
+  ],
+  "status": "actual stopped sessions observed; one native guard boot remains unapproved",
+  "successor_evidence": "research/validation/preactivation-evidence.json",
+  "unarmed_review_inputs": {
+    "bytes": 4472,
+    "path": ".local/validation/native-qualification-inputs-01/inventory.json",
+    "sha256": "b2cb04bb271aad1562a16a93c82b00a865e435f4759463f3a13dbe4fc960bb80"
+  },
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 182713,
+      "path": ".local/validation/native-qualification-regression-02/inventory.json",
+      "sha256": "c0c3632a2bac467509ca02190e2ebde9d7ec658aa7eb96192dfac610ab765ef1"
+    },
+    "log": {
+      "bytes": 75046,
+      "path": ".local/validation/native-qualification-regression-02/unittest.log",
+      "sha256": "fca67511addab8e98c637d13cae66ea540405c7c23a63f021858e62faaf18f85"
+    },
+    "passed": 423,
+    "skipped": [
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_exclusive_file_and_mask_never_overwrite_existing_bytes"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_global_journal_survives_close_and_rejects_a_fresh_attempt"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_hardlinked_or_foreign_owned_inputs_are_not_approved"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_partial_file_write_remains_and_refuses_replay"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_real_child_capture_timeout_output_bound_and_reaping"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_symlink_ancestors_writable_parents_and_path_escapes_refuse"
+      },
+      {
+        "reason": "POSIX pipe/process-group check",
+        "test": "test_guest_maintenance.GuestMaintenanceTests.test_native_pipe_deadline_output_bound_and_child_reaping"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_actual_non_guest_identity_fails_before_any_stage_write"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_bounded_decode_refuses_expansion_before_creating_final"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_tampered_compression_and_existing_final_file_never_execute_or_overwrite"
+      },
+      {
+        "reason": "symlink creation is unavailable to this process",
+        "test": "test_validation_harness.ObserverTests.test_symlinks_are_rejected_when_platform_supports_creation"
+      }
+    ],
+    "summary": {
+      "bytes": 15465,
+      "path": ".local/validation/native-qualification-regression-02/result.json",
+      "sha256": "3e184ee9bcee386989a02106b0d199258b6fdc69f747b0d332b4bc051866de81"
+    },
+    "tests_run": 436
+  }
+}

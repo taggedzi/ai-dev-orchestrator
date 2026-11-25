@@ -1,0 +1,225 @@
+{
+  "approval": "conversation:2026-11-22-approve-broker-phase-ceiling-preparation",
+  "classification": "Prepared explicit local-scripted broker mode; synthetic HTTP/count/billing tests and retained native-body byte comparisons only",
+  "comparisons": [
+    {
+      "admission": {
+        "attempt": "preparation-only",
+        "bound": 240000,
+        "counter_evidence_sha256": "a37f2c1180be025fa6a15a20b5c36383ff789abf11525fe88abd1faf9428e047",
+        "effective_output_tokens": 6000,
+        "effective_request_sha256": "e4c8d90798e2b146b153b42b8eef292a61b9df0d93c1646c3617a98f8718ccb2",
+        "incoming_counter_evidence_sha256": "4d248586aa629228eef0429f45c45f39237052d2b22d841fe4c04c6289b7d5f3",
+        "incoming_request_sha256": "e4c8d90798e2b146b153b42b8eef292a61b9df0d93c1646c3617a98f8718ccb2",
+        "input_cap": 12000,
+        "input_tokens": 5209,
+        "output_cap": 6000,
+        "output_policy": "phase-ceiling-v1",
+        "request_sha256": "e4c8d90798e2b146b153b42b8eef292a61b9df0d93c1646c3617a98f8718ccb2",
+        "requested_output_tokens": 6000,
+        "response_tokens": 1,
+        "role": "edit",
+        "task": "T-01"
+      },
+      "dispatch_approved": false,
+      "exact_independent_body_match": true,
+      "name": "T-01-initial_edit",
+      "new_tokenizer_measurements": 0,
+      "response_count_classification": "synthetic 1, not measured"
+    },
+    {
+      "admission": {
+        "attempt": "preparation-only",
+        "bound": 80000,
+        "counter_evidence_sha256": "a37f2c1180be025fa6a15a20b5c36383ff789abf11525fe88abd1faf9428e047",
+        "effective_output_tokens": 1000,
+        "effective_request_sha256": "713c3e2074e82433d3bda87e713025963810494a26cb3a2dffeb94ab9e9e5094",
+        "incoming_counter_evidence_sha256": "4d248586aa629228eef0429f45c45f39237052d2b22d841fe4c04c6289b7d5f3",
+        "incoming_request_sha256": "32c7b70c56cf04fd27bd17e59211254454a8ed227a9dfeb7ae7731ff15105019",
+        "input_cap": 6000,
+        "input_tokens": 5250,
+        "output_cap": 1000,
+        "output_policy": "phase-ceiling-v1",
+        "request_sha256": "32c7b70c56cf04fd27bd17e59211254454a8ed227a9dfeb7ae7731ff15105019",
+        "requested_output_tokens": 6000,
+        "response_tokens": 1,
+        "role": "finish",
+        "task": "T-01"
+      },
+      "dispatch_approved": false,
+      "exact_independent_body_match": true,
+      "name": "T-01-finish_projection",
+      "new_tokenizer_measurements": 0,
+      "response_count_classification": "synthetic 1, not measured"
+    },
+    {
+      "admission": {
+        "attempt": "preparation-only",
+        "bound": 240000,
+        "counter_evidence_sha256": "a37f2c1180be025fa6a15a20b5c36383ff789abf11525fe88abd1faf9428e047",
+        "effective_output_tokens": 6000,
+        "effective_request_sha256": "b99cf65dfa8649bccf9dec99b45be9ce1e09b8873e973b641ec33a7ac9b5d46c",
+        "incoming_counter_evidence_sha256": "4d248586aa629228eef0429f45c45f39237052d2b22d841fe4c04c6289b7d5f3",
+        "incoming_request_sha256": "b99cf65dfa8649bccf9dec99b45be9ce1e09b8873e973b641ec33a7ac9b5d46c",
+        "input_cap": 12000,
+        "input_tokens": 5228,
+        "output_cap": 6000,
+        "output_policy": "phase-ceiling-v1",
+        "request_sha256": "b99cf65dfa8649bccf9dec99b45be9ce1e09b8873e973b641ec33a7ac9b5d46c",
+        "requested_output_tokens": 6000,
+        "response_tokens": 1,
+        "role": "edit",
+        "task": "T-02"
+      },
+      "dispatch_approved": false,
+      "exact_independent_body_match": true,
+      "name": "T-02-initial_edit",
+      "new_tokenizer_measurements": 0,
+      "response_count_classification": "synthetic 1, not measured"
+    },
+    {
+      "admission": {
+        "attempt": "preparation-only",
+        "bound": 80000,
+        "counter_evidence_sha256": "a37f2c1180be025fa6a15a20b5c36383ff789abf11525fe88abd1faf9428e047",
+        "effective_output_tokens": 1000,
+        "effective_request_sha256": "8f9efb77bbd071172219b266d0a7e3d8df2de9d85309e0143b161ed96c338c64",
+        "incoming_counter_evidence_sha256": "4d248586aa629228eef0429f45c45f39237052d2b22d841fe4c04c6289b7d5f3",
+        "incoming_request_sha256": "0f6d1f4a29e441721459959e454d911c8b41992b7ea3c8d584ac108e13653f1a",
+        "input_cap": 6000,
+        "input_tokens": 5269,
+        "output_cap": 1000,
+        "output_policy": "phase-ceiling-v1",
+        "request_sha256": "0f6d1f4a29e441721459959e454d911c8b41992b7ea3c8d584ac108e13653f1a",
+        "requested_output_tokens": 6000,
+        "response_tokens": 1,
+        "role": "finish",
+        "task": "T-02"
+      },
+      "dispatch_approved": false,
+      "exact_independent_body_match": true,
+      "name": "T-02-finish_projection",
+      "new_tokenizer_measurements": 0,
+      "response_count_classification": "synthetic 1, not measured"
+    }
+  ],
+  "counter_receipts_qualified": false,
+  "default_policy": "strict; original strict binding digest preserved",
+  "focused_broker_tests": {
+    "bytes": 10100,
+    "path": ".local/validation/broker-ceiling-focused-01/result.json",
+    "sha256": "49b2a882ed03d865d6e5e82c13adf21ac467f619cd5c3787f9047cee9911de54"
+  },
+  "format": "mcli1-broker-ceiling-evidence-v1",
+  "native_agent_steps": 0,
+  "native_dispatch_approved": false,
+  "next_check": "Freeze and measure complete input/response counts, actual Agent traffic and deployment policy on the qualified target; no provider/task run follows from this preparation.",
+  "provider_calls": 0,
+  "retained_body_inventory": {
+    "bytes": 2574,
+    "path": ".local/validation/broker-ceiling-retained-01/inventory.json",
+    "sha256": "2b3c7c68d235cfec3d18715008a6f9c63be8ab0360e5a9d82730488ce5783a29"
+  },
+  "sources": [
+    {
+      "bytes": 5477,
+      "path": "research/validation/phase_policy.py",
+      "sha256": "82fe2ee9cbc8795078dc8225488324ca542c4646204554d2fa4b765e16bbe56e"
+    },
+    {
+      "bytes": 1736,
+      "path": "research/validation/phase_handoff_review.py",
+      "sha256": "17ab1d677afb24c91da65b3b094693cbbfaff78d8692478fa163ec91564eaa70"
+    },
+    {
+      "bytes": 13113,
+      "path": "research/validation/http_tools.py",
+      "sha256": "968163ac16f0c1a2ecd8e8d524fcf3d940df22a3ba75573091553aa9cdf63a73"
+    },
+    {
+      "bytes": 16923,
+      "path": "research/validation/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 6422,
+      "path": "research/validation/__main__.py",
+      "sha256": "d124c78a47f4aa2ef453a510baa50d0f18fe616d1a3b40f42c735ede503eb176"
+    }
+  ],
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 62353,
+      "path": ".local/validation/fixture-regression-03/inventory.json",
+      "sha256": "ca5d14cfef65054ca59566f4fd0fb31e9fb9e79db3f5a790f19c67b7c31f516e"
+    },
+    "log": {
+      "bytes": 60697,
+      "path": ".local/validation/fixture-regression-03/unittest.log",
+      "sha256": "388201d7af96e1d712326d894fab492ba2f8955d28848e56613624c25bdaf03a"
+    },
+    "passed": 339,
+    "skipped": [
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_exclusive_file_and_mask_never_overwrite_existing_bytes"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_global_journal_survives_close_and_rejects_a_fresh_attempt"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_hardlinked_or_foreign_owned_inputs_are_not_approved"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_partial_file_write_remains_and_refuses_replay"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_real_child_capture_timeout_output_bound_and_reaping"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_symlink_ancestors_writable_parents_and_path_escapes_refuse"
+      },
+      {
+        "reason": "POSIX pipe/process-group check",
+        "test": "test_guest_maintenance.GuestMaintenanceTests.test_native_pipe_deadline_output_bound_and_child_reaping"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_actual_non_guest_identity_fails_before_any_stage_write"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_bounded_decode_refuses_expansion_before_creating_final"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_tampered_compression_and_existing_final_file_never_execute_or_overwrite"
+      },
+      {
+        "reason": "symlink creation is unavailable to this process",
+        "test": "test_validation_harness.ObserverTests.test_symlinks_are_rejected_when_platform_supports_creation"
+      }
+    ],
+    "summary": {
+      "bytes": 12696,
+      "path": ".local/validation/fixture-regression-03/result.json",
+      "sha256": "61252cdc8ea313a0fb04f89efd5e8e9ffc882e0af8464d6e3b578d96b2d0385d"
+    },
+    "tests_run": 352
+  }
+}

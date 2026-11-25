@@ -1,0 +1,250 @@
+{
+  "added_tests": 6,
+  "classification": "this source cohort contains offline replay and Python-only process tests; the consumed native run is separate evidence",
+  "consumed_native_run": "research/validation/guard-startup-parser-hold-evidence.json",
+  "format": "mcli1-runtime-diagnostic-parser-and-console-retention-preparation-v1",
+  "historical_source_resolution": {
+    "bytes": 13991,
+    "path": ".local/validation/historical-source-resolution-01.json",
+    "sha256": "0a904b7e9bd31631a1d3196136ebdd145c1a2b2ba12dce1312cba61479274bed"
+  },
+  "new_VM_boots": 0,
+  "new_actual_VM_stop_commands": 0,
+  "next_check": "Implement approved decision 0005 and validate its guard-only initial-Aborted model before new backup/profile capture or any separately reviewed native activation.",
+  "parser_boundary": "Only the explicit bounded VideoMode composite and VRDEClients double-equals numeric form are accepted as diagnostic data. Duplicate keys, malformed/overflowed values, changed transports/profile and unrelated double-equals fields still hold.",
+  "recovery_preparation_approval": "conversation:call_8087bd953b7b4a9ea38c46d881c15b7e:Approve-recovery-model-preparation",
+  "retained_native_input_replay": {
+    "bytes": 1320,
+    "path": ".local/validation/guard-startup-review-04/parser-replay-after.json",
+    "sha256": "dea74817d1a7351d2bceb5f8dc3db295c75fa8a6414acef3629da8a910068b43"
+  },
+  "retirement_boundary": "After physical containment and authority fencing, bounded console bytes must match the reaped primitive's count/hash before exclusive publication. Publication failure holds and preserves existing files; it grants no stop acceptance or retry.",
+  "sources": [
+    {
+      "bytes": 14602,
+      "path": ".local/validation/runtime-parser-regression-01/sources/maintenance_stop.py",
+      "sha256": "f947ae1c1558d150db556a8437a01de2934938fa38e4478ca5da6264c1882faf",
+      "workspace_source": "research/validation/maintenance_stop.py"
+    },
+    {
+      "bytes": 6047,
+      "path": ".local/validation/runtime-parser-regression-01/sources/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba",
+      "workspace_source": "research/validation/driver.py"
+    },
+    {
+      "bytes": 3366,
+      "path": ".local/validation/runtime-parser-regression-01/sources/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d",
+      "workspace_source": "research/validation/supervisor.py"
+    },
+    {
+      "bytes": 34841,
+      "path": ".local/validation/runtime-parser-regression-01/sources/maintenance_host.py",
+      "sha256": "d333bd710ed88446334542b8fca407d014951fce895ea28596da61b57b13e7ba",
+      "workspace_source": "research/validation/maintenance_host.py"
+    },
+    {
+      "bytes": 12755,
+      "path": ".local/validation/runtime-parser-regression-01/sources/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f",
+      "workspace_source": "research/validation/windows_readonly.py"
+    },
+    {
+      "bytes": 15471,
+      "path": ".local/validation/runtime-parser-regression-01/sources/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9",
+      "workspace_source": "research/validation/maintenance_serial.py"
+    },
+    {
+      "bytes": 11221,
+      "path": ".local/validation/runtime-parser-regression-01/sources/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+      "workspace_source": "research/validation/maintenance_serial_worker.py"
+    },
+    {
+      "bytes": 10697,
+      "path": ".local/validation/runtime-parser-regression-01/sources/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249",
+      "workspace_source": "research/validation/transfer_commands.py"
+    },
+    {
+      "bytes": 16923,
+      "path": ".local/validation/runtime-parser-regression-01/sources/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5",
+      "workspace_source": "research/validation/store.py"
+    },
+    {
+      "bytes": 10319,
+      "path": ".local/validation/runtime-parser-regression-01/sources/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2",
+      "workspace_source": "research/validation/fixture.py"
+    },
+    {
+      "bytes": 3809,
+      "path": ".local/validation/runtime-parser-regression-01/sources/backup_records.py",
+      "sha256": "633902a7db727cfd1b0086b354816a6dbd79e3e14c967dceeca9f55a91adc521",
+      "workspace_source": "research/validation/backup_records.py"
+    },
+    {
+      "bytes": 12297,
+      "path": ".local/validation/runtime-parser-regression-01/sources/owner_process.py",
+      "sha256": "4bfbb296bd5081d15caaef338cbaa89cef3f7b768764d55f2de5cc1c1fd76f1b",
+      "workspace_source": "research/validation/owner_process.py"
+    },
+    {
+      "bytes": 16850,
+      "path": ".local/validation/runtime-parser-regression-01/sources/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7",
+      "workspace_source": "research/validation/owner_launch.py"
+    },
+    {
+      "bytes": 20426,
+      "path": ".local/validation/runtime-parser-regression-01/sources/boot_preconditions.py",
+      "sha256": "fe403017a39518b44064ca9154d9aa58ed28e2a277f4e96832e47eee48dc046d",
+      "workspace_source": "research/validation/boot_preconditions.py"
+    },
+    {
+      "bytes": 36517,
+      "path": ".local/validation/runtime-parser-regression-01/sources/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122",
+      "workspace_source": "research/validation/maintenance_transfer.py"
+    },
+    {
+      "bytes": 25846,
+      "path": ".local/validation/runtime-parser-regression-01/sources/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e",
+      "workspace_source": "research/validation/offline_repo.py"
+    },
+    {
+      "bytes": 17502,
+      "path": ".local/validation/runtime-parser-regression-01/sources/stopped_backup.py",
+      "sha256": "6b363daf2ed5a88c96609bf1fd8d7633924944a40868a7ab1dc8a077aa0d3f0f",
+      "workspace_source": "research/validation/stopped_backup.py"
+    },
+    {
+      "bytes": 37593,
+      "path": ".local/validation/runtime-parser-regression-01/sources/frontend_start.py",
+      "sha256": "d54d0fdaacd86a3e99a22435c78ccbd9a99a88f735797be9d41fbe4e3a37132d",
+      "workspace_source": "research/validation/frontend_start.py"
+    },
+    {
+      "bytes": 11632,
+      "path": ".local/validation/runtime-parser-regression-01/sources/frontend_process.py",
+      "sha256": "f81bc341c528dc0cf2039c7df9a2447c78f3880121bedb82a65a295bdced0ce8",
+      "workspace_source": "research/validation/frontend_process.py"
+    },
+    {
+      "bytes": 12602,
+      "path": ".local/validation/runtime-parser-regression-01/sources/native_session.py",
+      "sha256": "f7d036eb6df2fc27a06a5f98b4faceddc42d284d4e5958c2f9aa8ac6a4ed661b",
+      "workspace_source": "research/validation/native_session.py"
+    },
+    {
+      "bytes": 33711,
+      "path": ".local/validation/runtime-parser-regression-01/sources/startup_qualification.py",
+      "sha256": "2feaa4b52aeac1137ba3dcfcefaaa081bb5f99f8e4d1cbc8183cd93055984c7e",
+      "workspace_source": "research/validation/startup_qualification.py"
+    },
+    {
+      "bytes": 27661,
+      "path": ".local/validation/runtime-parser-regression-01/sources/test_maintenance_host.py",
+      "sha256": "82ed8f1254d2f8c18e0f1ea6c62be0257815fb61d46fb9c75dbcd83df7657b8b",
+      "workspace_source": "tests/test_maintenance_host.py"
+    },
+    {
+      "bytes": 10146,
+      "path": ".local/validation/runtime-parser-regression-01/sources/test_native_session.py",
+      "sha256": "b3de7736686a1b8f6834cfafc9b34105fb37bcdb0e4405624f664e9329d42d2a",
+      "workspace_source": "tests/test_native_session.py"
+    },
+    {
+      "bytes": 29782,
+      "path": ".local/validation/runtime-parser-regression-01/sources/test_frontend_start.py",
+      "sha256": "188784db7b86498c0945c1ec50d70ef158ebd55e5570f33f7b66dfe3003d055e",
+      "workspace_source": "tests/test_frontend_start.py"
+    },
+    {
+      "bytes": 25677,
+      "path": ".local/validation/runtime-parser-regression-01/sources/test_startup_qualification.py",
+      "sha256": "5f21f13b0f16ab5f4a2f81243cf36e59763cfef0130a03921aa38ece8a864ed5",
+      "workspace_source": "tests/test_startup_qualification.py"
+    }
+  ],
+  "status": "retained native-output replay and parser/retirement preparation verified; initial-Aborted recovery not implemented yet",
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 198367,
+      "path": ".local/validation/runtime-parser-regression-01/inventory.json",
+      "sha256": "130ffa096672e6126e91ba4f4ef1f81f61b621b719acfed79c6e0eb31645a259"
+    },
+    "log": {
+      "bytes": 81070,
+      "path": ".local/validation/runtime-parser-regression-01/unittest.log",
+      "sha256": "7ecb9263d1c7f49ab3f56e55b7e136dcf2a1d6559b929b050ae9a3c249a5bb55"
+    },
+    "passed": 458,
+    "skipped": [
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_exclusive_file_and_mask_never_overwrite_existing_bytes"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_global_journal_survives_close_and_rejects_a_fresh_attempt"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_hardlinked_or_foreign_owned_inputs_are_not_approved"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_partial_file_write_remains_and_refuses_replay"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_real_child_capture_timeout_output_bound_and_reaping"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_symlink_ancestors_writable_parents_and_path_escapes_refuse"
+      },
+      {
+        "reason": "POSIX pipe/process-group check",
+        "test": "test_guest_maintenance.GuestMaintenanceTests.test_native_pipe_deadline_output_bound_and_child_reaping"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_actual_non_guest_identity_fails_before_any_stage_write"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_bounded_decode_refuses_expansion_before_creating_final"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_tampered_compression_and_existing_final_file_never_execute_or_overwrite"
+      },
+      {
+        "reason": "symlink creation is unavailable to this process",
+        "test": "test_validation_harness.ObserverTests.test_symlinks_are_rejected_when_platform_supports_creation"
+      }
+    ],
+    "summary": {
+      "bytes": 15630,
+      "path": ".local/validation/runtime-parser-regression-01/result.json",
+      "sha256": "c97b707be6384d25cfe2577f3e12bd46c448b531e8175f54185f9063c57c6732"
+    },
+    "tests_run": 471
+  }
+}

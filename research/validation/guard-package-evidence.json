@@ -1,0 +1,119 @@
+{
+  "actions": {
+    "downloaded_package_scripts_or_binaries_executed": false,
+    "packages_installed": false,
+    "provider_or_model_calls": 0,
+    "repository_data_uploaded": false,
+    "vm_created": false,
+    "vm_or_host_network_settings_changed": false,
+    "vm_started": false
+  },
+  "audit": {
+    "helper_path": ".local/validation/audit-guard-packages.py",
+    "helper_sha256": "8b2a2c4c903d64a84bd7288dd9466fa583370175a9eccf8794a22c93ae71fc34",
+    "original_collection_inventory": "unchanged",
+    "package_text_observations": [
+      "Example nftables.conf contains empty chains without a drop policy",
+      "Stock nftables.service stop flushes the ruleset",
+      "Post-install script can reload systemd and try-restart a previously installed service; no script was executed"
+    ],
+    "receipt_path": ".local/validation/guard-package-audit-01/audit-result.json",
+    "receipt_sha256": "a7f4502f28a3d63b628ca7ca258cd68df6d2f52b8b26692c8259a788adb15451",
+    "upgrade_simulation": {
+      "candidate_kernel": "6.8.0-151.151",
+      "installed_kernel": "6.8.0-139.139",
+      "new_packages": 5,
+      "removals": 0,
+      "update_archives_downloaded": false,
+      "upgrades": 97
+    }
+  },
+  "base_commit": "38e1871",
+  "catalog": {
+    "path": "research/validation/guard-package-inputs.json",
+    "sha256": "440f705cafc107f9ef1c1b2e9a00cf409ac436d897e034c49e095f75d2be0802"
+  },
+  "classification": "Measured signed metadata resolution/archive verification and offline package-text/update inspection; not installed, security-qualified or effective network enforcement",
+  "collector": {
+    "executed_copy": ".local/validation/guard-package-check-01/executed-collector.py",
+    "path": "research/validation/guard_packages.py",
+    "sha256": "2c2762a2df5bfe359dbe7d6b32e5b35b14a4822d1dec6e54b954f63820fdd1ee"
+  },
+  "host_package_status": {
+    "after_sha256": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+    "before_sha256": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+    "unchanged": true
+  },
+  "next_check": "Prepare exact OS-update/hardening inputs without applying changes; preserve the pending disconnected-creation approval boundary",
+  "observed_at_utc": "2026-11-21T18:58:44.087816+00:00",
+  "remaining": [
+    "Separate pending disconnected VM creation approval",
+    "Pin coherent OS update/hardening inputs for both guests and review installation",
+    "Replace stock permissive/flush-on-stop policy and qualify lifecycle",
+    "Final image/readiness, packet/stream fencing, observers/supervisor/extractor and M1-12/M1-13 measurements"
+  ],
+  "retrieval": {
+    "approval": "Signed Ubuntu metadata and guard archive retrieval authorized through command approval on 2026-11-21",
+    "archive_bytes": 527232,
+    "archives": 4,
+    "finished_at_utc": "2026-11-21T18:50:19.487216+00:00",
+    "keyring_sha256": "80a36b0a6de2f69f49d2df75ef473ccde121e9e190b9ea01d20a4f63778d5c31",
+    "receipt": {
+      "path": ".local/validation/guard-packages-01/receipt.json",
+      "sha256": "c5c1a7927915d39424982ede3ef16ae3bb1a92b5b4d2bc1fd4867016465909f3"
+    },
+    "retained_indexed_files": 56,
+    "signatures": [
+      {
+        "file": "archive.ubuntu.com_ubuntu_dists_noble-updates_InRelease",
+        "sha256": "8be819b6d76c7d2490956220620307768159877e9d7a838508a41b0c3bfa6398",
+        "signing_fingerprints": [
+          "F6ECB3762474EDA9D21B7022871920D1991BC93C"
+        ]
+      },
+      {
+        "file": "archive.ubuntu.com_ubuntu_dists_noble_InRelease",
+        "sha256": "cdb2f31d809f589719a53c6ad15f255b27569c4059542ada282aaa21b8e164b0",
+        "signing_fingerprints": [
+          "F6ECB3762474EDA9D21B7022871920D1991BC93C"
+        ]
+      },
+      {
+        "file": "security.ubuntu.com_ubuntu_dists_noble-security_InRelease",
+        "sha256": "b431610037d0bbf122688ae8756c5ae9ee68d62dd3be5e1f0f65ab60abaea6c3",
+        "signing_fingerprints": [
+          "F6ECB3762474EDA9D21B7022871920D1991BC93C"
+        ]
+      }
+    ],
+    "started_at_utc": "2026-11-21T18:50:15.447132+00:00",
+    "status": "collected-not-installed"
+  },
+  "schema_version": 1,
+  "source_review": [
+    {
+      "finding": "Stock service disabled by default; example performs no filtering",
+      "url": "https://documentation.ubuntu.com/security/security-features/network/firewall/nftables/"
+    },
+    {
+      "finding": "Kernel byte-order validation/userspace compatibility requires exact rules testing; no affected planned rule or exploit observed",
+      "last_updated": "2026-11-20",
+      "noble_fixed_kernel": "6.8.0-151.151",
+      "priority": "negligible",
+      "url": "https://ubuntu.com/security/CVE-2026-99285"
+    }
+  ],
+  "verification": {
+    "elapsed_seconds": 27.026,
+    "new_package_tests": 4,
+    "raw_logs": {
+      "path": ".local/validation/guard-package-check-01",
+      "stderr_sha256": "9c0db4a67e3aa8fde55d9707055c09c514d3a9ea3f96bfb0f4b32db271ae0a8f",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "repository_tests_run": 96,
+    "result": "pass",
+    "scope": "Repository and pure metadata conformance; not native package installation or VM qualification",
+    "skipped": 1
+  }
+}

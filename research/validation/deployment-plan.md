@@ -1,0 +1,67 @@
+# Proposed validation deployment
+
+Status: provisioning and offline OS installation completed November 21. The latest [diagnostic](offline-inspection.md) completed one unattended two-CPU x2APIC-off boot and ACPI shutdown. Repeatability and prospective readiness-policy validation remain open. The last native receipt for `mcli1-validation-01` records poweroff, two vCPUs, original APIC settings restored on, all NICs disabled and UART off; revalidate before further VM work. A separate Docker Desktop preparation has now built and smoke-tested the runtime image. Guest runtime installation and executor experiments remain gated.
+
+November 22: the separately approved [guard creation](guard-preparation-plan.md),
+[file backups](stopped-backup-plan.md) and [stopped maintenance profiles](maintenance-profile-plan.md)
+are complete with independent observations. Both targets remain powered off,
+NICs disabled, with four SATA ports, UART server configured and x2APIC off/APIC on.
+The [frontend family primitive](frontend-process-plan.md), same-boot session and
+broker ceiling are locally prepared. Original-owner boot integration, native
+startup/session-PID/readiness, hardening and isolation remain open. No new guest
+boot or network activation ran.
+
+## Target and trust boundary
+
+Continue the existing [M1-06 profile](../execution-security-boundary.md#minimum-secure-proof-of-concept): a fresh dedicated disposable Linux VM, with an unprivileged container running the pinned Agent Server local runtime. Give it only metadata-free synthetic source, bounded scratch, read-only payloads, and an explicitly restricted path to the scripted broker. Keep planning, audit/ledger, Git writer, broker policy, fault proxy, supervisor and observer storage outside its control.
+
+The new target is `mcli1-validation-01`, UUID `74129e9c-5a65-44fa-9d35-79d458dc4704`. The existing `ai-dev-test` VM was not selected or modified. Its guest type label and NAT configuration remain inventory observations in [the checkpoint](../../docs/status.md#refreshed-local-preflight), not a qualified isolation profile.
+
+The selected installer is Ubuntu Server 24.04.5 AMD64, `ubuntu-24.04.5-live-server-amd64.iso`, SHA-256 `97f3d7ffb032c3eb3b23d2c8be9cc76e60c2c1f2c0146ba5ba9fe01cafae0fd8`. Its 4,080,486,400 downloaded bytes matched [Canonical's published checksum](https://releases.ubuntu.com/24.04/SHA256SUMS), reviewed November 21. The directory heading inconsistently names 26.10; selection binds the actual filename/digest. Standalone detection still exits 1 with `E_NOTIMPL`, but native unattended-install preparation succeeded, and a custom offline template then completed installation. See the [installation finding and evidence](os-install-plan.md). Ubuntu lists standard support for 24.04 LTS through May 2029 in its [maintenance schedule](https://ubuntu.com/security/esm).
+
+The first provisioning stage is now concrete in [provisioning-plan.json](provisioning-plan.json) and [New-ValidationVm.ps1](New-ValidationVm.ps1). It creates only a new, powered-off VM with the checksum-verified installer attached: 2 vCPUs, 4096 MiB RAM, a dynamically allocated 32 GiB installation disk, and all eight NICs disabled. Clipboard transfers, drag-and-drop, USB, audio and remote display are disabled. The 32 GiB disk is for image preparation; it does not implement the later 8 GiB runtime-write limit. OS installation, dependency retrieval, image hardening, networking and experiments remain subsequent stages. No existing VM is reused or modified.
+
+The script defaults to a plan-only JSON preview. An apply invocation requires `-Apply -ApprovalReference <decision>`, and downloading the roughly 3.8 GiB ISO additionally requires `-DownloadIso`. It confines output paths to this workspace, rejects existing VM identities/directories and path reparse points, checks the installed hypervisor version and ISO hash, and records the powered-off configuration. No automatic cleanup or overwrite follows a partial failure. Review the retained state before taking another action.
+
+The PowerShell parser, plan-only invocation and approved apply command succeeded. The initial host script-policy denial was handled through an approved process-local execution-policy override, without changing system policy. The apply stage passed its 40 GiB free-space check, verified the installer hash, created the VM and recorded its configuration in `.local/validation/vms/mcli1-validation-01/provisioning-receipt.json`. A separate receipt check confirmed poweroff, two CPUs, 4096 MiB and eight disabled NICs. The later Python installation stage completed successfully with a custom offline template; its receipt records the installed target and final VDI hash.
+
+Read-only inventory found VirtualBox `7.2.22r175245`, an existing host-only adapter at `192.168.56.1/24` with DHCP disabled, and an internal network named `intnet`. No network was created or reconfigured. Free-space enumeration returned no usable value in the sandbox; the apply stage's host-side check established at least 40 GiB before download/allocation. Host-only enumeration initially failed because VirtualBox tried to refresh its configuration; approved enumeration outside the sandbox succeeded.
+
+This is a Windows-hosted candidate profile, which needs its own qualification under M1-06. [Oracle's networking documentation](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/networkingdetails.html) says NAT can reach host loopback, host-only connects the guest to the host, and internal networking excludes host applications. Neither ordinary NAT nor an unfiltered host-only adapter establishes the required boundary. Keep NICs disabled until an external enforcement point and management transport are separately reviewed and tested. The CLI settings follow [Oracle's 7.2 command reference](https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/vboxmanage.html).
+
+| Boundary | Concrete preparation requirement | Qualification before dependent cases |
+| --- | --- | --- |
+| VM/container | 2 guest vCPUs, 4 GiB RAM; non-root container capped at 1 CPU, 2 GiB, 128 tasks, no extra swap; bounded disks/inodes. Disable host shares, inherited volumes, clipboard, drag-and-drop, management access and unnecessary devices. | Record effective hypervisor, UID/GID, mount, namespace, capability, cgroup and storage settings. Measure resource ceilings and all #12 denial groups plus the allowed edit. |
+| Network | One frozen literal broker destination; no forwarding to real models; no public egress, DNS leakage or alternate broker routes. Local preparation services bind loopback only. | Design the VM-to-broker path and host-side enforcement explicitly; a loopback service alone is not a guest network boundary. Record allowed exchange, forbidden listeners, positive controls and enforcement counters for IPv4/IPv6. |
+| Authority and stop | Separate external supervisor with a persisted absolute lease of at most ten minutes, immediate fencing on pause/cancel, forced stop within ten seconds, no workspace reuse before stop/reap. | Validate host clock mapping, service survival across coordinator failure, VM start identity, stop/reap observation and late-writer challenge. Prepared lease code has not been qualified against VirtualBox. |
+| Evidence | External marker and process/syscall observers, native HTTP/WebSocket capture, bounded diagnostics, sanitized canary scan and sealed source extraction from a stopped disk. | Establish independent positive controls, retained event pages and raw IDs, no tool-writable authoritative store, exact hashes and cleanup receipts. |
+| Toolchain | Existing proposed GSD 1.21.0, OpenHands 1.62.0, LiteLLM 1.105.1, Node 22.16.0 and Git 2.51.0; Python 3.12+ with exact runtime to freeze. | Approve the installation/image preparation plan, pin artifacts and locks, record effective versions, verify startup and actual tool schemas, and collect a real GSD export. Workstation versions do not substitute for these pins. |
+
+The full [M1-10 limits](../two-task-validation-fixture.md#proposed-numeric-thresholds) remain proposed, including storage, per-role token and simulated-money limits, scenario-specific correction budgets and retention. Approval of code preparation does not approve those numeric run limits.
+
+## Review packet to complete
+
+The bundle's manifest freezes source, checks, policy proposals, payloads, patches, Git objects and harness code. Save its printed SHA-256 externally. Generate a deployment template using `python -m research.validation profile BUNDLE` and store it outside the frozen bundle.
+
+The remaining packet needs the target UUID and start identity, OS/kernel/hypervisor/runtime versions, image and binary hashes, network/mount/controller snapshots, actual raw GSD export and normalized comparison, deployed prompt/tool schema bytes, exact Chat request/response transcripts, observer topology and control results, and supervisor installation/stop recovery plan. Every required blank remains a blocker; placeholder hashes must not be treated as evidence.
+
+The [GSD stage](gsd-export-plan.md) now supplies an actual schema-1 export and fixture-only import controls. The [new review-packet freeze](gsd-freeze-evidence.json) attaches that snapshot, its original query receipt and a normalized probe after verifying exact raw planning equality. Its generated deployment profile carries the real GSD hash, retains `not-approved` and leaves image/network/runtime qualification unset. Planning-host Node >=24 is separate from executor Node 22.16.0; the executor pins were preserved. Do not interpret this one completed input as an approved deployment.
+
+The [minimal runtime preparation](runtime-image-plan.md) binds 186 downloaded Python archives to the pinned upstream lock. The [subsequent approved image build](image-build-plan.md) supplies exact image/archive and binary/software hashes, passing dependency/import checks and non-root/read-only offline startup on Docker Desktop. The measured image is a preparation candidate; final-target package/LSM/security, narrow tool/API, observer and network controls remain open. The startup catalog advertises more than the permitted two tools. No VirtualBox operation, conversation, model call or executor task ran in this stage. See [build evidence](image-build-evidence.json), separate from deployment approval.
+
+No product architecture decision is made here. The experiment still evaluates the existing proposed ownership boundaries and can finish with a safe hold. An approved local-only result cannot establish provider billing finality, agent review quality, or production recovery.
+
+The developer has now [selected a separate guard VM for preparation](../../docs/decisions/0001-validation-network-boundary.md). It will place broker/control and filtering outside the executor guest, with an isolated internal switch and a loopback-bound management transport on the guard only. Exact guard image/UUID/packages, interfaces, packet rules, addresses, counters and control placement must be frozen and reviewed before native provisioning/connection. No network was configured by that decision. The [strict local control gate and SDK schema probe](control-policy-plan.md) are preparation mechanisms; deployed two-tool and wire qualification remain open.
+
+## Next review
+
+1. Prepare coherent [OS-update and hardening inputs](guard-package-plan.md) before freezing final guest profiles. The four downloaded nftables archives do not apply the 97 available OS upgrades or new kernel. Review installation, firewall-service stop/start behavior, the offline network wait and inherited credentials/artifacts. Then freeze the narrowly bound readiness policy and qualify three consecutive unattended cold starts/ACPI shutdowns on the final two-CPU x2APIC-off executor profile. Preserve earlier verdicts and the stopped-disk/attempt chain; do not replay the formatting installer. Guard readiness remains a separate profile measurement.
+2. Continue from the [applied stopped profiles](maintenance-profile-plan.md) and
+   [verified backups](stopped-backup-plan.md). Integrate the original owner/lease
+   and current profile into a one-use frontend start grant, then obtain separate
+   approval for native boot/failure/readiness qualification. Installation and
+   network activation remain separate actions.
+   Final deployment approval and #12/#13/#11 experiments follow their frozen inputs
+   and effective-control evidence.
+
+Do not merge PR #25 with an automatic closure of #11 unless the unfinished measurements are explicitly preserved in tracking. The preparation work supplies assets and tested local mechanisms; it does not satisfy #11–#14 by itself.

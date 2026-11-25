@@ -1,0 +1,235 @@
+{
+  "authority": {
+    "guard_topology_preparation": "approved",
+    "guard_vm_creation": null,
+    "installation": null,
+    "media_attachment": null,
+    "packet_approval_fields": null,
+    "phase_boundary_selection": null,
+    "vm_boot": null
+  },
+  "base_commit": "9f9bb7d",
+  "inputs_reverified": [
+    {
+      "bytes": 30360,
+      "path": "research/validation/maintenance-procedure.json",
+      "sha256": "42b91618b6f35639aee882e9654a7e8df20ef530b6cc5de23663f2400141d232"
+    },
+    {
+      "bytes": 599830528,
+      "path": ".local/validation/maintenance-media-01/maintenance.iso",
+      "sha256": "e09f95fb365b3b87be9f6e7b8f7d1529ee596f09c4ea2fee1cf36ea239dd48d4"
+    },
+    {
+      "bytes": 27362,
+      "path": ".local/validation/maintenance-media-01/payload/media-manifest.json",
+      "sha256": "de9916a00044717b9b5d588cf71bd5d88f565fc675a668a6b9351394dec943b6"
+    },
+    {
+      "bytes": 2581,
+      "path": ".local/validation/maintenance-config-01/profile.json",
+      "sha256": "fef1a95fd7f80e5e4bf89aed1b29135508d7ce0035daa4c5df6a76171efbbf92"
+    },
+    {
+      "bytes": 497662,
+      "path": ".local/validation/offline-repository-01/baseline/status",
+      "sha256": "b9f366f301a3ae82652a1bb983c905c53e325d78e44b831ed8da16a4176190b4"
+    }
+  ],
+  "limits": [
+    "Trusted collectors, authenticated approval bindings, live-supervisor probe and bounded native transport are still required.",
+    "Synthetic clocks/callbacks and real SQLite exercise fixture logic, not native VM enforcement.",
+    "File fsync plus SQLite FULL is not a qualification of physical power-loss durability or hostile filesystem behavior.",
+    "Admission refusal does not itself stop the VM; independent supervisor enforcement and stop/reap remain unqualified.",
+    "Injected sender callbacks are not interruptible by this API; a future adapter must enforce its own deadline and output bound.",
+    "Reported full postconditions and independent stop are not product acceptance or final runtime qualification."
+  ],
+  "next_check": "Prepare guest create-only controls/observation payload and bounded native host transport for separate review; preserve pending guard creation and phase-boundary decisions.",
+  "packets": [
+    {
+      "admission_refusal": "maintenance packet remains unbound",
+      "canonical_packet_sha256": "378b8ea8d31c048e9fd70e6918d170339f7b28daf33075e9a1b8c43b20597c68",
+      "directory": ".local/validation/maintenance-control-guard-01",
+      "files": [
+        {
+          "bytes": 33808,
+          "path": ".local/validation/maintenance-control-guard-01/maintenance_runner.py",
+          "sha256": "d2409b969f99e70b442c625e962b13e5b36d64f0c35af46545ebe56fcda092d1"
+        },
+        {
+          "bytes": 1520,
+          "path": ".local/validation/maintenance-control-guard-01/packet.json",
+          "sha256": "7f6b8f4cd44c76fedcb430953f0b22f632a7985b0b467671bcfb1522ff73c042"
+        },
+        {
+          "bytes": 6347,
+          "path": ".local/validation/maintenance-control-guard-01/preview.json",
+          "sha256": "4ff78a3c73bba9d04450610b1b4abc06ac4dc28fae706fb89ffacedf92f844dd"
+        }
+      ],
+      "journal_created": false,
+      "marker_created": false,
+      "missing_bindings": [
+        "run_nonce",
+        "generation",
+        "target.disk_uuid",
+        "target.pre_boot_disk_sha256",
+        "target.pre_boot_receipt_sha256",
+        "target.dmi_uuid",
+        "target.root_fs_uuid",
+        "target.boot_id",
+        "target.dvd_uuid",
+        "target.media_device",
+        "inputs.guest_preflight_program_sha256",
+        "inputs.source_preservation_receipt_sha256",
+        "approval.boot",
+        "approval.media_attachment",
+        "approval.installation",
+        "approval.target_binding",
+        "approval.backup",
+        "approval.source_preservation",
+        "backup.source_disk_uuid",
+        "backup.disk_uuid",
+        "backup.disk_sha256",
+        "backup.configuration_sha256",
+        "backup.nvram_sha256",
+        "backup.receipt_sha256",
+        "lease.owner_nonce",
+        "lease.expires_utc_ns",
+        "lease.expires_mono_ns"
+      ],
+      "native_calls": 0,
+      "role": "guard"
+    },
+    {
+      "admission_refusal": "maintenance packet remains unbound",
+      "canonical_packet_sha256": "99ba25ac4fb4de0f2d484ee2e5a38e8e7783f50e6a88070fc4fa3cd029f411c4",
+      "directory": ".local/validation/maintenance-control-executor-01",
+      "files": [
+        {
+          "bytes": 33808,
+          "path": ".local/validation/maintenance-control-executor-01/maintenance_runner.py",
+          "sha256": "d2409b969f99e70b442c625e962b13e5b36d64f0c35af46545ebe56fcda092d1"
+        },
+        {
+          "bytes": 1560,
+          "path": ".local/validation/maintenance-control-executor-01/packet.json",
+          "sha256": "856476165ff04ca6a2279645d6eaa4e12106584758e9d5956622764f01f53128"
+        },
+        {
+          "bytes": 6588,
+          "path": ".local/validation/maintenance-control-executor-01/preview.json",
+          "sha256": "737e2990999d6fac47d134cc626b83ea2a1b57043dec61eb0b2a2a6e5b7080f2"
+        }
+      ],
+      "journal_created": false,
+      "marker_created": false,
+      "missing_bindings": [
+        "run_nonce",
+        "generation",
+        "target.pre_boot_disk_sha256",
+        "target.pre_boot_receipt_sha256",
+        "target.dmi_uuid",
+        "target.root_fs_uuid",
+        "target.boot_id",
+        "target.dvd_uuid",
+        "target.media_device",
+        "inputs.guest_preflight_program_sha256",
+        "inputs.source_preservation_receipt_sha256",
+        "approval.boot",
+        "approval.media_attachment",
+        "approval.installation",
+        "approval.target_binding",
+        "approval.backup",
+        "approval.source_preservation",
+        "backup.source_disk_uuid",
+        "backup.disk_uuid",
+        "backup.disk_sha256",
+        "backup.configuration_sha256",
+        "backup.nvram_sha256",
+        "backup.receipt_sha256",
+        "lease.owner_nonce",
+        "lease.expires_utc_ns",
+        "lease.expires_mono_ns"
+      ],
+      "native_calls": 0,
+      "role": "executor"
+    }
+  ],
+  "primary_sources": [
+    {
+      "type": "documentation-not-target-measurement",
+      "url": "https://manpages.ubuntu.com/manpages/noble/man1/systemd-run.1.html",
+      "version": "systemd 255.4 Noble manual"
+    },
+    {
+      "type": "documentation-not-target-measurement",
+      "url": "https://manpages.ubuntu.com/manpages/noble/man5/systemd.exec.5.html",
+      "version": "systemd 255.4 Noble manual"
+    }
+  ],
+  "recorded_utc": "2026-11-22T10:05:53.802460+00:00",
+  "scope": {
+    "current_native_vm_state_measured": false,
+    "current_source_vdi_preservation_measured": false,
+    "guest_preparation_program_provided": false,
+    "media_attached_or_mounted": false,
+    "native_transport_provided": false,
+    "native_vm_commands": 0,
+    "package_installation": false,
+    "product_implementation": false,
+    "provider_calls": 0,
+    "repository_uploads": 0
+  },
+  "source": {
+    "bytes": 33808,
+    "path": "research/validation/maintenance_runner.py",
+    "sha256": "d2409b969f99e70b442c625e962b13e5b36d64f0c35af46545ebe56fcda092d1"
+  },
+  "status": "unarmed-fixture-preparation-not-native-qualified",
+  "tests_source": {
+    "bytes": 18317,
+    "path": "tests/test_maintenance_runner.py",
+    "sha256": "d65218e129f385c07beb436702496856d307d4470048fa937248581e60f04c07"
+  },
+  "verification": {
+    "command": "python -B -X utf8 -m unittest discover -s tests -v",
+    "focused_synthetic_tests": [
+      "test_draft_has_no_authority_and_cannot_probe_or_dispatch",
+      "test_valid_admission_persists_before_any_external_send_and_never_replays",
+      "test_deleted_database_rows_do_not_erase_the_one_use_marker",
+      "test_target_media_mount_and_backup_mismatches_hold_before_intent",
+      "test_clock_deadline_and_live_owner_cannot_be_renewed_by_packet",
+      "test_stale_observation_dead_supervisor_and_memory_journal_hold",
+      "test_zero_unit_exit_without_full_postconditions_is_not_acceptance",
+      "test_independent_stop_is_required_and_full_result_fences_further_authority",
+      "test_two_connections_cannot_both_admit_the_same_maintenance",
+      "test_handoff_is_durable_before_callback_and_lost_ack_never_replays",
+      "test_stale_ticket_and_changed_command_never_reach_sender",
+      "test_transport_ack_alone_keeps_operation_uncertain",
+      "test_missing_independent_stop_and_late_completion_cannot_complete"
+    ],
+    "passed": 168,
+    "ruff_check": "passed: research/validation tests",
+    "ruff_format_check": "passed: 80 files",
+    "sandbox_attempt": {
+      "errors": 5,
+      "log": {
+        "bytes": 82012,
+        "path": ".local/validation/maintenance-runner-tests-01.log",
+        "sha256": "70a80a3c7421f22c6bbfbaba01e4e41b17d5ea248d2a7ff83d7fb0dc71404e70"
+      },
+      "reason": "PowerShell child process launch blocked by sandbox: WinError 1920",
+      "skipped": 1,
+      "tests_run": 169
+    },
+    "seconds": 47.459,
+    "skipped": 1,
+    "successful_log": {
+      "bytes": 28306,
+      "path": ".local/validation/maintenance-runner-tests-02.log",
+      "sha256": "60721b676bddebfc374f633e34d32a0154b47d190234f97026e31689a497f328"
+    },
+    "tests_run": 169
+  }
+}

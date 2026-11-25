@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "downloaded_package_scripts_or_binaries_executed": false,
+    "host_or_guest_network_settings_changed": false,
+    "packages_installed": false,
+    "provider_or_model_calls": 0,
+    "repository_data_uploaded": false,
+    "virtualbox_vm_created_started_or_modified": false
+  },
+  "archive_bytes": 297065488,
+  "base_commit": "402d068",
+  "catalog": {
+    "path": "research/validation/os-update-inputs.json",
+    "sha256": "4e3d6910cd66b8bcd4f70fc13aba59f98a141fed9e8bc96392bcdeb33634e57a"
+  },
+  "classification": "Measured archive retrieval and control-identity verification; not OS installation, boot, security or network qualification",
+  "download_exit": 0,
+  "download_timed_out": false,
+  "executed_collector": {
+    "path": ".local/validation/os-update-artifacts-01/executed-collector.py",
+    "sha256": "cf11e6d2c5e092316acf0ac3b31a02e29edd853faca815968b6d23b12db15760"
+  },
+  "finished_at_utc": "2026-11-21T21:37:17.937917+00:00",
+  "next_check": "Prepare guest bootstrap and hardening inputs without applying changes; actual disk bindings and native actions follow separately approved guard creation.",
+  "receipt": {
+    "indexed_files": 123,
+    "path": ".local/validation/os-update-artifacts-01/receipt.json",
+    "sha256": "f50b00bdec22d3ea949ff26627c78cc2fa84de8046bd9331fb477b430c6b719b"
+  },
+  "remaining": [
+    "Pending disconnected guard VM creation approval",
+    "Actual guard disk identity and separately reviewed offline bootstrap/install/hardening plan",
+    "Credential/identity cleanup, firewall/service startup/stop controls and executor container engine inputs",
+    "Final profile inventory/kernel/readiness and external network/observer/supervisor/extractor qualification"
+  ],
+  "retrieval_approval": "Frozen Ubuntu OS-update archive retrieval authorized through command approval on 2026-11-21",
+  "retrieved_packages": 102,
+  "reused_packages": [
+    "libjansson4",
+    "libnftnl11",
+    "libnftables1",
+    "nftables"
+  ],
+  "schema_version": 1,
+  "source_sha256": {
+    "fetch_os_updates.py": "cf11e6d2c5e092316acf0ac3b31a02e29edd853faca815968b6d23b12db15760",
+    "guard_packages.py": "58f7942fb4f53161039a1ca74c86c9cb2e904dced8c73017db7735d286d6472c",
+    "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+  },
+  "started_at_utc": "2026-11-21T21:37:07.117859+00:00",
+  "verification": {
+    "all_archive_sizes_and_sha256": "pass",
+    "all_package_version_architecture_control_fields": "pass",
+    "catalog_bytes": "unchanged",
+    "collector_sources": "unchanged",
+    "frozen_metadata_inventory": "unchanged",
+    "host_package_status_sha256": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+    "host_package_status_unchanged": true,
+    "repository_tests_run": 107,
+    "scope": "Downloaded data and preparatory harness only",
+    "skipped": 1,
+    "tests_reference": "research/validation/os-update-evidence.json"
+  },
+  "verified_archives": 106
+}

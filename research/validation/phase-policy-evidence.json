@@ -1,0 +1,419 @@
+{
+  "actions": {
+    "agent_steps": 0,
+    "executor_instances": 0,
+    "image_pulls_or_builds": 0,
+    "model_endpoint_deliveries": 0,
+    "model_responses": 0,
+    "package_installs": 0,
+    "repository_data_uploaded": false,
+    "sdk_completion_method_invocations": 4,
+    "serialized_http_requests_denied_at_mock_transport": 4,
+    "socket_connect_attempts": 0,
+    "task_or_payload_executions": 0,
+    "unexpected_http_attempts": 0,
+    "virtualbox_operations": 0
+  },
+  "base_commit": "da405cf",
+  "broker_conformance": {
+    "classification": "Loopback HTTP/SQLite tests with declared synthetic counts and a fake response, no tokenizer attestation or native broker deployment",
+    "new_phase_tests": 9,
+    "observations": [
+      "Oversized finish returns 409 without consuming permit",
+      "Valid finish settles once; replay denied",
+      "Permit task/attempt/role/full bound mismatches retain reserved state",
+      "Bad counts/evidence/roles/output fields and stream options rejected",
+      "Journal failure rolls back phase admission and possible-send together",
+      "Detached transcript resists caller mutation",
+      "Restart with same binding allowed, changed binding held",
+      "Unbound legacy submissions prevent strict broker adoption"
+    ],
+    "tests": "tests/test_phase_policy.py"
+  },
+  "broker_counter_receipts_qualified": false,
+  "cases": [
+    {
+      "assessment": {
+        "dispatch_approved": false,
+        "input_cap": 12000,
+        "input_tokens_estimated": 5209,
+        "input_within_cap": true,
+        "output_cap": 6000,
+        "output_within_cap": true,
+        "requested_output_tokens": 6000
+      },
+      "http_attempts": 1,
+      "phase": "initial_edit",
+      "sdk_error_type": "APIError",
+      "sdk_input_tokens": 5209,
+      "sdk_response_returned": false,
+      "task": "T-01",
+      "wire_bytes": 24537,
+      "wire_fields": [
+        "messages",
+        "model",
+        "max_completion_tokens",
+        "tools"
+      ],
+      "wire_input_tokens": 5209,
+      "wire_output_field": "max_completion_tokens",
+      "wire_path": ".local/validation/wire-input-02/requests/T-01-initial_edit.json",
+      "wire_sha256": "e4c8d90798e2b146b153b42b8eef292a61b9df0d93c1646c3617a98f8718ccb2",
+      "wire_tool_json_sha256": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc"
+    },
+    {
+      "assessment": {
+        "dispatch_approved": false,
+        "input_cap": 6000,
+        "input_tokens_estimated": 5250,
+        "input_within_cap": true,
+        "output_cap": 1000,
+        "output_within_cap": true,
+        "requested_output_tokens": 1000
+      },
+      "http_attempts": 1,
+      "phase": "finish_projection",
+      "sdk_error_type": "APIError",
+      "sdk_input_tokens": 5250,
+      "sdk_response_returned": false,
+      "task": "T-01",
+      "wire_bytes": 24887,
+      "wire_fields": [
+        "messages",
+        "model",
+        "max_completion_tokens",
+        "tools"
+      ],
+      "wire_input_tokens": 5250,
+      "wire_output_field": "max_completion_tokens",
+      "wire_path": ".local/validation/wire-input-02/requests/T-01-finish_projection.json",
+      "wire_sha256": "713c3e2074e82433d3bda87e713025963810494a26cb3a2dffeb94ab9e9e5094",
+      "wire_tool_json_sha256": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc"
+    },
+    {
+      "assessment": {
+        "dispatch_approved": false,
+        "input_cap": 12000,
+        "input_tokens_estimated": 5228,
+        "input_within_cap": true,
+        "output_cap": 6000,
+        "output_within_cap": true,
+        "requested_output_tokens": 6000
+      },
+      "http_attempts": 1,
+      "phase": "initial_edit",
+      "sdk_error_type": "APIError",
+      "sdk_input_tokens": 5228,
+      "sdk_response_returned": false,
+      "task": "T-02",
+      "wire_bytes": 24605,
+      "wire_fields": [
+        "messages",
+        "model",
+        "max_completion_tokens",
+        "tools"
+      ],
+      "wire_input_tokens": 5228,
+      "wire_output_field": "max_completion_tokens",
+      "wire_path": ".local/validation/wire-input-02/requests/T-02-initial_edit.json",
+      "wire_sha256": "b99cf65dfa8649bccf9dec99b45be9ce1e09b8873e973b641ec33a7ac9b5d46c",
+      "wire_tool_json_sha256": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc"
+    },
+    {
+      "assessment": {
+        "dispatch_approved": false,
+        "input_cap": 6000,
+        "input_tokens_estimated": 5269,
+        "input_within_cap": true,
+        "output_cap": 1000,
+        "output_within_cap": true,
+        "requested_output_tokens": 1000
+      },
+      "http_attempts": 1,
+      "phase": "finish_projection",
+      "sdk_error_type": "APIError",
+      "sdk_input_tokens": 5269,
+      "sdk_response_returned": false,
+      "task": "T-02",
+      "wire_bytes": 24955,
+      "wire_fields": [
+        "messages",
+        "model",
+        "max_completion_tokens",
+        "tools"
+      ],
+      "wire_input_tokens": 5269,
+      "wire_output_field": "max_completion_tokens",
+      "wire_path": ".local/validation/wire-input-02/requests/T-02-finish_projection.json",
+      "wire_sha256": "8f9efb77bbd071172219b266d0a7e3d8df2de9d85309e0143b161ed96c338c64",
+      "wire_tool_json_sha256": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc"
+    }
+  ],
+  "changed_code_sha256": {
+    "research/validation/http_tools.py": "06176a5bcaaf725d2277fb9887068a540c14b857e624bb5253851a393ad3ba06",
+    "research/validation/phase_policy.py": "5cb6e90f96234814f77eda3598ed256c637e0d4c0565150905068699a3a47ef8",
+    "research/validation/store.py": "1c698d015c1959bb3ce58a22d67965dbc0ef728f29128b86344ed12bb516e779",
+    "research/validation/wire_input_probe.py": "268fa2b5b5f4889051b432d0f42b364e52777edef1065f6d6929c1d7e9c297ca",
+    "tests/test_phase_policy.py": "8aab7937be74fafea909eb33f7b06b094852573ef6557f1a0bd89e9be10a637d",
+    "tests/test_validation_harness.py": "bd60ac2fbf9fa31b5b3c68b3e99243d4065cf85dc918141de7c740bdc0a9ec4e",
+    "tests/test_wire_input_probe.py": "bec2d89379b63713a82f46d3717dfa27d7e3e60ec86893fe48e83a1170aaa702"
+  },
+  "classification": "Native SDK/LiteLLM HTTP serialization at a rejecting mock transport; prepared task inputs and synthetic finish projections, no Agent step, socket exchange, task execution, model response or final-target qualification; explicit per-call options verified, broker conformance is a separate local synthetic check",
+  "cleanup": {
+    "desktop_started_for_probe": true,
+    "desktop_stop_exit": 0,
+    "engine_unavailable_after_stop": true,
+    "named_container_absent": true,
+    "readiness_observation_timeouts": [
+      "engine-ready-0"
+    ],
+    "running_containers_after": 0
+  },
+  "deployment_tool_schema_sha256": null,
+  "driver_source_sha256": "02e9981ec1d200586debde5df55b3171ae175e3322e1218c8d4b9564a0dda3e0",
+  "explicit_phase_options": true,
+  "finished_epoch": 1795309608.8828893,
+  "fixture_manifest_sha256": "c63bc4edafcbd226dc209c938f94b4506c5034bcabab575070a8be78b1d0a32d",
+  "format": "mcli1-phase-policy-evidence-v1",
+  "full_finish_review_correction_fit_qualified": false,
+  "image_id": "sha256:f242d7a2b69742fde04385231647c54c57396b251ddfd7a5f34095073970e868",
+  "input_sha256": "3111c2dcf999937c5e3fbfe275cc2d1b728e59c59bc335f25723c054fa1faaaf",
+  "litellm_version": "1.105.1",
+  "native_approval": "offline-phase-cap-serialization-2026-11-21",
+  "next_check": "Select and bind a trusted Agent phase handoff; qualify complete request/scripted-response count receipts and final-target wire. Keep finish dispatch held, prior packets/caps unchanged and guard creation separately pending.",
+  "prepared_bindings": [
+    {
+      "base_oid": "187a824c8735c958b32b7d3c1f957d621d07226e",
+      "dispatch_approved": false,
+      "operation": "12345678-1234-4234-8234-000000000001",
+      "task": "T-01",
+      "task_sha256": "6f7503bfc8f1f21bce64c4aad1a9d97f3c7a4826df48af210b6725d9d36cb020",
+      "template_sha256": "8d2845035318dd587e13f9e39ee75278716bfc2d3bb60272cd93b72c46d939a7",
+      "user_prompt": "M-CLI1 PR-01 T-01 | base=187a824c8735c958b32b7d3c1f957d621d07226e | operation=12345678-1234-4234-8234-000000000001 | task=6f7503bfc8f1f21bce64c4aad1a9d97f3c7a4826df48af210b6725d9d36cb020\nAdd src/validate.js and test/validate.test.js only. Export validateName(input) for string inputs. Return nonblank names unchanged. Throw TypeError with message Name must not be blank for empty and ECMAScript whitespace-only strings, including tabs and mixed whitespace. Use a stateless check. Use node:test and node:assert/strict for Ada, padded Ada, empty, spaces and one tab. Run node --test test/validate.test.js. Report the two paths and test exit. Use the assigned source and preloaded tools. Leave Git, dependencies and network configuration alone.\n"
+    },
+    {
+      "base_oid": "2969711382c4fcd8735d2a35316919a94a80c71d",
+      "dispatch_approved": false,
+      "operation": "12345678-1234-4234-8234-000000000002",
+      "task": "T-02",
+      "task_sha256": "0be42c2150ce5e85548ea6b17107f69f0940764b72df10095b0889e34dc7a68d",
+      "template_sha256": "32d4c4ffd7f54b0e792689ec3d1aa5b5783b76f82e7cb9a2a7ee90710d36ead7",
+      "user_prompt": "M-CLI1 PR-01 T-02 | base=2969711382c4fcd8735d2a35316919a94a80c71d | operation=12345678-1234-4234-8234-000000000002 | task=0be42c2150ce5e85548ea6b17107f69f0940764b72df10095b0889e34dc7a68d\nAdd src/cli.js and test/cli.test.js only. Import validateName from ./validate.js. Validate argv[2], defaulting missing input to the empty string. For success print Hello, <name>! followed by LF to stdout and exit 0. For a validation error print its message followed by LF to stderr and exit 2. Use node:test, node:assert/strict and node:child_process for argv cases Ada, padded Ada, missing, empty, spaces and one tab. Assert exit, stdout and stderr. Run node --test test/cli.test.js. Report the two paths and test exit. Use the assigned source and preloaded tools. Leave Git, dependencies and network configuration alone.\n"
+    }
+  ],
+  "prior_uncapped_capture": {
+    "path": "research/validation/wire-input-evidence.json",
+    "sha256": "4d248586aa629228eef0429f45c45f39237052d2b22d841fe4c04c6289b7d5f3"
+  },
+  "probe_source_sha256": "268fa2b5b5f4889051b432d0f42b364e52777edef1065f6d6929c1d7e9c297ca",
+  "profile_finding": {
+    "classification": "Per-call SDK compatibility and local broker contract, not installed Agent integration or final-target qualification",
+    "direct_explicit_finish_output_tokens": 1000,
+    "full_finish_reservation_micro_usd": 80000,
+    "original_profile_changed": false,
+    "proposed_finish_output_cap": 1000,
+    "status": "hold integrated finish dispatch pending trusted Agent phase handoff and qualified counting receipts",
+    "unmodified_agent_default_output_tokens": 6000
+  },
+  "qualified_chat_transcript_sha256": null,
+  "raw_files": {
+    "containers-before.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "containers-before.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-start.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-start.stdout": {
+      "bytes": 29,
+      "sha256": "5f83026ffb6adcef95ed27e8e68d43a0183d524611d0644977de86d6352ad3eb"
+    },
+    "desktop-stop.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-stop.stdout": {
+      "bytes": 29,
+      "sha256": "c4ed0e5b1c3f7042bc1743fd09ea47af6ecc5878e72f6a444895489894af51b0"
+    },
+    "docker-config/config.json": {
+      "bytes": 94,
+      "sha256": "fb0778721a550b523aed3a864d99713499b89e7ccc204d2b2e00980d3ae0be51"
+    },
+    "engine-after-stop.stderr": {
+      "bytes": 224,
+      "sha256": "e9133cf10b02b0b91c8b119848513db0ac541e7c3c19681266939e4b9952f7cc"
+    },
+    "engine-after-stop.stdout": {
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "engine-before.stderr": {
+      "bytes": 224,
+      "sha256": "e9133cf10b02b0b91c8b119848513db0ac541e7c3c19681266939e4b9952f7cc"
+    },
+    "engine-before.stdout": {
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    "engine-ready-0.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-0.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "engine-ready-1.stdout": {
+      "bytes": 7,
+      "sha256": "db4ba0a89ba3c63cd68d4eb99ccf9e51bd122c7d3c2e03f79e91d251fb5300ab"
+    },
+    "executed-probe.py": {
+      "bytes": 12321,
+      "sha256": "268fa2b5b5f4889051b432d0f42b364e52777edef1065f6d6929c1d7e9c297ca"
+    },
+    "image-present.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "image-present.stdout": {
+      "bytes": 72,
+      "sha256": "653f77c084b5f15131de7efb7e69705b37ed73950247681a46683012611ea8cc"
+    },
+    "input.json": {
+      "bytes": 28692,
+      "sha256": "3111c2dcf999937c5e3fbfe275cc2d1b728e59c59bc335f25723c054fa1faaaf"
+    },
+    "named-after.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "named-after.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "named-before.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "named-before.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "observation.json": {
+      "bytes": 104450,
+      "sha256": "5819908db5853df9014bb683c0dbe8beb1b8e41db7bcffaa92af960b9ad8ec7e"
+    },
+    "probe.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "probe.stdout": {
+      "bytes": 103750,
+      "sha256": "c603abc5a1269c7112eafe847b6bf987198169dc223d154a0196db592dbff4df"
+    },
+    "process-before-0.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "process-before-0.stdout": {
+      "bytes": 64,
+      "sha256": "943b315e065238b7073b033f534ef954b6b6461fb3f03a3f5b8555b11bc4c0a2"
+    },
+    "process-before-1.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "process-before-1.stdout": {
+      "bytes": 64,
+      "sha256": "943b315e065238b7073b033f534ef954b6b6461fb3f03a3f5b8555b11bc4c0a2"
+    },
+    "requests/T-01-finish_projection.json": {
+      "bytes": 24887,
+      "sha256": "713c3e2074e82433d3bda87e713025963810494a26cb3a2dffeb94ab9e9e5094"
+    },
+    "requests/T-01-initial_edit.json": {
+      "bytes": 24537,
+      "sha256": "e4c8d90798e2b146b153b42b8eef292a61b9df0d93c1646c3617a98f8718ccb2"
+    },
+    "requests/T-02-finish_projection.json": {
+      "bytes": 24955,
+      "sha256": "8f9efb77bbd071172219b266d0a7e3d8df2de9d85309e0143b161ed96c338c64"
+    },
+    "requests/T-02-initial_edit.json": {
+      "bytes": 24605,
+      "sha256": "b99cf65dfa8649bccf9dec99b45be9ce1e09b8873e973b641ec33a7ac9b5d46c"
+    },
+    "result.json": {
+      "bytes": 21680,
+      "sha256": "98a93408060f1bbf0ee186b8b9c6d8a0a4ba90de23f7ffed74df370fb1a6bbe2"
+    },
+    "run.py": {
+      "bytes": 9036,
+      "sha256": "02e9981ec1d200586debde5df55b3171ae175e3322e1218c8d4b9564a0dda3e0"
+    },
+    "running-after.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "running-after.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "raw_root": ".local/validation/wire-input-02",
+  "retained_inputs_sha256": {
+    "dynamic_context": "77a5ca9923c3a8e07774d9acb1544197cf362a20fb0991a3215a61c5f48422a0",
+    "native_tool_json": "f970210f7d91edd8f3df5435ba14f3309ccbd70542394e655892728ff31dc5cc",
+    "request": "48b5b2f8c8519d80612766a9e1088be2459ca6da9e2396159b091b0dd5d41410",
+    "static_system_prompt": "ec7656c1a1975904653d8cba87e41ae5d493d110ce1607b6d8b5476e254b6d3a"
+  },
+  "sdk_commit": "504a88cab0fb48ee5226238ad7b8f1d865fa84a8",
+  "sdk_version": "1.62.0",
+  "source_review": {
+    "agent_gap": "Agent._step passes no per-phase output limit; LLMCallContext carries session/cache identity only",
+    "primary_sources": [
+      "https://github.com/OpenHands/software-agent-sdk/blob/504a88cab0fb48ee5226238ad7b8f1d865fa84a8/openhands-sdk/openhands/sdk/llm/options/chat_options.py#L21-L103",
+      "https://github.com/OpenHands/software-agent-sdk/blob/504a88cab0fb48ee5226238ad7b8f1d865fa84a8/openhands-sdk/openhands/sdk/agent/agent.py#L751-L940",
+      "https://github.com/OpenHands/software-agent-sdk/blob/504a88cab0fb48ee5226238ad7b8f1d865fa84a8/openhands-sdk/openhands/sdk/llm/call_context.py#L13-L41"
+    ],
+    "sdk_per_call_option": "select_chat_options uses caller max_completion_tokens before defaults"
+  },
+  "started_epoch": 1795309548.3854342,
+  "trusted_agent_phase_handoff_qualified": false,
+  "verification": {
+    "errors": 0,
+    "files": {
+      "result.json": {
+        "bytes": 45,
+        "sha256": "c81cde58d35d1d426d05d289b6dfa491ef897a9a9db02b5ea9e79e2435c6a9b0"
+      },
+      "tests.stderr": {
+        "bytes": 20608,
+        "sha256": "f3d0261adae1234f434691bb844710c0cc44e9a19877c98e7219ef685ddb1904"
+      },
+      "tests.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "passed": 125,
+    "path": ".local/validation/phase-policy-check-02",
+    "receipt": {
+      "elapsed_seconds": 30.983,
+      "exit": 0
+    },
+    "skip": "Existing Windows symlink test",
+    "skipped": 1,
+    "total": 126
+  }
+}

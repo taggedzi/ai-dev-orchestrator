@@ -1,0 +1,22 @@
+{
+  "approved_date": "2026-11-24",
+  "base_distributions_before": [
+    [
+      "pip",
+      "26.2.2"
+    ]
+  ],
+  "format": "orchestrator-web-install-approval-v1",
+  "lock_sha256": "a0a1619c04c3480dfc1b5a73cb783535b08f944c734af8d68eb5b658c7846cea",
+  "manifest_sha256": "7d4909ec027f84218363c4b18fc193b7c7adfb1ace0c94a1dfdfa10e8b7ae681",
+  "new_environment": ".local/product-web-venv",
+  "package_count": 19,
+  "plan": {
+    "bytes": 4573,
+    "path": ".local/validation/web-dependency-review-01/approved-plan.md",
+    "sha256": "1f14799f27a01f8e3a5a5cdc28843fe1ae54931f94008ed1a7e8796b9a4f07dd"
+  },
+  "reference": "conversation:user-approval:web-dependency-install-01",
+  "scope": "Create this new environment and install reviewed wheels offline, then local compatibility/product tests; no host/VM changes",
+  "user_answer": "Approve project-local installation (Recommended)"
+}

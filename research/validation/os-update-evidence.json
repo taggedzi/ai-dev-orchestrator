@@ -1,0 +1,113 @@
+{
+  "actions": {
+    "archives_downloaded_in_resolution": false,
+    "downloaded_package_code_executed": false,
+    "packages_installed": false,
+    "provider_or_model_calls": 0,
+    "repository_data_uploaded": false,
+    "vm_started_or_modified": false
+  },
+  "base_commit": "fccf2bf",
+  "catalog": {
+    "path": "research/validation/os-update-inputs.json",
+    "sha256": "4e3d6910cd66b8bcd4f70fc13aba59f98a141fed9e8bc96392bcdeb33634e57a"
+  },
+  "checks": {
+    "additional_download_bytes_at_resolution": 296538256,
+    "all_97_version_comparisons": "native dpkg old lt new passed",
+    "archive_bytes": 297065488,
+    "archive_union": 106,
+    "host_package_status_sha256": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+    "host_package_status_unchanged": true,
+    "original_collection": "full indexed inventory unchanged",
+    "phased_updates": "explicitly included; no WSL machine-ID-dependent selection",
+    "pinned_replay": "Both roles produced the same exact package-effect set as initial simulations",
+    "published_final_versions": 489,
+    "signature_identity": "F6ECB3762474EDA9D21B7022871920D1991BC93C",
+    "signed_releases": [
+      {
+        "codename": "noble",
+        "date": "2026-11-21T18:14:10+00:00",
+        "suite": "noble-updates",
+        "valid_until": null
+      },
+      {
+        "codename": "noble",
+        "date": "2024-04-25T15:10:33+00:00",
+        "suite": "noble",
+        "valid_until": null
+      },
+      {
+        "codename": "noble",
+        "date": "2026-11-21T09:52:04+00:00",
+        "suite": "noble-security",
+        "valid_until": null
+      }
+    ]
+  },
+  "classification": "Measured offline signed-metadata role resolution and pinned transaction replay; no OS installation or final-profile qualification",
+  "executed_source_snapshots": {
+    "guard_packages.py": ".local/validation/os-update-resolution-02-guard_packages.py",
+    "os_update_plan.py": ".local/validation/os-update-resolution-02-os_update_plan.py"
+  },
+  "finished_at_utc": "2026-11-21T21:23:01.955768+00:00",
+  "indexed_native_artifacts": 45,
+  "native_commands": 13,
+  "native_receipt": {
+    "path": ".local/validation/os-update-resolution-02/receipt.json",
+    "sha256": "408bf86c502100b284273aa5ec1c6a43c4c7b8949e414cc2079d329ebfaca3a9"
+  },
+  "next_check": "Review and retrieve the exact frozen archive union; then prepare separately approved offline guest bootstrap/install/hardening inputs. Pending guard creation approval remains separate.",
+  "prior_attempt": {
+    "finding": "APT --no-download required cached archives even with --simulate; held before the transaction. Revised mode does not omit packages or invoke missing-archive recovery.",
+    "path": ".local/validation/os-update-resolution-01",
+    "receipt_sha256": "dd2b26904caeb64db450b7cdf42ca9403881addfcaa934c2a634364d4f1b9510",
+    "source_sha256": {
+      "guard_packages.py": "58f7942fb4f53161039a1ca74c86c9cb2e904dced8c73017db7735d286d6472c",
+      "os_update_plan.py": "a44ec38c7d0e946cbfc8259295e48c7416b00042cd62825ced86ea995a15c6dd"
+    },
+    "status": "hold"
+  },
+  "profiles": {
+    "executor": {
+      "counts": {
+        "additions": 5,
+        "held_back": 0,
+        "removals": 0,
+        "upgrades": 97
+      },
+      "expected_installed_rows": 485
+    },
+    "guard": {
+      "counts": {
+        "additions": 9,
+        "held_back": 0,
+        "removals": 0,
+        "upgrades": 97
+      },
+      "expected_installed_rows": 489
+    }
+  },
+  "schema_version": 1,
+  "source_sha256": {
+    "guard_packages.py": "58f7942fb4f53161039a1ca74c86c9cb2e904dced8c73017db7735d286d6472c",
+    "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+  },
+  "started_at_utc": "2026-11-21T21:22:59.675609+00:00",
+  "verification": {
+    "elapsed_seconds": 25.085,
+    "new_tests": 11,
+    "raw_stderr": {
+      "path": ".local/validation/os-update-check-01/tests.stderr",
+      "sha256": "ee0640464cbf96ce9c969ed3dd987d9160146d058dfb91f8b012effef79ebb0b"
+    },
+    "raw_stdout": {
+      "path": ".local/validation/os-update-check-01/tests.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "result": "pass",
+    "scope": "Repository and preparatory command/data conformance; not installation or VM/native security qualification",
+    "skipped": 1,
+    "tests_run": 107
+  }
+}

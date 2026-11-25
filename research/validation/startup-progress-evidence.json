@@ -1,0 +1,252 @@
+{
+  "VM_boots": 0,
+  "actual_VM_stop_commands": 0,
+  "actual_readonly_preflight": {
+    "inventory": {
+      "bytes": 3193,
+      "path": ".local/validation/startup-progress-preflight-01/inventory.json",
+      "sha256": "0ce9e469db2865386d3757dea19852f09217ee8064ccbe9fdf12314c302b4286"
+    },
+    "observations": {
+      "executor": {
+        "machine_sha256": "a7dd6affd6c2a3e041d8db2f9fbb851c4db3efbddcf82f9bc77acde929040b5c",
+        "medium_sha256": "d8dbe0145c351913a2a2d917a6b333ca60da1fffb7db75ae0e71f23475e7dd69",
+        "observed_mono_ns": 23846931377100
+      },
+      "guard": {
+        "machine_sha256": "795dfea2313ecb41f64537ec086dbce34a1fc514e0951c96b8e09e4f40a45a68",
+        "medium_sha256": "2acc4ad14954518206da0b6a4eacc755b00d1bf7596c0eb0ac3e8a7b0fd1f93b",
+        "observed_mono_ns": 23846209100600
+      }
+    },
+    "receipt": {
+      "bytes": 569,
+      "path": ".local/validation/startup-progress-preflight-01/preactivation.receipt.json",
+      "sha256": "5bc605c54a5b573318773f75332e39ee6307188f20752b31c8c7c2b9ea00cc50"
+    }
+  },
+  "added_tests": 8,
+  "classification": "Python surrogate/synthetic state tests and actual read-only stopped preflight; no native activation in this cohort",
+  "coverage": [
+    "forward machine/session reads return a wait marker",
+    "default strict observation remains unchanged",
+    "backward/unknown states, profile/version/PID drift hold",
+    "wait cannot join, publish session receipt or renew original authority",
+    "cross-frame regression holds",
+    "wait after join holds",
+    "controller excludes waits from its two running samples"
+  ],
+  "format": "mcli1-forward-startup-wait-preparation-v1",
+  "limits": [
+    "Forward-progress handling is a source finding, not a proven cause of either consumed native hold",
+    "No native running/start/session/stop case has passed",
+    "Neither previous review/lease/stop may be reused",
+    "No guest readiness, UART, isolation, installation, product implementation or lifecycle completion claim"
+  ],
+  "next_check": "Prepare a fresh exact live one-boot review for separate approval under this tested source/policy cohort.",
+  "preliminary_check_note": "An initial direct test invocation lacked the discovery import path, then two drift fixtures used a nonmatching memory literal (corrected). One initial actual-Python normal-finish test conservatively held when a family PID identity became unavailable during exit. The complete final run passed its normal-finish case; ambiguous process-exit observations still hold and are not retried or accepted. No native incident cause is inferred.",
+  "sources": [
+    {
+      "bytes": 14602,
+      "path": "research/validation/maintenance_stop.py",
+      "sha256": "f947ae1c1558d150db556a8437a01de2934938fa38e4478ca5da6264c1882faf"
+    },
+    {
+      "bytes": 6047,
+      "path": "research/validation/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 33854,
+      "path": "research/validation/maintenance_host.py",
+      "sha256": "ebd01b1c779bbb1cd286b5e31c767592e8c2b03065b3dc732db2b3f92a847052"
+    },
+    {
+      "bytes": 12755,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    },
+    {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 10697,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 16923,
+      "path": "research/validation/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 10319,
+      "path": "research/validation/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 3809,
+      "path": "research/validation/backup_records.py",
+      "sha256": "633902a7db727cfd1b0086b354816a6dbd79e3e14c967dceeca9f55a91adc521"
+    },
+    {
+      "bytes": 12297,
+      "path": "research/validation/owner_process.py",
+      "sha256": "4bfbb296bd5081d15caaef338cbaa89cef3f7b768764d55f2de5cc1c1fd76f1b"
+    },
+    {
+      "bytes": 16850,
+      "path": "research/validation/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 20426,
+      "path": "research/validation/boot_preconditions.py",
+      "sha256": "fe403017a39518b44064ca9154d9aa58ed28e2a277f4e96832e47eee48dc046d"
+    },
+    {
+      "bytes": 36517,
+      "path": "research/validation/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122"
+    },
+    {
+      "bytes": 25846,
+      "path": "research/validation/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    {
+      "bytes": 17502,
+      "path": "research/validation/stopped_backup.py",
+      "sha256": "6b363daf2ed5a88c96609bf1fd8d7633924944a40868a7ab1dc8a077aa0d3f0f"
+    },
+    {
+      "bytes": 36773,
+      "path": "research/validation/frontend_start.py",
+      "sha256": "414591cf1329c1ced4a0c4d55ea89ef5a8803eaab6aa55f189c72cac17dcdc8c"
+    },
+    {
+      "bytes": 11632,
+      "path": "research/validation/frontend_process.py",
+      "sha256": "f81bc341c528dc0cf2039c7df9a2447c78f3880121bedb82a65a295bdced0ce8"
+    },
+    {
+      "bytes": 12602,
+      "path": "research/validation/native_session.py",
+      "sha256": "f7d036eb6df2fc27a06a5f98b4faceddc42d284d4e5958c2f9aa8ac6a4ed661b"
+    },
+    {
+      "bytes": 33711,
+      "path": "research/validation/startup_qualification.py",
+      "sha256": "2feaa4b52aeac1137ba3dcfcefaaa081bb5f99f8e4d1cbc8183cd93055984c7e"
+    },
+    {
+      "bytes": 9410,
+      "path": "tests/test_native_session.py",
+      "sha256": "23adb4764cc532c83ecba94f13113be98fd168f706a23e49d08b68b1162ada08"
+    },
+    {
+      "bytes": 27747,
+      "path": "tests/test_frontend_start.py",
+      "sha256": "d1cf44fd48a5a32bfa3ad8a85940163d9272fe852abada31804639387937b98a"
+    },
+    {
+      "bytes": 25677,
+      "path": "tests/test_startup_qualification.py",
+      "sha256": "5f21f13b0f16ab5f4a2f81243cf36e59763cfef0130a03921aa38ece8a864ed5"
+    }
+  ],
+  "status": "forward startup observations prepared as wait-only; native running qualification remains open",
+  "unchanged_limits": {
+    "original_lease_ns": 600000000000,
+    "query_ns": 4000000000,
+    "sample_ns": 10000000000,
+    "startup_ns": 15000000000
+  },
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 188350,
+      "path": ".local/validation/startup-progress-regression-01/inventory.json",
+      "sha256": "1c7c39544584b783bd7348f89c083b4d7d2f193507bea7262c836cc7a15ef4ba"
+    },
+    "log": {
+      "bytes": 79975,
+      "path": ".local/validation/startup-progress-regression-01/unittest.log",
+      "sha256": "9604856bc9679ff909fbfbe3800918b54aa6f1e9b5bb791cbb29dba8e82e54c5"
+    },
+    "passed": 452,
+    "skipped": [
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_exclusive_file_and_mask_never_overwrite_existing_bytes"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_global_journal_survives_close_and_rejects_a_fresh_attempt"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_hardlinked_or_foreign_owned_inputs_are_not_approved"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_partial_file_write_remains_and_refuses_replay"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_real_child_capture_timeout_output_bound_and_reaping"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_symlink_ancestors_writable_parents_and_path_escapes_refuse"
+      },
+      {
+        "reason": "POSIX pipe/process-group check",
+        "test": "test_guest_maintenance.GuestMaintenanceTests.test_native_pipe_deadline_output_bound_and_child_reaping"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_actual_non_guest_identity_fails_before_any_stage_write"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_bounded_decode_refuses_expansion_before_creating_final"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_tampered_compression_and_existing_final_file_never_execute_or_overwrite"
+      },
+      {
+        "reason": "symlink creation is unavailable to this process",
+        "test": "test_validation_harness.ObserverTests.test_symlinks_are_rejected_when_platform_supports_creation"
+      }
+    ],
+    "summary": {
+      "bytes": 15629,
+      "path": ".local/validation/startup-progress-regression-01/result.json",
+      "sha256": "05096522d3630855ca4631f9040c0947efb30bfab381843bf34cbbe603ceca81"
+    },
+    "tests_run": 465
+  }
+}

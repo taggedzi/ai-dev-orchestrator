@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "classification": "measured Windows-hosted VM preparation; not executor or isolation qualification",
+  "created_at_utc": "2026-11-21T06:11:24.6531121Z",
+  "approval": "Provisioning authorized through command approval on 2026-11-21",
+  "preparation_commit": "2758406",
+  "plan_sha256": "c578cc8f879491dab9f0f4cd281d964ab1b6c4e2e2a1c52d01fb66dd55797920",
+  "script_sha256": "c9140e7f2c758f78513ec6c3ca349e90285e076e0235e4687f9d6260797d7dc6",
+  "virtualbox": "7.2.22r175245",
+  "vm_name": "mcli1-validation-01",
+  "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704",
+  "state": "powered-off-installer-attached",
+  "cpus": 2,
+  "memory_mib": 4096,
+  "installation_disk_mib": 32768,
+  "disabled_nics": [1, 2, 3, 4, 5, 6, 7, 8],
+  "clipboard": "disabled",
+  "drag_and_drop": "disabled",
+  "usb_controllers": "off",
+  "audio": "off",
+  "remote_display": "off",
+  "installer": {
+    "filename": "ubuntu-24.04.5-live-server-amd64.iso",
+    "bytes": 4080486400,
+    "sha256": "97f3d7ffb032c3eb3b23d2c8be9cc76e60c2c1f2c0146ba5ba9fe01cafae0fd8",
+    "matches_published_sha256": true,
+    "checksum_source": "https://releases.ubuntu.com/24.04/SHA256SUMS",
+    "signature_verification": "not performed"
+  },
+  "receipt": ".local/validation/vms/mcli1-validation-01/provisioning-receipt.json",
+  "receipt_configuration_checks": "pass: poweroff, eight disabled NICs, 4096 MiB and two CPUs",
+  "installer_detection": {
+    "command": "VBoxManage unattended detect --iso=.local/validation/installers/ubuntu-24.04.5-live-server-amd64.iso --machine-readable",
+    "exit": 1,
+    "error": "E_NOTIMPL (0x80004001) at DetectIsoOS()",
+    "partial_metadata": {
+      "os_type": "Ubuntu24_64",
+      "os_version": "24.04.5 LTS Noble Numbat",
+      "flavor": "Ubuntu-Server",
+      "install_supported_field": "on"
+    },
+    "conclusion": "Partial identity observation only; unattended installation compatibility is unqualified because the command failed."
+  },
+  "host_changes": "registered the new VM and its installer/media; no host network reconfiguration",
+  "vm_booted": false,
+  "guest_os_installed": false,
+  "runtime_qualified": false,
+  "original_review_bundle": {
+    "manifest_sha256": "08cbd45c6f48c930300f5132bbc5af24d63cf0f55d3c24210095607ede57a405",
+    "verified_files": 220,
+    "unchanged": true
+  },
+  "next_check": "Prepare and approve the offline OS installation method. Resolve or avoid the unattended-detection failure before relying on automated installation; keep networking disabled."
+}

@@ -1,0 +1,215 @@
+{
+  "NIC_activations": 0,
+  "VM_boots": "one frontend startup attempt; failure reported at LockMachine before power-up; no new guest log or accepted running sample",
+  "accepted_running_samples": 0,
+  "approval": "conversation:user-I-approve:guard-recovery-review-05",
+  "diagnosis": "Startup polling begins with showvminfo, which upstream source says takes a shared session lock. A status query racing the direct frontend lock is a concrete candidate for the installed lock failure. The retained native error is measured; exact conflicting lock ownership/timing is not measured, so root cause remains unproven.",
+  "failure": {
+    "controller_failure": "Hold: frontend is retired",
+    "family_terminated": false,
+    "frontend_stderr": {
+      "bytes": 357,
+      "path": ".local/validation/guard-startup-review-05/owner/frontend.stderr.bin",
+      "sha256": "f1ce31ba459454919a3f990fbbb2e361d06e32245c73689c7b05f1904105d5a4"
+    },
+    "frontend_stdout": {
+      "bytes": 101,
+      "path": ".local/validation/guard-startup-review-05/owner/frontend.stdout.bin",
+      "sha256": "9c46147801a509e59ea5dd85a94d0f90a48bbc3aeb1ad49e86e03534b2d7d94c"
+    },
+    "job_active_processes": 0,
+    "root_exit": 1,
+    "watchdog_reason": "authority/family watchdog: frontend root exited before original stop acceptance"
+  },
+  "format": "mcli1-guard-initial-aborted-native-lock-hold-v1",
+  "guest_commands": 0,
+  "independent_process_inspection": {
+    "bytes": 3957,
+    "path": ".local/validation/guard-startup-review-05/independent-startup-inspection.json",
+    "sha256": "d8ddde9ee0c7647716e65d5005e14ef6029711362a109ec04f8611ac197ed93f"
+  },
+  "native_frontend_roots_created_and_resumed": 1,
+  "native_settlement_qualified": false,
+  "next_check": "Design/test lock-free COM-only waiting until the exact frontend owns a stable locked session, before lock-taking CLI profile reads. Preserve existing lease/startup bounds and full profile verification before accepting a join. Any successor recovery grant must reconcile this newly consumed review/stop and get separate exact native approval; no retry or lease reuse.",
+  "original_stop": {
+    "accepted": false,
+    "attempts": 1,
+    "exit": 1,
+    "inventory": {
+      "bytes": 864,
+      "path": ".local/validation/owner-stops/3779b158bfab4ca388a4bbafe98517d8/inventory.json",
+      "sha256": "2dd016b71b437b552afd729e55397837e485cd2d3d9ec6c8aa1058f4721b1cb1"
+    },
+    "job_active_processes": 0,
+    "ledger_state": "possible-send",
+    "stderr": "Machine is not currently running"
+  },
+  "package_installs": 0,
+  "posthold": {
+    "all_backing_files_unchanged": true,
+    "executor_inventory": {
+      "bytes": 1198,
+      "path": ".local/validation/executor-native-posthold-05/inventory.json",
+      "sha256": "4e34c2c247118f7f400e5bb4cd4c96cf1c0cce3b411caccccbb952ed93a857dd"
+    },
+    "executor_state": "poweroff/unlocked/PID-zero",
+    "files": {
+      "bytes": 2438,
+      "path": ".local/validation/guard-startup-review-05/postfiles/receipt.json",
+      "sha256": "d6a1ffe1181bf3f0ac8c9bc8733e23f9df4e604d4bc6ec0b0f61ab67cb61d153"
+    },
+    "guard_inventory": {
+      "bytes": 1180,
+      "path": ".local/validation/guard-native-posthold-05/inventory.json",
+      "sha256": "21bd277183ace2456c4c848b43abf453c263b55b6f810b5b22dc01d695635892"
+    },
+    "guard_nvram_absent": true,
+    "guard_state": "aborted/unlocked/PID-zero"
+  },
+  "restores": 0,
+  "retries": 0,
+  "review_inventory": {
+    "bytes": 24011,
+    "path": ".local/validation/guard-startup-review-05/inventory.json",
+    "sha256": "84f49f6f01024f547944ac82653c2e84d59b9d9ad00064ce83a914247e877c78"
+  },
+  "review_sha256": "680a7aa23fe6efcd1db67344d1271e4e32b71e08f62e47736cbe8e8712dbefd0",
+  "source_review": {
+    "exact_installed_source_correspondence": "unknown",
+    "headless": {
+      "header_date": "2026-06-22",
+      "header_revision": "114470",
+      "observation": "calls LockMachine(LockType_VM) before acquiring console and powering up",
+      "url": "https://raw.githubusercontent.com/VirtualBox/virtualbox/main/src/VBox/Frontends/VBoxHeadless/VBoxHeadless.cpp"
+    },
+    "showvminfo": {
+      "header_date": "2026-06-15",
+      "header_revision": "114362",
+      "observation": "handleShowVMInfo calls LockMachine(LockType_Shared), obtains Session.Machine, prints info and UnlockMachine",
+      "url": "https://raw.githubusercontent.com/VirtualBox/virtualbox/main/src/VBox/Frontends/VBoxManage/VBoxManageInfo.cpp"
+    }
+  },
+  "sources": [
+    {
+      "bytes": 6220,
+      "path": ".local/validation/initial-aborted-regression-05/sources/backup_records.py",
+      "sha256": "10fef40e816b1b7cd840fac94ed3ac8f1fdf16b4860814d864afbb69816da8c7"
+    },
+    {
+      "bytes": 21485,
+      "path": ".local/validation/initial-aborted-regression-05/sources/boot_preconditions.py",
+      "sha256": "b80bd097eeb2c34266b46432c16f5bdedd4607766c7f6c22f41688f966c35f3d"
+    },
+    {
+      "bytes": 6047,
+      "path": ".local/validation/initial-aborted-regression-05/sources/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 10319,
+      "path": ".local/validation/initial-aborted-regression-05/sources/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 16580,
+      "path": ".local/validation/initial-aborted-regression-05/sources/frontend_process.py",
+      "sha256": "dbc3cdff35d96432bce6e847b31e4e7c5ad25d477fab477b159e1f7057189e2d"
+    },
+    {
+      "bytes": 39023,
+      "path": ".local/validation/initial-aborted-regression-05/sources/frontend_start.py",
+      "sha256": "622915e6fbe9bf8da2afa6b83f1c6281d084cd20dcaf73022497bab30b40e74a"
+    },
+    {
+      "bytes": 21756,
+      "path": ".local/validation/initial-aborted-regression-05/sources/initial_aborted.py",
+      "sha256": "571486218af14705ba6476c1167db567378361d5f2ced49ffcdac8082b138e50"
+    },
+    {
+      "bytes": 35250,
+      "path": ".local/validation/initial-aborted-regression-05/sources/maintenance_host.py",
+      "sha256": "0fac9c031deb3ff6c3bc43e43b962c283115cd3861b5d49dd7bfcfc025978eda"
+    },
+    {
+      "bytes": 15471,
+      "path": ".local/validation/initial-aborted-regression-05/sources/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": ".local/validation/initial-aborted-regression-05/sources/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 14633,
+      "path": ".local/validation/initial-aborted-regression-05/sources/maintenance_stop.py",
+      "sha256": "5125a7553465e792997a858bb162f499d729226d91d662ae667ee4dca7248fe6"
+    },
+    {
+      "bytes": 36517,
+      "path": ".local/validation/initial-aborted-regression-05/sources/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122"
+    },
+    {
+      "bytes": 13099,
+      "path": ".local/validation/initial-aborted-regression-05/sources/native_session.py",
+      "sha256": "b019aad030710e708d0ba447abf81c2bd5857a0fdd0b5e9bb9bce7633c0a0eac"
+    },
+    {
+      "bytes": 25846,
+      "path": ".local/validation/initial-aborted-regression-05/sources/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    {
+      "bytes": 16850,
+      "path": ".local/validation/initial-aborted-regression-05/sources/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 12297,
+      "path": ".local/validation/initial-aborted-regression-05/sources/owner_process.py",
+      "sha256": "4bfbb296bd5081d15caaef338cbaa89cef3f7b768764d55f2de5cc1c1fd76f1b"
+    },
+    {
+      "bytes": 1726,
+      "path": ".local/validation/initial-aborted-regression-05/sources/process_proof.py",
+      "sha256": "af51675c2760bb21ada8af8ec2e10ffbd39194857025a52c43495ce10e3265db"
+    },
+    {
+      "bytes": 6500,
+      "path": ".local/validation/initial-aborted-regression-05/sources/recovery_records.py",
+      "sha256": "61e457af666b0b96453da6bacc0385b2ab535256957ca0a3497e8d8e7a3572ab"
+    },
+    {
+      "bytes": 37243,
+      "path": ".local/validation/initial-aborted-regression-05/sources/startup_qualification.py",
+      "sha256": "f5a258b424a45386c0386da019f965189b1d8558cb636e3e4eb529f3748860b7"
+    },
+    {
+      "bytes": 18952,
+      "path": ".local/validation/initial-aborted-regression-05/sources/stopped_backup.py",
+      "sha256": "20205aefa189ab6891ab95a040db8433467aefefc6a95e62a07cb83170d6a80f"
+    },
+    {
+      "bytes": 16923,
+      "path": ".local/validation/initial-aborted-regression-05/sources/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 3366,
+      "path": ".local/validation/initial-aborted-regression-05/sources/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 10697,
+      "path": ".local/validation/initial-aborted-regression-05/sources/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 12755,
+      "path": ".local/validation/initial-aborted-regression-05/sources/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    }
+  ],
+  "status": "approved recovery frontend exited 1 at session lock; no running sample qualified; review consumed"
+}

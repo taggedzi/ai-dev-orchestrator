@@ -1,0 +1,1237 @@
+{
+  "authority": {
+    "backup_binding": null,
+    "control_changes": null,
+    "dpkg_configuration_review": null,
+    "guard_creation": null,
+    "guard_topology_preparation": "approved",
+    "guest_boot": null,
+    "installation": null,
+    "observation": null,
+    "phase_boundary_selection": null,
+    "root_session": null,
+    "transfer": null
+  },
+  "base_commit": "54ade13b1f9186af444704548bc63de1bab87780",
+  "earlier_packets": [
+    {
+      "directory": ".local/validation/transfer-guard-inspect-01",
+      "files": [
+        {
+          "bytes": 1614,
+          "path": ".local/validation/transfer-guard-inspect-01/grant.json",
+          "sha256": "a716546fd4aef121939f976274a8fdfb8f9f06a9c8c33fc9daba83505e7e0d4c"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-guard-inspect-01/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-guard-inspect-01/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4238,
+          "path": ".local/validation/transfer-guard-inspect-01/inspection-spec.json",
+          "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-guard-inspect-01/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34117,
+          "path": ".local/validation/transfer-guard-inspect-01/maintenance_transfer.py",
+          "sha256": "218b9e224ba0aa925953328d497b3c22f796d31eb9348595bff62db9d6ce44d8"
+        },
+        {
+          "bytes": 1208,
+          "path": ".local/validation/transfer-guard-inspect-01/review.json",
+          "sha256": "3c69b2fdddf35d56b1bb696180c0ba454da41fb11cbd02cde2b71af940b46267"
+        },
+        {
+          "bytes": 10214,
+          "path": ".local/validation/transfer-guard-inspect-01/transfer_commands.py",
+          "sha256": "d2e79db099f8dfee4dbe90cf47ecc1fc1b8301edcd679b4e2d628e5227187bdb"
+        }
+      ],
+      "purpose": "inspect",
+      "review": {
+        "VM_activation_authorized": false,
+        "actual_observation_present": false,
+        "collectors_implemented": false,
+        "grant": {
+          "bytes": 1614,
+          "sha256": "a716546fd4aef121939f976274a8fdfb8f9f06a9c8c33fc9daba83505e7e0d4c"
+        },
+        "mutations": 0,
+        "native_calls": 0,
+        "purpose": "inspect",
+        "refusal": "transfer approval is unbound",
+        "role": "guard",
+        "static_payload_layout": [
+          {
+            "bytes": 21670,
+            "compressed_bytes": 6617,
+            "name": "guest_maintenance_probe.py",
+            "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+          },
+          {
+            "bytes": 4238,
+            "compressed_bytes": 1357,
+            "name": "inspection-spec.json",
+            "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+          }
+        ],
+        "status": "unarmed-transfer-controller-review",
+        "still_required": [
+          "Actual VM/disk/backup/root-session and immutable lease bindings",
+          "Qualified live-state, approval and independent stop collectors",
+          "Scoped native creation/boot/UART/transfer/observation/control approvals",
+          "Real observation and exact control packet for controls purpose",
+          "Native target and complete installation/runtime qualification"
+        ]
+      },
+      "role": "guard"
+    },
+    {
+      "directory": ".local/validation/transfer-guard-controls-01",
+      "files": [
+        {
+          "bytes": 1843,
+          "path": ".local/validation/transfer-guard-controls-01/grant.json",
+          "sha256": "a5d75c958a8f612fd85f54070d8b3356482282db51f0e312f90f946acd105e75"
+        },
+        {
+          "bytes": 26530,
+          "path": ".local/validation/transfer-guard-controls-01/guest_maintenance_control.py",
+          "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-guard-controls-01/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-guard-controls-01/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4238,
+          "path": ".local/validation/transfer-guard-controls-01/inspection-spec.json",
+          "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-guard-controls-01/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34117,
+          "path": ".local/validation/transfer-guard-controls-01/maintenance_transfer.py",
+          "sha256": "218b9e224ba0aa925953328d497b3c22f796d31eb9348595bff62db9d6ce44d8"
+        },
+        {
+          "bytes": 688,
+          "path": ".local/validation/transfer-guard-controls-01/request.json",
+          "sha256": "e3f8f54e97cadc3646f8aca0c45c9b4f07b141b57a06b4fd5c38bbf643ab1fb0"
+        },
+        {
+          "bytes": 1582,
+          "path": ".local/validation/transfer-guard-controls-01/review.json",
+          "sha256": "d93b3aa48d77f930edae3f69c150684eeb52a101d469c7083efef8e82647dd9d"
+        },
+        {
+          "bytes": 10214,
+          "path": ".local/validation/transfer-guard-controls-01/transfer_commands.py",
+          "sha256": "d2e79db099f8dfee4dbe90cf47ecc1fc1b8301edcd679b4e2d628e5227187bdb"
+        }
+      ],
+      "purpose": "controls",
+      "review": {
+        "VM_activation_authorized": false,
+        "actual_observation_present": false,
+        "collectors_implemented": false,
+        "grant": {
+          "bytes": 1843,
+          "sha256": "a5d75c958a8f612fd85f54070d8b3356482282db51f0e312f90f946acd105e75"
+        },
+        "mutations": 0,
+        "native_calls": 0,
+        "purpose": "controls",
+        "refusal": "transfer approval is unbound",
+        "role": "guard",
+        "static_payload_layout": [
+          {
+            "bytes": 26530,
+            "compressed_bytes": 7008,
+            "name": "guest_maintenance_control.py",
+            "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+          },
+          {
+            "bytes": 21670,
+            "compressed_bytes": 6617,
+            "name": "guest_maintenance_probe.py",
+            "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+          },
+          {
+            "bytes": 4238,
+            "compressed_bytes": 1357,
+            "name": "inspection-spec.json",
+            "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+          },
+          {
+            "bytes": 688,
+            "compressed_bytes": 362,
+            "name": "request.json",
+            "sha256": "e3f8f54e97cadc3646f8aca0c45c9b4f07b141b57a06b4fd5c38bbf643ab1fb0"
+          }
+        ],
+        "status": "unarmed-transfer-controller-review",
+        "still_required": [
+          "Actual VM/disk/backup/root-session and immutable lease bindings",
+          "Qualified live-state, approval and independent stop collectors",
+          "Scoped native creation/boot/UART/transfer/observation/control approvals",
+          "Real observation and exact control packet for controls purpose",
+          "Native target and complete installation/runtime qualification"
+        ]
+      },
+      "role": "guard"
+    },
+    {
+      "directory": ".local/validation/transfer-executor-inspect-01",
+      "files": [
+        {
+          "bytes": 1617,
+          "path": ".local/validation/transfer-executor-inspect-01/grant.json",
+          "sha256": "6ed221abc36601081932bfde8aa285725471fae2247ff4edab6acf1f7de95bc0"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-executor-inspect-01/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-executor-inspect-01/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4276,
+          "path": ".local/validation/transfer-executor-inspect-01/inspection-spec.json",
+          "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-executor-inspect-01/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34117,
+          "path": ".local/validation/transfer-executor-inspect-01/maintenance_transfer.py",
+          "sha256": "218b9e224ba0aa925953328d497b3c22f796d31eb9348595bff62db9d6ce44d8"
+        },
+        {
+          "bytes": 1211,
+          "path": ".local/validation/transfer-executor-inspect-01/review.json",
+          "sha256": "018c0ab94b7856bf1019a3b6cacfe82ba1c61f313160bfb4cad99ca9c48f2cc5"
+        },
+        {
+          "bytes": 10214,
+          "path": ".local/validation/transfer-executor-inspect-01/transfer_commands.py",
+          "sha256": "d2e79db099f8dfee4dbe90cf47ecc1fc1b8301edcd679b4e2d628e5227187bdb"
+        }
+      ],
+      "purpose": "inspect",
+      "review": {
+        "VM_activation_authorized": false,
+        "actual_observation_present": false,
+        "collectors_implemented": false,
+        "grant": {
+          "bytes": 1617,
+          "sha256": "6ed221abc36601081932bfde8aa285725471fae2247ff4edab6acf1f7de95bc0"
+        },
+        "mutations": 0,
+        "native_calls": 0,
+        "purpose": "inspect",
+        "refusal": "transfer approval is unbound",
+        "role": "executor",
+        "static_payload_layout": [
+          {
+            "bytes": 21670,
+            "compressed_bytes": 6617,
+            "name": "guest_maintenance_probe.py",
+            "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+          },
+          {
+            "bytes": 4276,
+            "compressed_bytes": 1365,
+            "name": "inspection-spec.json",
+            "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+          }
+        ],
+        "status": "unarmed-transfer-controller-review",
+        "still_required": [
+          "Actual VM/disk/backup/root-session and immutable lease bindings",
+          "Qualified live-state, approval and independent stop collectors",
+          "Scoped native creation/boot/UART/transfer/observation/control approvals",
+          "Real observation and exact control packet for controls purpose",
+          "Native target and complete installation/runtime qualification"
+        ]
+      },
+      "role": "executor"
+    },
+    {
+      "directory": ".local/validation/transfer-executor-controls-01",
+      "files": [
+        {
+          "bytes": 1846,
+          "path": ".local/validation/transfer-executor-controls-01/grant.json",
+          "sha256": "18788d198a2767ef5d210b18b372ff443dbb66db99a6295328ac6c7ee31c06f5"
+        },
+        {
+          "bytes": 26530,
+          "path": ".local/validation/transfer-executor-controls-01/guest_maintenance_control.py",
+          "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-executor-controls-01/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-executor-controls-01/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4276,
+          "path": ".local/validation/transfer-executor-controls-01/inspection-spec.json",
+          "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-executor-controls-01/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34117,
+          "path": ".local/validation/transfer-executor-controls-01/maintenance_transfer.py",
+          "sha256": "218b9e224ba0aa925953328d497b3c22f796d31eb9348595bff62db9d6ce44d8"
+        },
+        {
+          "bytes": 691,
+          "path": ".local/validation/transfer-executor-controls-01/request.json",
+          "sha256": "371cf791b6fe1d87eab56cdb74e1ef43b8a6b2c5630e766226db9f27c9179a14"
+        },
+        {
+          "bytes": 1585,
+          "path": ".local/validation/transfer-executor-controls-01/review.json",
+          "sha256": "70ee7dc16d2b5292c8adf0046590333446d03a552e7d38dd8d56fd7c73fb7be6"
+        },
+        {
+          "bytes": 10214,
+          "path": ".local/validation/transfer-executor-controls-01/transfer_commands.py",
+          "sha256": "d2e79db099f8dfee4dbe90cf47ecc1fc1b8301edcd679b4e2d628e5227187bdb"
+        }
+      ],
+      "purpose": "controls",
+      "review": {
+        "VM_activation_authorized": false,
+        "actual_observation_present": false,
+        "collectors_implemented": false,
+        "grant": {
+          "bytes": 1846,
+          "sha256": "18788d198a2767ef5d210b18b372ff443dbb66db99a6295328ac6c7ee31c06f5"
+        },
+        "mutations": 0,
+        "native_calls": 0,
+        "purpose": "controls",
+        "refusal": "transfer approval is unbound",
+        "role": "executor",
+        "static_payload_layout": [
+          {
+            "bytes": 26530,
+            "compressed_bytes": 7008,
+            "name": "guest_maintenance_control.py",
+            "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+          },
+          {
+            "bytes": 21670,
+            "compressed_bytes": 6617,
+            "name": "guest_maintenance_probe.py",
+            "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+          },
+          {
+            "bytes": 4276,
+            "compressed_bytes": 1365,
+            "name": "inspection-spec.json",
+            "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+          },
+          {
+            "bytes": 691,
+            "compressed_bytes": 365,
+            "name": "request.json",
+            "sha256": "371cf791b6fe1d87eab56cdb74e1ef43b8a6b2c5630e766226db9f27c9179a14"
+          }
+        ],
+        "status": "unarmed-transfer-controller-review",
+        "still_required": [
+          "Actual VM/disk/backup/root-session and immutable lease bindings",
+          "Qualified live-state, approval and independent stop collectors",
+          "Scoped native creation/boot/UART/transfer/observation/control approvals",
+          "Real observation and exact control packet for controls purpose",
+          "Native target and complete installation/runtime qualification"
+        ]
+      },
+      "role": "executor"
+    }
+  ],
+  "execution_contract": {
+    "chunk_bytes": 480,
+    "default_CLI": "unarmed preview or preparation only; no native activation CLI",
+    "final_success_state": "transfer-and-stop-reported-not-accepted; authority remains fenced",
+    "guest_clock_mapping": "guest sample plus remaining original host UTC/monotonic phase budget after reply; host deadlines are not renewed",
+    "guest_report_bytes_at_most": 524288,
+    "guest_window_seconds_at_most": 60,
+    "host_phase_seconds_at_most": 90,
+    "journal": "one attempt per store, durable intent before I/O; possible-send retained until bound result and original stop ledger plus independent poweroff receipt",
+    "original_VM_lease_seconds_at_most": 600,
+    "original_lease_stop_reserve_seconds": 10,
+    "payload_member_bytes_at_most": 1048576,
+    "purposes": [
+      "inspect",
+      "controls"
+    ],
+    "sample_freshness_seconds_at_most": 5,
+    "serial_request_bytes_at_most": 262144,
+    "serial_steps_at_most": 128,
+    "source_binding": "grant equals process-start epoch and current files; rechecked before dispatch; caller payload bytes frozen; identity/helper source extracted from verified entry bytes",
+    "staging": "exclusive /run/mcli1-observe-<nonce> or /run/mcli1-control-<nonce>; no deletion/repair/replay",
+    "stop_wait_seconds_at_most": 10,
+    "typed_line_printable_characters_at_most": 2047
+  },
+  "historical_evidence_preserved": [
+    {
+      "bytes": 12840,
+      "path": "research/validation/guest-maintenance-evidence.json",
+      "sha256": "6ee9f69e87af0dcf2c69cad486568d492b5a2e05fdba99efed28642c4fff7cd6"
+    },
+    {
+      "bytes": 12096,
+      "path": "research/validation/guest-control-evidence.json",
+      "sha256": "86036137d61c98ab6a9349bcb88570787bc187fe1f81a87b84f790185ca6752f"
+    },
+    {
+      "bytes": 17474,
+      "path": "research/validation/maintenance-serial-evidence.json",
+      "sha256": "4504a59828bc4c9391576dcbf9c01cd2c3f4214d9cc346fdb6c6b3df3035398b"
+    }
+  ],
+  "limits": [
+    "No actual root staging, selected-VM transfer, service command, root apply or VM action ran. POSIX checks use UID 1000 temporary paths and synthetic commands/callbacks; they do not qualify target-root behavior.",
+    "Review packets contain empty actual identity/backup/approval/original-lease fields. Controls contain no fabricated observation. They refuse before native dispatch and are not deployable host packages.",
+    "Native live-state collection, original-owner liveness/signalling, peer identity, approval authentication and independent stop/storage observations are unimplemented or unqualified boundaries. A blocked sampler may outlive bounded close, so a qualified collector remains necessary.",
+    "Controls require an approved genuine current-boot inspection. Completed inspection attempts stop their VM; the stopped boot-bound observation cannot authorize another boot. Same-boot acquisition and approval handoff remain unresolved.",
+    "Synthetic role/purpose compilations fit native transport limits. Static review layouts omit real observations, capsule and helper; compression/layout data alone do not prove native command delivery or fit for a future real observation.",
+    "Guest clock mapping does not qualify clock drift, pause or suspend. Original outside-VM wall/monotonic lease, revocation and independent stop remain authoritative.",
+    "Directory and namespace checks do not protect against hostile guest root or bind-mount manipulation. Root-only staging, service quiescence, kernel stalls, physical-power/database-loss recovery and native stop/reap remain unqualified.",
+    "Hashes and receipt consistency checks do not authenticate approvals or prove callback observations are true. Frozen historical media/VDI/package evidence was not refreshed.",
+    "Earlier source snapshots and test attempts remain intact. Only final native-03, regression-02 and role/purpose revision-02 packets bind the final source cohort.",
+    "Package/media verification, installation, repeated readiness, final isolation/routing/recovery and the product feasibility decision remain open."
+  ],
+  "next_check": "Prepare and qualify bounded live-state/original-supervisor stop adapters and the same-boot inspection/approval handoff. Pending guard creation and phase-boundary choices remain separate; do not activate a VM or transfer/control packet without its applicable approvals.",
+  "packets": [
+    {
+      "directory": ".local/validation/transfer-guard-inspect-02",
+      "files": [
+        {
+          "bytes": 1614,
+          "path": ".local/validation/transfer-guard-inspect-02/grant.json",
+          "sha256": "9076c9c12a92ed63e0204718aa4a607c7a42b3a73ad0a92a89025c9791e7b3e7"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-guard-inspect-02/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-guard-inspect-02/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4238,
+          "path": ".local/validation/transfer-guard-inspect-02/inspection-spec.json",
+          "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-guard-inspect-02/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/transfer-guard-inspect-02/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 1208,
+          "path": ".local/validation/transfer-guard-inspect-02/review.json",
+          "sha256": "a997f47e34c12605e2ec4fc428d1122b3d099c3b1c4bfa2d7e1bda5a7062bf33"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/transfer-guard-inspect-02/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        }
+      ],
+      "purpose": "inspect",
+      "review": {
+        "VM_activation_authorized": false,
+        "actual_observation_present": false,
+        "collectors_implemented": false,
+        "grant": {
+          "bytes": 1614,
+          "sha256": "9076c9c12a92ed63e0204718aa4a607c7a42b3a73ad0a92a89025c9791e7b3e7"
+        },
+        "mutations": 0,
+        "native_calls": 0,
+        "purpose": "inspect",
+        "refusal": "transfer approval is unbound",
+        "role": "guard",
+        "static_payload_layout": [
+          {
+            "bytes": 21670,
+            "compressed_bytes": 6617,
+            "name": "guest_maintenance_probe.py",
+            "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+          },
+          {
+            "bytes": 4238,
+            "compressed_bytes": 1357,
+            "name": "inspection-spec.json",
+            "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+          }
+        ],
+        "status": "unarmed-transfer-controller-review",
+        "still_required": [
+          "Actual VM/disk/backup/root-session and immutable lease bindings",
+          "Qualified live-state, approval and independent stop collectors",
+          "Scoped native creation/boot/UART/transfer/observation/control approvals",
+          "Real observation and exact control packet for controls purpose",
+          "Native target and complete installation/runtime qualification"
+        ]
+      },
+      "role": "guard"
+    },
+    {
+      "directory": ".local/validation/transfer-guard-controls-02",
+      "files": [
+        {
+          "bytes": 1843,
+          "path": ".local/validation/transfer-guard-controls-02/grant.json",
+          "sha256": "40b2f6b8d01930e7c667b32657b697a77095e722ae396299a363387fda8d9097"
+        },
+        {
+          "bytes": 26530,
+          "path": ".local/validation/transfer-guard-controls-02/guest_maintenance_control.py",
+          "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-guard-controls-02/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-guard-controls-02/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4238,
+          "path": ".local/validation/transfer-guard-controls-02/inspection-spec.json",
+          "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-guard-controls-02/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/transfer-guard-controls-02/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 688,
+          "path": ".local/validation/transfer-guard-controls-02/request.json",
+          "sha256": "e3f8f54e97cadc3646f8aca0c45c9b4f07b141b57a06b4fd5c38bbf643ab1fb0"
+        },
+        {
+          "bytes": 1582,
+          "path": ".local/validation/transfer-guard-controls-02/review.json",
+          "sha256": "e0dcf4481083dab613a436e4689da35e95c193930dda0e647ba3297442c3a340"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/transfer-guard-controls-02/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        }
+      ],
+      "purpose": "controls",
+      "review": {
+        "VM_activation_authorized": false,
+        "actual_observation_present": false,
+        "collectors_implemented": false,
+        "grant": {
+          "bytes": 1843,
+          "sha256": "40b2f6b8d01930e7c667b32657b697a77095e722ae396299a363387fda8d9097"
+        },
+        "mutations": 0,
+        "native_calls": 0,
+        "purpose": "controls",
+        "refusal": "transfer approval is unbound",
+        "role": "guard",
+        "static_payload_layout": [
+          {
+            "bytes": 26530,
+            "compressed_bytes": 7008,
+            "name": "guest_maintenance_control.py",
+            "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+          },
+          {
+            "bytes": 21670,
+            "compressed_bytes": 6617,
+            "name": "guest_maintenance_probe.py",
+            "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+          },
+          {
+            "bytes": 4238,
+            "compressed_bytes": 1357,
+            "name": "inspection-spec.json",
+            "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+          },
+          {
+            "bytes": 688,
+            "compressed_bytes": 362,
+            "name": "request.json",
+            "sha256": "e3f8f54e97cadc3646f8aca0c45c9b4f07b141b57a06b4fd5c38bbf643ab1fb0"
+          }
+        ],
+        "status": "unarmed-transfer-controller-review",
+        "still_required": [
+          "Actual VM/disk/backup/root-session and immutable lease bindings",
+          "Qualified live-state, approval and independent stop collectors",
+          "Scoped native creation/boot/UART/transfer/observation/control approvals",
+          "Real observation and exact control packet for controls purpose",
+          "Native target and complete installation/runtime qualification"
+        ]
+      },
+      "role": "guard"
+    },
+    {
+      "directory": ".local/validation/transfer-executor-inspect-02",
+      "files": [
+        {
+          "bytes": 1617,
+          "path": ".local/validation/transfer-executor-inspect-02/grant.json",
+          "sha256": "7ecedafed520ac29fb8b10f5a39a55499c3f197a4ed924e5c506d1f72b1921eb"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-executor-inspect-02/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-executor-inspect-02/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4276,
+          "path": ".local/validation/transfer-executor-inspect-02/inspection-spec.json",
+          "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-executor-inspect-02/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/transfer-executor-inspect-02/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 1211,
+          "path": ".local/validation/transfer-executor-inspect-02/review.json",
+          "sha256": "53e0fa4486e3f43dfa18f95c0ce146994d4c1cad970703f7dbcc56f1a5b77d1f"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/transfer-executor-inspect-02/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        }
+      ],
+      "purpose": "inspect",
+      "review": {
+        "VM_activation_authorized": false,
+        "actual_observation_present": false,
+        "collectors_implemented": false,
+        "grant": {
+          "bytes": 1617,
+          "sha256": "7ecedafed520ac29fb8b10f5a39a55499c3f197a4ed924e5c506d1f72b1921eb"
+        },
+        "mutations": 0,
+        "native_calls": 0,
+        "purpose": "inspect",
+        "refusal": "transfer approval is unbound",
+        "role": "executor",
+        "static_payload_layout": [
+          {
+            "bytes": 21670,
+            "compressed_bytes": 6617,
+            "name": "guest_maintenance_probe.py",
+            "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+          },
+          {
+            "bytes": 4276,
+            "compressed_bytes": 1365,
+            "name": "inspection-spec.json",
+            "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+          }
+        ],
+        "status": "unarmed-transfer-controller-review",
+        "still_required": [
+          "Actual VM/disk/backup/root-session and immutable lease bindings",
+          "Qualified live-state, approval and independent stop collectors",
+          "Scoped native creation/boot/UART/transfer/observation/control approvals",
+          "Real observation and exact control packet for controls purpose",
+          "Native target and complete installation/runtime qualification"
+        ]
+      },
+      "role": "executor"
+    },
+    {
+      "directory": ".local/validation/transfer-executor-controls-02",
+      "files": [
+        {
+          "bytes": 1846,
+          "path": ".local/validation/transfer-executor-controls-02/grant.json",
+          "sha256": "0b2faf328e0b8252ffae8de0264913a22d71cb147cde0608c71f02d167befde4"
+        },
+        {
+          "bytes": 26530,
+          "path": ".local/validation/transfer-executor-controls-02/guest_maintenance_control.py",
+          "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-executor-controls-02/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-executor-controls-02/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4276,
+          "path": ".local/validation/transfer-executor-controls-02/inspection-spec.json",
+          "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-executor-controls-02/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/transfer-executor-controls-02/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 691,
+          "path": ".local/validation/transfer-executor-controls-02/request.json",
+          "sha256": "371cf791b6fe1d87eab56cdb74e1ef43b8a6b2c5630e766226db9f27c9179a14"
+        },
+        {
+          "bytes": 1585,
+          "path": ".local/validation/transfer-executor-controls-02/review.json",
+          "sha256": "0964fb82ad4e525d5f9a1aefaca2ebb2fa6fda69f3c46d7cd01c667730a20685"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/transfer-executor-controls-02/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        }
+      ],
+      "purpose": "controls",
+      "review": {
+        "VM_activation_authorized": false,
+        "actual_observation_present": false,
+        "collectors_implemented": false,
+        "grant": {
+          "bytes": 1846,
+          "sha256": "0b2faf328e0b8252ffae8de0264913a22d71cb147cde0608c71f02d167befde4"
+        },
+        "mutations": 0,
+        "native_calls": 0,
+        "purpose": "controls",
+        "refusal": "transfer approval is unbound",
+        "role": "executor",
+        "static_payload_layout": [
+          {
+            "bytes": 26530,
+            "compressed_bytes": 7008,
+            "name": "guest_maintenance_control.py",
+            "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+          },
+          {
+            "bytes": 21670,
+            "compressed_bytes": 6617,
+            "name": "guest_maintenance_probe.py",
+            "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+          },
+          {
+            "bytes": 4276,
+            "compressed_bytes": 1365,
+            "name": "inspection-spec.json",
+            "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+          },
+          {
+            "bytes": 691,
+            "compressed_bytes": 365,
+            "name": "request.json",
+            "sha256": "371cf791b6fe1d87eab56cdb74e1ef43b8a6b2c5630e766226db9f27c9179a14"
+          }
+        ],
+        "status": "unarmed-transfer-controller-review",
+        "still_required": [
+          "Actual VM/disk/backup/root-session and immutable lease bindings",
+          "Qualified live-state, approval and independent stop collectors",
+          "Scoped native creation/boot/UART/transfer/observation/control approvals",
+          "Real observation and exact control packet for controls purpose",
+          "Native target and complete installation/runtime qualification"
+        ]
+      },
+      "role": "executor"
+    }
+  ],
+  "primary_sources": [
+    {
+      "classification": "Python isolated invocation and optimization semantics; source review only",
+      "url": "https://docs.python.org/3.12/using/cmdline.html#cmdoption-I"
+    },
+    {
+      "classification": "Python POSIX shell quoting; source review only",
+      "url": "https://docs.python.org/3.12/library/shlex.html#shlex.quote"
+    },
+    {
+      "classification": "Python bounded decompression and EOF/tail state; source review only",
+      "url": "https://docs.python.org/3.12/library/zlib.html"
+    },
+    {
+      "classification": "Python monotonic clock scope; source review only",
+      "url": "https://docs.python.org/3.12/library/time.html#time.monotonic"
+    }
+  ],
+  "recorded_utc": "2026-11-22T16:24:39.684360+00:00",
+  "scope": {
+    "VM_stop_implementation_added": false,
+    "actual_guest_transfer": false,
+    "actual_root_apply_performed": false,
+    "actual_service_commands": 0,
+    "current_guest_state_measured": false,
+    "current_source_VDI_state_measured": false,
+    "media_mounted_or_attached": false,
+    "native_live_state_collector_implemented": false,
+    "original_supervisor_stop_adapter_implemented": false,
+    "package_or_tool_installation": false,
+    "prepared_requests_armed": false,
+    "product_implementation": false,
+    "provider_calls": 0,
+    "repository_uploads": 0,
+    "selected_VM_operations": 0,
+    "synthetic_child_processes": true,
+    "unprivileged_scratch_filesystem_writes": true
+  },
+  "sources": [
+    {
+      "bytes": 26530,
+      "path": "research/validation/guest_maintenance_control.py",
+      "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+    },
+    {
+      "bytes": 21670,
+      "path": "research/validation/guest_maintenance_probe.py",
+      "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+    },
+    {
+      "bytes": 10718,
+      "path": "research/validation/guest_transfer_entry.py",
+      "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+    },
+    {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 34393,
+      "path": "research/validation/maintenance_transfer.py",
+      "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+    },
+    {
+      "bytes": 10632,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+    },
+    {
+      "bytes": 19745,
+      "path": "tests/test_maintenance_serial.py",
+      "sha256": "d2b2635e45c73ddf58882917925ca789ecb2fe448084943f6970d3127c017570"
+    },
+    {
+      "bytes": 28792,
+      "path": "tests/test_maintenance_transfer.py",
+      "sha256": "76cadf1e37f025e73575304063126f8e694308ceeb9a08b0ff93c47cb9fa8992"
+    },
+    {
+      "bytes": 15129,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "3817eb91ca181af7c1f7d4e908d21882c92749825688536166e9c6a1f2f66fe6"
+    }
+  ],
+  "status": "unarmed-transfer-controller-preparation-not-target-qualified",
+  "superseded_activation_cohort": [
+    {
+      "activation_superseded": true,
+      "retained_snapshot": {
+        "bytes": 21641,
+        "path": ".local/validation/guest-control-guard-01/guest_maintenance_probe.py",
+        "sha256": "9d64f2fdc9f2c0f27d6c7f94ca7d54064717d70c937ad682e8ac888270b2c16b"
+      },
+      "role": "probe"
+    },
+    {
+      "activation_superseded": true,
+      "retained_snapshot": {
+        "bytes": 21641,
+        "path": ".local/validation/guest-control-executor-01/guest_maintenance_probe.py",
+        "sha256": "9d64f2fdc9f2c0f27d6c7f94ca7d54064717d70c937ad682e8ac888270b2c16b"
+      },
+      "role": "probe"
+    },
+    {
+      "activation_superseded": true,
+      "retained_snapshot": {
+        "bytes": 26530,
+        "path": ".local/validation/guest-control-guard-01/guest_maintenance_control.py",
+        "sha256": "29654753377e0100db2677c50a242565f1e98f01770e50ae6ee7fed5ddeb591e"
+      },
+      "role": "control"
+    },
+    {
+      "activation_superseded": true,
+      "retained_snapshot": {
+        "bytes": 26530,
+        "path": ".local/validation/guest-control-executor-01/guest_maintenance_control.py",
+        "sha256": "29654753377e0100db2677c50a242565f1e98f01770e50ae6ee7fed5ddeb591e"
+      },
+      "role": "control"
+    },
+    {
+      "activation_superseded": true,
+      "retained_snapshot": {
+        "bytes": 11001,
+        "path": ".local/validation/maintenance-serial-guard-02/maintenance_serial_worker.py",
+        "sha256": "f2c4550732de43e9ff23a780d7d1d346c76b2ca242fa50100ded076110d4442c"
+      },
+      "role": "worker"
+    },
+    {
+      "activation_superseded": true,
+      "retained_snapshot": {
+        "bytes": 11001,
+        "path": ".local/validation/maintenance-serial-executor-02/maintenance_serial_worker.py",
+        "sha256": "f2c4550732de43e9ff23a780d7d1d346c76b2ca242fa50100ded076110d4442c"
+      },
+      "role": "worker"
+    }
+  ],
+  "verification": {
+    "measurements": [
+      {
+        "classification": "unprivileged POSIX scratch files and synthetic callbacks/children; not target-root qualification",
+        "current_cohort": false,
+        "log": {
+          "bytes": 6410,
+          "path": ".local/validation/transfer-native-01/unittest.log",
+          "sha256": "98c17ec949c9ab24c26b57bf23562a312197e9fd49ea48aa9d3a363ab191fe04"
+        },
+        "log_elapsed_seconds": 2.886,
+        "log_tests_run": 56,
+        "receipt": {
+          "bytes": 1470,
+          "path": ".local/validation/transfer-native-01/receipt.json",
+          "sha256": "9706e99308403012d40ae86163a3bee8df68d49e903588427e47326f8c2eb5fc"
+        },
+        "result": {
+          "actual_root_apply_performed": false,
+          "actual_service_commands": 0,
+          "elapsed_seconds": 3.424423,
+          "exit": 0,
+          "kernel": "6.18.58.1-microsoft-standard-WSL2",
+          "kind": "unprivileged-transfer-and-control-fixtures",
+          "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+          "selected_VM_operations": 0,
+          "sources": {
+            "research/validation/guest_maintenance_control.py": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391",
+            "research/validation/guest_maintenance_probe.py": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99",
+            "research/validation/guest_transfer_entry.py": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1",
+            "research/validation/maintenance_serial_worker.py": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+            "research/validation/maintenance_transfer.py": "d56959a26f73aa3acd565ab5e1ac4c74486f288ec1f5c9d0d7c9e32b969a42ef",
+            "research/validation/transfer_commands.py": "d2e79db099f8dfee4dbe90cf47ecc1fc1b8301edcd679b4e2d628e5227187bdb",
+            "tests/test_maintenance_serial.py": "d2b2635e45c73ddf58882917925ca789ecb2fe448084943f6970d3127c017570",
+            "tests/test_maintenance_transfer.py": "f2506bbed2622478365beaa4aa6ad86a6d5293abe97048ff9d032c9a1a2e49aa"
+          },
+          "status_after": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "status_before": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "uid": 1000
+        }
+      },
+      {
+        "classification": "unprivileged POSIX scratch files and synthetic callbacks/children; not target-root qualification",
+        "current_cohort": false,
+        "log": {
+          "bytes": 6526,
+          "path": ".local/validation/transfer-native-02/unittest.log",
+          "sha256": "1a1d8b3c0b404baa8c3d3f29c1236f61e4d9e5e89311d0dc8ecdead7dbe39da8"
+        },
+        "log_elapsed_seconds": 3.129,
+        "log_tests_run": 57,
+        "receipt": {
+          "bytes": 1470,
+          "path": ".local/validation/transfer-native-02/receipt.json",
+          "sha256": "02ce809d3a8147231bbd4f7a0e290f46684eaa5925845549f0d1f34ffeb06305"
+        },
+        "result": {
+          "actual_root_apply_performed": false,
+          "actual_service_commands": 0,
+          "elapsed_seconds": 3.725726,
+          "exit": 0,
+          "kernel": "6.18.58.1-microsoft-standard-WSL2",
+          "kind": "unprivileged-transfer-and-control-fixtures",
+          "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+          "selected_VM_operations": 0,
+          "sources": {
+            "research/validation/guest_maintenance_control.py": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391",
+            "research/validation/guest_maintenance_probe.py": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99",
+            "research/validation/guest_transfer_entry.py": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1",
+            "research/validation/maintenance_serial_worker.py": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+            "research/validation/maintenance_transfer.py": "218b9e224ba0aa925953328d497b3c22f796d31eb9348595bff62db9d6ce44d8",
+            "research/validation/transfer_commands.py": "d2e79db099f8dfee4dbe90cf47ecc1fc1b8301edcd679b4e2d628e5227187bdb",
+            "tests/test_maintenance_serial.py": "d2b2635e45c73ddf58882917925ca789ecb2fe448084943f6970d3127c017570",
+            "tests/test_maintenance_transfer.py": "da4a4018cefd04b868a2804fff5036ac2378ab8085fcf835c14bddc7bd946d48"
+          },
+          "status_after": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "status_before": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "uid": 1000
+        }
+      },
+      {
+        "classification": "unprivileged POSIX scratch files and synthetic callbacks/children; not target-root qualification",
+        "current_cohort": true,
+        "log": {
+          "bytes": 6741,
+          "path": ".local/validation/transfer-native-03/unittest.log",
+          "sha256": "a3b90116896f145b2198271b2777addea3f35dac0aa99031b044d4978e7e30e1"
+        },
+        "log_elapsed_seconds": 3.187,
+        "log_tests_run": 59,
+        "receipt": {
+          "bytes": 1470,
+          "path": ".local/validation/transfer-native-03/receipt.json",
+          "sha256": "a6ce6bdd9868a8fc748bbcd63565742750907d162c0e7cf80b57a16758a3c97a"
+        },
+        "result": {
+          "actual_root_apply_performed": false,
+          "actual_service_commands": 0,
+          "elapsed_seconds": 3.775291,
+          "exit": 0,
+          "kernel": "6.18.58.1-microsoft-standard-WSL2",
+          "kind": "unprivileged-transfer-and-control-fixtures",
+          "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+          "selected_VM_operations": 0,
+          "sources": {
+            "research/validation/guest_maintenance_control.py": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391",
+            "research/validation/guest_maintenance_probe.py": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99",
+            "research/validation/guest_transfer_entry.py": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1",
+            "research/validation/maintenance_serial_worker.py": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+            "research/validation/maintenance_transfer.py": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c",
+            "research/validation/transfer_commands.py": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2",
+            "tests/test_maintenance_serial.py": "d2b2635e45c73ddf58882917925ca789ecb2fe448084943f6970d3127c017570",
+            "tests/test_maintenance_transfer.py": "76cadf1e37f025e73575304063126f8e694308ceeb9a08b0ff93c47cb9fa8992"
+          },
+          "status_after": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "status_before": "82f7835e29b4c8d3aab46e79e5d4719a53e03c9841f3aaa7eb02755740064501",
+          "uid": 1000
+        }
+      },
+      {
+        "classification": "Windows regression with platform skips; synthetic authority/VM state",
+        "current_cohort": false,
+        "log": {
+          "bytes": 41657,
+          "path": ".local/validation/transfer-regression-01/unittest.log",
+          "sha256": "9215e976aaeed27aa4f8d318ed65afc1122e83fd21290931e0387951db5b9248"
+        },
+        "log_elapsed_seconds": 53.306,
+        "log_tests_run": 245,
+        "receipt": {
+          "bytes": 1278,
+          "path": ".local/validation/transfer-regression-01/receipt.json",
+          "sha256": "285bb435ff779f54188ab6eef58fef0c47578d5cb42f9c0bcf15d0bae7384a1b"
+        },
+        "result": {
+          "actual_root_apply_performed": false,
+          "elapsed_seconds": 53.873904,
+          "errors": 0,
+          "failures": 0,
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "selected_VM_operations": 0,
+          "skipped": 13,
+          "sources": {
+            "research/validation/guest_maintenance_control.py": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391",
+            "research/validation/guest_maintenance_probe.py": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99",
+            "research/validation/guest_transfer_entry.py": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1",
+            "research/validation/maintenance_serial_worker.py": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+            "research/validation/maintenance_transfer.py": "218b9e224ba0aa925953328d497b3c22f796d31eb9348595bff62db9d6ce44d8",
+            "research/validation/transfer_commands.py": "d2e79db099f8dfee4dbe90cf47ecc1fc1b8301edcd679b4e2d628e5227187bdb",
+            "tests/test_maintenance_serial.py": "d2b2635e45c73ddf58882917925ca789ecb2fe448084943f6970d3127c017570",
+            "tests/test_maintenance_transfer.py": "da4a4018cefd04b868a2804fff5036ac2378ab8085fcf835c14bddc7bd946d48"
+          },
+          "tests_run": 245
+        }
+      },
+      {
+        "classification": "Windows regression with platform skips; synthetic authority/VM state",
+        "current_cohort": true,
+        "log": {
+          "bytes": 41985,
+          "path": ".local/validation/transfer-regression-02/unittest.log",
+          "sha256": "2d6ed752a217edd44128762acf5937f6e114d18bd1e3b4263b8e3de6b82b3b76"
+        },
+        "log_elapsed_seconds": 50.643,
+        "log_tests_run": 247,
+        "receipt": {
+          "bytes": 1278,
+          "path": ".local/validation/transfer-regression-02/receipt.json",
+          "sha256": "65674142eeb10928cf26a19271e8fbb98c0bc6bae82cc60c6a5d0d865e772e11"
+        },
+        "result": {
+          "actual_root_apply_performed": false,
+          "elapsed_seconds": 50.994564,
+          "errors": 0,
+          "failures": 0,
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "selected_VM_operations": 0,
+          "skipped": 13,
+          "sources": {
+            "research/validation/guest_maintenance_control.py": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391",
+            "research/validation/guest_maintenance_probe.py": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99",
+            "research/validation/guest_transfer_entry.py": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1",
+            "research/validation/maintenance_serial_worker.py": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+            "research/validation/maintenance_transfer.py": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c",
+            "research/validation/transfer_commands.py": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2",
+            "tests/test_maintenance_serial.py": "d2b2635e45c73ddf58882917925ca789ecb2fe448084943f6970d3127c017570",
+            "tests/test_maintenance_transfer.py": "76cadf1e37f025e73575304063126f8e694308ceeb9a08b0ff93c47cb9fa8992"
+          },
+          "tests_run": 247
+        }
+      }
+    ],
+    "order_replay": {
+      "classification": "pure-Python source replay with synthetic inspection; no native guest action",
+      "receipt": {
+        "bytes": 775,
+        "path": ".local/validation/transfer-order-replay-01/receipt.json",
+        "sha256": "1f06e077301474f79e3c69eeac47daf297352e00f7f4c43bccc56a842d6cd4ae"
+      },
+      "result": {
+        "classification": "pure-Python source replay with synthetic inspection; no native guest action",
+        "new_after_plan_sha256": "972300ca6f0259e242f4cd3bd58203c30ab7636a6c49f0f800cfb7134838a8c0",
+        "new_before_plan_sha256": "972300ca6f0259e242f4cd3bd58203c30ab7636a6c49f0f800cfb7134838a8c0",
+        "new_roundtrip_equal": true,
+        "new_source_sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99",
+        "old_after_plan_sha256": "993a811ebc4316c7d6f236181f84554ad0520073eb9c80bf2f5f580d551b139b",
+        "old_artifact_unchanged": true,
+        "old_before_plan_sha256": "972300ca6f0259e242f4cd3bd58203c30ab7636a6c49f0f800cfb7134838a8c0",
+        "old_roundtrip_equal": false,
+        "old_source_sha256": "9d64f2fdc9f2c0f27d6c7f94ca7d54064717d70c937ad682e8ac888270b2c16b"
+      }
+    },
+    "ruff_check": "passed: research/validation tests",
+    "ruff_format_check": "passed: 98 files",
+    "selected_Linux": {
+      "POSIX_scratch_or_synthetic_child_cases": 12,
+      "actual_root_apply_performed": false,
+      "control_checks": 18,
+      "passed": 59,
+      "probe_checks": 16,
+      "tests_run": 59,
+      "transfer_checks": 25,
+      "uid": 1000
+    },
+    "serial_rejection_case": "test_guest_rejection_frame_holds_immediately_and_echo_is_not_a_frame",
+    "serial_test_count": 19,
+    "transfer_test_classes": {
+      "ControllerTests": [
+        "test_complete_inspection_requires_stop_before_receipt_and_fences_authority",
+        "test_complete_control_report_stays_controls_only",
+        "test_caller_cannot_swap_payload_bytes_after_identity",
+        "test_changed_entry_source_after_identity_cannot_be_uploaded",
+        "test_lost_ack_retains_possible_send_and_stops_without_resend",
+        "test_wrong_guest_identity_prevents_upload_and_still_stops",
+        "test_changed_host_profile_prevents_gate_and_stops_owned_vm",
+        "test_missing_stop_report_retains_uncertain_upload",
+        "test_poweroff_claim_without_original_stop_ledger_cannot_complete",
+        "test_stale_stop_from_another_attempt_cannot_complete",
+        "test_blocked_collector_cannot_refresh_old_authority",
+        "test_store_fence_revokes_inflight_phase_without_deadline_renewal"
+      ],
+      "NativeTransferBodyTests": [
+        "test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold",
+        "test_tampered_compression_and_existing_final_file_never_execute_or_overwrite",
+        "test_bounded_decode_refuses_expansion_before_creating_final",
+        "test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env",
+        "test_actual_non_guest_identity_fails_before_any_stage_write"
+      ],
+      "TransferCompilerTests": [
+        "test_control_plan_is_stable_across_sorted_json_roundtrip",
+        "test_fixed_cohort_and_both_purpose_role_compilations_fit_native_limits",
+        "test_unarmed_and_changed_source_grants_refuse_before_dispatch",
+        "test_partial_or_weakened_control_inventory_cannot_hide_in_payload_hash",
+        "test_guest_clock_budget_uses_remaining_host_time_without_copying_clock",
+        "test_changed_identity_and_extended_phase_or_source_disk_alias_refuse",
+        "test_payload_size_or_step_overflow_refuses_in_compiler",
+        "test_entry_defaults_to_preview_without_guest_queries"
+      ]
+    },
+    "windows_regression": {
+      "errors": 0,
+      "failures": 0,
+      "passed": 234,
+      "skipped": 13,
+      "tests_run": 247
+    }
+  }
+}

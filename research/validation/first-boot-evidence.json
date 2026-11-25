@@ -1,0 +1,562 @@
+{
+  "attempts": [
+    {
+      "artifacts": {
+        "configuration.log": {
+          "bytes": 3213,
+          "sha256": "39c7cf42041406b89a2f79bc97a52ed8f03f48f8a762c834990abf16ee73e5f3"
+        },
+        "control.sqlite": {
+          "bytes": 32768,
+          "sha256": "4233ad83494cf07bfb040363c2fe2bc70c093e7af3523729bcebdf41047853fa"
+        },
+        "disk-boot-and-pipe.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "failure-reconciled.json": {
+          "bytes": 740,
+          "sha256": "a1a59b72b4bb8f8716b2e612f034a6849505dea928b30781c4f321275fd91b62"
+        },
+        "host-vm-termination.log": {
+          "bytes": 236413,
+          "sha256": "45fb28077cd66e41d09495a543eaea3ac47b62e1cfc015b2fecfd5bc539778cc"
+        },
+        "serial-sanitized.log": {
+          "bytes": 38218,
+          "sha256": "b56bef8eee1db1b81f6f8066bf34815cdfb6790c2239dd790bbc1795cee2be5d"
+        },
+        "start-first-boot.log": {
+          "bytes": 141,
+          "sha256": "96f74832ef0136dc51e47cb52caf4a713104b2fcefdc7e06a703a80a5af87a6a"
+        },
+        "version.log": {
+          "bytes": 13,
+          "sha256": "a13dcb55ddfae435ebc57364d872c589b553fe399993462d41c13c5c8698fbad"
+        }
+      },
+      "audit_chain_verified": true,
+      "audit_tail_digest": "f7d20e2cd16b0ab03471d7b66ec31951494f6d857b5dec41c16a70d567302534",
+      "guest_cpus": 2,
+      "intent": {
+        "approval": "Offline first-boot verification authorized by developer continuation and command approval on 2026-11-21",
+        "input_vdi_sha256": "8461a61de7a1c53c125d47397ae3c52fd792a24fad3f7f794dfe29b9ff826feb",
+        "max_seconds": 600,
+        "token": "342d4a98-1438-4eab-8411-cf20c27c7746"
+      },
+      "last_confirmed_stop": {
+        "command_exit": 0,
+        "state": "poweroff",
+        "stderr_sha256": "45d51ca3779f08f12d24976e300a044ce77129c4f83565d4c2383e02400c2267",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+      },
+      "outcome": "login deadline 150s; emergency stop",
+      "path": ".local/validation/first-boot-01",
+      "started": true
+    },
+    {
+      "artifacts": {
+        "configuration.log": {
+          "bytes": 3213,
+          "sha256": "7a616fb5820f91958f14fb0da7a6e40efd25e9ceb0d8cd6a23f60ec32f7c4b9a"
+        },
+        "console-live.png": {
+          "bytes": 38373,
+          "sha256": "f85f87064175b0b538e9f3116645f79affbbdf95b4a568e7cbcd8fc2b96a6dbe"
+        },
+        "control.sqlite": {
+          "bytes": 32768,
+          "sha256": "7bfe026687d8b1d8875902b764d69b289af2f473d315e42e3207626834c6cae7"
+        },
+        "cpu-trial-checkpoint.json": {
+          "bytes": 777,
+          "sha256": "18d4a82837ea8abd3dc52552e2af1a2695634f04381009c0ea5aabb5b1fc3d1d"
+        },
+        "disk-boot-and-pipe.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "failure-display.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "failure-display.png": {
+          "bytes": 38373,
+          "sha256": "f85f87064175b0b538e9f3116645f79affbbdf95b4a568e7cbcd8fc2b96a6dbe"
+        },
+        "host-vm-termination.log": {
+          "bytes": 233493,
+          "sha256": "5e36638f1e62aaa90fea8913b2e2a0aafaddc4e4e03f8dfc5b91cd5997bdf62e"
+        },
+        "serial-sanitized.log": {
+          "bytes": 31375,
+          "sha256": "9f7b4b62687b1d136bb268b8989c402fc5714ca5c2f094e18e47458268956813"
+        },
+        "start-first-boot.log": {
+          "bytes": 141,
+          "sha256": "96f74832ef0136dc51e47cb52caf4a713104b2fcefdc7e06a703a80a5af87a6a"
+        },
+        "version.log": {
+          "bytes": 13,
+          "sha256": "a13dcb55ddfae435ebc57364d872c589b553fe399993462d41c13c5c8698fbad"
+        }
+      },
+      "audit_chain_verified": true,
+      "audit_tail_digest": "a973a5d08ab2db31d33753074d35a92ec391b20416a89075a819490054368b57",
+      "guest_cpus": 2,
+      "intent": {
+        "approval": "Continue the authorized offline boot verification after confirmed stop; one reconciled retry on 2026-11-21",
+        "input_vdi_sha256": "8dc5a39305aa9db0b6ae4e174acfce6384d77c01f4b77269110aef857e2c2af2",
+        "max_seconds": 600,
+        "prior_attempt": {
+          "checkpoint_sha256": "a1a59b72b4bb8f8716b2e612f034a6849505dea928b30781c4f321275fd91b62",
+          "host_termination_log_sha256": "45fb28077cd66e41d09495a543eaea3ac47b62e1cfc015b2fecfd5bc539778cc",
+          "kind": "stopped-boot-reconciliation-v1",
+          "observed_at_utc": "2026-11-21T07:13:30.658724+00:00",
+          "original_installed_vdi_sha256": "8461a61de7a1c53c125d47397ae3c52fd792a24fad3f7f794dfe29b9ff826feb",
+          "reason": "Initial 150-second getty wait expired after installed kernel/root mount; emergency poweroff confirmed. Reconcile this known local boot; retry with a longer wait under the same 600-second overall bound.",
+          "retry_index": 1,
+          "serial_sha256": "b56bef8eee1db1b81f6f8066bf34815cdfb6790c2239dd790bbc1795cee2be5d",
+          "stopped_vdi_sha256": "8dc5a39305aa9db0b6ae4e174acfce6384d77c01f4b77269110aef857e2c2af2",
+          "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+        },
+        "token": "8ffb4229-161d-41b1-876c-a1a2dffc0b13"
+      },
+      "last_confirmed_stop": {
+        "command_exit": 0,
+        "state": "poweroff",
+        "stderr_sha256": "45d51ca3779f08f12d24976e300a044ce77129c4f83565d4c2383e02400c2267",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+      },
+      "outcome": "login deadline 360s; emergency stop",
+      "path": ".local/validation/first-boot-02",
+      "started": true
+    },
+    {
+      "artifacts": {
+        "configuration.log": {
+          "bytes": 3213,
+          "sha256": "d52e74b30f35853d56bce9219fb07533a92b74456d2690c5ded900a0a2e826db"
+        },
+        "control.sqlite": {
+          "bytes": 40960,
+          "sha256": "4b7d69a0323b633f008d9ca27bf8b2e5063975dbd67044deeb360f5cbabf4862"
+        },
+        "disk-boot-and-pipe.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "failure-display.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "failure-display.png": {
+          "bytes": 28802,
+          "sha256": "f78541f7e0445d0c736619f6899491f42e505e092ec29accc2296bb08701b07a"
+        },
+        "host-vm-termination.log": {
+          "bytes": 213254,
+          "sha256": "7f1e08670b98dd82fce1fe5478b081be463c0e1c8df94bc1f3781a62c0495c24"
+        },
+        "one-cpu-nem-diagnostic.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "protocol-retry-checkpoint.json": {
+          "bytes": 1068,
+          "sha256": "94526129b0c89f5edaca7764efe9335e69c8c8b295f540fed107ba3954f54f72"
+        },
+        "serial-sanitized.log": {
+          "bytes": 39700,
+          "sha256": "70ed33e8c17522d75a58992fbafbc50ece48322f058b2c6e9133405c0ef91346"
+        },
+        "source-snapshot/boot_receipt.py": {
+          "bytes": 2713,
+          "sha256": "1db00369eca245cd4d915d138dff493aebb1c024dae5946c1a38abfae00da1fc"
+        },
+        "source-snapshot/first_boot.py": {
+          "bytes": 20130,
+          "sha256": "b7bf8ab962bade588dad1256f29d5463fb063dc2e518b9f634e4ddf4384e69ee"
+        },
+        "source-snapshot/fixture.py": {
+          "bytes": 10065,
+          "sha256": "e9ce12d31c348cc8e40e3c6e1be2853eb400d53003632d39f6ebe58b30aa65d6"
+        },
+        "source-snapshot/index.json": {
+          "bytes": 421,
+          "sha256": "c0015f1fc414e6688948203a18504236b820312c2958c6da46147fb34fccf63d"
+        },
+        "source-snapshot/os_install.py": {
+          "bytes": 17336,
+          "sha256": "f97635193d76da1cfcddd1a9042d2110b44faf28d7d9f54237c2f14072f1d8ea"
+        },
+        "source-snapshot/store.py": {
+          "bytes": 13949,
+          "sha256": "7556f2bdba33390eec3f741e002f93ad8c738e4f40598bcd7085461e52de9a12"
+        },
+        "start-first-boot.log": {
+          "bytes": 141,
+          "sha256": "96f74832ef0136dc51e47cb52caf4a713104b2fcefdc7e06a703a80a5af87a6a"
+        },
+        "version.log": {
+          "bytes": 13,
+          "sha256": "a13dcb55ddfae435ebc57364d872c589b553fe399993462d41c13c5c8698fbad"
+        }
+      },
+      "audit_chain_verified": true,
+      "audit_tail_digest": "0f594a41a958879a472f70dd30a01c74c72b43045c722118bff4573037f89d6a",
+      "guest_cpus": 1,
+      "intent": {
+        "approval": "One-vCPU offline boot diagnostic authorized through command approval on 2026-11-21",
+        "input_vdi_sha256": "5861bde9fed2397849d5771673b31609384d6499797c322f3e037f8d3402ef97",
+        "max_seconds": 600,
+        "prior_attempt": {
+          "checkpoint_sha256": "18d4a82837ea8abd3dc52552e2af1a2695634f04381009c0ea5aabb5b1fc3d1d",
+          "host_termination_log_sha256": "5e36638f1e62aaa90fea8913b2e2a0aafaddc4e4e03f8dfc5b91cd5997bdf62e",
+          "kind": "stopped-boot-reconciliation-v1",
+          "observed_at_utc": "2026-11-21T07:24:01.077565+00:00",
+          "original_installed_vdi_sha256": "8461a61de7a1c53c125d47397ae3c52fd792a24fad3f7f794dfe29b9ff826feb",
+          "parent_checkpoint_sha256": "a1a59b72b4bb8f8716b2e612f034a6849505dea928b30781c4f321275fd91b62",
+          "profile_change": {
+            "cpus": 1
+          },
+          "reason": "Two two-vCPU boot stalls under NEM; diagnostic one-CPU trial with RAM, disk, kernel, graphics and network unchanged.",
+          "retry_index": 2,
+          "serial_sha256": "9f7b4b62687b1d136bb268b8989c402fc5714ca5c2f094e18e47458268956813",
+          "stopped_vdi_sha256": "5861bde9fed2397849d5771673b31609384d6499797c322f3e037f8d3402ef97",
+          "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+        },
+        "token": "6ce6eb11-a443-442f-aac3-7d95a64ee94d"
+      },
+      "intervention": "one approved pause/resume pair; exact command output unavailable; subsequent running state and guest progress observed",
+      "last_confirmed_stop": {
+        "command_exit": 0,
+        "state": "poweroff",
+        "stderr_sha256": "45d51ca3779f08f12d24976e300a044ce77129c4f83565d4c2383e02400c2267",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+      },
+      "outcome": "incomplete serial frame parsed before newline; emergency stop",
+      "path": ".local/validation/first-boot-03",
+      "started": true
+    },
+    {
+      "artifacts": {
+        "control.sqlite": {
+          "bytes": 32768,
+          "sha256": "2dd4490a457134ce177fe9949630023891d0edfe83e3ca18fdb40a59048ae104"
+        },
+        "version.log": {
+          "bytes": 13,
+          "sha256": "a13dcb55ddfae435ebc57364d872c589b553fe399993462d41c13c5c8698fbad"
+        }
+      },
+      "audit_chain_verified": true,
+      "audit_tail_digest": null,
+      "guest_cpus": 2,
+      "last_confirmed_stop": null,
+      "outcome": "preflight failed: checkpoint not yet available; no VM start",
+      "path": ".local/validation/first-boot-04",
+      "started": false
+    },
+    {
+      "artifacts": {
+        "acpi-shutdown.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "configuration.log": {
+          "bytes": 3213,
+          "sha256": "ab7c2cd918dc8c9f41d4743c2be7acfe67fc16950138b45754b4b7208a79a897"
+        },
+        "control.sqlite": {
+          "bytes": 40960,
+          "sha256": "3cb8ea254aac705f599930b5aacb23d47808cac5a922cd708fdf11b6a58a3c60"
+        },
+        "disk-boot-and-pipe.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "failure-display.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "failure-display.png": {
+          "bytes": 46689,
+          "sha256": "a47059649ef4d9770c6a0a696084d05d6d1e1a97ffcf8c28fd5c3c31db8d626d"
+        },
+        "host-vm-termination.log": {
+          "bytes": 213277,
+          "sha256": "1ef95ee1244fc37951c03680587664573f1ba01c6d5546b286dff3080006c61e"
+        },
+        "one-cpu-nem-diagnostic.log": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "pause-resume.json": {
+          "bytes": 284,
+          "sha256": "00b3f4b94b5543857b1ca8860422ec0aaeb5781a124067a7f003a2f0d0e17c3d"
+        },
+        "post-trial-state.json": {
+          "bytes": 516,
+          "sha256": "c7de6e550b9657c07a3d2f528e74fe78404a54e15f1fcc74cdff2b16a663c064"
+        },
+        "recovered-receipt.json": {
+          "bytes": 3586,
+          "sha256": "62e03bda72aaa32a31a8cfe636a0e772420728b03550f00d75d516a44f4c2f1a"
+        },
+        "restored-configuration.log": {
+          "bytes": 3225,
+          "sha256": "f5fee410b2a648ad31373850424def6de8cf53f79557d47debb8b60c7c19169f"
+        },
+        "serial-sanitized.log": {
+          "bytes": 43506,
+          "sha256": "27f671514bb55bc24bf136473a3236a21dc09b51c6836b3fe413d236a2f4dbfc"
+        },
+        "source-snapshot/boot_receipt.py": {
+          "bytes": 2713,
+          "sha256": "1db00369eca245cd4d915d138dff493aebb1c024dae5946c1a38abfae00da1fc"
+        },
+        "source-snapshot/first_boot.py": {
+          "bytes": 21002,
+          "sha256": "9df0dcd213d93f9b541f542756b6622713d7e1e9ffa43ee63246c6622f223f7e"
+        },
+        "source-snapshot/fixture.py": {
+          "bytes": 10065,
+          "sha256": "e9ce12d31c348cc8e40e3c6e1be2853eb400d53003632d39f6ebe58b30aa65d6"
+        },
+        "source-snapshot/index.json": {
+          "bytes": 439,
+          "sha256": "46b31ac973562a8a2937be40c71f3287fa0242a2a388c0f3795cedb6e3918ca9"
+        },
+        "source-snapshot/os_install.py": {
+          "bytes": 17336,
+          "sha256": "f97635193d76da1cfcddd1a9042d2110b44faf28d7d9f54237c2f14072f1d8ea"
+        },
+        "source-snapshot/store.py": {
+          "bytes": 13949,
+          "sha256": "7556f2bdba33390eec3f741e002f93ad8c738e4f40598bcd7085461e52de9a12"
+        },
+        "start-first-boot.log": {
+          "bytes": 141,
+          "sha256": "96f74832ef0136dc51e47cb52caf4a713104b2fcefdc7e06a703a80a5af87a6a"
+        },
+        "version.log": {
+          "bytes": 13,
+          "sha256": "a13dcb55ddfae435ebc57364d872c589b553fe399993462d41c13c5c8698fbad"
+        }
+      },
+      "audit_chain_verified": true,
+      "audit_tail_digest": "eeb06cad59b470a341a8ccb74961b393855c42d87fc6182c0a685ae4b0abd60b",
+      "guest_cpus": 1,
+      "intent": {
+        "approval": "Bounded offline protocol-correction retry following approved one-vCPU diagnostic; user requested continuation 2026-11-21",
+        "input_vdi_sha256": "7bc5d9d105f68dede5cb4c38339c78e3bac5d69dd74c25733430b63325058cea",
+        "max_seconds": 600,
+        "prior_attempt": {
+          "checkpoint_sha256": "94526129b0c89f5edaca7764efe9335e69c8c8b295f540fed107ba3954f54f72",
+          "host_log_sha256": "7f1e08670b98dd82fce1fe5478b081be463c0e1c8df94bc1f3781a62c0495c24",
+          "intervention": "One immediate pause/resume pair performed through a separately approved native command; success inferred from subsequent guest progress and running state, not from a preserved command receipt.",
+          "kind": "stopped-boot-reconciliation-v1",
+          "original_installed_vdi_sha256": "8461a61de7a1c53c125d47397ae3c52fd792a24fad3f7f794dfe29b9ff826feb",
+          "parent_checkpoint_sha256": "18d4a82837ea8abd3dc52552e2af1a2695634f04381009c0ea5aabb5b1fc3d1d",
+          "profile_change": {
+            "cpus": 1
+          },
+          "reason": "One pause/resume intervention followed by successful serial login and transfer; host consumed an incomplete receipt before newline. Emergency stop confirmed. One protocol-correction retry only.",
+          "retry_index": 3,
+          "serial_sha256": "70ed33e8c17522d75a58992fbafbc50ece48322f058b2c6e9133405c0ef91346",
+          "stopped_vdi_sha256": "7bc5d9d105f68dede5cb4c38339c78e3bac5d69dd74c25733430b63325058cea",
+          "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+        },
+        "token": "d1c8b273-7f8a-4c37-adf5-2bc68e632435"
+      },
+      "intervention": [
+        {
+          "action": "pause",
+          "at_utc": "2026-11-21T07:32:40.712115+00:00",
+          "exit": 0,
+          "stderr": "",
+          "stdout": ""
+        },
+        {
+          "action": "resume",
+          "at_utc": "2026-11-21T07:32:40.735850+00:00",
+          "exit": 0,
+          "stderr": "",
+          "stdout": ""
+        }
+      ],
+      "last_confirmed_stop": {
+        "command_exit": 0,
+        "state": "poweroff",
+        "stderr_sha256": "45d51ca3779f08f12d24976e300a044ce77129c4f83565d4c2383e02400c2267",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+      },
+      "outcome": "receipt recovered; cloud-init predicate failed; ACPI deadline 60s; emergency stop",
+      "path": ".local/validation/first-boot-04b",
+      "receipt": {
+        "boot_id": "677e6039-d436-45fd-9eda-8c7c9209b7f3",
+        "cgroup_v2": true,
+        "classification": "guest-reported base OS boot observations; not independent containment evidence",
+        "cloud_init": {
+          "exit": 0,
+          "report": {
+            "boot_status_code": "disabled-by-marker-file",
+            "datasource": "none",
+            "detail": "DataSourceNone",
+            "errors": [],
+            "extended_status": "disabled",
+            "init": {
+              "errors": [],
+              "finished": 167.51,
+              "recoverable_errors": {},
+              "start": 167.07
+            },
+            "init-local": {
+              "errors": [],
+              "finished": 45.93,
+              "recoverable_errors": {},
+              "start": 44.61
+            },
+            "last_update": "Thu, 01 Jan 1970 00:03:01 +0000",
+            "modules-config": {
+              "errors": [],
+              "finished": 169.87,
+              "recoverable_errors": {},
+              "start": 168.95
+            },
+            "modules-final": {
+              "errors": [],
+              "finished": null,
+              "recoverable_errors": {},
+              "start": 181.9
+            },
+            "recoverable_errors": {},
+            "stage": "modules-final",
+            "status": "disabled"
+          },
+          "stderr": "2026-11-21 07:34:37,485 - util.py[WARNING]: REDACTED config part /etc/cloud/cloud.cfg.d/99-installer.cfg, insufficient permissions\n2026-11-21 07:34:37,487 - util.py[WARNING]: REDACTED config part /etc/cloud/cloud.cfg.d/90-installer-network.cfg, insufficient permissions\n",
+          "stdout": "{\n  \"boot_status_code\": \"disabled-by-marker-file\",\n  \"datasource\": \"none\",\n  \"detail\": \"DataSourceNone\",\n  \"errors\": [],\n  \"extended_status\": \"disabled\",\n  \"init\": {\n    \"errors\": [],\n    \"finished\": 167.51,\n    \"recoverable_errors\": {},\n    \"start\": 167.07\n  },\n  \"init-local\": {\n    \"errors\": [],\n    \"finished\": 45.93,\n    \"recoverable_errors\": {},\n    \"start\": 44.61\n  },\n  \"last_update\": \"Thu, 01 Jan 1970 00:03:01 +0000\",\n  \"modules-config\": {\n    \"errors\": [],\n    \"finished\": 169.87,\n    \"recoverable_errors\": {},\n    \"start\": 168.95\n  },\n  \"modules-final\": {\n    \"errors\": [],\n    \"finished\": null,\n    \"recoverable_errors\": {},\n    \"start\": 181.9\n  },\n  \"recoverable_errors\": {},\n  \"stage\": \"modules-final\",\n  \"status\": \"disabled\"\n}\n"
+        },
+        "command_line": "BOOT_IMAGE=/boot/vmlinuz-6.8.0-139-generic root=UUID=83ad9448-2174-491c-8040-cdfb77ce3762 ro console=ttyS0,115200n8 console=tty0",
+        "fixture_uid": 1000,
+        "interfaces": [
+          "lo"
+        ],
+        "machine": "x86_64",
+        "os_release": {
+          "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+          "HOME_URL": "https://www.ubuntu.com/",
+          "ID": "ubuntu",
+          "ID_LIKE": "debian",
+          "LOGO": "ubuntu-logo",
+          "NAME": "Ubuntu",
+          "PRETTY_NAME": "Ubuntu 24.04.5 LTS",
+          "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+          "SUPPORT_URL": "https://help.ubuntu.com/",
+          "UBUNTU_CODENAME": "noble",
+          "VERSION": "24.04.5 LTS (Noble Numbat)",
+          "VERSION_CODENAME": "noble",
+          "VERSION_ID": "24.04"
+        },
+        "package_audit": {
+          "exit": 0,
+          "stderr": "",
+          "stdout": ""
+        },
+        "package_inventory_sha256": "5b4f046c57bf86f2afb418c87902ef3745e925a7a11243b1d59037ef56398cb0",
+        "package_rows": 480,
+        "python_version": "3.12.3",
+        "root_mount": [
+          "/dev/sda2",
+          "/",
+          "ext4",
+          "rw,relatime"
+        ],
+        "running_kernel": "6.8.0-139-generic",
+        "schema_version": 1,
+        "ssh_server_installed": false,
+        "token": "d1c8b273-7f8a-4c37-adf5-2bc68e632435",
+        "uid": 1000
+      },
+      "started": true,
+      "verdict": {
+        "checks": {
+          "cloud_init_done": false,
+          "disk_root": true,
+          "installed_kernel": true,
+          "loopback_only": true,
+          "no_installer_arguments": true,
+          "non_root_operator": true,
+          "package_audit_clean": true,
+          "package_inventory_unchanged": true,
+          "ssh_absent": true,
+          "ubuntu_release": true
+        },
+        "pass": false
+      }
+    }
+  ],
+  "causal_diagnosis": "unconfirmed; upstream NEM reports motivate diagnosis only",
+  "classification": "measured offline boot diagnostics; overall readiness held; no executor or containment qualification",
+  "final_state": {
+    "configuration_sha256": "f5fee410b2a648ad31373850424def6de8cf53f79557d47debb8b60c7c19169f",
+    "cpus": 2,
+    "memory_mib": 4096,
+    "nics": [
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none"
+    ],
+    "state": "poweroff",
+    "stopped_vdi_sha256": "0eda722dc1150b9f21f3ad3db0616c9def7ad4f6a5c1a020362527b460ef275e",
+    "uart": "off; mode absent from native output after explicit disconnected setting",
+    "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+  },
+  "host_backend": "NEM/Hyper-V; VM log reports VT-x unavailable",
+  "hypervisor_version": "7.2.22r175245",
+  "installation_commit": "7b4e2ad",
+  "next_check": "Review a bounded minimal startup/shutdown diagnostic using the recorded stopped-image hash; keep dependencies, networking and host virtualization/security settings unchanged pending a separately reviewed plan.",
+  "observed_at_utc": "2026-11-21T08:03:18.005199+00:00",
+  "open_checks": [
+    "repeatable unattended startup on frozen profile",
+    "cloud-init disable-marker origin and readiness predicate",
+    "power-button handling and orderly ACPI shutdown",
+    "image hardening and bootstrap credential cleanup",
+    "external supervisor lifetime and stop/reap qualification",
+    "dependency/image and network preparation before executor experiments"
+  ],
+  "original_installed_vdi_sha256": "8461a61de7a1c53c125d47397ae3c52fd792a24fad3f7f794dfe29b9ff826feb",
+  "pass": false,
+  "schema_version": 1,
+  "source_provenance": {
+    "current_source_sha256": {
+      "boot_receipt.py": "1db00369eca245cd4d915d138dff493aebb1c024dae5946c1a38abfae00da1fc",
+      "first_boot.py": "c3c27689f97959f7673337a2b6342bd404945d6afbeba9b17de046655fc7388e",
+      "fixture.py": "e9ce12d31c348cc8e40e3c6e1be2853eb400d53003632d39f6ebe58b30aa65d6",
+      "os_install.py": "f97635193d76da1cfcddd1a9042d2110b44faf28d7d9f54237c2f14072f1d8ea",
+      "store.py": "7556f2bdba33390eec3f741e002f93ad8c738e4f40598bcd7085461e52de9a12"
+    },
+    "first_two_trials": "No complete execution-time source snapshot was captured; do not substitute final hashes as execution provenance.",
+    "later_trials": "Execution source snapshots and indices are retained for first-boot-03 and first-boot-04b; later receipt-persistence change was not executed in those trials.",
+    "test_source_sha256": "fbbce18aca203654cbb9546f03750544c85a1c85f990f40c479c0e09a0934cbb"
+  },
+  "verification": {
+    "original_review_bundle": "220 files verified against original external manifest digest",
+    "passed": 49,
+    "ruff_check": "pass",
+    "ruff_format_check": "pass",
+    "skip_reason": "Windows symlink creation unavailable",
+    "skipped": 1,
+    "tests_run": 50
+  }
+}

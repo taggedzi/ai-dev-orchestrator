@@ -1,0 +1,253 @@
+{
+  "NIC_activations": 0,
+  "VM_boots": 1,
+  "accepted_running_samples": 2,
+  "actual_VM_stop_commands": 1,
+  "approval": "conversation:user-exact-approval:guard-review-10",
+  "expired_unarmed_reviews": [
+    {
+      "bytes": 1817,
+      "path": ".local/validation/guard-startup-review-08/inventory.json",
+      "sha256": "95392e874805fc0e67037f65d9e75e6d6b0ecdd4c6cf7357d3086476b1ebd867"
+    },
+    {
+      "bytes": 1817,
+      "path": ".local/validation/guard-startup-review-09/inventory.json",
+      "sha256": "994ab068d099c7745514841df0dd588833c3d7fdab0b2e768cf44f41bc79eace"
+    }
+  ],
+  "format": "mcli1-native-guard-normal-start-session-stop-v1",
+  "frontend_sha256": "e862a58b74c085306c5e8103529ddea1159e48862712cb5d4a68305c886fd51d",
+  "guest_commands": 0,
+  "hypervisor": {
+    "path": "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+    "sha256": "178e016ed38cb6e369a5c17c6c960c176674b9c864030d8ce0ad2867613becff",
+    "version": "7.2.22r175245"
+  },
+  "limits": [
+    "No guest readiness, root/UART ownership, installation/hardening or effective isolation qualification",
+    "No native startup-loss/controller-loss/late/detached/lost-ack failure-case qualification",
+    "No executor runtime or product-orchestrator qualification",
+    "No observed SQLite BUSY in this native run; contention behavior is covered by retained controlled tests",
+    "Historical failed stops remain held; no previous review or lease is repaired or reusable",
+    "Capture 06 predates the new poweroff metadata and NVRAM and cannot be relabeled as the current profile"
+  ],
+  "native_command_retries": 0,
+  "next_check": "Prepare the next scoped native failure-case review and refresh stopped profile/backup bindings before any separately approved activation. No live lease or further VM authority remains.",
+  "normal_start_session_stop_qualified": true,
+  "original_stop": {
+    "attempts": 1,
+    "elapsed_to_independent_proof_ns": 2597052500,
+    "exit": 0,
+    "inventory": {
+      "bytes": 1081,
+      "path": ".local/validation/owner-stops/b9479f8f1aad43faadc74b1594148303/inventory.json",
+      "sha256": "680cb440664422ee2d9ad1dac04096c671cbb93770d88277f3643cec18eafd74"
+    },
+    "ledger_state": "command-returned",
+    "receipt_sha256": "5207498bf87b04045bab833420e8d32e1c431a3ff52fd002289ac7c096b3c29c",
+    "two_independent_poweroff_unlocked_PID_zero_observations": true
+  },
+  "package_installs": 0,
+  "postrun": {
+    "both_disks_unchanged": true,
+    "executor_configuration_and_NVRAM_unchanged": true,
+    "files": {
+      "bytes": 2782,
+      "path": ".local/validation/guard-startup-review-10/postfiles/receipt.json",
+      "sha256": "a6c653f569cce55f7e1cab4978912ec374400e4e52c8e74b0914c41902012cca"
+    },
+    "guard_NVRAM_created_by_authorized_boot": {
+      "archive": {
+        "bytes": 540672,
+        "path": ".local/validation/guard-startup-review-10/postfiles/guard-nvram.bin",
+        "sha256": "ec2dca0346cd722d9e47a263353fa97b71b3de1914d7f5084b87eec1c9b4a49c"
+      },
+      "bytes": 540672,
+      "sha256": "ec2dca0346cd722d9e47a263353fa97b71b3de1914d7f5084b87eec1c9b4a49c",
+      "source_path": ".local/validation/vms/mcli1-guard-01/mcli1-guard-01.nvram",
+      "state": "file"
+    },
+    "guard_configuration_payload_unchanged_beyond_metadata": true,
+    "guard_configuration_sha256": "1ec80854e03eb158afa58cb7410d13398b608b734115e36586db3446463cf97c",
+    "guard_metadata_after": {
+      "aborted": null,
+      "lastStateChange": "2026-11-24T00:45:02Z"
+    },
+    "guard_metadata_before": {
+      "aborted": "true",
+      "lastStateChange": "2026-11-23T20:51:48Z"
+    },
+    "inventories": {
+      "executor": {
+        "bytes": 1192,
+        "path": ".local/validation/executor-native-postrun-10/inventory.json",
+        "sha256": "d43b3145ba1f28835148eba6461b3215c744fd22cc586845aae019a43acaea23"
+      },
+      "guard": {
+        "bytes": 1174,
+        "path": ".local/validation/guard-native-postrun-10/inventory.json",
+        "sha256": "cf5ddc05440ddbcdbec37aad7d78c4f946d4a00954ced821dad11e183859ffa8"
+      }
+    },
+    "state": "both VMs poweroff/unlocked/PID-zero; all NICs disabled"
+  },
+  "processes": {
+    "all_original_and_retained_identities_retired": true,
+    "forced_termination": false,
+    "inspection": {
+      "bytes": 4122,
+      "path": ".local/validation/guard-startup-review-10/independent-startup-inspection.json",
+      "sha256": "759493a2534ad88df2d015fbffd99c17b28b6eababb3f869bfc196502d461148"
+    },
+    "job_active_processes": 0,
+    "natural_zero_exits": 4
+  },
+  "qualification_boundary": "The bootstrap terminal supplies combined independent normal-stop acceptance. Controller/owner/session receipts deliberately retain their narrower not-poweroff-proof flags and are not rewritten.",
+  "restores": 0,
+  "review_inventory": {
+    "bytes": 27241,
+    "path": ".local/validation/guard-startup-review-10/inventory.json",
+    "sha256": "25266cc0771f43b4f8ec0d5ff107be4714b6023fd9c8e221a605f5be221da861"
+  },
+  "review_sha256": "027b509dfcbe0d710f5bdf0a63334b0668a351b6dd0e3907f8caf79e4996967b",
+  "session_binding": {
+    "busy_observed_in_this_native_run": false,
+    "commit_preceded_receipt_publication": true,
+    "ledger_state": "owner-stop-requested",
+    "process": {
+      "created_filetime": 134399546968861783,
+      "image": "C:\\Program Files\\Oracle\\VirtualBox\\VBoxHeadless.exe",
+      "pid": 10204
+    },
+    "receipt_sha256": "9669c0f91e2947e9db529cd67f0395a3bb1f910a4493487fe45e04d382235a82",
+    "trace": {
+      "bytes": 975,
+      "path": ".local/validation/guard-startup-review-10/owner/frontend.journal.trace.json",
+      "sha256": "4c75db4afdcf4db1219e884a2c775a4cd98ad54b3b6a2f1c12c45f190663b111"
+    }
+  },
+  "sources": [
+    {
+      "bytes": 6220,
+      "path": ".local/validation/controller-journal-regression-01/sources/backup_records.py",
+      "sha256": "10fef40e816b1b7cd840fac94ed3ac8f1fdf16b4860814d864afbb69816da8c7"
+    },
+    {
+      "bytes": 21485,
+      "path": ".local/validation/controller-journal-regression-01/sources/boot_preconditions.py",
+      "sha256": "b80bd097eeb2c34266b46432c16f5bdedd4607766c7f6c22f41688f966c35f3d"
+    },
+    {
+      "bytes": 6047,
+      "path": ".local/validation/controller-journal-regression-01/sources/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 10319,
+      "path": ".local/validation/controller-journal-regression-01/sources/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 16580,
+      "path": ".local/validation/controller-journal-regression-01/sources/frontend_process.py",
+      "sha256": "dbc3cdff35d96432bce6e847b31e4e7c5ad25d477fab477b159e1f7057189e2d"
+    },
+    {
+      "bytes": 49122,
+      "path": ".local/validation/controller-journal-regression-01/sources/frontend_start.py",
+      "sha256": "c6a2c8dec009495f59fb6ba69392655eafdd5dda3815dc79f95517ed463d2239"
+    },
+    {
+      "bytes": 27838,
+      "path": ".local/validation/controller-journal-regression-01/sources/initial_aborted.py",
+      "sha256": "48af5239ecf56d3d5f0a67119c84a2c8fbaf604e68630254231f5ada58fcb222"
+    },
+    {
+      "bytes": 35250,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_host.py",
+      "sha256": "0fac9c031deb3ff6c3bc43e43b962c283115cd3861b5d49dd7bfcfc025978eda"
+    },
+    {
+      "bytes": 15471,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 14633,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_stop.py",
+      "sha256": "5125a7553465e792997a858bb162f499d729226d91d662ae667ee4dca7248fe6"
+    },
+    {
+      "bytes": 36517,
+      "path": ".local/validation/controller-journal-regression-01/sources/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122"
+    },
+    {
+      "bytes": 14000,
+      "path": ".local/validation/controller-journal-regression-01/sources/native_session.py",
+      "sha256": "b9b365803cad5dd7eb00ada6803b2e9aa4228cd9320bc584cbb70a1133cdfff4"
+    },
+    {
+      "bytes": 25846,
+      "path": ".local/validation/controller-journal-regression-01/sources/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    {
+      "bytes": 16850,
+      "path": ".local/validation/controller-journal-regression-01/sources/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 12297,
+      "path": ".local/validation/controller-journal-regression-01/sources/owner_process.py",
+      "sha256": "4bfbb296bd5081d15caaef338cbaa89cef3f7b768764d55f2de5cc1c1fd76f1b"
+    },
+    {
+      "bytes": 1726,
+      "path": ".local/validation/controller-journal-regression-01/sources/process_proof.py",
+      "sha256": "af51675c2760bb21ada8af8ec2e10ffbd39194857025a52c43495ce10e3265db"
+    },
+    {
+      "bytes": 12233,
+      "path": ".local/validation/controller-journal-regression-01/sources/recovery_records.py",
+      "sha256": "496beacd8aa0f505b1c867fbd9d1675d79f853511c0cc79550c6737ee31da9e0"
+    },
+    {
+      "bytes": 37953,
+      "path": ".local/validation/controller-journal-regression-01/sources/startup_qualification.py",
+      "sha256": "dc1d9c37bc7351f6eeccbd3c1f79f9d4206723e6113bbb17aacb7560345af75b"
+    },
+    {
+      "bytes": 18952,
+      "path": ".local/validation/controller-journal-regression-01/sources/stopped_backup.py",
+      "sha256": "20205aefa189ab6891ab95a040db8433467aefefc6a95e62a07cb83170d6a80f"
+    },
+    {
+      "bytes": 16923,
+      "path": ".local/validation/controller-journal-regression-01/sources/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 3366,
+      "path": ".local/validation/controller-journal-regression-01/sources/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 10697,
+      "path": ".local/validation/controller-journal-regression-01/sources/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 12755,
+      "path": ".local/validation/controller-journal-regression-01/sources/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    }
+  ],
+  "status": "one explicitly approved native guard startup/session/normal-stop case measured successfully"
+}

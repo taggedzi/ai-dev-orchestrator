@@ -1,0 +1,400 @@
+{
+  "NIC_activations": 0,
+  "VM_boots": 0,
+  "approval": "conversation:2026-11-22-stopped-only-profiles",
+  "classification": "historical backup/profile/process checkpoint; newer owner-bound startup preparation is separate",
+  "format": "mcli1-maintenance-profile-evidence-v1",
+  "guest_commands": 0,
+  "next_check": "Integrate the original-owner ready proof, backups/current profile and admitted frontend family before a separately approved native boot.",
+  "observation_inventory": {
+    "bytes": 1033,
+    "path": ".local/validation/maintenance-profile-observe-01/inventory.json",
+    "sha256": "5e88e80712a54ad21747f563b7ffc6e7911cf0e28843d957c3d66acdc66f9caa"
+  },
+  "observations": [
+    {
+      "VM_mutations": 0,
+      "all_nics_disabled": true,
+      "apic": "on",
+      "configuration": {
+        "bytes": 2358,
+        "sha256": "986cf055dec3732488666adfe7e8715965faac421c9dc9c651eecb411f5c4f7e",
+        "state": "file"
+      },
+      "disk_sha256": "a8a6024499644999738f089546096e93174a336c003f2d1ae841214c2fe22c43",
+      "nvram": {
+        "state": "absent"
+      },
+      "plan_sha256": "962e01aa8f264bbc8f86f60af6ae908bf1a3e8f2dc794a3fbb6bcae7e87fe542",
+      "ports": "4",
+      "queries": [
+        {
+          "exit": 0,
+          "finished_mono_ns": 4150223897600,
+          "job_active_processes": 0,
+          "pid": 29752,
+          "started_mono_ns": 4150203917200
+        },
+        {
+          "exit": 0,
+          "finished_mono_ns": 4150649349400,
+          "job_active_processes": 0,
+          "pid": 15276,
+          "started_mono_ns": 4150226242400
+        },
+        {
+          "exit": 0,
+          "finished_mono_ns": 4150682051900,
+          "job_active_processes": 0,
+          "pid": 6524,
+          "started_mono_ns": 4150651724000
+        },
+        {
+          "exit": 0,
+          "finished_mono_ns": 4150718676400,
+          "job_active_processes": 0,
+          "pid": 9772,
+          "started_mono_ns": 4150684539900
+        }
+      ],
+      "receipt_sha256": "dca350813141f8a51e4b9a69f4fe6ff28152b28eb35b36638753ce1c077cceab",
+      "role": "guard",
+      "state": "poweroff",
+      "uart": "0x03f8,4",
+      "x2apic": "off"
+    },
+    {
+      "VM_mutations": 0,
+      "all_nics_disabled": true,
+      "apic": "on",
+      "configuration": {
+        "bytes": 3239,
+        "sha256": "5dfe5bc297f585a934bb2090797c365fafcfbd4bb7cbe785c8916f1da7ccf4f2",
+        "state": "file"
+      },
+      "disk_sha256": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09",
+      "nvram": {
+        "bytes": 540672,
+        "sha256": "cdfcb7d4b7eb19f0a4d990481704fbd02f81272e6f32d0651ed4a726546ce521",
+        "state": "file"
+      },
+      "plan_sha256": "d2bf6cf5e5ccd05e065e9922b310c8114ca40fae5ae530ecce158e02d692458d",
+      "ports": "4",
+      "queries": [
+        {
+          "exit": 0,
+          "finished_mono_ns": 4152255355400,
+          "job_active_processes": 0,
+          "pid": 20000,
+          "started_mono_ns": 4152230823000
+        },
+        {
+          "exit": 0,
+          "finished_mono_ns": 4152298558200,
+          "job_active_processes": 0,
+          "pid": 16088,
+          "started_mono_ns": 4152257820400
+        },
+        {
+          "exit": 0,
+          "finished_mono_ns": 4152331462000,
+          "job_active_processes": 0,
+          "pid": 20700,
+          "started_mono_ns": 4152300984700
+        },
+        {
+          "exit": 0,
+          "finished_mono_ns": 4152373419900,
+          "job_active_processes": 0,
+          "pid": 8584,
+          "started_mono_ns": 4152334050600
+        }
+      ],
+      "receipt_sha256": "c1592bb0748bee74f42cc2eb2452eeff94bcfde45dd1173db9970b0565663db5",
+      "role": "executor",
+      "state": "poweroff",
+      "uart": "0x03f8,4",
+      "x2apic": "off"
+    }
+  ],
+  "package_installs": 0,
+  "plan_inventory": {
+    "bytes": 4040,
+    "path": ".local/validation/maintenance-profile-review-01/inventory.json",
+    "sha256": "230a39326488858b8e48b0f78ebce87e9347c0dc068063140cacbf69ec929688"
+  },
+  "profiles": [
+    {
+      "inventory": {
+        "bytes": 3376,
+        "path": ".local/validation/maintenance-profile-guard-01/inventory.json",
+        "sha256": "bf2c5ad7c27f73f8451dab7aaebee892cf770ba84a894e398242ef26ca757a73"
+      },
+      "receipt": {
+        "bytes": 1137,
+        "path": ".local/validation/maintenance-profile-guard-01/receipt.json",
+        "sha256": "dca350813141f8a51e4b9a69f4fe6ff28152b28eb35b36638753ce1c077cceab"
+      },
+      "result": {
+        "VM_started": false,
+        "approval": "conversation:2026-11-22-stopped-only-profiles",
+        "backup_receipt_sha256": "c16629a52d55229edd3f66c2afb3c99af231451379ae26814668421837e4715f",
+        "commands": [
+          {
+            "exit": 0,
+            "finished_mono_ns": 3984145308000,
+            "job_active_processes": 0,
+            "pid": 25784,
+            "started_mono_ns": 3984009597500
+          },
+          {
+            "exit": 0,
+            "finished_mono_ns": 3986000660700,
+            "job_active_processes": 0,
+            "pid": 6664,
+            "started_mono_ns": 3985868710400
+          }
+        ],
+        "configuration": {
+          "bytes": 2358,
+          "sha256": "986cf055dec3732488666adfe7e8715965faac421c9dc9c651eecb411f5c4f7e",
+          "state": "file"
+        },
+        "disk_sha256": "a8a6024499644999738f089546096e93174a336c003f2d1ae841214c2fe22c43",
+        "machine_sha256": "795dfea2313ecb41f64537ec086dbce34a1fc514e0951c96b8e09e4f40a45a68",
+        "medium_sha256": "2acc4ad14954518206da0b6a4eacc755b00d1bf7596c0eb0ac3e8a7b0fd1f93b",
+        "native_boot_authorized": false,
+        "network_enabled": false,
+        "nvram": {
+          "state": "absent"
+        },
+        "plan_sha256": "962e01aa8f264bbc8f86f60af6ae908bf1a3e8f2dc794a3fbb6bcae7e87fe542",
+        "role": "guard",
+        "source_disk_uuid": "a8f47315-d330-4b28-bbb0-6a721b4c6251",
+        "status": "stopped-maintenance-profile-reported-not-boot-authority",
+        "target_vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      },
+      "role": "guard"
+    },
+    {
+      "inventory": {
+        "bytes": 2430,
+        "path": ".local/validation/maintenance-profile-executor-01/inventory.json",
+        "sha256": "0e2be97678019d552f06399709d8392161bf29067ba23a1ec763f525743bea49"
+      },
+      "receipt": {
+        "bytes": 1116,
+        "path": ".local/validation/maintenance-profile-executor-01/receipt.json",
+        "sha256": "c1592bb0748bee74f42cc2eb2452eeff94bcfde45dd1173db9970b0565663db5"
+      },
+      "result": {
+        "VM_started": false,
+        "approval": "conversation:2026-11-22-stopped-only-profiles",
+        "backup_receipt_sha256": "c727a10b2fcc3cc4d83be32943b46f28895a8005dd5da4ccf4381a1d0eceb44a",
+        "commands": [
+          {
+            "exit": 0,
+            "finished_mono_ns": 4011449279800,
+            "job_active_processes": 0,
+            "pid": 4960,
+            "started_mono_ns": 4011305615200
+          }
+        ],
+        "configuration": {
+          "bytes": 3239,
+          "sha256": "5dfe5bc297f585a934bb2090797c365fafcfbd4bb7cbe785c8916f1da7ccf4f2",
+          "state": "file"
+        },
+        "disk_sha256": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09",
+        "machine_sha256": "a7dd6affd6c2a3e041d8db2f9fbb851c4db3efbddcf82f9bc77acde929040b5c",
+        "medium_sha256": "d8dbe0145c351913a2a2d917a6b333ca60da1fffb7db75ae0e71f23475e7dd69",
+        "native_boot_authorized": false,
+        "network_enabled": false,
+        "nvram": {
+          "bytes": 540672,
+          "sha256": "cdfcb7d4b7eb19f0a4d990481704fbd02f81272e6f32d0651ed4a726546ce521",
+          "state": "file"
+        },
+        "plan_sha256": "d2bf6cf5e5ccd05e065e9922b310c8114ca40fae5ae530ecce158e02d692458d",
+        "role": "executor",
+        "source_disk_uuid": "e832fc9c-23cc-40a8-8e66-fa0c624b8bd9",
+        "status": "stopped-maintenance-profile-reported-not-boot-authority",
+        "target_vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+      },
+      "role": "executor"
+    }
+  ],
+  "source_description_note": "Changed historical workspace sources point to retained exact bytes; current owner-contention cohort is separate.",
+  "sources": [
+    {
+      "bytes": 14602,
+      "path": "research/validation/maintenance_stop.py",
+      "sha256": "f947ae1c1558d150db556a8437a01de2934938fa38e4478ca5da6264c1882faf"
+    },
+    {
+      "bytes": 6047,
+      "path": "research/validation/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 31432,
+      "historical_workspace_path": "research/validation/maintenance_host.py",
+      "path": ".local/validation/preactivation-regression-01/sources/maintenance_host.py",
+      "sha256": "b4abff939398a81e628d3de21e9c718f9b7e239a39772a337eb607f17716c583"
+    },
+    {
+      "bytes": 12755,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    },
+    {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 10697,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 16923,
+      "path": "research/validation/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 10319,
+      "path": "research/validation/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 3809,
+      "path": "research/validation/backup_records.py",
+      "sha256": "633902a7db727cfd1b0086b354816a6dbd79e3e14c967dceeca9f55a91adc521"
+    },
+    {
+      "bytes": 11948,
+      "historical_workspace_path": "research/validation/owner_process.py",
+      "path": ".local/validation/preactivation-regression-01/sources/owner_process.py",
+      "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+    },
+    {
+      "bytes": 16850,
+      "path": "research/validation/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 17502,
+      "path": "research/validation/stopped_backup.py",
+      "sha256": "6b363daf2ed5a88c96609bf1fd8d7633924944a40868a7ab1dc8a077aa0d3f0f"
+    },
+    {
+      "bytes": 25846,
+      "path": "research/validation/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    {
+      "bytes": 11331,
+      "path": "research/validation/maintenance_profile.py",
+      "sha256": "4f05799f0455d315b03091c29259ffa8bdf7ef2697a9a546ba5b41cebdce721d"
+    },
+    {
+      "bytes": 19909,
+      "historical_workspace_path": "research/validation/boot_preconditions.py",
+      "path": ".local/validation/frontend-regression-01/sources/boot_preconditions.py",
+      "sha256": "168b7b6ff48fb10e14b98056e67b560042895a242849d71720bcd2a9d31b1b59"
+    },
+    {
+      "bytes": 36517,
+      "path": "research/validation/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122"
+    }
+  ],
+  "status": "both stopped-only profiles applied and independently reobserved",
+  "successor_evidence": "research/validation/frontend-start-evidence.json",
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 70400,
+      "path": ".local/validation/frontend-regression-01/inventory.json",
+      "sha256": "1243245e165b71d004f6e3df66c3bbfe21f088eca7ec24a5cfd8cf5d156d8782"
+    },
+    "log": {
+      "bytes": 65741,
+      "path": ".local/validation/frontend-regression-01/unittest.log",
+      "sha256": "1d44928be77e46543c122e51eb6266fde311f026d8a408725c21ce508bb1eb38"
+    },
+    "passed": 368,
+    "skipped": [
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_exclusive_file_and_mask_never_overwrite_existing_bytes"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_global_journal_survives_close_and_rejects_a_fresh_attempt"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_hardlinked_or_foreign_owned_inputs_are_not_approved"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_partial_file_write_remains_and_refuses_replay"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_real_child_capture_timeout_output_bound_and_reaping"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_symlink_ancestors_writable_parents_and_path_escapes_refuse"
+      },
+      {
+        "reason": "POSIX pipe/process-group check",
+        "test": "test_guest_maintenance.GuestMaintenanceTests.test_native_pipe_deadline_output_bound_and_child_reaping"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_actual_non_guest_identity_fails_before_any_stage_write"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_bounded_decode_refuses_expansion_before_creating_final"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_tampered_compression_and_existing_final_file_never_execute_or_overwrite"
+      },
+      {
+        "reason": "symlink creation is unavailable to this process",
+        "test": "test_validation_harness.ObserverTests.test_symlinks_are_rejected_when_platform_supports_creation"
+      }
+    ],
+    "summary": {
+      "bytes": 14155,
+      "path": ".local/validation/frontend-regression-01/result.json",
+      "sha256": "61fb15d43632d20a733bec7600c5b3e5dcb47a8405d975af0b41f4698ed448fa"
+    },
+    "tests_run": 381
+  }
+}

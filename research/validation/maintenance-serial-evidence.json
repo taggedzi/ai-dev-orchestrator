@@ -1,0 +1,412 @@
+{
+  "authority": {
+    "control_changes": null,
+    "guard_creation": null,
+    "guard_topology_preparation": "approved",
+    "guest_boot": null,
+    "guest_transfer_or_observation": null,
+    "installation": null,
+    "phase_boundary_selection": null,
+    "serial_activation": null
+  },
+  "base_commit": "6018494",
+  "earlier_packets": [
+    {
+      "directory": ".local/validation/maintenance-serial-guard-01",
+      "files": [
+        {
+          "bytes": 14868,
+          "path": ".local/validation/maintenance-serial-guard-01/maintenance_serial.py",
+          "sha256": "70b44a716d093abd26ff6df2074cca9e8861d3ff20f7e8290345a052ed00aab0"
+        },
+        {
+          "bytes": 8403,
+          "path": ".local/validation/maintenance-serial-guard-01/maintenance_serial_worker.py",
+          "sha256": "32fc7113dc7f94cccca326aeabc9f34261585343451ce0b77be8d051e35edae9"
+        },
+        {
+          "bytes": 364,
+          "path": ".local/validation/maintenance-serial-guard-01/request.json",
+          "sha256": "2b6449c9a972af954558f8b90f81cc64aadc15d94d2d0fe6a49e97c0c9a09b42"
+        },
+        {
+          "bytes": 1131,
+          "path": ".local/validation/maintenance-serial-guard-01/review.json",
+          "sha256": "bc165a5f8faf966b9f6008d064491119a9383acfc3fd8fade47e468833e678d3"
+        }
+      ],
+      "refusal": "serial activation is unbound",
+      "revision": "01",
+      "role": "guard"
+    },
+    {
+      "directory": ".local/validation/maintenance-serial-executor-01",
+      "files": [
+        {
+          "bytes": 14868,
+          "path": ".local/validation/maintenance-serial-executor-01/maintenance_serial.py",
+          "sha256": "70b44a716d093abd26ff6df2074cca9e8861d3ff20f7e8290345a052ed00aab0"
+        },
+        {
+          "bytes": 8403,
+          "path": ".local/validation/maintenance-serial-executor-01/maintenance_serial_worker.py",
+          "sha256": "32fc7113dc7f94cccca326aeabc9f34261585343451ce0b77be8d051e35edae9"
+        },
+        {
+          "bytes": 364,
+          "path": ".local/validation/maintenance-serial-executor-01/request.json",
+          "sha256": "12db973cbee8b7935acc5f8441f86ec32a7c3df858bc70e7a95a7d66e590cc9a"
+        },
+        {
+          "bytes": 1134,
+          "path": ".local/validation/maintenance-serial-executor-01/review.json",
+          "sha256": "449f35a5c9a6eaa2db8bb82e9f52731051a38610de88b5d2d0e6cff909731063"
+        }
+      ],
+      "refusal": "serial activation is unbound",
+      "revision": "01",
+      "role": "executor"
+    }
+  ],
+  "limits": [
+    "This is a serial I/O primitive, not VM/root-session/backup/UART admission or approval authentication.",
+    "Controller must bind deadlines to original VM authority and signal revocation; no VM lease is armed or renewed here.",
+    "Killing the worker does not stop the VM or undo guest work; external supervisor must enforce fencing and independent stop/reap.",
+    "Transport acknowledgements retain Store possible-send and do not become task/package acceptance.",
+    "Local synthetic pipes/jobs do not qualify VirtualBox serial, actual guest identity, reexec, package installation or final isolation.",
+    "Pipe peer identity/access controls, credential handling and approved guest command generation remain open.",
+    "Host scheduling/kernel stalls and physical-power-loss/database-loss recovery are not qualified by process tests."
+  ],
+  "next_check": "Prepare approved identity-gated guest commands and create-only control execution, then bind original VM authority, trusted revocation and independent stop; pending creation/phase decisions remain unchanged.",
+  "packets": [
+    {
+      "directory": ".local/validation/maintenance-serial-guard-02",
+      "files": [
+        {
+          "bytes": 15129,
+          "path": ".local/validation/maintenance-serial-guard-02/maintenance_serial.py",
+          "sha256": "3817eb91ca181af7c1f7d4e908d21882c92749825688536166e9c6a1f2f66fe6"
+        },
+        {
+          "bytes": 11001,
+          "path": ".local/validation/maintenance-serial-guard-02/maintenance_serial_worker.py",
+          "sha256": "f2c4550732de43e9ff23a780d7d1d346c76b2ca242fa50100ded076110d4442c"
+        },
+        {
+          "bytes": 364,
+          "path": ".local/validation/maintenance-serial-guard-02/request.json",
+          "sha256": "606ad15def332ca2d7cb1b23d9e4406a447b50630aef669f7a2131d02f0c6f12"
+        },
+        {
+          "bytes": 1132,
+          "path": ".local/validation/maintenance-serial-guard-02/review.json",
+          "sha256": "85556395e616d48d727dafe110435fb0b47c57e31b348a38c0a6cf8a3c9035ce"
+        }
+      ],
+      "refusal": "serial activation is unbound",
+      "revision": "02",
+      "role": "guard"
+    },
+    {
+      "directory": ".local/validation/maintenance-serial-executor-02",
+      "files": [
+        {
+          "bytes": 15129,
+          "path": ".local/validation/maintenance-serial-executor-02/maintenance_serial.py",
+          "sha256": "3817eb91ca181af7c1f7d4e908d21882c92749825688536166e9c6a1f2f66fe6"
+        },
+        {
+          "bytes": 11001,
+          "path": ".local/validation/maintenance-serial-executor-02/maintenance_serial_worker.py",
+          "sha256": "f2c4550732de43e9ff23a780d7d1d346c76b2ca242fa50100ded076110d4442c"
+        },
+        {
+          "bytes": 364,
+          "path": ".local/validation/maintenance-serial-executor-02/request.json",
+          "sha256": "1c5c708cca58d7790d07e98dd64a4d0a878287da7f2d155a1b5af2ae31103039"
+        },
+        {
+          "bytes": 1135,
+          "path": ".local/validation/maintenance-serial-executor-02/review.json",
+          "sha256": "488a5985dab6711c1d0c894e715043e2fa9b705d1fe23e607f9e737a1d153220"
+        }
+      ],
+      "refusal": "serial activation is unbound",
+      "revision": "02",
+      "role": "executor"
+    }
+  ],
+  "primary_sources": [
+    {
+      "classification": "Microsoft Win32 source documentation; native selected behaviors measured separately",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects"
+    },
+    {
+      "classification": "Microsoft job kill-on-close/active-process flags",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_basic_limit_information"
+    },
+    {
+      "classification": "Microsoft extended-limit structure",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information"
+    },
+    {
+      "classification": "Python 3.13 shared-process monotonic clock semantics",
+      "url": "https://docs.python.org/3.13/library/time.html#time.monotonic"
+    }
+  ],
+  "recorded_utc": "2026-11-22T10:42:30.733993+00:00",
+  "scope": {
+    "VM_stop_implementation_added": false,
+    "WSL_operations": 0,
+    "actual_guest_pipe_connections": 0,
+    "current_source_disk_state_measured": false,
+    "current_vm_state_measured": false,
+    "guest_commands_generated": false,
+    "guest_control_changes": 0,
+    "media_mounted_or_attached": false,
+    "native_job_process_checks_used": true,
+    "original_VM_lease_admission_integrated": false,
+    "package_or_tool_installation": false,
+    "product_implementation": false,
+    "provider_calls": 0,
+    "repository_uploads": 0,
+    "selected_vm_operations": 0,
+    "synthetic_local_windows_pipes_used": true
+  },
+  "sources": [
+    {
+      "bytes": 15129,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "3817eb91ca181af7c1f7d4e908d21882c92749825688536166e9c6a1f2f66fe6"
+    },
+    {
+      "bytes": 11001,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "f2c4550732de43e9ff23a780d7d1d346c76b2ca242fa50100ded076110d4442c"
+    },
+    {
+      "bytes": 19338,
+      "path": "tests/test_maintenance_serial.py",
+      "sha256": "6d28d7ee25df49e03369bf67038375a67afcc003944ed0a8ea665efd52202523"
+    }
+  ],
+  "status": "unarmed-serial-primitive-with-local-native-evidence",
+  "verification": {
+    "earlier_shell_carrier": {
+      "explanation": "PowerShell stderr redirection emitted NativeCommandError metadata; later drivers write unittest logs directly and retain explicit result counts.",
+      "log": {
+        "bytes": 6286,
+        "path": ".local/validation/maintenance-serial-focused-01.log",
+        "sha256": "55f1bb52a8d11ee773f4f9f5ba5be46f2a68404c268932901d327a2d3f598092"
+      },
+      "tool_exit": 1,
+      "unittest_result": "16 tests OK"
+    },
+    "final_focused": {
+      "native_windows_cases": 9,
+      "passed": 18,
+      "protocol_and_journal_cases": 9,
+      "skipped": 0,
+      "tests_run": 18
+    },
+    "final_regression": {
+      "passed": 201,
+      "skip_reasons": [
+        "Existing Windows symlink limitation",
+        "POSIX pipe/process-group case, separately measured in guest-maintenance evidence"
+      ],
+      "skipped": 2,
+      "tests_run": 203
+    },
+    "focused_attempts": [
+      {
+        "log": {
+          "bytes": 2749,
+          "path": ".local/validation/maintenance-serial-focused-02/unittest.log",
+          "sha256": "a2a4d3455732b0098e9b638509de48678d0a481b1f24176f5be0485f90e6823a"
+        },
+        "receipt": {
+          "bytes": 636,
+          "path": ".local/validation/maintenance-serial-focused-02/receipt.json",
+          "sha256": "1c269119f3413cf9fd5a5ef5faae23566e183609d0f58fb62311eca65e0e11c8"
+        },
+        "result": {
+          "elapsed_seconds": 1.831769,
+          "errors": 0,
+          "failures": 0,
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "selected_vm_operations": 0,
+          "skipped": 0,
+          "sources": {
+            "research/validation/maintenance_serial.py": "7117b9934dcb526b2e16bbc3ef565d69b1c839187f5a752aa60b7e5199b436bc",
+            "research/validation/maintenance_serial_worker.py": "32fc7113dc7f94cccca326aeabc9f34261585343451ce0b77be8d051e35edae9",
+            "tests/test_maintenance_serial.py": "a0730423f386d286505ce2ebd614422436f6a9ba4bd248216ae8d029002ca8b3"
+          },
+          "tests_run": 16
+        }
+      },
+      {
+        "log": {
+          "bytes": 2906,
+          "path": ".local/validation/maintenance-serial-focused-03/unittest.log",
+          "sha256": "fc30c6cfa11f17101a9441f3194d7ad117206bc099ef10be8116264bc8d0508b"
+        },
+        "receipt": {
+          "bytes": 636,
+          "path": ".local/validation/maintenance-serial-focused-03/receipt.json",
+          "sha256": "465286a1df6562332c4f34bc4ba2e99beaafeb0cf0ea60f83bcea2260bd901a8"
+        },
+        "result": {
+          "elapsed_seconds": 1.938077,
+          "errors": 0,
+          "failures": 0,
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "selected_vm_operations": 0,
+          "skipped": 0,
+          "sources": {
+            "research/validation/maintenance_serial.py": "70b44a716d093abd26ff6df2074cca9e8861d3ff20f7e8290345a052ed00aab0",
+            "research/validation/maintenance_serial_worker.py": "32fc7113dc7f94cccca326aeabc9f34261585343451ce0b77be8d051e35edae9",
+            "tests/test_maintenance_serial.py": "6249d5e9060a9bd5dae2827d7d4447e99242b65edeb812b6ead2b8d6573e8ff1"
+          },
+          "tests_run": 17
+        }
+      },
+      {
+        "log": {
+          "bytes": 9287,
+          "path": ".local/validation/maintenance-serial-focused-04/unittest.log",
+          "sha256": "88d13c0c09ebd1644272d7db8d69c2e4b12271bc03adc3cc1478e1e15cefd867"
+        },
+        "receipt": {
+          "bytes": 637,
+          "path": ".local/validation/maintenance-serial-focused-04/receipt.json",
+          "sha256": "555c5a8ad68babae6ee8cbc6ee3e17fbb9180bcd29f51abf21805e81b80226e1"
+        },
+        "result": {
+          "elapsed_seconds": 10.072548,
+          "errors": 1,
+          "failures": 6,
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "selected_vm_operations": 0,
+          "skipped": 0,
+          "sources": {
+            "research/validation/maintenance_serial.py": "62463016a46649d239a89134064d3036280b10177e7e06cd18f5083a0be2af16",
+            "research/validation/maintenance_serial_worker.py": "f2c4550732de43e9ff23a780d7d1d346c76b2ca242fa50100ded076110d4442c",
+            "tests/test_maintenance_serial.py": "92a60c78ef632acba2fafac0d65ff221f106e4fa457bc13a69e065860838653a"
+          },
+          "tests_run": 18
+        }
+      },
+      {
+        "log": {
+          "bytes": 3049,
+          "path": ".local/validation/maintenance-serial-focused-05/unittest.log",
+          "sha256": "0889175c7012b15a68280577775422fda0bf5346930fcc20e03c40db91349972"
+        },
+        "receipt": {
+          "bytes": 636,
+          "path": ".local/validation/maintenance-serial-focused-05/receipt.json",
+          "sha256": "9e2e43636d05a2d61e616e47d4a4359024cc6b141bb6fbd17deb58ceb2c38e96"
+        },
+        "result": {
+          "elapsed_seconds": 1.957945,
+          "errors": 0,
+          "failures": 0,
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "selected_vm_operations": 0,
+          "skipped": 0,
+          "sources": {
+            "research/validation/maintenance_serial.py": "3817eb91ca181af7c1f7d4e908d21882c92749825688536166e9c6a1f2f66fe6",
+            "research/validation/maintenance_serial_worker.py": "f2c4550732de43e9ff23a780d7d1d346c76b2ca242fa50100ded076110d4442c",
+            "tests/test_maintenance_serial.py": "6d28d7ee25df49e03369bf67038375a67afcc003944ed0a8ea665efd52202523"
+          },
+          "tests_run": 18
+        }
+      }
+    ],
+    "intermediate_failure": {
+      "attempt": "maintenance-serial-focused-04",
+      "reason": "Requested Job Object name was overwritten by an API-definition loop variable; native membership checks rejected the worker. Corrected argument naming and test-peer cleanup passed attempt 05.",
+      "reconstructed_sources": [
+        {
+          "bytes": 15117,
+          "path": ".local/validation/maintenance-serial-focused-04/maintenance_serial.py",
+          "sha256": "62463016a46649d239a89134064d3036280b10177e7e06cd18f5083a0be2af16"
+        },
+        {
+          "bytes": 19052,
+          "path": ".local/validation/maintenance-serial-focused-04/test_maintenance_serial.py",
+          "sha256": "92a60c78ef632acba2fafac0d65ff221f106e4fa457bc13a69e065860838653a"
+        },
+        {
+          "bytes": 11001,
+          "path": ".local/validation/maintenance-serial-focused-04/maintenance_serial_worker.py",
+          "sha256": "f2c4550732de43e9ff23a780d7d1d346c76b2ca242fa50100ded076110d4442c"
+        }
+      ],
+      "reconstruction": "Recovered exact bytes from final source edits and matched every failed-attempt source hash before retaining."
+    },
+    "regression_attempts": [
+      {
+        "log": {
+          "bytes": 33735,
+          "path": ".local/validation/maintenance-serial-regression-01/unittest.log",
+          "sha256": "bd851180d9bcc6bfe7be584ca9e535d7f2d88d3c4cee50db8e14ed6860d6f16c"
+        },
+        "receipt": {
+          "bytes": 638,
+          "path": ".local/validation/maintenance-serial-regression-01/receipt.json",
+          "sha256": "98c246f2fd6d8937a7168fb1cbe00d0c5902418a71c42801a47da5faa9dd6a18"
+        },
+        "result": {
+          "elapsed_seconds": 54.498616,
+          "errors": 0,
+          "failures": 0,
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "selected_vm_operations": 0,
+          "skipped": 2,
+          "sources": {
+            "research/validation/maintenance_serial.py": "70b44a716d093abd26ff6df2074cca9e8861d3ff20f7e8290345a052ed00aab0",
+            "research/validation/maintenance_serial_worker.py": "32fc7113dc7f94cccca326aeabc9f34261585343451ce0b77be8d051e35edae9",
+            "tests/test_maintenance_serial.py": "6249d5e9060a9bd5dae2827d7d4447e99242b65edeb812b6ead2b8d6573e8ff1"
+          },
+          "tests_run": 202
+        }
+      },
+      {
+        "log": {
+          "bytes": 33878,
+          "path": ".local/validation/maintenance-serial-regression-02/unittest.log",
+          "sha256": "1a0a4a248e2ae73ae544bc18f47407fab041cb74e433234e9e82a0b7214fd299"
+        },
+        "receipt": {
+          "bytes": 638,
+          "path": ".local/validation/maintenance-serial-regression-02/receipt.json",
+          "sha256": "40eb3c4d58851cf926970f060e11d6f91ad2c572951b88482a3f431d621a0715"
+        },
+        "result": {
+          "elapsed_seconds": 52.624773,
+          "errors": 0,
+          "failures": 0,
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "selected_vm_operations": 0,
+          "skipped": 2,
+          "sources": {
+            "research/validation/maintenance_serial.py": "3817eb91ca181af7c1f7d4e908d21882c92749825688536166e9c6a1f2f66fe6",
+            "research/validation/maintenance_serial_worker.py": "f2c4550732de43e9ff23a780d7d1d346c76b2ca242fa50100ded076110d4442c",
+            "tests/test_maintenance_serial.py": "6d28d7ee25df49e03369bf67038375a67afcc003944ed0a8ea665efd52202523"
+          },
+          "tests_run": 203
+        }
+      }
+    ],
+    "ruff_check": "passed: research/validation tests",
+    "ruff_format_check": "passed: 88 files"
+  }
+}

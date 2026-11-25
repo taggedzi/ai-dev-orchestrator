@@ -1,0 +1,8 @@
+{
+  "name": "P1 development example",
+  "repository": "fixture-only-not-a-qualified-repository",
+  "requirements": [
+    {"id": "R1", "text": "Validate input before using it in the CLI"}
+  ],
+  "context": {"goal": "Exercise durable planning and holds without executing code"}
+}

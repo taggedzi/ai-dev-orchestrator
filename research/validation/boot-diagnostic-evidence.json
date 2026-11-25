@@ -1,0 +1,225 @@
+{
+  "artifacts": {
+    "acpi-shutdown.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "boot-receipt.json": {
+      "bytes": 2566,
+      "sha256": "ee83ada59fb6096792cb49dc513135f101b4a5412fc21de337fa6f1a6598f891"
+    },
+    "boot-verdict.json": {
+      "bytes": 269,
+      "sha256": "5ef2b17ea48e1f825f98508860824792dd8db1beb1528fd7d13c9c9f1467d2cc"
+    },
+    "configuration.log": {
+      "bytes": 3109,
+      "sha256": "6134b556f5c263d00adad103a7489e0dc401f73d25f0c77f7356fe65a9dfcfc0"
+    },
+    "control.sqlite": {
+      "bytes": 49152,
+      "sha256": "42cd84c72b33579438dd6a548bf3c53ce10e98cb384675d18079839209b9d758"
+    },
+    "disconnect-preparation-console.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "disk-boot-and-pipe.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "final-configuration.log": {
+      "bytes": 3225,
+      "sha256": "db34d68b16f8700d1644db182a1f9dbe3b05333384dfff95c6ff355c3210392d"
+    },
+    "host-vm-termination.log": {
+      "bytes": 236834,
+      "sha256": "aa58e2633a593e658e2d906e26d53ef8229ada7079b4b905b8995588e25f8033"
+    },
+    "restore-x2apic.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "result.json": {
+      "bytes": 5051,
+      "sha256": "4875b7e1f217628b9dde1ab8cc24d3d917c899a1d3e916894173c5fff07c4630"
+    },
+    "serial-sanitized.log": {
+      "bytes": 43616,
+      "sha256": "02e2fb3908fb350cba0531513cc9059050a545797b0bd9a095da737547f266fb"
+    },
+    "start-first-boot.log": {
+      "bytes": 141,
+      "sha256": "96f74832ef0136dc51e47cb52caf4a713104b2fcefdc7e06a703a80a5af87a6a"
+    },
+    "version.log": {
+      "bytes": 13,
+      "sha256": "a13dcb55ddfae435ebc57364d872c589b553fe399993462d41c13c5c8698fbad"
+    },
+    "x2apic-diagnostic.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "audit_tail_digest": "1bd0e162ef61f15464a5284095898fde6ab025511af2de3dc4e7bb4c71bd914e",
+  "classification": "one measured unattended two-CPU x2APIC-off boot and ACPI shutdown; repeatability and causal diagnosis unqualified",
+  "next_check": "Freeze a prospective inspected-cloud-init readiness policy and repeat cold boot/ACPI shutdown on the candidate two-CPU x2APIC-off profile; stop at any failure, then review image hardening and dependency preparation.",
+  "observations": {
+    "acpi_receipt_to_console_disconnect_seconds": 8.196158,
+    "acpi_request_exit": 0,
+    "cloud_marker_matches_inspection": true,
+    "emergency_stop_used": false,
+    "legacy_cloud_init_predicate_preserved": true,
+    "native_final_state": "poweroff; two CPUs; APIC and x2APIC restored on; UART off; all NICs disabled",
+    "offline_wait_online_service_failed": true,
+    "pause_resume_interventions": 0,
+    "readiness_predicates_passed": 9,
+    "readiness_predicates_total": 10,
+    "unattended_guest_boot": true
+  },
+  "observed_at_utc": "2026-11-21T09:35:05.235168+00:00",
+  "result": {
+    "checks": {
+      "cloud_init_done": false,
+      "disk_root": true,
+      "installed_kernel": true,
+      "loopback_only": true,
+      "no_installer_arguments": true,
+      "non_root_operator": true,
+      "package_audit_clean": true,
+      "package_inventory_unchanged": true,
+      "ssh_absent": true,
+      "ubuntu_release": true
+    },
+    "classification": "measured offline base OS boot; runtime isolation and executor remain unqualified",
+    "elapsed_seconds": 234.271,
+    "guest_cpus": 2,
+    "guest_x2apic": "off",
+    "hypervisor_version": "7.2.22r175245",
+    "image": {
+      "boot_id": "4235a8d6-71cd-4de4-975f-5585703003d0",
+      "cgroup_v2": true,
+      "classification": "guest-reported base OS boot observations; not independent containment evidence",
+      "cloud_init": {
+        "exit": 0,
+        "report": {
+          "boot_status_code": "disabled-by-marker-file",
+          "datasource": "",
+          "detail": "Cloud-init disabled by /etc/cloud/cloud-init.disabled",
+          "errors": [],
+          "extended_status": "disabled",
+          "last_update": "",
+          "recoverable_errors": {},
+          "status": "disabled"
+        },
+        "stderr": "2026-11-21 09:31:59,629 - util.py[WARNING]: REDACTED config part /etc/cloud/cloud.cfg.d/99-installer.cfg, insufficient permissions\n2026-11-21 09:31:59,637 - util.py[WARNING]: REDACTED config part /etc/cloud/cloud.cfg.d/90-installer-network.cfg, insufficient permissions\n",
+        "stdout": "{\n  \"boot_status_code\": \"disabled-by-marker-file\",\n  \"datasource\": \"\",\n  \"detail\": \"Cloud-init disabled by /etc/cloud/cloud-init.disabled\",\n  \"errors\": [],\n  \"extended_status\": \"disabled\",\n  \"last_update\": \"\",\n  \"recoverable_errors\": {},\n  \"status\": \"disabled\"\n}\n"
+      },
+      "cloud_init_disable_marker": {
+        "bytes": 132,
+        "exists": true,
+        "sha256": "932a93a163ea404534b62a37be08baf1ca7d6ed2d037447f767b12cb6b87514f"
+      },
+      "command_line": "BOOT_IMAGE=/boot/vmlinuz-6.8.0-139-generic root=UUID=83ad9448-2174-491c-8040-cdfb77ce3762 ro console=ttyS0,115200n8 console=tty0",
+      "fixture_uid": 1000,
+      "interfaces": [
+        "lo"
+      ],
+      "machine": "x86_64",
+      "os_release": {
+        "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+        "HOME_URL": "https://www.ubuntu.com/",
+        "ID": "ubuntu",
+        "ID_LIKE": "debian",
+        "LOGO": "ubuntu-logo",
+        "NAME": "Ubuntu",
+        "PRETTY_NAME": "Ubuntu 24.04.5 LTS",
+        "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+        "SUPPORT_URL": "https://help.ubuntu.com/",
+        "UBUNTU_CODENAME": "noble",
+        "VERSION": "24.04.5 LTS (Noble Numbat)",
+        "VERSION_CODENAME": "noble",
+        "VERSION_ID": "24.04"
+      },
+      "package_audit": {
+        "exit": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      "package_inventory_sha256": "5b4f046c57bf86f2afb418c87902ef3745e925a7a11243b1d59037ef56398cb0",
+      "package_rows": 480,
+      "python_version": "3.12.3",
+      "readiness_services": {
+        "exit": 0,
+        "stderr": "",
+        "stdout": "Result=success\nExecMainStatus=0\nId=systemd-logind.service\nActiveState=active\nSubState=running\n\nResult=success\nExecMainStatus=0\nId=cloud-final.service\nActiveState=inactive\nSubState=dead\n\nResult=exit-code\nExecMainStatus=1\nId=systemd-networkd-wait-online.service\nActiveState=failed\nSubState=failed\n"
+      },
+      "root_mount": [
+        "/dev/sda2",
+        "/",
+        "ext4",
+        "rw,relatime"
+      ],
+      "running_kernel": "6.8.0-139-generic",
+      "schema_version": 1,
+      "ssh_server_installed": false,
+      "token": "4b0202f5-404c-4d23-9e0f-1e25dea0d948",
+      "uid": 1000
+    },
+    "input_vdi_sha256": "0eda722dc1150b9f21f3ad3db0616c9def7ad4f6a5c1a020362527b460ef275e",
+    "network": "eight NICs disabled",
+    "output_vdi_sha256": "2eb1d9cd009ecfe83381d855137f5cee8c1317739f6209beddd6da8a10955a09",
+    "pass": false,
+    "prior_attempt": {
+      "checkpoint_sha256": "5985a2898d12fa87a881f50bd6853e95e5a0f7f6c3018f2d78a5554eb3341ff9",
+      "kind": "stopped-boot-reconciliation-v1",
+      "offline_inspection_sha256": "d9e5782e3302e514ed0dd34d9a32eb5c3f5375061a8bb6f6636d141e84dae45c",
+      "original_installed_vdi_sha256": "8461a61de7a1c53c125d47397ae3c52fd792a24fad3f7f794dfe29b9ff826feb",
+      "parent_checkpoint_sha256": "94526129b0c89f5edaca7764efe9335e69c8c8b295f540fed107ba3954f54f72",
+      "prior_audit_tail_digest": "eeb06cad59b470a341a8ccb74961b393855c42d87fc6182c0a685ae4b0abd60b",
+      "profile_change": {
+        "x2apic": "off"
+      },
+      "reason": "Corrected native option ordering after refused start: x2APIC off, ordinary APIC explicitly on last. Pre-start APIC guard; same stopped disk and limits; no pause/resume.",
+      "refused_start_audit_tail_digest": "085ebfcab381e533d7df39f5089f462d25b289458a200cb169fd57878a39fd34",
+      "retry_index": 4,
+      "serial_sha256": "27f671514bb55bc24bf136473a3236a21dc09b51c6836b3fe413d236a2f4dbfc",
+      "stopped_vdi_sha256": "0eda722dc1150b9f21f3ad3db0616c9def7ad4f6a5c1a020362527b460ef275e",
+      "trial_source_sha256": {
+        "boot_receipt.py": "c75491d510140d231594428b0b9b36708212cf10caff1bbbc9f065931f1fde33",
+        "first_boot.py": "058deaf2e35b48453f5cedaa936acc886b4c4cf7f5b734f17aa2dddd78d2d5a9",
+        "fixture.py": "e9ce12d31c348cc8e40e3c6e1be2853eb400d53003632d39f6ebe58b30aa65d6",
+        "os_install.py": "f97635193d76da1cfcddd1a9042d2110b44faf28d7d9f54237c2f14072f1d8ea",
+        "store.py": "7556f2bdba33390eec3f741e002f93ad8c738e4f40598bcd7085461e52de9a12"
+      },
+      "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+    },
+    "probe_sha256": "c75491d510140d231594428b0b9b36708212cf10caff1bbbc9f065931f1fde33",
+    "serial_sha256": "02e2fb3908fb350cba0531513cc9059050a545797b0bd9a095da737547f266fb",
+    "shutdown": "ACPI",
+    "state": "poweroff",
+    "temporary_uart": "disabled after shutdown",
+    "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+  },
+  "run_path": ".local/validation/x2apic-02",
+  "schema_version": 1,
+  "source_provenance": {
+    "artifact_version": "no evidence of repeated cold-start stability yet",
+    "bundle_helpers": "digest/load_json loaded from bundle.py at af6cd7c; only its unused build evidence allowlist changed while this trial ran",
+    "execution_core_sha256": {
+      "boot_receipt.py": "c75491d510140d231594428b0b9b36708212cf10caff1bbbc9f065931f1fde33",
+      "first_boot.py": "058deaf2e35b48453f5cedaa936acc886b4c4cf7f5b734f17aa2dddd78d2d5a9",
+      "fixture.py": "e9ce12d31c348cc8e40e3c6e1be2853eb400d53003632d39f6ebe58b30aa65d6",
+      "os_install.py": "f97635193d76da1cfcddd1a9042d2110b44faf28d7d9f54237c2f14072f1d8ea",
+      "store.py": "7556f2bdba33390eec3f741e002f93ad8c738e4f40598bcd7085461e52de9a12"
+    },
+    "execution_core_snapshot": ".local/validation/offline-inspection-01/corrected-trial-source",
+    "inspection_evidence": {
+      "execution_copy": ".local/validation/offline-inspection-01/corrected-trial-source/offline-inspection-evidence.execution.json",
+      "execution_sha256": "d9e5782e3302e514ed0dd34d9a32eb5c3f5375061a8bb6f6636d141e84dae45c",
+      "normalization": "Tracked JSON normalized from CRLF to LF after the run; exact execution bytes retained locally. Converting tracked LF to CRLF reconstructs the recorded execution hash.",
+      "tracked_lf_sha256": "4b7b4c091b671917a143784b76c95cafbfaf2fb64528892804bccc2b1c79b91b"
+    }
+  },
+  "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+}

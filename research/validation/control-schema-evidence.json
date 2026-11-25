@@ -1,0 +1,258 @@
+{
+  "base_commit": "2fde381",
+  "classification": "Measured read-only SDK model/schema validation and local control-gate conformance; not a deployed tool/wire, isolation or recovery qualification",
+  "cleanup": {
+    "conversations_created": 0,
+    "desktop_started_for_probe": true,
+    "desktop_stop_exit": 0,
+    "engine_unavailable_after_stop": true,
+    "images_pulled_or_built": false,
+    "model_calls": 0,
+    "packages_installed": false,
+    "tool_executors_created": 0,
+    "virtualbox_operations": 0
+  },
+  "conformance": {
+    "coverage": [
+      "Exact create/profile and duplicate-JSON denial",
+      "Wrong HTTP methods/routes/conversation IDs/encoded queries denied",
+      "Duplicate/unsupported headers and WebSocket upgrades denied",
+      "Private control credential differs from backend dummy and is never forwarded",
+      "One in-flight mutation across SQLite connections",
+      "Uncertainty/replay/fencing survive restart; stop remains separately admissible",
+      "No transient/in-memory control journal or policy rebinding",
+      "Lost backend acknowledgement retains possible-send and causes no duplicate delivery",
+      "Receipt storage failure after a backend effect leaves a hold, not a resend",
+      "Fault-proxy composition preserves public operation ID and independent receipt without private-auth forwarding"
+    ],
+    "evidence": "root-tests.stderr; fake services and temporary SQLite databases only",
+    "new_control_tests": 11,
+    "root_tests_result": "pass",
+    "root_tests_run": 87,
+    "root_tests_skipped": 1
+  },
+  "image_id": "sha256:f242d7a2b69742fde04385231647c54c57396b251ddfd7a5f34095073970e868",
+  "limitations": [
+    "No resolved runtime tool inventory, rendered system prompt or actual Chat request was observed.",
+    "The schema artifacts are action/request model schemas, not the final Chat function/tool schema digest.",
+    "Ambient plugin and vision-profile discovery require qualified clean mount/LSM controls; empty JSON lists are insufficient.",
+    "Gate admission fencing cannot cancel an already admitted/in-flight API request; external stream/packet fencing and OS stop remain mandatory.",
+    "This local HTTP-only transport does not implement final guard-VM binding or WebSocket recording.",
+    "The fixed per-request/role token ceilings and SDK context capacity are different controls; role/wire/token fitting remains open.",
+    "Prototype gate use does not supply missing deployment or run approval.",
+    "The global product objective, architecture decision and lifecycle requirements remain unfinished."
+  ],
+  "native_observations": {
+    "broker_url": "http://127.0.0.1:18080/v1",
+    "include_default_tools": [],
+    "max_input_tokens": 32768,
+    "max_output_tokens": 6000,
+    "model": "openai/fixture/model-v1",
+    "native_tool_calling": true,
+    "request_model_validation": true,
+    "supplied_fields_recognized": true,
+    "tool_specs": [
+      {
+        "name": "terminal",
+        "params": {
+          "no_change_timeout_seconds": 30,
+          "shell_path": "/bin/bash",
+          "terminal_type": "subprocess"
+        }
+      },
+      {
+        "name": "file_editor",
+        "params": {}
+      }
+    ]
+  },
+  "native_probes": [
+    {
+      "container_removed": true,
+      "exit": 1,
+      "generator_source_sha256": "ce006e2e939c9e476f19ef129dd2dbf913010063a655606fece6c977cb0b2c5e",
+      "outcome": "SDK rejected 12000 as total context capacity below its 16384 minimum. No short-context override or inference was used.",
+      "probe_source_sha256": "e40b7b535e474b02c4b5a590f65d01f84393a446cf02a6bd32546317dcac4fcc",
+      "request_sha256": "89b1f4499038c37e444b31d46bd484b9ba4b3454a35365f9eb6358cebea70db7",
+      "revision": "01"
+    },
+    {
+      "container_removed": true,
+      "exit": 0,
+      "generator_source_sha256": "7f716f1a1e2cac7e793240825d42e9f872617767dedcf4c4e5c9e5531aaf382b",
+      "outcome": "All supplied fields recognized and native StartConversationRequest validation passed. Context capacity 32768; broker per-request bounds remain separate and unqualified.",
+      "probe_source_sha256": "e40b7b535e474b02c4b5a590f65d01f84393a446cf02a6bd32546317dcac4fcc",
+      "request_sha256": "48b5b2f8c8519d80612766a9e1088be2459ca6da9e2396159b091b0dd5d41410",
+      "revision": "02"
+    }
+  ],
+  "next_check": "Prepare the approved guard topology exact provisioning/image/package and network/control policy inputs; revalidate the existing VM and complete readiness/hardening before approved M1-12 tests.",
+  "observed_at_utc": "2026-11-21T18:18:27.892368+00:00",
+  "raw_evidence_files": {
+    "containers-after.json": {
+      "bytes": 598,
+      "sha256": "a82a60016980c92b4cbb65d32c08825f584f4d3527ad5afa6c504069e8b77d6c"
+    },
+    "containers-after.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-stop.json": {
+      "bytes": 231,
+      "sha256": "4cb45dac7a3cf4cd3be00bf0f8747c72db30f8f039556e47e535d33c87f4cd2c"
+    },
+    "desktop-stop.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-stop.stdout": {
+      "bytes": 29,
+      "sha256": "c4ed0e5b1c3f7042bc1743fd09ea47af6ecc5878e72f6a444895489894af51b0"
+    },
+    "docker-config/config.json": {
+      "bytes": 96,
+      "sha256": "3a7f77151abb5fbdf3027458e1bb16f0d6809b8aeb534848e9dc6dba563afb1f"
+    },
+    "docker_step.py": {
+      "bytes": 1800,
+      "sha256": "79e5bc0dbe5f6296178838557c5284f6f6dc2b8410a8e947058c503ce73dceea"
+    },
+    "engine-after-stop.json": {
+      "bytes": 611,
+      "sha256": "0dff155d3990fa7acf14598dce7780c050421ba3c66c223985498c1fd2eebab2"
+    },
+    "engine-after-stop.log": {
+      "bytes": 229,
+      "sha256": "cdaafd6864eb40563844e63a88769d03b43c2090c072266106b4f846e09c1868"
+    },
+    "engine-before.json": {
+      "bytes": 607,
+      "sha256": "b2d5aeb09561d4397ec771f9ef85b74454130001fe0d55554153c06960bcc6be"
+    },
+    "engine-before.log": {
+      "bytes": 229,
+      "sha256": "cdaafd6864eb40563844e63a88769d03b43c2090c072266106b4f846e09c1868"
+    },
+    "executed-control-policy-01.py": {
+      "bytes": 13696,
+      "sha256": "ce006e2e939c9e476f19ef129dd2dbf913010063a655606fece6c977cb0b2c5e"
+    },
+    "executed-control-policy-02.py": {
+      "bytes": 13944,
+      "sha256": "7f716f1a1e2cac7e793240825d42e9f872617767dedcf4c4e5c9e5531aaf382b"
+    },
+    "executed-probe-01.py": {
+      "bytes": 2983,
+      "sha256": "e40b7b535e474b02c4b5a590f65d01f84393a446cf02a6bd32546317dcac4fcc"
+    },
+    "executed-probe-02.py": {
+      "bytes": 2983,
+      "sha256": "e40b7b535e474b02c4b5a590f65d01f84393a446cf02a6bd32546317dcac4fcc"
+    },
+    "file_editor_action_schema.json": {
+      "bytes": 1927,
+      "sha256": "5c5e60e89bb25ca7661a7f1aff810abbdccef9379e797c012ed0f1e0b9ad78c1"
+    },
+    "image-present.json": {
+      "bytes": 696,
+      "sha256": "5cc13646da2635639cc916a34a65b446a3b767b51bf0de483d7ea279bff26884"
+    },
+    "image-present.log": {
+      "bytes": 72,
+      "sha256": "653f77c084b5f15131de7efb7e69705b37ed73950247681a46683012611ea8cc"
+    },
+    "probe-01.stderr": {
+      "bytes": 2717,
+      "sha256": "42d9e8951a6f42ecba1504232a3fc25a69870a39a513015846359c6b3596918e"
+    },
+    "probe-01.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "probe-02.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "probe-02.stdout": {
+      "bytes": 118534,
+      "sha256": "67926ee3fc41681b70e50945861a8855eeb7922531e6740eca714c680825efd2"
+    },
+    "request-01.json": {
+      "bytes": 1679,
+      "sha256": "89b1f4499038c37e444b31d46bd484b9ba4b3454a35365f9eb6358cebea70db7"
+    },
+    "request-02.json": {
+      "bytes": 1807,
+      "sha256": "48b5b2f8c8519d80612766a9e1088be2459ca6da9e2396159b091b0dd5d41410"
+    },
+    "request_schema.json": {
+      "bytes": 113972,
+      "sha256": "d4ddf656d7e9aac94874e7397af46f1cb6d719d404f6e8a3ce82d6bc509c9d12"
+    },
+    "result-01.json": {
+      "bytes": 347,
+      "sha256": "4eba4628f4792b6fa335012f8e762da542a9cdf7e5b0c0768899ac1f16a2b2ca"
+    },
+    "result-02.json": {
+      "bytes": 351,
+      "sha256": "a1ef390744f27f36da6992654acaabe82dcfff6ecca72089cfd2c31964498938"
+    },
+    "root-tests.stderr": {
+      "bytes": 115,
+      "sha256": "5d1d2cc8147fedf87ffd4350dc818793512ff5a0a4881195e7aac06736e36808"
+    },
+    "root-tests.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run_probe.py": {
+      "bytes": 3768,
+      "sha256": "99b8039f122744f141ab4d371f8c7287c5402ee69ba1a7f9588cfbcbf71907db"
+    },
+    "terminal_action_schema.json": {
+      "bytes": 1912,
+      "sha256": "5982fc9cf9408a4bf48193db2ad88e37901e65d986d4a5d85bbd694f82b22f7e"
+    }
+  },
+  "raw_evidence_root": ".local/validation/control-schema-01",
+  "schema_version": 1,
+  "schemas": {
+    "file_editor_action_schema": {
+      "bytes": 1927,
+      "path": ".local/validation/control-schema-01/file_editor_action_schema.json",
+      "serialization": "sorted compact json.dumps, default ensure_ascii=True, no trailing LF",
+      "sha256": "5c5e60e89bb25ca7661a7f1aff810abbdccef9379e797c012ed0f1e0b9ad78c1"
+    },
+    "request_schema": {
+      "bytes": 113972,
+      "path": ".local/validation/control-schema-01/request_schema.json",
+      "serialization": "sorted compact json.dumps, default ensure_ascii=True, no trailing LF",
+      "sha256": "d4ddf656d7e9aac94874e7397af46f1cb6d719d404f6e8a3ce82d6bc509c9d12"
+    },
+    "terminal_action_schema": {
+      "bytes": 1912,
+      "path": ".local/validation/control-schema-01/terminal_action_schema.json",
+      "serialization": "sorted compact json.dumps, default ensure_ascii=True, no trailing LF",
+      "sha256": "5982fc9cf9408a4bf48193db2ad88e37901e65d986d4a5d85bbd694f82b22f7e"
+    }
+  },
+  "source_provenance": {
+    "current_sha256": {
+      "bundle.py": "8f3657665bf40c02ed79a30a435e5ac80ec0e120d51c8ffe83159231cf309c20",
+      "control_policy.py": "accccc46cb9f38d0627d44935f971ad3fe876bf8b74a2ff1eb429fe0e67bcea0",
+      "control_schema_probe.py": "e40b7b535e474b02c4b5a590f65d01f84393a446cf02a6bd32546317dcac4fcc",
+      "http_tools.py": "1e13683972fcc57b9399167ce2a86e4338ba5b578a2d796117705b717eb7ff62"
+    },
+    "note": "Both native request generators and probe sources are retained. Later journal/transport guard changes do not alter the validated request bytes."
+  },
+  "topology_decision": {
+    "native_provisioning_approval": null,
+    "path": "docs/decisions/0001-validation-network-boundary.md",
+    "status": "developer-selected guard VM topology for preparation only"
+  },
+  "upstream": {
+    "commit": "504a88cab0fb48ee5226238ad7b8f1d865fa84a8",
+    "repository": "OpenHands/software-agent-sdk",
+    "version": "1.62.0"
+  }
+}

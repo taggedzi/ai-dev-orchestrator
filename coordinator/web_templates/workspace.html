@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="A local workspace for project intent, plan approval and recovery decisions.">
+  <title>Orchestrator · Local workspace</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/workspace.css">
+  <script src="/assets/workspace.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to workspace</a>
+  <nav aria-label="Workspace"><a class="brand" href="/" aria-current="page">Orchestrator</a><span class="local-label">Local workspace</span><button id="sign-out" class="quiet" hidden>Sign out</button></nav>
+  <main id="main">
+    <section id="login-panel" class="login panel" aria-labelledby="login-title">
+      <p class="eyebrow">Your intent, kept in one place</p>
+      <h1 id="login-title">Open your workspace</h1>
+      <p>Use the access token from your local token file. Your projects and decisions stay in the local store.</p>
+      <form id="login-form">
+        <label for="access-token">Local access token</label>
+        <input id="access-token" type="password" required minlength="32" maxlength="128" autocomplete="off" spellcheck="false">
+        <button class="primary" type="submit">Open workspace</button>
+      </form>
+      <p class="error" id="login-error" role="alert" hidden></p>
+    </section>
+    <section id="workspace" hidden aria-labelledby="workspace-title">
+      <header class="page-header"><div><p class="eyebrow">Project control</p><h1 id="workspace-title">Review intent.<br>Keep decisions clear.</h1></div><button id="show-create" class="primary">Create project</button></header>
+      <p class="notice">Development preview. Planning, approval, recovery, scripted promotion, and cost reports work here. Coding tasks and model calls are not enabled.</p>
+      <div class="error panel" id="workspace-error" role="alert" hidden></div>
+      <div class="layout">
+        <aside class="panel" aria-labelledby="projects-title"><h2 id="projects-title">Projects</h2><div id="project-list"><div class="skeleton" aria-label="Loading projects"></div></div></aside>
+        <div class="content">
+          <section id="create-panel" class="panel" hidden aria-labelledby="create-title">
+            <h2 id="create-title">Capture a project</h2><p>Start with the goal and requirements. You can revise them before approving a plan.</p>
+            <form id="create-form">
+              <label for="project-name">Project name</label><input id="project-name" required maxlength="200">
+              <label for="project-repository">Repository location</label><input id="project-repository" required maxlength="4096" placeholder="Local path or repository reference">
+              <label for="project-goal">Goal</label><textarea id="project-goal" required rows="3"></textarea>
+              <label for="project-requirements">Requirements</label><textarea id="project-requirements" required rows="4" placeholder="R1: Describe an observable outcome&#10;R2: Describe another outcome"></textarea>
+              <p class="help">One requirement per line, starting with its identifier and a colon.</p>
+              <div class="actions"><button type="submit" class="primary">Save project</button><button id="cancel-create" type="button" class="quiet">Cancel</button></div>
+            </form>
+          </section>
+          <section id="empty-panel" class="panel empty"><p class="eyebrow">A clear starting point</p><h2>Choose a project or capture a new one</h2><p>Your approved plans, task states and pending decisions will appear here.</p></section>
+          <section id="project-panel" class="panel" hidden aria-labelledby="project-title">
+            <div class="section-header"><div><p id="project-state" class="eyebrow"></p><h2 id="project-title"></h2></div><div class="actions"><button id="refresh-project" class="quiet">Refresh state</button><button id="revise-project" class="quiet">Revise intent</button><button id="pause-project" class="quiet">Pause project</button><button id="resume-project" class="quiet" hidden>Resume project</button></div></div>
+            <p id="project-goal-text"></p><p class="help" id="project-revision"></p>
+            <details><summary>Requirements and context</summary><pre id="project-context"></pre></details>
+            <div id="discovery-turns"></div>
+            <div class="divider"></div><h3>Import a plan for review</h3>
+            <form id="plan-form"><label for="milestone-key">Milestone identifier</label><input id="milestone-key" required pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,79}" maxlength="80" placeholder="M1"><label for="plan-file">Plan JSON file</label><input id="plan-file" type="file" accept=".json,application/json" required><button type="submit" class="secondary">Import plan</button></form>
+            <p class="help">Importing does not approve a plan. Its requirements revision must match this project.</p>
+            <div id="plans"></div><div id="tasks"></div>
+            <section id="operator-report" aria-labelledby="operator-title">
+              <div class="divider"></div>
+              <h3 id="operator-title">Cost and decisions</h3>
+              <dl id="cost-units"></dl>
+              <p id="scripted-acceptance"></p>
+              <p id="capability-flags" class="help"></p>
+              <div id="pending-decisions"></div>
+              <div id="milestone-costs"></div>
+            </section>
+            <details><summary>Recovery controls</summary><p>Use recovery when a sender disappeared. Possible delivery stays held until its effects are reconciled.</p><label for="recovery-reason">Reason</label><input id="recovery-reason" maxlength="8192" placeholder="What happened to the sender?"><button id="recover-project" class="quiet">Fence and recover</button></details>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><span>Local data. Explicit decisions.</span><a href="/privacy">Privacy</a><a href="/terms">Usage terms</a></footer>
+</body>
+</html>

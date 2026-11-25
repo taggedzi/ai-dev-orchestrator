@@ -1,0 +1,41 @@
+﻿{
+    "format":  "orchestrator-decisions-0007-0008-approval-v1",
+    "approved_date":  "2026-11-24",
+    "reference":  "conversation:developer-approval:decisions-0007-0008:2026-11-24",
+    "user_text":  "I approve the decisions",
+    "decisions":  [
+                      "0007",
+                      "0008"
+                  ],
+    "proposals":  [
+                      {
+                          "path":  "docs/decisions/0007-held-guard-successor.md",
+                          "bytes":  7787,
+                          "sha256":  "29f33d1470e62fcbca7e5b585b04cdb08679fb479bce0a403d332b6762c9f95e",
+                          "archive":  ".local/validation/product-approval-01/0007-held-guard-successor.md"
+                      },
+                      {
+                          "path":  "docs/decisions/0008-product-implementation-boundary.md",
+                          "bytes":  8273,
+                          "sha256":  "235b0114943a7e4c0510a35a617c0fc05c75e1270f23ae45c1d6c713896cdd3c",
+                          "archive":  ".local/validation/product-approval-01/0008-product-implementation-boundary.md"
+                      },
+                      {
+                          "path":  "docs/product-delivery-plan.md",
+                          "bytes":  7770,
+                          "sha256":  "db06da2ce08105bb426ee08433b1aebebdfc1f8ded902432b83160376239c36d",
+                          "archive":  ".local/validation/product-approval-01/product-delivery-plan.md"
+                      }
+                  ],
+    "authorized":  [
+                       "Product implementation and local tests under Decision 0008",
+                       "Held-guard preparation, scratch/Python tests and read-only/unattached capture under Decision 0007"
+                   ],
+    "separate_scopes":  [
+                            "Dependency installation",
+                            "Real admission transfer",
+                            "VM or runner mutation and native activation",
+                            "Provider-data or paid experiments",
+                            "Remote writes and publication"
+                        ]
+}

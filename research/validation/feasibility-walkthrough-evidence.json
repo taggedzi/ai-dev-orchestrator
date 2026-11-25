@@ -1,0 +1,155 @@
+{
+  "classification": "Read-only repository/CLI inspection and retained review-terminal audit; not a product usability trial or a native fault run.",
+  "commands": [
+    {
+      "args": [
+        "python",
+        "-m",
+        "research.validation",
+        "--help"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "stdout": "usage: __main__.py [-h]\n                   {build,verify,check,profile,blind,supervise,report,reserve,broker,proxy} ...\n\nPrepare and inspect M-CLI1 using installed Python, Node and Git only.\n\npositional arguments:\n  {build,verify,check,profile,blind,supervise,report,reserve,broker,proxy}\n\noptions:\n  -h, --help            show this help message and exit\n"
+    },
+    {
+      "args": [
+        "git",
+        "ls-files",
+        "coordinator",
+        "integrations"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "stdout": ""
+    }
+  ],
+  "controller_loss_preparation": {
+    "bytes": 31446,
+    "path": "research/validation/controller-loss-preparation-evidence.json",
+    "sha256": "2af356fe1edd73ab9abe5b58d742dab68529e31dd86d0e0aa302a666f00454b2"
+  },
+  "decision": "Revise checkpoint only; no technology adoption, implementation approval or Go verdict inferred.",
+  "format": "m1-14-document-cli-walkthrough-evidence-v1",
+  "inputs": [
+    {
+      "bytes": 5699,
+      "path": "docs/vision.md",
+      "sha256": "c1c537b3f714739b01b747d60190913d771797b42a8fb0046f51670a29907b92"
+    },
+    {
+      "bytes": 2728,
+      "path": "docs/requirements.md",
+      "sha256": "21cd58db145824a623bee2e41f1b5e78685b0c63865d3030f9a3afa9e86b2c2d"
+    },
+    {
+      "bytes": 3478,
+      "path": "docs/architecture.md",
+      "sha256": "b23198d261892d639bc219a78160df6fc5f3e1b68e972b5567b2b05210625949"
+    },
+    {
+      "bytes": 34251,
+      "path": "research/gsd-core.md",
+      "sha256": "f3aa7fbb453c00ccd2aaecafe4e827d28cd390a63a6d0389abe355cbea177698"
+    },
+    {
+      "bytes": 30734,
+      "path": "research/openhands.md",
+      "sha256": "1655af045f82d965ccb5dd61ec2b15d6a6a4c74422c1827a4d12ee95c4ebcb17"
+    },
+    {
+      "bytes": 78476,
+      "path": "research/model-routing.md",
+      "sha256": "aa3a9a9f8678bf3d4ade55376d21c6e014a308fb437146ac0367a9a7351ff59e"
+    },
+    {
+      "bytes": 6422,
+      "path": "research/validation/__main__.py",
+      "sha256": "d124c78a47f4aa2ef453a510baa50d0f18fe616d1a3b40f42c735ede503eb176"
+    }
+  ],
+  "latest_unarmed_closure": {
+    "bytes": 1162,
+    "path": ".local/validation/guard-controller-loss-review-01/independent-unarmed-closure.json",
+    "sha256": "9c3acf3add1589c260f5a3c0a27c8f01efa23a4cbfaaa58f1a79443c6b84f745"
+  },
+  "new_VM_boots": 0,
+  "new_actual_VM_stop_commands": 0,
+  "no_product_sources_at_tracked_coordinator_or_integrations_paths": true,
+  "normal_native_case": {
+    "bytes": 10926,
+    "path": "research/validation/guard-startup-normal-stop-evidence.json",
+    "sha256": "43c7a21c977afe04cfd66d1355b719b0676555d5097ff7a02fd08ec9058bde24"
+  },
+  "observed_utc_ns": 1795508087162115100,
+  "product_requirements_completed_by_this_walkthrough": [],
+  "remote_mutations": 0,
+  "remote_review": {
+    "bytes": 2219,
+    "path": ".local/validation/remote-milestone-review-2026-11-24.json",
+    "sha256": "fd58985680cb775ec98709ae4a294610e40b49dc7d3a285461f41f5c71c30e27"
+  },
+  "scope_of_expiry_count": "Exactly the five listed review roots, not a count of every user intervention or native attempt.",
+  "unarmed_expiries_in_selected_retained_history": [
+    {
+      "review": {
+        "bytes": 5533,
+        "path": ".local/validation/guard-startup-review-03/review.json",
+        "sha256": "7580226fe0d7a9e75c702a57e68c69966e5c8f3a4f3328fd8b0423cdedf1118a"
+      },
+      "terminal": {
+        "bytes": 59,
+        "path": ".local/validation/guard-startup-review-03/qualification.terminal.json",
+        "sha256": "7c0e2d5d1169b1798ab513103699a004bafaf23bdf374c184f41381dca859f0c"
+      }
+    },
+    {
+      "review": {
+        "bytes": 6531,
+        "path": ".local/validation/guard-startup-review-06/review.json",
+        "sha256": "4507ab8096d8d9ead05f75f0b62f38402ed5ab490ce17eded3a4f7aebbca9bb9"
+      },
+      "terminal": {
+        "bytes": 59,
+        "path": ".local/validation/guard-startup-review-06/qualification.terminal.json",
+        "sha256": "7c0e2d5d1169b1798ab513103699a004bafaf23bdf374c184f41381dca859f0c"
+      }
+    },
+    {
+      "review": {
+        "bytes": 6529,
+        "path": ".local/validation/guard-startup-review-08/review.json",
+        "sha256": "f6acd56bc6e6c159f5efbb3e533ac7e0fc8c694de9a47e6472d622a52ad44f70"
+      },
+      "terminal": {
+        "bytes": 59,
+        "path": ".local/validation/guard-startup-review-08/qualification.terminal.json",
+        "sha256": "7c0e2d5d1169b1798ab513103699a004bafaf23bdf374c184f41381dca859f0c"
+      }
+    },
+    {
+      "review": {
+        "bytes": 6532,
+        "path": ".local/validation/guard-startup-review-09/review.json",
+        "sha256": "7840297c4a1849e411047ee4e5caaef92754d1cf00cad7d432f0db89cded75ff"
+      },
+      "terminal": {
+        "bytes": 59,
+        "path": ".local/validation/guard-startup-review-09/qualification.terminal.json",
+        "sha256": "7c0e2d5d1169b1798ab513103699a004bafaf23bdf374c184f41381dca859f0c"
+      }
+    },
+    {
+      "review": {
+        "bytes": 6038,
+        "path": ".local/validation/guard-controller-loss-review-01/review.json",
+        "sha256": "c43c796cdb66927682e62d22df0618de2c4a70738f146d15da08f38782abf41f"
+      },
+      "terminal": {
+        "bytes": 59,
+        "path": ".local/validation/guard-controller-loss-review-01/qualification.terminal.json",
+        "sha256": "7c0e2d5d1169b1798ab513103699a004bafaf23bdf374c184f41381dca859f0c"
+      }
+    }
+  ]
+}

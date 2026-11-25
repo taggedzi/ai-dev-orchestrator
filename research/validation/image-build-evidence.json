@@ -1,0 +1,603 @@
+{
+  "base_commit": "fec5bfb",
+  "builder": {
+    "client": {
+      "ApiVersion": "1.56",
+      "Arch": "amd64",
+      "BuildTime": "Tue Nov  3 21:46:10 2026",
+      "Context": "default",
+      "DefaultAPIVersion": "1.56",
+      "GitCommit": "5457199",
+      "GoVersion": "go1.26.10",
+      "Os": "windows",
+      "Version": "29.9.3"
+    },
+    "docker_started_for_preparation": true,
+    "effective_resources": {
+      "Driver": "overlay2",
+      "MemTotal": 16693161984,
+      "NCPU": 20,
+      "OSType": "linux",
+      "SecurityOptions": [
+        "name=seccomp,profile=builtin",
+        "name=cgroupns"
+      ],
+      "ServerVersion": "29.9.3"
+    },
+    "prior_running_containers": 0,
+    "server": {
+      "ApiVersion": "1.56",
+      "Arch": "amd64",
+      "BuildTime": "2026-11-03T21:41:42.000000000+00:00",
+      "Components": [
+        {
+          "Details": {
+            "ApiVersion": "1.56",
+            "Arch": "amd64",
+            "BuildTime": "Tue Nov  3 21:41:42 2026",
+            "Experimental": "false",
+            "GitCommit": "70efc0e",
+            "GoVersion": "go1.26.10",
+            "KernelVersion": "6.18.58.1-microsoft-standard-WSL2",
+            "MinAPIVersion": "1.40",
+            "Module": "github.com/moby/moby/v2",
+            "ModuleVersion": "v2.0.0+unknown",
+            "Os": "linux"
+          },
+          "Name": "Engine",
+          "Version": "29.9.3"
+        },
+        {
+          "Details": {
+            "GitCommit": "b7a25261e029d68978bbf290df0a62fc819b3c51"
+          },
+          "Name": "containerd",
+          "Version": "v2.4.2"
+        },
+        {
+          "Details": {
+            "GitCommit": "v1.5.2-0-g29dd3dc2"
+          },
+          "Name": "runc",
+          "Version": "1.5.2"
+        },
+        {
+          "Details": {
+            "GitCommit": "de40ad0"
+          },
+          "Name": "docker-init",
+          "Version": "0.19.0"
+        }
+      ],
+      "GitCommit": "70efc0e",
+      "GoVersion": "go1.26.10",
+      "KernelVersion": "6.18.58.1-microsoft-standard-WSL2",
+      "MinAPIVersion": "1.40",
+      "Os": "linux",
+      "Platform": {
+        "Name": "Docker Desktop 4.99.0 (245822)"
+      },
+      "Version": "29.9.3"
+    }
+  },
+  "classification": "Measured offline image preparation and startup smoke; final VirtualBox deployment and M1-12 remain unqualified",
+  "cleanup": {
+    "after_stop_query_classification": "Expected unavailable engine after successful Desktop stop; generic helper hold is not a runtime failure.",
+    "desktop_stop_exit": 0,
+    "engine_unreachable_after_stop": true,
+    "no_virtualbox_operations_issued": true,
+    "running_containers_after": 0,
+    "scope": "Both named containers removed, retained images/archive not pruned, other containers/settings untouched. Global context was not switched."
+  },
+  "contexts": [
+    {
+      "classification": "never built; superseded before execution to correct documented telemetry consent literals",
+      "manifest_sha256": "a354e449969e0ee38bee927f48d571c6cf4c3f778aa134a18d67e59f50c69b11",
+      "path": ".local/validation/image-context-01"
+    },
+    {
+      "classification": "executed offline build context; exact amendment retained",
+      "files": 751,
+      "manifest_sha256": "90eecd3d458076e9ad95becba7f14e07a2355f459992ba59c0694f3979346375",
+      "path": ".local/validation/image-context-02"
+    }
+  ],
+  "image": {
+    "architecture": "amd64",
+    "archive": {
+      "bytes": 999058944,
+      "image_id": "sha256:f242d7a2b69742fde04385231647c54c57396b251ddfd7a5f34095073970e868",
+      "path": ".local/validation/image-build-01/agent-server-image.tar",
+      "sha256": "4859acc886856d990bef0215be182999bf6a7021db54ba06db30888ca01caf66"
+    },
+    "binary_sha256": {
+      "bin/git": "bdf5526190288e7ff41f768bcab29e28de5aff65423c374a3e6edf6a7fd4f4be",
+      "bin/node": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+      "bin/tini": "c5b0666b4cb676901f90dfcb37106783c5fe2077b04590973b885950611b30ee"
+    },
+    "built_wheels": {
+      "func_timeout-4.3.5-py3-none-any.whl": "6c7246ce7556c6ad2de9ab6d448de7b24713535c2dd1c5deacd2eac970b2e649",
+      "openhands_agent_server-1.62.0-py3-none-any.whl": "b233f17ad6f1bd3a6d8f6fe996f77a51352c221968f6be43f6c7c541033a23de",
+      "openhands_sdk-1.62.0-py3-none-any.whl": "3e86a611089968c57f33a3a7f38cacef3aab7dccefd80a38ea61bed4cbc50d8a",
+      "openhands_tools-1.62.0-py3-none-any.whl": "24dd3cbd9a50ba04d06414063a97b0b0780e2df6eec62e5112d612ffc0050bb6"
+    },
+    "id": "sha256:f242d7a2b69742fde04385231647c54c57396b251ddfd7a5f34095073970e868",
+    "inspect_size_bytes": 968113932,
+    "os": "linux",
+    "tag": "mcli1-agent-server:prep-504a88c-01",
+    "toolchain_inventory": {
+      "path": ".local/validation/image-build-01/toolchain-inventory.json",
+      "sha256": "89da4f442adfd5cc89517c05efdf946cd8c637f77dc4cb7abe4e02a3a71366dc"
+    }
+  },
+  "image_input_manifest": {
+    "path": "research/validation/image-build-inputs.json",
+    "sha256": "11f525e2b09560fc977ad3b45530b014279b31348c18c768c79899eb55319c00"
+  },
+  "input_evidence_files": {
+    "3.13.17-slim-trixie.config.json": {
+      "bytes": 5515,
+      "sha256": "72036a705a7cff38924efd674e60654666cb283faf7b3fad160b34007f7395bd"
+    },
+    "3.13.17-slim-trixie.index.json": {
+      "bytes": 10373,
+      "sha256": "d98cc29d3266e535dd9da1099688d9cb3ca4753813571e071763d17725460962"
+    },
+    "3.13.17-slim-trixie.manifest.json": {
+      "bytes": 1746,
+      "sha256": "d879ed88565a7a3c614b980b369d4a5025a9d057b71f93d09fc6d0b2ca823a18"
+    },
+    "3.13.17-trixie.config.json": {
+      "bytes": 6378,
+      "sha256": "b629346a61bd0be57ac436bae7846691e7a5ec1d017497d18a7c06ee1dd8903a"
+    },
+    "3.13.17-trixie.index.json": {
+      "bytes": 9040,
+      "sha256": "d5a186865324088bd10d1671801b42297a8fe3f8059143fb22b2e2b776ffa6dd"
+    },
+    "3.13.17-trixie.manifest.json": {
+      "bytes": 2319,
+      "sha256": "bf756c962c5d29f6fe30dbf70c692b1e978c272619e8f1096e1d697934c662bf"
+    },
+    "native-artifact-head.json": {
+      "bytes": 865,
+      "sha256": "edbcbd646f9edb66e7ea9b076bd4594f744e77eae02aecf239fc42afa21acefa"
+    },
+    "openhands-504a88c.tar.gz": {
+      "bytes": 5730059,
+      "sha256": "1c91cd7f97074706d0bfb2fde0608c104b69de6bdbe58d44f6c7275d0b9ea1d7"
+    },
+    "packaging.pypi.json": {
+      "bytes": 5747,
+      "sha256": "7eea47157cf6e38386b2a0026bd646cbff4b344f9399b22a89e15f5a79f54593"
+    },
+    "pip.pypi.json": {
+      "bytes": 6683,
+      "sha256": "d0b07879e414dc3347bf20a492a9e8a15cfb1962e3cae3843b93453d9940f5f9"
+    },
+    "setuptools.pypi.json": {
+      "bytes": 11091,
+      "sha256": "1c509b89f744e798fb7c60d3c5236e293a397cc582cd8e2aed1a443ad1dc2e5c"
+    },
+    "terminal.definition.py": {
+      "bytes": 14969,
+      "sha256": "a978161b8512762607288fe1e3459dfd9b9d3ed79f46b6495cda9d5d2da6e3a3"
+    },
+    "terminal.impl.py": {
+      "bytes": 24261,
+      "sha256": "e2a9aa8414e2f604bf9b6f06d463df7233ed68e7225d1958920badb885dec599"
+    },
+    "wheel.pypi.json": {
+      "bytes": 4473,
+      "sha256": "fab1ef024a0366d42bcb3b5455d4a45bedd65c243987b229c935e40eaa360cd7"
+    }
+  },
+  "input_evidence_root": ".local/validation/image-input-review-02",
+  "limitations": [
+    "No model/provider call or fixture task ran. This preparation is not an autonomous milestone.",
+    "Docker Desktop is not the final VirtualBox target; its observed AppArmor profile was empty. Enforcing LSM, independent observers, containment, quotas and stop/supervisor/extractor qualification remain open.",
+    "Server reports 17 usable tools, including delegation/workflow tools. A conversation-bound two-tool profile and external ingress allowlist remain to qualify; no conversation was created.",
+    "The local-only workspace distribution is absent and /server_info reports workspace_version unknown. This image supports the proposed local Agent Server mode only.",
+    "Image environment alone does not disable dynamic imports, hooks, plugins, MCP or subagents in arbitrary API requests.",
+    "Base package inventory includes apt 3.0.3. Patch/security qualification and any hardened successor image remain open; no patched-runtime claim is made.",
+    "The external fixture spending ledger remains authoritative; bundled model-cost metadata is not hosted billing evidence.",
+    "No image signature or upstream registry provenance attestation was verified. Reproducible rebuilt wheel/image byte identity is not measured.",
+    "No VirtualBox VM was changed or started during this stage. Guest readiness and final deployment/run approval remain open."
+  ],
+  "next_check": "Freeze and verify the narrow conversation/API policy, external network topology and guest runtime/hardening preparation; qualify M1-12 on the approved exact VirtualBox profile before executor tasks.",
+  "observed_at_utc": "2026-11-21T11:41:11.568171+00:00",
+  "raw_evidence_files": {
+    "agent-server-image.tar": {
+      "bytes": 999058944,
+      "sha256": "4859acc886856d990bef0215be182999bf6a7021db54ba06db30888ca01caf66"
+    },
+    "archive-validation.json": {
+      "bytes": 256,
+      "sha256": "37fc2f2f7daffdc85a178864867a5db6c70790092d546a640c8f20acf6e4694a"
+    },
+    "build.json": {
+      "bytes": 936,
+      "sha256": "39be5485515553ac043e5a47257378d59b7315728cef062753f6693491364fce"
+    },
+    "build.log": {
+      "bytes": 77233,
+      "sha256": "dea279ba3797ed57e2c66b7bd16de451e646ffdf9613c55a883be8107700d9ea"
+    },
+    "built-evidence/build-receipt.json": {
+      "bytes": 25731,
+      "sha256": "09107380c47b355da46676a40c10a713338239ee4351ea1d20441b240e7b7157"
+    },
+    "built-evidence/context-manifest.json": {
+      "bytes": 97734,
+      "sha256": "90eecd3d458076e9ad95becba7f14e07a2355f459992ba59c0694f3979346375"
+    },
+    "built-evidence/installed-requirements.txt": {
+      "bytes": 26584,
+      "sha256": "d88ec285b7cc0a60b7e85bb17389550dbc0a29fa8396619c37c75e84dcafcfc2"
+    },
+    "containers-after.json": {
+      "bytes": 593,
+      "sha256": "32d5cdba8bbf04680a8aaaf52ceefcaf42b244c9ae6616227b4c4f1624a65989"
+    },
+    "containers-after.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "containers-before.json": {
+      "bytes": 593,
+      "sha256": "cd55f165a2806b899266f8b50abb5685bb6b3c51a81708b21d00e8d6e8867e1c"
+    },
+    "containers-before.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-stop.json": {
+      "bytes": 401,
+      "sha256": "0bf97aa38b2569dc4ceb15fd6eeed2d5bf0442c02aa3309698b3cb7a229bd1de"
+    },
+    "desktop-stop.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "desktop-stop.stdout": {
+      "bytes": 29,
+      "sha256": "c4ed0e5b1c3f7042bc1743fd09ea47af6ecc5878e72f6a444895489894af51b0"
+    },
+    "docker-config/buildx/.buildNodeID": {
+      "bytes": 16,
+      "sha256": "2ea7c679406722d08f5aba10cb725007f823d776d842837ebaf756eb7ee557e4"
+    },
+    "docker-config/buildx/.lock": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docker-config/buildx/activity/default": {
+      "bytes": 20,
+      "sha256": "5c52b651dcdd72d23a39ea47ba3f5fb4c9811f1eb6c3c0935df2c9ec4a0ce336"
+    },
+    "docker-config/buildx/refs/default/default/vu8t4ow68ycslw4p4vvkgavgf": {
+      "bytes": 249,
+      "sha256": "a517421bf0efd626332872c2d62d66b415e7bf981421fd071d245113bf049197"
+    },
+    "docker-config/config.json": {
+      "bytes": 96,
+      "sha256": "3a7f77151abb5fbdf3027458e1bb16f0d6809b8aeb534848e9dc6dba563afb1f"
+    },
+    "docker_step.py": {
+      "bytes": 1800,
+      "sha256": "79e5bc0dbe5f6296178838557c5284f6f6dc2b8410a8e947058c503ce73dceea"
+    },
+    "engine-after-stop.json": {
+      "bytes": 604,
+      "sha256": "c508505d9b2edb3f79c68048970a2e51f7421d67afe206b3990eb77f8d4a363f"
+    },
+    "engine-after-stop.log": {
+      "bytes": 229,
+      "sha256": "cdaafd6864eb40563844e63a88769d03b43c2090c072266106b4f846e09c1868"
+    },
+    "image-archive-receipt.json": {
+      "bytes": 269,
+      "sha256": "9699cdcb472157c388e8dfd3699c185878a40a2522923eae3ba3dbf5a0e2ad97"
+    },
+    "image-id.txt": {
+      "bytes": 71,
+      "sha256": "a349333984e1b45f67e646801d0d8ba631c5a765448a23e613d8fea8088c90cd"
+    },
+    "image-inspect.json": {
+      "bytes": 655,
+      "sha256": "bf7f6b7eed93eeeb5c5f1e21793539aa28dc81ff54f83ed5fa00ad0cec267446"
+    },
+    "image-inspect.log": {
+      "bytes": 4181,
+      "sha256": "5e2d98b4f74a01bf1fd14e8a8267cee8427c9d1d44d6cd0e253abe369e054fa6"
+    },
+    "image-save.json": {
+      "bytes": 731,
+      "sha256": "d7a9fad6b2963d93b3f4b94f4902e8c19e7beffb93a0d8448cd553a2e3cf26c9"
+    },
+    "image-save.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "info.json": {
+      "bytes": 766,
+      "sha256": "0a505e389a10fb47410f890c4c357165c55985ba9be52885cb1e4c892d920926"
+    },
+    "info.log": {
+      "bytes": 164,
+      "sha256": "a2f7dd2ed814b40c88ac03d24794f1fd4af6790d9eff5cba9457d1853ddfb118"
+    },
+    "preflight.json": {
+      "bytes": 586,
+      "sha256": "49d20eb7930a0e50055bd97f8b50c0e3d47668dea08aba44b17238a191755fb8"
+    },
+    "pull-builder.json": {
+      "bytes": 684,
+      "sha256": "6d8e0d7153eab7d69742708fcf9c190a2a152bb6170cb8a29fb3bc623fb6e557"
+    },
+    "pull-builder.log": {
+      "bytes": 1373,
+      "sha256": "d7799db1ad5e7e86e65a4b975bfedd0f28bcdf036f94a3d0fdd6b89d1d673633"
+    },
+    "pull-runtime.json": {
+      "bytes": 684,
+      "sha256": "4cde663a849d49a2af51c2e243a3d347ecbd15c2342740ac57eb76417291be5e"
+    },
+    "pull-runtime.log": {
+      "bytes": 903,
+      "sha256": "614677d5452f1390a8bfb4f87a2eedbfa390e85010dc416b59f2ef5b89308b58"
+    },
+    "smoke-inspect.json": {
+      "bytes": 592,
+      "sha256": "4ca4c77d6b6f1d00a2bccec3891cb7c4273f303acc315dcf19e9c4d2bab8cde8"
+    },
+    "smoke-inspect.log": {
+      "bytes": 9541,
+      "sha256": "ef08c5314abcd9a98b406a311a833215f48af8f30f348d67b735161317b37469"
+    },
+    "smoke-logs.json": {
+      "bytes": 586,
+      "sha256": "c70c2f4d9257ab70f4b5f7b60318f26bb04f9c0549a31c451eba05deeb71382d"
+    },
+    "smoke-logs.log": {
+      "bytes": 683,
+      "sha256": "46148aa80d0e61350bbd72cc3cc3f7c36a0a402a4c04c75ca3f3974aaec8a599"
+    },
+    "smoke-name-check.json": {
+      "bytes": 677,
+      "sha256": "6f09d18ab707a662b6b95c4d13f8c0245992f74fb79bbc1391ec779733d1c4c8"
+    },
+    "smoke-name-check.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "smoke-probe-02.py": {
+      "bytes": 2356,
+      "sha256": "46d1f7ae2c4f6b91e767802788a5629536589f307ceccd29eb707ad257cb5372"
+    },
+    "smoke-probe.json": {
+      "bytes": 2992,
+      "sha256": "812537391c31fad859853f86ca71572ad7c62f086c52ccc07996aee9257227d8"
+    },
+    "smoke-probe.log": {
+      "bytes": 899,
+      "sha256": "d72d72e664217fe5ec519836275b6402d33e2cef81c9799be677cbe58e1c24f0"
+    },
+    "smoke-remove.json": {
+      "bytes": 586,
+      "sha256": "5d948c35c487bbf027a1ef9cbea0ed1de9a6e771b6cba28ae997a4b295110460"
+    },
+    "smoke-remove.log": {
+      "bytes": 21,
+      "sha256": "3ab92fd4d958096eea758861f96e62ff9aa0d781f07b7ccad8a8d71bb7fb8287"
+    },
+    "smoke-result-02.json": {
+      "bytes": 17534,
+      "sha256": "73cdfee42b6565f4acb4a3daf6217f8fef4fc24b7c5bf7ccbe6f5f2a3669e7df"
+    },
+    "smoke-result.json": {
+      "bytes": 668,
+      "sha256": "efe23d23b80182385084888c9ac58478c36ca04221c1299582ccad078d3033ca"
+    },
+    "smoke-start.json": {
+      "bytes": 1480,
+      "sha256": "79d9b12c5d7cadb6c0f79b5d25c391b9ec21b310ceab3eb4df95b87a66824562"
+    },
+    "smoke-start.log": {
+      "bytes": 65,
+      "sha256": "c9a2606a756c5347ef24676a5e38e497cbe836a32f295b901ae85cb81335d2fe"
+    },
+    "smoke-stop.json": {
+      "bytes": 612,
+      "sha256": "05a1931029f7de334963919ae392d18d97d744bf86ea26cb68f7cd31b4c13869"
+    },
+    "smoke-stop.log": {
+      "bytes": 76,
+      "sha256": "3079d237555d9e9dc69aba5fa76d463690e09c134fd75f8ec619cb72cbc7049d"
+    },
+    "smoke-stopped.json": {
+      "bytes": 591,
+      "sha256": "fd7131edfd90cba05c19e6cd6d6a9f392c95b435c310b0b9f173e76af5c64c56"
+    },
+    "smoke-stopped.log": {
+      "bytes": 9388,
+      "sha256": "7285d842b8a36ccf93cd3667074e579b3c6e5a5cd478b0ec9f2e970580a321ee"
+    },
+    "smoke02-smoke-build-evidence.json": {
+      "bytes": 738,
+      "sha256": "bac53fd03c54ed6538ce448a35269c326f8e07dadc3c784830412c7f9fe0ec64"
+    },
+    "smoke02-smoke-build-evidence.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "smoke02-smoke-inspect.json": {
+      "bytes": 599,
+      "sha256": "e14de048bcf2634e229e997c1df296756bad6087f752fb0b1983b0eff2db1722"
+    },
+    "smoke02-smoke-inspect.log": {
+      "bytes": 9591,
+      "sha256": "1aa6409561abad5765a50e2cf5616a0ad57bf34a9f837142b467f7c37ad1c2bb"
+    },
+    "smoke02-smoke-logs.json": {
+      "bytes": 594,
+      "sha256": "1e84afc92878d211de09a1bc5746f378eeac998a24009fe78ed2dedd5e2ede51"
+    },
+    "smoke02-smoke-logs.log": {
+      "bytes": 4708,
+      "sha256": "460f3502172d0ecd87e72bce3d37133c6b8596a68a6c106b102150a42e73b800"
+    },
+    "smoke02-smoke-name-check.json": {
+      "bytes": 685,
+      "sha256": "25d5c20d165865a868e64e3f10bfda2cf096d3e9b5a2d43d0811a21cd83e0724"
+    },
+    "smoke02-smoke-name-check.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "smoke02-smoke-probe.json": {
+      "bytes": 3009,
+      "sha256": "d3e4bc81cb811c0a393495d62c24944718ac830f89bd197de13326d77840a3e3"
+    },
+    "smoke02-smoke-probe.log": {
+      "bytes": 9340,
+      "sha256": "bc673aa966149dc421d1f23468d49b09000fc3f9617f3b5f69a4383923ce563e"
+    },
+    "smoke02-smoke-remove.json": {
+      "bytes": 593,
+      "sha256": "932297ef6702c5efea086217c87d31541212ba743210663e411dd21163f53ee5"
+    },
+    "smoke02-smoke-remove.log": {
+      "bytes": 21,
+      "sha256": "53a87cb4cd9f9b941607ccbc9ccde93adfdb09c5eac41d2fd3d49d1054b7fa91"
+    },
+    "smoke02-smoke-start.json": {
+      "bytes": 1544,
+      "sha256": "3fe5c42bfcdd675e3dfc2144ecf5c8a094904599e6d8cc7a385a71b98f08e285"
+    },
+    "smoke02-smoke-start.log": {
+      "bytes": 65,
+      "sha256": "cfc4791dd6ebcc6d29f9b809542bdbb0c4442d8b88c9e27b8140a2f76dbc0f3b"
+    },
+    "smoke02-smoke-stop.json": {
+      "bytes": 622,
+      "sha256": "d86d0cbd7c90d6ac5b474f6e924be16d6d47da3067c1fa03e276d233420f9c63"
+    },
+    "smoke02-smoke-stop.log": {
+      "bytes": 21,
+      "sha256": "53a87cb4cd9f9b941607ccbc9ccde93adfdb09c5eac41d2fd3d49d1054b7fa91"
+    },
+    "smoke02-smoke-stopped.json": {
+      "bytes": 599,
+      "sha256": "ca7bcc801f02272b0459862f1ee480ceefd52361759c0e89a6b92f575e726b60"
+    },
+    "smoke02-smoke-stopped.log": {
+      "bytes": 9438,
+      "sha256": "8df5b081f6f1d3b1ee815cb5115d6778374f00e2f3854a23de0e897e52663fd5"
+    },
+    "smoke_driver.py": {
+      "bytes": 5337,
+      "sha256": "00de4e1e9e16820f9687e2cc020f32e03cd5804e60ce7b200c884a96d9f12589"
+    },
+    "smoke_driver_02.py": {
+      "bytes": 5528,
+      "sha256": "d9fb2cf96f95c14230f86f5908227e01dbd2e89356c33115fd09201b62d81333"
+    },
+    "tag-preflight.json": {
+      "bytes": 673,
+      "sha256": "4e416e5355f5b4d4dff3d86e9d69195fbae68646ea5bed1fef0f9736a408fe59"
+    },
+    "tag-preflight.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "toolchain-inventory.json": {
+      "bytes": 31357,
+      "sha256": "89da4f442adfd5cc89517c05efdf946cd8c637f77dc4cb7abe4e02a3a71366dc"
+    },
+    "version.json": {
+      "bytes": 592,
+      "sha256": "5a1ca1214a174a545030f58d65061c67276a4a5aa2bb21511a2a68eeccde6306"
+    },
+    "version.log": {
+      "bytes": 1142,
+      "sha256": "b75264005b6715e2d825f2d9d538a3c55fab699e31d949498e019a508d97e5fe"
+    }
+  },
+  "raw_evidence_root": ".local/validation/image-build-01",
+  "schema_version": 1,
+  "smoke_runs": [
+    {
+      "classification": "invalid probe: host-embedded newline caused Python SyntaxError before readiness checks; not a failed SDK readiness result",
+      "container_id": "b308bfbbd3f69ba485b7217210659ce529f897bb82d03b2d1be6719494bb377e",
+      "effective_controls_match": true,
+      "name": "smoke-01",
+      "observation": "LiteLLM attempted an unapproved remote cost-map metadata fetch; network none prevented DNS/connect and it fell back to the bundled file.",
+      "pass": false,
+      "raw_result": ".local/validation/image-build-01/smoke-result.json",
+      "removed": true,
+      "stop_observed": true
+    },
+    {
+      "advertised_tools": [
+        "ClassifyAndSwitchLLMTool",
+        "ask_oracle",
+        "task_tool_set",
+        "task",
+        "file_editor",
+        "task_tracker",
+        "terminal",
+        "workflow_tool_set",
+        "workflow",
+        "start_child_conversation",
+        "edit",
+        "list_directory",
+        "read_file",
+        "write_file",
+        "glob",
+        "grep",
+        "planning_file_editor"
+      ],
+      "container_id": "051deebbcbece51e70cb282fc028e61b92d714f2f2f0f31b74b430ae15e36c23",
+      "dpkg_rows": 87,
+      "effective_controls_match": true,
+      "exit_code": 143,
+      "gid": 10001,
+      "http_statuses": {
+        "/alive": 200,
+        "/health": 200,
+        "/ready": 200,
+        "/server_info": 200
+      },
+      "image_root_write_errno": 30,
+      "launch_addition": {
+        "LITELLM_LOCAL_MODEL_COST_MAP": "True"
+      },
+      "name": "smoke-02",
+      "pass": true,
+      "raw_result": ".local/validation/image-build-01/smoke-result-02.json",
+      "removed": true,
+      "runtime_packages": 189,
+      "stop_observed": true,
+      "uid": 10001,
+      "versions": {
+        "git": "git version 2.51.0",
+        "litellm": "1.105.1",
+        "node": "v22.16.0",
+        "openhands-agent-server": "1.62.0",
+        "openhands-sdk": "1.62.0",
+        "openhands-tools": "1.62.0",
+        "python": "3.13.17"
+      },
+      "workspace_version": "unknown"
+    }
+  ],
+  "verification": {
+    "original_220_gsd_250_runtime_255_bundles_unchanged": true,
+    "ruff_check": "pass",
+    "ruff_format": "pass",
+    "unit_tests_result": "pass",
+    "unit_tests_run": 76,
+    "unit_tests_skipped": 1
+  }
+}

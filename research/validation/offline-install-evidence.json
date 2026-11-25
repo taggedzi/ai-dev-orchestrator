@@ -1,0 +1,213 @@
+{
+  "archive_bytes": 370837818,
+  "attempts": [
+    {
+      "host_status_sha256_after": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+      "observation": "Absent compressed indexes selected; APT exit 100; final held receipt sealed",
+      "receipt": {
+        "bytes": 8613,
+        "path": ".local/validation/offline-repository-check-01/receipt.json",
+        "sha256": "3131a7117405bdb119d6caa45cbb9db0df539c436078713d2cff025bef16a2e4"
+      },
+      "recorded_status": "held",
+      "sealed_inventory": true,
+      "source_sha256": {
+        "fetch_os_updates.py": "8709263b41dbb9a38d4aa2c53def495b6f3378325e39e17c200940a83ff702dc",
+        "guard_packages.py": "e46445e8d033a565236bda4747ac1fe8e53cd176db791ed88ced7897295344ce",
+        "offline_repo.py": "39df70c84cc87b7c79664daa0e8bc0d303b539b628a7aecb3c0061cd8b4e8a76",
+        "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+      }
+    },
+    {
+      "host_status_sha256_after": null,
+      "observation": "Local refresh passed; strict cache-link rejection also interrupted final inventory/receipt save; last receipt is nonterminal",
+      "receipt": {
+        "bytes": 3856,
+        "path": ".local/validation/offline-repository-check-02/receipt.json",
+        "sha256": "a38c99568886ea59755e9d676bbbb01714fde62458c1de297fd6f700fe916460"
+      },
+      "recorded_status": "checking",
+      "sealed_inventory": false,
+      "source_sha256": {
+        "fetch_os_updates.py": "8709263b41dbb9a38d4aa2c53def495b6f3378325e39e17c200940a83ff702dc",
+        "guard_packages.py": "e46445e8d033a565236bda4747ac1fe8e53cd176db791ed88ced7897295344ce",
+        "offline_repo.py": "a936d5aa7d0afe480f0961f13780b5955540ea1979ddbea818262aee028889ec",
+        "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+      }
+    },
+    {
+      "host_status_sha256_after": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+      "observation": "Exact canonical-only cache target check rejected authenticated by-hash counterpart; held/unsealed final inventory",
+      "receipt": {
+        "bytes": 4415,
+        "path": ".local/validation/offline-repository-check-03/receipt.json",
+        "sha256": "ef7976dede9698da46c7addd76eab71a76ae07c629bc9fa5986f2ded8069a0a2"
+      },
+      "recorded_status": "held-inventory-unsealed",
+      "sealed_inventory": false,
+      "source_sha256": {
+        "fetch_os_updates.py": "8709263b41dbb9a38d4aa2c53def495b6f3378325e39e17c200940a83ff702dc",
+        "guard_packages.py": "e46445e8d033a565236bda4747ac1fe8e53cd176db791ed88ced7897295344ce",
+        "offline_repo.py": "8383ebf7d23d50074c5c4d623c07f0354f7fefea7403c572934646a794dbb94b",
+        "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+      }
+    },
+    {
+      "host_status_sha256_after": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+      "observation": "All signatures, local refresh, six exact indexes and both role simulations passed; six checked cache links materialized as private regular files",
+      "receipt": {
+        "bytes": 56873,
+        "path": ".local/validation/offline-repository-check-04/receipt.json",
+        "sha256": "fe3aa5b2c740c361ea1ce811d2cedc0d0ef91ef208c2de409911260ebf422d84"
+      },
+      "recorded_status": "verified-offline-not-installed",
+      "sealed_inventory": true,
+      "source_sha256": {
+        "fetch_os_updates.py": "8709263b41dbb9a38d4aa2c53def495b6f3378325e39e17c200940a83ff702dc",
+        "guard_packages.py": "e46445e8d033a565236bda4747ac1fe8e53cd176db791ed88ced7897295344ce",
+        "offline_repo.py": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e",
+        "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+      }
+    }
+  ],
+  "authority": {
+    "guard_creation": null,
+    "guard_topology_preparation": "Developer selected separate guard topology",
+    "installation": null,
+    "maintenance_lease": null,
+    "product_implementation": false,
+    "runtime_or_security_qualified": false
+  },
+  "builder_source_sha256": "39df70c84cc87b7c79664daa0e8bc0d303b539b628a7aecb3c0061cd8b4e8a76",
+  "bundle_manifest": {
+    "bytes": 126956,
+    "path": ".local/validation/offline-repository-01/manifest.json",
+    "sha256": "007c21f71b69a3741fffe3edbc24b7757d55805755163ffe04a19083d0e52570"
+  },
+  "bundle_payload_bytes": 598872399,
+  "bundle_payload_files": 134,
+  "catalog_sha256": {
+    "engine": "d4cb0db896a0b45e1e98a1ef26afd876a65f7f5f1fa85edcf33577ce2028f396",
+    "os-update": "4e3d6910cd66b8bcd4f70fc13aba59f98a141fed9e8bc96392bcdeb33634e57a"
+  },
+  "installation_contract": {
+    "bytes": 3594,
+    "path": "research/validation/offline-install-plan.json",
+    "sha256": "65a3ea41e793c082e9357cd57a81e1c30f72fd1d94fdbafd8c91732d20614f4a"
+  },
+  "measured": {
+    "all_native_commands_exit_zero": true,
+    "frozen_bundle_and_sources_unchanged": true,
+    "host_status_sha256_after": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+    "host_status_sha256_before": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+    "materialized_exact_index_links": 6,
+    "native_commands": 8,
+    "original_private_status_unchanged": true,
+    "private_indexes": {
+      "noble-security/main": {
+        "bytes": 6526018,
+        "sha256": "54b0bfabe9350eb7877059b7929a61d0842f18555bddc19c09777322cd330e8f"
+      },
+      "noble-security/universe": {
+        "bytes": 7722388,
+        "sha256": "460578edf79d78ba490348e3a69306cb480d11e842f6111e76da4923e88ccb34"
+      },
+      "noble-updates/main": {
+        "bytes": 7986610,
+        "sha256": "8272d1d9ba373ef38d13f3880964b8faf3e9872dfb95970b89f6f0e086629f1f"
+      },
+      "noble-updates/universe": {
+        "bytes": 10691677,
+        "sha256": "2349f1cd7b5d285a6fc04b91b4467738c7d8a938d9b4ef54c57b0ed7f0474cbe"
+      },
+      "noble/main": {
+        "bytes": 7165069,
+        "sha256": "8f6f71ae839c8cba390a7643fcbbdacddb0bc7d12c1583a2dd80a1f8443a30e5"
+      },
+      "noble/universe": {
+        "bytes": 73379142,
+        "sha256": "687ffc969e7700137677b9cfe2f614ee2d638052a91a7c9bf31f3f6a3040a99a"
+      }
+    },
+    "role_transactions": {
+      "executor": {
+        "counts": {
+          "additions": 16,
+          "held_back": 0,
+          "removals": 0,
+          "upgrades": 97
+        },
+        "expected_installed_rows": 496
+      },
+      "guard": {
+        "counts": {
+          "additions": 9,
+          "held_back": 0,
+          "removals": 0,
+          "upgrades": 97
+        },
+        "expected_installed_rows": 489
+      }
+    },
+    "signatures": 3,
+    "signing_fingerprint": "F6ECB3762474EDA9D21B7022871920D1991BC93C",
+    "source_receipts_and_inventories_reverified_afterward": true,
+    "sources": "Three constructed file:/// sources only, explicit signed-by; no trusted=yes or insecure override",
+    "timeouts": 0
+  },
+  "native_environment": {
+    "apt": "apt 2.8.3 (amd64)",
+    "distribution": "Ubuntu-24.04 existing WSL tools",
+    "finished_utc": "2026-11-22T07:28:52.617508+00:00",
+    "gpgv": "gpgv (GnuPG) 2.4.4",
+    "started_utc": "2026-11-22T07:28:45.332363+00:00",
+    "uid": 1000
+  },
+  "next_check": "Inspect remaining OS maintainer scripts and automatic service paths; prepare a concrete maintenance procedure while the guard-creation and phase-boundary decisions remain separately pending",
+  "not_measured": [
+    "Installed or configured guest packages and running kernel",
+    "All maintainer-script/service side effects and mask survival",
+    "Actual guard disk identity and repeated guard/executor readiness",
+    "Docker socket/network/storage/quota/LSM/image compatibility",
+    "Final control/Chat wire, routing/isolation, external fencing/stop and recovery qualification"
+  ],
+  "schema_version": 1,
+  "scope": "Public signed-package mirror construction and private native file-only APT planning; no package installation or validation VM operation",
+  "source_receipts": {
+    "engine-artifacts-01": "2e7192702f316856147b0a0c68d0e4359f2757c2ba547e4040ff0d307a3c7515",
+    "engine-resolution-02": "b6727d3878cf7c3144a471352e23db04152411c2ad36072d293a4596c0f32dbd",
+    "os-update-artifacts-01": "f50b00bdec22d3ea949ff26627c78cc2fa84de8046bd9331fb477b430c6b719b",
+    "os-update-resolution-02": "408bf86c502100b284273aa5ec1c6a43c4c7b8949e414cc2079d329ebfaca3a9"
+  },
+  "source_review_separate_from_measurement": {
+    "freshness": "Frozen signed cohort has no Valid-Until; currentness and unresolved runc distro backports remain open",
+    "primary_sources": [
+      "https://manpages.ubuntu.com/manpages/noble/man5/apt.conf.5.html",
+      "https://github.com/Debian/apt/blob/main/doc/acquire-additional-files.md",
+      "https://manpages.debian.org/bookworm/init-system-helpers/invoke-rc.d.8.en.html",
+      "https://manpages.debian.org/bookworm/init-system-helpers/deb-systemd-invoke.1p.en.html"
+    ],
+    "remaining_maintainer_scripts": "OS update scripts/needrestart/conffile/debconf/automatic-unit paths still need complete inspection",
+    "service_suppression": "Proposed create-only policy-rc.d and persistent role masks; no target effect measured and no universal suppression assertion",
+    "source_version_limit": "APT additional-index link is archived upstream documentation; installed APT 2.8.3 compatibility was measured directly"
+  },
+  "status": "offline-input-verified-not-installed",
+  "successful_checker_source_sha256": {
+    "fetch_os_updates.py": "8709263b41dbb9a38d4aa2c53def495b6f3378325e39e17c200940a83ff702dc",
+    "guard_packages.py": "e46445e8d033a565236bda4747ac1fe8e53cd176db791ed88ced7897295344ce",
+    "offline_repo.py": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e",
+    "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+  },
+  "unique_archives": 114,
+  "updated_at_utc": "2026-11-22T07:32:24.581764+00:00",
+  "verification": {
+    "command": "python -B -X utf8 -m unittest discover -s tests -v",
+    "format": "ruff format --check research/validation tests passed",
+    "lint": "ruff check research/validation tests passed",
+    "new_contract_tests": 6,
+    "passed": 151,
+    "skip_reason": "Existing Windows symlink creation capability test",
+    "skipped": 1,
+    "total": 152
+  }
+}

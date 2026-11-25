@@ -1,0 +1,63 @@
+{
+  "SQLite": "3.53.4",
+  "VM_mutations": 0,
+  "approval": "docs/implementation/web-install-approval.json",
+  "artifacts": [
+    {
+      "bytes": 149054,
+      "path": ".local/validation/web-installed-01/inventory.json",
+      "sha256": "24bd9f1a9e1444c037fb8ed1fb5b35fc4d31c487a9986d408ea314abbc0906fe"
+    },
+    {
+      "bytes": 1649,
+      "path": ".local/validation/web-installed-01/result.json",
+      "sha256": "3bf8a3d31c17806f21bb6faa8890ba811f4b1f404f1c2ece60b65345eb9ff1d1"
+    }
+  ],
+  "base": {
+    "packages": [
+      [
+        "pip",
+        "26.2.2"
+      ]
+    ],
+    "python": "3.15.2",
+    "sqlite": "3.53.4"
+  },
+  "base_packages_unchanged": true,
+  "classification": "Actual installed package inventory/RECORD verification, offline wheel validation, base identity and pip compatibility check",
+  "format": "web-install-measured-v1",
+  "package_count": 19,
+  "packages": {
+    "annotated-doc": "0.0.7",
+    "annotated-types": "0.8.0",
+    "anyio": "4.16.0",
+    "certifi": "2026.11.20",
+    "click": "8.5.1",
+    "fastapi": "0.165.0",
+    "h11": "0.16.0",
+    "httpcore": "1.0.9",
+    "httpx": "0.28.1",
+    "idna": "3.20",
+    "jinja2": "3.1.6",
+    "markupsafe": "3.0.4",
+    "opentelemetry-api": "1.45.2",
+    "pydantic": "2.14.4",
+    "pydantic-core": "2.50.5",
+    "starlette": "1.10.0",
+    "typing-extensions": "4.16.0",
+    "typing-inspection": "0.4.5",
+    "uvicorn": "0.54.0"
+  },
+  "pip_check": "No broken requirements found.",
+  "provider_calls": 0,
+  "python": "3.15.2",
+  "real_held_journals_unchanged": {
+    ".local/validation/offline-guard-admissions.sqlite": "f1eac66681934fd294c73efeb580ebc102b64e6586a17a13bdd7a1bec488260a",
+    ".local/validation/offline-guard-run-ccc16a8440524bda84e57fdcd90055e7/owner/owner.sqlite": "24bab655c096ee1fa16b4f4bed2d04a76a167eee93de7e0fd21c54cefade0313"
+  },
+  "sqlite_source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+  "warnings": [
+    "Starlette TestClient deprecates the working HTTPX adapter; HTTPX2 not installed"
+  ]
+}

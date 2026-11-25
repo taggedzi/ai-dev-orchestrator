@@ -1,0 +1,314 @@
+{
+  "approval": "conversation:2026-11-22-approve-session-model-preparation",
+  "base_commit": "a522739066592af55eebfdc21f3487b1d184a29b",
+  "boot_reviews": [
+    {
+      "inventory": {
+        "bytes": 3601,
+        "path": ".local/validation/boot-preconditions-guard-01/inventory.json",
+        "sha256": "25cb5b3f7493bd3265d29d63ac0a1d6fbb361f5927674b1802a66f3c9d635e18"
+      },
+      "packet": {
+        "bytes": 2438,
+        "path": ".local/validation/boot-preconditions-guard-01/measured-target-unarmed.json",
+        "sha256": "596fb51b81812581840384f630a919d9bf9db6797acb1ef2394ce7ca825a5eb2"
+      },
+      "refusal": "boot scope/backup/configuration review is unbound",
+      "role": "guard"
+    },
+    {
+      "inventory": {
+        "bytes": 3655,
+        "path": ".local/validation/boot-preconditions-executor-01/inventory.json",
+        "sha256": "0b867f10f88da8948be67b31cf694a51b91652fd2a59f338bc5bebc3d0819ab5"
+      },
+      "packet": {
+        "bytes": 2441,
+        "path": ".local/validation/boot-preconditions-executor-01/measured-target-unarmed.json",
+        "sha256": "dcca57a8d3a4b9c0cd5ddac2f5db6da348adac587777d25defef6f52e89315c2"
+      },
+      "refusal": "boot scope/backup/configuration review is unbound",
+      "role": "executor"
+    }
+  ],
+  "boot_sources": {
+    "research/validation/boot_preconditions.py": {
+      "bytes": 19658,
+      "path": "research/validation/boot_preconditions.py",
+      "sha256": "10f8db58b396d62e3123a44414ac321d902abbd3d492334198a0d1ee190a760d"
+    },
+    "research/validation/driver.py": {
+      "bytes": 6047,
+      "path": "research/validation/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    "research/validation/fixture.py": {
+      "bytes": 10319,
+      "path": "research/validation/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    "research/validation/maintenance_host.py": {
+      "bytes": 31160,
+      "path": "research/validation/maintenance_host.py",
+      "sha256": "0193521b2ffc33504373b566be4d9c62006ff276f61188fb4560eb5a0f0e319e"
+    },
+    "research/validation/maintenance_serial.py": {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    "research/validation/maintenance_serial_worker.py": {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    "research/validation/maintenance_stop.py": {
+      "bytes": 14573,
+      "path": "research/validation/maintenance_stop.py",
+      "sha256": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a"
+    },
+    "research/validation/maintenance_transfer.py": {
+      "bytes": 36218,
+      "path": "research/validation/maintenance_transfer.py",
+      "sha256": "938565049b28057b2687e25f59af678588543466d4f1640adcb18b12b1df4e60"
+    },
+    "research/validation/offline_repo.py": {
+      "bytes": 25846,
+      "path": "research/validation/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    "research/validation/owner_launch.py": {
+      "bytes": 16850,
+      "path": "research/validation/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    "research/validation/owner_process.py": {
+      "bytes": 11948,
+      "path": "research/validation/owner_process.py",
+      "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+    },
+    "research/validation/store.py": {
+      "bytes": 16923,
+      "path": "research/validation/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    "research/validation/supervisor.py": {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    "research/validation/transfer_commands.py": {
+      "bytes": 10697,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    "research/validation/windows_readonly.py": {
+      "bytes": 12755,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    }
+  },
+  "format": "mcli1-maintenance-session-evidence-v1",
+  "limits": [
+    "No VM startup dispatch permit or startup-task settlement qualification",
+    "No native backup/preboot/source receipt issuer or root-console session qualification",
+    "Native VM stop timing, host ACLs/approval authentication and complete same-boot target workflow remain open",
+    "Earlier stop/host/owner/transfer packets have historical source cohorts; none gains activation authority",
+    "No product implementation or R1-R9 acceptance established"
+  ],
+  "native_process_scope": "Actual original owner, Windows jobs and Python stop surrogates. Session native expiry test injects guest/collector facts and caller-to-controller identity mapping; it does not qualify native session caller admission or a VM stop.",
+  "review_inventory": {
+    "bytes": 4259,
+    "path": ".local/validation/same-boot-review-01/inventory.json",
+    "sha256": "9dcfdf493352a25e7aa1b6dd998845066f559e25b07bb14384bf434f9b340929"
+  },
+  "source_review": {
+    "header_revision": "112403, 2026-01-11",
+    "observed": "LaunchVMProcess yields IProgress; CLI waits without a finite timeout, then reads completion/result and unlocks its session.",
+    "unknown": "Not established as installed 7.2.22r175245's exact source; client termination is not a measured cancellation/settlement guarantee.",
+    "url": "https://raw.githubusercontent.com/VirtualBox/virtualbox/main/src/VBox/Frontends/VBoxManage/VBoxManageMisc.cpp"
+  },
+  "sources": {
+    "research/validation/driver.py": {
+      "bytes": 6047,
+      "path": "research/validation/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    "research/validation/fixture.py": {
+      "bytes": 10319,
+      "path": "research/validation/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    "research/validation/guest_maintenance_control.py": {
+      "bytes": 26530,
+      "path": "research/validation/guest_maintenance_control.py",
+      "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+    },
+    "research/validation/guest_maintenance_probe.py": {
+      "bytes": 21670,
+      "path": "research/validation/guest_maintenance_probe.py",
+      "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+    },
+    "research/validation/guest_transfer_entry.py": {
+      "bytes": 10718,
+      "path": "research/validation/guest_transfer_entry.py",
+      "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+    },
+    "research/validation/maintenance_config.py": {
+      "bytes": 14280,
+      "path": "research/validation/maintenance_config.py",
+      "sha256": "2c4fb51e96f630341c793c9684746864ac561ac02b936fe1d913ebd05dcc9a57"
+    },
+    "research/validation/maintenance_control.py": {
+      "bytes": 4117,
+      "path": "research/validation/maintenance_control.py",
+      "sha256": "796ab5b6440e69f9c27e4459ea75f2f30ff3613176a4faf8f69db1dadb23e08a"
+    },
+    "research/validation/maintenance_guest.py": {
+      "bytes": 5282,
+      "path": "research/validation/maintenance_guest.py",
+      "sha256": "09290df891bfd4c093b54ce31d80c2ebb0183e865363dfd917cdb0a0102a9a50"
+    },
+    "research/validation/maintenance_host.py": {
+      "bytes": 31160,
+      "path": "research/validation/maintenance_host.py",
+      "sha256": "0193521b2ffc33504373b566be4d9c62006ff276f61188fb4560eb5a0f0e319e"
+    },
+    "research/validation/maintenance_serial.py": {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    "research/validation/maintenance_serial_worker.py": {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    "research/validation/maintenance_session.py": {
+      "bytes": 19990,
+      "path": "research/validation/maintenance_session.py",
+      "sha256": "78b15a869b2023694d312a51719ea47cba0a06e3eb157525bbbf4e2ac84e7fdc"
+    },
+    "research/validation/maintenance_stop.py": {
+      "bytes": 14573,
+      "path": "research/validation/maintenance_stop.py",
+      "sha256": "02c151c352037f7c79202fcc3a959a8e6ea6501028ebbd21d22cdea82246600a"
+    },
+    "research/validation/maintenance_transfer.py": {
+      "bytes": 36218,
+      "path": "research/validation/maintenance_transfer.py",
+      "sha256": "938565049b28057b2687e25f59af678588543466d4f1640adcb18b12b1df4e60"
+    },
+    "research/validation/offline_repo.py": {
+      "bytes": 25846,
+      "path": "research/validation/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    "research/validation/owner_launch.py": {
+      "bytes": 16850,
+      "path": "research/validation/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    "research/validation/owner_process.py": {
+      "bytes": 11948,
+      "path": "research/validation/owner_process.py",
+      "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+    },
+    "research/validation/store.py": {
+      "bytes": 16923,
+      "path": "research/validation/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    "research/validation/supervisor.py": {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    "research/validation/transfer_commands.py": {
+      "bytes": 10697,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    "research/validation/windows_readonly.py": {
+      "bytes": 12755,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    }
+  },
+  "status": "prepared and locally measured; no native target session activated",
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 62353,
+      "path": ".local/validation/fixture-regression-03/inventory.json",
+      "sha256": "ca5d14cfef65054ca59566f4fd0fb31e9fb9e79db3f5a790f19c67b7c31f516e"
+    },
+    "log": {
+      "bytes": 60697,
+      "path": ".local/validation/fixture-regression-03/unittest.log",
+      "sha256": "388201d7af96e1d712326d894fab492ba2f8955d28848e56613624c25bdaf03a"
+    },
+    "passed": 339,
+    "skipped": [
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_exclusive_file_and_mask_never_overwrite_existing_bytes"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_global_journal_survives_close_and_rejects_a_fresh_attempt"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_hardlinked_or_foreign_owned_inputs_are_not_approved"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_partial_file_write_remains_and_refuses_replay"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_real_child_capture_timeout_output_bound_and_reaping"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_symlink_ancestors_writable_parents_and_path_escapes_refuse"
+      },
+      {
+        "reason": "POSIX pipe/process-group check",
+        "test": "test_guest_maintenance.GuestMaintenanceTests.test_native_pipe_deadline_output_bound_and_child_reaping"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_actual_non_guest_identity_fails_before_any_stage_write"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_bounded_decode_refuses_expansion_before_creating_final"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_tampered_compression_and_existing_final_file_never_execute_or_overwrite"
+      },
+      {
+        "reason": "symlink creation is unavailable to this process",
+        "test": "test_validation_harness.ObserverTests.test_symlinks_are_rejected_when_platform_supports_creation"
+      }
+    ],
+    "summary": {
+      "bytes": 12696,
+      "path": ".local/validation/fixture-regression-03/result.json",
+      "sha256": "61252cdc8ea313a0fb04f89efd5e8e9ffc882e0af8464d6e3b578d96b2d0385d"
+    },
+    "tests_run": 352
+  }
+}

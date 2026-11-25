@@ -1,0 +1,322 @@
+{
+  "Git": "git version 2.56.1.windows.1",
+  "Python": "3.15.2",
+  "SQLite": "3.53.4",
+  "VM_mutations": 0,
+  "artifacts": [
+    {
+      "bytes": 8792,
+      "path": ".local/validation/product-verification-01/result.json",
+      "sha256": "bbda68c6bc42d7eed85a57fabe5f60c91b61f863f7b5cd593d7b5b991b32df84"
+    },
+    {
+      "bytes": 11835,
+      "path": ".local/validation/product-verification-01/unittest.log",
+      "sha256": "f5d55bc3f2f2359fa537ccdffbb4ff3a74275df63f981355efcd52d2e1bea2f9"
+    },
+    {
+      "bytes": 25671,
+      "path": ".local/validation/product-verification-01/intake-smoke.json",
+      "sha256": "04ac29368a9d7f2a16c077d7b4cb9e1e59746233eeb0870900e2414c4aa24baa"
+    },
+    {
+      "bytes": 433,
+      "path": ".local/validation/product-verification-01/migration-cli.json",
+      "sha256": "0359721089d4f4ecaba27f6893f2088b37c1378e253797c6bcecbbfed7665a10"
+    },
+    {
+      "bytes": 5363,
+      "path": ".local/validation/product-verification-01/prior-document-resolutions.json",
+      "sha256": "8197eefb08d6c2763a1111e7a49cb73bcb024532bed006ad0c4d5fd15b7a9c4c"
+    }
+  ],
+  "browser_qa": "not completed",
+  "candidate_admission": true,
+  "candidate_evidence_gate": true,
+  "checks": {
+    "format": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "17 files already formatted\n"
+    },
+    "ruff": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "All checks passed!\n"
+    },
+    "whitespace": {
+      "exit": 0,
+      "stderr": "warning: in the working copy of 'docs/status.md', CRLF will be replaced by LF the next time Git touches it\n",
+      "stdout": ""
+    }
+  },
+  "current_documents": [
+    {
+      "bytes": 1673,
+      "path": "AGENTS.md",
+      "sha256": "b19cdc51adc75a3a09569c86019cc887db513d55469b7e81b16ecdae9abc9c15"
+    },
+    {
+      "bytes": 6740,
+      "path": "README.md",
+      "sha256": "5942daea5f4f7d070c8cb0c2567ef471c100addec5db9b4ea1723db37df4c6f0"
+    },
+    {
+      "bytes": 15379,
+      "path": "docs/HANDOFF.md",
+      "sha256": "f0e27d43e3e872aeadbc5bce4ace78907cf021e15d5281364a42bae6198a7a3b"
+    },
+    {
+      "bytes": 16423,
+      "path": "docs/completion-audit.md",
+      "sha256": "473ca8fb1dbbc8d4cfe8595964399b3895dee02e1caaf515499e380790d3c408"
+    },
+    {
+      "bytes": 7506,
+      "path": "docs/developer-experience-walkthrough.md",
+      "sha256": "9cb3d61142c782d0fd9008a48a5ac99866b96b2b8df304081f77d42206a9e04d"
+    },
+    {
+      "bytes": 4875,
+      "path": "docs/implementation/web-dependency-install-plan.md",
+      "sha256": "f3763be58a4ee4e52a4f75327caafa57970b78949314eca0b7db279dc52dc513"
+    },
+    {
+      "bytes": 5832,
+      "path": "docs/product-cli.md",
+      "sha256": "90aaf97e72fb0b7769d4808faad7590d8a30a5d89bfa2006ea25d6e789363e42"
+    },
+    {
+      "bytes": 8755,
+      "path": "docs/product-delivery-plan.md",
+      "sha256": "9049925bf78583f082872573f0310e6cdfa6e24fb5847056a8db782139f32196"
+    },
+    {
+      "bytes": 5467,
+      "path": "docs/product-intake.md",
+      "sha256": "5d50a9caeff4cbfc79a95b16ee3fa0f871355ccc885e27b97136fcd0e993545f"
+    },
+    {
+      "bytes": 5293,
+      "path": "docs/product-source.md",
+      "sha256": "1d42317f733e1799f2ef94986c2c34ef4936d2c7bfbecc24c9bfd70797bcc67d"
+    },
+    {
+      "bytes": 5312,
+      "path": "docs/product-verification.md",
+      "sha256": "c03a558631be6b05706853d77cebae326523730626e7fe0a963ecf6d775444f1"
+    },
+    {
+      "bytes": 4069,
+      "path": "docs/product-web.md",
+      "sha256": "452c6e58de5c0df35b247c0a0c532dfb75169fbafc898371ecc00ef42478702c"
+    },
+    {
+      "bytes": 82483,
+      "path": "docs/status.md",
+      "sha256": "e59324df23b8d2b1d908bbb71c88a21d28ac309a83e6bb8f7dcc1135b8c2d8e3"
+    }
+  ],
+  "errors": 0,
+  "failures": 0,
+  "focused_terminal_sessions": [
+    4158,
+    16074,
+    14580
+  ],
+  "format": "product-verification-cohort-v1",
+  "full_product_complete": false,
+  "git_executable_sha256": "177bc8a9af84fa3a400c694c975fda731d048279c074e1a93947ce8b067ebb48",
+  "goal_status": "active",
+  "immutable_review_packet": true,
+  "limits": [
+    "All check/review profiles and outcomes are scripted development evidence",
+    "Local trusted principals are not deployed remote producer authentication",
+    "No candidate/check process, reviewer model call, native operation or task acceptance",
+    "Integration regressions and guarded promotion/acceptance are not implemented",
+    "Old unknown implementation identities cannot qualify reviewer independence",
+    "Full research suite remains failed at the retained startup-BEGIN BUSY case; browser QA incomplete"
+  ],
+  "live_task_handles": [],
+  "live_verification_eligible": false,
+  "native_stop_qualification": false,
+  "new_dependency_installs": 0,
+  "next_actions": [
+    "Implement exact integration proposals/regressions and guarded promotion/acceptance with crash reconciliation",
+    "Prepare held-guard successor under Decision 0007; actual native transfer/boot still needs its exact review"
+  ],
+  "passed": 70,
+  "product_repository_commits": 0,
+  "provider_calls": 0,
+  "read_only_ref_reconciliation": true,
+  "real_held_journals_unchanged": {
+    ".local/validation/offline-guard-admissions.sqlite": "f1eac66681934fd294c73efeb580ebc102b64e6586a17a13bdd7a1bec488260a",
+    ".local/validation/offline-guard-run-ccc16a8440524bda84e57fdcd90055e7/owner/owner.sqlite": "24bab655c096ee1fa16b4f4bed2d04a76a167eee93de7e0fd21c54cefade0313"
+  },
+  "remote_writes": 0,
+  "schema": 3,
+  "skipped": 0,
+  "source_drift": [],
+  "sources": [
+    {
+      "bytes": 286,
+      "path": ".local/validation/product-verification-01/sources/coordinator/__init__.py",
+      "sha256": "d044c232fe90a5f2fbea02702e3475a5da14632835c7ae3aeaab37c5790d1015",
+      "workspace_source": "coordinator/__init__.py"
+    },
+    {
+      "bytes": 48,
+      "path": ".local/validation/product-verification-01/sources/coordinator/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "workspace_source": "coordinator/__main__.py"
+    },
+    {
+      "bytes": 34051,
+      "path": ".local/validation/product-verification-01/sources/coordinator/application.py",
+      "sha256": "3cc567f2b1034a0615ddd0eb248d856d4b6dda7b04d97a5147f286b6a51ccd88",
+      "workspace_source": "coordinator/application.py"
+    },
+    {
+      "bytes": 7344,
+      "path": ".local/validation/product-verification-01/sources/coordinator/cli.py",
+      "sha256": "acc96b079db07824a6b8077e8d1e2b8e99190b78563f8df18cfa35efc00e0cfb",
+      "workspace_source": "coordinator/cli.py"
+    },
+    {
+      "bytes": 7465,
+      "path": ".local/validation/product-verification-01/sources/coordinator/domain.py",
+      "sha256": "83a2cccf2e9bdab2d7b6efe317d950204906556d04bb373ef3c933fb713c1d3e",
+      "workspace_source": "coordinator/domain.py"
+    },
+    {
+      "bytes": 2679,
+      "path": ".local/validation/product-verification-01/sources/coordinator/evidence.py",
+      "sha256": "328db99cba342b4257c83b0a89c60f2ff764dffb61801c21c8b8e66151927034",
+      "workspace_source": "coordinator/evidence.py"
+    },
+    {
+      "bytes": 15817,
+      "path": ".local/validation/product-verification-01/sources/coordinator/intake.py",
+      "sha256": "6bf4b68d106d3ce626e18f912ca5ce77b48ee6073e330b2930032e8ab9f795e6",
+      "workspace_source": "coordinator/intake.py"
+    },
+    {
+      "bytes": 19649,
+      "path": ".local/validation/product-verification-01/sources/coordinator/source.py",
+      "sha256": "2a4eb3299bd55d8a406d60ac1b7bbdf154cd92253ee42dd7f2fb039fcb45bbd9",
+      "workspace_source": "coordinator/source.py"
+    },
+    {
+      "bytes": 14462,
+      "path": ".local/validation/product-verification-01/sources/coordinator/store.py",
+      "sha256": "4a09324eac4bc1309d97118cd89bec1dd9445882b09f154f7027a0f138022b0e",
+      "workspace_source": "coordinator/store.py"
+    },
+    {
+      "bytes": 31595,
+      "path": ".local/validation/product-verification-01/sources/coordinator/verification.py",
+      "sha256": "07abf15464be04392e2ea580c4aec5773615db49b6329d94abb90349dc55f2e9",
+      "workspace_source": "coordinator/verification.py"
+    },
+    {
+      "bytes": 13558,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web.py",
+      "sha256": "40da68993c38ce6078df8b28023bccdcd263e3135e5d53cf0acb2cdce9a92460",
+      "workspace_source": "coordinator/web.py"
+    },
+    {
+      "bytes": 194,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web_assets/favicon.svg",
+      "sha256": "badbecc09718d0793d39fe65e864c39f3cb90b0c108d3555a0df759cb849eff3",
+      "workspace_source": "coordinator/web_assets/favicon.svg"
+    },
+    {
+      "bytes": 823,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web_assets/font-source.json",
+      "sha256": "84209db818656f7c7d0633c1caedc9615794b6d31af82738f5174728366ada49",
+      "workspace_source": "coordinator/web_assets/font-source.json"
+    },
+    {
+      "bytes": 4387,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web_assets/manrope-OFL.txt",
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+      "workspace_source": "coordinator/web_assets/manrope-OFL.txt"
+    },
+    {
+      "bytes": 164700,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web_assets/manrope.ttf",
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+      "workspace_source": "coordinator/web_assets/manrope.ttf"
+    },
+    {
+      "bytes": 5161,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web_assets/workspace.css",
+      "sha256": "f2a81ba36968f2509ba2617e18ed2402f7842b7bbb30f28e52d749c354233b95",
+      "workspace_source": "coordinator/web_assets/workspace.css"
+    },
+    {
+      "bytes": 9852,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web_assets/workspace.js",
+      "sha256": "3b9f35182d51867c2b67915e120eda054c22ced958a1b47120ef0f6d562bae7f",
+      "workspace_source": "coordinator/web_assets/workspace.js"
+    },
+    {
+      "bytes": 6600,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web_security.py",
+      "sha256": "725690c2bc3b50d12b3656fddcbdbb2377d482a109dc855eacb20745dcd9c51c",
+      "workspace_source": "coordinator/web_security.py"
+    },
+    {
+      "bytes": 753,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web_templates/info.html",
+      "sha256": "b75522fe79d0ee724e7ba85f014495313757111f42bcd87b6f2aa18aff2e4150",
+      "workspace_source": "coordinator/web_templates/info.html"
+    },
+    {
+      "bytes": 5652,
+      "path": ".local/validation/product-verification-01/sources/coordinator/web_templates/workspace.html",
+      "sha256": "6e196074a5ac19693e05165b8705ee1a551a6ca4bee45b5416933e3b27a112d3",
+      "workspace_source": "coordinator/web_templates/workspace.html"
+    },
+    {
+      "bytes": 16201,
+      "path": ".local/validation/product-verification-01/sources/tests/test_coordinator.py",
+      "sha256": "ef40b8c36fa4f67d714aa6bc3ece4a4244ad933da9aed0b92e74b6fb09c7a0ac",
+      "workspace_source": "tests/test_coordinator.py"
+    },
+    {
+      "bytes": 21174,
+      "path": ".local/validation/product-verification-01/sources/tests/test_coordinator_intake.py",
+      "sha256": "f41f3734f61ea2099ed93ba49d427a1b39edfcc290689471e3fa9ec4000136d4",
+      "workspace_source": "tests/test_coordinator_intake.py"
+    },
+    {
+      "bytes": 11926,
+      "path": ".local/validation/product-verification-01/sources/tests/test_coordinator_source.py",
+      "sha256": "eb90ee332a9f58798df9be8d21ca0d084413108a4cb4d7602fa0f6076c48b62f",
+      "workspace_source": "tests/test_coordinator_source.py"
+    },
+    {
+      "bytes": 20098,
+      "path": ".local/validation/product-verification-01/sources/tests/test_coordinator_verification.py",
+      "sha256": "94b6bad9f0cf42b7ccfd7cc71bc0fa216fef416b3aae080123235f846b56cc53",
+      "workspace_source": "tests/test_coordinator_verification.py"
+    },
+    {
+      "bytes": 11365,
+      "path": ".local/validation/product-verification-01/sources/tests/test_coordinator_web.py",
+      "sha256": "7c996e4763339d02b60c77683b0d04ac7372bc53183d7274a8ec0d440ad20af3",
+      "workspace_source": "tests/test_coordinator_web.py"
+    }
+  ],
+  "sqlite_source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+  "task_acceptance": false,
+  "terminal_exec_session": {
+    "exit": 0,
+    "id": 80477
+  },
+  "tests_run": 70,
+  "warnings": [
+    "Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead."
+  ]
+}

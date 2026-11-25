@@ -157,3 +157,11 @@ At the boundary, use a one-way handoff. Leave native GSD progress records under 
 [claude]: https://github.com/open-gsd/gsd-core/blob/357508df233ccca0dcf4332b385d6bee9b113da9/capabilities/claude/capability.json
 [dispatch]: https://github.com/open-gsd/gsd-core/blob/357508df233ccca0dcf4332b385d6bee9b113da9/gsd-core/references/runtime-aware-dispatch.md
 [plan-metadata]: https://github.com/open-gsd/gsd-core/blob/357508df233ccca0dcf4332b385d6bee9b113da9/gsd-core/workflows/execute-plan.md#L531-L570
+
+## November 21 measured planning-export follow-up
+
+The approved [fixture export stage](validation/gsd-export-plan.md) ran the published 1.21.0 CLI against isolated synthetic planning checkouts. Its fixed SHA-512 package integrity matched, and the package manifest, CLI entry point and bootstrap Git blob IDs matched the pinned source. No npm hook, global install or dependency installation was used. The planning host ran Node 26.13.1 because this GSD pin requires Node >=24; the executor's separate Node 22.16.0 pin was preserved.
+
+Real schema-1 snapshots repeated byte-for-byte within each checkout, with matching planning/Git/package byte inventories before and after. The initial fixture needed upstream-compatible objective/criteria formatting, explicit requirement traceability and phase-goal prose. The corrected export preserves both task identities, files, separate criteria, done conditions and dependency. Action and verification bodies require the retained raw PLAN files. Native progress percentages remain unknown where scope is unscoped; no progress was inferred.
+
+The fixture-only import probe refuses missing targets, dropped dependencies, cycles, malformed task markup and unsupported schema versions. The native plan-index command also rejects the cycle explicitly, while some other invalid inputs still export successfully. Native completion, checkboxes and the broad `runnable` list do not supply coordinator acceptance. The real ledger, execution, recovery and handoff checks remain open; this does not establish a production importer or scheduler. Raw evidence and the separate [review-packet freeze](validation/gsd-freeze-evidence.json) retain the exact scope and digests.

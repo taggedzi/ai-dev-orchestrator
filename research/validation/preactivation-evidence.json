@@ -1,0 +1,276 @@
+{
+  "VM_boots": 0,
+  "actual_VM_stop_commands": 0,
+  "actual_ordered_surrogate_owner_context": {
+    "activation": {
+      "VM_boots": 0,
+      "actual_VM_stop_commands": 0,
+      "controller_still_suspended": true,
+      "elapsed_ns": 1341501500,
+      "every_stop_is_a_Python_surrogate": true,
+      "status": "readonly-proofs-preceded-Python-owner-activation"
+    },
+    "actual_VM_stop_commands": 0,
+    "after_real_input_locks": {
+      "VM_boots": 0,
+      "actual_VM_stop_commands": 0,
+      "input_lock_elapsed_ns": 4633362000,
+      "session": {
+        "pid": 0,
+        "state_after": "Unlocked",
+        "state_before": "Unlocked",
+        "vm_uuid": "0eceb37e-f216-45ed-817c-7cf2fca3a32a"
+      }
+    },
+    "inventory": {
+      "bytes": 9660,
+      "path": ".local/validation/preactivation-order-probe-01/inventory.json",
+      "sha256": "2a037f2097b2dcc40ddcca6627459fe008ebe17ca1db1bfe731d93e90cdf24d3"
+    },
+    "original_stop_surrogate_calls": 1
+  },
+  "actual_readonly_preflight": {
+    "inventory": {
+      "bytes": 3109,
+      "path": ".local/validation/preactivation-native-01/inventory.json",
+      "sha256": "b9f3b08c38ee38c85b485134d1c2c4c2b58c53793167ae1f4698b431b1592720"
+    },
+    "observations": {
+      "executor": {
+        "machine_sha256": "a7dd6affd6c2a3e041d8db2f9fbb851c4db3efbddcf82f9bc77acde929040b5c",
+        "medium_sha256": "d8dbe0145c351913a2a2d917a6b333ca60da1fffb7db75ae0e71f23475e7dd69",
+        "observed_mono_ns": 20011706025000
+      },
+      "guard": {
+        "machine_sha256": "795dfea2313ecb41f64537ec086dbce34a1fc514e0951c96b8e09e4f40a45a68",
+        "medium_sha256": "2acc4ad14954518206da0b6a4eacc755b00d1bf7596c0eb0ac3e8a7b0fd1f93b",
+        "observed_mono_ns": 20010902664000
+      }
+    },
+    "receipt": {
+      "bytes": 569,
+      "path": ".local/validation/preactivation-native-01/preactivation.receipt.json",
+      "sha256": "e6d10b438b9fe44e789709ce799b039eed4ab7254782a3e13fd69a8b8548a2a1"
+    }
+  },
+  "format": "mcli1-readonly-before-owner-activation-evidence-v1",
+  "limits": [
+    "The first timeout cause is not established",
+    "Read-only and Python-surrogate results do not qualify native running/start/stop behavior",
+    "Measured lock/probe durations are not worst-case latency guarantees",
+    "The earlier possible-send native stop stays unknown and is never replayed"
+  ],
+  "new_checks": 9,
+  "next_check": "Create a fresh suspended review under the corrected source/policy cohort and request its exact one-boot approval; never renew or reuse the consumed session.",
+  "prior_native_client_lookup": {
+    "finding": "The recorded consumed native stop PID and all VBoxManage/VBoxHeadless client names were absent in the outside-sandbox lookup. This is not a successful original-stop acknowledgement.",
+    "receipt": {
+      "bytes": 506,
+      "path": ".local/validation/consumed-native-client-check-01/process-lookup.json",
+      "sha256": "94291cf28169e7ddba58e2c8fdc645df87cdcca235e910ce265e7891e5bb2dc1"
+    }
+  },
+  "prior_session": "fc14c0ca697b09726c3fcdc84ed78810e876fce6f7e9997305a0a733cdef54db remains consumed and held; no replay or receipt invention",
+  "source_description_note": "Changed historical workspace sources point to retained exact bytes; the current startup-progress cohort is separate.",
+  "source_review": {
+    "finding": "The reviewed client obtains a shared session and its Console before issuing PowerDown and waiting on progress; a missing Console returns failure. Exact installed-source correspondence and lost-ack settlement remain unqualified.",
+    "header_revision": "114362, 2026-06-15",
+    "url": "https://raw.githubusercontent.com/VirtualBox/virtualbox/main/src/VBox/Frontends/VBoxManage/VBoxManageControlVM.cpp"
+  },
+  "sources": [
+    {
+      "bytes": 14602,
+      "path": "research/validation/maintenance_stop.py",
+      "sha256": "f947ae1c1558d150db556a8437a01de2934938fa38e4478ca5da6264c1882faf"
+    },
+    {
+      "bytes": 6047,
+      "path": "research/validation/driver.py",
+      "sha256": "7322d1f9968e43eb60a77705976bb11c1f901d7ad173701ac8a0335e527d0bba"
+    },
+    {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 31432,
+      "historical_workspace_path": "research/validation/maintenance_host.py",
+      "path": ".local/validation/preactivation-regression-01/sources/maintenance_host.py",
+      "sha256": "b4abff939398a81e628d3de21e9c718f9b7e239a39772a337eb607f17716c583"
+    },
+    {
+      "bytes": 12755,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "cdf7c6f9547de6283fa5ca1283923519f1b42e22b78fabae23a0d3008ff9540f"
+    },
+    {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 10697,
+      "path": "research/validation/transfer_commands.py",
+      "sha256": "8b29c2ca7aaade95c56dd2f79785dab6e2f5e9061c43bf3ba7751923a7450249"
+    },
+    {
+      "bytes": 16923,
+      "path": "research/validation/store.py",
+      "sha256": "4df126c74a92d6b5f12127663889fda0b7286b021c2e60c9b047bfeaf1a805c5"
+    },
+    {
+      "bytes": 10319,
+      "path": "research/validation/fixture.py",
+      "sha256": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2"
+    },
+    {
+      "bytes": 3809,
+      "path": "research/validation/backup_records.py",
+      "sha256": "633902a7db727cfd1b0086b354816a6dbd79e3e14c967dceeca9f55a91adc521"
+    },
+    {
+      "bytes": 11948,
+      "historical_workspace_path": "research/validation/owner_process.py",
+      "path": ".local/validation/preactivation-regression-01/sources/owner_process.py",
+      "sha256": "527715769465a3f8f1a525d103697dab5685cd0e76a0c699b178170341e73f8c"
+    },
+    {
+      "bytes": 16850,
+      "path": "research/validation/owner_launch.py",
+      "sha256": "05b24bcfb4d376138e450a79fbcf7d5f4cacc7ecc70c074d0a0174ba846a9aa7"
+    },
+    {
+      "bytes": 20285,
+      "historical_workspace_path": "research/validation/boot_preconditions.py",
+      "path": ".local/validation/preactivation-regression-01/sources/boot_preconditions.py",
+      "sha256": "73db7d68efea800bc41ff9998be67b3cfb72a7be49adeb28de51cf20a227bb3e"
+    },
+    {
+      "bytes": 36517,
+      "path": "research/validation/maintenance_transfer.py",
+      "sha256": "2cb8b65cd32387934691c487b8160136d2c2e9cc201d7e1acfbd742eb4cdd122"
+    },
+    {
+      "bytes": 25846,
+      "path": "research/validation/offline_repo.py",
+      "sha256": "c56119e74001e6fbf3b5731694db3d34a11b99c9401e96e49d616c39f6cf028e"
+    },
+    {
+      "bytes": 17502,
+      "path": "research/validation/stopped_backup.py",
+      "sha256": "6b363daf2ed5a88c96609bf1fd8d7633924944a40868a7ab1dc8a077aa0d3f0f"
+    },
+    {
+      "bytes": 34597,
+      "historical_workspace_path": "research/validation/frontend_start.py",
+      "path": ".local/validation/owner-contention-regression-02/sources/frontend_start.py",
+      "sha256": "556efc8b71d975178ea6ea3a12584819b62b393d2d4cfb31ffa54633cc73ec14"
+    },
+    {
+      "bytes": 11386,
+      "historical_workspace_path": "research/validation/frontend_process.py",
+      "path": ".local/validation/preactivation-regression-01/sources/frontend_process.py",
+      "sha256": "c6437355d342a48381b466296db229c6025ff9474218b8fb093679d8a9d21925"
+    },
+    {
+      "bytes": 10256,
+      "historical_workspace_path": "research/validation/native_session.py",
+      "path": ".local/validation/owner-contention-regression-02/sources/native_session.py",
+      "sha256": "62d4945fdd000ab4b70e2436f94062f71369da7540eb8a7558ce73fe10c52928"
+    },
+    {
+      "bytes": 31955,
+      "historical_workspace_path": "research/validation/startup_qualification.py",
+      "path": ".local/validation/preactivation-regression-01/sources/startup_qualification.py",
+      "sha256": "f7b514fd3b833d8ba7258d0b1dc0f40cab783b5e35598c73c98360c00b7e66c4"
+    },
+    {
+      "bytes": 23218,
+      "historical_workspace_path": "tests/test_startup_qualification.py",
+      "path": ".local/validation/preactivation-regression-01/sources/test_startup_qualification.py",
+      "sha256": "7fd69d91301fa98be8097b24e5c78c05b22b91d6c54a1fbfe82acda4506b9bac"
+    }
+  ],
+  "status": "preactivation ordering corrected; successor native review not yet authorized",
+  "verification": {
+    "errors": 0,
+    "failures": 0,
+    "inventory": {
+      "bytes": 179526,
+      "path": ".local/validation/preactivation-regression-01/inventory.json",
+      "sha256": "dfa350f7937757c5aaae5ae9e4c759557783845b8525db3e77d06044527d1d3e"
+    },
+    "log": {
+      "bytes": 76583,
+      "path": ".local/validation/preactivation-regression-01/unittest.log",
+      "sha256": "bcc185829ca7ecdf141c10c916e37201f86dfe6be0dc50a729859e532afdba2a"
+    },
+    "passed": 432,
+    "skipped": [
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_exclusive_file_and_mask_never_overwrite_existing_bytes"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_global_journal_survives_close_and_rejects_a_fresh_attempt"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_hardlinked_or_foreign_owned_inputs_are_not_approved"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_partial_file_write_remains_and_refuses_replay"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_real_child_capture_timeout_output_bound_and_reaping"
+      },
+      {
+        "reason": "POSIX exclusive filesystem/child checks",
+        "test": "test_guest_control.NativeControlPrimitiveTests.test_symlink_ancestors_writable_parents_and_path_escapes_refuse"
+      },
+      {
+        "reason": "POSIX pipe/process-group check",
+        "test": "test_guest_maintenance.GuestMaintenanceTests.test_native_pipe_deadline_output_bound_and_child_reaping"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_actual_non_guest_identity_fails_before_any_stage_write"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_bounded_decode_refuses_expansion_before_creating_final"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_isolated_packed_rejection_does_not_expose_error_or_honor_optimize_env"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_real_chunk_and_decode_bytes_roundtrip_and_duplicate_offset_hold"
+      },
+      {
+        "reason": "POSIX transfer-body fixture checks",
+        "test": "test_maintenance_transfer.NativeTransferBodyTests.test_tampered_compression_and_existing_final_file_never_execute_or_overwrite"
+      },
+      {
+        "reason": "symlink creation is unavailable to this process",
+        "test": "test_validation_harness.ObserverTests.test_symlinks_are_rejected_when_platform_supports_creation"
+      }
+    ],
+    "summary": {
+      "bytes": 15465,
+      "path": ".local/validation/preactivation-regression-01/result.json",
+      "sha256": "4fbf8db36bd9512e9ef9b513637eb7417b9fd3d9637e2a9a081a93fcc1263676"
+    },
+    "tests_run": 445
+  }
+}

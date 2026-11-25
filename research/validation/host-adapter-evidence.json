@@ -1,0 +1,1260 @@
+{
+  "authority": {
+    "broker_phase_boundary_selection": null,
+    "controls": null,
+    "guard_creation": null,
+    "guard_topology_preparation": "approved",
+    "installation": null,
+    "native_boot": null,
+    "native_inventory_retry": "separate read-only command approval outside sandbox",
+    "native_owner_startup": null,
+    "native_root_session": null,
+    "same_boot_session_design": null,
+    "transfer": null
+  },
+  "base_commit": "c32f83e8a43b01ddbf8e41450b9d1ced6698bd25",
+  "current_transfer_packets": [
+    {
+      "activation_authorized": false,
+      "actual_observation_present": false,
+      "directory": ".local/validation/transfer-guard-inspect-03",
+      "files": [
+        {
+          "bytes": 1614,
+          "path": ".local/validation/transfer-guard-inspect-03/grant.json",
+          "sha256": "11f4b1813c2c42defe5f2c5acb7bc34573ddd8544b2d74734ac2cfa48e4c92b2"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-guard-inspect-03/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-guard-inspect-03/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4238,
+          "path": ".local/validation/transfer-guard-inspect-03/inspection-spec.json",
+          "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-guard-inspect-03/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/transfer-guard-inspect-03/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 1208,
+          "path": ".local/validation/transfer-guard-inspect-03/review.json",
+          "sha256": "e89cc17b1dc0e5ffed5539ef3941e12eff3370820c1a57013ea4ed94d3019732"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/transfer-guard-inspect-03/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        }
+      ],
+      "grant": {
+        "bytes": 1614,
+        "path": ".local/validation/transfer-guard-inspect-03/grant.json",
+        "sha256": "11f4b1813c2c42defe5f2c5acb7bc34573ddd8544b2d74734ac2cfa48e4c92b2"
+      },
+      "purpose": "inspect",
+      "refusal": "transfer approval is unbound",
+      "role": "guard"
+    },
+    {
+      "activation_authorized": false,
+      "actual_observation_present": false,
+      "directory": ".local/validation/transfer-guard-controls-03",
+      "files": [
+        {
+          "bytes": 1843,
+          "path": ".local/validation/transfer-guard-controls-03/grant.json",
+          "sha256": "e0e5fb445d8d9cea784f0744d76749a27bc6c0ef59ec28de04f0e6d2262cc941"
+        },
+        {
+          "bytes": 26530,
+          "path": ".local/validation/transfer-guard-controls-03/guest_maintenance_control.py",
+          "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-guard-controls-03/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-guard-controls-03/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4238,
+          "path": ".local/validation/transfer-guard-controls-03/inspection-spec.json",
+          "sha256": "9c3ad109974b201e3ac12679643f9b1b7f49609beffb5b0f5cf0ae8294adb501"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-guard-controls-03/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/transfer-guard-controls-03/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 688,
+          "path": ".local/validation/transfer-guard-controls-03/request.json",
+          "sha256": "e3f8f54e97cadc3646f8aca0c45c9b4f07b141b57a06b4fd5c38bbf643ab1fb0"
+        },
+        {
+          "bytes": 1582,
+          "path": ".local/validation/transfer-guard-controls-03/review.json",
+          "sha256": "142d5dc68c2eb48d7015ef920b64bc7a19d32f2e82437a33d5b7830cca971fa6"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/transfer-guard-controls-03/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        }
+      ],
+      "grant": {
+        "bytes": 1843,
+        "path": ".local/validation/transfer-guard-controls-03/grant.json",
+        "sha256": "e0e5fb445d8d9cea784f0744d76749a27bc6c0ef59ec28de04f0e6d2262cc941"
+      },
+      "purpose": "controls",
+      "refusal": "transfer approval is unbound",
+      "role": "guard"
+    },
+    {
+      "activation_authorized": false,
+      "actual_observation_present": false,
+      "directory": ".local/validation/transfer-executor-inspect-03",
+      "files": [
+        {
+          "bytes": 1617,
+          "path": ".local/validation/transfer-executor-inspect-03/grant.json",
+          "sha256": "d0bf59483073d1c4e92174af64c2c4e0aafe13926ce4f70a09fd2b3d3c86f342"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-executor-inspect-03/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-executor-inspect-03/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4276,
+          "path": ".local/validation/transfer-executor-inspect-03/inspection-spec.json",
+          "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-executor-inspect-03/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/transfer-executor-inspect-03/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 1211,
+          "path": ".local/validation/transfer-executor-inspect-03/review.json",
+          "sha256": "ed9aabb8ab3368bad2bcf6f63db05b6739638290322e6d2756a92be6eadf23c5"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/transfer-executor-inspect-03/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        }
+      ],
+      "grant": {
+        "bytes": 1617,
+        "path": ".local/validation/transfer-executor-inspect-03/grant.json",
+        "sha256": "d0bf59483073d1c4e92174af64c2c4e0aafe13926ce4f70a09fd2b3d3c86f342"
+      },
+      "purpose": "inspect",
+      "refusal": "transfer approval is unbound",
+      "role": "executor"
+    },
+    {
+      "activation_authorized": false,
+      "actual_observation_present": false,
+      "directory": ".local/validation/transfer-executor-controls-03",
+      "files": [
+        {
+          "bytes": 1846,
+          "path": ".local/validation/transfer-executor-controls-03/grant.json",
+          "sha256": "6b5eb74a7821189713770bd4cb7d72ad8e65dbabf593280e7217fc74251acb73"
+        },
+        {
+          "bytes": 26530,
+          "path": ".local/validation/transfer-executor-controls-03/guest_maintenance_control.py",
+          "sha256": "6b01cd7ca8e27ae56ed55d1817e336c2a2d5cdab4a667916557bd8347dc70391"
+        },
+        {
+          "bytes": 21670,
+          "path": ".local/validation/transfer-executor-controls-03/guest_maintenance_probe.py",
+          "sha256": "598837d6ef704d54716b9982660d6b0377bae690a3a26a9570f55a4586969c99"
+        },
+        {
+          "bytes": 10718,
+          "path": ".local/validation/transfer-executor-controls-03/guest_transfer_entry.py",
+          "sha256": "b11628aecfd42fa5317a18c83bf738214653c17cdc61ee86ed9085aa8d8e5ee1"
+        },
+        {
+          "bytes": 4276,
+          "path": ".local/validation/transfer-executor-controls-03/inspection-spec.json",
+          "sha256": "2063f96ea8211625e5bb43e12f486289b04ef26f521e165adbcc8bdf8125aa89"
+        },
+        {
+          "bytes": 11221,
+          "path": ".local/validation/transfer-executor-controls-03/maintenance_serial_worker.py",
+          "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/transfer-executor-controls-03/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 691,
+          "path": ".local/validation/transfer-executor-controls-03/request.json",
+          "sha256": "371cf791b6fe1d87eab56cdb74e1ef43b8a6b2c5630e766226db9f27c9179a14"
+        },
+        {
+          "bytes": 1585,
+          "path": ".local/validation/transfer-executor-controls-03/review.json",
+          "sha256": "7b0486cfd3ee839751dd5b2f404f9b28e65b7d2cc7816d98e09b8e802788ce5d"
+        },
+        {
+          "bytes": 10632,
+          "path": ".local/validation/transfer-executor-controls-03/transfer_commands.py",
+          "sha256": "c142892591fc02b05b54c6c52a74cf7e5c2138379235b9abbd8f1299cdfe49a2"
+        }
+      ],
+      "grant": {
+        "bytes": 1846,
+        "path": ".local/validation/transfer-executor-controls-03/grant.json",
+        "sha256": "6b5eb74a7821189713770bd4cb7d72ad8e65dbabf593280e7217fc74251acb73"
+      },
+      "purpose": "controls",
+      "refusal": "transfer approval is unbound",
+      "role": "executor"
+    }
+  ],
+  "earlier_packets": [
+    {
+      "contract": {
+        "bytes": 1219,
+        "path": ".local/validation/host-adapter-guard-01/adapter-contract.json",
+        "sha256": "1c4193225555fbe87c0a2edf3a8160859a5b521a118aef3d7ce75ae5b0d13df7"
+      },
+      "directory": ".local/validation/host-adapter-guard-01",
+      "files": [
+        {
+          "bytes": 1219,
+          "path": ".local/validation/host-adapter-guard-01/adapter-contract.json",
+          "sha256": "1c4193225555fbe87c0a2edf3a8160859a5b521a118aef3d7ce75ae5b0d13df7"
+        },
+        {
+          "bytes": 6439,
+          "path": ".local/validation/host-adapter-guard-01/driver.py",
+          "sha256": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb"
+        },
+        {
+          "bytes": 28046,
+          "path": ".local/validation/host-adapter-guard-01/maintenance_host.py",
+          "sha256": "1235c8ccf69d77949da6ffd98de1db5b32a38aafe56699c7d2f439b7488b4365"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/host-adapter-guard-01/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 515,
+          "path": ".local/validation/host-adapter-guard-01/review.json",
+          "sha256": "28608c93dc861de20610211d4cb8db806ca19776856d3b7a4636606565332eb4"
+        },
+        {
+          "bytes": 3366,
+          "path": ".local/validation/host-adapter-guard-01/supervisor.py",
+          "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+        },
+        {
+          "bytes": 12715,
+          "path": ".local/validation/host-adapter-guard-01/windows_readonly.py",
+          "sha256": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4"
+        }
+      ],
+      "review": {
+        "VM_mutations": 0,
+        "activation_authorized": false,
+        "actual_owner_registered": false,
+        "deployable_runtime_package": false,
+        "grant_refusals": {
+          "controls": "transfer approval is unbound",
+          "inspect": "transfer approval is unbound"
+        },
+        "guest_commands": 0,
+        "role": "guard",
+        "source_snapshot_paths": [
+          "research/validation/maintenance_host.py",
+          "research/validation/windows_readonly.py",
+          "research/validation/maintenance_transfer.py",
+          "research/validation/supervisor.py",
+          "research/validation/driver.py"
+        ],
+        "status": "unarmed-host-adapter-review"
+      }
+    },
+    {
+      "contract": {
+        "bytes": 1262,
+        "path": ".local/validation/host-adapter-executor-01/adapter-contract.json",
+        "sha256": "5c6cbbb213fd5c2bb05b828c2651a038c56794d763553746b993aa92ec7d59e6"
+      },
+      "directory": ".local/validation/host-adapter-executor-01",
+      "files": [
+        {
+          "bytes": 1262,
+          "path": ".local/validation/host-adapter-executor-01/adapter-contract.json",
+          "sha256": "5c6cbbb213fd5c2bb05b828c2651a038c56794d763553746b993aa92ec7d59e6"
+        },
+        {
+          "bytes": 6439,
+          "path": ".local/validation/host-adapter-executor-01/driver.py",
+          "sha256": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb"
+        },
+        {
+          "bytes": 28046,
+          "path": ".local/validation/host-adapter-executor-01/maintenance_host.py",
+          "sha256": "1235c8ccf69d77949da6ffd98de1db5b32a38aafe56699c7d2f439b7488b4365"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/host-adapter-executor-01/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 518,
+          "path": ".local/validation/host-adapter-executor-01/review.json",
+          "sha256": "f593a285dcc36924a290e7b59f094e18aa750cc22db5a4944cf307b8f0a4de5a"
+        },
+        {
+          "bytes": 3366,
+          "path": ".local/validation/host-adapter-executor-01/supervisor.py",
+          "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+        },
+        {
+          "bytes": 12715,
+          "path": ".local/validation/host-adapter-executor-01/windows_readonly.py",
+          "sha256": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4"
+        }
+      ],
+      "review": {
+        "VM_mutations": 0,
+        "activation_authorized": false,
+        "actual_owner_registered": false,
+        "deployable_runtime_package": false,
+        "grant_refusals": {
+          "controls": "transfer approval is unbound",
+          "inspect": "transfer approval is unbound"
+        },
+        "guest_commands": 0,
+        "role": "executor",
+        "source_snapshot_paths": [
+          "research/validation/maintenance_host.py",
+          "research/validation/windows_readonly.py",
+          "research/validation/maintenance_transfer.py",
+          "research/validation/supervisor.py",
+          "research/validation/driver.py"
+        ],
+        "status": "unarmed-host-adapter-review"
+      }
+    }
+  ],
+  "historical_evidence_preserved": [
+    {
+      "bytes": 55473,
+      "path": "research/validation/transfer-evidence.json",
+      "sha256": "1b67563d2a5d0b0d9b4e1ef416f6c1979da0132daea91c4e825493269472bb53"
+    },
+    {
+      "bytes": 17474,
+      "path": "research/validation/maintenance-serial-evidence.json",
+      "sha256": "4504a59828bc4c9391576dcbf9c01cd2c3f4214d9cc346fdb6c6b3df3035398b"
+    },
+    {
+      "bytes": 12096,
+      "path": "research/validation/guest-control-evidence.json",
+      "sha256": "86036137d61c98ab6a9349bcb88570787bc187fe1f81a87b84f790185ca6752f"
+    }
+  ],
+  "limits": [
+    "No actual owner activation, selected-VM boot/root/transfer/control workflow, native poweroff or package installation ran. Current stopped inventory is diagnostic only; UART remains off and cannot satisfy running transfer admission.",
+    "Job ownership covers each query process, not the independently activated VBoxSVC COM service. COM service lifecycle, dependencies/DLL loading and their host access remain unqualified.",
+    "Sandbox native inventory timed out and the first full regression had five PowerShell launch errors plus one real serial-accounting race. Their receipts/logs and source snapshots remain intact; the separately approved outside-sandbox attempts are distinct.",
+    "The serial transport accounting fix changes its hash; four revision 03 transfer grants and two revision 02 host contracts bind the current source. All remain unarmed. Earlier revision 02 transfer and revision 01 host packets are historical and must not be mixed into activation.",
+    "Backup, preboot and source-preservation receipt formats have only synthetic producers. Receipt hashes and the externally supplied owner-binding hash are consistency checks, not approval or issuer authentication.",
+    "PID creation identity and fresh heartbeat do not prove code identity, future owner liveness or independent startup. Actual host filesystem ACLs, owner launch separation, controller-death behavior and native stop/reap require qualification.",
+    "The existing original native stop command still needs bounded-output/process qualification. The new stop adapter observes that original owner and cannot compensate for a blocked or lost owner by issuing another stop.",
+    "Cold COM/native collection may exceed the existing transfer monitor one-second initial sample wait. It must hold rather than extend readiness or original lease/phase clocks. Samples also cannot prove continuous hypervisor policy between observations.",
+    "Guest clock drift/suspend, hostile guest root or bind mounts, host kernel stalls, physical power-loss/database loss and full deployment/runtime enforcement remain unqualified.",
+    "Same-boot review design is only proposed in ADR 0003. Current inspection attempts still stop; an old boot observation cannot authorize controls after reboot. No phase/session behavior has changed.",
+    "Guard creation, broker phase policy, backup/boot/root/transfer/control/installation approvals and final M1-11 through M1-14 qualification remain separate and incomplete."
+  ],
+  "next_check": "Prepare and qualify bounded execution of the original owner stop command and its independent launch packet. Obtain developer selection on ADR 0003 before changing session/phase authority; do not infer native activation approval.",
+  "owner_stop_contract": {
+    "adapter_issues_VM_control_command": false,
+    "lease_renewal": false,
+    "missing_or_changed_evidence": "hold and retain partial state; no replay",
+    "outer_stop_allowance_seconds": 10,
+    "owner_binding": "original immutable lease, nonce, PID creation FILETIME and process image; externally reviewed raw binding hash",
+    "owner_takeover_or_restart": false,
+    "required_stop_evidence": [
+      "original stop-command-returned lease ledger",
+      "original stop-returned owner state",
+      "unchanged authority/target/storage/disconnection profile",
+      "fresh independently captured poweroff receipt"
+    ],
+    "same_durable_Store": true,
+    "same_process_owner_refused": true,
+    "stop_acknowledgement_is_poweroff": false,
+    "stop_issuer": "original RegisteredOwner wrapping existing LeaseSupervisor.poll and existing native stop callback",
+    "stop_signal": "existing controller durable authority fence",
+    "stop_wait_intent_exclusive": true,
+    "stop_wait_seconds_at_most": 9
+  },
+  "packets": [
+    {
+      "contract": {
+        "bytes": 1219,
+        "path": ".local/validation/host-adapter-guard-02/adapter-contract.json",
+        "sha256": "1ee821c1dbd5b8c57d3e38faae9dffb2c764bed9e7ff500b22612258bd3c1e36"
+      },
+      "directory": ".local/validation/host-adapter-guard-02",
+      "files": [
+        {
+          "bytes": 1219,
+          "path": ".local/validation/host-adapter-guard-02/adapter-contract.json",
+          "sha256": "1ee821c1dbd5b8c57d3e38faae9dffb2c764bed9e7ff500b22612258bd3c1e36"
+        },
+        {
+          "bytes": 6439,
+          "path": ".local/validation/host-adapter-guard-02/driver.py",
+          "sha256": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb"
+        },
+        {
+          "bytes": 28046,
+          "path": ".local/validation/host-adapter-guard-02/maintenance_host.py",
+          "sha256": "1235c8ccf69d77949da6ffd98de1db5b32a38aafe56699c7d2f439b7488b4365"
+        },
+        {
+          "bytes": 15471,
+          "path": ".local/validation/host-adapter-guard-02/maintenance_serial.py",
+          "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/host-adapter-guard-02/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 559,
+          "path": ".local/validation/host-adapter-guard-02/review.json",
+          "sha256": "5c9798616794ac0abdd7859c1dedfd3de17e3e4b1c354b06afa510ffe8dccff9"
+        },
+        {
+          "bytes": 3366,
+          "path": ".local/validation/host-adapter-guard-02/supervisor.py",
+          "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+        },
+        {
+          "bytes": 12715,
+          "path": ".local/validation/host-adapter-guard-02/windows_readonly.py",
+          "sha256": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4"
+        }
+      ],
+      "review": {
+        "VM_mutations": 0,
+        "activation_authorized": false,
+        "actual_owner_registered": false,
+        "deployable_runtime_package": false,
+        "grant_refusals": {
+          "controls": "transfer approval is unbound",
+          "inspect": "transfer approval is unbound"
+        },
+        "guest_commands": 0,
+        "role": "guard",
+        "source_snapshot_paths": [
+          "research/validation/maintenance_host.py",
+          "research/validation/windows_readonly.py",
+          "research/validation/maintenance_transfer.py",
+          "research/validation/supervisor.py",
+          "research/validation/driver.py",
+          "research/validation/maintenance_serial.py"
+        ],
+        "status": "unarmed-host-adapter-review"
+      }
+    },
+    {
+      "contract": {
+        "bytes": 1262,
+        "path": ".local/validation/host-adapter-executor-02/adapter-contract.json",
+        "sha256": "1c09e39164d6e4b68f5ab9735ebd6b60306e3a5a2393d1bd4e6cc8a7186b9445"
+      },
+      "directory": ".local/validation/host-adapter-executor-02",
+      "files": [
+        {
+          "bytes": 1262,
+          "path": ".local/validation/host-adapter-executor-02/adapter-contract.json",
+          "sha256": "1c09e39164d6e4b68f5ab9735ebd6b60306e3a5a2393d1bd4e6cc8a7186b9445"
+        },
+        {
+          "bytes": 6439,
+          "path": ".local/validation/host-adapter-executor-02/driver.py",
+          "sha256": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb"
+        },
+        {
+          "bytes": 28046,
+          "path": ".local/validation/host-adapter-executor-02/maintenance_host.py",
+          "sha256": "1235c8ccf69d77949da6ffd98de1db5b32a38aafe56699c7d2f439b7488b4365"
+        },
+        {
+          "bytes": 15471,
+          "path": ".local/validation/host-adapter-executor-02/maintenance_serial.py",
+          "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+        },
+        {
+          "bytes": 34393,
+          "path": ".local/validation/host-adapter-executor-02/maintenance_transfer.py",
+          "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+        },
+        {
+          "bytes": 562,
+          "path": ".local/validation/host-adapter-executor-02/review.json",
+          "sha256": "a7e75f4d3f6372c9da649eb52e87511fdbf79886a6d4717f882de8658591c956"
+        },
+        {
+          "bytes": 3366,
+          "path": ".local/validation/host-adapter-executor-02/supervisor.py",
+          "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+        },
+        {
+          "bytes": 12715,
+          "path": ".local/validation/host-adapter-executor-02/windows_readonly.py",
+          "sha256": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4"
+        }
+      ],
+      "review": {
+        "VM_mutations": 0,
+        "activation_authorized": false,
+        "actual_owner_registered": false,
+        "deployable_runtime_package": false,
+        "grant_refusals": {
+          "controls": "transfer approval is unbound",
+          "inspect": "transfer approval is unbound"
+        },
+        "guest_commands": 0,
+        "role": "executor",
+        "source_snapshot_paths": [
+          "research/validation/maintenance_host.py",
+          "research/validation/windows_readonly.py",
+          "research/validation/maintenance_transfer.py",
+          "research/validation/supervisor.py",
+          "research/validation/driver.py",
+          "research/validation/maintenance_serial.py"
+        ],
+        "status": "unarmed-host-adapter-review"
+      }
+    }
+  ],
+  "primary_sources": [
+    {
+      "classification": "Oracle 7.2 read-only query command documentation",
+      "url": "https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/vboxmanage.html"
+    },
+    {
+      "classification": "Oracle upstream output source review, not established as the exact installed binary source",
+      "upstream_header_revision": "114362 2026-06-15 18:31:38Z",
+      "url": "https://raw.githubusercontent.com/VirtualBox/virtualbox/master/src/VBox/Frontends/VBoxManage/VBoxManageInfo.cpp"
+    },
+    {
+      "classification": "HANDLE_LIST and Windows 10+ creation-time JOB_LIST documentation",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute"
+    },
+    {
+      "classification": "Attribute list lifetime and allocation documentation",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-initializeprocthreadattributelist"
+    },
+    {
+      "classification": "CREATE_SUSPENDED and extended startup flags",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/process-creation-flags"
+    },
+    {
+      "classification": "Job process accounting and kill-on-close documentation",
+      "url": "https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects"
+    }
+  ],
+  "query_contract": {
+    "COM_server_lifecycle_qualified": false,
+    "SQLite_lock_seconds_at_most": 0.05,
+    "active_process_limit": 1,
+    "aggregate_capture_seconds_at_most": 4,
+    "capture_count_at_most": 256,
+    "captures": "exclusive intent and raw command outputs before validated capture; no overwrite",
+    "creation": "CREATE_SUSPENDED plus HANDLE_LIST and creation-time JOB_LIST; no separate assignment gap",
+    "executable_sha256": "178e016ed38cb6e369a5c17c6c960c176674b9c864030d8ce0ad2867613becff",
+    "fixed_executable": "C:\\Program Files\\Oracle\\VirtualBox\\VBoxManage.exe",
+    "fresh_timestamp": "start of capture, never completion of a stale native call",
+    "host_shell": false,
+    "job_handle_inherited": false,
+    "kill_on_job_close": true,
+    "parallel_capture_allowed": false,
+    "shapes": [
+      "--version",
+      "showvminfo <reviewed UUID> --machinereadable",
+      "showmediuminfo disk <reviewed UUID>"
+    ],
+    "stderr_bytes_at_most": 65536,
+    "stdout_bytes_at_most": 65536,
+    "version": "7.2.22r175245"
+  },
+  "recorded_utc": "2026-11-22T17:39:25.218027+00:00",
+  "scope": {
+    "VM_boot": false,
+    "VM_creation": false,
+    "VM_mutations": 0,
+    "actual_guest_commands": 0,
+    "actual_lease_armed": false,
+    "actual_owner_launched": false,
+    "current_VDI_bytes_hashed": false,
+    "current_stopped_VM_inventory_measured": true,
+    "media_mounts": 0,
+    "native_VM_stop": false,
+    "native_running_UART_qualification": false,
+    "package_or_tool_installation": false,
+    "product_implementation": false,
+    "provider_calls": 0,
+    "repository_uploads": 0,
+    "same_boot_session_implemented": false,
+    "unprivileged_scratch_files_and_synthetic_children": true
+  },
+  "sources": [
+    {
+      "bytes": 6439,
+      "path": "research/validation/driver.py",
+      "sha256": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb"
+    },
+    {
+      "bytes": 28046,
+      "path": "research/validation/maintenance_host.py",
+      "sha256": "1235c8ccf69d77949da6ffd98de1db5b32a38aafe56699c7d2f439b7488b4365"
+    },
+    {
+      "bytes": 15471,
+      "path": "research/validation/maintenance_serial.py",
+      "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+    },
+    {
+      "bytes": 11221,
+      "path": "research/validation/maintenance_serial_worker.py",
+      "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+    },
+    {
+      "bytes": 34393,
+      "path": "research/validation/maintenance_transfer.py",
+      "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+    },
+    {
+      "bytes": 3366,
+      "path": "research/validation/supervisor.py",
+      "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+    },
+    {
+      "bytes": 12715,
+      "path": "research/validation/windows_readonly.py",
+      "sha256": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4"
+    },
+    {
+      "bytes": 25156,
+      "path": "tests/test_maintenance_host.py",
+      "sha256": "8358ffaa4b168be67b9925b1b313664e4768f25f7f2ff418f344d02df3611938"
+    },
+    {
+      "bytes": 20844,
+      "path": "tests/test_maintenance_serial.py",
+      "sha256": "a6a65ef884637f3a6463ae6525fc43bd71c1b4823e5aeb6fba848c7a8bdda157"
+    }
+  ],
+  "status": "prepared-host-adapters-and-stopped-native-inventory-not-activated",
+  "verification": {
+    "focused_host_checks": {
+      "native_Windows_scratch_process_cases": 5,
+      "synthetic_inventory_owner_controller_policy_cases": 18,
+      "total": 23
+    },
+    "full_Windows_regression": {
+      "errors": 0,
+      "failures": 0,
+      "location": ".local/validation/host-adapter-regression-02",
+      "outside_sandbox": true,
+      "passed": 258,
+      "skipped": 13,
+      "tests_run": 271
+    },
+    "measurements": [
+      {
+        "directory": ".local/validation/host-query-preflight-01",
+        "files": [
+          {
+            "bytes": 381,
+            "path": ".local/validation/host-query-preflight-01/receipt.json",
+            "sha256": "6c8ab6b01dffc232531b1e9c70392375acb25d84264bfaed2cef27af8d6c04bd"
+          },
+          {
+            "bytes": 8110,
+            "path": ".local/validation/host-query-preflight-01/windows_readonly.py",
+            "sha256": "d8384aadd9918d07db6261725bf58f5f747dcf6d70fb484a974686579d7f895c"
+          }
+        ],
+        "result": {
+          "actual_VM_operations": 0,
+          "classification": "synthetic Windows child; no VBox/VM action",
+          "command_kind": "isolated Python prints query-fixture",
+          "result": "held after child exit because Job Object accounting had not yet converged to zero; cleanup also reported incomplete",
+          "source_sha256": "d8384aadd9918d07db6261725bf58f5f747dcf6d70fb484a974686579d7f895c"
+        }
+      },
+      {
+        "directory": ".local/validation/host-observe-native-01",
+        "files": [
+          {
+            "bytes": 0,
+            "path": ".local/validation/host-observe-native-01/0-version.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 15,
+            "path": ".local/validation/host-observe-native-01/0-version.stdout",
+            "sha256": "2ac2b583314b957306270781d498af778e2008ac0f084119e604fba15e5e738d"
+          },
+          {
+            "bytes": 188,
+            "path": ".local/validation/host-observe-native-01/intent.json",
+            "sha256": "4de24e2bdc04c6a887c2987bc38ad8f05ed22d7091c9e0bcef8b0e816815035a"
+          },
+          {
+            "bytes": 25573,
+            "path": ".local/validation/host-observe-native-01/maintenance_host.py",
+            "sha256": "2f15a02e82f98778e2588197f7994c03aa383ec3e7af6b811d06086a6870c857"
+          },
+          {
+            "bytes": 988,
+            "path": ".local/validation/host-observe-native-01/receipt.json",
+            "sha256": "a1516c12b5f50ff316fd4af70f6f7bbf33a1594193ebcd3ae812c4278e4cd522"
+          },
+          {
+            "bytes": 23097,
+            "path": ".local/validation/host-observe-native-01/test_maintenance_host.py",
+            "sha256": "e43104f171467f7113a0d1729084c1445d91c1c1c409e01f2629ce43fe02a17b"
+          },
+          {
+            "bytes": 12715,
+            "path": ".local/validation/host-observe-native-01/windows_readonly.py",
+            "sha256": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4"
+          }
+        ],
+        "result": {
+          "VM_mutations": 0,
+          "classification": "native read-only observation of stopped preparation VM; not running/lease/target-root qualification",
+          "commands": [
+            {
+              "exit": 0,
+              "finished_mono_ns": 138358381930400,
+              "job_active_processes": 0,
+              "kind": "version",
+              "pid": 19112,
+              "started_mono_ns": 138358353507000,
+              "stdout_sha256": "2ac2b583314b957306270781d498af778e2008ac0f084119e604fba15e5e738d",
+              "target": null
+            }
+          ],
+          "error": "native query deadline expired",
+          "error_type": "Hold",
+          "executable_sha256": "178e016ed38cb6e369a5c17c6c960c176674b9c864030d8ce0ad2867613becff",
+          "guest_commands": 0,
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "sources": {
+            "research/validation/maintenance_host.py": "2f15a02e82f98778e2588197f7994c03aa383ec3e7af6b811d06086a6870c857",
+            "research/validation/windows_readonly.py": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4",
+            "tests/test_maintenance_host.py": "e43104f171467f7113a0d1729084c1445d91c1c1c409e01f2629ce43fe02a17b"
+          },
+          "status": "held"
+        }
+      },
+      {
+        "directory": ".local/validation/host-observe-native-02",
+        "files": [
+          {
+            "bytes": 0,
+            "path": ".local/validation/host-observe-native-02/0-version.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 15,
+            "path": ".local/validation/host-observe-native-02/0-version.stdout",
+            "sha256": "2ac2b583314b957306270781d498af778e2008ac0f084119e604fba15e5e738d"
+          },
+          {
+            "bytes": 0,
+            "path": ".local/validation/host-observe-native-02/1-machine.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 3225,
+            "path": ".local/validation/host-observe-native-02/1-machine.stdout",
+            "sha256": "db34d68b16f8700d1644db182a1f9dbe3b05333384dfff95c6ff355c3210392d"
+          },
+          {
+            "bytes": 0,
+            "path": ".local/validation/host-observe-native-02/2-disk.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 524,
+            "path": ".local/validation/host-observe-native-02/2-disk.stdout",
+            "sha256": "d8dbe0145c351913a2a2d917a6b333ca60da1fffb7db75ae0e71f23475e7dd69"
+          },
+          {
+            "bytes": 0,
+            "path": ".local/validation/host-observe-native-02/3-machine.stderr",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 3225,
+            "path": ".local/validation/host-observe-native-02/3-machine.stdout",
+            "sha256": "db34d68b16f8700d1644db182a1f9dbe3b05333384dfff95c6ff355c3210392d"
+          },
+          {
+            "bytes": 188,
+            "path": ".local/validation/host-observe-native-02/intent.json",
+            "sha256": "4de24e2bdc04c6a887c2987bc38ad8f05ed22d7091c9e0bcef8b0e816815035a"
+          },
+          {
+            "bytes": 25573,
+            "path": ".local/validation/host-observe-native-02/maintenance_host.py",
+            "sha256": "2f15a02e82f98778e2588197f7994c03aa383ec3e7af6b811d06086a6870c857"
+          },
+          {
+            "bytes": 2401,
+            "path": ".local/validation/host-observe-native-02/observe.py",
+            "sha256": "258c3fd393efaa78e73ec4b68aa5c07a9af4643ffc182a3b4be774d95f100e96"
+          },
+          {
+            "bytes": 2708,
+            "path": ".local/validation/host-observe-native-02/receipt.json",
+            "sha256": "882101e3a19a12efc24b9acb94823d1194f7b4880d3bd3a4271c9cb8be65c9dc"
+          },
+          {
+            "bytes": 23097,
+            "path": ".local/validation/host-observe-native-02/test_maintenance_host.py",
+            "sha256": "e43104f171467f7113a0d1729084c1445d91c1c1c409e01f2629ce43fe02a17b"
+          },
+          {
+            "bytes": 12715,
+            "path": ".local/validation/host-observe-native-02/windows_readonly.py",
+            "sha256": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4"
+          }
+        ],
+        "result": {
+          "VM_mutations": 0,
+          "classification": "native read-only observation outside sandbox after the sandbox attempt held; not running/lease/target-root qualification",
+          "commands": [
+            {
+              "exit": 0,
+              "finished_mono_ns": 138410124324800,
+              "job_active_processes": 0,
+              "kind": "version",
+              "pid": 20704,
+              "started_mono_ns": 138410098846700,
+              "stdout_sha256": "2ac2b583314b957306270781d498af778e2008ac0f084119e604fba15e5e738d",
+              "target": null
+            },
+            {
+              "exit": 0,
+              "finished_mono_ns": 138410280047400,
+              "job_active_processes": 0,
+              "kind": "machine",
+              "pid": 1448,
+              "started_mono_ns": 138410127544500,
+              "stdout_sha256": "db34d68b16f8700d1644db182a1f9dbe3b05333384dfff95c6ff355c3210392d",
+              "target": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+            },
+            {
+              "exit": 0,
+              "finished_mono_ns": 138410411016800,
+              "job_active_processes": 0,
+              "kind": "disk",
+              "pid": 17176,
+              "started_mono_ns": 138410283275500,
+              "stdout_sha256": "d8dbe0145c351913a2a2d917a6b333ca60da1fffb7db75ae0e71f23475e7dd69",
+              "target": "e832fc9c-23cc-40a8-8e66-fa0c624b8bd9"
+            },
+            {
+              "exit": 0,
+              "finished_mono_ns": 138410463325300,
+              "job_active_processes": 0,
+              "kind": "machine",
+              "pid": 4600,
+              "started_mono_ns": 138410414194200,
+              "stdout_sha256": "db34d68b16f8700d1644db182a1f9dbe3b05333384dfff95c6ff355c3210392d",
+              "target": "74129e9c-5a65-44fa-9d35-79d458dc4704"
+            }
+          ],
+          "duplicate_profiles_match": true,
+          "elapsed_seconds": 0.368772,
+          "executable_sha256": "178e016ed38cb6e369a5c17c6c960c176674b9c864030d8ce0ad2867613becff",
+          "guest_commands": 0,
+          "medium": {
+            "Capacity": "32768 MBytes",
+            "Encryption": "disabled",
+            "Format variant": "dynamic default",
+            "In use by VMs": "mcli1-validation-01 (UUID: 74129e9c-5a65-44fa-9d35-79d458dc4704)",
+            "Location": "E:\\Home\\Documents\\Programming\\ai-dev-orchestrator\\.local\\validation\\vms\\mcli1-validation-01\\installation.vdi",
+            "Parent UUID": "base",
+            "Property": "AllocationBlockSize=1048576",
+            "Size on disk": "2504 MBytes",
+            "State": "created",
+            "Storage format": "VDI",
+            "Type": "normal (base)",
+            "UUID": "e832fc9c-23cc-40a8-8e66-fa0c624b8bd9"
+          },
+          "profile": {
+            "clipboard": "disabled",
+            "cpus": 2,
+            "disks": [
+              "e832fc9c-23cc-40a8-8e66-fa0c624b8bd9"
+            ],
+            "dragdrop": "disabled",
+            "dvd_uuid": null,
+            "memory_mb": 4096,
+            "nics": [
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none",
+              "none"
+            ],
+            "shares": [],
+            "state": "poweroff",
+            "uart_pipe": null,
+            "uart_server": false,
+            "usb": "disabled",
+            "vm_uuid": "74129e9c-5a65-44fa-9d35-79d458dc4704",
+            "vrde": false
+          },
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "sources": {
+            "research/validation/maintenance_host.py": "2f15a02e82f98778e2588197f7994c03aa383ec3e7af6b811d06086a6870c857",
+            "research/validation/windows_readonly.py": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4",
+            "tests/test_maintenance_host.py": "e43104f171467f7113a0d1729084c1445d91c1c1c409e01f2629ce43fe02a17b"
+          },
+          "status": "read-only-observation-reported-not-admitted"
+        }
+      },
+      {
+        "directory": ".local/validation/host-adapter-regression-01",
+        "files": [
+          {
+            "bytes": 6439,
+            "path": ".local/validation/host-adapter-regression-01/driver.py",
+            "sha256": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb"
+          },
+          {
+            "bytes": 28046,
+            "path": ".local/validation/host-adapter-regression-01/maintenance_host.py",
+            "sha256": "1235c8ccf69d77949da6ffd98de1db5b32a38aafe56699c7d2f439b7488b4365"
+          },
+          {
+            "bytes": 15129,
+            "path": ".local/validation/host-adapter-regression-01/maintenance_serial.py",
+            "sha256": "3817eb91ca181af7c1f7d4e908d21882c92749825688536166e9c6a1f2f66fe6"
+          },
+          {
+            "bytes": 11221,
+            "path": ".local/validation/host-adapter-regression-01/maintenance_serial_worker.py",
+            "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+          },
+          {
+            "bytes": 34393,
+            "path": ".local/validation/host-adapter-regression-01/maintenance_transfer.py",
+            "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+          },
+          {
+            "bytes": 1379,
+            "path": ".local/validation/host-adapter-regression-01/receipt.json",
+            "sha256": "db5ad1c333f9fac3a716f82d952bef6cf0f0874f7b39cdf20c9cee3e87f00b33"
+          },
+          {
+            "bytes": 3366,
+            "path": ".local/validation/host-adapter-regression-01/supervisor.py",
+            "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+          },
+          {
+            "bytes": 25156,
+            "path": ".local/validation/host-adapter-regression-01/test_maintenance_host.py",
+            "sha256": "8358ffaa4b168be67b9925b1b313664e4768f25f7f2ff418f344d02df3611938"
+          },
+          {
+            "bytes": 60487,
+            "path": ".local/validation/host-adapter-regression-01/unittest.log",
+            "sha256": "1a41d1a5ea98c8c0f9fa61ed3036ba581e19754bcc25bc9774d11f4d539adf1a"
+          },
+          {
+            "bytes": 12715,
+            "path": ".local/validation/host-adapter-regression-01/windows_readonly.py",
+            "sha256": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4"
+          }
+        ],
+        "result": {
+          "VM_mutations": 0,
+          "actual_guest_commands": 0,
+          "actual_native_VM_stop": false,
+          "elapsed_seconds": 47.34947000001557,
+          "errors": 6,
+          "failures": 0,
+          "kind": "Windows full regression and synthetic VM/owner state with native Windows scratch-process checks",
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "skipped": 13,
+          "sources": {
+            "research/validation/driver.py": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb",
+            "research/validation/maintenance_host.py": "1235c8ccf69d77949da6ffd98de1db5b32a38aafe56699c7d2f439b7488b4365",
+            "research/validation/maintenance_serial.py": "3817eb91ca181af7c1f7d4e908d21882c92749825688536166e9c6a1f2f66fe6",
+            "research/validation/maintenance_serial_worker.py": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+            "research/validation/maintenance_transfer.py": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c",
+            "research/validation/supervisor.py": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d",
+            "research/validation/windows_readonly.py": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4",
+            "tests/test_maintenance_host.py": "8358ffaa4b168be67b9925b1b313664e4768f25f7f2ff418f344d02df3611938"
+          },
+          "tests_run": 270
+        }
+      },
+      {
+        "directory": ".local/validation/host-adapter-regression-02",
+        "files": [
+          {
+            "bytes": 6439,
+            "path": ".local/validation/host-adapter-regression-02/driver.py",
+            "sha256": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb"
+          },
+          {
+            "bytes": 28046,
+            "path": ".local/validation/host-adapter-regression-02/maintenance_host.py",
+            "sha256": "1235c8ccf69d77949da6ffd98de1db5b32a38aafe56699c7d2f439b7488b4365"
+          },
+          {
+            "bytes": 15471,
+            "path": ".local/validation/host-adapter-regression-02/maintenance_serial.py",
+            "sha256": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9"
+          },
+          {
+            "bytes": 11221,
+            "path": ".local/validation/host-adapter-regression-02/maintenance_serial_worker.py",
+            "sha256": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502"
+          },
+          {
+            "bytes": 34393,
+            "path": ".local/validation/host-adapter-regression-02/maintenance_transfer.py",
+            "sha256": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c"
+          },
+          {
+            "bytes": 1493,
+            "path": ".local/validation/host-adapter-regression-02/receipt.json",
+            "sha256": "8ce8eb85f37595eb2444d3f836dd8529b91da221464c39bea74a96ed18c7340f"
+          },
+          {
+            "bytes": 1469,
+            "path": ".local/validation/host-adapter-regression-02/run.py",
+            "sha256": "61a7baad40ff6b4df5b10e9aaa299a57c3df22031379ac179a188b4ee565cd79"
+          },
+          {
+            "bytes": 3366,
+            "path": ".local/validation/host-adapter-regression-02/supervisor.py",
+            "sha256": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d"
+          },
+          {
+            "bytes": 25156,
+            "path": ".local/validation/host-adapter-regression-02/test_maintenance_host.py",
+            "sha256": "8358ffaa4b168be67b9925b1b313664e4768f25f7f2ff418f344d02df3611938"
+          },
+          {
+            "bytes": 20844,
+            "path": ".local/validation/host-adapter-regression-02/test_maintenance_serial.py",
+            "sha256": "a6a65ef884637f3a6463ae6525fc43bd71c1b4823e5aeb6fba848c7a8bdda157"
+          },
+          {
+            "bytes": 46553,
+            "path": ".local/validation/host-adapter-regression-02/unittest.log",
+            "sha256": "07a1a519f7e0e8ff5a91c83538e2d7896d517bda00991ecddf615fe10cefe393"
+          },
+          {
+            "bytes": 12715,
+            "path": ".local/validation/host-adapter-regression-02/windows_readonly.py",
+            "sha256": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4"
+          }
+        ],
+        "result": {
+          "VM_mutations": 0,
+          "actual_guest_commands": 0,
+          "actual_native_VM_stop": false,
+          "elapsed_seconds": 52.10712960001547,
+          "errors": 0,
+          "failures": 0,
+          "kind": "Windows full regression outside sandbox; synthetic VM/owner state and real Windows scratch processes",
+          "platform": "win32",
+          "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+          "skipped": 13,
+          "sources": {
+            "research/validation/driver.py": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb",
+            "research/validation/maintenance_host.py": "1235c8ccf69d77949da6ffd98de1db5b32a38aafe56699c7d2f439b7488b4365",
+            "research/validation/maintenance_serial.py": "63fe667d48a538c95ea3c1092547fc4a9687419d5faa1acced37552894cbcbe9",
+            "research/validation/maintenance_serial_worker.py": "0e7e3344d13ce4fc448e0943debb76bade221672cfef9f195f61cca0785e7502",
+            "research/validation/maintenance_transfer.py": "61ae5de5d12d53dd1ab51d477e559ba2d5b0ff0e1bd4bec267c6d2ea8b4bbd9c",
+            "research/validation/supervisor.py": "cfcaf7e0e5572a3f5f824c6f55534d8c89328e0b20c192a1d6c56bc8d3ce532d",
+            "research/validation/windows_readonly.py": "77804a21f9224949055b7a6b2f0210bc7eb377a34bce2f4bc68af9f8ccc2aca4",
+            "tests/test_maintenance_host.py": "8358ffaa4b168be67b9925b1b313664e4768f25f7f2ff418f344d02df3611938",
+            "tests/test_maintenance_serial.py": "a6a65ef884637f3a6463ae6525fc43bd71c1b4823e5aeb6fba848c7a8bdda157"
+          },
+          "tests_run": 271
+        }
+      }
+    ],
+    "native_inventory_source_provenance": {
+      "KillJob_class_unchanged_sha256": "1422b8441b7e63fd102b3d60b629379a7945f6f6bec64f2686de0534a3dd8539",
+      "entire_query_runner_source_unchanged": true,
+      "function_comparisons": [
+        {
+          "executed_by_native_inventory_driver": true,
+          "function_source_sha256": "f502eb7d940fe7e54e2990fe6b97487d45477a87a05178c23c2b2495224785dc",
+          "name": "machine_fields",
+          "unchanged": true
+        },
+        {
+          "executed_by_native_inventory_driver": true,
+          "function_source_sha256": "718db552e6214b39b669b26d47d625ef465d1d31f7069ef81137bf3a19ff38f4",
+          "name": "machine_profile",
+          "unchanged": true
+        },
+        {
+          "executed_by_native_inventory_driver": true,
+          "function_source_sha256": "cebe80f8471743ce4338e0925aa18249dcf420de9bba78ba4e7af2a040270d6b",
+          "name": "medium_fields",
+          "unchanged": true
+        },
+        {
+          "executed_by_native_inventory_driver": false,
+          "function_source_sha256": "ebbf64f8eb2e537e9b89ab7acfeb44a8ac7de4c577e5b98e512dae39db612da8",
+          "name": "check_medium",
+          "unchanged": true
+        },
+        {
+          "executed_by_native_inventory_driver": false,
+          "function_source_sha256": "f32702a41ab4358422657fbf342caeb322f62c9b18cc96b8d425a976a68eb291",
+          "name": "process_identity",
+          "unchanged": true
+        }
+      ],
+      "measured_source_directory": ".local/validation/host-observe-native-02",
+      "note": "Function equality is static source evidence; check_medium was synthetic-tested, not called by the native stopped-inventory driver. Later owner/stop changes are verified by final regression, not native VM shutdown."
+    },
+    "ruff_check": "passed: research/validation tests",
+    "ruff_format_check": "passed: 102 files",
+    "serial_checks": {
+      "classification": "actual local pipe and worker with injected delayed Job Object accounting; original deadlines unchanged",
+      "new_case": "test_delayed_job_accounting_after_exit_waits_within_original_authority",
+      "total": 20
+    },
+    "test_classes": {
+      "tests/test_maintenance_host.py": {
+        "AdapterTests": [
+          "test_live_probe_preserves_original_clocks_and_raw_queries_without_mutation",
+          "test_reused_pid_stale_pulse_or_changed_lease_prevent_native_queries",
+          "test_owner_registration_and_stop_are_one_shot_without_takeover",
+          "test_changed_owner_profile_refuses_foreign_stop_and_replay",
+          "test_uncertain_original_stop_stays_stopping_and_cannot_be_reissued",
+          "test_stop_before_controller_fence_holds_without_queries",
+          "test_stop_acknowledgement_waits_for_poweroff_without_repeating_stop",
+          "test_changed_authority_after_poweroff_observation_prevents_stop_receipt",
+          "test_same_process_owner_binding_cannot_admit_a_live_adapter",
+          "test_stop_adapter_waits_for_original_owner_and_then_measures_poweroff",
+          "test_poweroff_ledger_claim_without_original_owner_cannot_query",
+          "test_interrupted_and_overlapping_capture_retains_intent_and_cannot_reuse_root",
+          "test_controller_uses_the_adapters_and_only_original_owner_stops"
+        ],
+        "InventoryTests": [
+          "test_both_roles_and_raw_uart_backslashes_match_the_frozen_profile",
+          "test_duplicate_malformed_and_shell_text_are_data_or_refusals",
+          "test_extra_controllers_media_nics_shares_and_transports_cannot_disappear",
+          "test_medium_path_parent_backup_and_cross_attempt_receipt_changes_hold"
+        ],
+        "QueryPolicyTests": [
+          "test_public_query_policy_cannot_launch_mutations_paths_or_changed_tool_bytes"
+        ],
+        "WindowsQueryTests": [
+          "test_actual_job_membership_precedes_execution_and_output_is_reaped",
+          "test_failed_pre_resume_gate_cannot_execute_child",
+          "test_timeout_flood_and_forbidden_descendant_cannot_leave_a_query_child",
+          "test_original_process_creation_identity_changes_after_exit",
+          "test_parent_death_reaps_child_even_before_its_primary_thread_resumes"
+        ]
+      },
+      "tests/test_maintenance_serial.py": {
+        "Channel": [],
+        "NativeSerialTests": [
+          "test_real_local_pipe_receipt_and_durable_uncertainty",
+          "test_unanswered_pipe_deadline_reaps_worker_and_retains_intent",
+          "test_delayed_job_accounting_after_exit_waits_within_original_authority",
+          "test_revocation_stops_worker_with_original_deadline_unchanged",
+          "test_failed_assignment_reaps_unstarted_worker_without_channel_io",
+          "test_parent_output_limit_reaps_a_faulty_worker",
+          "test_parent_rejects_corrupt_result_digest_and_fences",
+          "test_job_termination_cancels_a_kernel_blocked_pipe_write",
+          "test_job_kills_worker_when_parent_process_dies",
+          "test_worker_requires_its_exact_configured_job"
+        ],
+        "PipeServer": [],
+        "SerialProtocolTests": [
+          "test_complete_request_binds_worker_digest_channel_and_exact_bytes",
+          "test_unarmed_guest_draft_has_no_native_activation",
+          "test_printable_bounded_lines_and_ack_order_cannot_be_changed",
+          "test_console_echo_cannot_acknowledge_and_data_is_hash_bound",
+          "test_duplicate_out_of_order_and_oversized_output_hold_without_replay",
+          "test_lost_ack_sends_once_and_does_not_retry",
+          "test_guest_rejection_frame_holds_immediately_and_echo_is_not_a_frame",
+          "test_expired_request_never_writes_to_channel",
+          "test_durable_intent_survives_reopen_and_rejects_replay",
+          "test_ephemeral_journal_and_default_cli_cannot_activate_transport"
+        ]
+      }
+    }
+  }
+}

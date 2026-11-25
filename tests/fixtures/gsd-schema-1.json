@@ -1,0 +1,192 @@
+{
+  "active": {
+    "phase": {
+      "scope": "complete",
+      "value": "1 of 1 (Validate CLI)"
+    },
+    "plan": {
+      "scope": "complete",
+      "value": "0 of 2 in current phase"
+    },
+    "status": {
+      "scope": "complete",
+      "value": "Ready to execute"
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "uat_absent",
+      "detail": "No UAT document for this phase. This does not affect phase acceptance.",
+      "subject": "01-validate-cli"
+    },
+    {
+      "code": "percent_withheld",
+      "detail": "Scope is \"unscoped\"; a percentage derived from an incomplete read would be a confident wrong answer.",
+      "subject": "progress.accepted_phases"
+    },
+    {
+      "code": "percent_withheld",
+      "detail": "Scope is \"unscoped\"; a percentage derived from an incomplete read would be a confident wrong answer.",
+      "subject": "progress.completed_plans"
+    }
+  ],
+  "generated_from": {
+    "cwd": "<synthetic-planning-checkout>",
+    "planning_root": "<synthetic-planning-checkout>/.planning"
+  },
+  "milestone": {
+    "name": "M-CLI1",
+    "scope": "complete",
+    "version": "v1.0"
+  },
+  "orphan_phase_dirs": [],
+  "phases": [
+    {
+      "complete": false,
+      "dependencies": {
+        "scope": "complete",
+        "value": []
+      },
+      "dir": "01-validate-cli",
+      "goal": {
+        "scope": "complete",
+        "value": "Validate names and provide a CLI."
+      },
+      "phase_id": "01",
+      "plan_count": 2,
+      "plans": [
+        {
+          "agentHint": null,
+          "autonomous": true,
+          "changedFiles": null,
+          "dependsOn": [],
+          "file": "01-01-PLAN.md",
+          "hasSummary": false,
+          "id": "01-01",
+          "objective": "Implement T-01 from the frozen synthetic milestone.",
+          "plannedFiles": [
+            "src/validate.js",
+            "test/validate.test.js"
+          ],
+          "scope": "complete",
+          "superseded": false,
+          "tasks": [
+            {
+              "acceptanceCriteria": [
+                "valid-names-preserved",
+                "blank-names-rejected"
+              ],
+              "agreement": "unknown",
+              "changedFiles": null,
+              "done": "All frozen candidate checks and independent review pass on the exact revision.",
+              "index": 1,
+              "kind": "auto",
+              "name": "T-01",
+              "plannedFiles": [
+                "src/validate.js",
+                "test/validate.test.js"
+              ],
+              "provenance": "absent",
+              "status": "pending",
+              "type": "auto"
+            }
+          ],
+          "wave": 1
+        },
+        {
+          "agentHint": null,
+          "autonomous": true,
+          "changedFiles": null,
+          "dependsOn": [
+            "01-01"
+          ],
+          "file": "01-02-PLAN.md",
+          "hasSummary": false,
+          "id": "01-02",
+          "objective": "Implement T-02 from the frozen synthetic milestone.",
+          "plannedFiles": [
+            "src/cli.js",
+            "test/cli.test.js"
+          ],
+          "scope": "complete",
+          "superseded": false,
+          "tasks": [
+            {
+              "acceptanceCriteria": [
+                "validator-reused",
+                "valid-exits-zero",
+                "blank-exits-two-with-stderr"
+              ],
+              "agreement": "unknown",
+              "changedFiles": null,
+              "done": "All frozen candidate checks and independent review pass on the exact revision.",
+              "index": 1,
+              "kind": "auto",
+              "name": "T-02",
+              "plannedFiles": [
+                "src/cli.js",
+                "test/cli.test.js"
+              ],
+              "provenance": "absent",
+              "status": "pending",
+              "type": "auto"
+            }
+          ],
+          "wave": 2
+        }
+      ],
+      "roadmap_acceptance": {
+        "authoritative": false,
+        "checkbox": false
+      },
+      "scope": "complete",
+      "summary_count": 0,
+      "uat": {
+        "scope": "complete",
+        "unresolved": []
+      },
+      "verification": {
+        "next_action": "No verification report found \u2014 the verify step never completed. Running execute-phase is safe here: it resumes at the verification gates and does not re-run plans that already have a SUMMARY.md (see #2868).",
+        "route": "execute-phase",
+        "status": "missing"
+      }
+    }
+  ],
+  "progress": {
+    "accepted_phases": {
+      "completed": 0,
+      "percent": null,
+      "scope": "unscoped",
+      "total": 1
+    },
+    "completed_plans": {
+      "completed": 0,
+      "percent": null,
+      "scope": "unscoped",
+      "total": 2
+    }
+  },
+  "requirements": [
+    {
+      "complete": false,
+      "diagnostics": [],
+      "id": "CLI-01",
+      "mappedPhases": [
+        "1"
+      ],
+      "scope": "complete",
+      "text": "Preserve nonblank names; reject ECMAScript whitespace-only names."
+    },
+    {
+      "complete": false,
+      "diagnostics": [],
+      "id": "CLI-02",
+      "mappedPhases": [
+        "1"
+      ],
+      "scope": "complete",
+      "text": "Reuse the validator; greet on stdout or exit 2 with an error on stderr."
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,1020 @@
+{
+  "base_commit": "f71afc2",
+  "classification": "measured GSD planning export and fixture-only import conformance; product coordinator/executor qualification remains open",
+  "conformance_sample": {
+    "path": "tests/fixtures/gsd-schema-1.json",
+    "sha256": "3568a79095dd2868053f389295e11b57c45f18af79f5c74ace509f5ec9f9aa92",
+    "source_snapshot_sha256": "5fc3b148578fc357606e7744e12e692d914eb0b9354f99b60e21264bc8685df3",
+    "transform": "parsed JSON; generated_from paths replaced by synthetic placeholders; sorted/indented UTF-8/LF; all other semantic fields match"
+  },
+  "controls": {
+    "artifacts": {
+      "cycle/query/context.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cycle/query/context.stdout": {
+        "bytes": 884,
+        "sha256": "669fa9fe3019a5b9b8d936cc576d74e13dd553dece484be66b66ec7021983cf9"
+      },
+      "cycle/query/git-status-before.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cycle/query/identity.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cycle/query/identity.stdout": {
+        "bytes": 55,
+        "sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+      },
+      "cycle/query/index.stderr": {
+        "bytes": 78,
+        "sha256": "ef1f5108b76b4adde714683f03d6862105cb101b895ccb387fb439aa95078f79"
+      },
+      "cycle/query/index.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cycle/query/inspect.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cycle/query/inspect.stdout": {
+        "bytes": 5467,
+        "sha256": "0524e934e190f86fe81fa16be0838a5cd8fecd725bbd471d6d61e53be5eda145"
+      },
+      "cycle/query/planning-after.json": {
+        "bytes": 3718,
+        "sha256": "7ead43b561248bed74fe8e5d1712314cad651ebf678c097fb3ca9a8aa8b58118"
+      },
+      "cycle/query/planning-before.json": {
+        "bytes": 3718,
+        "sha256": "7ead43b561248bed74fe8e5d1712314cad651ebf678c097fb3ca9a8aa8b58118"
+      },
+      "cycle/query/query-observations.json": {
+        "bytes": 946,
+        "sha256": "07130c74f6fc9fc876ffe8e81cb10ccf012bf18bc5455ba86e9cbab6fae433be"
+      },
+      "dropped-edge/query/context.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "dropped-edge/query/context.stdout": {
+        "bytes": 919,
+        "sha256": "3bc23b295df03af364d92c17ed84dec340cf1de1d5610e7fcd520969fd6da7b5"
+      },
+      "dropped-edge/query/git-status-after.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "dropped-edge/query/git-status-before.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "dropped-edge/query/identity.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "dropped-edge/query/identity.stdout": {
+        "bytes": 55,
+        "sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+      },
+      "dropped-edge/query/index.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "dropped-edge/query/index.stdout": {
+        "bytes": 1292,
+        "sha256": "b91a8b2adfa99b8bd9d743d9da9b90280c844af5a828a481766481e48677f0d6"
+      },
+      "dropped-edge/query/inspect-repeat.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "dropped-edge/query/inspect-repeat.stdout": {
+        "bytes": 5419,
+        "sha256": "223e8bf430e27af56f137578db93bfe41646fc3f35e363de1776c5dbe1991115"
+      },
+      "dropped-edge/query/inspect.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "dropped-edge/query/inspect.stdout": {
+        "bytes": 5419,
+        "sha256": "223e8bf430e27af56f137578db93bfe41646fc3f35e363de1776c5dbe1991115"
+      },
+      "dropped-edge/query/planning-after.json": {
+        "bytes": 3718,
+        "sha256": "652f2ec05766e7affa4b99698e0a4bfa1588b002b1a7ee344404740e11015ca8"
+      },
+      "dropped-edge/query/planning-before.json": {
+        "bytes": 3718,
+        "sha256": "652f2ec05766e7affa4b99698e0a4bfa1588b002b1a7ee344404740e11015ca8"
+      },
+      "dropped-edge/query/query-observations.json": {
+        "bytes": 1190,
+        "sha256": "f351ba71da8f72429285ee517bfc852deb00f0d9036a5887220faa1c5a0e70a0"
+      },
+      "dropped-edge/query/result.json": {
+        "bytes": 2557,
+        "sha256": "6de35444c3096a61bb720117ec5f353ca4b2c8d807af92b8b2d146bfbe473b51"
+      },
+      "malformed-plan/query/context.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "malformed-plan/query/context.stdout": {
+        "bytes": 929,
+        "sha256": "909d26cc132a6d1fea7ce0ce50b1969e70005701aead00ae21d8e6f7ad89bed6"
+      },
+      "malformed-plan/query/git-status-after.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "malformed-plan/query/git-status-before.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "malformed-plan/query/identity.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "malformed-plan/query/identity.stdout": {
+        "bytes": 55,
+        "sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+      },
+      "malformed-plan/query/index.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "malformed-plan/query/index.stdout": {
+        "bytes": 1285,
+        "sha256": "fa76ed502f965f28121c81fe96a01d1f952f9ece92b7e8c0f52d71491421f58d"
+      },
+      "malformed-plan/query/inspect-repeat.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "malformed-plan/query/inspect-repeat.stdout": {
+        "bytes": 5454,
+        "sha256": "93d20b25bfc05ab73d8c7aa2a38b3902b777ca003d019677cd81606463aa5ac7"
+      },
+      "malformed-plan/query/inspect.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "malformed-plan/query/inspect.stdout": {
+        "bytes": 5454,
+        "sha256": "93d20b25bfc05ab73d8c7aa2a38b3902b777ca003d019677cd81606463aa5ac7"
+      },
+      "malformed-plan/query/planning-after.json": {
+        "bytes": 3718,
+        "sha256": "f4bb99a4a104135c77eaaedb70a1ba208f50f53dbb6f98332a30b3ee2842aad5"
+      },
+      "malformed-plan/query/planning-before.json": {
+        "bytes": 3718,
+        "sha256": "f4bb99a4a104135c77eaaedb70a1ba208f50f53dbb6f98332a30b3ee2842aad5"
+      },
+      "malformed-plan/query/query-observations.json": {
+        "bytes": 1190,
+        "sha256": "0af634177a6c62b442304917b8317cf819d155b94e9a1a20585d67a0c1c4a95f"
+      },
+      "malformed-plan/query/result.json": {
+        "bytes": 2557,
+        "sha256": "306fdb95dc2dc14e24948a4c98c4ac72c22840f5c5be9e797858c76e85a74b85"
+      },
+      "missing-target/query/context.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "missing-target/query/context.stdout": {
+        "bytes": 929,
+        "sha256": "9395fe78049fac93a9a3bae950ea1241af2e6d84c7b1e7ce3cf9beddb5ff8ce2"
+      },
+      "missing-target/query/git-status-after.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "missing-target/query/git-status-before.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "missing-target/query/identity.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "missing-target/query/identity.stdout": {
+        "bytes": 55,
+        "sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+      },
+      "missing-target/query/index.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "missing-target/query/index.stdout": {
+        "bytes": 1446,
+        "sha256": "cfa8bc45241be5944e0c35b6a58a0aad5dffab51acd8cb292caa9a0bbab099bb"
+      },
+      "missing-target/query/inspect-repeat.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "missing-target/query/inspect-repeat.stdout": {
+        "bytes": 5454,
+        "sha256": "b976e5e370e23fff9df6346aa31c6b94699fb347e83b0c7d4d8674cfa0ba5762"
+      },
+      "missing-target/query/inspect.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "missing-target/query/inspect.stdout": {
+        "bytes": 5454,
+        "sha256": "b976e5e370e23fff9df6346aa31c6b94699fb347e83b0c7d4d8674cfa0ba5762"
+      },
+      "missing-target/query/planning-after.json": {
+        "bytes": 3718,
+        "sha256": "6b6e9e50683ed5663e2745393b38b03dab799673a2a21efc4988843a876f1d67"
+      },
+      "missing-target/query/planning-before.json": {
+        "bytes": 3718,
+        "sha256": "6b6e9e50683ed5663e2745393b38b03dab799673a2a21efc4988843a876f1d67"
+      },
+      "missing-target/query/query-observations.json": {
+        "bytes": 1190,
+        "sha256": "af5f73ab18dccfb56aad9b88b32b999c2ad4201053f452925f3b840d00d96312"
+      },
+      "missing-target/query/result.json": {
+        "bytes": 2557,
+        "sha256": "940c48f146cca1d762552db2fbf134030991c9365faa962275e576c1f3eb923d"
+      },
+      "positive/context.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "positive/context.stdout": {
+        "bytes": 864,
+        "sha256": "ed49d6dd00e09a563a92f307299f6c8f06e1802797ef794c8b0ae0ceb2386c68"
+      },
+      "positive/git-status-after.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "positive/git-status-before.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "positive/identity.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "positive/identity.stdout": {
+        "bytes": 55,
+        "sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+      },
+      "positive/index.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "positive/index.stdout": {
+        "bytes": 1285,
+        "sha256": "fa76ed502f965f28121c81fe96a01d1f952f9ece92b7e8c0f52d71491421f58d"
+      },
+      "positive/inspect-repeat.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "positive/inspect-repeat.stdout": {
+        "bytes": 5430,
+        "sha256": "e90f994372c582abe2957a200324463a6e1734d40c38ab7b319c4f9d5eb0b6d7"
+      },
+      "positive/inspect.stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "positive/inspect.stdout": {
+        "bytes": 5430,
+        "sha256": "e90f994372c582abe2957a200324463a6e1734d40c38ab7b319c4f9d5eb0b6d7"
+      },
+      "positive/normalized-plan.json": {
+        "bytes": 3390,
+        "sha256": "ff6df7efdb30fdc31111217e488fcb59be1f2a80ef16487df707ebe1733ef8d5"
+      },
+      "positive/planning-after.json": {
+        "bytes": 3718,
+        "sha256": "3a8d0161224eeff780762e0f6b7f800af4e2d2a3793ea64a7c64a3394a1be04e"
+      },
+      "positive/planning-before.json": {
+        "bytes": 3718,
+        "sha256": "3a8d0161224eeff780762e0f6b7f800af4e2d2a3793ea64a7c64a3394a1be04e"
+      },
+      "positive/query-observations.json": {
+        "bytes": 1190,
+        "sha256": "fb9ca60f01f39823a9fa5ff10a9fe530a14f92a48c7081369f13262c09127b22"
+      },
+      "positive/result.json": {
+        "bytes": 2557,
+        "sha256": "e1387ff67d589857f50368821d8f289308685e649591c3dd138efbeb59261cdc"
+      },
+      "result.json": {
+        "bytes": 2399,
+        "sha256": "71f550a7bc5a7c6cdc4ac6d45c35e1121c34113d943ebe83acc84aecc7400d5d"
+      },
+      "unsupported-schema.json": {
+        "bytes": 3583,
+        "sha256": "02ea888146c3bee311efd05b8f63ef87600dc382032dc6521efe92de11573205"
+      }
+    },
+    "initial_conservative_classification": {
+      "outcome": "cycle left inconclusive until explicit native index refusal and unchanged-input evidence were reviewed; raw first result retained",
+      "path": ".local/validation/gsd-import-cases-01/result.json",
+      "sha256": "edf231a0c04aa8bcef72a170162637af11ae1265beb69f22f0cf210abe3a0ce4"
+    },
+    "path": ".local/validation/gsd-import-cases-02",
+    "result": {
+      "baseline_manifest_sha256": "75119bfdc864b21223807d2fb8e566e04e2ec0d0e831f24ad3eca87e68cb4a25",
+      "cases": [
+        {
+          "bundle_sha256": "20477a3c545d97d78a41882e2ac5103da71670bbb91742e55763d4cc3d279353",
+          "case": "missing-target",
+          "classification": "measured native export; importer refused",
+          "eligible": [],
+          "error": "missing dependency target",
+          "planning_unchanged": true,
+          "snapshot_sha256": "b976e5e370e23fff9df6346aa31c6b94699fb347e83b0c7d4d8674cfa0ba5762"
+        },
+        {
+          "bundle_sha256": "95a1329308129a76b1e44589e3d76ded52b4de3f4a19ee82b9915805e49594bf",
+          "case": "cycle",
+          "classification": "measured native index refusal; importer refused",
+          "eligible": [],
+          "error": "pinned GSD query failed; inspect retained evidence",
+          "importer_error": "dependency cycle",
+          "native_error": "Error: depends_on cycle detected in phase 01 â€” cycle involves: 01-01, 01-02",
+          "planning_unchanged": true,
+          "snapshot_sha256": "0524e934e190f86fe81fa16be0838a5cd8fecd725bbd471d6d61e53be5eda145"
+        },
+        {
+          "bundle_sha256": "6098931248ee7379af3b2fc55fda9af5bf7d28b7c4a347810661b691d153e31e",
+          "case": "dropped-edge",
+          "classification": "measured native export; importer refused",
+          "eligible": [],
+          "error": "approved fixture dependency changed",
+          "planning_unchanged": true,
+          "snapshot_sha256": "223e8bf430e27af56f137578db93bfe41646fc3f35e363de1776c5dbe1991115"
+        },
+        {
+          "bundle_sha256": "18d05c98598b14c9c8c556dd4071de77cb8c1adffe59f596328454c75d637c83",
+          "case": "malformed-plan",
+          "classification": "measured native export; importer refused",
+          "eligible": [],
+          "error": "unsupported raw fixture task shape",
+          "planning_unchanged": true,
+          "snapshot_sha256": "93d20b25bfc05ab73d8c7aa2a38b3902b777ca003d019677cd81606463aa5ac7"
+        },
+        {
+          "case": "unsupported-schema",
+          "classification": "consumer-only schema mutation refused",
+          "eligible": [],
+          "error": "unsupported planning snapshot schema",
+          "snapshot_sha256": "02ea888146c3bee311efd05b8f63ef87600dc382032dc6521efe92de11573205"
+        }
+      ],
+      "classification": "local planning import controls; no task execution or product scheduler qualification",
+      "pass": true,
+      "positive_readiness": {
+        "after_T01_acceptance": [
+          "T-02"
+        ],
+        "initial": [
+          "T-01"
+        ]
+      },
+      "positive_snapshot_sha256": "e90f994372c582abe2957a200324463a6e1734d40c38ab7b319c4f9d5eb0b6d7",
+      "schema_version": 1,
+      "source_sha256": {
+        "gsd_cases.py": "bb4c5f1472c4db856ec92a1f0ebea0a0637eaa167e9c4f727b7f0bd0aa6b5f3c",
+        "gsd_export.py": "c1106b051d23210bd2a5da7c3938a6ad42fa20d33daccf66d0a7bd565cb1e7fb",
+        "gsd_import.py": "29fede32cee7489b9992531c29d7c575300daa6190642e4920e1cae56db2e92a"
+      }
+    }
+  },
+  "export_runs": [
+    {
+      "artifacts": {
+        "context.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "context.stdout": {
+          "bytes": 784,
+          "sha256": "35bbfae48fe79a2cb5668d26f7da3161321703e9b2cbfec821ed89365602de7a"
+        },
+        "git-status-after.stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "git-status-before.stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "identity.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "identity.stdout": {
+          "bytes": 55,
+          "sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+        },
+        "index.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "index.stdout": {
+          "bytes": 1309,
+          "sha256": "dc3a039c1668343fbe763683ad463b0c4671befe019ac855f5c504c22506eed9"
+        },
+        "inspect-repeat.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "inspect-repeat.stdout": {
+          "bytes": 5677,
+          "sha256": "8b137f879b0a5ed514a10902086c1510db1b9d2c5e82a0e2c9a951e3b81b4e74"
+        },
+        "inspect.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "inspect.stdout": {
+          "bytes": 5677,
+          "sha256": "8b137f879b0a5ed514a10902086c1510db1b9d2c5e82a0e2c9a951e3b81b4e74"
+        },
+        "planning-after.json": {
+          "bytes": 3718,
+          "sha256": "60692bd82411445f8bc687f9390f7d4e23fa6130e3ff64f2ce978bf2147a20cd"
+        },
+        "planning-before.json": {
+          "bytes": 3718,
+          "sha256": "60692bd82411445f8bc687f9390f7d4e23fa6130e3ff64f2ce978bf2147a20cd"
+        },
+        "query-observations.json": {
+          "bytes": 1190,
+          "sha256": "b4ca389e3a1a21ce4056cdddcb676024d7e36f69b98c5aba0b9b8c62cfd82e0d"
+        },
+        "result.json": {
+          "bytes": 2295,
+          "sha256": "d0da857de348550eb26205c614a6bbbb8abf2861e76c59779dd6e71268184b6c"
+        }
+      },
+      "path": ".local/validation/gsd-export-01",
+      "result": {
+        "approval": "Approved isolated pinned GSD preparation and read-only synthetic planning queries, 2026-11-21",
+        "bundle_sha256": "08cbd45c6f48c930300f5132bbc5af24d63cf0f55d3c24210095607ede57a405",
+        "classification": "measured pinned GSD schema-1 export; import fidelity not yet qualified",
+        "git_metadata_unchanged": true,
+        "gsd_commit": "357508df233ccca0dcf4332b385d6bee9b113da9",
+        "gsd_version": "1.21.0",
+        "node_path": "C:\\Program Files\\nodejs\\node.EXE",
+        "node_sha256": "f5109dc868ec38703ad8f305e0aceece717cb60d4889873f434017af4e96cccb",
+        "package_receipt_sha256": "3eae91efd8a2a4ba9afcf3dea0f09db860e40ce8dc6841fe477075f2fe2f1ee8",
+        "planning_commit": {
+          "message": "Frozen M-CLI1 planning input",
+          "oid": "b8fb03b30bc62794ced6c0b6f986e4ede971aa6f",
+          "parents": [],
+          "timestamp": 1767225600,
+          "tree": "7e50aa5107f24273e21faa37f7e2a870b17ee463"
+        },
+        "planning_files_unchanged": true,
+        "planning_git": "git version 2.56.1.windows.1",
+        "planning_node": "v26.13.1",
+        "queries": [
+          {
+            "arguments": [
+              "runtime-identity",
+              "--raw"
+            ],
+            "exit": 0,
+            "name": "identity",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+          },
+          {
+            "arguments": [
+              "query",
+              "project-context"
+            ],
+            "exit": 0,
+            "name": "context",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "35bbfae48fe79a2cb5668d26f7da3161321703e9b2cbfec821ed89365602de7a"
+          },
+          {
+            "arguments": [
+              "query",
+              "planning",
+              "inspect"
+            ],
+            "exit": 0,
+            "name": "inspect",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "8b137f879b0a5ed514a10902086c1510db1b9d2c5e82a0e2c9a951e3b81b4e74"
+          },
+          {
+            "arguments": [
+              "query",
+              "phase-plan-index",
+              "1"
+            ],
+            "exit": 0,
+            "name": "index",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "dc3a039c1668343fbe763683ad463b0c4671befe019ac855f5c504c22506eed9"
+          },
+          {
+            "arguments": [
+              "query",
+              "planning",
+              "inspect"
+            ],
+            "exit": 0,
+            "name": "inspect-repeat",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "8b137f879b0a5ed514a10902086c1510db1b9d2c5e82a0e2c9a951e3b81b4e74"
+          }
+        ],
+        "repeat_bytes_equal": true,
+        "schema_version": 1,
+        "snapshot_schema": 1,
+        "snapshot_sha256": "8b137f879b0a5ed514a10902086c1510db1b9d2c5e82a0e2c9a951e3b81b4e74",
+        "tool_package_unchanged": true
+      }
+    },
+    {
+      "artifacts": {
+        "context.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "context.stdout": {
+          "bytes": 784,
+          "sha256": "8ff15b20818d77224af5d02fc8f7ecd07d4c9fab430f313086d83d21b25da77d"
+        },
+        "git-status-after.stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "git-status-before.stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "identity.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "identity.stdout": {
+          "bytes": 55,
+          "sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+        },
+        "index.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "index.stdout": {
+          "bytes": 1285,
+          "sha256": "fa76ed502f965f28121c81fe96a01d1f952f9ece92b7e8c0f52d71491421f58d"
+        },
+        "inspect-repeat.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "inspect-repeat.stdout": {
+          "bytes": 5369,
+          "sha256": "d7da91a73dbec562842607cce8f75f09ad91b973bc5982786d336962b23d21fb"
+        },
+        "inspect.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "inspect.stdout": {
+          "bytes": 5369,
+          "sha256": "d7da91a73dbec562842607cce8f75f09ad91b973bc5982786d336962b23d21fb"
+        },
+        "planning-after.json": {
+          "bytes": 3718,
+          "sha256": "a6fd13e1b8a3a101fd9c020589e74b4dfd1d9eaede3ed8d07273ff56b0efde3f"
+        },
+        "planning-before.json": {
+          "bytes": 3718,
+          "sha256": "a6fd13e1b8a3a101fd9c020589e74b4dfd1d9eaede3ed8d07273ff56b0efde3f"
+        },
+        "query-observations.json": {
+          "bytes": 1190,
+          "sha256": "db063a020f8dbe7deb72fe34855bc2ab1ab998e585c1525802a5276c2381f60c"
+        },
+        "result.json": {
+          "bytes": 2287,
+          "sha256": "f2aa081b351e1020ec50d2f010d8531530f86d6ac735530e550baf8658736fa6"
+        }
+      },
+      "path": ".local/validation/gsd-export-02",
+      "result": {
+        "approval": "Approved read-only GSD queries over corrected synthetic planning revision, 2026-11-21",
+        "bundle_sha256": "5685ce0c19518350306e00659f68d4df73d596b37083436f1d5795f29ff829df",
+        "classification": "measured pinned GSD schema-1 export; import fidelity not yet qualified",
+        "git_metadata_unchanged": true,
+        "gsd_commit": "357508df233ccca0dcf4332b385d6bee9b113da9",
+        "gsd_version": "1.21.0",
+        "node_path": "C:\\Program Files\\nodejs\\node.EXE",
+        "node_sha256": "f5109dc868ec38703ad8f305e0aceece717cb60d4889873f434017af4e96cccb",
+        "package_receipt_sha256": "3eae91efd8a2a4ba9afcf3dea0f09db860e40ce8dc6841fe477075f2fe2f1ee8",
+        "planning_commit": {
+          "message": "Frozen M-CLI1 planning input",
+          "oid": "73dc1df5d7c59567e0391b80145175abdfc6fcbb",
+          "parents": [],
+          "timestamp": 1767225600,
+          "tree": "e23c0eb5f12c5151835516636b0f65554e0b1c4f"
+        },
+        "planning_files_unchanged": true,
+        "planning_git": "git version 2.56.1.windows.1",
+        "planning_node": "v26.13.1",
+        "queries": [
+          {
+            "arguments": [
+              "runtime-identity",
+              "--raw"
+            ],
+            "exit": 0,
+            "name": "identity",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+          },
+          {
+            "arguments": [
+              "query",
+              "project-context"
+            ],
+            "exit": 0,
+            "name": "context",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "8ff15b20818d77224af5d02fc8f7ecd07d4c9fab430f313086d83d21b25da77d"
+          },
+          {
+            "arguments": [
+              "query",
+              "planning",
+              "inspect"
+            ],
+            "exit": 0,
+            "name": "inspect",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "d7da91a73dbec562842607cce8f75f09ad91b973bc5982786d336962b23d21fb"
+          },
+          {
+            "arguments": [
+              "query",
+              "phase-plan-index",
+              "1"
+            ],
+            "exit": 0,
+            "name": "index",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "fa76ed502f965f28121c81fe96a01d1f952f9ece92b7e8c0f52d71491421f58d"
+          },
+          {
+            "arguments": [
+              "query",
+              "planning",
+              "inspect"
+            ],
+            "exit": 0,
+            "name": "inspect-repeat",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "d7da91a73dbec562842607cce8f75f09ad91b973bc5982786d336962b23d21fb"
+          }
+        ],
+        "repeat_bytes_equal": true,
+        "schema_version": 1,
+        "snapshot_schema": 1,
+        "snapshot_sha256": "d7da91a73dbec562842607cce8f75f09ad91b973bc5982786d336962b23d21fb",
+        "tool_package_unchanged": true
+      }
+    },
+    {
+      "artifacts": {
+        "context.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "context.stdout": {
+          "bytes": 784,
+          "sha256": "adbf207b843fa4abd968eb7fe3286a7b613fdd4cd731aa0b276e8fef25da26f4"
+        },
+        "current-analysis.json": {
+          "bytes": 4318,
+          "sha256": "b1962aef3d3a7703cf3331434ebb44766e3344657b4f2a9b1a9b9baaf72920da"
+        },
+        "git-status-after.stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "git-status-before.stdout": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "identity.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "identity.stdout": {
+          "bytes": 55,
+          "sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+        },
+        "index.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "index.stdout": {
+          "bytes": 1285,
+          "sha256": "fa76ed502f965f28121c81fe96a01d1f952f9ece92b7e8c0f52d71491421f58d"
+        },
+        "inspect-repeat.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "inspect-repeat.stdout": {
+          "bytes": 5400,
+          "sha256": "5fc3b148578fc357606e7744e12e692d914eb0b9354f99b60e21264bc8685df3"
+        },
+        "inspect.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "inspect.stdout": {
+          "bytes": 5400,
+          "sha256": "5fc3b148578fc357606e7744e12e692d914eb0b9354f99b60e21264bc8685df3"
+        },
+        "normalized-plan.json": {
+          "bytes": 3390,
+          "sha256": "16420d00ab4469d30982488e1a86f849c089eb60b9e2166bde43778d10f3a100"
+        },
+        "planning-after.json": {
+          "bytes": 3718,
+          "sha256": "3a8d0161224eeff780762e0f6b7f800af4e2d2a3793ea64a7c64a3394a1be04e"
+        },
+        "planning-before.json": {
+          "bytes": 3718,
+          "sha256": "3a8d0161224eeff780762e0f6b7f800af4e2d2a3793ea64a7c64a3394a1be04e"
+        },
+        "query-observations.json": {
+          "bytes": 1190,
+          "sha256": "92f1e21a689d9716f677e9012e2f90ef3cf72fa19a5d7dd8954b85db390f9071"
+        },
+        "result.json": {
+          "bytes": 2299,
+          "sha256": "eab87c2d5c0a421e49f5a19142553c8b5849281ab7b9efea97bb2c8a58a256c8"
+        }
+      },
+      "path": ".local/validation/gsd-export-03",
+      "result": {
+        "approval": "Approved read-only GSD queries over synthetic planning with explicit phase goal prose, 2026-11-21",
+        "bundle_sha256": "75119bfdc864b21223807d2fb8e566e04e2ec0d0e831f24ad3eca87e68cb4a25",
+        "classification": "measured pinned GSD schema-1 export; import fidelity not yet qualified",
+        "git_metadata_unchanged": true,
+        "gsd_commit": "357508df233ccca0dcf4332b385d6bee9b113da9",
+        "gsd_version": "1.21.0",
+        "node_path": "C:\\Program Files\\nodejs\\node.EXE",
+        "node_sha256": "f5109dc868ec38703ad8f305e0aceece717cb60d4889873f434017af4e96cccb",
+        "package_receipt_sha256": "3eae91efd8a2a4ba9afcf3dea0f09db860e40ce8dc6841fe477075f2fe2f1ee8",
+        "planning_commit": {
+          "message": "Frozen M-CLI1 planning input",
+          "oid": "10474b5cdbc5bdbee2b7af5c71153c0432fc3c6a",
+          "parents": [],
+          "timestamp": 1767225600,
+          "tree": "1fbe4509118688284268dcb1c00e7c448821e696"
+        },
+        "planning_files_unchanged": true,
+        "planning_git": "git version 2.56.1.windows.1",
+        "planning_node": "v26.13.1",
+        "queries": [
+          {
+            "arguments": [
+              "runtime-identity",
+              "--raw"
+            ],
+            "exit": 0,
+            "name": "identity",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "17e2c0507cd3d126f7e562c70c704931577c4e6c87a476da326d1fa6db92aaa1"
+          },
+          {
+            "arguments": [
+              "query",
+              "project-context"
+            ],
+            "exit": 0,
+            "name": "context",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "adbf207b843fa4abd968eb7fe3286a7b613fdd4cd731aa0b276e8fef25da26f4"
+          },
+          {
+            "arguments": [
+              "query",
+              "planning",
+              "inspect"
+            ],
+            "exit": 0,
+            "name": "inspect",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "5fc3b148578fc357606e7744e12e692d914eb0b9354f99b60e21264bc8685df3"
+          },
+          {
+            "arguments": [
+              "query",
+              "phase-plan-index",
+              "1"
+            ],
+            "exit": 0,
+            "name": "index",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "fa76ed502f965f28121c81fe96a01d1f952f9ece92b7e8c0f52d71491421f58d"
+          },
+          {
+            "arguments": [
+              "query",
+              "planning",
+              "inspect"
+            ],
+            "exit": 0,
+            "name": "inspect-repeat",
+            "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stdout_sha256": "5fc3b148578fc357606e7744e12e692d914eb0b9354f99b60e21264bc8685df3"
+          }
+        ],
+        "repeat_bytes_equal": true,
+        "schema_version": 1,
+        "snapshot_schema": 1,
+        "snapshot_sha256": "5fc3b148578fc357606e7744e12e692d914eb0b9354f99b60e21264bc8685df3",
+        "tool_package_unchanged": true
+      }
+    }
+  ],
+  "limitations": [
+    "M-CLI1-only probe, not a production importer or scheduler",
+    "synthetic acceptance IDs do not qualify real acceptance-ledger authority",
+    "before/after byte inventories are not syscall-level transient-write tracing",
+    "repeated exports are byte-identical within the same input root; generated_from contains host paths",
+    "native completion, runnable lists and road-map checkboxes never supply coordinator acceptance",
+    "no VM, SDK executor, gateway or paid model experiment performed by this stage"
+  ],
+  "next_check": "Attach the selected native snapshot and normalized probe to a fresh frozen review bundle; complete pinned runtime image, external network, supervisor and observer prerequisites before M1-12.",
+  "observed_at_utc": "2026-11-21T10:28:20.895144+00:00",
+  "package": {
+    "compiled_runtime_rebuilt": false,
+    "extracted": {
+      "bytes": 20945147,
+      "files": 1282
+    },
+    "git_head": "357508df233ccca0dcf4332b385d6bee9b113da9",
+    "metadata_sha256": "a3f206ed2a417a01b97e3956174d22ef3d2670afb77bc74914f141c4e2a5ff56",
+    "name": "@opengsd/gsd-core",
+    "preparation_receipt_sha256": "3eae91efd8a2a4ba9afcf3dea0f09db860e40ce8dc6841fe477075f2fe2f1ee8",
+    "registry_signatures_verified": false,
+    "source_identity": {
+      "gsd-core/bin/ensure-runtime-build.cjs": {
+        "git_blob": "6d9fb9727d09a2f8c259371338f0001b41ef50ce",
+        "source_blob_matches": true
+      },
+      "gsd-core/bin/gsd-tools.cjs": {
+        "git_blob": "f29caa428fbcdc5b2e2ebb884ee08b80b60840ef",
+        "source_blob_matches": true
+      },
+      "package.json": {
+        "git_blob": "9e5d89c4082353756a4d7ce0a7734052c78f7724",
+        "source_blob_matches": true
+      }
+    },
+    "tarball_integrity": "sha512-qccKXCfMny+UMYO7rDZWz83oy6JWd1D3QR/2WUbcjd7N0WZBhr9/+hsXQ5nVaf423W/GSspMjSqT+ZsQNeCLUQ==",
+    "tarball_sha256": "e1bfe32b2da10861cc8829bcce62b323ca87248707fb5547fd396b19ff49893a",
+    "version": "1.21.0"
+  },
+  "planning_tools": {
+    "executor_git_pin": "2.51.0",
+    "executor_node_pin": "22.16.0",
+    "executor_pins_changed": false,
+    "git": "2.56.1.windows.1",
+    "gsd_node_requirement": ">=24.0.0",
+    "node": "26.13.1",
+    "preparation_python": "3.13.17"
+  },
+  "schema_version": 1,
+  "selected_export": {
+    "after_T01_acceptance": [
+      "T-02"
+    ],
+    "initial_eligible": [
+      "T-01"
+    ],
+    "normalized": {
+      "classification": "fixture-only translation; native completion/status never supplies coordinator acceptance",
+      "context_sha256": "3e08afaa5fb0287f6fb5a3477a1748f0094bda4b9665b5c40632b928f3faf99a",
+      "format": "mcli1-gsd-import-probe-v1",
+      "milestone": "M-CLI1",
+      "native_phase_verification_observation": {
+        "next_action": "No verification report found — the verify step never completed. Running execute-phase is safe here: it resumes at the verification gates and does not re-run plans that already have a SUMMARY.md (see #2868).",
+        "route": "execute-phase",
+        "status": "missing"
+      },
+      "native_progress_observation": {
+        "accepted_phases": {
+          "completed": 0,
+          "percent": null,
+          "scope": "unscoped",
+          "total": 1
+        },
+        "completed_plans": {
+          "completed": 0,
+          "percent": null,
+          "scope": "unscoped",
+          "total": 2
+        }
+      },
+      "phase_goal": "Validate names and provide a CLI.",
+      "raw_plan_sha256": {
+        ".planning/phases/01-validate-cli/01-01-PLAN.md": "87c0d15f905df82fa8d607c3215cd8b9830e78e622a53fe6687084051bccff2c",
+        ".planning/phases/01-validate-cli/01-02-PLAN.md": "82329e3c3146d52285e7b1215d41e447bd6670bffa64694fa63bf277fa5653ed"
+      },
+      "snapshot_sha256": "5fc3b148578fc357606e7744e12e692d914eb0b9354f99b60e21264bc8685df3",
+      "source_schema": 1,
+      "tasks": [
+        {
+          "acceptance_criteria": [
+            "valid-names-preserved",
+            "blank-names-rejected"
+          ],
+          "action": "Add src/validate.js and test/validate.test.js only. Export validateName(input) for string inputs. Return nonblank names unchanged. Throw TypeError with message Name must not be blank for empty and ECMAScript whitespace-only strings, including tabs and mixed whitespace. Use a stateless check. Use node:test and node:assert/strict for Ada, padded Ada, empty, spaces and one tab. Run node --test test/validate.test.js. Report the two paths and test exit. Use the assigned source and preloaded tools. Leave Git, dependencies and network configuration alone.",
+          "depends_on": [],
+          "done": "All frozen candidate checks and independent review pass on the exact revision.",
+          "id": "T-01",
+          "native_status_observation": "pending",
+          "objective": "Implement T-01 from the frozen synthetic milestone.",
+          "plan": "01-01",
+          "planned_files": [
+            "src/validate.js",
+            "test/validate.test.js"
+          ],
+          "source_plan_sha256": "87c0d15f905df82fa8d607c3215cd8b9830e78e622a53fe6687084051bccff2c",
+          "verification": "node --test test/validate.test.js"
+        },
+        {
+          "acceptance_criteria": [
+            "validator-reused",
+            "valid-exits-zero",
+            "blank-exits-two-with-stderr"
+          ],
+          "action": "Add src/cli.js and test/cli.test.js only. Import validateName from ./validate.js. Validate argv[2], defaulting missing input to the empty string. For success print Hello, <name>! followed by LF to stdout and exit 0. For a validation error print its message followed by LF to stderr and exit 2. Use node:test, node:assert/strict and node:child_process for argv cases Ada, padded Ada, missing, empty, spaces and one tab. Assert exit, stdout and stderr. Run node --test test/cli.test.js. Report the two paths and test exit. Use the assigned source and preloaded tools. Leave Git, dependencies and network configuration alone.",
+          "depends_on": [
+            "T-01"
+          ],
+          "done": "All frozen candidate checks and independent review pass on the exact revision.",
+          "id": "T-02",
+          "native_status_observation": "pending",
+          "objective": "Implement T-02 from the frozen synthetic milestone.",
+          "plan": "01-02",
+          "planned_files": [
+            "src/cli.js",
+            "test/cli.test.js"
+          ],
+          "source_plan_sha256": "82329e3c3146d52285e7b1215d41e447bd6670bffa64694fa63bf277fa5653ed",
+          "verification": "node --test test/cli.test.js"
+        }
+      ]
+    },
+    "path": ".local/validation/gsd-export-03",
+    "snapshot_sha256": "5fc3b148578fc357606e7744e12e692d914eb0b9354f99b60e21264bc8685df3",
+    "unknown_percentages_preserved": true
+  },
+  "source_provenance": {
+    "case_execution_snapshot": ".local/validation/gsd-import-cases-02/execution-sources",
+    "current_sha256": {
+      "__main__.py": "24595f2dfdfd2209b7f974047a12b7c9f8288070f21e16c41d5c127adc51204b",
+      "bundle.py": "faa73915f42b75879f06a4023b83dab59bcb69a954629d73709e652f0e553625",
+      "driver.py": "87a6da72e86999e497a1cbcb4caf93e659d7a80764a48456c46726ba4f55a5fb",
+      "fixture.py": "4a167ba617450ef541ee49f99dc21c2afd4c74b9f9c23a609645e5767d88bfb2",
+      "gsd_cases.py": "0113a80ea799ac2bdf2fd980c63da655688e4d272a60992bb883dd2c8b21acc1",
+      "gsd_export.py": "09ce9a7da99cf0742b16659fc7f48c3ab125967b45a150fa2f39795b42d55114",
+      "gsd_import.py": "8c07f366d429d4319cfd96b788c290cc784af52766233c5786ab9a48604833f0"
+    },
+    "execution_vs_current": "The selected raw export predates source-pin reporting; its unchanged execution sources were captured after the run. Case run 02 records core source hashes. Bundle attachment was added afterward; executed source copies remain separate. Final CLI UTF-8 handling was made explicit after the native measurements; captured execution sources remain separate.",
+    "initial_export_execution_snapshot": ".local/validation/gsd-execution-sources-01"
+  },
+  "verification": {
+    "passed": 69,
+    "ruff_check": "pass",
+    "ruff_format": "pass",
+    "skip_reason": "Windows symlink creation unavailable",
+    "skipped": 1,
+    "tests_run": 70
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "Git": "git version 2.56.1.windows.1",
+  "Python": "3.15.2",
+  "SQLite": "3.53.4",
+  "VM_mutations": 0,
+  "artifacts": [
+    {
+      "bytes": 9446,
+      "path": ".local/validation/product-integration-01/result.json",
+      "sha256": "da2963d937269b4037b8b89ac58532f50cfd6823607e2643c7b13c2fd8260cc3"
+    },
+    {
+      "bytes": 15019,
+      "path": ".local/validation/product-integration-01/unittest.log",
+      "sha256": "214298938dcf96ac3d289baeebd203263884c33510fe4604facbf0e20bce0e00"
+    },
+    {
+      "bytes": 39681,
+      "path": ".local/validation/product-integration-01/intake-smoke.json",
+      "sha256": "70d7f111c5a24aacf9d785662b8e74c08eb00c05372662cb4f96fb74dba12cea"
+    },
+    {
+      "bytes": 431,
+      "path": ".local/validation/product-integration-01/migration-cli.json",
+      "sha256": "d296829be6ebf418f4aae96aa3520a335daac211acb47a81257bb9b7b0f931b1"
+    },
+    {
+      "bytes": 5805,
+      "path": ".local/validation/product-integration-01/prior-document-resolutions.json",
+      "sha256": "151986cb3124295a7c912d6ddb8ea063dccc7de62143c360f1a8527ed648efcb"
+    },
+    {
+      "bytes": 12975,
+      "path": "docs/implementation/product-verification-evidence.json",
+      "sha256": "1d90210fab232b16dc5c8ae369d005fcedc879e47a6b2c3f5c3bc2dc887e5f51"
+    }
+  ],
+  "browser_qa": "not completed",
+  "candidate_admission": true,
+  "candidate_evidence_gate": true,
+  "checks": {
+    "format": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "19 files already formatted\n"
+    },
+    "ruff": {
+      "exit": 0,
+      "stderr": "",
+      "stdout": "All checks passed!\n"
+    },
+    "whitespace": {
+      "exit": 0,
+      "stderr": "warning: in the working copy of 'docs/status.md', CRLF will be replaced by LF the next time Git touches it\n",
+      "stdout": ""
+    }
+  },
+  "current_documents": [
+    {
+      "bytes": 1673,
+      "path": "AGENTS.md",
+      "sha256": "b19cdc51adc75a3a09569c86019cc887db513d55469b7e81b16ecdae9abc9c15"
+    },
+    {
+      "bytes": 6780,
+      "path": "README.md",
+      "sha256": "3c15eaaaeaefa384e074d1bd0cc7598575acfff97a39f97402aacaafbe5bfee9"
+    },
+    {
+      "bytes": 17956,
+      "path": "docs/HANDOFF.md",
+      "sha256": "9627cec25745aa7bf7edb226661f48e17c459a0f48a05182d97be5e90f9291fc"
+    },
+    {
+      "bytes": 16977,
+      "path": "docs/completion-audit.md",
+      "sha256": "f762a91a72491cc91e13ee52faa12fa248675c1a052da9fbcb7d2ec449f452ff"
+    },
+    {
+      "bytes": 7506,
+      "path": "docs/developer-experience-walkthrough.md",
+      "sha256": "9cb3d61142c782d0fd9008a48a5ac99866b96b2b8df304081f77d42206a9e04d"
+    },
+    {
+      "bytes": 4875,
+      "path": "docs/implementation/web-dependency-install-plan.md",
+      "sha256": "f3763be58a4ee4e52a4f75327caafa57970b78949314eca0b7db279dc52dc513"
+    },
+    {
+      "bytes": 5841,
+      "path": "docs/product-cli.md",
+      "sha256": "11970690938eb468c83eafa23fb73b5242e20a9e557d7189870c8ccdffffd1c8"
+    },
+    {
+      "bytes": 9025,
+      "path": "docs/product-delivery-plan.md",
+      "sha256": "3c3408cd753c29b328a99f1464cbd5cb79e62121b8eb795b74b0ee87ef19dcda"
+    },
+    {
+      "bytes": 5604,
+      "path": "docs/product-intake.md",
+      "sha256": "f47d84b94a73fbb912df503627e1658ef8a279996a820d36ce59998804bc74af"
+    },
+    {
+      "bytes": 6075,
+      "path": "docs/product-integration.md",
+      "sha256": "b2b9d03c49c347730d2a056a03c203d389b1f466d1b5b2e42360c1c1903b0428"
+    },
+    {
+      "bytes": 5557,
+      "path": "docs/product-source.md",
+      "sha256": "2d9bc26bd0e7be2c5bae57132414c1ce170dd6d5b789fc2c0df4b84404b5261e"
+    },
+    {
+      "bytes": 5508,
+      "path": "docs/product-verification.md",
+      "sha256": "084500155d1ed1ec2289460279f390d1c209d6d5b4e94a69ed98f1231303bd28"
+    },
+    {
+      "bytes": 4072,
+      "path": "docs/product-web.md",
+      "sha256": "604922ebb476a14913c1f0fa70a9f2627f9675010ac457f93cc07748e8de5e86"
+    },
+    {
+      "bytes": 84313,
+      "path": "docs/status.md",
+      "sha256": "7e5fb17c7bdebd9eec1869c5f1ad22a9da3b63e63001fd0df00c34807fa1fedd"
+    }
+  ],
+  "errors": 0,
+  "failures": 0,
+  "focused_terminal_sessions": [
+    98712,
+    98285
+  ],
+  "format": "product-integration-cohort-v1",
+  "full_product_complete": false,
+  "git_executable_sha256": "177bc8a9af84fa3a400c694c975fda731d048279c074e1a93947ce8b067ebb48",
+  "goal_status": "active",
+  "immutable_review_packet": true,
+  "integration_regression_gate": true,
+  "integration_staging": true,
+  "limits": [
+    "All check/review/regression outcomes are scripted development evidence",
+    "Private merge/CAS controls are not authorized application-head movement or promotion",
+    "Ordinary proposals require unchanged attempt input; diverged-head mapping and fresh distinct-I checks/review are not implemented",
+    "No live promotion/acceptance command or dependency release",
+    "Deployed runner/reviewer authentication and actual isolation remain unqualified",
+    "Old full research suite error and browser QA remain open"
+  ],
+  "live_promotion_implemented": false,
+  "live_task_handles": [],
+  "live_verification_eligible": false,
+  "native_stop_qualification": false,
+  "new_dependency_installs": 0,
+  "next_actions": [
+    "Prepare the Decision 0007 held-guard successor without modifying the actual ledger or starting a VM",
+    "Finish head-mapping/distinct-I verification, serialized promotion and acceptance/release recovery after the applicable live gates"
+  ],
+  "passed": 87,
+  "product_repository_commits": 0,
+  "provider_calls": 0,
+  "read_only_ref_reconciliation": true,
+  "real_held_journals_unchanged": {
+    ".local/validation/offline-guard-admissions.sqlite": "f1eac66681934fd294c73efeb580ebc102b64e6586a17a13bdd7a1bec488260a",
+    ".local/validation/offline-guard-run-ccc16a8440524bda84e57fdcd90055e7/owner/owner.sqlite": "24bab655c096ee1fa16b4f4bed2d04a76a167eee93de7e0fd21c54cefade0313"
+  },
+  "remote_writes": 0,
+  "schema": 4,
+  "skipped": 0,
+  "source_drift": [],
+  "sources": [
+    {
+      "bytes": 286,
+      "path": ".local/validation/product-integration-01/sources/coordinator/__init__.py",
+      "sha256": "d044c232fe90a5f2fbea02702e3475a5da14632835c7ae3aeaab37c5790d1015",
+      "workspace_source": "coordinator/__init__.py"
+    },
+    {
+      "bytes": 48,
+      "path": ".local/validation/product-integration-01/sources/coordinator/__main__.py",
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+      "workspace_source": "coordinator/__main__.py"
+    },
+    {
+      "bytes": 35660,
+      "path": ".local/validation/product-integration-01/sources/coordinator/application.py",
+      "sha256": "52fe2e21e9b26e4a4761d56c72a2ef8affd9b559bb4301038d7c92a803b5036d",
+      "workspace_source": "coordinator/application.py"
+    },
+    {
+      "bytes": 7344,
+      "path": ".local/validation/product-integration-01/sources/coordinator/cli.py",
+      "sha256": "acc96b079db07824a6b8077e8d1e2b8e99190b78563f8df18cfa35efc00e0cfb",
+      "workspace_source": "coordinator/cli.py"
+    },
+    {
+      "bytes": 7465,
+      "path": ".local/validation/product-integration-01/sources/coordinator/domain.py",
+      "sha256": "83a2cccf2e9bdab2d7b6efe317d950204906556d04bb373ef3c933fb713c1d3e",
+      "workspace_source": "coordinator/domain.py"
+    },
+    {
+      "bytes": 2679,
+      "path": ".local/validation/product-integration-01/sources/coordinator/evidence.py",
+      "sha256": "328db99cba342b4257c83b0a89c60f2ff764dffb61801c21c8b8e66151927034",
+      "workspace_source": "coordinator/evidence.py"
+    },
+    {
+      "bytes": 15817,
+      "path": ".local/validation/product-integration-01/sources/coordinator/intake.py",
+      "sha256": "6bf4b68d106d3ce626e18f912ca5ce77b48ee6073e330b2930032e8ab9f795e6",
+      "workspace_source": "coordinator/intake.py"
+    },
+    {
+      "bytes": 30391,
+      "path": ".local/validation/product-integration-01/sources/coordinator/integration.py",
+      "sha256": "5a87489f5b0a723f1a0519f5314eeb4bf89f51be71d5a5940f7e1a2b688cf35b",
+      "workspace_source": "coordinator/integration.py"
+    },
+    {
+      "bytes": 29537,
+      "path": ".local/validation/product-integration-01/sources/coordinator/source.py",
+      "sha256": "1da68967859a404b277068fbb197f53f72f519d878404a4f5623ebf6b7a2bf35",
+      "workspace_source": "coordinator/source.py"
+    },
+    {
+      "bytes": 16114,
+      "path": ".local/validation/product-integration-01/sources/coordinator/store.py",
+      "sha256": "0b8f50a07e64a34a13d66d64c3abcc408a8636ed492d47a23b8ec08f3250a1bb",
+      "workspace_source": "coordinator/store.py"
+    },
+    {
+      "bytes": 32037,
+      "path": ".local/validation/product-integration-01/sources/coordinator/verification.py",
+      "sha256": "e484260fdc0ae3df04ae42a101b6a7ae287846a33f4123909f7e88a3efea21a6",
+      "workspace_source": "coordinator/verification.py"
+    },
+    {
+      "bytes": 13558,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web.py",
+      "sha256": "40da68993c38ce6078df8b28023bccdcd263e3135e5d53cf0acb2cdce9a92460",
+      "workspace_source": "coordinator/web.py"
+    },
+    {
+      "bytes": 194,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web_assets/favicon.svg",
+      "sha256": "badbecc09718d0793d39fe65e864c39f3cb90b0c108d3555a0df759cb849eff3",
+      "workspace_source": "coordinator/web_assets/favicon.svg"
+    },
+    {
+      "bytes": 823,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web_assets/font-source.json",
+      "sha256": "84209db818656f7c7d0633c1caedc9615794b6d31af82738f5174728366ada49",
+      "workspace_source": "coordinator/web_assets/font-source.json"
+    },
+    {
+      "bytes": 4387,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web_assets/manrope-OFL.txt",
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+      "workspace_source": "coordinator/web_assets/manrope-OFL.txt"
+    },
+    {
+      "bytes": 164700,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web_assets/manrope.ttf",
+      "sha256": "3ae11c49db0455a3cc33e37d380f20fdb8c7f8b41dc07625c177e3d87a9d6ae6",
+      "workspace_source": "coordinator/web_assets/manrope.ttf"
+    },
+    {
+      "bytes": 5161,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web_assets/workspace.css",
+      "sha256": "f2a81ba36968f2509ba2617e18ed2402f7842b7bbb30f28e52d749c354233b95",
+      "workspace_source": "coordinator/web_assets/workspace.css"
+    },
+    {
+      "bytes": 9852,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web_assets/workspace.js",
+      "sha256": "3b9f35182d51867c2b67915e120eda054c22ced958a1b47120ef0f6d562bae7f",
+      "workspace_source": "coordinator/web_assets/workspace.js"
+    },
+    {
+      "bytes": 6600,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web_security.py",
+      "sha256": "725690c2bc3b50d12b3656fddcbdbb2377d482a109dc855eacb20745dcd9c51c",
+      "workspace_source": "coordinator/web_security.py"
+    },
+    {
+      "bytes": 753,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web_templates/info.html",
+      "sha256": "b75522fe79d0ee724e7ba85f014495313757111f42bcd87b6f2aa18aff2e4150",
+      "workspace_source": "coordinator/web_templates/info.html"
+    },
+    {
+      "bytes": 5652,
+      "path": ".local/validation/product-integration-01/sources/coordinator/web_templates/workspace.html",
+      "sha256": "6e196074a5ac19693e05165b8705ee1a551a6ca4bee45b5416933e3b27a112d3",
+      "workspace_source": "coordinator/web_templates/workspace.html"
+    },
+    {
+      "bytes": 16201,
+      "path": ".local/validation/product-integration-01/sources/tests/test_coordinator.py",
+      "sha256": "ef40b8c36fa4f67d714aa6bc3ece4a4244ad933da9aed0b92e74b6fb09c7a0ac",
+      "workspace_source": "tests/test_coordinator.py"
+    },
+    {
+      "bytes": 23452,
+      "path": ".local/validation/product-integration-01/sources/tests/test_coordinator_intake.py",
+      "sha256": "57f9c6e90bd23638c54486f5cef56730a47e3834c905b191f6cd27b74a149406",
+      "workspace_source": "tests/test_coordinator_intake.py"
+    },
+    {
+      "bytes": 18855,
+      "path": ".local/validation/product-integration-01/sources/tests/test_coordinator_integration.py",
+      "sha256": "3511a1ee1f96024d007170447d8de58d84785a10d7f4353485437a181ed49b20",
+      "workspace_source": "tests/test_coordinator_integration.py"
+    },
+    {
+      "bytes": 11926,
+      "path": ".local/validation/product-integration-01/sources/tests/test_coordinator_source.py",
+      "sha256": "eb90ee332a9f58798df9be8d21ca0d084413108a4cb4d7602fa0f6076c48b62f",
+      "workspace_source": "tests/test_coordinator_source.py"
+    },
+    {
+      "bytes": 20147,
+      "path": ".local/validation/product-integration-01/sources/tests/test_coordinator_verification.py",
+      "sha256": "a4bc5a9ae7ab23db9fb87989faabb3e0563f684b6ba7713e6eca686863142f82",
+      "workspace_source": "tests/test_coordinator_verification.py"
+    },
+    {
+      "bytes": 11365,
+      "path": ".local/validation/product-integration-01/sources/tests/test_coordinator_web.py",
+      "sha256": "7c996e4763339d02b60c77683b0d04ac7372bc53183d7274a8ec0d440ad20af3",
+      "workspace_source": "tests/test_coordinator_web.py"
+    }
+  ],
+  "sqlite_source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+  "task_acceptance": false,
+  "terminal_exec_session": {
+    "exit": 0,
+    "id": 91255
+  },
+  "tests_run": 87,
+  "warnings": [
+    "Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead."
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "assets": [
+    {
+      "bytes": 30425588,
+      "filename": "node-v22.16.0-linux-x64.tar.xz",
+      "sha256": "f4cb75bb036f0d0eddf6b79d9596df1aaab9ddccd6a20bf489be5abe9467e84e",
+      "url": "https://nodejs.org/dist/v22.16.0/node-v22.16.0-linux-x64.tar.xz"
+    },
+    {
+      "bytes": 7857228,
+      "filename": "git-2.51.0.tar.xz",
+      "sha256": "60a7c2251cc2e588d5cd87bae567260617c6de0c22dca9cdbfc4c7d2b8990b62",
+      "url": "https://www.kernel.org/pub/software/scm/git/git-2.51.0.tar.xz"
+    },
+    {
+      "bytes": 870496,
+      "filename": "tini-static-amd64",
+      "sha256": "c5b0666b4cb676901f90dfcb37106783c5fe2077b04590973b885950611b30ee",
+      "url": "https://github.com/krallin/tini/releases/download/v0.19.0/tini-static-amd64"
+    },
+    {
+      "bytes": 1819850,
+      "filename": "pip-26.2.2-py3-none-any.whl",
+      "sha256": "fd7f4dfa8190e014013b9f08f3e973f4e4c26ffd179a204895533a7254813a70",
+      "url": "https://files.pythonhosted.org/packages/3f/06/3e4420302363fbb71be3c7f35ce042f54bfca330e3e66b3a2e3c4cca579f/pip-26.2.2-py3-none-any.whl"
+    },
+    {
+      "bytes": 1008090,
+      "filename": "setuptools-83.0.0-py3-none-any.whl",
+      "sha256": "29b23c360f22f414dc7336bb39178cc7bcbf6021ed2733cde173f09dba19abb3",
+      "url": "https://files.pythonhosted.org/packages/5d/40/e1e72872c6354b306daef1703549e8e83b4d43cfea356311bf722a043752/setuptools-83.0.0-py3-none-any.whl"
+    },
+    {
+      "bytes": 30557,
+      "filename": "wheel-0.46.3-py3-none-any.whl",
+      "sha256": "4b399d56c9d9338230118d705d9737a2a468ccca63d5e813e2a4fc7815d8bc4d",
+      "url": "https://files.pythonhosted.org/packages/87/22/b76d483683216dde3d67cba61fb2444be8d5be289bf628c13fc0fd90e5f9/wheel-0.46.3-py3-none-any.whl"
+    },
+    {
+      "bytes": 100195,
+      "filename": "packaging-26.2-py3-none-any.whl",
+      "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
+      "url": "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl"
+    }
+  ],
+  "base_images": [
+    {
+      "compressed_bytes": 413631605,
+      "config_sha256": "b629346a61bd0be57ac436bae7846691e7a5ec1d017497d18a7c06ee1dd8903a",
+      "index_sha256": "d5a186865324088bd10d1671801b42297a8fe3f8059143fb22b2e2b776ffa6dd",
+      "layers": [
+        {
+          "digest": "sha256:8d0037029946d2c6dabce18eceda79c533c5797ed1ee86f94084cb8cddaeea91",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 49393622
+        },
+        {
+          "digest": "sha256:63040bd9752a74c5b1082903de92d441d30121f994018576b4a2f4cf8bb3bca4",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 25635564
+        },
+        {
+          "digest": "sha256:7046f4e749f0e32d9fc67f654ad5e33cc555534f82a9971e45a00dbdb899e309",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 67818834
+        },
+        {
+          "digest": "sha256:992d9e06c2e85b99901bc1e8b27e557e9537e4d0eee8d4cdff13bc0f9bdee2e4",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 236996741
+        },
+        {
+          "digest": "sha256:27e8080e4d59af5fbf06653b11762096bdea17464ead30aba88ae0b55a8cde66",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 6101752
+        },
+        {
+          "digest": "sha256:978808cfaacb3cf411bedf6ed615b479c8fd888ac0d173d9e473a45772dbfa89",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 27684842
+        },
+        {
+          "digest": "sha256:0b66c7162712e792ce1618af5ca8ef25723e10f240c35477221214087eaab7f9",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 250
+        }
+      ],
+      "manifest_sha256": "bf756c962c5d29f6fe30dbf70c692b1e978c272619e8f1096e1d697934c662bf",
+      "observed_tag": "3.13.17-trixie",
+      "platform": "linux/amd64",
+      "repository": "docker.io/library/python",
+      "role": "builder"
+    },
+    {
+      "compressed_bytes": 43057528,
+      "config_sha256": "72036a705a7cff38924efd674e60654666cb283faf7b3fad160b34007f7395bd",
+      "index_sha256": "d98cc29d3266e535dd9da1099688d9cb3ca4753813571e071763d17725460962",
+      "layers": [
+        {
+          "digest": "sha256:f2be67225471500c788ce88c597eb5ea8336e912ad1ca4815650e0281afe2034",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 29843579
+        },
+        {
+          "digest": "sha256:bec94cf691b4dddfccfba1394c83bd789bbed4a1f7c336a67d42e2e4d38b8930",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 1291237
+        },
+        {
+          "digest": "sha256:e1f7d490169d660949e28a29d1d513760a431ac5cda9c666f3be44a4b7a42469",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 11922462
+        },
+        {
+          "digest": "sha256:1972997cb12722025e38722a7ac2d1f2526e93b32650511f0da9153772c4fa86",
+          "mediaType": "application/vnd.oci.image.layer.v1.tar+gzip",
+          "size": 250
+        }
+      ],
+      "manifest_sha256": "d879ed88565a7a3c614b980b369d4a5025a9d057b71f93d09fc6d0b2ca823a18",
+      "observed_tag": "3.13.17-slim-trixie",
+      "platform": "linux/amd64",
+      "repository": "docker.io/library/python",
+      "role": "runtime"
+    }
+  ],
+  "platform": "linux/amd64",
+  "runtime_catalog_sha256": "9d564fe32a459224da2b8d9e51c89964e5a7fd80d91c8e564aa0ea1a8f6a9881",
+  "schema_version": 1,
+  "scope": "Offline image preparation only; image digests are proposed inputs, not proof of an installed or isolated runtime.",
+  "source_archive": {
+    "bytes": 5730059,
+    "filename": "openhands-504a88c.tar.gz",
+    "sha256": "1c91cd7f97074706d0bfb2fde0608c104b69de6bdbe58d44f6c7275d0b9ea1d7",
+    "url": "https://codeload.github.com/OpenHands/software-agent-sdk/tar.gz/504a88cab0fb48ee5226238ad7b8f1d865fa84a8"
+  },
+  "status": "proposed-preparation-inputs",
+  "terminal_backend": "subprocess",
+  "upstream_commit": "504a88cab0fb48ee5226238ad7b8f1d865fa84a8"
+}

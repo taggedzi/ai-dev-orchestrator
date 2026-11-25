@@ -1,0 +1,6 @@
+# Product HTTP/dashboard candidate. Compile to an exact platform lock before
+# the separately approved installation; no extras or source builds are required.
+fastapi
+uvicorn
+jinja2
+httpx

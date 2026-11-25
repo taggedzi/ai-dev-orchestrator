@@ -1,0 +1,938 @@
+{
+  "actions": {
+    "docker_or_validation_vm_operations": 0,
+    "downloaded_code_executed": 0,
+    "model_calls": 0,
+    "package_archives_downloaded": 0,
+    "packages_installed": 0,
+    "repository_data_uploaded": false
+  },
+  "archive_bytes": 74229720,
+  "attempts": [
+    {
+      "commands": [
+        {
+          "args": [
+            "id",
+            "-u"
+          ],
+          "exit": 0,
+          "label": "user-id"
+        },
+        {
+          "args": [
+            "apt-get",
+            "--version"
+          ],
+          "exit": 0,
+          "label": "apt-get-version"
+        },
+        {
+          "args": [
+            "apt-cache",
+            "--version"
+          ],
+          "exit": 0,
+          "label": "apt-cache-version"
+        },
+        {
+          "args": [
+            "gpgv",
+            "--version"
+          ],
+          "exit": 0,
+          "label": "gpgv-version"
+        },
+        {
+          "args": [
+            "dpkg-query",
+            "--version"
+          ],
+          "exit": 0,
+          "label": "dpkg-query-version"
+        },
+        {
+          "args": [
+            "apt-config",
+            "dump"
+          ],
+          "exit": 0,
+          "label": "effective-config"
+        },
+        {
+          "args": [
+            "dpkg-query",
+            "--admindir=/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/projected-dpkg",
+            "-W",
+            "-f=${Package}\t${Version}\t${Status}\n"
+          ],
+          "exit": 0,
+          "label": "projected-dpkg-query"
+        },
+        {
+          "args": [
+            "gpgv",
+            "--homedir",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/gnupg",
+            "--keyring",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/etc/ubuntu-archive-keyring.gpg",
+            "--output",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/releases/0.txt",
+            "--status-fd",
+            "1",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/state/lists/archive.ubuntu.com_ubuntu_dists_noble-updates_InRelease"
+          ],
+          "exit": 0,
+          "label": "signature-0"
+        },
+        {
+          "args": [
+            "gpgv",
+            "--homedir",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/gnupg",
+            "--keyring",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/etc/ubuntu-archive-keyring.gpg",
+            "--output",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/releases/1.txt",
+            "--status-fd",
+            "1",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/state/lists/archive.ubuntu.com_ubuntu_dists_noble_InRelease"
+          ],
+          "exit": 0,
+          "label": "signature-1"
+        },
+        {
+          "args": [
+            "gpgv",
+            "--homedir",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/gnupg",
+            "--keyring",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/etc/ubuntu-archive-keyring.gpg",
+            "--output",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/releases/2.txt",
+            "--status-fd",
+            "1",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-01/state/lists/security.ubuntu.com_ubuntu_dists_noble-security_InRelease"
+          ],
+          "exit": 0,
+          "label": "signature-2"
+        },
+        {
+          "args": [
+            "apt-cache",
+            "policy",
+            "docker.io",
+            "containerd",
+            "runc"
+          ],
+          "exit": 0,
+          "label": "engine-candidates"
+        },
+        {
+          "args": [
+            "apt-get",
+            "--simulate",
+            "--no-install-recommends",
+            "--no-remove",
+            "install",
+            "docker.io=29.1.3-0ubuntu3~24.04.2"
+          ],
+          "exit": 0,
+          "label": "simulate-engine"
+        },
+        {
+          "args": [
+            "apt-get",
+            "--simulate",
+            "--no-install-recommends",
+            "--no-remove",
+            "install",
+            "libip4tc2=1.8.10-3ubuntu2",
+            "libip6tc2=1.8.10-3ubuntu2",
+            "libnfnetlink0=1.0.2-2build1",
+            "libnetfilter-conntrack3=1.0.9-6build1",
+            "libnftnl11=1.2.6-2build1",
+            "iptables=1.8.10-3ubuntu2",
+            "libjansson4=2.14-2build2",
+            "libnftables1=1.0.9-1ubuntu0.1",
+            "runc=1.3.4-0ubuntu1~24.04.1",
+            "containerd=2.2.1-0ubuntu1~24.04.4",
+            "docker.io=29.1.3-0ubuntu3~24.04.2"
+          ],
+          "exit": 0,
+          "label": "pinned-simulate-engine"
+        },
+        {
+          "args": [
+            "apt-cache",
+            "show",
+            "libip4tc2=1.8.10-3ubuntu2",
+            "libip6tc2=1.8.10-3ubuntu2",
+            "libnfnetlink0=1.0.2-2build1",
+            "libnetfilter-conntrack3=1.0.9-6build1",
+            "libnftnl11=1.2.6-2build1",
+            "iptables=1.8.10-3ubuntu2",
+            "libjansson4=2.14-2build2",
+            "libnftables1=1.0.9-1ubuntu0.1",
+            "runc=1.3.4-0ubuntu1~24.04.1",
+            "containerd=2.2.1-0ubuntu1~24.04.4",
+            "docker.io=29.1.3-0ubuntu3~24.04.2"
+          ],
+          "exit": 0,
+          "label": "selected-package-metadata"
+        }
+      ],
+      "error": "ValueError: invalid package location, architecture, size or digest",
+      "files": {
+        "apt.config": {
+          "bytes": 1360,
+          "sha256": "b82b19a4710f743799527d7768d1792b30c58dae5aa8c4ec0bcda69525f9f4b6"
+        },
+        "cache/pkgcache.bin": {
+          "bytes": 49039394,
+          "sha256": "54698b5125e750e6409b5909d43bb1a8d4c0fe0819d20643aca5c53d4f6eab8e"
+        },
+        "cache/srcpkgcache.bin": {
+          "bytes": 49039248,
+          "sha256": "ca025fd2b1bd1f64190f96a0249d926b4c23ac5dd5a75f509fabae9a12174d3f"
+        },
+        "commands/apt-cache-version.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/apt-cache-version.stdout": {
+          "bytes": 18,
+          "sha256": "62614c8443b2ca3516ba8253d39c9bfa64615211180cb9197d7d693ac8418865"
+        },
+        "commands/apt-get-version.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/apt-get-version.stdout": {
+          "bytes": 505,
+          "sha256": "bc0790763e83e3ff0571131c801ef72a7a02b1a5d7845e6d1af0a47fb17b92f1"
+        },
+        "commands/dpkg-query-version.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/dpkg-query-version.stdout": {
+          "bytes": 203,
+          "sha256": "167d0500c8ee9e2d842ddc0cc329b897682d9ca59cfb836f1e3adda81cd36039"
+        },
+        "commands/effective-config.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/effective-config.stdout": {
+          "bytes": 9687,
+          "sha256": "0950b8d714d9e25cd06a9dcb9593ad6d90f6e0b22469b8835802793b45b0cf1b"
+        },
+        "commands/engine-candidates.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/engine-candidates.stdout": {
+          "bytes": 1199,
+          "sha256": "8349603e2b9a801b4482f2b0feb85c92359682c1cdcad636aad189655db88d90"
+        },
+        "commands/gpgv-version.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/gpgv-version.stdout": {
+          "bytes": 255,
+          "sha256": "757d7f2aa9ecf8a64ae85e872227cc8fcf11def914bcfe35f3a17d6affdaf5bb"
+        },
+        "commands/pinned-simulate-engine.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/pinned-simulate-engine.stdout": {
+          "bytes": 2224,
+          "sha256": "41abaf29a6e1428b4349833ee61b7d54bffba9ee803c7d815125c8805132c6e4"
+        },
+        "commands/projected-dpkg-query.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/projected-dpkg-query.stdout": {
+          "bytes": 25362,
+          "sha256": "57d9c025e2973f583fefa4f5a75a9f1734370f9b18dd45d9d7c798f95fe45ad5"
+        },
+        "commands/selected-package-metadata.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/selected-package-metadata.stdout": {
+          "bytes": 11300,
+          "sha256": "fb22acb3bd472864e260b1f581471f18248412b1e264766328220de61f43d88f"
+        },
+        "commands/signature-0.stderr": {
+          "bytes": 221,
+          "sha256": "c5e58e60ca10b28be3594f1f542e6c7df9f83b0e6201b5c91f92e3595adff5a5"
+        },
+        "commands/signature-0.stdout": {
+          "bytes": 411,
+          "sha256": "fcec5bbb627bbda173197f68b77e4e9fab48c1e2c10645a6effc11290761730e"
+        },
+        "commands/signature-1.stderr": {
+          "bytes": 221,
+          "sha256": "96b8c92b77e0b8defe99ec863ecb41ce9ed5df441836bd547a4610e962985a98"
+        },
+        "commands/signature-1.stdout": {
+          "bytes": 411,
+          "sha256": "7ec5b58ee1da8ade1dcc942f55d19b5efab3bfd6dd671434e12f1716f8a687cc"
+        },
+        "commands/signature-2.stderr": {
+          "bytes": 221,
+          "sha256": "b52d98b41c88e22ba2b07a475b1c4777a388e2accca15317e54771b0e76d936f"
+        },
+        "commands/signature-2.stdout": {
+          "bytes": 411,
+          "sha256": "afb71097e675f55ddc157240ac44bf5adf79c1d76da98c4b18e6baa90a145bbb"
+        },
+        "commands/simulate-engine.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/simulate-engine.stdout": {
+          "bytes": 2400,
+          "sha256": "579a7a5b335b7506b9110cc6019b1441c4807037a10663c1be718c7804437a3a"
+        },
+        "commands/user-id.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/user-id.stdout": {
+          "bytes": 5,
+          "sha256": "83c02ac2d48c863dab2ccf6870455aadfc2cec073b8db269b517c879d76aa6d9"
+        },
+        "etc/sources.list": {
+          "bytes": 633,
+          "sha256": "83b78199a371d30f7d8410053ebe2cb36a7dbe2232e0e6412de417370eb69301"
+        },
+        "etc/ubuntu-archive-keyring.gpg": {
+          "bytes": 3607,
+          "sha256": "80a36b0a6de2f69f49d2df75ef473ccde121e9e190b9ea01d20a4f63778d5c31"
+        },
+        "log/eipp.log.xz": {
+          "bytes": 20592,
+          "sha256": "85c4ae37802a184c782a7cf8f2ac6738d65620033b2c4ec7dd32e5564eef6b83"
+        },
+        "projected-dpkg/status": {
+          "bytes": 252385,
+          "sha256": "9857d72c8972af5ce9ba4a10afa3f4de87ced7c5aa06f770a972373699fe408b"
+        },
+        "releases/0.txt": {
+          "bytes": 125243,
+          "sha256": "2815da222a558efbd1088a191f960c7e723cad40ca9efedb1318713293434b0f"
+        },
+        "releases/1.txt": {
+          "bytes": 254968,
+          "sha256": "26758a13cecfaff9ff274d31ea9a4633674a999bd130c09f6ecd66a4b8071184"
+        },
+        "releases/2.txt": {
+          "bytes": 125245,
+          "sha256": "8d9899ac920a3a331cdb731b90066f18bc741891c714c942dd447542956c8e52"
+        },
+        "source/engine_metadata.py": {
+          "bytes": 12612,
+          "sha256": "d69942343c081caf8212214435ed970f5bfb55d5be6a2535cac6868b281c1d5f"
+        },
+        "source/engine_plan.py": {
+          "bytes": 17167,
+          "sha256": "6e20c1c25312ecadd21fd7a498f0dee0692fa1fa158cb5b7026f33b0a2da8308"
+        },
+        "source/guard_packages.py": {
+          "bytes": 14957,
+          "sha256": "58f7942fb4f53161039a1ca74c86c9cb2e904dced8c73017db7735d286d6472c"
+        },
+        "source/os_update_plan.py": {
+          "bytes": 17996,
+          "sha256": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble-updates_InRelease": {
+          "bytes": 126125,
+          "sha256": "8be819b6d76c7d2490956220620307768159877e9d7a838508a41b0c3bfa6398"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble-updates_main_binary-amd64_Packages": {
+          "bytes": 7986610,
+          "sha256": "8272d1d9ba373ef38d13f3880964b8faf3e9872dfb95970b89f6f0e086629f1f"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble-updates_universe_binary-amd64_Packages": {
+          "bytes": 10691677,
+          "sha256": "2349f1cd7b5d285a6fc04b91b4467738c7d8a938d9b4ef54c57b0ed7f0474cbe"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble_InRelease": {
+          "bytes": 255850,
+          "sha256": "cdb2f31d809f589719a53c6ad15f255b27569c4059542ada282aaa21b8e164b0"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble_main_binary-amd64_Packages": {
+          "bytes": 7165069,
+          "sha256": "8f6f71ae839c8cba390a7643fcbbdacddb0bc7d12c1583a2dd80a1f8443a30e5"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble_universe_binary-amd64_Packages": {
+          "bytes": 73379142,
+          "sha256": "687ffc969e7700137677b9cfe2f614ee2d638052a91a7c9bf31f3f6a3040a99a"
+        },
+        "state/lists/lock": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "state/lists/security.ubuntu.com_ubuntu_dists_noble-security_InRelease": {
+          "bytes": 126127,
+          "sha256": "b431610037d0bbf122688ae8756c5ae9ee68d62dd3be5e1f0f65ab60abaea6c3"
+        },
+        "state/lists/security.ubuntu.com_ubuntu_dists_noble-security_main_binary-amd64_Packages": {
+          "bytes": 6526018,
+          "sha256": "54b0bfabe9350eb7877059b7929a61d0842f18555bddc19c09777322cd330e8f"
+        },
+        "state/lists/security.ubuntu.com_ubuntu_dists_noble-security_universe_binary-amd64_Packages": {
+          "bytes": 7722388,
+          "sha256": "460578edf79d78ba490348e3a69306cb480d11e842f6111e76da4923e88ccb34"
+        },
+        "target-status": {
+          "bytes": 252385,
+          "sha256": "9857d72c8972af5ce9ba4a10afa3f4de87ced7c5aa06f770a972373699fe408b"
+        }
+      },
+      "path": ".local/validation/engine-resolution-01",
+      "receipt": {
+        "bytes": 34555,
+        "path": ".local/validation/engine-resolution-01/receipt.json",
+        "sha256": "afa3c2af769002a1e8cee9ae59dcdf201e39a74dabd96fd8de773a7585f7cf32"
+      },
+      "source_sha256": {
+        "engine_metadata.py": "d69942343c081caf8212214435ed970f5bfb55d5be6a2535cac6868b281c1d5f",
+        "engine_plan.py": "6e20c1c25312ecadd21fd7a498f0dee0692fa1fa158cb5b7026f33b0a2da8308",
+        "guard_packages.py": "58f7942fb4f53161039a1ca74c86c9cb2e904dced8c73017db7735d286d6472c",
+        "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+      },
+      "status": "hold"
+    },
+    {
+      "commands": [
+        {
+          "args": [
+            "id",
+            "-u"
+          ],
+          "exit": 0,
+          "label": "user-id"
+        },
+        {
+          "args": [
+            "apt-get",
+            "--version"
+          ],
+          "exit": 0,
+          "label": "apt-get-version"
+        },
+        {
+          "args": [
+            "apt-cache",
+            "--version"
+          ],
+          "exit": 0,
+          "label": "apt-cache-version"
+        },
+        {
+          "args": [
+            "gpgv",
+            "--version"
+          ],
+          "exit": 0,
+          "label": "gpgv-version"
+        },
+        {
+          "args": [
+            "dpkg-query",
+            "--version"
+          ],
+          "exit": 0,
+          "label": "dpkg-query-version"
+        },
+        {
+          "args": [
+            "apt-config",
+            "dump"
+          ],
+          "exit": 0,
+          "label": "effective-config"
+        },
+        {
+          "args": [
+            "dpkg-query",
+            "--admindir=/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/projected-dpkg",
+            "-W",
+            "-f=${Package}\t${Version}\t${Status}\n"
+          ],
+          "exit": 0,
+          "label": "projected-dpkg-query"
+        },
+        {
+          "args": [
+            "gpgv",
+            "--homedir",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/gnupg",
+            "--keyring",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/etc/ubuntu-archive-keyring.gpg",
+            "--output",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/releases/0.txt",
+            "--status-fd",
+            "1",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/state/lists/archive.ubuntu.com_ubuntu_dists_noble-updates_InRelease"
+          ],
+          "exit": 0,
+          "label": "signature-0"
+        },
+        {
+          "args": [
+            "gpgv",
+            "--homedir",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/gnupg",
+            "--keyring",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/etc/ubuntu-archive-keyring.gpg",
+            "--output",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/releases/1.txt",
+            "--status-fd",
+            "1",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/state/lists/archive.ubuntu.com_ubuntu_dists_noble_InRelease"
+          ],
+          "exit": 0,
+          "label": "signature-1"
+        },
+        {
+          "args": [
+            "gpgv",
+            "--homedir",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/gnupg",
+            "--keyring",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/etc/ubuntu-archive-keyring.gpg",
+            "--output",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/releases/2.txt",
+            "--status-fd",
+            "1",
+            "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-resolution-02/state/lists/security.ubuntu.com_ubuntu_dists_noble-security_InRelease"
+          ],
+          "exit": 0,
+          "label": "signature-2"
+        },
+        {
+          "args": [
+            "apt-cache",
+            "policy",
+            "docker.io",
+            "containerd",
+            "runc"
+          ],
+          "exit": 0,
+          "label": "engine-candidates"
+        },
+        {
+          "args": [
+            "apt-get",
+            "--simulate",
+            "--no-install-recommends",
+            "--no-remove",
+            "install",
+            "docker.io=29.1.3-0ubuntu3~24.04.2"
+          ],
+          "exit": 0,
+          "label": "simulate-engine"
+        },
+        {
+          "args": [
+            "apt-get",
+            "--simulate",
+            "--no-install-recommends",
+            "--no-remove",
+            "install",
+            "libip4tc2=1.8.10-3ubuntu2",
+            "libip6tc2=1.8.10-3ubuntu2",
+            "libnfnetlink0=1.0.2-2build1",
+            "libnetfilter-conntrack3=1.0.9-6build1",
+            "libnftnl11=1.2.6-2build1",
+            "iptables=1.8.10-3ubuntu2",
+            "libjansson4=2.14-2build2",
+            "libnftables1=1.0.9-1ubuntu0.1",
+            "runc=1.3.4-0ubuntu1~24.04.1",
+            "containerd=2.2.1-0ubuntu1~24.04.4",
+            "docker.io=29.1.3-0ubuntu3~24.04.2"
+          ],
+          "exit": 0,
+          "label": "pinned-simulate-engine"
+        },
+        {
+          "args": [
+            "apt-cache",
+            "show",
+            "libip4tc2=1.8.10-3ubuntu2",
+            "libip6tc2=1.8.10-3ubuntu2",
+            "libnfnetlink0=1.0.2-2build1",
+            "libnetfilter-conntrack3=1.0.9-6build1",
+            "libnftnl11=1.2.6-2build1",
+            "iptables=1.8.10-3ubuntu2",
+            "libjansson4=2.14-2build2",
+            "libnftables1=1.0.9-1ubuntu0.1",
+            "runc=1.3.4-0ubuntu1~24.04.1",
+            "containerd=2.2.1-0ubuntu1~24.04.4",
+            "docker.io=29.1.3-0ubuntu3~24.04.2"
+          ],
+          "exit": 0,
+          "label": "selected-package-metadata"
+        }
+      ],
+      "error": null,
+      "files": {
+        "apt.config": {
+          "bytes": 1360,
+          "sha256": "495234c46b9946b25cb7e128712706b9d48705eb7c93af42e3fa0984a4edc477"
+        },
+        "cache/pkgcache.bin": {
+          "bytes": 49039394,
+          "sha256": "83e208fe58d68ffa6e8a46c08ac850a8f71bc093238d566a246cea7857ae6320"
+        },
+        "cache/srcpkgcache.bin": {
+          "bytes": 49039248,
+          "sha256": "f2e5b0e64a339935a2e91934696ff7b6106a2843d4d83eea2eb2e800d7b5fdc4"
+        },
+        "commands/apt-cache-version.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/apt-cache-version.stdout": {
+          "bytes": 18,
+          "sha256": "62614c8443b2ca3516ba8253d39c9bfa64615211180cb9197d7d693ac8418865"
+        },
+        "commands/apt-get-version.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/apt-get-version.stdout": {
+          "bytes": 505,
+          "sha256": "bc0790763e83e3ff0571131c801ef72a7a02b1a5d7845e6d1af0a47fb17b92f1"
+        },
+        "commands/dpkg-query-version.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/dpkg-query-version.stdout": {
+          "bytes": 203,
+          "sha256": "167d0500c8ee9e2d842ddc0cc329b897682d9ca59cfb836f1e3adda81cd36039"
+        },
+        "commands/effective-config.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/effective-config.stdout": {
+          "bytes": 9687,
+          "sha256": "f7e835ead0dc772f0ea298a667e305a82dedf1594d6a781cb25facc4aa75c464"
+        },
+        "commands/engine-candidates.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/engine-candidates.stdout": {
+          "bytes": 1199,
+          "sha256": "8349603e2b9a801b4482f2b0feb85c92359682c1cdcad636aad189655db88d90"
+        },
+        "commands/gpgv-version.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/gpgv-version.stdout": {
+          "bytes": 255,
+          "sha256": "757d7f2aa9ecf8a64ae85e872227cc8fcf11def914bcfe35f3a17d6affdaf5bb"
+        },
+        "commands/pinned-simulate-engine.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/pinned-simulate-engine.stdout": {
+          "bytes": 2224,
+          "sha256": "41abaf29a6e1428b4349833ee61b7d54bffba9ee803c7d815125c8805132c6e4"
+        },
+        "commands/projected-dpkg-query.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/projected-dpkg-query.stdout": {
+          "bytes": 25362,
+          "sha256": "57d9c025e2973f583fefa4f5a75a9f1734370f9b18dd45d9d7c798f95fe45ad5"
+        },
+        "commands/selected-package-metadata.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/selected-package-metadata.stdout": {
+          "bytes": 11300,
+          "sha256": "fb22acb3bd472864e260b1f581471f18248412b1e264766328220de61f43d88f"
+        },
+        "commands/signature-0.stderr": {
+          "bytes": 221,
+          "sha256": "c5e58e60ca10b28be3594f1f542e6c7df9f83b0e6201b5c91f92e3595adff5a5"
+        },
+        "commands/signature-0.stdout": {
+          "bytes": 411,
+          "sha256": "fcec5bbb627bbda173197f68b77e4e9fab48c1e2c10645a6effc11290761730e"
+        },
+        "commands/signature-1.stderr": {
+          "bytes": 221,
+          "sha256": "96b8c92b77e0b8defe99ec863ecb41ce9ed5df441836bd547a4610e962985a98"
+        },
+        "commands/signature-1.stdout": {
+          "bytes": 411,
+          "sha256": "7ec5b58ee1da8ade1dcc942f55d19b5efab3bfd6dd671434e12f1716f8a687cc"
+        },
+        "commands/signature-2.stderr": {
+          "bytes": 221,
+          "sha256": "b52d98b41c88e22ba2b07a475b1c4777a388e2accca15317e54771b0e76d936f"
+        },
+        "commands/signature-2.stdout": {
+          "bytes": 411,
+          "sha256": "afb71097e675f55ddc157240ac44bf5adf79c1d76da98c4b18e6baa90a145bbb"
+        },
+        "commands/simulate-engine.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/simulate-engine.stdout": {
+          "bytes": 2400,
+          "sha256": "579a7a5b335b7506b9110cc6019b1441c4807037a10663c1be718c7804437a3a"
+        },
+        "commands/user-id.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "commands/user-id.stdout": {
+          "bytes": 5,
+          "sha256": "83c02ac2d48c863dab2ccf6870455aadfc2cec073b8db269b517c879d76aa6d9"
+        },
+        "etc/sources.list": {
+          "bytes": 633,
+          "sha256": "922cbd9bb62a3b60f8467ede8e7e022eeb8a3cd68404640e123fec062cc34f0a"
+        },
+        "etc/ubuntu-archive-keyring.gpg": {
+          "bytes": 3607,
+          "sha256": "80a36b0a6de2f69f49d2df75ef473ccde121e9e190b9ea01d20a4f63778d5c31"
+        },
+        "log/eipp.log.xz": {
+          "bytes": 20592,
+          "sha256": "85c4ae37802a184c782a7cf8f2ac6738d65620033b2c4ec7dd32e5564eef6b83"
+        },
+        "projected-dpkg/status": {
+          "bytes": 252385,
+          "sha256": "9857d72c8972af5ce9ba4a10afa3f4de87ced7c5aa06f770a972373699fe408b"
+        },
+        "releases/0.txt": {
+          "bytes": 125243,
+          "sha256": "2815da222a558efbd1088a191f960c7e723cad40ca9efedb1318713293434b0f"
+        },
+        "releases/1.txt": {
+          "bytes": 254968,
+          "sha256": "26758a13cecfaff9ff274d31ea9a4633674a999bd130c09f6ecd66a4b8071184"
+        },
+        "releases/2.txt": {
+          "bytes": 125245,
+          "sha256": "8d9899ac920a3a331cdb731b90066f18bc741891c714c942dd447542956c8e52"
+        },
+        "source/engine_metadata.py": {
+          "bytes": 12612,
+          "sha256": "d69942343c081caf8212214435ed970f5bfb55d5be6a2535cac6868b281c1d5f"
+        },
+        "source/engine_plan.py": {
+          "bytes": 17295,
+          "sha256": "00b2b6d4bc9e4c3e17b6fc37bf0a848774f8a8b1fc0c4e0deb1eff8b09b6ebf4"
+        },
+        "source/guard_packages.py": {
+          "bytes": 15203,
+          "sha256": "e46445e8d033a565236bda4747ac1fe8e53cd176db791ed88ced7897295344ce"
+        },
+        "source/os_update_plan.py": {
+          "bytes": 17996,
+          "sha256": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble-updates_InRelease": {
+          "bytes": 126125,
+          "sha256": "8be819b6d76c7d2490956220620307768159877e9d7a838508a41b0c3bfa6398"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble-updates_main_binary-amd64_Packages": {
+          "bytes": 7986610,
+          "sha256": "8272d1d9ba373ef38d13f3880964b8faf3e9872dfb95970b89f6f0e086629f1f"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble-updates_universe_binary-amd64_Packages": {
+          "bytes": 10691677,
+          "sha256": "2349f1cd7b5d285a6fc04b91b4467738c7d8a938d9b4ef54c57b0ed7f0474cbe"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble_InRelease": {
+          "bytes": 255850,
+          "sha256": "cdb2f31d809f589719a53c6ad15f255b27569c4059542ada282aaa21b8e164b0"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble_main_binary-amd64_Packages": {
+          "bytes": 7165069,
+          "sha256": "8f6f71ae839c8cba390a7643fcbbdacddb0bc7d12c1583a2dd80a1f8443a30e5"
+        },
+        "state/lists/archive.ubuntu.com_ubuntu_dists_noble_universe_binary-amd64_Packages": {
+          "bytes": 73379142,
+          "sha256": "687ffc969e7700137677b9cfe2f614ee2d638052a91a7c9bf31f3f6a3040a99a"
+        },
+        "state/lists/lock": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "state/lists/security.ubuntu.com_ubuntu_dists_noble-security_InRelease": {
+          "bytes": 126127,
+          "sha256": "b431610037d0bbf122688ae8756c5ae9ee68d62dd3be5e1f0f65ab60abaea6c3"
+        },
+        "state/lists/security.ubuntu.com_ubuntu_dists_noble-security_main_binary-amd64_Packages": {
+          "bytes": 6526018,
+          "sha256": "54b0bfabe9350eb7877059b7929a61d0842f18555bddc19c09777322cd330e8f"
+        },
+        "state/lists/security.ubuntu.com_ubuntu_dists_noble-security_universe_binary-amd64_Packages": {
+          "bytes": 7722388,
+          "sha256": "460578edf79d78ba490348e3a69306cb480d11e842f6111e76da4923e88ccb34"
+        },
+        "target-status": {
+          "bytes": 252385,
+          "sha256": "9857d72c8972af5ce9ba4a10afa3f4de87ced7c5aa06f770a972373699fe408b"
+        }
+      },
+      "path": ".local/validation/engine-resolution-02",
+      "receipt": {
+        "bytes": 42509,
+        "path": ".local/validation/engine-resolution-02/receipt.json",
+        "sha256": "b6727d3878cf7c3144a471352e23db04152411c2ad36072d293a4596c0f32dbd"
+      },
+      "source_sha256": {
+        "engine_metadata.py": "d69942343c081caf8212214435ed970f5bfb55d5be6a2535cac6868b281c1d5f",
+        "engine_plan.py": "00b2b6d4bc9e4c3e17b6fc37bf0a848774f8a8b1fc0c4e0deb1eff8b09b6ebf4",
+        "guard_packages.py": "e46445e8d033a565236bda4747ac1fe8e53cd176db791ed88ced7897295344ce",
+        "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+      },
+      "status": "prepared-not-approved"
+    }
+  ],
+  "base_commit": "0ae51b3",
+  "baseline_rows": 485,
+  "catalog": {
+    "bytes": 9008,
+    "path": "research/validation/engine-inputs.json",
+    "sha256": "d4cb0db896a0b45e1e98a1ef26afd876a65f7f5f1fa85edcf33577ce2028f396"
+  },
+  "checks": {
+    "baseline_upgrades_removals_held_back": 0,
+    "dpkg_query_matches_all_projected_versions": true,
+    "initial_and_pinned_effects_match": true,
+    "signed_main_and_universe_indexes_checked": true,
+    "three_release_signatures_verified": true,
+    "unprivileged_uid": 1000,
+    "wsl_package_status_unchanged": true
+  },
+  "classification": "Native dpkg-query validation and offline APT simulations of a hypothetical post-OS inventory; not installed packages, security approval or runtime qualification",
+  "counts": {
+    "additions": 11,
+    "held_back": 0,
+    "removals": 0,
+    "upgrades": 0
+  },
+  "execution_environment": {
+    "apt": "2.8.3",
+    "classification": "Existing host tools for package planning; not the validation VM runtime",
+    "distribution": "Ubuntu-24.04",
+    "dpkg_query": "1.22.6",
+    "observed_wsl_version": 1,
+    "uid": 1000
+  },
+  "format": "mcli1-engine-resolution-evidence-v1",
+  "host_status_sha256_after": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+  "host_status_sha256_before": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+  "native_execution_approval": "Explicit execution approvals for offline WSL simulation and corrected Main/Universe metadata variant, 2026-11-22 UTC",
+  "next_check": "Review source/backports and the concrete 11-archive retrieval/installation inputs; preserve pending phase/guard decisions and all installation/runtime gates.",
+  "prior_attempt": {
+    "correction": "Engine caller explicitly permits Main/Universe; parser default remains Main only; exact first source/receipt retained",
+    "finding": "Catalog step rejected Universe under the default Main-only archive parser after both simulations passed"
+  },
+  "projected_status_sha256": "9857d72c8972af5ce9ba4a10afa3f4de87ced7c5aa06f770a972373699fe408b",
+  "proposed_final_rows": 496,
+  "source_sha256": {
+    "engine_metadata.py": "d69942343c081caf8212214435ed970f5bfb55d5be6a2535cac6868b281c1d5f",
+    "engine_plan.py": "00b2b6d4bc9e4c3e17b6fc37bf0a848774f8a8b1fc0c4e0deb1eff8b09b6ebf4",
+    "guard_packages.py": "e46445e8d033a565236bda4747ac1fe8e53cd176db791ed88ced7897295344ce",
+    "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+  },
+  "successful_native_invocation": [
+    "wsl",
+    "-d",
+    "Ubuntu-24.04",
+    "--cd",
+    "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator",
+    "--",
+    "python3",
+    "-B",
+    "-m",
+    "research.validation.engine_plan",
+    "--resolve",
+    "--output",
+    ".local/validation/engine-resolution-02"
+  ],
+  "verification": {
+    "errors": 0,
+    "files": {
+      "result.json": {
+        "bytes": 45,
+        "sha256": "167ec8ee3b3d1c09a07f8281d04e43226b9d6b9970077ef1ad9a262315ab3b64"
+      },
+      "tests.stderr": {
+        "bytes": 23427,
+        "sha256": "4359c5a49f2a4d353cea1f37d522c5825316747b56c8bd87d0197cb77523f61c"
+      },
+      "tests.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "passed": 141,
+    "path": ".local/validation/engine-resolution-check-01",
+    "receipt": {
+      "elapsed_seconds": 31.735,
+      "exit": 0
+    },
+    "skip": "Existing Windows symlink test",
+    "skipped": 1,
+    "total": 142
+  },
+  "verified_private_indexes": {
+    "noble": {
+      "main": {
+        "bytes": 7165069,
+        "sha256": "8f6f71ae839c8cba390a7643fcbbdacddb0bc7d12c1583a2dd80a1f8443a30e5"
+      },
+      "universe": {
+        "bytes": 73379142,
+        "sha256": "687ffc969e7700137677b9cfe2f614ee2d638052a91a7c9bf31f3f6a3040a99a"
+      }
+    },
+    "noble-security": {
+      "main": {
+        "bytes": 6526018,
+        "sha256": "54b0bfabe9350eb7877059b7929a61d0842f18555bddc19c09777322cd330e8f"
+      },
+      "universe": {
+        "bytes": 7722388,
+        "sha256": "460578edf79d78ba490348e3a69306cb480d11e842f6111e76da4923e88ccb34"
+      }
+    },
+    "noble-updates": {
+      "main": {
+        "bytes": 7986610,
+        "sha256": "8272d1d9ba373ef38d13f3880964b8faf3e9872dfb95970b89f6f0e086629f1f"
+      },
+      "universe": {
+        "bytes": 10691677,
+        "sha256": "2349f1cd7b5d285a6fc04b91b4467738c7d8a938d9b4ef54c57b0ed7f0474cbe"
+      }
+    }
+  }
+}

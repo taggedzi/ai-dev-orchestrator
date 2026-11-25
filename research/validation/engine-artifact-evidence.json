@@ -1,0 +1,727 @@
+{
+  "actions": {
+    "archives_downloaded": 8,
+    "cached_archives_reused": 3,
+    "model_calls": 0,
+    "package_scripts_or_engine_binaries_executed": 0,
+    "packages_installed": 0,
+    "repository_data_uploaded": false,
+    "systemd_units_activated": 0,
+    "validation_vm_operations": 0
+  },
+  "archive_bytes": 74229720,
+  "archives": [
+    {
+      "architecture": "amd64",
+      "bytes": 23342,
+      "control_identity": "pass",
+      "filename": "libip4tc2_1.8.10-3ubuntu2_amd64.deb",
+      "name": "libip4tc2",
+      "sha256": "eb381f8ff0469534df3f1b146c3eb8baa6e36f8cfcdf2e3e039398322930d0a4",
+      "version": "1.8.10-3ubuntu2"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 23732,
+      "control_identity": "pass",
+      "filename": "libip6tc2_1.8.10-3ubuntu2_amd64.deb",
+      "name": "libip6tc2",
+      "sha256": "b98b88eb6aa14a902ea1aebc3b12ddd140572545ae1fc6428cb0868c31671d05",
+      "version": "1.8.10-3ubuntu2"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 14810,
+      "control_identity": "pass",
+      "filename": "libnfnetlink0_1.0.2-2build1_amd64.deb",
+      "name": "libnfnetlink0",
+      "sha256": "f557a287af2ca00df5dbf632c6b77d77479139ffb51c83e3de9766eb609b5d63",
+      "version": "1.0.2-2build1"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 45218,
+      "control_identity": "pass",
+      "filename": "libnetfilter-conntrack3_1.0.9-6build1_amd64.deb",
+      "name": "libnetfilter-conntrack3",
+      "sha256": "6d32a4c4618eb7d6c0d989591d28637a9acdfa86dfe22e42e9ac9cc25d882a97",
+      "version": "1.0.9-6build1"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 65986,
+      "control_identity": "pass",
+      "filename": "libnftnl11_1.2.6-2build1_amd64.deb",
+      "name": "libnftnl11",
+      "sha256": "e5bde5c9cbb95082700011f0b7ef2c0a41900b0a9fd7434f6e90448e2a7b4e50",
+      "version": "1.2.6-2build1"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 381328,
+      "control_identity": "pass",
+      "filename": "iptables_1.8.10-3ubuntu2_amd64.deb",
+      "name": "iptables",
+      "sha256": "d341e8ffc42ca035f5aa0fd9a798c8d2b2edb019225dc11f4dac16edf9c57840",
+      "version": "1.8.10-3ubuntu2"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 32830,
+      "control_identity": "pass",
+      "filename": "libjansson4_2.14-2build2_amd64.deb",
+      "name": "libjansson4",
+      "sha256": "0cf79113f5d193ce9af2be2ff4b2c3b30dd4e55a0b6c47f7d28f6c849ff3aa60",
+      "version": "2.14-2build2"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 358574,
+      "control_identity": "pass",
+      "filename": "libnftables1_1.0.9-1ubuntu0.1_amd64.deb",
+      "name": "libnftables1",
+      "sha256": "fcaee001747a6adaa0cd9337fef437b3aa7a7a6d5246b62fbd4784d3d6a5009e",
+      "version": "1.0.9-1ubuntu0.1"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 9573850,
+      "control_identity": "pass",
+      "filename": "runc_1.3.4-0ubuntu1~24.04.1_amd64.deb",
+      "name": "runc",
+      "sha256": "6ddd64ed7ef1693dd95620a2b1148a4187ef4fe0819c3c3049fad9385ecfd5dc",
+      "version": "1.3.4-0ubuntu1~24.04.1"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 28151546,
+      "control_identity": "pass",
+      "filename": "containerd_2.2.1-0ubuntu1~24.04.4_amd64.deb",
+      "name": "containerd",
+      "sha256": "213089e5957d1ea6554b312f8e69869229017fc962ef4f6950228d7160fef2e9",
+      "version": "2.2.1-0ubuntu1~24.04.4"
+    },
+    {
+      "architecture": "amd64",
+      "bytes": 35558504,
+      "control_identity": "pass",
+      "filename": "docker.io_29.1.3-0ubuntu3~24.04.2_amd64.deb",
+      "name": "docker.io",
+      "sha256": "bd5c22d42d4ce3021958b7a8d627701597f61a1a9867ba83fe3c841f04991e3a",
+      "version": "29.1.3-0ubuntu3~24.04.2"
+    }
+  ],
+  "base_commit": "3c7ae7d",
+  "catalog": {
+    "bytes": 9008,
+    "path": "research/validation/engine-inputs.json",
+    "sha256": "d4cb0db896a0b45e1e98a1ef26afd876a65f7f5f1fa85edcf33577ce2028f396"
+  },
+  "catalog_kind": "engine",
+  "classification": "Measured archive identity/text extraction and separate source-text review; not installed engine, service execution, source-patch audit or security/runtime qualification",
+  "download": {
+    "download_args": [
+      "apt-get",
+      "download",
+      "libip4tc2=1.8.10-3ubuntu2",
+      "libip6tc2=1.8.10-3ubuntu2",
+      "libnfnetlink0=1.0.2-2build1",
+      "libnetfilter-conntrack3=1.0.9-6build1",
+      "iptables=1.8.10-3ubuntu2",
+      "runc=1.3.4-0ubuntu1~24.04.1",
+      "containerd=2.2.1-0ubuntu1~24.04.4",
+      "docker.io=29.1.3-0ubuntu3~24.04.2"
+    ],
+    "download_exit": 0,
+    "download_pid": 12,
+    "download_process_group": 12,
+    "download_state": "terminal",
+    "download_timed_out": false
+  },
+  "external_security_review": {
+    "canonical_119101": {
+      "result": "Fetch timed out again; no distro disposition inferred",
+      "url": "https://ubuntu.com/security/CVE-2026-119101"
+    },
+    "canonical_41579": {
+      "classification": "Primary-source status, not a fixed-version determination",
+      "noble_runc_app_status": "Needs evaluation",
+      "page_last_updated": "2026-07-01",
+      "reviewed_utc_date": "2026-11-22",
+      "url": "https://ubuntu.com/security/CVE-2026-41579"
+    },
+    "upstream_feature_conditions": [
+      "https://github.com/opencontainers/runc/security/advisories/GHSA-xjvp-4fhw-gc47",
+      "https://github.com/opencontainers/runc/security/advisories/GHSA-g2c3-j8g3-7gpw"
+    ]
+  },
+  "format": "mcli1-engine-artifact-evidence-v1",
+  "host_status_sha256_after": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+  "host_status_sha256_before": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+  "installation_approval": null,
+  "native_inspection_authorization": "Explicit read-only package text and stock-unit execution approvals, 2026-11-22 UTC; downloaded package code was not run",
+  "next_check": "Prepare offline installation/hardening with controlled service startup/socket/groups, explicit daemon/network/storage/LSM policy and checkpoint/restore exclusion. Recheck actual guest state, approve installation separately and qualify final profile; preserve both pending decisions.",
+  "retrieval_approval": "pinned-engine-archives-2026-11-22",
+  "retrieval_receipt": {
+    "bytes": 11205,
+    "path": ".local/validation/engine-artifacts-01/receipt.json",
+    "sha256": "2e7192702f316856147b0a0c68d0e4359f2757c2ba547e4040ff0d307a3c7515"
+  },
+  "retrieved_packages": 8,
+  "reused_archive_sources": [
+    {
+      "name": "libnftnl11",
+      "path": "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/guard-packages-01/archives/libnftnl11_1.2.6-2build1_amd64.deb",
+      "sha256": "e5bde5c9cbb95082700011f0b7ef2c0a41900b0a9fd7434f6e90448e2a7b4e50"
+    },
+    {
+      "name": "libjansson4",
+      "path": "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/guard-packages-01/archives/libjansson4_2.14-2build2_amd64.deb",
+      "sha256": "0cf79113f5d193ce9af2be2ff4b2c3b30dd4e55a0b6c47f7d28f6c849ff3aa60"
+    },
+    {
+      "name": "libnftables1",
+      "path": "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/guard-packages-01/archives/libnftables1_1.0.9-1ubuntu0.1_amd64.deb",
+      "sha256": "fcaee001747a6adaa0cd9337fef437b3aa7a7a6d5246b62fbd4784d3d6a5009e"
+    }
+  ],
+  "reused_packages": [
+    "libnftnl11",
+    "libjansson4",
+    "libnftables1"
+  ],
+  "security_and_runtime_qualified": false,
+  "source_findings": {
+    "changelogs": "Docker BuildKit backports and containerd security/shutdown entries present; runc latest entry February 20, 2026, version 1.3.4-0ubuntu1~24.04.1",
+    "classification": "Observations from retained signed-package text, not measured installed behavior",
+    "containerd_postinst": "Unit unmask/enable and daemon start/restart paths",
+    "docker_postinst": "docker group creation, unit unmask/enable, daemon start/restart paths, debconf and tolerated AppArmor parser failure",
+    "iptables_postinst": "Legacy and nft alternatives registered with nft at higher priority; effective selection unmeasured",
+    "negative_search_limit": "No matching changelog entry is not proof of no code backport; no source or binary patch audit ran",
+    "stock_daemon_units": "Both Restart=always, Delegate=yes, KillMode=process; Docker TimeoutSec=0 and network-online ordering",
+    "stock_socket": "/run/docker.sock, 0660, root:docker",
+    "target_runc_cve_entries_found": false
+  },
+  "source_sha256": {
+    "fetch_os_updates.py": "8709263b41dbb9a38d4aa2c53def495b6f3378325e39e17c200940a83ff702dc",
+    "guard_packages.py": "e46445e8d033a565236bda4747ac1fe8e53cd176db791ed88ced7897295344ce",
+    "os_update_plan.py": "f8d81dab60c48706b9321cb0d3daf53bb1747d3913924cdb6aac7d70f4586f8d"
+  },
+  "text_inspections": [
+    {
+      "host_status_sha256_after": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+      "host_status_sha256_before": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+      "packages": [
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "postinst",
+            "postrm",
+            "preinst",
+            "prerm",
+            "templates"
+          ],
+          "archive_sha256": "eb381f8ff0469534df3f1b146c3eb8baa6e36f8cfcdf2e3e039398322930d0a4",
+          "changelogs": [],
+          "control_files": [
+            {
+              "bytes": 824,
+              "component": "control",
+              "path": "libip4tc2-control.stdout",
+              "sha256": "9c6836c699c22d0b1ae847cd0a79dd15302bb8ad33079560ca15e4f5bfd1a99d"
+            },
+            {
+              "bytes": 75,
+              "component": "triggers",
+              "path": "libip4tc2-triggers.stdout",
+              "sha256": "0f1eda96d7595190cc2d40a06fafff8def651d19ceb635292ae6104de50de218"
+            }
+          ],
+          "name": "libip4tc2",
+          "version": "1.8.10-3ubuntu2"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "postinst",
+            "postrm",
+            "preinst",
+            "prerm",
+            "templates"
+          ],
+          "archive_sha256": "b98b88eb6aa14a902ea1aebc3b12ddd140572545ae1fc6428cb0868c31671d05",
+          "changelogs": [],
+          "control_files": [
+            {
+              "bytes": 824,
+              "component": "control",
+              "path": "libip6tc2-control.stdout",
+              "sha256": "f33413833dde0da1b4c8f861a200a4553deaf1433f554d4c63a2bd11ea09190c"
+            },
+            {
+              "bytes": 75,
+              "component": "triggers",
+              "path": "libip6tc2-triggers.stdout",
+              "sha256": "0f1eda96d7595190cc2d40a06fafff8def651d19ceb635292ae6104de50de218"
+            }
+          ],
+          "name": "libip6tc2",
+          "version": "1.8.10-3ubuntu2"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "postinst",
+            "postrm",
+            "preinst",
+            "prerm",
+            "templates"
+          ],
+          "archive_sha256": "f557a287af2ca00df5dbf632c6b77d77479139ffb51c83e3de9766eb609b5d63",
+          "changelogs": [],
+          "control_files": [
+            {
+              "bytes": 743,
+              "component": "control",
+              "path": "libnfnetlink0-control.stdout",
+              "sha256": "6b575cb914645dbe500ec1bc9875f348b7db8a89c118c24b97d16b9e8beaa295"
+            },
+            {
+              "bytes": 75,
+              "component": "triggers",
+              "path": "libnfnetlink0-triggers.stdout",
+              "sha256": "0f1eda96d7595190cc2d40a06fafff8def651d19ceb635292ae6104de50de218"
+            }
+          ],
+          "name": "libnfnetlink0",
+          "version": "1.0.2-2build1"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "postinst",
+            "postrm",
+            "preinst",
+            "prerm",
+            "templates"
+          ],
+          "archive_sha256": "6d32a4c4618eb7d6c0d989591d28637a9acdfa86dfe22e42e9ac9cc25d882a97",
+          "changelogs": [],
+          "control_files": [
+            {
+              "bytes": 675,
+              "component": "control",
+              "path": "libnetfilter-conntrack3-control.stdout",
+              "sha256": "a05a5beaefbed6a998b8b641eb1adc940699e7b35917baca7f418354701a9add"
+            },
+            {
+              "bytes": 75,
+              "component": "triggers",
+              "path": "libnetfilter-conntrack3-triggers.stdout",
+              "sha256": "0f1eda96d7595190cc2d40a06fafff8def651d19ceb635292ae6104de50de218"
+            }
+          ],
+          "name": "libnetfilter-conntrack3",
+          "version": "1.0.9-6build1"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "postinst",
+            "postrm",
+            "preinst",
+            "prerm",
+            "templates"
+          ],
+          "archive_sha256": "e5bde5c9cbb95082700011f0b7ef2c0a41900b0a9fd7434f6e90448e2a7b4e50",
+          "changelogs": [],
+          "control_files": [
+            {
+              "bytes": 648,
+              "component": "control",
+              "path": "libnftnl11-control.stdout",
+              "sha256": "9547acb7a728426588b91fd02d2f2da1335d519934f535e273cf880be8f9b16e"
+            },
+            {
+              "bytes": 75,
+              "component": "triggers",
+              "path": "libnftnl11-triggers.stdout",
+              "sha256": "0f1eda96d7595190cc2d40a06fafff8def651d19ceb635292ae6104de50de218"
+            }
+          ],
+          "name": "libnftnl11",
+          "version": "1.2.6-2build1"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "postrm",
+            "preinst",
+            "templates",
+            "triggers"
+          ],
+          "archive_sha256": "d341e8ffc42ca035f5aa0fd9a798c8d2b2edb019225dc11f4dac16edf9c57840",
+          "changelogs": [],
+          "control_files": [
+            {
+              "bytes": 1542,
+              "component": "control",
+              "path": "iptables-control.stdout",
+              "sha256": "d986df781b81e383456890d415e7ce297655b01ba73bb8af63f6aa23ac402cb5"
+            },
+            {
+              "bytes": 1786,
+              "component": "postinst",
+              "path": "iptables-postinst.stdout",
+              "sha256": "9a91fb4c7c59646fdbc50b406838b8e4f986fff29f3ebabec94d474ae2de2e76"
+            },
+            {
+              "bytes": 854,
+              "component": "prerm",
+              "path": "iptables-prerm.stdout",
+              "sha256": "c427439b95e288ccc0f74cc43ee64367d47ac8a403a4e7eb3f31148a473323a8"
+            }
+          ],
+          "name": "iptables",
+          "version": "1.8.10-3ubuntu2"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "postinst",
+            "postrm",
+            "preinst",
+            "prerm",
+            "templates"
+          ],
+          "archive_sha256": "0cf79113f5d193ce9af2be2ff4b2c3b30dd4e55a0b6c47f7d28f6c849ff3aa60",
+          "changelogs": [],
+          "control_files": [
+            {
+              "bytes": 680,
+              "component": "control",
+              "path": "libjansson4-control.stdout",
+              "sha256": "600c8d165e7b54c10e391e6376bf49c4aceaf40c97c75d2ec8c3a458256275b4"
+            },
+            {
+              "bytes": 75,
+              "component": "triggers",
+              "path": "libjansson4-triggers.stdout",
+              "sha256": "0f1eda96d7595190cc2d40a06fafff8def651d19ceb635292ae6104de50de218"
+            }
+          ],
+          "name": "libjansson4",
+          "version": "2.14-2build2"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "postinst",
+            "postrm",
+            "preinst",
+            "prerm",
+            "templates"
+          ],
+          "archive_sha256": "fcaee001747a6adaa0cd9337fef437b3aa7a7a6d5246b62fbd4784d3d6a5009e",
+          "changelogs": [],
+          "control_files": [
+            {
+              "bytes": 1104,
+              "component": "control",
+              "path": "libnftables1-control.stdout",
+              "sha256": "55e23f762f86453314e46ccf488e500505b66e2e10160bcc0397d1b7acbe09d3"
+            },
+            {
+              "bytes": 75,
+              "component": "triggers",
+              "path": "libnftables1-triggers.stdout",
+              "sha256": "0f1eda96d7595190cc2d40a06fafff8def651d19ceb635292ae6104de50de218"
+            }
+          ],
+          "name": "libnftables1",
+          "version": "1.0.9-1ubuntu0.1"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "postinst",
+            "postrm",
+            "preinst",
+            "prerm",
+            "templates",
+            "triggers"
+          ],
+          "archive_sha256": "6ddd64ed7ef1693dd95620a2b1148a4187ef4fe0819c3c3049fad9385ecfd5dc",
+          "changelogs": [
+            {
+              "bytes": 4067,
+              "member": "./usr/share/doc/runc/changelog.Debian.gz",
+              "path": "runc-changelog-0.stdout",
+              "sha256": "e3ac2637f93580f0807fa24e94f13b6cc5830a69c6321e118364f26d1575957f"
+            }
+          ],
+          "control_files": [
+            {
+              "bytes": 599,
+              "component": "control",
+              "path": "runc-control.stdout",
+              "sha256": "4a297e704c5f51c75577eb6de9cb9cb57347cfdf54a504f8bb363e9c70e0a431"
+            }
+          ],
+          "name": "runc",
+          "version": "1.3.4-0ubuntu1~24.04.1"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "preinst",
+            "templates",
+            "triggers"
+          ],
+          "archive_sha256": "213089e5957d1ea6554b312f8e69869229017fc962ef4f6950228d7160fef2e9",
+          "changelogs": [
+            {
+              "bytes": 4804,
+              "member": "./usr/share/doc/containerd/changelog.Debian.gz",
+              "path": "containerd-changelog-0.stdout",
+              "sha256": "ff1b69edffa11376983bcc60b0836e9197ab64928b960f791577f9f8db66f936"
+            }
+          ],
+          "control_files": [
+            {
+              "bytes": 697,
+              "component": "control",
+              "path": "containerd-control.stdout",
+              "sha256": "82f1dfa688e7b723cfe5698725aa5a744a39e3afd3abda340b4f30943033c0e4"
+            },
+            {
+              "bytes": 1838,
+              "component": "postinst",
+              "path": "containerd-postinst.stdout",
+              "sha256": "e2061f7b4ce34c7030a6acac4fe201cc4dbc5607fbbdc6c64c6f01d5b25ae32c"
+            },
+            {
+              "bytes": 464,
+              "component": "postrm",
+              "path": "containerd-postrm.stdout",
+              "sha256": "84c7de9c952fcba2f044d32214bee6ab133634801dd87888f8a5e69264a2267a"
+            },
+            {
+              "bytes": 262,
+              "component": "prerm",
+              "path": "containerd-prerm.stdout",
+              "sha256": "7be5f90995c2afbda4ceccd273edfcb634a6edfd8f4c4f5faa02f856b5d4534e"
+            }
+          ],
+          "name": "containerd",
+          "version": "2.2.1-0ubuntu1~24.04.4"
+        },
+        {
+          "absent_control_components": [
+            "conffiles",
+            "config",
+            "triggers"
+          ],
+          "archive_sha256": "bd5c22d42d4ce3021958b7a8d627701597f61a1a9867ba83fe3c841f04991e3a",
+          "changelogs": [
+            {
+              "bytes": 4545,
+              "member": "./usr/share/doc/docker.io/changelog.Debian.gz",
+              "path": "docker.io-changelog-0.stdout",
+              "sha256": "7abe076e4b5dba4fd8cc6821b0be18594b0875c75d9a2c47f0ae9a9834155de4"
+            }
+          ],
+          "control_files": [
+            {
+              "bytes": 1248,
+              "component": "control",
+              "path": "docker.io-control.stdout",
+              "sha256": "82aedd6597e0fd0fe7fa738bd1223123a685610b1a95207d2bd39bef34344c10"
+            },
+            {
+              "bytes": 8037,
+              "component": "postinst",
+              "path": "docker.io-postinst.stdout",
+              "sha256": "6d5302a37e5a2a1146a147d6067dcff4139b724adda4a2924e6f8f53644902c0"
+            },
+            {
+              "bytes": 1911,
+              "component": "postrm",
+              "path": "docker.io-postrm.stdout",
+              "sha256": "f11c0cfc0c8a3b6b21c8ebce4580e27839354af2a729da157f5e12f73baf611e"
+            },
+            {
+              "bytes": 285,
+              "component": "preinst",
+              "path": "docker.io-preinst.stdout",
+              "sha256": "0126ea7a95f68fd15cf0d621e1d745b49ccd7f3b0e8b4fc42f8b5e79f57af3a1"
+            },
+            {
+              "bytes": 730,
+              "component": "prerm",
+              "path": "docker.io-prerm.stdout",
+              "sha256": "a1448f93e8804cf0f2bc1dfb3e227b4e68d33a2644f336622a8a0d7dce3a5030"
+            },
+            {
+              "bytes": 737,
+              "component": "templates",
+              "path": "docker.io-templates.stdout",
+              "sha256": "80f7e83fdbee98f6398850b91df58b03cd0d1ae71d5ff66d01533090708ff69b"
+            }
+          ],
+          "name": "docker.io",
+          "version": "29.1.3-0ubuntu3~24.04.2"
+        }
+      ],
+      "path": ".local/validation/engine-review-01",
+      "receipt": {
+        "bytes": 42602,
+        "path": ".local/validation/engine-review-01/result.json",
+        "sha256": "d7570c6cb1a75b53463a99c6e7d48d27786d43797e2184eb1d5ac8690cf7fa1b"
+      },
+      "source": {
+        "bytes": 5551,
+        "path": ".local/validation/engine-review-01/run.py",
+        "sha256": "94728b68a6b5ce8efd69132d3dac37cede9b3fa813efb90fa2de23cb2ca4d57d"
+      },
+      "status": "inspected-not-installed",
+      "units": null
+    },
+    {
+      "host_status_sha256_after": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+      "host_status_sha256_before": "0eb4221dd0a5e22685398c9efd9e7f0868351ea67279d01dd41f54d4a8f2a12b",
+      "packages": null,
+      "path": ".local/validation/engine-units-01",
+      "receipt": {
+        "bytes": 3988,
+        "path": ".local/validation/engine-units-01/result.json",
+        "sha256": "804a9955b7bef53e8fb175bec478a1fa182a3a87c3fba3e691ef48ffb42f46f2"
+      },
+      "source": {
+        "bytes": 3651,
+        "path": ".local/validation/engine-units-01/run.py",
+        "sha256": "0f03eee724f880b4ddb2f1e1113b1f5c7cc589a3eb4d9659a453b36029661114"
+      },
+      "status": "read-not-activated",
+      "units": [
+        {
+          "archive_sha256": "bd5c22d42d4ce3021958b7a8d627701597f61a1a9867ba83fe3c841f04991e3a",
+          "bytes": 1701,
+          "commands": [
+            [
+              "dpkg-deb",
+              "--fsys-tarfile",
+              "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-artifacts-01/archives/docker.io_29.1.3-0ubuntu3~24.04.2_amd64.deb"
+            ],
+            [
+              "tar",
+              "--extract",
+              "--to-stdout",
+              "--file",
+              "-",
+              "./usr/lib/systemd/system/docker.service"
+            ]
+          ],
+          "exit_codes": [
+            0,
+            0
+          ],
+          "member": "./usr/lib/systemd/system/docker.service",
+          "package": "docker.io",
+          "path": "docker.service.stdout",
+          "sha256": "2e35580df3c26dc898440289f4abad013fbd62722f00c93f994dba002e468873"
+        },
+        {
+          "archive_sha256": "bd5c22d42d4ce3021958b7a8d627701597f61a1a9867ba83fe3c841f04991e3a",
+          "bytes": 171,
+          "commands": [
+            [
+              "dpkg-deb",
+              "--fsys-tarfile",
+              "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-artifacts-01/archives/docker.io_29.1.3-0ubuntu3~24.04.2_amd64.deb"
+            ],
+            [
+              "tar",
+              "--extract",
+              "--to-stdout",
+              "--file",
+              "-",
+              "./usr/lib/systemd/system/docker.socket"
+            ]
+          ],
+          "exit_codes": [
+            0,
+            0
+          ],
+          "member": "./usr/lib/systemd/system/docker.socket",
+          "package": "docker.io",
+          "path": "docker.socket.stdout",
+          "sha256": "96c04477e86bd6f724560f3a78b7c0b00b539d5254a251d247641029fc7ad92e"
+        },
+        {
+          "archive_sha256": "213089e5957d1ea6554b312f8e69869229017fc962ef4f6950228d7160fef2e9",
+          "bytes": 1242,
+          "commands": [
+            [
+              "dpkg-deb",
+              "--fsys-tarfile",
+              "/mnt/e/Home/Documents/Programming/ai-dev-orchestrator/.local/validation/engine-artifacts-01/archives/containerd_2.2.1-0ubuntu1~24.04.4_amd64.deb"
+            ],
+            [
+              "tar",
+              "--extract",
+              "--to-stdout",
+              "--file",
+              "-",
+              "./usr/lib/systemd/system/containerd.service"
+            ]
+          ],
+          "exit_codes": [
+            0,
+            0
+          ],
+          "member": "./usr/lib/systemd/system/containerd.service",
+          "package": "containerd",
+          "path": "containerd.service.stdout",
+          "sha256": "bd1effcf6d9cd564c232b631b353b2758f174160e3d8c078a792363b59f113d0"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "errors": 0,
+    "files": {
+      "result.json": {
+        "bytes": 45,
+        "sha256": "c324f9c5a0d16d22ef7ce6de46584e366865361511f455ace15713022b6fbdd9"
+      },
+      "tests.stderr": {
+        "bytes": 24153,
+        "sha256": "cd32f1a0fe8e5b633ddf1e0c6cd72c3ea4303cc0f18fc8e8b3f49467fd5f43ad"
+      },
+      "tests.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "passed": 145,
+    "path": ".local/validation/engine-artifact-check-01",
+    "receipt": {
+      "elapsed_seconds": 32.726,
+      "exit": 0
+    },
+    "skip": "Existing Windows symlink test",
+    "skipped": 1,
+    "total": 146
+  }
+}
